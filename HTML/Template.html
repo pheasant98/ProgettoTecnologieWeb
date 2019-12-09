@@ -21,25 +21,30 @@
 	</head>
 	<body>
 
-		<div id="header" class="">
+		<div id="header" class="" role="banner">
             <div id="logo" class="">
                 <img src="" alt="Museo di Arte Moderna"/>
             </div>
             <a id="logIn" class="" href="">Accedi</a>
+            <form class="" action="" method="post" role="search">
+                <label for="textSearch">Cerca nel sito</label> <!--nascondi con CSS-->
+                <input id="textSearch" class="" type="text" tabindex="1" role="search"/>
+                <input type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
+            </form>
 		</div>
 
         <div id="breadcrumbs">Ti trovi in: <span xml:lang="en">Home</span></div>
 
 		<div id="menu">
 			<ul id="menu">
-                <li id="skipMenu"><a href="#content" tabindex="1">Vai al contenuto</a></li>
+                <li id="skipMenu"><a href="#content" tabindex="2">Vai al contenuto</a></li>
                 <li id="currentLink"><span xml:lang="en">Home</span></li>
-                <li><a href="" tabindex="2">Opere</a></li>
-                <li><a href="" tabindex="3">Eventi</a></li>
-                <li><a href="" tabindex="4">Opzioni d'acquisto</a></li>
-                <li><a href="" tabindex="5">Avvisi</a></li>
-                <li><a href="" tabindex="6">Cosa dicono di noi</a></li>
-                <li><a href="" tabindex="7">Contatti</a></li>
+                <li><a href="" tabindex="3">Opere</a></li>
+                <li><a href="" tabindex="4">Eventi</a></li>
+                <li><a href="" tabindex="5">Opzioni d'acquisto</a></li>
+                <li><a href="" tabindex="6">Avvisi</a></li>
+                <li><a href="" tabindex="7">Cosa dicono di noi</a></li>
+                <li><a href="" tabindex="8">Contatti</a></li>
             </ul>
 		</div>
 
