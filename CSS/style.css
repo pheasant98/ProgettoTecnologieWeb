@@ -74,7 +74,7 @@ html, body {
     white-space: nowrap;
 }
 
-#skip4SR {
+#skipParagraph {
     position: absolute;
     overflow: hidden;
     width: 0;
@@ -96,7 +96,7 @@ html, body {
     background-color: #333333;
 }
 
-#ButtonBackUp {
+#buttonBackUp {
     background-image: url('..');
     width: 3em;
     height: 3em;
