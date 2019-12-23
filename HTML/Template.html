@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN" "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it-IT" lang="it-IT">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it-IT">
 
     <head>
 
@@ -28,15 +28,17 @@
             <a id="logIn" class="" href="" title="LogIn" role="button" aria-label="porta alla pagina di login"> <span xml:lang="en"> LogIn </span></a>
             <a id="profile" href="" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente"> Area utente </a>
             <a id="logOut" href="" title="LogOut" role="button" aria-label="esci dal tuo profilo"> <span xml:lang="en"> LogOut </span> </a>
-            <form class="" action="" method="post" role="search">
-                <select id="Filtro" class="" tabindex="0" aria-label="Seleziona il filtro per la ricerca">
-                    <option value="" selected="selected"></option>
-                    <option value="" ></option>
-                    <option value="" ></option>
-                </select>
-                <label for="textSearch">Cerca nel sito</label>                  <!-- Nascondi con CSS -->
-                <input id="textSearch" class="" type="text" tabindex="1" role="search"/>
-                <input type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
+            <form id="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
+                <fieldset>
+                    <select name="test" id="filter" class="" tabindex="0"  aria-label="Seleziona il filtro per la ricerca">
+                        <option value="" selected="selected"></option>
+                        <option value="" ></option>
+                        <option value="" ></option>
+                    </select>
+                    <label for="textSearch">Cerca nel sito</label>
+                    <input id="textSearch" class="" type="text" tabindex="1" role="search"/>
+                    <input type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
+                </fieldset>
             </form>
         </div>
 
