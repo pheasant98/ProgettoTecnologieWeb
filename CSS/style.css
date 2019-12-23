@@ -4,14 +4,14 @@
     margin: 0em;
     font-size: 1em;
     font-family: sans-serif;
-    box-sizing:border-box;
-    max-width:100%;
+    box-sizing: border-box;
+    max-width: 100%;
     line-height: 1.5em;
 }
 
 html, body {
     margin: auto;
-   <!-- min-width: -->
+    min-width: 380px;
 }
 
 #header {
@@ -39,7 +39,7 @@ html, body {
 
 #menu {
     background-color: #CCCCCC;
-<!--  color: #0000CD;-->
+/*  color: #0000CD; */
 }
 
 #menu ul {
@@ -58,7 +58,7 @@ html, body {
 }
 
 #menu a:active{
-<!--  color: #8B0000; -->
+      color: #660000;
 }
 
 #skipMenu {
@@ -68,7 +68,9 @@ html, body {
     height: 0;
     padding: 0;
     border: 0;
-    clip: rect(0, 0, 0, 0);
+    /*eventualmente mettere*/
+    /*display: inline-block */
+    /*clip: rect(0, 0, 0, 0);  da rivedere perche' e' deprecato*/
     white-space: nowrap;
 }
 
@@ -79,7 +81,9 @@ html, body {
     height: 0;
     padding: 0;
     border: 0;
-    clip: rect(0, 0, 0, 0);
+    /*eventualmente mettere*/
+    /*display: inline-block */
+    /*clip: rect(0, 0, 0, 0);  da rivedere perche' e' deprecato*/
     white-space: nowrap;
 }
 
@@ -93,10 +97,9 @@ html, body {
 }
 
 #ButtonBackUp {
-    background-image:url('..');
-    position:fixed;
-    width:3em;
-    height:3em;
+    background-image: url('..');
+    width: 3em;
+    height: 3em;
     bottom: 2.5em;
     right: 2.5em;
     color: transparent;
