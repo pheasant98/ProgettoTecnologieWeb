@@ -12,6 +12,7 @@
 html, body {
     margin: auto;
     min-width: 380px;
+    background-color: #CCCCCC;
 }
 
 #header {
@@ -28,7 +29,6 @@ html, body {
 }
 
 #breadcrumb {
-    background-color: #CCCCCC;
     border-radius: 10px;
     color: #000000;
 }
@@ -47,6 +47,9 @@ html, body {
 #menu ul {
     list-style-type: none;
     text-align: center;
+}
+
+#menu a  {
     text-decoration: none;
 }
 
@@ -88,8 +91,9 @@ html, body {
 
 @media (min-width: 700px) {
     #header {
-        height: 15em;
         background-color: #333333;
+        padding: 2em;
+
     }
 
     #logoImg {
@@ -134,7 +138,7 @@ html, body {
     }
 
     #search {
-        padding-top: 8.25em;
+        padding-top: 9.5em;
         text-align: center;
         border: none;
         box-shadow: none;
@@ -148,31 +152,50 @@ html, body {
 
     #textSearch {
         height: 6.5em;
-        width: 34em;
+        width: 32em;
         border: none;
     }
 
     #Submit {
         height: 6.5em;
-        width: 12em;
+        width: 10em;
         border-bottom-right-radius: 30px;
         border-top-right-radius: 30px;
         border: none;
+        background-color: #EEEEEE;
     }
 
     #filter {
         border: none;
         height: 6.5em;
-        width: 14em;
+        width: 12em;
         padding-left: 5em;
         border-bottom-left-radius: 30px;
         border-top-left-radius: 30px;
+        background-color: #EEEEEE;
     }
     #breadcrumbs {
-        border-radius: 15px;
-        margin-top: 0.5em;
-        margin-bottom: 0.5em;
-        background-color: #CCCCCC;
+        border-radius: 20px;
+        font-size: 3em;
+        margin: 0.5em;
+        padding-left: 0.4em;
+        background-color: #EEEEEE;
     }
 
+    #menu {
+        margin: 1.5em;
+        border-radius: 20px;
+        background-color: #EEEEEE;
+    }
+
+    #content {
+        border-radius: 20px;
+        margin: 1.5em;
+        padding: 2em;
+    }
+    #warning {
+        padding: 0.5em;
+        background-color: #EEEEEE;
+        border-radius: 20px;
+    }
 }

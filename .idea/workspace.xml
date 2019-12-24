@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3466ad5c-8897-4a32-bfaa-8732a96663dc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/TornaSu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/museo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/valid-xhtml10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/vcss-blue.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSS/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/CSS/Style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HTML/Index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/HTML/Index.xhtml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
