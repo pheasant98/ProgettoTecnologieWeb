@@ -1,6 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN" "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
 <!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">-->
-
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="it-IT">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -13,7 +12,7 @@
     <meta name="keywords" content="arte, pittura, scultura, museo"/>       <!-- Rivedere per sicurezza -->
     <meta name="author" content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto"/>
 
-    <link rel="stylesheet" media="screen" href="" type="text/css"/>
+    <link rel="stylesheet" media="screen" href="../CSS/Style.css" type="text/css"/>
     <link rel="stylesheet" media="print" href="" type="text/css"/>
     <link rel="icon" href=""/>
 
@@ -49,7 +48,7 @@
 
 <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
     <ul id="menuUl">
-        <li id="skipMenu"><a href="#content" tabindex="2">Vai al contenuto</a></li>
+        <li class="skip"><a href="#content" tabindex="2">Vai al contenuto</a></li>
         <li id="currentLink"><span xml:lang="en">Home</span></li>
         <li><a href="" tabindex="3" title="Opere" aria-label="Vai alla pagina delle opere">Opere</a></li>
         <li><a href="" tabindex="4" title="Eventi" aria-label="Vai alla pagina degli eventi">Eventi</a></li>
@@ -68,7 +67,7 @@
     </div>
     <h2 class="H2Home">Lorem Ipsum</h2>
     <p class="pContent">
-        <a href="#p2" class="skip4SR">Salta il testo</a>               <!-- Da nascondere con il CSS -->
+        <a href="#p2" class="skip">Salta il testo</a>               <!-- Da nascondere con il CSS -->
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         Vestibulum id augue quis orci porttitor consequat sit amet at velit.
         Mauris odio dolor, vestibulum vel pharetra ut, varius non nibh.
@@ -90,7 +89,7 @@
     </p>
 
     <p id="p2" class="pContent">
-        <a href="#footer" class="skip4SR">Salta il testo</a>
+        <a href="#footer" class="skip">Salta il testo</a>
         Pellentesque nec facilisis eros, non egestas nisl.
         Cras facilisis, metus dapibus viverra consequat, mauris enim facilisis mauris, feugiat laoreet ligula leo ac
         diam.
