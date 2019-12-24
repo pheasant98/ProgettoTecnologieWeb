@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3466ad5c-8897-4a32-bfaa-8732a96663dc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/CSS/Print.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/HTML/Index.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Images/Logo.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaScript/Placeholder.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PHP/Index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Relazione/main.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,9 +25,14 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="FiammettaFMC &lt;fiammetta1998@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.3" />
   <component name="ProjectId" id="1VOQs4HSyiHobd33qhRJUCkrdqS" />
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="XHTML File" />
@@ -63,7 +63,17 @@
       <option name="presentableId" value="Default" />
       <updated>1577121864109</updated>
       <workItem from="1577121865632" duration="1997000" />
+      <workItem from="1577124966285" duration="388000" />
+      <workItem from="1577135234801" duration="140000" />
     </task>
+    <task id="LOCAL-00001" summary="Test di funzionamento dell'intreprete locale di php.">
+      <created>1577125153304</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1577125153304</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -74,10 +84,20 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <MESSAGE value="Test di funzionamento dell'intreprete locale di php." />
+    <option name="LAST_COMMIT_MESSAGE" value="Test di funzionamento dell'intreprete locale di php." />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
