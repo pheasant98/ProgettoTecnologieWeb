@@ -92,7 +92,7 @@ fieldset{
     color: transparent;
 }
 
-@media (min-width: 700px) {
+@media (max-width: 700px) {
 
     #header {
         background-color: #333333;
@@ -102,6 +102,7 @@ fieldset{
     #logoImg {
         height: 4em;
         float:left;
+        width: 8.3em;
     }
 
     #UserTools{
@@ -110,18 +111,14 @@ fieldset{
         overflow: hidden;
     }
 
-    #UserTools ul {
-        list-style-type: none;
-    }
-
     #UserTools li {
+        list-style-type: none;
         margin-bottom: 0.05em;
         padding: 1em 2.5em 1em 2.5em;
         background-color: #CCCCCC;
         outline: none;
         cursor: pointer;
         text-align: center;
-       /* width: 10em;*/
         font: 2em Arial, Helvetica, sans-serif;
         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
         border-radius: 5px;
@@ -138,44 +135,51 @@ fieldset{
         text-decoration: none;
     }
 
+    #searchBox {
+        background-color: #EEEEEE;
+        border-radius: 20px;
+    }
+
     #search {
-        padding-top: 23em;
+        clear: both;
+        padding-top: 3em;
         text-align: center;
     }
 
     #labelS {
         position: absolute;
-        height: 0;
+        height: 0px;
         overflow: hidden;
     }
 
     #textSearch {
-        font-size: 2.8em;
+        font-size:1.4em;
+        border: 0px;
+        width: 50%;
+        padding: 0.5em;
     }
 
     #Submit {
         cursor: pointer;
-        font-size: 2.82em;
-        padding-right: 0.35em;
-        border-bottom-right-radius: 30px;
-        border-top-right-radius: 30px;
-        background-color: #EEEEEE;
+        border: 0px;
+        padding-left:0.5% ;
+        font-size:1.3em;
+        background:none;
+    }
+
+    input:hover {
+        color: #660000;
     }
 
     #filter {
-        font-size: 3em;
-        padding-top: 0.14em;
-        padding-bottom: 0.18em;
-        padding-left: 0.9em;
-        border-bottom-left-radius: 30px;
-        border-top-left-radius: 30px;
-        background-color: #EEEEEE;
-
-
+        border: 0px;
+        font-size:1.3em;
+        background:none;
+        padding: 0.5%;
     }
 
     option {
-        font-size: 0.3em;
+        font-size: 1em;
     }
 
     #breadcrumbs {
