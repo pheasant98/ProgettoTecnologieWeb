@@ -170,6 +170,12 @@ fieldset{
         border-bottom-left-radius: 30px;
         border-top-left-radius: 30px;
         background-color: #EEEEEE;
+
+
+    }
+
+    option {
+        font-size: 0.3em;
     }
 
     #breadcrumbs {
