@@ -24,21 +24,30 @@
     <div id="logo" role="img" aria-label="Immagine del logo Museo arte nel tempo">
         <h1 id="logoImg"> Museo Arte nel Tempo </h1>                    <!-- Utilizzare il css per inserire il logo -->
     </div>
-    <a id="logIn" href="" title="LogIn" role="button" aria-label="porta alla pagina di login"> <span xml:lang="en"> LogIn </span></a>
-    <a id="profile" href="" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente"> Area
-        utente </a>
-    <a id="logOut" href="" title="LogOut" role="button" aria-label="esci dal tuo profilo"> <span
-            xml:lang="en"> LogOut </span> </a>
+    <ul id="UserTools">
+        <li>
+            <a id="logIn" class="Button" href="" title="LogIn" role="button" aria-label="porta alla pagina di login"> <span xml:lang="en"> LogIn </span></a>
+        </li>
+        <li>
+            <a id="profile" class="Button" href="" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente"> Area
+                utente </a>
+        </li>
+        <li>
+            <a id="logOut" class="Button" href="" title="LogOut" role="button" aria-label="esci dal tuo profilo"> <span
+                    xml:lang="en"> LogOut </span> </a>
+        </li>
+    </ul>
+
     <form id="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
         <fieldset>
             <select name="test" id="filter" tabindex="0" aria-label="Seleziona il filtro per la ricerca">
-                <option value="Opera" selected="selected">Opera</option>
-                <option value="Evento">Evento</option>
-                <option value="Avviso">Avviso</option>
+                <option  value="Opera" selected="selected">Opera</option>
+                <option  value="Evento">Evento</option>
+                <option  value="Avviso">Avviso</option>
             </select>
-            <label for="textSearch">Cerca nel sito</label>
+            <label id="labelS" for="textSearch">Cerca nel sito</label>
             <input id="textSearch" type="text" tabindex="1" role="search"/>
-            <input type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
+            <input id="Submit" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
         </fieldset>
     </form>
 </div>

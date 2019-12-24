@@ -22,7 +22,9 @@ html, body {
     text-indent: 100%;
     white-space: nowrap;
     overflow: hidden;
-    background-image: url('..');
+    background-image: url('../images/logo.PNG');
+    background-repeat: no-repeat;
+
 }
 
 #breadcrumb {
@@ -84,4 +86,93 @@ html, body {
     color: transparent;
 }
 
+@media (min-width: 700px) {
+    #header {
+        height: 15em;
+        background-color: #333333;
+    }
 
+    #logoImg {
+        height: 8.1em;
+        /*background-position: left center;*/
+        width: 17em;
+        float:left;
+    }
+
+    #UserTools{
+        float:right;
+        text-align: center;
+        overflow: hidden;
+    }
+    #UserTools ul {
+        list-style-type: none;
+    }
+
+    #UserTools li {
+        margin-bottom: 0.05em;
+        padding-top: 0.6em;
+        padding-bottom: 0.6em;
+        background-color: #CCCCCC;
+        outline: none;
+        cursor: pointer;
+        text-align: center;
+        width: 10em;
+        font: 1em Arial, Helvetica, sans-serif;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        border-radius: 5px;
+    }
+
+    #UserTools li:hover {
+        font-weight: bold;
+        background-color: #CCDDEE;
+        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+
+    .Button {
+        text-shadow: 0 -1px rgb(46,53,58);
+        text-decoration: none;
+    }
+
+    #search {
+        padding-top: 8.25em;
+        text-align: center;
+        border: none;
+        box-shadow: none;
+    }
+
+    #labelS {
+        position: absolute;
+        height: 0;
+        overflow: hidden;
+    }
+
+    #textSearch {
+        height: 6.5em;
+        width: 34em;
+        border: none;
+    }
+
+    #Submit {
+        height: 6.5em;
+        width: 12em;
+        border-bottom-right-radius: 30px;
+        border-top-right-radius: 30px;
+        border: none;
+    }
+
+    #filter {
+        border: none;
+        height: 6.5em;
+        width: 14em;
+        padding-left: 5em;
+        border-bottom-left-radius: 30px;
+        border-top-left-radius: 30px;
+    }
+    #breadcrumbs {
+        border-radius: 15px;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+        background-color: #CCCCCC;
+    }
+
+}
