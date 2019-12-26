@@ -58,7 +58,10 @@ fieldset{
 }
 
 #menu {
-    background-color: #CCCCCC;
+    background-color: #EEEEEE;
+    border-radius: 20px;
+    margin: 1.5em;
+    display: none;
     /*  color: #0000CD; */
 }
 
@@ -69,24 +72,37 @@ fieldset{
 
 #menu a  {
     text-decoration: none;
+    color: #0000FF;
 }
 
 #menu li:hover {
-    border-radius: 30px;
+    border-radius: 20px;
     background-color: #FFFFFF;
-}
-
-#menu a:hover {
     font-weight: bold;
+    color: #0000FF;
 }
 
-#menu a:active {
+#menu a:visited {
     color: #660000;
 }
 
+#skipMenu{
+    position: absolute;
+    text-indent: -9999px;
+}
+
+#skipMenu:focus{
+    position: static;
+    text-indent: 0;
+    overflow: visible;
+}
 .skip {
     position: absolute;
     text-indent: -9999px;
+}
+
+.skip:focus {
+    position: static;
 }
 
 #footer {
@@ -96,15 +112,6 @@ fieldset{
     font-weight: bold;
     color: #FFFFFF;
     background-color: #333333;
-}
-
-#buttonBackUp {
-    background-image: url('..');
-    width: 3em;
-    height: 3em;
-    bottom: 2.5em;
-    right: 2.5em;
-    color: transparent;
 }
 
 @media(max-width:700px) {
@@ -131,17 +138,14 @@ fieldset{
         background-position: center;
     }
 
-    .show {
-        display: block !important;
+    #menu.show{
+        display: block;
     }
 
-    #menu {
-        display: none;
-    }
-
-    #menu li {
+/*    #menu.show li {
         float: none ;
-    }
+    }*/
+
     #UserTools{
         float:right;
         height: 8em;
@@ -160,7 +164,7 @@ fieldset{
         background-color: #CCCCCC;
         outline: none;
         cursor: pointer;
-        font: 2em Arial, Helvetica, sans-serif;
+        font: 2em  sans-serif;
         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
         border-radius: 5px;
     }
@@ -208,10 +212,6 @@ fieldset{
         background:none;
     }
 
-    input:hover {
-        color: #660000;
-    }
-
     #filter {
         border: 0px;
         font-size:1.3em;
@@ -228,12 +228,6 @@ fieldset{
         font-size: 3em;
         margin: 0.5em;
         padding-left: 0.4em;
-        background-color: #EEEEEE;
-    }
-
-    #menu {
-        margin: 1.5em;
-        border-radius: 20px;
         background-color: #EEEEEE;
     }
 
