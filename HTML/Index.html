@@ -29,19 +29,22 @@
     <h1 id="logoImg" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
     <!-- Utilizzare il css per inserire il logo -->
     <span id="HamburgerMenu" title="Menu a hambuger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu a hambuger, cliccaci sopra per aprire il menu">Menu a hamburger</span>
-    <ul id="UserTools">
-        <li>
-            <a id="logIn" class="Button" href="" title="LogIn" role="button" aria-label="porta alla pagina di login"> <span xml:lang="en"> LogIn </span></a>
-        </li>
-        <li>
-            <a id="profile" class="Button" href="" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente"> Area
-                                                                                                                                        utente </a>
-        </li>
-        <li>
-            <a id="logOut" class="Button" href="" title="LogOut" role="button" aria-label="esci dal tuo profilo"> <span
-                    xml:lang="en"> LogOut </span> </a>
-        </li>
-    </ul>
+    <div id="UserTools" title="area dedicata alla registrazione, login e logout" aria-label="area dedicata alla registrazione, login e logout">
+        &nbsp;
+        <ul>
+            <li>
+                <a id="logIn" class="Button" href="" title="LogIn" role="button" aria-label="porta alla pagina di login"> <span xml:lang="en"> LogIn </span></a>
+            </li>
+            <li>
+                <a id="profile" class="Button" href="" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente"> Area
+                    utente </a>
+            </li>
+            <li>
+                <a id="logOut" class="Button" href="" title="LogOut" role="button" aria-label="esci dal tuo profilo"> <span
+                        xml:lang="en"> LogOut </span> </a>
+            </li>
+        </ul>
+    </div>
 
     <form id="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
         <fieldset id="searchBox">
@@ -61,7 +64,7 @@
 </div>   <!-- Da rivedere come farlo -->
 
 <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
-    <ul id="menuUl">
+    <ul>
         <li class="skip"><a href="#content" tabindex="4">Vai al contenuto</a></li>
         <li id="currentLink"><span xml:lang="en">Home</span></li>
         <li><a href="" tabindex="5" title="Opere" aria-label="Vai alla pagina delle opere">Opere</a></li>
