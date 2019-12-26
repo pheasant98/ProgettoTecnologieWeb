@@ -18,6 +18,7 @@
     <link rel="stylesheet" media="screen" href="../CSS/Style.css" type="text/css"/>
     <link rel="stylesheet" media="print" href="" type="text/css"/>
     <link rel="icon" href=""/>
+    <script src="../JavaScript/Placeholder.js"></script>
 
 </head>
 
@@ -27,6 +28,7 @@
 
     <h1 id="logoImg" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
     <!-- Utilizzare il css per inserire il logo -->
+    <span id="HamburgerMenu" title="Menu a hambuger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu a hambuger, cliccaci sopra per aprire il menu">Menu a hamburger</span>
     <ul id="UserTools">
         <li>
             <a id="logIn" class="Button" href="" title="LogIn" role="button" aria-label="porta alla pagina di login"> <span xml:lang="en"> LogIn </span></a>
@@ -43,14 +45,14 @@
 
     <form id="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
         <fieldset id="searchBox">
-            <select id="filter" tabindex="0" aria-label="Seleziona il filtro per la ricerca">
+            <select id="filter" tabindex="2" aria-label="Seleziona il filtro per la ricerca">
                 <option selected="selected" value="Opera">Opera</option>
                 <option value="Evento">Evento</option>
                 <option value="Avviso">Avviso</option>
             </select>
             <label id="labelS" for="textSearch">Cerca nel sito</label>
             <input id="textSearch" type="text" tabindex="1" role="search"/>
-            <input id="Submit" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
+            <input id="Submit" tabindex="3" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
         </fieldset>
     </form>
 </div>
@@ -60,18 +62,18 @@
 
 <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
     <ul id="menuUl">
-        <li class="skip"><a href="#content" tabindex="2">Vai al contenuto</a></li>
+        <li class="skip"><a href="#content" tabindex="4">Vai al contenuto</a></li>
         <li id="currentLink"><span xml:lang="en">Home</span></li>
-        <li><a href="" tabindex="3" title="Opere" aria-label="Vai alla pagina delle opere">Opere</a></li>
-        <li><a href="" tabindex="4" title="Eventi" aria-label="Vai alla pagina degli eventi">Eventi</a></li>
-        <li><a href="" tabindex="5" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti">Opzioni
+        <li><a href="" tabindex="5" title="Opere" aria-label="Vai alla pagina delle opere">Opere</a></li>
+        <li><a href="" tabindex="6" title="Eventi" aria-label="Vai alla pagina degli eventi">Eventi</a></li>
+        <li><a href="" tabindex="7" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti">Opzioni
                                                                                                                    d'acquisto</a>
         </li>
-        <li><a href="" tabindex="6" title="Avvisi" aria-label="Vai alla pagina degli avvisi">Avvisi</a></li>
-        <li><a href="" tabindex="7" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni">Cosa
+        <li><a href="" tabindex="8" title="Avvisi" aria-label="Vai alla pagina degli avvisi">Avvisi</a></li>
+        <li><a href="" tabindex="9" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni">Cosa
                                                                                                                      dicono di noi</a>
         </li>
-        <li><a href="" tabindex="8" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti">Contatti</a></li>
+        <li><a href="" tabindex="10" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti">Contatti</a></li>
     </ul>
 </div>
 
@@ -104,7 +106,7 @@
     </p>
     <!-- Da vedere bene -->
     <p>
-        <a id="ButtonBackUp" href="#header" title="Torna su" aria-label="Torna su" >
+        <a id="ButtonBackUp" tabindex="11" href="#header" title="Torna su" aria-label="Torna su" >
             <img alt="Torna su" src="../Images/TornaSu.png"/>
         </a>
     </p>
