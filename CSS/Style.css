@@ -20,49 +20,79 @@ html, body {
 }
 
 #logoImg {
+    display: block;
+    float:left;
+    background-size: 100%;
+    background-image: url('../images/logo.PNG');
+    background-repeat: no-repeat;
     text-indent: 100%;
     white-space: nowrap;
     overflow: hidden;
-    background-image: url('../images/logo.PNG');
-    background-repeat: no-repeat;
 }
 
 #UserTools {
+    float:right;
+    background-size: 100%;
     background-image: url('../images/MenuUser.png');
+    background-repeat: no-repeat;
     text-indent: 100%;
     white-space: nowrap;
-    overflow: hidden;
-    background-repeat: no-repeat;
 }
 
 #HamburgerMenu {
+    display: block;
+    float:right;
+    background-size: 100%;
     background-image: url('../images/HamburgerMenu.png');
+    background-repeat: no-repeat;
     text-indent: 100%;
     white-space: nowrap;
-    overflow: hidden;
-    background-repeat: no-repeat;
+}
+/* inizio Bottoni*/
+#UserTools li {
+    text-align: center;
+    list-style-type: none;
+    margin-bottom: 0.05em;
+    padding: 1em 2.5em 1em 2.5em;
+    background-color: #CCCCCC;
+    outline: none;
+    cursor: pointer;
+    font: 1em  sans-serif;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius: 5px;
 }
 
+#UserTools li:hover {
+    font-weight: bold;
+    background-color: /*#CCDDEE*/ #FFFFFF;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.Button {
+    text-shadow     : 0 -1px #2E353A;
+    text-decoration : none;
+}
+/* fine bottoni*/
 fieldset{
     border: none;
 }
 
 #breadcrumb {
-    border-radius: 10px;
+    border-radius: 20px;
     color: #000000;
 }
 
 #content {
     background-color: #FFFFFF;
     color: #000000;
+    border-radius: 20px;
 }
 
 #menu {
-    background-color: #EEEEEE;
-    border-radius: 20px;
-    margin: 1.5em;
     display: none;
-    /*  color: #0000CD; */
+    background-color: #EEEEEE;
+    margin: 1.5em;
+    border-radius: 20px;
 }
 
 #menu ul {
@@ -72,112 +102,89 @@ fieldset{
 
 #menu a  {
     text-decoration: none;
-    color: #0000FF;
 }
 
 #menu li:hover {
-    border-radius: 20px;
     background-color: #FFFFFF;
     font-weight: bold;
-    color: #0000FF;
+    border-radius: 20px;
 }
 
-#menu a:visited {
-    color: #660000;
-}
-
-#skipMenu{
-    position: absolute;
-    text-indent: -9999px;
-}
-
-#skipMenu:focus{
-    position: static;
-    text-indent: 0;
-    overflow: visible;
-}
 .skip {
     position: absolute;
-    text-indent: -9999px;
+    text-indent: -999em;
 }
 
 .skip:focus {
     position: static;
 }
 
+a {
+    color: #0000FF;
+}
+
+a:active {
+    color: #660000;
+}
+
+a:visited {
+    color: #660000;
+}
+
 #footer {
     clear: both;
     border-top: 1px solid #333333;
+    background-color: #333333;
+    color: #FFFFFF;
     font-style: italic;
     font-weight: bold;
-    color: #FFFFFF;
-    background-color: #333333;
 }
 
-@media(max-width:700px) {
+@media screen and (max-width:700px) {
 
     #header {
-        background-color: #333333;
         padding: 2em;
     }
 
     #logoImg {
-        float:left;
-        background-size: 100%;
         background-position: center;
         height: 4em;
         width: 39%;
     }
 
-    #HamburgerMenu {
-        float:right;
+    #UserTools {
+        background-position: center;
         height: 8em;
         width: 20%;
-        background-size: 100%;
-        margin-left: 10%;
+    }
+
+    #UserTools:active{
+        border-style: inset;
+    }
+
+    #UserTools ul {
+        display: none;
+    }
+
+    #HamburgerMenu {
         background-position: center;
+        height: 8em;
+        width: 20%;
+        margin-left: 10%;
+    }
+
+    #HamburgerMenu:active {
+        border-style: inset;
     }
 
     #menu.show{
         display: block;
     }
 
-/*    #menu.show li {
-        float: none ;
-    }*/
-
-    #UserTools{
-        float:right;
-        height: 8em;
-        width: 20%;
-        background-position: center;
-        background-size: 100%;
-    }
-    #UserTools ul{
-        display: none;
-    }
-    #UserTools li {
+    #search {
+        clear: both;
+        padding-top: 0.5em;
         text-align: center;
-        list-style-type: none;
-        margin-bottom: 0.05em;
-        padding: 1em 2.5em 1em 2.5em;
-        background-color: #CCCCCC;
-        outline: none;
-        cursor: pointer;
-        font: 2em  sans-serif;
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-        border-radius: 5px;
-    }
-
-    #UserTools li:hover {
-        font-weight: bold;
-        background-color: /*#CCDDEE*/ #FFFFFF;
-        box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-    }
-
-    .Button {
-        text-shadow     : 0 -1px #2E353A;
-        text-decoration : none;
     }
 
     #searchBox {
@@ -185,10 +192,15 @@ fieldset{
         border-radius: 20px;
     }
 
-    #search {
-        clear: both;
-        padding-top: 0.5em;
-        text-align: center;
+    #filter {
+        border: 0px;
+        font-size:1.3em;
+        background:none;
+        padding: 0.5%;
+    }
+
+    option {
+        font-size: 1em;
     }
 
     #labelS {
@@ -212,29 +224,37 @@ fieldset{
         background:none;
     }
 
-    #filter {
-        border: 0px;
-        font-size:1.3em;
-        background:none;
-        padding: 0.5%;
-    }
-
-    option {
-        font-size: 1em;
-    }
-
     #breadcrumbs {
-        border-radius: 20px;
         font-size: 3em;
         margin: 0.5em;
         padding-left: 0.4em;
         background-color: #EEEEEE;
+        border-radius: 20px;
+    }
+
+    #breadcrumbs.hide {
+        display: none;
+    }
+
+    #menu {
+        font-size: 3.5em;
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
+    }
+
+    #menu ul {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
     }
 
     #content {
-        border-radius: 20px;
         margin: 1.5em;
         padding: 2em;
+    }
+
+    #content.hide {
+        display: none;
     }
 
     #warning {
