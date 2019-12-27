@@ -173,6 +173,7 @@ fieldset{
     #menu li {
         float: none ;
     }
+
     #UserTools{
         float:right;
         height: 8em;
@@ -180,9 +181,11 @@ fieldset{
         background-position: center;
         background-size: 100%;
     }
+
     #UserTools ul{
         display: none;
     }
+
     #UserTools li {
         text-align: center;
         list-style-type: none;
