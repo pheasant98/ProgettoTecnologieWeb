@@ -110,7 +110,7 @@ fieldset{
 
 .skip {
     position: absolute;
-    text-indent: -999em;
+    left: -999em;
 }
 
 .skip:focus {
