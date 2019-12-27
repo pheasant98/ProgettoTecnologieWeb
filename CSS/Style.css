@@ -35,7 +35,6 @@ html, body {
     background-size: 100%;
     background-image: url('../images/MenuUser.png');
     background-repeat: no-repeat;
-    text-indent: 100%;
     white-space: nowrap;
 }
 
@@ -45,7 +44,6 @@ html, body {
     background-size: 100%;
     background-image: url('../images/HamburgerMenu.png');
     background-repeat: no-repeat;
-    text-indent: 100%;
     white-space: nowrap;
 }
 /* inizio Bottoni*/
@@ -74,7 +72,7 @@ html, body {
 }
 /* fine bottoni*/
 fieldset{
-    border: none;
+    border: 2px solid #000000;
 }
 
 #breadcrumb {
@@ -210,10 +208,10 @@ a:visited {
     }
 
     #textSearch {
-        font-size:1.4em;
+        font-size:1.27em;
         border: 0px;
         width: 50%;
-        padding: 0.5em;
+        padding: 0.45em;
     }
 
     #Submit {
