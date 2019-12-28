@@ -32,9 +32,6 @@
     <div id="UserTools" title="area dedicata alla registrazione, login e logout" aria-label="area dedicata alla registrazione, login e logout" tabindex="4">
         <ul>
             <li>
-                <a id="logIn" class="Button" href="" title="LogIn" role="button" aria-label="porta alla pagina di login"> <span xml:lang="en"> LogIn </span></a>
-            </li>
-            <li>
                 <a id="profile" class="Button" href="" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente"> Area
                     utente </a>
             </li>
@@ -53,81 +50,67 @@
                 <option value="Avviso">Avviso</option>
             </select>
             <label id="labelS" for="textSearch">Cerca nel sito</label>
-            <input name="Ricerca" id="textSearch" type="text" tabindex="1" role="search"/>
+            <input name="Rircerca" id="textSearch" type="text" tabindex="1" role="search"/>
             <input name="Invio" id="Submit" tabindex="3" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
         </fieldset>
     </form>
 </div>
 
 <div id="breadcrumbs" aria-label="breadcrumbs">
-    <p>
-        Ti trovi in:
-    </p>
+    <p> Ti trovi in: </p>
     <ol>
-        <li>
-            <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo">
-            <span xml:lang="en">Home</span></a>&gt;&gt;
-        </li>
-        <li>
-            <a href="Opere.html" title="Opere" aria-label="Vai alla pagina delle opere">Opere</a>&gt;&gt;
-        </li>
-        <li>
-            <a href="PeriodoStorico.html" id="changeB" title="Periodo storico" aria-label="Vai alla pagina del periodo storico dell'opera">
-                Periodo storico</a>&gt;&gt; <!--da cambiare col nome del periodo storico dell'opera con innerHTML in JS-->
-        </li>
-        <li id="CurrentPage"><em>OperaSingola</em></li> <!--da cambiare col nome dell'opera con innerHTML in JS-->
+        <li><a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo"><span xml:lang="en">Home</span></a>&gt;&gt;</li>
+        <li><a href="AreaUtente.html" title="Area Utente" aria-label="Vai alla pagina area utente"><span xml:lang="en">Area Utente</span></a>&gt;&gt;</li>
+        <li id="CurrentPage"><em>Recensione</em></li>
     </ol>
 
 </div>
 
 <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
     <ul>
-        <li><a href="#content" class="skip" tabindex="4">Vai al contenuto</a></li>
-        <li><span xml:lang="en">Home</span></li>
-        <li><a href="" tabindex="5" title="Opere" aria-label="Vai alla pagina delle opere">Opere</a></li>
-        <li><a href="" tabindex="6" title="Eventi" aria-label="Vai alla pagina degli eventi">Eventi</a></li>
-        <li><a href="" tabindex="7" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti">Opzioni
+        <li><a href="#content" class="skip" tabindex="6">Vai al contenuto</a></li>
+        <li><a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo"><span xml:lang="en">Home</span></a></li>
+        <li><a href="" tabindex="7" title="Opere" aria-label="Vai alla pagina delle opere">Opere</a></li>
+        <li><a href="" tabindex="8" title="Eventi" aria-label="Vai alla pagina degli eventi">Eventi</a></li>
+        <li><a href="" tabindex="9" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti">Opzioni
             d'acquisto</a>
         </li>
-        <li><a href="" tabindex="8" title="Avvisi" aria-label="Vai alla pagina degli avvisi">Avvisi</a></li>
-        <li><a href="" tabindex="9" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni">Cosa
+        <li><a href="" tabindex="10" title="Avvisi" aria-label="Vai alla pagina degli avvisi">Avvisi</a></li>
+        <li><a href="" tabindex="11" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni">Cosa
             dicono di noi</a>
         </li>
-        <li><a href="" tabindex="10" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti">Contatti</a></li>
+        <li><a href="" tabindex="12" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti">Contatti</a></li>
     </ul>
 </div>
 
 <div id="content" role="main">
 
-    <h2 class="H2Home">Elenco dettagli</h2>
-    <p class="pContent">
-        <a href="#p2" class="skip">Salta il testo</a>               <!-- Da nascondere con il CSS -->
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Vestibulum id augue quis orci porttitor consequat sit amet at velit.
-        Mauris odio dolor, vestibulum vel pharetra ut, varius non nibh.
-        Nullam porttitor ante sed facilisis efficitur.
-        Maecenas semper velit in feugiat interdum.
-        Duis dapibus porta rutrum.
-    </p>
+    <h2 class="H2Home">Recensioni effettuate</h2>
 
-    <p id="ImgOpera">
-        <img alt="Immagine dell'opera ecc.." src="../Images/museo.png"/>
-    </p>
-    <h2 class="H2Home">Descrizione completa</h2>
-    <p id="p2" class="pContent">
-        <a href="#footer" class="skip">Salta il testo</a>
-        Pellentesque nec facilisis eros, non egestas nisl.
-        Cras facilisis, metus dapibus viverra consequat, mauris enim facilisis mauris, feugiat laoreet ligula leo ac
-        diam.
-        Donec consequat tortor nisl, quis sodales sapien molestie eget.
-        Nullam vel aliquet libero, fringilla faucibus felis.
-    </p>
-    <!-- Da vedere bene -->
-
-        <a id="ButtonBackUp" tabindex="11" href="#header" title="Torna su" aria-label="Torna su" >
-            <img alt="Torna su" src="../Images/TornaSu.png"/>
+    <dl>
+        <dt>
+            Recensione 1
+        </dt>
+        <dd>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Vestibulum id augue quis orci porttitor consequat sit amet at velit.
+        </dd>
+        <dd>
+            <img id="Remove" src="../Images/X.png" alt="Rimuovi recensione"/>
+        </dd>
+        <dd>
+            <img id="Print" src="../Images/Stampa.png" alt="Stampa recensione"/>
+        </dd>
+    </dl>
+    <p>
+        <a id="Back" class="Button" href="" title="Torna indietro" role="button" aria-label="Torna alla pagina di recensione precedente"> Precedente
         </a>
-
+        <a id="Next" class="Button" href="" title="Vai avanti" role="button" aria-label="Vai alla pagina di recensione succesiva"> Successiva
+        </a>
+    </p>
+    <a id="ButtonBackUp" tabindex="13" href="#header" title="Torna su" aria-label="Torna su" >
+        <img alt="Torna su" src="../Images/TornaSu.png"/>
+    </a>
 </div>
 
 <div id="footer" aria-label="footer">
