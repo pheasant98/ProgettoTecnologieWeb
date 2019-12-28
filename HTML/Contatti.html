@@ -18,6 +18,7 @@
         <link rel="stylesheet" media="screen" href="../CSS/Style.css" type="text/css"/>
         <link rel="stylesheet" media="print" href="" type="text/css"/>
         <link rel="icon" href=""/>
+        <script src="http://maps.googleapis.com/maps/api/js?sensor=true" type="text/javascript"></script>
         <script src="../JavaScript/Placeholder.js" type="text/javascript"></script>
 
     </head>
@@ -60,14 +61,13 @@
         </div>
 
         <div id="breadcrumbs" aria-label="breadcrumbs">
-            <p>
-                Ti trovi in:
-                <ol>
-                <li><a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo"> <span xml:lang="en">Home</span></a>&gt;&gt;</li>
-                    <li id="CurrentPage" aria-current="page">Contatti</li>
-                </ol>
-            </p>
-        </div>   <!-- Da rivedere come farlo -->
+            <p> Ti trovi in: </p>
+            <ol>
+                <li><a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo"><span xml:lang="en">Home</span></a>&gt;&gt;</li>
+                <li id="CurrentPage"><em>Contatti</em></li>
+            </ol>
+
+        </div>
 
         <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
             <ul>
@@ -89,51 +89,53 @@
         <div id="content" role="main">
 
             <h2 class="H2Home">Contatti</h2>
-            <p class="pContatti">
-                <ul>
-                    <li>Nome Museo: Museo Arte nel tempo</li>
-                    <li>Indirizzo sede: Via Biancanile, 3, </li>
-                    <li>Cap, Città, Provincia: 31050 Povegliano <abbr title="Treviso">TV</abbr></li>
-                    <li>Telefono: 347 968 6063</li>
-                    <li>Fax: esiste ancora il fax?</li>
-                    <li><span xml:lang="en">Email: </span><a href="mailto:MuseoArteNelTempo@MAT.it">MuseoArteNelTempo@MAT.it</a></li>
-                </ul>
-            </p>
 
+            <ul class="ulContatti">
+                <li>Nome Museo: Museo Arte nel tempo</li>
+                <li>Indirizzo sede: Via Biancanile, 3, </li>
+                <li>Cap, Città, Provincia: 31050 Povegliano <abbr title="Treviso">TV</abbr></li>
+                <li>Telefono: 347 968 6063</li>
+                <li>Fax: esiste ancora il fax?</li>
+                <li><span xml:lang="en">Email: </span><a href="mailto:MuseoArteNelTempo@MAT.it">MuseoArteNelTempo@MAT.it</a></li>
+            </ul>
 
             <h2 class="H2Home">Orari sede</h2>
-            <p class="pContatti">
-                <ul>
-                    <li>
-                            Lunedì: dalle 8:00 alle 19:00
-                    </li>
-                    <li>
-                            Martedì: dalle 8:00 alle 19:00
-                    </li>
-                    <li>
-                            Mercoledì: dalle 8:00 alle 19:00
-                    </li>
-                    <li>
-                            Giovedì: chiusi
-                    </li>
-                    <li>
-                            Venerdì: dalle 8:00 alle 19:00
-                    </li>
-                    <li>
-                            Sabato: dalle 10:00 alle 17:00
-                    </li>
-                    <li>
-                            Domenica: dalle 10:00 alle 17:00
-                    </li>
-                </ul>
-            </p>
+
+            <ul class="ulContatti">
+                <li>
+                    Lunedì: dalle 8:00 alle 19:00
+                </li>
+                <li>
+                    Martedì: dalle 8:00 alle 19:00
+                </li>
+                <li>
+                    Mercoledì: dalle 8:00 alle 19:00
+                </li>
+                <li>
+                    Giovedì: chiusi
+                </li>
+                <li>
+                    Venerdì: dalle 8:00 alle 19:00
+                </li>
+                <li>
+                    Sabato: dalle 10:00 alle 17:00
+                </li>
+                <li>
+                    Domenica: dalle 10:00 alle 17:00
+                </li>
+            </ul>
+
             <h2 class="H2Home"> Come raggiungerci</h2>
-            <p>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5232.551664801382!2d12.216841!3d45.7719164!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47793938e6ff70ab%3A0xdb07cc096d9b45b4!2sOsteria%20Al%20Biancanil!5e1!3m2!1sit!2sit!4v1577489552038!5m2!1sit!2sit"
-                        width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""><!--tolgo gli attributi e faccio in CSS prossimamente-->
-                        Esci dalla strada pronviciale 56 girando a destra in prossimità di via Biancanile, prosegui fino della strada e ti troverai a destinazione
-                </iframe>
+            
+            <p class="pContatti">
+               <object id="Map" data="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5232.551664801382!2d12.216841!3d45.7719164!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47793938e6ff70ab%3A0xdb07cc096d9b45b4!2sOsteria%20Al%20Biancanil!5e1!3m2!1sit!2sit!4v1577489552038!5m2!1sit!2sit"
+                       title="Mappa per raggiungere il museo">
+
+               </object>
+                    Esci dalla strada pronviciale 56 girando a destra in prossimità di via Biancanile, prosegui fino della strada e ti troverai a destinazione
             </p>
+
+
             <a id="ButtonBackUp" tabindex="13" href="#header" title="Torna su" aria-label="Torna su" >
                     <img alt="Torna su" src="../Images/TornaSu.png"/>
             </a>
