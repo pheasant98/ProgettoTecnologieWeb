@@ -69,7 +69,6 @@ html, body {
 }
 
 .Button {
-    text-shadow     : 0 -1px #2E353A;
     text-decoration : none;
 }
 /* fine bottoni*/
@@ -119,8 +118,12 @@ fieldset{
     text-indent: 1em;
 }
 
-#small {
+#clause {
     font-size: 0.5em;
+}
+
+#pAcquista {
+    padding-top: 1em;
 }
 
 .skip {
@@ -237,10 +240,21 @@ a:visited {
         background:none;
     }
 
+    #Acquista {
+        float: right;
+        text-align: center;
+        color: #000000;
+        font-size: 1em;
+        padding: 0.5em;
+        background-color: #EEEEEE;
+        border-radius: 15px;
+        position: center;
+    }
+
     #breadcrumbs {
-        font-size: 3em;
-        margin: 0.5em;
-        padding-left: 0.4em;
+        font-size: 1.5em;
+        margin: 0.9em;
+        padding: 0.8em;
         background-color: #EEEEEE;
         border-radius: 20px;
     }
