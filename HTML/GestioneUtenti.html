@@ -32,6 +32,10 @@
     <div id="UserTools" title="area dedicata alla registrazione, login e logout" aria-label="area dedicata alla registrazione, login e logout" tabindex="4">
         <ul>
             <li>
+                <a id="profile" class="Button" href="" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente"> Area
+                    utente </a>
+            </li>
+            <li>
                 <a id="logOut" class="Button" href="" title="LogOut" role="button" aria-label="esci dal tuo profilo"> <span
                         xml:lang="en"> LogOut </span> </a>
             </li>
@@ -46,88 +50,57 @@
                 <option value="Avviso">Avviso</option>
             </select>
             <label id="labelS" for="textSearch">Cerca nel sito</label>
-            <input name="Ricerca" id="textSearch" type="text" tabindex="1" role="search"/>
+            <input name="Rircerca" id="textSearch" type="text" tabindex="1" role="search"/>
             <input name="Invio" id="Submit" tabindex="3" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
         </fieldset>
     </form>
 </div>
 
 <div id="breadcrumbs" aria-label="breadcrumbs">
-    <p>
-        Ti trovi in:
-    </p>
+    <p> Ti trovi in: </p>
     <ol>
-        <li>
-            <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo">
-                <span xml:lang="en">Home</span></a>&gt;&gt;
-        </li>
-        <li id="CurrentPage"><em>Area Personale</em></li> <!--da cambiare col nome dell'opera con innerHTML in JS-->
+        <li><a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo"><span xml:lang="en">Home</span></a>&gt;&gt;</li>
+        <li><a href="AreaAdmin.html" title="area admin" aria-label="Vai alla pagina area admin"><span xml:lang="en">Area Admin</span></a>&gt;&gt;</li>
+        <li id="CurrentPage"><em>Gestione utente</em></li>
     </ol>
 
 </div>
 
 <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
     <ul>
-        <li><a href="#content" class="skip" tabindex="4">Vai al contenuto</a></li>
-        <li><span xml:lang="en">Home</span></li>
-        <li><a href="" tabindex="5" title="Opere" aria-label="Vai alla pagina delle opere">Opere</a></li>
-        <li><a href="" tabindex="6" title="Eventi" aria-label="Vai alla pagina degli eventi">Eventi</a></li>
-        <li><a href="" tabindex="7" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti">Opzioni
+        <li><a href="#content" class="skip" tabindex="6">Salta il menu</a></li>
+        <li><a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo"><span xml:lang="en">Home</span></a></li>
+        <li><a href="" tabindex="7" title="Opere" aria-label="Vai alla pagina delle opere">Opere</a></li>
+        <li><a href="" tabindex="8" title="Eventi" aria-label="Vai alla pagina degli eventi">Eventi</a></li>
+        <li><a href="" tabindex="9" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti">Opzioni
             d'acquisto</a>
         </li>
-        <li><a href="" tabindex="8" title="Avvisi" aria-label="Vai alla pagina degli avvisi">Avvisi</a></li>
-        <li><a href="" tabindex="9" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni">Cosa
+        <li><a href="" tabindex="10" title="Avvisi" aria-label="Vai alla pagina degli avvisi">Avvisi</a></li>
+        <li><a href="" tabindex="11" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni">Cosa
             dicono di noi</a>
         </li>
-        <li><a href="" tabindex="10" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti">Contatti</a></li>
+        <li><a href="" tabindex="12" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti">Contatti</a></li>
     </ul>
 </div>
 
 <div id="content" role="main">
 
-    <h2 id="Welcome">Ciao Username!</h2>
-
-    Questi sono i tuoi dati:
-
-    <ul id="ListUser">
-        <li>
-            Nome:
-        </li>
-        <li>
-            Cognome:
-        </li>
-        <li>
-            Sesso:
-        </li>
-        <li>
-            Data di nascita:
-        </li>
-        <li>
-            E-mail:
+    <h2 class="H2Home">Elenco Utenti</h2>
+    <ul id="Users">
+        <li>User 1
+            <img id="Remove" src="../Images/X.png" alt="Rimuovi utente"/>
+            <img id="ViewMore" src="../Images/Visualizza.png" alt="Visualizza dettagli utente"/>
         </li>
     </ul>
-
-    <h2 class="H2Admin">Funzionalita</h2>
-
-    <ul id="ListCom">
-        <li>
-            <a id="Modifica" class="Button" href="Modifica.html" title="vai alla pagina modifica pagina" role="button" aria-label="vai alla pagina modifica pagina">Modifica</a>
-        </li>
-        <li>
-            <a id="Inserisci" class="Button" href="Inserisci.html" title="vai alla pagina inserisci pagina" role="button" aria-label="vai alla pagina inserisci pagina">Inserisci</a>
-        </li>
-        <li>
-            <a id="GestioneUtenti" class="Button" href="GestioneUtenti.html" title="vai alla pagina Gestione Utenti" role="button" aria-label="vai alla pagina iGestione Utenti">Gestione utenti</a>
-        </li>
-        <li>
-            <a id="ContenutoSito" class="Button" href="ContenutoSito.html" title="vai alla pagina Contenuto Sito" role="button" aria-label="vai alla pagina Contenuto Sito">Contenuto sito</a>
-        </li>
-    </ul>
-
-    <a id="ButtonBackUp" tabindex="11" href="#header" title="Torna su" aria-label="Torna su" >
+    <p>
+        <a id="Back" class="Button" href="" title="Torna indietro" role="button" aria-label="Torna alla pagina di gestione utenti precedente"> Precedente
+        </a>
+        <a id="Next" class="Button" href="" title="Vai avanti" role="button" aria-label="Vai alla pagina di gestione utenti succesiva"> Successiva
+        </a>
+    </p>
+    <a id="ButtonBackUp" tabindex="13" href="#header" title="Torna su" aria-label="Torna su" >
         <img alt="Torna su" src="../Images/TornaSu.png"/>
     </a>
-
 </div>
 
 <div id="footer" aria-label="footer">
