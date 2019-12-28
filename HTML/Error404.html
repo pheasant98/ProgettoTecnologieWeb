@@ -25,25 +25,7 @@
 <body>
 
 <div id="header404" role="banner">
-
     <h1 id="logoImg" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
-    <!-- Utilizzare il css per inserire il logo -->
-    <!-- <div id="UserTools" title="area dedicata alla registrazione, login e logout" aria-label="area dedicata alla registrazione, login e logout">
-        &nbsp;
-        <ul>
-            <li>
-                <a id="logIn" class="Button" href="" title="LogIn" role="button" aria-label="porta alla pagina di login"> <span xml:lang="en"> LogIn </span></a>
-            </li>
-            <li>
-                <a id="profile" class="Button" href="" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente"> Area
-                    utente </a>
-            </li>
-            <li>
-                <a id="logOut" class="Button" href="" title="LogOut" role="button" aria-label="esci dal tuo profilo"> <span
-                        xml:lang="en"> LogOut </span> </a>
-            </li>
-        </ul>
-    </div> -->
 </div>
 
 <div id="content" role="main">
@@ -51,13 +33,14 @@
     <p id="ImgError404" title="Cornice vuote di un ritratto" role="img" aria-label="Cornice vuote di un ritratto">Cornice vuota con ritratto</p>
     <p class="pContent">
         <a href="#p2" class="skip">Salta il testo</a>
-        ...vorremmo aiutarti a ritrovare la strada giusta!
+        ...vorremmo aiutarti a trovare la strada giusta!
     </p>
     <p class="pContent">
         Prova a spiegarci meglio cosa ti serve, oppure permettici di riaccompagnarti all'ingresso!
     </p>
     <ul id="Error404Options">
-        <li><form id="search" action="" method="post" role="search"> <!-- Nascondi con CSS -->
+        <li>
+            <form id="search" action="" method="post" role="search"> <!-- Nascondi con CSS -->
                 <fieldset id="searchBox">
                     <select name="filter" id="filter" tabindex="2" aria-label="Seleziona il filtro per la ricerca">
                         <option selected="selected" value="Opera">Opera</option>
@@ -66,7 +49,7 @@
                     </select>
                     <label id="labelS" for="textSearch">Cerca nel sito</label>
                     <input id="textSearch" type="text" tabindex="1" role="search"/>
-                    <input id="Submit" tabindex="3" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
+                    <input name="Invio" id="Submit" tabindex="3" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
                 </fieldset>
             </form>
         </li>
@@ -74,11 +57,9 @@
             <a id="ToHome" class="Button" href="index.html" title="Home" role="button" aria-label="porta alla pagina di home"> <span xml:lang="en"> Home </span></a>
         </li>
     </ul>
-    <p>
-        <a id="ButtonBackUp" tabindex="4" href="#header404" title="Torna su" aria-label="Torna su" >
-            <img alt="Torna su" src="../Images/TornaSu.png"/>
-        </a>
-    </p>
+    <a id="ButtonBackUp" tabindex="13" href="#header404" title="Torna su" aria-label="Torna su" >
+        <img alt="Torna su" src="../Images/TornaSu.png"/>
+    </a>
 </div>
 
 <div id="footer" aria-label="footer">
