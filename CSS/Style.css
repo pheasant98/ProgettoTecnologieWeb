@@ -248,6 +248,7 @@ a.avvisosingolo:visited {
     }
 
     #Back, #Next {
+        display: inline;
         text-align: center;
         color: #000000;
         font-size: 1.2em;
@@ -255,14 +256,6 @@ a.avvisosingolo:visited {
         background-color: #EEEEEE;
         border-radius: 15px;
         position: center;
-    }
-
-    #Back {
-        float:left;
-    }
-
-    #Next {
-        float:right;
     }
 
     #breadcrumbs {
