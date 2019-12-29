@@ -27,14 +27,14 @@
 
             <h1 id="logoImg" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
             <!-- Utilizzare il css per inserire il logo -->
-            <span id="HamburgerMenu" title="Menu a hambuger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu a hambuger, cliccaci sopra per aprire il menu" tabindex="5"></span>
-            <div id="UserTools" title="area dedicata alla registrazione, login e logout" aria-label="area dedicata alla registrazione, login e logout" tabindex="4">
+            <span id="HamburgerMenu" title="Menu a hambuger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu a hambuger, cliccaci sopra per aprire il menu" tabindex="10"></span>
+            <div id="UserTools" title="area dedicata alla registrazione, login e logout" aria-label="area dedicata alla registrazione, login e logout" tabindex="7">
                 <ul>
                     <li>
-                        <a id="logIn" class="Button" href="" title="LogIn" role="button" aria-label="porta alla pagina di login"> <span xml:lang="en"> LogIn </span></a>
+                        <a id="logIn" class="Button" href="" tabindex="8" title="LogIn" role="button" aria-label="porta alla pagina di login"> <span xml:lang="en"> LogIn </span></a>
                     </li>
                     <li>
-                        <a id="profile" class="Button" href="" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente"> Area
+                        <a id="profile" class="Button" href="" tabindex="9" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente"> Area
                             utente </a>
                     </li>
                     <li>
@@ -47,62 +47,62 @@
                 <form id="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
                     <fieldset id="searchBox">
                         <select name="filter" id="filter" tabindex="2" aria-label="Seleziona il filtro per la ricerca">
-                            <option selected="selected" value="Opera">Opera</option>
-                            <option value="Evento">Evento</option>
-                            <option value="Avviso">Avviso</option>
+                            <option selected="selected" tabindex="3" value="Opera">Opera</option>
+                            <option value="Evento" tabindex="4">Evento</option>
+                            <option value="Avviso" tabindex="5">Avviso</option>
                         </select>
                         <label id="labelS" for="textSearch">Cerca nel sito</label>
                         <input id="textSearch" type="text" tabindex="1" role="search"/>
-                        <input id="Submit" tabindex="3" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
+                        <input id="Submit" tabindex="6" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
                     </fieldset>
                 </form>
             </div>
 
-        <div id="breadcrumbs" aria-label="breadcrumbs">Ti trovi in: <a href="Index.html" xml:lang="en">Home</a> &gt;&gt; Avvisi
+        <div id="breadcrumbs" aria-label="breadcrumbs">Ti trovi in: <a href="Index.html" tabindex="18" xml:lang="en">Home</a> &gt;&gt; Avvisi
         </div>   <!-- Da rivedere come farlo -->
 
         <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
             <ul>
-                <li><a href="#content" class="skip" tabindex="4">Vai al contenuto</a></li>
-                <li><a href="Index.html" tabindex="5" title="Home" aria-label="Vai alla pagina di Home" xml:lang="en">Home</a></li>
-                <li><a href="" tabindex="6" title="Opere" aria-label="Vai alla pagina delle opere">Opere</a></li>
-                <li><a href="" tabindex="7" title="Eventi" aria-label="Vai alla pagina degli eventi">Eventi</a></li>
-                <li><a href="" tabindex="8" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti">Opzioni
+                <li><a href="#content" class="skip" tabindex="11">Vai al contenuto</a></li>
+                <li><a href="Index.html" tabindex="12" title="Home" aria-label="Vai alla pagina di Home" xml:lang="en">Home</a></li>
+                <li><a href="" tabindex="13" title="Opere" aria-label="Vai alla pagina delle opere">Opere</a></li>
+                <li><a href="" tabindex="14" title="Eventi" aria-label="Vai alla pagina degli eventi">Eventi</a></li>
+                <li><a href="" tabindex="15" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti">Opzioni
                     d'acquisto</a>
                 </li>
                 <li>Avvisi</li>
-                <li><a href="" tabindex="9" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni">Cosa
+                <li><a href="" tabindex="16" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni">Cosa
                     dicono di noi</a>
                 </li>
-                <li><a href="" tabindex="10" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti">Contatti</a></li>
+                <li><a href="" tabindex="17" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti">Contatti</a></li>
             </ul>
         </div>
 
         <div id="content" role="main">
             <h2 class="H2Avvisi">Avvisi</h2>
             <ul id="Avvisi">
-                <li><a href="#p2" class="skip">Salta l'avviso</a><a href="Avviso1.html" tabindex="11" class="avvisosingolo">
+                <li><a href="#p2" tabindex="19" class="skip">Salta l'avviso</a><a href="Avviso1.html" tabindex="20" class="avvisosingolo">
                     <p>Data: 2020.01.29</p>
                     <p>Oggetto: chiusura per controllo generale della sicurezza</p>
                     Si comunica che il museo sarà chiuso per l'intera giornata di martedì 21 gennaio p.v. a
                     causa del periodico controllo dei sistemi di sicurezza presenti nell'edificio.
                     </a>
                 </li>
-                <li><a href="#p3" class="skip">Salta l'avviso</a><a href="Avviso2.html" tabindex="12" class="avvisosingolo">
+                <li><a href="#p3" tabindex="21" class="skip">Salta l'avviso</a><a href="Avviso2.html" tabindex="22" class="avvisosingolo">
                     <p>Data: 2020.01.20</p>
-                    <p>Oggetto: apertura straordianria</p>
+                    <p>Oggetto: apertura straordinaria</p>
                     Si comunica che il museo resterà aperto il giorno lunedì 20 gennaio p.v. in occasione del
                     finesettimana dedicato alla promozione della cutlura e dell'arte indetto dal Comune.
                     </a>
                 </li>
-                <li><a href="#p4" class="skip">Salta l'avviso</a><a href="Avviso3.html" tabindex="13" class="avvisosingolo">
+                <li><a href="#p4" tabindex="23" class="skip">Salta l'avviso</a><a href="Avviso3.html" tabindex="24" class="avvisosingolo">
                     <p>Data: 2020.01.13</p>
                     <p>Oggetto: riapertura del museo</p>
                     Si comunica che il reparto "scultura" del Quattrocento resterà inagibile fino al giorno 17 gennaio p.v.
                     a causa di guasti tecnici alle infrastrutture. La direzione del museo si scusa per il disguido.
                     </a>
                 </li>
-                <li><a href="#footer" class="skip">Salta l'avviso</a><a href="Avviso4.html" tabindex="14" class="avvisosingolo">
+                <li><a href="#footer" tabindex="25" class="skip">Salta l'avviso</a><a href="Avviso4.html" tabindex="26" class="avvisosingolo">
                     <p>Data: 2019.12.28</p>
                     <p>Oggetto: chiusura invernale</p>
                     Si comunica che il museo resterà chiuso da domenica 30 dicembre p.v. a lunedì 6 gennaio p.v.
@@ -111,13 +111,13 @@
                 </li>
             </ul>
             <p>
-                <a id="Back" class="Button" tabindex="15" href="" title="Torna indietro" role="button" aria-label="Torna alla pagina di recensione precedente"> Precedente
+                <a id="Back" class="Button" tabindex="27" href="" title="Torna indietro" role="button" aria-label="Torna alla pagina di recensione precedente"> Precedente
                 </a>
-                <a id="Next" class="Button" tabindex="16" href="" title="Vai avanti" role="button" aria-label="Vai alla pagina di recensione succesiva"> Successiva
+                <a id="Next" class="Button" tabindex="28" href="" title="Vai avanti" role="button" aria-label="Vai alla pagina di recensione succesiva"> Successiva
                 </a>
             </p>
-            <p id="fondoElenco">
-                <a id="ButtonBackUp" tabindex="11" href="#header" title="Torna su" aria-label="Torna su" >
+            <p>
+                <a id="ButtonBackUp" tabindex="29" href="#header" title="Torna su" aria-label="Torna su" >
                     <img alt="Torna su" src="../Images/TornaSu.png"/>
                 </a>
             </p>
