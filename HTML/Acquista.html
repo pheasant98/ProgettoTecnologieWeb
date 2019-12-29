@@ -39,8 +39,7 @@
                     utente </a>
             </li>
             <li>
-                <a id="logOut" class="Button" href="" title="LogOut" role="button" aria-label="esci dal tuo profilo"> <span
-                        xml:lang="en"> LogOut </span> </a>
+                <a id="logOut" class="Button" href="" title="LogOut" role="button" aria-label="esci dal tuo profilo"> <span xml:lang="en"> LogOut </span> </a>
             </li>
         </ul>
     </div>
@@ -53,16 +52,23 @@
                 <option value="Avviso">Avviso</option>
             </select>
             <label id="labelS" for="textSearch">Cerca nel sito</label>
-            <input name="Ricerca" id="textSearch" type="text" tabindex="1" role="search"/>
-            <input name="Invio" id="Submit" tabindex="3" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
+            <input name="ricerca" id="textSearch" type="text" tabindex="1" role="search"/>
+            <input name="invio" id="Submit" tabindex="3" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
         </fieldset>
     </form>
 </div>
 
-<div id="breadcrumbs" aria-label="breadcrumbs">Ti trovi in:
-    <a aria-label="Vai alla pagina homepage del museo" href="Index.html" title="Home"><span xml:lang="en">Home</span></a>&gt;&gt;
-    <a aria-label="Vai alla pagina opzioni d'acquisto del museo" href="Opzioni d'acquisto.html" title="Opzioni d'acquisto">Opzioni d'acquisto</a>&gt;&gt;
-    Acquista
+<div id="breadcrumbs" aria-label="breadcrumbs">
+    <p>
+        Ti trovi in:
+    </p>
+    <span id="path">
+        <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
+        &gt;&gt;
+        <a aria-label="Vai alla pagina opzioni d'acquisto del museo" href="Opzioni d'acquisto.html" title="Opzioni d'acquisto">Opzioni d'acquisto</a>
+        &gt;&gt;
+        <span id="pathSelected">Acquista</span>
+    </span>
 </div>
 
 <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
@@ -128,10 +134,10 @@
 <div id="footer" aria-label="footer">
     <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
     <p>
-        Progetto per il corso di Tecnologie Web, Anno Accademico 2019/2020
+        Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
     </p>
     <p>
-        Studenti: Fiammetta Cannavò;, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
+        Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
     </p>
     <img alt="Simbolo di validazione CSS" src="../Images/vcss-blue.gif"/>
 </div>
