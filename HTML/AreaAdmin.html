@@ -7,10 +7,10 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-    <title>Home | Museo arte nel tempo</title>
+    <title>Area admin | Museo arte nel tempo</title>
 
     <meta name="language" content="italian it"/>
-    <meta name="title" content="Home | Museo arte nel tempo"/>
+    <meta name="title" content="Area admin | Museo arte nel tempo"/>
     <meta name="description" content=""/>
     <meta name="keywords" content="arte, pittura, scultura, museo"/>       <!-- Rivedere per sicurezza -->
     <meta name="author" content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto"/>
@@ -46,8 +46,8 @@
                 <option value="Avviso">Avviso</option>
             </select>
             <label id="labelS" for="textSearch">Cerca nel sito</label>
-            <input name="Ricerca" id="textSearch" type="text" tabindex="1" role="search"/>
-            <input name="Invio" id="Submit" tabindex="3" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
+            <input name="ricerca" id="textSearch" type="text" tabindex="1" role="search"/>
+            <input name="invio" id="Submit" tabindex="3" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
         </fieldset>
     </form>
 </div>
@@ -56,13 +56,11 @@
     <p>
         Ti trovi in:
     </p>
-    <ol>
-        <li>
-            <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo">
-                <span xml:lang="en">Home</span></a>&gt;&gt;
-        </li>
-        <li id="CurrentPage"><em>Area Personale</em></li>
-    </ol>
+    <span id="path">
+        <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
+        &gt;&gt;
+        <span id="pathSelected">Area <span xml:lang="en">admin</span></span>
+    </span>
 
 </div>
 
@@ -115,28 +113,28 @@
             Data di nascita: 25/11/1998
         </li>
         <li>
-            E-mail: federico.p98@outlook.it
+            <span xml:lang="en">E-mail</span>: federico.p98@<span xml:lang="en">outlook</span>.it
         </li>
     </ul>
 
-    <h2 class="H2Admin">Funzionalita</h2>
+    <h2 class="H2Admin">Funzionalità</h2>
 
     <ul id="ListCom">
         <li>
-            <a id="Modifica" class="Button" href="Modifica.html" title="vai alla pagina modifica pagina" role="button" aria-label="vai alla pagina modifica pagina">Modifica</a>
+            <a id="Modifica" class="Button" href="Modifica.html" title="vai alla pagina modifica pagina" role="button" tabindex="14" aria-label="vai alla pagina modifica pagina">Modifica</a>
         </li>
         <li>
-            <a id="Inserisci" class="Button" href="Inserisci.html" title="vai alla pagina inserisci pagina" role="button" aria-label="vai alla pagina inserisci pagina">Inserisci</a>
+            <a id="Inserisci" class="Button" href="Inserisci.html" title="vai alla pagina inserisci pagina" role="button" tabindex="15" aria-label="vai alla pagina inserisci pagina">Inserisci</a>
         </li>
         <li>
-            <a id="GestioneUtenti" class="Button" href="GestioneUtenti.html" title="vai alla pagina Gestione Utenti" role="button" aria-label="vai alla pagina iGestione Utenti">Gestione utenti</a>
+            <a id="GestioneUtenti" class="Button" href="GestioneUtenti.html" title="vai alla pagina Gestione Utenti" role="button" tabindex="16" aria-label="vai alla pagina iGestione Utenti">Gestione utenti</a>
         </li>
         <li>
-            <a id="ContenutoSito" class="Button" href="ContenutoSito.html" title="vai alla pagina Contenuto Sito" role="button" aria-label="vai alla pagina Contenuto Sito">Contenuto sito</a>
+            <a id="ContenutoSito" class="Button" href="ContenutoSito.html" title="vai alla pagina Contenuto Sito" role="button" tabindex="17" aria-label="vai alla pagina Contenuto Sito">Contenuto sito</a>
         </li>
     </ul>
 
-    <a id="ButtonBackUp" tabindex="14" href="#header" title="Torna su" aria-label="Torna su" >
+    <a id="ButtonBackUp" tabindex="18" href="#header" title="Torna su" aria-label="Torna su">
         <img alt="Torna su" src="../Images/TornaSu.png"/>
     </a>
 
@@ -145,7 +143,7 @@
 <div id="footer" aria-label="footer">
     <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
     <p>
-        Progetto per il corso di Tecnologie Web, Anno Accademico 2019/2020
+        Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
     </p>
     <p>
         Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto

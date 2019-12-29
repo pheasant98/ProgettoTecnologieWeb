@@ -7,10 +7,10 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-    <title>Home | Museo arte nel tempo</title>
+    <title>Riepilogo acquisto | Museo arte nel tempo</title>
 
     <meta name="language" content="italian it"/>
-    <meta name="title" content="Home | Museo arte nel tempo"/>
+    <meta name="title" content="Riepilogo acquisto | Museo arte nel tempo"/>
     <meta name="description" content=""/>
     <meta name="keywords" content="arte, pittura, scultura, museo"/>       <!-- Rivedere per sicurezza -->
     <meta name="author" content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto"/>
@@ -50,8 +50,8 @@
                 <option value="Avviso">Avviso</option>
             </select>
             <label id="labelS" for="textSearch">Cerca nel sito</label>
-            <input name="Ricerca" id="textSearch" type="text" tabindex="1" role="search"/>
-            <input name="Invio" id="Submit" tabindex="3" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
+            <input name="ricerca" id="textSearch" type="text" tabindex="1" role="search"/>
+            <input name="invio" id="Submit" tabindex="3" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
         </fieldset>
     </form>
 </div>
@@ -60,20 +60,15 @@
     <p>
         Ti trovi in:
     </p>
-    <ol>
-        <li>
-            <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo">
-                <span xml:lang="en">Home</span></a>&gt;&gt;
-        </li>
-        <li>
-            <a href="OpzioniDAquisto.html" title="Opzioni d'acquisto" aria-label="Vai alla pagina Opzioni d'acquisto">Opzioni d'acquisto</a>&gt;&gt;
-        </li>
-        <li>
-            <a href="Acquista.html" title="Acquista" aria-label="Vai alla pagina Acquista">
-                Periodo storico</a>&gt;&gt;
-        </li>
-        <li id="CurrentPage"><em>Riepilogo acquisto</em></li>
-    </ol>
+    <span id="path">
+        <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
+        &gt;&gt;
+        <a href="OpzioniDAquisto.html" title="Opzioni d'acquisto" aria-label="Vai alla pagina Opzioni d'acquisto">Opzioni d'acquisto</a>
+        &gt;&gt;
+        <a href="Acquista.html" title="Acquista" aria-label="Vai alla pagina Acquista">Acquista</a>
+        &gt;&gt;
+        <span id="pathSelected">Riepilogo acquisto</span>
+    </span>
 
 </div>
 
@@ -130,9 +125,9 @@
 
     <p id="pRiepilogo">
         Totale:
-        <a id="Continue" class="Button" href="" title="Prosegui con il pagamento" role="button" aria-label="Prosegui con il pagamento"> Continua </a>
+        <a id="Continue" class="Button" href="" title="Prosegui con il pagamento" tabindex="14" role="button" aria-label="Prosegui con il pagamento"> Continua </a>
     </p>
-    <a id="ButtonBackUp" tabindex="14" href="#header" title="Torna su" aria-label="Torna su" >
+    <a id="ButtonBackUp" tabindex="15" href="#header" title="Torna su" aria-label="Torna su" >
         <img alt="Torna su" src="../Images/TornaSu.png"/>
     </a>
 
@@ -141,7 +136,7 @@
 <div id="footer" aria-label="footer">
     <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
     <p>
-        Progetto per il corso di Tecnologie Web, Anno Accademico 2019/2020
+        Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
     </p>
     <p>
         Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto

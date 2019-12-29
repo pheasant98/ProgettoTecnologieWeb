@@ -7,10 +7,10 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-    <title>Home | Museo arte nel tempo</title>
+    <title>Lascia una recensione | Museo arte nel tempo</title>
 
     <meta name="language" content="italian it"/>
-    <meta name="title" content="Home | Museo arte nel tempo"/>
+    <meta name="title" content="Lascia una recensione | Museo arte nel tempo"/>
     <meta name="description" content=""/>
     <meta name="keywords" content="arte, pittura, scultura, museo"/>       <!-- Rivedere per sicurezza -->
     <meta name="author" content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto"/>
@@ -50,8 +50,8 @@
                 <option value="Avviso">Avviso</option>
             </select>
             <label id="labelS" for="textSearch">Cerca nel sito</label>
-            <input name="Ricerca" id="textSearch" type="text" tabindex="1" role="search"/>
-            <input name="Invio" id="Submit" tabindex="3" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
+            <input name="ricerca" id="textSearch" type="text" tabindex="1" role="search"/>
+            <input name="invio" id="Submit" tabindex="3" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
         </fieldset>
     </form>
 </div>
@@ -60,16 +60,13 @@
     <p>
         Ti trovi in:
     </p>
-    <ol>
-        <li>
-            <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo">
-                <span xml:lang="en">Home</span></a>&gt;&gt;
-        </li>
-        <li>
-            <a href="CosaDiconoDiNoi.html" title="Cosa dicono di noi" aria-label="Vai alla pagina cosa dicono di noi">Cosa dicono di noi</a>&gt;&gt;
-        </li>
-        <li id="CurrentPage"><em>Lascia una recensione</em></li>
-    </ol>
+    <span id="path">
+        <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
+        &gt;&gt;
+        <a href="CosaDiconoDiNoi.html" title="Cosa dicono di noi" aria-label="Vai alla pagina cosa dicono di noi">Cosa dicono di noi</a>
+        &gt;&gt;
+        <span id="pathSelected">Lascia una recensione</span>
+    </span>
 
 </div>
 
@@ -109,11 +106,11 @@
     <form id="FeedBack" action="" method="post" >
         <fieldset id="FeedBackBox">
             <label id="labelTitle" for="textTitle">Titolo: </label>
-            <input id="textTitle" name="textTitle" type="text" tabindex="14"/>
+            <input id="textTitle" name="textTitle" type="text" aria-required="true" tabindex="14"/>
             <label id="labelTitle1" for="textTitle">Titolo: </label>
-            <input id="textTitle1" name="textTitle" type="text" tabindex="15"/>
+            <input id="textTitle1" name="textTitle" type="text" tabindex="15" aria-required="true"/>
             <label id="labelTextArea" for="textArea">Contenuto: </label>
-            <textarea id="textArea" name="FeedbackArea" rows="10" cols="20" tabindex="16">
+            <textarea id="textArea" name="FeedbackArea" rows="10" cols="20" tabindex="16" aria-required="true">
                 Scrivi qui la tua recensione!
             </textarea>
             <input id="SubmitRec" type="submit" value="Invia" tabindex="17" aria-label="Pulsante per inviare la recensione"/>
@@ -129,7 +126,7 @@
 <div id="footer" aria-label="footer">
     <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
     <p>
-        Progetto per il corso di Tecnologie Web, Anno Accademico 2019/2020
+        Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
     </p>
     <p>
         Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto

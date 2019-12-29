@@ -7,10 +7,10 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-    <title>Home | Museo arte nel tempo</title>
+    <title>Opera singola | Museo arte nel tempo</title>
 
     <meta name="language" content="italian it"/>
-    <meta name="title" content="Home | Museo arte nel tempo"/>
+    <meta name="title" content="Opera singola | Museo arte nel tempo"/>
     <meta name="description" content=""/>
     <meta name="keywords" content="arte, pittura, scultura, museo"/>       <!-- Rivedere per sicurezza -->
     <meta name="author" content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto"/>
@@ -53,8 +53,8 @@
                 <option value="Avviso">Avviso</option>
             </select>
             <label id="labelS" for="textSearch">Cerca nel sito</label>
-            <input name="Ricerca" id="textSearch" type="text" tabindex="1" role="search"/>
-            <input name="Invio" id="Submit" tabindex="3" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
+            <input name="ricerca" id="textSearch" type="text" tabindex="1" role="search"/>
+            <input name="invio" id="Submit" tabindex="3" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
         </fieldset>
     </form>
 </div>
@@ -63,20 +63,17 @@
     <p>
         Ti trovi in:
     </p>
-    <ol>
-        <li>
-            <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo">
-            <span xml:lang="en">Home</span></a>&gt;&gt;
-        </li>
-        <li>
-            <a href="Opere.html" title="Opere" aria-label="Vai alla pagina delle opere">Opere</a>&gt;&gt;
-        </li>
-        <li>
-            <a href="PeriodoStorico.html" id="changeB" title="Periodo storico" aria-label="Vai alla pagina del periodo storico dell'opera">
-                Periodo storico</a>&gt;&gt; <!--da cambiare col nome del periodo storico dell'opera con innerHTML in JS-->
-        </li>
-        <li id="CurrentPage"><em>OperaSingola</em></li> <!--da cambiare col nome dell'opera con innerHTML in JS-->
-    </ol>
+    <span id="path">
+        <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
+        &gt;&gt;
+        <a href="Opere.html" title="Opere" aria-label="Vai alla pagina delle opere">Opere</a>
+        &gt;&gt;
+        <!--da cambiare col nome del periodo storico dell'opera con innerHTML in JS-->
+        <a href="PeriodoStorico.html" title="Periodo storico" aria-label="Vai alla pagina del periodo storico dell'opera">Periodo storico</a>
+        &gt;&gt;
+        <!--da cambiare col nome dell'opera con innerHTML in JS-->
+        <span id="pathSelected">Opera singola</span>
+    </span>
 
 </div>
 
@@ -145,7 +142,7 @@
 <div id="footer" aria-label="footer">
     <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
     <p>
-        Progetto per il corso di Tecnologie Web, Anno Accademico 2019/2020
+        Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
     </p>
     <p>
         Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
