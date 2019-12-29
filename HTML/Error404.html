@@ -29,10 +29,10 @@
 </div>
 
 <div id="content" role="main">
+    <a href="#searchBox" tabindex="1" class="skip">Salta il testo</a>
     <h2 class="H2Error404">Hai proprio l'aria di chi si è perso nei corridoi del museo...</h2>
     <p id="ImgError404" title="Cornice vuote di un ritratto" role="img" aria-label="Cornice vuote di un ritratto">Cornice vuota con ritratto</p>
     <p class="pContent">
-        <a href="#p2" class="skip">Salta il testo</a>
         ...vorremmo aiutarti a trovare la strada giusta!
     </p>
     <p class="pContent">
@@ -42,22 +42,22 @@
         <li>
             <form id="search" action="" method="post" role="search"> <!-- Nascondi con CSS -->
                 <fieldset id="searchBox">
-                    <select name="filter" id="filter" tabindex="2" aria-label="Seleziona il filtro per la ricerca">
+                    <select name="filter" id="filter" tabindex="3" aria-label="Seleziona il filtro per la ricerca">
                         <option selected="selected" value="Opera">Opera</option>
                         <option value="Evento">Evento</option>
                         <option value="Avviso">Avviso</option>
                     </select>
                     <label id="labelS" for="textSearch">Cerca nel sito</label>
-                    <input id="textSearch" type="text" tabindex="1" role="search"/>
-                    <input name="Invio" id="Submit" tabindex="3" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
+                    <input id="textSearch" type="text" tabindex="2" role="search"/>
+                    <input name="Invio" id="Submit" tabindex="4" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
                 </fieldset>
             </form>
         </li>
        <li>
-            <a id="ToHome" class="Button" href="index.html" title="Home" role="button" aria-label="porta alla pagina di home"> <span xml:lang="en"> Home </span></a>
+            <a id="ToHome" class="Button" tabindex="5" href="index.html" title="Home" role="button" aria-label="porta alla pagina di home"> <span xml:lang="en"> Home </span></a>
         </li>
     </ul>
-    <a id="ButtonBackUp" tabindex="13" href="#header404" title="Torna su" aria-label="Torna su" >
+    <a id="ButtonBackUp" tabindex="6" href="#header404" title="Torna su" aria-label="Torna su" >
         <img alt="Torna su" src="../Images/TornaSu.png"/>
     </a>
 </div>
