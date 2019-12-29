@@ -7,10 +7,10 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-    <title>Home | Museo arte nel tempo</title>
+    <title>Opera singola | Museo arte nel tempo</title>
 
     <meta name="language" content="italian it"/>
-    <meta name="title" content="Home | Museo arte nel tempo"/>
+    <meta name="title" content="Opera singola | Museo arte nel tempo"/>
     <meta name="description" content=""/>
     <meta name="keywords" content="arte, pittura, scultura, museo"/>       <!-- Rivedere per sicurezza -->
     <meta name="author" content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto"/>
@@ -34,7 +34,9 @@
     <div id="UserTools" class="ImgBackground" title="area dedicata alla registrazione, login e logout" aria-label="area dedicata alla registrazione, login e logout" tabindex="4">
         <ul>
             <li>
-                <a id="logIn" class="Button" href="" title="LogIn" role="button" aria-label="porta alla pagina di login" xml:lang="en"> LogIn </a>
+                <a id="logIn" class="Button" href="" title="LogIn" role="button" aria-label="porta alla pagina di login" xml:lang="en">
+                    LogIn
+                </a>
             </li>
             <li>
                 <a id="profile" class="Button" href="" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente">
@@ -67,45 +69,52 @@
     <p>
         Ti trovi in:
     </p>
-    <span id="pathSelected" xml:lang="en">Home</span>
-</div>   <!-- Da rivedere come farlo -->
+    <span id="path">
+        <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
+        &gt;&gt;
+        <a href="Opere.html" title="Opere" aria-label="Vai alla pagina delle opere">Opere</a>
+        &gt;&gt;
+        <!--da cambiare col nome del periodo storico dell'opera con innerHTML in JS-->
+        <a href="PeriodoStorico.html" title="Periodo storico" aria-label="Vai alla pagina del periodo storico dell'opera">Periodo storico</a>
+        &gt;&gt;
+        <!--da cambiare col nome dell'opera con innerHTML in JS-->
+        <span id="pathSelected">Opera singola</span>
+    </span>
+
+</div>
 
 <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
     <ul>
         <li>
-            <a href="#content" class="skip" tabindex="6">Vai al contenuto</a>
+            <a class="skip" href="#content" tabindex="6">Vai al contenuto</a>
         </li>
         <li>
-            <span xml:lang="en">Home</span>
+            <a aria-label="Vai alla pagina homepage del museo" href="Index.html" tabindex="7" title="Home" ><span xml:lang="en">Home</span></a>
         </li>
         <li>
-            <a href="" tabindex="7" title="Opere" aria-label="Vai alla pagina delle opere">Opere</a>
+            <a aria-label="Vai alla pagina delle opere" href="" tabindex="8" title="Opere">Opere</a>
         </li>
         <li>
-            <a href="" tabindex="8" title="Eventi" aria-label="Vai alla pagina degli eventi">Eventi</a>
+            <a aria-label="Vai alla pagina degli eventi" href="" tabindex="9" title="Eventi">Eventi</a>
         </li>
         <li>
-            <a href="" tabindex="9" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti">Opzioni
-            d'acquisto</a>
+            <a aria-label="Vai alla pagina dedicata agli acquisti" href="" tabindex="10" title="Opzioni d'acquisto">Opzioni d'acquisto</a>
         </li>
         <li>
-            <a href="" tabindex="10" title="Avvisi" aria-label="Vai alla pagina degli avvisi">Avvisi</a>
+            <a aria-label="Vai alla pagina degli avvisi" href="" tabindex="11" title="Avvisi">Avvisi</a>
         </li>
         <li>
-            <a href="" tabindex="11" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni">Cosa
-            dicono di noi</a>
+            <a aria-label="Vai alla pagina dedicata alle recensioni" href="" tabindex="12" title="Cosa dicono di noi">Cosa dicono di noi</a>
         </li>
         <li>
-            <a href="" tabindex="12" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti">Contatti</a>
+            <a aria-label="Vai alla pagina dedicata ai contatti" href="" tabindex="13" title="Contatti">Contatti</a>
         </li>
     </ul>
 </div>
 
 <div id="content" role="main">
-    <div id="warning" aria-label="sezione avvisi">
-        <p id="pWarning"> Avvisi: Orca l'oca! il museo il 25 Dicembre sarà chiuso =( </p>
-    </div>
-    <h2 class="H2Home">Lorem Ipsum</h2>
+
+    <h2 class="H2Home">Elenco dettagli</h2>
     <p class="pContent">
         <a href="#p2" class="skip">Salta il testo</a>               <!-- Da nascondere con il CSS -->
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -116,10 +125,10 @@
         Duis dapibus porta rutrum.
     </p>
 
-    <p id="ImgMuseo">
-        <img alt="Immagine facciata del museo" src="../Images/museo.png"/>
+    <p id="ImgOpera">
+        <img alt="Immagine dell'opera ecc.." src="../Images/museo.png"/>
     </p>
-
+    <h2 class="H2Home">Descrizione completa</h2>
     <p id="p2" class="pContent">
         <a href="#footer" class="skip">Salta il testo</a>
         Pellentesque nec facilisis eros, non egestas nisl.
@@ -129,11 +138,11 @@
         Nullam vel aliquet libero, fringilla faucibus felis.
     </p>
     <!-- Da vedere bene -->
-    <p>
-        <a id="ButtonBackUp" tabindex="13" href="#header" title="Torna su" aria-label="Torna su" >
+
+        <a id="ButtonBackUp" tabindex="14" href="#header" title="Torna su" aria-label="Torna su" >
             <img alt="Torna su" src="../Images/TornaSu.png"/>
         </a>
-    </p>
+
 </div>
 
 <div id="footer" aria-label="footer">
