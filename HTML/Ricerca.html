@@ -28,20 +28,23 @@
 
     <h1 id="logoImg" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
     <!-- Utilizzare il css per inserire il logo -->
-    <span id="HamburgerMenu" title="Menu a hambuger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu a hambuger, cliccaci sopra per aprire il menu">Menu a hamburger</span>
+    <span id="HamburgerMenu" title="Menu a hambuger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu a hambuger, cliccaci sopra per aprire il menu">Menu a <span xml:lang="en"> hamburger</span></span>
     <div id="UserTools" title="area dedicata alla registrazione, login e logout" aria-label="area dedicata alla registrazione, login e logout">
-        &nbsp;
         <ul>
             <li>
-                <a id="logIn" class="Button" href="" title="LogIn" role="button" aria-label="porta alla pagina di login"> <span xml:lang="en"> LogIn </span></a>
+                <a id="logIn" class="Button" href="" title="LogIn" role="button" aria-label="porta alla pagina di login" xml:lang="en">
+                    LogIn
+                </a>
             </li>
             <li>
-                <a id="profile" class="Button" href="" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente"> Area
-                    utente </a>
+                <a id="profile" class="Button" href="" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente">
+                    Area utente
+                </a>
             </li>
             <li>
-                <a id="logOut" class="Button" href="" title="LogOut" role="button" aria-label="esci dal tuo profilo"> <span
-                        xml:lang="en"> LogOut </span> </a>
+                <a id="logOut" class="Button" href="" title="LogOut" role="button" aria-label="esci dal tuo profilo" xml:lang="en">
+                    LogOut
+                </a>
             </li>
         </ul>
     </div>
@@ -54,62 +57,72 @@
                 <option value="Avviso">Avviso</option>
             </select>
             <label id="labelS" for="textSearch">Cerca nel sito</label>
-            <input id="textSearch" type="text" tabindex="1" role="search"/>
-            <input id="Submit" tabindex="3" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
+            <input name="ricerca" id="textSearch" type="text" tabindex="1" role="search"/>
+            <input name="invio" id="Submit" tabindex="3" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
         </fieldset>
     </form>
 </div>
 
-<div id="breadcrumbs" aria-label="breadcrumbs">Ti trovi in: <span xml:lang="en">Home</span>>>Ricerca
+<div id="breadcrumbs" aria-label="breadcrumbs">
+    <p>
+        Ti trovi in:
+    </p>
+    <span id="path">
+        <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
+        &gt;&gt;
+        <span id="pathSelected">Ricerca</span>
+    </span>
 </div>   <!-- Da rivedere come farlo -->
 
 <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
     <ul>
-        <li id="skipMenu"><a href="#content" tabindex="4">Vai al contenuto</a></li>
-        <li><span xml:lang="en">Home</span></li>
-        <li><a href="" tabindex="5" title="Opere" aria-label="Vai alla pagina delle opere">Opere</a></li>
-        <li><a href="" tabindex="6" title="Eventi" aria-label="Vai alla pagina degli eventi">Eventi</a></li>
-        <li><a href="" tabindex="7" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti">Opzioni
-            d'acquisto</a>
+        <li>
+            <a class="skip" href="#content" tabindex="6">Vai al contenuto</a>
         </li>
-        <li><a href="" tabindex="8" title="Avvisi" aria-label="Vai alla pagina degli avvisi">Avvisi</a></li>
-        <li><a href="" tabindex="9" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni">Cosa
-            dicono di noi</a>
+        <li>
+            <a aria-label="Vai alla pagina homepage del museo" href="Index.html" tabindex="7" title="Home" ><span xml:lang="en">Home</span></a>
         </li>
-        <li><a href="" tabindex="10" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti">Contatti</a></li>
+        <li>
+            <a aria-label="Vai alla pagina delle opere" href="" tabindex="8" title="Opere">Opere</a>
+        </li>
+        <li>
+            <a aria-label="Vai alla pagina degli eventi" href="" tabindex="9" title="Eventi">Eventi</a>
+        </li>
+        <li>
+            <a aria-label="Vai alla pagina dedicata agli acquisti" href="" tabindex="10" title="Opzioni d'acquisto">Opzioni d'acquisto</a>
+        </li>
+        <li>
+            <a aria-label="Vai alla pagina degli avvisi" href="" tabindex="11" title="Avvisi">Avvisi</a>
+        </li>
+        <li>
+            <a aria-label="Vai alla pagina dedicata alle recensioni" href="" tabindex="12" title="Cosa dicono di noi">Cosa dicono di noi</a>
+        </li>
+        <li>
+            <a aria-label="Vai alla pagina dedicata ai contatti" href="" tabindex="13" title="Contatti">Contatti</a>
+        </li>
     </ul>
 </div>
 
 <div id="content" role="main">
-    <div id="warning" aria-label="sezione avvisi">
-        <p id="pWarning"> Avvisi: Orca l'oca! il museo il 25 Dicembre sarà chiuso =( </p>
-    </div>
-    <h2 class="H2Home">Lorem Ipsum</h2>
-    <p class="pContent">
-        <a href="#p2" class="skip">Salta il testo</a>               <!-- Da nascondere con il CSS -->
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Vestibulum id augue quis orci porttitor consequat sit amet at velit.
-        Mauris odio dolor, vestibulum vel pharetra ut, varius non nibh.
-        Nullam porttitor ante sed facilisis efficitur.
-        Maecenas semper velit in feugiat interdum.
-        Duis dapibus porta rutrum.
-    </p>
-
-    <p id="ImgMuseo">
-        <img alt="Immagine facciata del museo" src="../Images/museo.png"/>
-    </p>
-
-    <p id="p2" class="pContent">
-        <a href="#footer" class="skip">Salta il testo</a>
-        Pellentesque nec facilisis eros, non egestas nisl.
-        Cras facilisis, metus dapibus viverra consequat, mauris enim facilisis mauris, feugiat laoreet ligula leo ac
-        diam.
-        Donec consequat tortor nisl, quis sodales sapien molestie eget.
-        Nullam vel aliquet libero, fringilla faucibus felis.
-    </p>
-    <!-- Da vedere bene -->
+    <h2>Ricerca</h2>
+    <p>Categoria</p> <span>***</span>  <p>Numero risultati:</p> <span>***</span>
+    <ul class="pagination">
+        <li><a href="#" class="page-link">1</a></li>
+        <li><a href="#" class="page-link">2</a></li>
+        <li><a href="#" class="page-link">3</a></li>
+        <li><a href="#" class="page-link">***</a></li>
+        <li><a href="#" class="page-link">***</a></li>
+    </ul>
+    <!-- Da capire in base a come risulteranno le ricerche -->
+    <ul class="query">
+        <li>
+            <p>Nome</p>
+            <p class="description">Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione</p>
+            <!-- Saranno da mettere tutti come link? -->
+        </li>
+    </ul>
     <p>
-        <a id="ButtonBackUp" tabindex="11" href="#header" title="Torna su" aria-label="Torna su" >
+        <a id="ButtonBackUp" tabindex="14" href="#header" title="Torna su" aria-label="Torna su" >
             <img alt="Torna su" src="../Images/TornaSu.png"/>
         </a>
     </p>
@@ -118,7 +131,7 @@
 <div id="footer" aria-label="footer">
     <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
     <p>
-        Progetto per il corso di Tecnologie Web, Anno Accademico 2019/2020
+        Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
     </p>
     <p>
         Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
