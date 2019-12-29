@@ -104,6 +104,7 @@ fieldset {
     background-color: #FFFFFF;
     color: #000000;
     border-radius: 20px;
+    /*text-align: justify;*/
 }
 
 #menu {
@@ -126,6 +127,22 @@ fieldset {
     background-color: #FFFFFF;
     font-weight: bold;
     border-radius: 20px;
+}
+
+#content dt {
+    font-size: 1.4em;
+}
+
+#content dd {
+    text-indent: 1em;
+}
+
+#clause {
+    font-size: 0.5em;
+}
+
+#pAcquista {
+    padding-top: 1em;
 }
 
 .skip {
@@ -290,6 +307,17 @@ a.avvisosingolo:visited, a.eventosingolo:visited {
         padding-left:0.5% ;
         font-size:1.3em;
         background:none;
+    }
+
+    #Acquista {
+        float: right;
+        text-align: center;
+        color: #000000;
+        font-size: 1em;
+        padding: 0.5em;
+        background-color: #EEEEEE;
+        border-radius: 15px;
+        position: center;
     }
 
     #Back, #Next {
