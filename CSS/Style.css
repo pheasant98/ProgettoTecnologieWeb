@@ -75,7 +75,6 @@ html, body {
 }
 
 .Button {
-    text-shadow     : 0 -1px #2E353A;
     text-decoration : none;
 }
 /* fine bottoni*/
@@ -149,6 +148,10 @@ a.avvisosingolo:visited {
 #Avvisi li:hover {
     background-color: #EEEEEE;
     border-radius: 20px;
+}
+
+#fondoElenco {
+
 }
 
 #footer {
@@ -244,6 +247,24 @@ a.avvisosingolo:visited {
         background:none;
     }
 
+    #Back, #Next {
+        text-align: center;
+        color: #000000;
+        font-size: 1.2em;
+        padding: 0.5em;
+        background-color: #EEEEEE;
+        border-radius: 15px;
+        position: center;
+    }
+
+    #Back {
+        float:left;
+    }
+
+    #Next {
+        float:right;
+    }
+
     #breadcrumbs {
         font-size: 1.5em;
         margin: 1em;
@@ -293,7 +314,7 @@ a.avvisosingolo:visited {
         font-size: 2em;
     }
 
-   /* #ImgMuseo{
+    /* #ImgMuseo{
 
     }*/
 
