@@ -26,12 +26,14 @@
 
 <div id="header" role="banner">
 
-    <h1 aria-label="Immagine del logo Museo arte nel tempo" id="logoImg" role="img" title="Immagine del logo Museo arte nel tempo">
+    <h1 aria-label="Immagine del logo Museo arte nel tempo" id="logoImg" class="ImgBackground" role="img" title="Immagine del logo Museo arte nel tempo">
         Museo Arte nel Tempo
     </h1>
     <!-- Utilizzare il css per inserire il logo -->
-    <span aria-label="Menu a hambuger, cliccaci sopra per aprire il menu" id="HamburgerMenu" role="img" tabindex="5" title="Menu a hambuger, cliccaci sopra per aprire il menu"></span>
-    <div aria-label="area dedicata alla registrazione, login e logout" id="UserTools" tabindex="4" title="area dedicata alla registrazione, login e logout">
+    <span aria-label="Menu a hambuger, cliccaci sopra per aprire il menu" id="HamburgerMenu" class="ImgBackground" role="img" tabindex="5" title="Menu a hambuger, cliccaci sopra per aprire il menu">
+        Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
+    </span>
+    <div aria-label="area dedicata alla registrazione, login e logout" id="UserTools" class="ImgBackground" tabindex="4" title="area dedicata alla registrazione, login e logout">
         <ul>
             <li>
                 <span xml:lang="en">LogIn</span>
@@ -42,8 +44,8 @@
                 </a>
             </li>
             <li>
-                <a aria-label="esci dal tuo profilo" class="Button" href="" id="logOut" role="button" title="LogOut">
-                    <span xml:lang="en">LogOut</span>
+                <a aria-label="esci dal tuo profilo" class="Button" href="" id="logOut" role="button" title="LogOut" xml:lang="en">
+                    LogOut
                 </a>
             </li>
         </ul>

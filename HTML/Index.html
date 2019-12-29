@@ -26,21 +26,25 @@
 
 <div id="header" role="banner">
 
-    <h1 id="logoImg" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
+    <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
     <!-- Utilizzare il css per inserire il logo -->
-    <span id="HamburgerMenu" title="Menu a hambuger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu a hambuger, cliccaci sopra per aprire il menu" tabindex="5"></span>
-    <div id="UserTools" title="area dedicata alla registrazione, login e logout" aria-label="area dedicata alla registrazione, login e logout" tabindex="4">
+    <span id="HamburgerMenu" class="ImgBackground" title="Menu a hambuger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu a hambuger, cliccaci sopra per aprire il menu" tabindex="5">
+        Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
+    </span>
+    <div id="UserTools" class="ImgBackground" title="area dedicata alla registrazione, login e logout" aria-label="area dedicata alla registrazione, login e logout" tabindex="4">
         <ul>
             <li>
-                <a id="logIn" class="Button" href="" title="LogIn" role="button" aria-label="porta alla pagina di login"> <span xml:lang="en"> LogIn </span></a>
+                <a id="logIn" class="Button" href="" title="LogIn" role="button" aria-label="porta alla pagina di login" xml:lang="en"> LogIn </a>
             </li>
             <li>
-                <a id="profile" class="Button" href="" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente"> Area
-                    utente </a>
+                <a id="profile" class="Button" href="" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente">
+                    Area utente
+                </a>
             </li>
             <li>
-                <a id="logOut" class="Button" href="" title="LogOut" role="button" aria-label="esci dal tuo profilo"> <span
-                        xml:lang="en"> LogOut </span> </a>
+                <a id="logOut" class="Button" href="" title="LogOut" role="button" aria-label="esci dal tuo profilo" xml:lang="en">
+                    LogOut
+                </a>
             </li>
         </ul>
     </div>
