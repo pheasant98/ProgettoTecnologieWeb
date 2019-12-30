@@ -7,10 +7,10 @@
 <head>
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 
-    <title>Prenotazione | Museo arte nel tempo</title>
+    <title>Prenotazioni | Museo arte nel tempo</title>
 
     <meta content="italian it" name="language"/>
-    <meta content="Prenotazione | Museo arte nel tempo" name="title"/>
+    <meta content="Prenotazioni | Museo arte nel tempo" name="title"/>
     <meta content="" name="description"/>
     <meta content="arte, pittura, scultura, museo" name="keywords"/>       <!-- Rivedere per sicurezza -->
     <meta content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto" name="author"/>
@@ -72,7 +72,9 @@
     <span id="path">
         <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
         &gt;&gt;
-        <span id="pathSelected">Cosa dicono di noi</span>
+        <a href="Area utente.html" title="Area utente" aria-label="Vai alla pagina area utente del museo" >Area utente</a>
+        &gt;&gt;
+        <span id="pathSelected">Prenotazioni</span>
     </span>
 </div>   <!-- Da rivedere come farlo -->
 
@@ -97,17 +99,59 @@
             <a aria-label="Vai alla pagina degli avvisi" href="" tabindex="11" title="Avvisi">Avvisi</a>
         </li>
         <li>
-            Cosa dicono di noi
+            <a aria-label="Vai alla pagina cosa dicono di noi" href="" tabindex="12" title="Cosa dicono di noi" >Cosa dicono di noi</a>
         </li>
         <li>
-            <a aria-label="Vai alla pagina dedicata ai contatti" href="" tabindex="12" title="Contatti">Contatti</a>
+            <a aria-label="Vai alla pagina dedicata ai contatti" href="" tabindex="13" title="Contatti">Contatti</a>
         </li>
     </ul>
 </div>
 
 <div id="content" role="main">
 
-    <!--Da fare-->
+    <h2> Prenotazioni effettuate</h2>
+    <dl>
+        <dt>
+            Prenotazione 1
+        </dt>
+        <dd>
+            <p>
+                Data: data
+            </p>
+            <p>
+                Ora di visita: orario
+            </p>
+            <p>
+                <input type="button" name="print" id="printTicket1" value="Stampa" tabindex="14" aria-label="Pulsante per la stampa della prenotazione corrente"/>
+            </p>
+        </dd>
+        <dt>
+            Prenotazione 2
+        </dt>
+        <dd>
+            <p>
+                Data: data
+            </p>
+            <p>
+                Ora di visita: orario
+            </p>
+            <p>
+                <input type="button" name="print" id="printTicket2" value="Stampa" tabindex="14" aria-label="Pulsante per la stampa della prenotazione corrente"/>
+            </p>
+        </dd>
+    </dl>
+
+    <p>
+        <a id="Back" class="Button" tabindex="15" href="" title="Torna indietro" role="button" aria-label="Torna alla pagina dell'evento precedente"> &lt;&lt;
+        </a>
+        <a id="Next" class="Button" tabindex="16" href="" title="Vai avanti" role="button" aria-label="Vai alla pagina dell'evento succesivo"> &gt;&gt;
+        </a>
+    </p>
+    <p>
+        <a id="ButtonBackUp" tabindex="17" href="#header" title="Torna su" aria-label="Torna su" >
+            <img alt="Torna su" src="../Images/TornaSu.png"/>
+        </a>
+    </p>
 
 </div>
 
