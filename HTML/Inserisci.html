@@ -72,7 +72,9 @@
     <span id="path">
         <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
         &gt;&gt;
-        <span id="pathSelected">Cosa dicono di noi</span>
+        <a href="AreaAdmin.html" title="Area Admin" aria-label="Vai alla pagina area admin" xml:lang="en">Area admin</a>
+        &gt;&gt;
+        <span id="pathSelected">Inserisci pagina</span>
     </span>
 </div>   <!-- Da rivedere come farlo -->
 
@@ -107,8 +109,91 @@
 
 <div id="content" role="main">
 
-    <!--Da fare-->
+    <h2 class="H2Home">Inserimento</h2>
+    <form id="Insert" action="" method="post"><!-- Nascondi con CSS -->
+        <fieldset id="InsertBox">
+            <select name="filterType" id="filterType" tabindex="13" aria-label="Seleziona tipologia di pagina da creare">
+                <option selected="selected" value="Opera">Opera</option>
+                <option value="Evento">Evento</option>
+                <option value="Avviso">Avviso</option>
+            </select>
+            <select name="filterOpera" id="filterOpera" tabindex="14" aria-label="Seleziona stile dell'opera">
+                <option selected="selected" value="Pittura">Pittura</option>
+                <option value="Scultura">Scultura</option>
+            </select>
+            <select name="filterHistory" id="filterHistory" tabindex="15" aria-label="Seleziona il periodo storico dell'opera">
+                <option selected="selected" value="Quattrocento">Quattrocento</option>
+                <option value="Cinquecento">Cinquecento</option>
+                <option value="Seicento">Seicento</option>
+                <option value="Settecento">Settecento</option>
+            </select>
+            <select name="filterEventType" id="filterEventType" tabindex="16" aria-label="Seleziona tipologia di evento">
+                <option selected="selected" value="Mostra">Mostra</option>
+                <option value="Conferenza">Conferenza</option>
+            </select>
 
+            <!--Opera-->
+            <label id="labelAuthor" for="textAuthor">Autore</label>
+            <input name="textAuthor" id="textAuthor" type="text" tabindex="17"/>
+
+            <label id="labelTitle" for="textTitle">Titolo</label>
+            <input name="textTitle" id="textTitle" type="text" tabindex="18"/>
+
+            <label id="labelAreaDescr" for="AreaDescr">Descrizione</label>
+            <textarea id="AreaDescr" name="AreaDescr" rows="20px" cols="20px"> Scrivi qui la descrizione!</textarea>
+
+            <label id="labelYear" for="textYear">Anno</label>
+            <input name="textYear" id="textYear" type="text" tabindex="19"/>
+
+            <label id="labelTechnique" for="textTechnique">Tecnica</label>
+            <input name="textTechnique" id="textTechnique" type="text" tabindex="20"/>
+
+            <label id="labelMaterial" for="textMaterial">Materiale</label>
+            <input name="textMaterial" id="textMaterial" type="text" tabindex="21"/>
+
+            <label id="labelSize" for="textSize">Dimensione</label>
+            <input name="textSize" id="textSize" type="text" tabindex="22"/>
+
+            <label id="labelLoanYes" for="textLoanYes">Sì</label>
+            <input name="textLoan" id="textLoanYes" value="Si" type="radio" tabindex="23"/>
+
+            <label id="labelLoanNo" for="textLoanNo">No</label>
+            <input name="textLoan" id="textLoanNo" value="No" type="radio" tabindex="24"/>
+
+            <!--Eventi-->
+
+            <label id="labelBegin" for="textBegin">Inzio</label>
+            <input name="textBegin" id="textBegin" type="text" tabindex="25"/>
+
+            <label id="labelEnd" for="textEnd">Fine</label>
+            <input name="textEnd" id="textEnd" type="text" tabindex="26"/>
+
+            <label id="labelManager" for="textManager">Organizzatore</label>
+            <input name="textManager" id="textManager" type="text" tabindex="27"/>
+
+            <!--Avvisi-->
+
+            <label id="labelObject" for="textObject">Oggetto</label>
+            <input name="textObject" id="textObject" type="text" tabindex="28"/>
+
+            <label id="labelRelease" for="textRelease">Rilascio</label>
+            <input name="textRelease" id="textRelease" type="text" tabindex="29"/>
+
+            <label id="labelDeadline" for="textDeadline">Oggetto</label>
+            <input name="textDeadline" id="textDeadline" type="text" tabindex="30"/>
+
+            <label id="labelImg" for="textImg">Inserisci Immagine</label>
+            <input name="textImg" id="textImg" type="file" tabindex="31"/>
+
+            <input name="InsertB" id="InsertB" tabindex="32" type="submit" value="Inserisci" aria-label="Pulsante per la ricerca"/>
+
+        </fieldset>
+    </form>
+    <p>
+        <a id="ButtonBackUp" tabindex="33" href="#header" title="Torna su" aria-label="Torna su" >
+            <img alt="Torna su" src="../Images/TornaSu.png"/>
+        </a>
+    </p>
 </div>
 
 <div aria-label="footer" id="footer">
