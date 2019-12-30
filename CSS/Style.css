@@ -226,7 +226,7 @@ a.avvisosingolo:visited, a.eventosingolo:visited {
         background-position: center;
         background-size: 100%;
     }
-
+  
     #UserTools:active{
         border-style: inset;
     }
@@ -354,11 +354,11 @@ a.avvisosingolo:visited, a.eventosingolo:visited {
         padding-top: 0.5em;
         padding-bottom: 0.5em;
     }
-
+  
     #menu li {
         float: none ;
     }
-
+  
     #menu.show{
         display: block;
     }
@@ -405,4 +405,3 @@ a.avvisosingolo:visited, a.eventosingolo:visited {
         padding: 1em;
         text-align: center;
     }
-}
