@@ -102,8 +102,8 @@
 </div>
 
 <div id="content" role="main">
-    <h2 class="H2Home">Modifica della pagina numero X</h2>
-    <form id="Modifica" action="" method="post"> <!-- Nascondi con CSS -->
+    <h2 class="H2Modifica">Modifica della pagina numero X</h2>
+    <form id="Modifica" tabindex="19" action="" method="post"><!-- Nascondi con CSS -->
         <fieldset id="BoxModifica">
             <p id="TipoPaginaAvv">Tipologia di pagina: Avviso</p>
             <p id="TipoPaginaEven">Tipologia di pagina: Evento</p>
@@ -111,10 +111,18 @@
 
             <fieldset id="BoxModificaAvviso">
                 <label id="labelDataAvviso" for="DataAvviso">Data: </label>
-                <input name="DataAvviso" id="DataAvviso" type="text" tabindex="" aria-required="true"/><br/>
+                <input name="DataAvviso" id="DataAvviso" type="text" tabindex="20" aria-required="true"/><br/>
+                <p id="p2" class="pContent">
+                    <a href="#InvioModifiche" class="skip">Vai alla conferma delle modifiche</a>
+                </p>
+
                 <label id="labelOggetto" for="Oggetto">Oggetto: </label>
-                <input name="Oggetto" id="Oggetto" type="text" tabindex="" aria-required="true"/><br/>
-                <textarea id="AreaDescrAvviso" name="AreaDescrAvviso" rows="10" cols="70" tabindex="" aria-required="true">
+                <input name="Oggetto" id="Oggetto" type="text" tabindex="21" aria-required="true"/><br/>
+                <p id="p3" class="pContent">
+                    <a href="#InvioModifiche" class="skip">Vai alla conferma delle modifiche</a>
+                </p>
+
+                <textarea id="AreaDescrAvviso" name="AreaDescrAvviso" rows="10" cols="70" tabindex="22" aria-required="true">
                     Inserire la descrizione dell'avviso
                 </textarea><br/>
             </fieldset>
@@ -122,29 +130,43 @@
             <fieldset id="BoxModificaEvento">
                 <label id="labelDataEvento" for="DataEvento">Data: </label>
                 <input name="DataEvento" id="DataEvento" type="text" tabindex="" aria-required="true"/><br/>
+                <p id="p4" class="pContent">
+                    <a href="#InvioModifiche" class="skip">Vai alla conferma delle modifiche</a>
+                </p>
                 <label id="labelTitoloEvento" for="TitoloEvento">Titolo: </label>
                 <input name="TitoloEvento" id="TitoloEvento" type="text" tabindex="" aria-required="true"/><br/>
+                <p id="p5" class="pContent">
+                    <a href="#InvioModifiche" class="skip">Vai alla conferma delle modifiche</a>
+                </p>
                 <textarea id="AreDescrEvento" name="AreaDescrEvento" rows="15" cols="70" tabindex="" aria-required="true">
                     Inserire la descrizione dell'evento
                 </textarea><br/>
             </fieldset>
 
             <fieldset id="BoxModificaOpera">
-
-                <!-- Immagine: string <not null> -->
-
-
                 <label id="labelIDOpera" for="IDOpera">ID: </label>
                 <input name="IDOpera" id="IDOpera" type="hidden" tabindex="" aria-required="true"/><br/>
+                <p id="p6" class="pContent">
+                    <a href="#InvioModifiche" class="skip">Vai alla conferma delle modifiche</a>
+                </p>
 
                 <label id="labelAutore" for="Autore">Autore: </label>
                 <input name="Autore" id="Autore" type="text" tabindex="" aria-required="true"/><br/>
+                <p id="p7" class="pContent">
+                    <a href="#InvioModifiche" class="skip">Vai alla conferma delle modifiche</a>
+                </p>
 
                 <label id="labelTitoloOpera" for="TitoloOpera">Titolo: </label>
                 <input name="TitoloOpera" id="TitoloOpera" type="text" tabindex="" aria-required="true"/><br/>
+                <p id="p8" class="pContent">
+                    <a href="#InvioModifiche" class="skip">Vai alla conferma delle modifiche</a>
+                </p>
 
                 <label id="labelAnno" for="Anno">Anno: </label>
                 <input name="Anno" id="Anno" type="text" tabindex="" aria-required="true"/><br/>
+                <p id="p9" class="pContent">
+                    <a href="#InvioModifiche" class="skip">Vai alla conferma delle modifiche</a>
+                </p>
 
                 <label id="labelPeriodoStorico" for="PeriodoStorico">Periodo storico: </label>
                 <select name="PeriodoStorico" id="PeriodoStorico" tabindex="" aria-label="Seleziona il periodo storico di appartenenza">
@@ -153,32 +175,52 @@
                     <option value="Seicento" tabindex="5">Seicento</option>
                     <option value="Settecento" tabindex="5">Settecento</option>
                 </select><br/>
+                <p id="p10" class="pContent">
+                    <a href="#InvioModifiche" class="skip">Vai alla conferma delle modifiche</a>
+                </p>
 
                 <label id="labelStile" for="Stile">Stile: </label>
                 <select name="Stile" id="Stile" tabindex="" aria-label="Seleziona lo stile artistico">
                     <option selected="selected" value="pittura" tabindex="3">Pittura</option>
                     <option value="scultura" tabindex="4">Scultura</option>
                 </select><br/>
+                <p id="p11" class="pContent">
+                    <a href="#InvioModifiche" class="skip">Vai alla conferma delle modifiche</a>
+                </p>
 
                 <label id="labelTecnica" for="Tecnica">Tecnica: </label>
                 <input name="Tecnica" id="Tecnica" type="text" tabindex="" aria-required="true"/><br/>
+                <p id="p12" class="pContent">
+                    <a href="#InvioModifiche" class="skip">Vai alla conferma delle modifiche</a>
+                </p>
 
                 <label id="labelMateriale" for="Materiale">Materiale: </label>
                 <input name="Materiale" id="Materiale" type="text" tabindex="" aria-required="true"/><br/>
+                <p id="p13" class="pContent">
+                    <a href="#InvioModifiche" class="skip">Vai alla conferma delle modifiche</a>
+                </p>
 
                 <label id="labelUtente" for="Utente">Utente: </label>
                 <input name="Utente" id="Utente" type="hidden" tabindex="" aria-required="true"/><br/>
+                <p id="14" class="pContent">
+                    <a href="#InvioModifiche" class="skip">Vai alla conferma delle modifiche</a>
+                </p>
 
                 <label id="labelPrestito" for="Prestito">In prestito: </label>
                 <select name="Prestito" id="Prestito" tabindex="" aria-label="Seleziona lo stato dell'opera">
                     <option value="Sì" tabindex="3">Sì</option>
                     <option selected="selected" value="No" tabindex="4">No</option>
                 </select><br/>
-
+                <p id="p15" class="pContent">
+                    <a href="#InvioModifiche" class="skip">Vai alla conferma delle modifiche</a>
+                </p>
 
                 <textarea id="AreDescrOpera" name="AreaDescrOpera" rows="30" cols="70" tabindex="" aria-required="true">
                     Inserire la descrizione dell'opera
                 </textarea><br/>
+                <p id="p16" class="pContent">
+                    <a href="#InvioModifiche" class="skip">Vai alla conferma delle modifiche</a>
+                </p>
 
                 <label id="labelUploadImg" for="Immagine">Scegliere l'immagine: </label>
                 <input type="file" name="Immagine" id="Immagine" tabindex="" aria-required="true"/><br/>
@@ -187,10 +229,6 @@
             <input name="invio" id="InvioModifiche" tabindex="6" type="submit" value="Conferma" aria-label="Pulsante per la ricerca"/>
         </fieldset>
     </form>
-
-    <p id="p2" class="pContent">
-        <a href="#footer" class="skip">Salta il testo</a>
-    </p>
     <!-- Da vedere bene -->
     <p>
         <a id="ButtonBackUp" tabindex="" href="#header" title="Torna su" aria-label="Torna su" >
