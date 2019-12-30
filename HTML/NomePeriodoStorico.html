@@ -97,17 +97,80 @@
             <a aria-label="Vai alla pagina degli avvisi" href="" tabindex="11" title="Avvisi">Avvisi</a>
         </li>
         <li>
-            Cosa dicono di noi
+            <a aria-label="Vai alla pagina cosa dicono di noi" href="" tabindex="11" title="Cosa dicono di noi">Cosa dicono di noi</a>
         </li>
         <li>
-            <a aria-label="Vai alla pagina dedicata ai contatti" href="" tabindex="12" title="Contatti">Contatti</a>
+            <a aria-label="Vai alla pagina dedicata ai contatti" href="" tabindex="13" title="Contatti">Contatti</a>
         </li>
     </ul>
 </div>
 
 <div id="content" role="main">
+    <h2>Nome Periodo</h2>
+    <h3>Descrizione completa</h3>
+    <p>
+        Descrizione
+    </p>
 
-    <!--Da fare-->
+    <form id="operaFilter" action="" method="post"><!-- Nascondi con CSS -->
+        <fieldset id="filterBox">
+            <input type="button" name="filter" id="filterButton" value="Filtra" tabindex="14"/>
+            <select name="filterType" id="filterType" tabindex="14" aria-label="filtro per il tipo di opera">
+                <option value="Tipo1" selected="selected"> Tipo1 </option>
+                <option value="Tipo2"> Tipo 2 </option>
+            </select>
+        </fieldset>
+    </form>
+
+    <h3>Elenco</h3>
+    <dl>
+        <dt>
+            Nome prima opera
+        </dt>
+        <dd>
+            <p>
+                nome autore: nome
+            </p>
+            <p>
+                tecnica:tecnica
+            </p>
+            <p>
+                data:data
+            </p>
+            <p>
+                foto:foto
+            </p>
+        </dd>
+        <dt>
+            Nome seconda opera
+        </dt>
+        <dd>
+            <p>
+                nome autore: nome
+            </p>
+            <p>
+                tecnica:tecnica
+            </p>
+            <p>
+                data:data
+            </p>
+            <p>
+                foto:foto
+            </p>
+        </dd>
+    </dl>
+
+    <p>
+        <a id="Back" class="Button" tabindex="15" href="" title="Torna indietro" role="button" aria-label="Torna alla pagina dell'evento precedente"> &lt;&lt;
+        </a>
+        <a id="Next" class="Button" tabindex="16" href="" title="Vai avanti" role="button" aria-label="Vai alla pagina dell'evento succesivo"> &gt;&gt;
+        </a>
+    </p>
+    <p>
+        <a id="ButtonBackUp" tabindex="17" href="#header" title="Torna su" aria-label="Torna su" >
+            <img alt="Torna su" src="../Images/TornaSu.png"/>
+        </a>
+    </p>
 
 </div>
 
