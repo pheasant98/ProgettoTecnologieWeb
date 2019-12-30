@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN" "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
+
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">-->
+<html xml:lang="it" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+
+    <title>Registrazione | Museo arte nel tempo</title>
+
+    <meta content="italian it" name="language"/>
+    <meta content="Registrazione | Museo arte nel tempo" name="title"/>
+    <meta content="" name="description"/>
+    <meta content="arte, pittura, scultura, museo" name="keywords"/>       <!-- Rivedere per sicurezza -->
+    <meta content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto" name="author"/>
+
+    <link href="../CSS/Style.css" media="screen" rel="stylesheet" type="text/css"/>
+    <link href="" media="print" rel="stylesheet" type="text/css"/>
+    <link href="" rel="icon"/>
+    <script src="../JavaScript/Placeholder.js" type="text/javascript"></script>
+</head>
+
+<body>
+<div id="header" role="banner">
+    <h1 aria-label="Immagine del logo Museo arte nel tempo" class="ImgBackground" id="logoImg" role="img" title="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
+    <!-- Utilizzare il css per inserire il logo -->
+    <span aria-label="Menu a hambuger, cliccaci sopra per aprire il menu" class="ImgBackground" id="HamburgerMenu" role="img" tabindex="5" title="Menu a hambuger, cliccaci sopra per aprire il menu">
+                Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
+            </span>
+
+    <div aria-label="area dedicata alla registrazione, login e logout" class="ImgBackground" id="UserTools" tabindex="4" title="area dedicata alla registrazione, login e logout">
+        <ul>
+            <li>
+                <a aria-label="porta alla pagina di login" class="Button" href="" id="logIn" role="button" title="LogIn" xml:lang="en">
+                    LogIn
+                </a>
+            </li>
+            <li>
+                <a aria-label="porta alla pagina del profilo utente" class="Button" href="" id="profile" role="button" title="Area utente">
+                    Area utente
+                </a>
+            </li>
+            <li>
+                <a aria-label="esci dal tuo profilo" class="Button" href="" id="logOut" role="button" title="LogOut" xml:lang="en">
+                    LogOut
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <form action="" id="search" method="post" role="search"><!-- Nascondi con CSS -->
+        <fieldset id="searchBox">
+            <select aria-label="Seleziona il filtro per la ricerca" id="filter" name="filter" tabindex="2">
+                <option selected="selected" value="Opera">Opera</option>
+                <option value="Evento">Evento</option>
+                <option value="Avviso">Avviso</option>
+            </select>
+            <label for="textSearch" id="labelS">Cerca nel sito</label>
+            <input id="textSearch" name="ricerca" role="search" tabindex="1" type="text"/>
+            <input aria-label="Pulsante per la ricerca" id="Submit" name="invio" tabindex="3" type="submit" value="Cerca"/>
+        </fieldset>
+    </form>
+</div>
+
+<div aria-label="breadcrumbs" id="breadcrumbs">
+    <p>
+        Ti trovi in:
+    </p>
+    <span id="path">
+                <a aria-label="Vai alla pagina homepage del museo" href="Index.html" title="Home" xml:lang="en">Home</a>
+                &gt;&gt;
+                <a aria-label="Vai alla pagina di login" href="" title="Login" xml:lang="en">Login</a>
+                &gt;&gt;
+                <span id="pathSelected">Registrazione</span>
+            </span>
+</div>   <!-- Da rivedere come farlo -->
+
+<div aria-label="menu per la navigazione nel sito" id="menu" role="navigation">
+    <ul>
+        <li>
+            <a class="skip" href="#content" tabindex="6">Vai al contenuto</a>
+        </li>
+        <li>
+            <a aria-label="Vai alla pagina homepage del museo" href="Index.html" tabindex="7" title="Home"><span xml:lang="en">Home</span></a>
+        </li>
+        <li>
+            <a aria-label="Vai alla pagina delle opere" href="" tabindex="8" title="Opere">Opere</a>
+        </li>
+        <li>
+            <a aria-label="Vai alla pagina degli eventi" href="" tabindex="9" title="Eventi">Eventi</a>
+        </li>
+        <li>
+            <a aria-label="Vai alla pagina dedicata agli acquisti" href="" tabindex="10" title="Opzioni d'acquisto">Opzioni d'acquisto</a>
+        </li>
+        <li>
+            <a aria-label="Vai alla pagina degli avvisi" href="" tabindex="11" title="Avvisi">Avvisi</a>
+        </li>
+        <li>
+            <a aria-label="Vai alla pagina dedicata alle recensioni" href="" tabindex="12" title="Cosa dicono di noi">Cosa dicono di noi</a>
+        </li>
+        <li>
+            <a aria-label="Vai alla pagina dedicata ai contatti" href="" tabindex="13" title="Contatti">Contatti</a>
+        </li>
+    </ul>
+</div>
+
+<div id="content" role="main">
+    <h2 class="H2Home">Registrazione</h2>
+
+    <form action="" id="registration" method="post"><!-- Nascondi con CSS -->
+        <fieldset form="registration" id="personalData">
+            <legend>Dati personali</legend>
+            <label for="textName" id="labelName">Nome:</label>
+            <input id="textName" name="textName" tabindex="14" type="text"/>
+
+            <label for="textSurname" id="labelSurname">Cognome:</label>
+            <input id="textSurname" name="textSurname" tabindex="15" type="text"/>
+
+            <label for="radioSexM" id="labelSex">Sesso:</label>
+
+            <label for="radioSexM" id="labelSexM">Maschile</label>
+            <input id="radioSexM" name="radioSex" tabindex="16" type="radio" value="M"/>
+
+            <label for="radioSexF" id="labelSexF">Femminile</label>
+            <input id="radioSexF" name="radioSex" tabindex="17" type="radio" value="F"/>
+
+            <label for="radioSexA" id="labelSexA">Altro</label>
+            <input id="radioSexA" name="radioSex" tabindex="18" type="radio" value="A"/>
+
+            <label for="textDate" id="labelDate">Data di nascita:</label>
+            <input id="textDate" name="textDate" tabindex="19" type="text"/>
+        </fieldset>
+
+        <fieldset form="registration" id="contactData">
+            <legend>Dati di contatto</legend>
+            <label for="textMail" id="labelMail" xml:lang="en">E-mail:</label>
+            <input id="textMail" name="textMail" tabindex="20" type="text"/>
+
+            <label for="radioNewsletterYes" id="labelNewsletter">Iscrizione alla <span xml:lang="en">newsletter</span>:</label>
+
+            <label for="radioNewsletterYes" id="labelNewsletterYes">Sì</label>
+            <input id="radioNewsletterYes" name="radioNewsletter" tabindex="21" type="radio" value="Si"/>
+
+            <label for="radioNewsletterNo" id="labelNewsletterNo">No</label>
+            <input id="radioNewsletterNo" name="radioNewsletter" tabindex="22" type="radio" value="No"/>
+        </fieldset>
+
+        <fieldset form="registration" id="accountData">
+            <legend>Dati d'accesso</legend>
+            <label for="textUsername" id="labelUsername" xml:lang="en">Username:</label>
+            <input id="textUsername" name="textUsername" tabindex="23" type="text"/>
+
+            <label for="textPassword" id="labelPassword" xml:lang="en">Password:</label>
+            <input id="textPassword" name="textPassword" tabindex="24" type="password"/>
+
+            <label for="textRepetePassword" id="labelRepetePassword">Ripetere
+                <span xml:lang="en">password</span>:</label>
+            <input id="textRepetePassword" name="textRepetePassword" tabindex="25" type="password"/>
+        </fieldset>
+
+        <input aria-label="Pulsante per la cancellazione dei dati inseriti" id="reset" name="reset" tabindex="26" type="reset" value="Cancella"/>
+        <input aria-label="Pulsante per la conferma dati inseriti" id="confirm" name="confirm" tabindex="27" type="submit" value="Conferma"/>
+    </form>
+
+    <p>
+        <a aria-label="Torna su" href="#header" id="ButtonBackUp" tabindex="28" title="Torna su">
+            <img alt="Torna su" src="../Images/TornaSu.png"/>
+        </a>
+    </p>
+</div>
+
+<div aria-label="footer" id="footer">
+    <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
+    <p>
+        Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
+    </p>
+    <p>
+        Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
+    </p>
+    <img alt="Simbolo di validazione CSS" src="../Images/vcss-blue.gif"/>
+</div>
+</body>
+</html>
