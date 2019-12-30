@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN" "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
+
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">-->
+<html xml:lang="it" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <title>Modifica | Museo arte nel tempo</title>
+
+    <meta name="language" content="italian it"/>
+    <meta name="title" content="Modifica | Museo arte nel tempo"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content="arte, pittura, scultura, museo"/>       <!-- Rivedere per sicurezza -->
+    <meta name="author" content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto"/>
+
+    <link rel="stylesheet" media="screen" href="../CSS/Style.css" type="text/css"/>
+    <link rel="stylesheet" media="print" href="" type="text/css"/>
+    <link rel="icon" href=""/>
+    <script src="../JavaScript/Placeholder.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+<div id="header" role="banner">
+
+    <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
+    <!-- Utilizzare il css per inserire il logo -->
+    <span id="HamburgerMenu" class="ImgBackground" title="Menu a hambuger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu a hambuger, cliccaci sopra per aprire il menu" tabindex="5">
+            Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
+        </span>
+    <div id="UserTools" class="ImgBackground" title="area dedicata alla registrazione, login e logout" aria-label="area dedicata alla registrazione, login e logout" tabindex="4">
+        <ul>
+            <li>
+                <a id="logIn" class="Button" href="" title="LogIn" role="button" aria-label="porta alla pagina di login" xml:lang="en">
+                    LogIn
+                </a>
+            </li>
+            <li>
+                <a id="profile" class="Button" href="" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente">
+                    Area utente
+                </a>
+            </li>
+            <li>
+                <a id="logOut" class="Button" href="" title="LogOut" role="button" aria-label="esci dal tuo profilo" xml:lang="en">
+                    LogOut
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <form id="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
+        <fieldset id="searchBox">
+            <select name="filter" id="filter" tabindex="2" aria-label="Seleziona il filtro per la ricerca">
+                <option selected="selected" value="Opera">Opera</option>
+                <option value="Evento">Evento</option>
+                <option value="Avviso">Avviso</option>
+            </select>
+            <label id="labelS" for="textSearch">Cerca nel sito</label>
+            <input name="ricerca" id="textSearch" type="text" tabindex="1" role="search"/>
+            <input name="invio" id="Submit" tabindex="3" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
+        </fieldset>
+    </form>
+</div>
+
+<div id="breadcrumbs" aria-label="breadcrumbs">
+    <p>
+        Ti trovi in:
+    </p>
+    <span id="pathSelected"><a href="" tabindex="14" xml:lang="en">Area personale</a> &gt;&gt; Modifica dati utente</span>
+</div>   <!-- Da rivedere come farlo -->
+
+<div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
+    <ul>
+        <li>
+            <a href="#content" class="skip" tabindex="6">Vai al contenuto</a>
+        </li>
+        <li>
+            <a href="Index.html" tabindex="7" title="Home" aria-label="Vai alla pagine di home">Home</a>
+        </li>
+        <li>
+            <a href="" tabindex="8" title="Opere" aria-label="Vai alla pagina delle opere">Opere</a>
+        </li>
+        <li>
+            <a href="Eventi.html" tabindex="9" title="Eventi" aria-label="Vai alla pagina degli eventi">Eventi</a>
+        </li>
+        <li>
+            <a href="OpzioniAcquisto.html" tabindex="10" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti">Opzioni
+                d'acquisto</a>
+        </li>
+        <li>
+            <a href="Avvisi.html" tabindex="11" title="Avvisi" aria-label="Vai alla pagina degli avvisi">Avvisi</a>
+        </li>
+        <li>
+            <a href="CosaDiconoDiNoi.html" tabindex="12" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni">Cosa
+                dicono di noi</a>
+        </li>
+        <li>
+            <a href="Contatti.html" tabindex="13" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti">Contatti</a>
+        </li>
+    </ul>
+</div>
+<div id="content" role="main">
+    <h2 class="H2ModificaUtente">Modifica dati</h2>
+    <form id="ModificaDatiUtente" action="" method="post" ><!-- Nascondi con CSS -->
+        <fieldset id="BoxDatiUtente">
+            <label id="labelNome" for="Nome">Nome:</label>
+            <input name="Nome" id="Nome" type="text" tabindex="14" aria-label="Modifica nome utente" aria-required="true"/><br/>
+            <p><a href="#InviaModificheUtente" class="skip" tabindex="15">Salta alla conferma delle modifiche</a></p>
+
+            <label id="labelCognome" for="Cognome">Cognome:</label>
+            <input name="Cognome" id="Cognome" type="text" tabindex="16" aria-label="Modifica cpgnome utente" aria-required="true"/><br/>
+            <p><a href="#InviaModificheUtente" class="skip" tabindex="17">Salta alla conferma delle modifiche</a></p>
+
+            <label id="labelGenere" for="Genere">Genere: </label>
+            <select name="Genere" id="Genere" tabindex="18" aria-label="Modifica il genere">
+                <option selected="selected" value="PreferiscoNonDichiarare">Preferisco non dichiarare</option>
+                <option value="Maschio">Maschio</option>
+                <option value="Femmina">Femmina</option>
+            </select><br/>
+            <p><a href="#InviaModificheUtente" class="skip" tabindex="19">Salta alla conferma delle modifiche</a></p>
+
+            <label id="labelDataNascita" for="DataNascita">Data di nascita:</label>
+            <input name="DataNascita" id="DataNascita" type="text" tabindex="20" aria-label="Modifica data di nascita utente" aria-required="true"/><br/>
+            <p><a href="#InviaModificheUtente" class="skip" tabindex="21">Salta alla conferma delle modifiche</a></p>
+
+            <label id="labelIndirizzo" for="Indirizzo">Indirizzo:</label>
+            <input name="Indirizzo" id="Indirizzo" type="text" tabindex="22" aria-label="Modifica indirizzo utente" aria-required="true"/><br/>
+            <p><a href="#InviaModificheUtente" class="skip" tabindex="23">Salta alla conferma delle modifiche</a></p>
+
+            <label id="labelEmail" for="Email">Email:</label>
+            <input name="Email" id="Email" type="text" tabindex="24" aria-label="Modifica email utente" aria-required="true"/><br/>
+            <p><a href="#InviaModificheUtente" class="skip" tabindex="25">Salta alla conferma delle modifiche</a></p>
+
+            <label id="labelUsername" for="Username">Username:</label>
+            <input name="Username" id="Username" type="text" tabindex="26" aria-label="Modifica username" aria-required="true"/><br/>
+            <p><a href="#InviaModificheUtente" class="skip" tabindex="27">Salta alla conferma delle modifiche</a></p>
+
+            <label id="labelPassword" for="Password">Password:</label>
+            <input name="Password" id="Password" type="password" tabindex="28" aria-label="Modifica password utente" aria-required="true"/><br/>
+            <p><a href="#InviaModificheUtente" class="skip" tabindex="29">Salta alla conferma delle modifiche</a></p>
+
+            <label id="labelNewsletter" for="Newsletter">Desidero iscrivermi alla newsletter </label>
+            <input name="Newsletter" id="Newsletter" type="checkbox" checked="checked" aria-label="Modifica l'iscrizione alla newsletter" /><br/>
+
+            <input name="AnnullaModificheUtente" id="AnnullaModificheUtente" tabindex="31" type="reset" value="Annulla" aria-label="Annulla le modifiche apportate"/>
+            <input name="InviaModificheUtente" id="InviaModificheUtente" tabindex="32" type="submit" value="Conferma" aria-label="Conferma le modifiche apportate"/>
+        </fieldset>
+    </form>
+    <p>
+        <a id="ButtonBackUp" tabindex="33" href="#header" title="Torna su" aria-label="Torna su" >
+            <img alt="Torna su" src="../Images/TornaSu.png"/>
+        </a>
+    </p>
+</div>
+
+<div id="footer" aria-label="footer">
+    <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
+    <p>
+        Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
+    </p>
+    <p>
+        Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
+    </p>
+    <img alt="Simbolo di validazione CSS" src="../Images/vcss-blue.gif"/>
+</div>
+
+</body>
+</html>
