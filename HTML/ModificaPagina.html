@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN" "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
+
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">-->
+<html xml:lang="it" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <title>Modifica | Museo arte nel tempo</title>
+
+    <meta name="language" content="italian it"/>
+    <meta name="title" content="Modifica | Museo arte nel tempo"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content="arte, pittura, scultura, museo"/>       <!-- Rivedere per sicurezza -->
+    <meta name="author" content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto"/>
+
+    <link rel="stylesheet" media="screen" href="../CSS/Style.css" type="text/css"/>
+    <link rel="stylesheet" media="print" href="" type="text/css"/>
+    <link rel="icon" href=""/>
+    <script src="../JavaScript/Placeholder.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+<div id="header" role="banner">
+
+    <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
+    <!-- Utilizzare il css per inserire il logo -->
+    <span id="HamburgerMenu" class="ImgBackground" title="Menu a hambuger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu a hambuger, cliccaci sopra per aprire il menu" tabindex="10">
+        Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
+    </span>
+    <div id="UserTools" class="ImgBackground" title="area dedicata alla registrazione, login e logout" aria-label="area dedicata alla registrazione, login e logout" tabindex="7">
+        <ul>
+            <li>
+                <a id="logIn" class="Button" tabindex="8" href="" title="LogIn" role="button" aria-label="porta alla pagina di login" xml:lang="en"> LogIn </a>
+            </li>
+            <li>
+                <a id="profile" class="Button" tabindex="9" href="" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente">
+                    Area utente
+                </a>
+            </li>
+            <li>
+                <a id="logOut" class="Button" href="" title="LogOut" role="button" aria-label="esci dal tuo profilo" xml:lang="en">
+                    LogOut
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <form id="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
+        <fieldset id="searchBox">
+            <select name="filter" id="filter" tabindex="2" aria-label="Seleziona il filtro per la ricerca">
+                <option selected="selected" value="Opera" tabindex="3">Opera</option>
+                <option value="Evento" tabindex="4">Evento</option>
+                <option value="Avviso" tabindex="5">Avviso</option>
+            </select>
+            <label id="labelS" for="textSearch">Cerca nel sito</label>
+            <input name="ricerca" id="textSearch" type="text" tabindex="1" role="search"/>
+            <input name="invio" id="Submit" tabindex="6" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
+        </fieldset>
+    </form>
+</div>
+
+<div id="breadcrumbs" aria-label="breadcrumbs">
+    <p>
+        Ti trovi in:
+    </p>
+    <span id="pathSelected"><a href="" tabindex="18">Area Personale</a> &gt;&gt; Modifica</span>
+</div>   <!-- Da rivedere come farlo -->
+
+<div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
+    <ul>
+        <li>
+            <a href="#content" class="skip" tabindex="11">Vai al contenuto</a>
+        </li>
+        <li>
+            <span xml:lang="en">Home</span>
+        </li>
+        <li>
+            <a href="" tabindex="12" title="Opere" aria-label="Vai alla pagina delle opere">Opere</a>
+        </li>
+        <li>
+            <a href="" tabindex="13" title="Eventi" aria-label="Vai alla pagina degli eventi">Eventi</a>
+        </li>
+        <li>
+            <a href="" tabindex="14" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti">Opzioni
+                d'acquisto</a>
+        </li>
+        <li>
+            <a href="" tabindex="15" title="Avvisi" aria-label="Vai alla pagina degli avvisi">Avvisi</a>
+        </li>
+        <li>
+            <a href="" tabindex="16" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni">Cosa
+                dicono di noi</a>
+        </li>
+        <li>
+            <a href="" tabindex="17" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti">Contatti</a>
+        </li>
+    </ul>
+</div>
+
+<div id="content" role="main">
+    <h2 class="H2Home">Modifica della pagina numero X</h2>
+    <form id="Modifica" action="" method="post"> <!-- Nascondi con CSS -->
+        <fieldset id="BoxModifica">
+            <p id="TipoPaginaAvv">Tipologia di pagina: Avviso</p>
+            <p id="TipoPaginaEven">Tipologia di pagina: Evento</p>
+            <p id="TipoPaginaOper">Tipologia di pagina: Opera</p>
+
+            <fieldset id="BoxModificaAvviso">
+                <label id="labelDataAvviso" for="DataAvviso">Data: </label>
+                <input name="DataAvviso" id="DataAvviso" type="text" tabindex="" aria-required="true"/><br/>
+                <label id="labelOggetto" for="Oggetto">Oggetto: </label>
+                <input name="Oggetto" id="Oggetto" type="text" tabindex="" aria-required="true"/><br/>
+                <textarea id="AreaDescrAvviso" name="AreaDescrAvviso" rows="10" cols="70" tabindex="" aria-required="true">
+                    Inserire la descrizione dell'avviso
+                </textarea><br/>
+            </fieldset>
+
+            <fieldset id="BoxModificaEvento">
+                <label id="labelDataEvento" for="DataEvento">Data: </label>
+                <input name="DataEvento" id="DataEvento" type="text" tabindex="" aria-required="true"/><br/>
+                <label id="labelTitoloEvento" for="TitoloEvento">Titolo: </label>
+                <input name="TitoloEvento" id="TitoloEvento" type="text" tabindex="" aria-required="true"/><br/>
+                <textarea id="AreDescrEvento" name="AreaDescrEvento" rows="15" cols="70" tabindex="" aria-required="true">
+                    Inserire la descrizione dell'evento
+                </textarea><br/>
+            </fieldset>
+
+            <fieldset id="BoxModificaOpera">
+
+                <!-- Immagine: string <not null> -->
+
+
+                <label id="labelIDOpera" for="IDOpera">ID: </label>
+                <input name="IDOpera" id="IDOpera" type="hidden" tabindex="" aria-required="true"/><br/>
+
+                <label id="labelAutore" for="Autore">Autore: </label>
+                <input name="Autore" id="Autore" type="text" tabindex="" aria-required="true"/><br/>
+
+                <label id="labelTitoloOpera" for="TitoloOpera">Titolo: </label>
+                <input name="TitoloOpera" id="TitoloOpera" type="text" tabindex="" aria-required="true"/><br/>
+
+                <label id="labelAnno" for="Anno">Anno: </label>
+                <input name="Anno" id="Anno" type="text" tabindex="" aria-required="true"/><br/>
+
+                <label id="labelPeriodoStorico" for="PeriodoStorico">Periodo storico: </label>
+                <select name="PeriodoStorico" id="PeriodoStorico" tabindex="" aria-label="Seleziona il periodo storico di appartenenza">
+                    <option selected="selected" value="Quattrocento" tabindex="3">Quattrocento</option>
+                    <option value="Cinquecento" tabindex="4">Cinquecento</option>
+                    <option value="Seicento" tabindex="5">Seicento</option>
+                    <option value="Settecento" tabindex="5">Settecento</option>
+                </select><br/>
+
+                <label id="labelStile" for="Stile">Stile: </label>
+                <select name="Stile" id="Stile" tabindex="" aria-label="Seleziona lo stile artistico">
+                    <option selected="selected" value="pittura" tabindex="3">Pittura</option>
+                    <option value="scultura" tabindex="4">Scultura</option>
+                </select><br/>
+
+                <label id="labelTecnica" for="Tecnica">Tecnica: </label>
+                <input name="Tecnica" id="Tecnica" type="text" tabindex="" aria-required="true"/><br/>
+
+                <label id="labelMateriale" for="Materiale">Materiale: </label>
+                <input name="Materiale" id="Materiale" type="text" tabindex="" aria-required="true"/><br/>
+
+                <label id="labelUtente" for="Utente">Utente: </label>
+                <input name="Utente" id="Utente" type="hidden" tabindex="" aria-required="true"/><br/>
+
+                <label id="labelPrestito" for="Prestito">In prestito: </label>
+                <select name="Prestito" id="Prestito" tabindex="" aria-label="Seleziona lo stato dell'opera">
+                    <option value="Sì" tabindex="3">Sì</option>
+                    <option selected="selected" value="No" tabindex="4">No</option>
+                </select><br/>
+
+
+                <textarea id="AreDescrOpera" name="AreaDescrOpera" rows="30" cols="70" tabindex="" aria-required="true">
+                    Inserire la descrizione dell'opera
+                </textarea><br/>
+
+                <label id="labelUploadImg" for="Immagine">Scegliere l'immagine: </label>
+                <input type="file" name="Immagine" id="Immagine" tabindex="" aria-required="true"/><br/>
+            </fieldset>
+
+            <input name="invio" id="InvioModifiche" tabindex="6" type="submit" value="Conferma" aria-label="Pulsante per la ricerca"/>
+        </fieldset>
+    </form>
+
+    <p id="p2" class="pContent">
+        <a href="#footer" class="skip">Salta il testo</a>
+    </p>
+    <!-- Da vedere bene -->
+    <p>
+        <a id="ButtonBackUp" tabindex="" href="#header" title="Torna su" aria-label="Torna su" >
+            <img alt="Torna su" src="../Images/TornaSu.png"/>
+        </a>
+    </p>
+</div>
+
+<div id="footer" aria-label="footer">
+    <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
+    <p>
+        Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
+    </p>
+    <p>
+        Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
+    </p>
+    <img alt="Simbolo di validazione CSS" src="../Images/vcss-blue.gif"/>
+</div>
+
+</body>
+</html>
