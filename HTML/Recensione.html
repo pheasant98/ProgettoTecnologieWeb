@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN" "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
+
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">-->
+<html xml:lang="it" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <title>Recensione | Museo arte nel tempo</title>
+
+    <meta name="language" content="italian it"/>
+    <meta name="title" content="Recensione | Museo arte nel tempo"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content="arte, pittura, scultura, museo"/>       <!-- Rivedere per sicurezza -->
+    <meta name="author" content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto"/>
+
+    <link rel="stylesheet" media="screen" href="../CSS/Style.css" type="text/css"/>
+    <link rel="stylesheet" media="print" href="" type="text/css"/>
+    <link rel="icon" href=""/>
+    <script src="../JavaScript/Placeholder.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+<div id="header" role="banner">
+
+    <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
+    <!-- Utilizzare il css per inserire il logo -->
+    <span id="HamburgerMenu" class="ImgBackground" title="Menu a hambuger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu a hambuger, cliccaci sopra per aprire il menu" tabindex="5">
+        Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
+    </span>
+    <div id="UserTools" class="ImgBackground" title="area dedicata alla registrazione, login e logout" aria-label="area dedicata alla registrazione, login e logout" tabindex="4">
+        <ul>
+            <li>
+                <a id="profile" class="Button" href="" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente">
+                    Area utente
+                </a>
+            </li>
+            <li>
+                <a id="logOut" class="Button" href="" title="LogOut" role="button" aria-label="esci dal tuo profilo" xml:lang="en">
+                    LogOut
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <form id="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
+        <fieldset id="searchBox">
+            <select name="filter" id="filter" tabindex="2" aria-label="Seleziona il filtro per la ricerca">
+                <option selected="selected" value="Opera">Opera</option>
+                <option value="Evento">Evento</option>
+                <option value="Avviso">Avviso</option>
+            </select>
+            <label id="labelS" for="textSearch">Cerca nel sito</label>
+            <input name="ricerca" id="textSearch" type="text" tabindex="1" role="search"/>
+            <input name="invio" id="Submit" tabindex="3" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
+        </fieldset>
+    </form>
+</div>
+
+<div id="breadcrumbs" aria-label="breadcrumbs">
+    <p>
+        Ti trovi in:
+    </p>
+    <span id="path">
+        <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
+        &gt;&gt;
+        <a href="AreaUtente.html" title="Area Utente" aria-label="Vai alla pagina area utente">Area Utente</a>
+        &gt;&gt;
+        <span id="pathSelected">Recensione</span>
+    </span>
+
+</div>
+
+<div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
+    <ul>
+        <li>
+            <a class="skip" href="#content" tabindex="6">Vai al contenuto</a>
+        </li>
+        <li>
+            <a aria-label="Vai alla pagina homepage del museo" href="Index.html" tabindex="7" title="Home" ><span xml:lang="en">Home</span></a>
+        </li>
+        <li>
+            <a aria-label="Vai alla pagina delle opere" href="" tabindex="8" title="Opere">Opere</a>
+        </li>
+        <li>
+            <a aria-label="Vai alla pagina degli eventi" href="" tabindex="9" title="Eventi">Eventi</a>
+        </li>
+        <li>
+            <a aria-label="Vai alla pagina dedicata agli acquisti" href="" tabindex="10" title="Opzioni d'acquisto">Opzioni d'acquisto</a>
+        </li>
+        <li>
+            <a aria-label="Vai alla pagina degli avvisi" href="" tabindex="11" title="Avvisi">Avvisi</a>
+        </li>
+        <li>
+            <a aria-label="Vai alla pagina dedicata alle recensioni" href="" tabindex="12" title="Cosa dicono di noi">Cosa dicono di noi</a>
+        </li>
+        <li>
+            <a aria-label="Vai alla pagina dedicata ai contatti" href="" tabindex="13" title="Contatti">Contatti</a>
+        </li>
+    </ul>
+</div>
+
+<div id="content" role="main">
+
+    <h2 class="H2Home">Recensioni effettuate</h2>
+
+    <dl>
+        <dt>
+            Recensione 1
+        </dt>
+        <dd>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Vestibulum id augue quis orci porttitor consequat sit amet at velit.
+        </dd>
+        <dd>
+            <img class="Remove" src="../Images/X.png" alt="Rimuovi recensione"/>
+            <img class="Print" src="../Images/Stampa.png" alt="Stampa recensione"/>
+        </dd>
+        <dt>
+            Recensione 2
+        </dt>
+        <dd>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Vestibulum id augue quis orci porttitor consequat sit amet at velit.
+        </dd>
+        <dd>
+            <img class="Remove" src="../Images/X.png" alt="Rimuovi recensione"/>
+            <img class="Print" src="../Images/Stampa.png" alt="Stampa recensione"/>
+        </dd>
+        <dt>
+            Recensione 3
+        </dt>
+        <dd>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Vestibulum id augue quis orci porttitor consequat sit amet at velit.
+        </dd>
+        <dd>
+            <img class="Remove" src="../Images/X.png" alt="Rimuovi recensione"/>
+            <img class="Print" src="../Images/Stampa.png" alt="Stampa recensione"/>
+        </dd>
+    </dl>
+    <p>
+        <a id="Back" class="Button" href="" title="Torna indietro" role="button" tabindex="14" aria-label="Torna alla pagina di recensione precedente"> Precedente
+        </a>
+        <a id="Next" class="Button" href="" title="Vai avanti" role="button" tabindex="15" aria-label="Vai alla pagina di recensione succesiva"> Successiva
+        </a>
+    </p>
+    <a id="ButtonBackUp" tabindex="16" href="#header" title="Torna su" aria-label="Torna su" >
+        <img alt="Torna su" src="../Images/TornaSu.png"/>
+    </a>
+</div>
+
+<div id="footer" aria-label="footer">
+    <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
+    <p>
+        Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
+    </p>
+    <p>
+        Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
+    </p>
+    <img alt="Simbolo di validazione CSS" src="../Images/vcss-blue.gif"/>
+</div>
+
+</body>
+</html>
