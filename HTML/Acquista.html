@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN" "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
+
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">-->
+<html xml:lang="it" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <title>Acquista | Museo arte nel tempo</title>
+
+    <meta name="language" content="italian it"/>
+    <meta name="title" content="Acquista | Museo arte nel tempo"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content="arte, pittura, scultura, museo"/>       <!-- Rivedere per sicurezza -->
+    <meta name="author" content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto"/>
+
+    <link rel="stylesheet" media="screen" href="../CSS/Style.css" type="text/css"/>
+    <link rel="stylesheet" media="print" href="" type="text/css"/>
+    <link rel="icon" href=""/>
+    <script src="../JavaScript/Placeholder.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+<div id="header" role="banner">
+
+    <h1 id="logoImg" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
+    <!-- Utilizzare il css per inserire il logo -->
+    <span id="HamburgerMenu" title="Menu a hambuger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu a hambuger, cliccaci sopra per aprire il menu" tabindex="5">
+        Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
+    </span>
+    <div id="UserTools" title="area dedicata alla registrazione, login e logout" aria-label="area dedicata alla registrazione, login e logout" tabindex="4">
+        <ul>
+            <li>
+                <a id="logIn" class="Button" href="" title="LogIn" role="button" aria-label="porta alla pagina di login" xml:lang="en">
+                   LogIn
+                </a>
+            </li>
+            <li>
+                <a id="profile" class="Button" href="" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente">
+                    Area utente
+                </a>
+            </li>
+            <li>
+                <a id="logOut" class="Button" href="" title="LogOut" role="button" aria-label="esci dal tuo profilo" xml:lang="en">
+                    LogOut
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <form id="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
+        <fieldset id="searchBox">
+            <select name="filter" id="filter" tabindex="2" aria-label="Seleziona il filtro per la ricerca">
+                <option selected="selected" value="Opera">Opera</option>
+                <option value="Evento">Evento</option>
+                <option value="Avviso">Avviso</option>
+            </select>
+            <label id="labelS" for="textSearch">Cerca nel sito</label>
+            <input name="ricerca" id="textSearch" type="text" tabindex="1" role="search"/>
+            <input name="invio" id="Submit" tabindex="3" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
+        </fieldset>
+    </form>
+</div>
+
+<div id="breadcrumbs" aria-label="breadcrumbs">
+    <p>
+        Ti trovi in:
+    </p>
+    <span id="path">
+        <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
+        &gt;&gt;
+        <a aria-label="Vai alla pagina opzioni d'acquisto del museo" href="Opzioni d'acquisto.html" title="Opzioni d'acquisto">Opzioni d'acquisto</a>
+        &gt;&gt;
+        <span id="pathSelected">Acquista</span>
+    </span>
+</div>
+
+<div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
+    <ul>
+        <li>
+            <a href="#content" class="skip" tabindex="6">Vai al contenuto</a>
+        </li>
+        <li>
+            <a href="Index.html" tabindex="7" title="Home" aria-label="Vai alla pagina homepage del museo"><span xml:lang="en">Home</span></a>
+        </li>
+        <li>
+            <a href="" tabindex="8" title="Opere" aria-label="Vai alla pagina delle opere">Opere</a>
+        </li>
+        <li>
+            <a href="" tabindex="9" title="Eventi" aria-label="Vai alla pagina degli eventi">Eventi</a>
+        </li>
+        <li>
+            <a href="" tabindex="10" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti">Opzioni
+            d'acquisto</a>
+        </li>
+        <li><a href="" tabindex="11" title="Avvisi" aria-label="Vai alla pagina degli avvisi">Avvisi</a></li>
+        <li><a href="" tabindex="12" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni">Cosa
+            dicono di noi</a>
+        </li>
+        <li><a href="" tabindex="13" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti">Contatti</a></li>
+    </ul>
+</div>
+
+<div id="content" role="main">
+    <h2>Acquisto</h2>
+
+    <form action="" aria-label="form per effettuare l'acquisto" id="buyForm" method="post" role="form">
+        <fieldset id="buyFieldSet">
+            <label for="data" id="dataLabel">Data</label>
+            <input id="data" name="data" tabindex="14" type="text"/>
+            <label for="ora" id="oraLabel">Ora</label>
+            <input id="ora" name="ora" tabindex="15" type="text"/>
+
+            <select id="biglietto" name="biglietto" tabindex="16">
+                <option value="intero" selected="selected">Intero</option>
+                <option value="ridotto">Ridotto</option>
+            </select>
+
+            <select id="pacchetto" name="pacchetto" tabindex="17">
+                <option value="famiglia" selected="selected">Famiglia</option>
+                <option value="comitiva">Comitiva</option>
+            </select>
+
+            <p class="pContent">Guida</p>
+            <input id="guidaSì" type="radio" name="guidaSì" value="sì" tabindex="18"/> Sì
+            <input id="guidaNo" type="radio" name="guidaNo" value="no" tabindex="19"/> No
+
+            <input id="buttonContinua" name="continua" type="submit" value="Continua" tabindex="20" aria-label="Pulsante per proseguire nell'acquisto"/>
+        </fieldset>
+    </form>
+    <p>
+        <a id="ButtonBackUp" href="#header" title="Torna su" aria-label="Torna su" tabindex="21">
+            <img alt="Torna su" src="../Images/TornaSu.png"/>
+        </a>
+    </p>
+</div>
+
+<div id="footer" aria-label="footer">
+    <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
+    <p>
+        Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
+    </p>
+    <p>
+        Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
+    </p>
+    <img alt="Simbolo di validazione CSS" src="../Images/vcss-blue.gif"/>
+</div>
+
+</body>
+</html>
