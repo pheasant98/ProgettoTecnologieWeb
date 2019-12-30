@@ -23,21 +23,27 @@
     <body>
         <div id="header" role="banner">
 
-            <h1 id="logoImg" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
+            <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
             <!-- Utilizzare il css per inserire il logo -->
-            <span id="HamburgerMenu" title="Menu a hambuger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu a hambuger, cliccaci sopra per aprire il menu" tabindex="10">Menu a hamburger</span>
-            <div id="UserTools" title="area dedicata alla registrazione, login e logout" aria-label="area dedicata alla registrazione, login e logout" tabindex="7">
+            <span id="HamburgerMenu" class="ImgBackground" title="Menu a hambuger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu a hambuger, cliccaci sopra per aprire il menu" tabindex="5">
+                Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
+            </span>
+            <div id="UserTools" class="ImgBackground" title="area dedicata alla registrazione, login e logout" aria-label="area dedicata alla registrazione, login e logout" tabindex="4">
                 <ul>
                     <li>
-                        <a id="logIn" class="Button" tabindex="8" href="" title="LogIn" role="button" aria-label="porta alla pagina di login"> <span xml:lang="en"> LogIn </span></a>
+                        <a id="logIn" class="Button" href="" title="LogIn" role="button" aria-label="porta alla pagina di login" xml:lang="en">
+                            LogIn
+                        </a>
                     </li>
                     <li>
-                        <a id="profile" class="Button" tabindex="9" href="" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente"> Area
-                            utente </a>
+                        <a id="profile" class="Button" href="" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente">
+                            Area utente
+                        </a>
                     </li>
                     <li>
-                        <a id="logOut" class="Button" href="" title="LogOut" role="button" aria-label="esci dal tuo profilo"> <span
-                                xml:lang="en"> LogOut </span> </a>
+                        <a id="logOut" class="Button" href="" title="LogOut" role="button" aria-label="esci dal tuo profilo" xml:lang="en">
+                            LogOut
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -45,63 +51,80 @@
             <form id="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
                 <fieldset id="searchBox">
                     <select name="filter" id="filter" tabindex="2" aria-label="Seleziona il filtro per la ricerca">
-                        <option selected="selected" value="Opera" tabindex="3">Opera</option>
-                        <option value="Evento" tabindex="4">Evento</option>
-                        <option value="Avviso" tabindex="5">Avviso</option>
+                        <option selected="selected" value="Opera">Opera</option>
+                        <option value="Evento">Evento</option>
+                        <option value="Avviso">Avviso</option>
                     </select>
                     <label id="labelS" for="textSearch">Cerca nel sito</label>
-                    <input id="textSearch" type="text" tabindex="1" role="search"/>
-                    <input id="Submit" name="Invio" tabindex="6" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
+                    <input name="ricerca" id="textSearch" type="text" tabindex="1" role="search"/>
+                    <input name="invio" id="Submit" tabindex="3" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
                 </fieldset>
             </form>
         </div>
 
-        <div id="breadcrumbs" aria-label="breadcrumbs">Ti trovi in: <a href="Index.html" tabindex="18" xml:lang="en">Home</a> &gt;&gt; Opzioni d'acquisto</div>   <!-- Da rivedere come farlo -->
+        <div id="breadcrumbs" aria-label="breadcrumbs">
+            <p>
+                Ti trovi in:
+            </p>
+            <span id="path">
+                <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
+                &gt;&gt;
+                <span id="pathSelected">Opzioni d'acquisto</span>
+            </span>
+        </div>   <!-- Da rivedere come farlo -->
 
         <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
             <ul>
-                <li><a href="#content" class="skip" tabindex="11">Vai al contenuto</a></li>
-                <li><a href="Index.html" tabindex="12" title="Home" aria-label="Vai alla pagina di home" xml:lang="en">Home</a></li>
-                <li><a href="" tabindex="13" title="Opere" aria-label="Vai alla pagina delle opere">Opere</a></li>
-                <li><a href="" tabindex="14" title="Eventi" aria-label="Vai alla pagina degli eventi">Eventi</a></li>
-                <li>Opzioni d'acquisto</li>
-                <li><a href="" tabindex="15" title="Avvisi" aria-label="Vai alla pagina degli avvisi">Avvisi</a></li>
-                <li><a href="" tabindex="16" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni">Cosa
-                    dicono di noi</a>
+                <li>
+                    <a class="skip" href="#content" tabindex="6">Vai al contenuto</a>
                 </li>
-                <li><a href="" tabindex="17" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti">Contatti</a></li>
+                <li>
+                    <a aria-label="Vai alla pagina homepage del museo" href="Index.html" tabindex="7" title="Home" ><span xml:lang="en">Home</span></a>
+                </li>
+                <li>
+                    <a aria-label="Vai alla pagina delle opere" href="" tabindex="8" title="Opere">Opere</a>
+                </li>
+                <li>
+                    <a aria-label="Vai alla pagina degli eventi" href="" tabindex="9" title="Eventi">Eventi</a>
+                </li>
+                <li>
+                    Opzioni d'acquisto
+                </li>
+                <li>
+                    <a aria-label="Vai alla pagina degli avvisi" href="" tabindex="11" title="Avvisi">Avvisi</a>
+                </li>
+                <li>
+                    <a aria-label="Vai alla pagina dedicata alle recensioni" href="" tabindex="12" title="Cosa dicono di noi">Cosa dicono di noi</a>
+                </li>
+                <li>
+                    <a aria-label="Vai alla pagina dedicata ai contatti" href="" tabindex="13" title="Contatti">Contatti</a>
+                </li>
             </ul>
         </div>
 
         <div id="content" role="main">
             <h2 class="H2Home">Opzioni d'acquisto</h2>
-            <p class="pContent">
-                <a href="#p2" tabindex="19" class="skip">Salta il testo</a>
-                Biglietti
-                <dl>
-                    <dt>Intero: </dt>
-                        <dd>11.90€ cadauno.</dd>
-                    <dt>Ridotto (fino ai 14 anni): </dt>
-                        <dd>7.50€ cadauno.</dd>
-                </dl>
-            </p>
-            <p id="p2" class="pContent">
-                <a href="#p3" tabindex="20" class="skip">Salta il testo</a>
-                Pacchetti
-                <dl>
-                    <dt>Famiglia: </dt>
-                        <dd>include 2 biglietti interi, a prezzo standard, e fino a 6 biglietti ridotti, ad un prezzo speciale di 6€ cadauno.</dd>
-                    <dt>Comitiva: </dt>
-                        <dd>include biglietti interi, ad un prezzo speciale di 10€ cadauno, e ridotti, ad un prezzo speciale di 6.50€ cadauno.</dd>
-                </dl>
-            </p>
-            <p id="p3" class="pContent">
-                <a href="#footer" tabindex="21" class="skip">Salta il testo</a>
-                Abbonamenti
+            <a href="#p2" tabindex="19" class="skip">Salta il testo</a>
+            <p>Biglietti</p>
+            <dl>
+                <dt>Intero: </dt>
+                    <dd>11.90€ cadauno.</dd>
+                <dt>Ridotto (fino ai 14 anni): </dt>
+                    <dd>7.50€ cadauno.</dd>
+            </dl>
+            <a href="#p3" tabindex="20" class="skip">Salta il testo</a>
+            <p>Pacchetti</p>
+            <dl>
+                <dt>Famiglia: </dt>
+                    <dd>include 2 biglietti interi, a prezzo standard, e fino a 6 biglietti ridotti, ad un prezzo speciale di 6€ cadauno.</dd>
+                <dt>Comitiva: </dt>
+                    <dd>include biglietti interi, ad un prezzo speciale di 10€ cadauno, e ridotti, ad un prezzo speciale di 6.50€ cadauno.</dd>
+            </dl>
+            <a href="#footer" tabindex="21" class="skip">Salta il testo</a>
+            <p>Abbonamenti</p>
             <dl>
                 <dd>Per gli abbonamenti è previsto l'acquisto solo presso la sede fisica del nostro museo.</dd>
             </dl>
-            </p>
             <p id="pAcquista">
                 Desideri effettuare un acquisto?
                 <a id="Acquista" class="Button" tabindex="22" href="" title="Pagina acquisto biglietti e pacchetti" role="button" aria-label="porta alla pagina dell'acquisto di biglietti o pacchetti"> Acquista </a>
@@ -120,7 +143,7 @@
         <div id="footer" aria-label="footer">
             <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
             <p>
-                Progetto per il corso di Tecnologie Web, Anno Accademico 2019/2020
+                Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
             </p>
             <p>
                 Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
