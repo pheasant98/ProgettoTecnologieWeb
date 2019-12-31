@@ -34,12 +34,14 @@ html, body {
 #UserTools {
     float:right;
     background-image: url('../images/MenuUser.png');
+    background-color: #CCCCCC;
 }
 
 #HamburgerMenu {
     float:right;
     background-image: url('../images/HamburgerMenu.png');
     text-indent: 100%;
+    background-color: #CCCCCC;
 }
 
 .ImgBackground{
@@ -48,6 +50,7 @@ html, body {
     background-repeat: no-repeat;
     white-space: nowrap;
     overflow: hidden;
+    border-radius: 20px;
 }
 
 #Avvisi, #Eventi li {
