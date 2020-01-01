@@ -26,25 +26,25 @@
 
 <div id="header" role="banner">
 
-    <h1 id="logoImg" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
+    <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
     <!-- Utilizzare il css per inserire il logo -->
-    <span id="HamburgerMenu" title="Menu a hambuger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu a hambuger, cliccaci sopra per aprire il menu" tabindex="5">
+    <span id="HamburgerMenu" class="ImgBackground" title="Menu a hambuger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu a hambuger, cliccaci sopra per aprire il menu" tabindex="5">
         Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
     </span>
-    <div id="UserTools" title="area dedicata alla registrazione, login e logout" aria-label="area dedicata alla registrazione, login e logout" tabindex="4">
-        <ul>
+    <div id="UserTools" class="ImgBackground" title="area dedicata alla registrazione, login e logout" aria-label="area dedicata alla registrazione, login e logout" tabindex="4">
+        <ul id="UserMenu">
             <li>
-                <a id="logIn" class="Button" href="" title="LogIn" role="button" aria-label="porta alla pagina di login" xml:lang="en">
-                   LogIn
+                <a id="logIn" class="Button" href="Login.html" title="LogIn" role="button" aria-label="porta alla pagina di login" xml:lang="en">
+                    LogIn
                 </a>
             </li>
             <li>
-                <a id="profile" class="Button" href="" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente">
+                <a id="profile" class="Button" href="AreaUtente.html" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente">
                     Area utente
                 </a>
             </li>
             <li>
-                <a id="logOut" class="Button" href="" title="LogOut" role="button" aria-label="esci dal tuo profilo" xml:lang="en">
+                <a id="logOut" class="Button" href="Index.html" title="LogOut" role="button" aria-label="esci dal tuo profilo" xml:lang="en">
                     LogOut
                 </a>
             </li>
@@ -125,8 +125,10 @@
             </select>
 
             <p class="pContent">Guida</p>
-            <input id="guidaSì" type="radio" name="guidaSì" value="sì" tabindex="18"/> Sì
-            <input id="guidaNo" type="radio" name="guidaNo" value="no" tabindex="19"/> No
+            <label id="labelYes" for="guidaSì">Sì</label>
+            <input id="guidaSì" type="radio" name="guidaSì" value="sì" tabindex="18"/>
+            <label id="labelNo" for="guidaNo">No</label>
+            <input id="guidaNo" type="radio" name="guidaNo" value="no" tabindex="19"/>
 
             <input id="buttonContinua" name="continua" type="submit" value="Continua" tabindex="20" aria-label="Pulsante per proseguire nell'acquisto"/>
         </fieldset>

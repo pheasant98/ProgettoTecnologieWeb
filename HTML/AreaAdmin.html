@@ -32,9 +32,11 @@
         Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
     </span>
     <div id="UserTools" class="ImgBackground" title="area dedicata alla registrazione, login e logout" aria-label="area dedicata alla registrazione, login e logout" tabindex="4">
-        <ul>
+        <ul id="UserMenu">
             <li>
-                <a id="logOut" class="Button" href="" title="LogOut" role="button" aria-label="esci dal tuo profilo" xml:lang="en"> LogOut </a>
+                <a id="logOut" class="Button" href="Index.html" title="LogOut" role="button" aria-label="esci dal tuo profilo" xml:lang="en">
+                    LogOut
+                </a>
             </li>
         </ul>
     </div>
@@ -93,7 +95,7 @@
 
 <div id="content" role="main">
 
-    <h2 id="Welcome">Ciao Federico!</h2> <!--da cambiare col nome dell'user con innerHTML in JS-->
+    <h2 id="Welcome" class="title-content">Ciao Federico!</h2> <!--da cambiare col nome dell'user con innerHTML in JS-->
 
     Questi sono i tuoi dati:
 
@@ -105,7 +107,7 @@
             Cognome: Perin
         </li>
         <li>
-            Sesso: F
+            Sesso: M
         </li>
         <li>
             Data di nascita: 25/11/1998
@@ -115,11 +117,11 @@
         </li>
     </ul>
 
-    <h2 class="H2Admin">Funzionalità</h2>
+    <h2 class="title-content">Funzionalità</h2>
 
     <ul id="ListCom">
         <li>
-            <a id="Modifica" class="Button" href="Modifica.html" title="vai alla pagina modifica pagina" role="button" tabindex="14" aria-label="vai alla pagina modifica pagina">Modifica</a>
+            <a id="Modifica" class="Button" href="ModificaPagina.html" title="vai alla pagina modifica pagina" role="button" tabindex="14" aria-label="vai alla pagina modifica pagina">Modifica</a>
         </li>
         <li>
             <a id="Inserisci" class="Button" href="Inserisci.html" title="vai alla pagina inserisci pagina" role="button" tabindex="15" aria-label="vai alla pagina inserisci pagina">Inserisci</a>
@@ -128,7 +130,7 @@
             <a id="GestioneUtenti" class="Button" href="GestioneUtenti.html" title="vai alla pagina Gestione Utenti" role="button" tabindex="16" aria-label="vai alla pagina iGestione Utenti">Gestione utenti</a>
         </li>
         <li>
-            <a id="ContenutoSito" class="Button" href="ContenutoSito.html" title="vai alla pagina Contenuto Sito" role="button" tabindex="17" aria-label="vai alla pagina Contenuto Sito">Contenuto sito</a>
+            <a id="ContenutoSito" class="Button" href="GestioneContenuti.html" title="vai alla pagina Contenuto Sito" role="button" tabindex="17" aria-label="vai alla pagina Contenuto Sito">Contenuto sito</a>
         </li>
     </ul>
 

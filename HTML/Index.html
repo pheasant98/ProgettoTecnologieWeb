@@ -31,19 +31,19 @@
             Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
         </span>
         <div id="UserTools" class="ImgBackground" title="area dedicata alla registrazione, login e logout" aria-label="area dedicata alla registrazione, login e logout" tabindex="4">
-            <ul>
+            <ul id="UserMenu">
                 <li>
-                    <a id="logIn" class="Button" href="" title="LogIn" role="button" aria-label="porta alla pagina di login" xml:lang="en">
+                    <a id="logIn" class="Button" href="Login.html" title="LogIn" role="button" aria-label="porta alla pagina di login" xml:lang="en">
                         LogIn
                     </a>
                 </li>
                 <li>
-                    <a id="profile" class="Button" href="" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente">
+                    <a id="profile" class="Button" href="AreaUtente.html" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente">
                         Area utente
                     </a>
                 </li>
                 <li>
-                    <a id="logOut" class="Button" href="" title="LogOut" role="button" aria-label="esci dal tuo profilo" xml:lang="en">
+                    <a id="logOut" class="Button" href="Index.html" title="LogOut" role="button" aria-label="esci dal tuo profilo" xml:lang="en">
                         LogOut
                     </a>
                 </li>
@@ -105,8 +105,8 @@
         <div id="warning" aria-label="sezione avvisi">
             <p id="pWarning"> Avvisi: Orca l'oca! il museo il 25 Dicembre sarà chiuso =( </p>
         </div>
-        <h2 class="H2Home">Lorem Ipsum</h2>
-        <p class="pContent">
+        <h2 class="title-content">Lorem Ipsum</h2>
+        <p class="paragraph-content">
             <a href="#p2" class="skip">Salta il testo</a>               <!-- Da nascondere con il CSS -->
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Vestibulum id augue quis orci porttitor consequat sit amet at velit.
@@ -116,11 +116,11 @@
             Duis dapibus porta rutrum.
         </p>
 
-        <p id="ImgMuseo">
-            <img alt="Immagine facciata del museo" src="../Images/museo.png"/>
+        <p >
+            <img  id="ImgMuseo" alt="Immagine facciata del museo" src="../Images/museo.png"/>
         </p>
 
-        <p id="p2" class="pContent">
+        <p id="p2" class="paragraph-content">
             <a href="#footer" class="skip">Salta il testo</a>
             Pellentesque nec facilisis eros, non egestas nisl.
             Cras facilisis, metus dapibus viverra consequat, mauris enim facilisis mauris, feugiat laoreet ligula leo ac

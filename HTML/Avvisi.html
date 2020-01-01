@@ -31,19 +31,19 @@
                 Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
             </span>
             <div id="UserTools" class="ImgBackground" title="area dedicata alla registrazione, login e logout" aria-label="area dedicata alla registrazione, login e logout" tabindex="4">
-                <ul>
+                <ul id="UserMenu">
                     <li>
-                        <a id="logIn" class="Button" href="" title="LogIn" role="button" aria-label="porta alla pagina di login" xml:lang="en">
+                        <a id="logIn" class="Button" href="Login.html" title="LogIn" role="button" aria-label="porta alla pagina di login" xml:lang="en">
                             LogIn
                         </a>
                     </li>
                     <li>
-                        <a id="profile" class="Button" href="" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente">
+                        <a id="profile" class="Button" href="AreaUtente.html" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente">
                             Area utente
                         </a>
                     </li>
                     <li>
-                        <a id="logOut" class="Button" href="" title="LogOut" role="button" aria-label="esci dal tuo profilo" xml:lang="en">
+                        <a id="logOut" class="Button" href="Index.html" title="LogOut" role="button" aria-label="esci dal tuo profilo" xml:lang="en">
                             LogOut
                         </a>
                     </li>
@@ -102,11 +102,11 @@
         </div>
 
         <div id="content" role="main">
-            <h2 class="H2Avvisi">Avvisi</h2>
+            <h2 class="title-content">Avvisi</h2>
             <a href="#p2" tabindex="18" class="skip">Salta gli avvisi</a>
             <dl id="Avvisi">
                 <dt>
-                    <a href="Avviso1.html" tabindex="20" class="avvisoSingolo">Oggetto: chiusura per controllo generale della sicurezza</a>
+                    <a href="AvvisoSingolo.html" tabindex="20">Oggetto: chiusura per controllo generale della sicurezza</a>
                 </dt>
                 <dd>
                     <a href="#p2" tabindex="19" class="skip">Salta l'avviso</a>
@@ -119,7 +119,7 @@
                     causa del periodico controllo dei sistemi di sicurezza presenti nell'edificio.
                 </dd>
                 <dt>
-                    <a href="Avviso2.html" tabindex="22" class="avvisosingolo">Oggetto: apertura straordinaria</a>
+                    <a href="Avviso2.html" tabindex="22">Oggetto: apertura straordinaria</a>
                 </dt>
                 <dd>
                     <a href="#p3" tabindex="21" class="skip">Salta l'avviso</a>
@@ -132,7 +132,7 @@
                     finesettimana dedicato alla promozione della cutlura e dell'arte indetto dal Comune.
                 </dd>
                 <dt>
-                    <a href="Avviso3.html" tabindex="24" class="avvisosingolo">Oggetto: riapertura del museo</a>
+                    <a href="Avviso3.html" tabindex="24">Oggetto: riapertura del museo</a>
                 </dt>
                 <dd>
                     <a href="#p4" tabindex="23" class="skip">Salta l'avviso</a>
@@ -145,7 +145,7 @@
                     a causa di guasti tecnici alle infrastrutture. La direzione del museo si scusa per il disguido.
                 </dd>
                 <dt>
-                    <a href="Avviso4.html" tabindex="26" class="avvisosingolo">Oggetto: chiusura invernale</a>
+                    <a href="Avviso4.html" tabindex="26">Oggetto: chiusura invernale</a>
                 </dt>
                 <dd>
                     <a href="#footer" tabindex="25" class="skip">Salta l'avviso</a>
@@ -158,10 +158,10 @@
                     La direzione del museo augura un felice inizio d'anno a tutti i clienti e visitatori.
                 </dd>
             </dl>
-            <p>
-                <a id="Back" class="Button" tabindex="27" href="" title="Torna indietro" role="button" aria-label="Torna alla pagina di avvisi precedente"> &lt;&lt;
+            <p id="paragraphButton">
+                <a id="Back" class="Button" tabindex="27" href="" title="Torna indietro" role="button" aria-label="Torna alla pagina di avvisi precedente"> &lt; Precedente
                 </a>
-                <a id="Next" class="Button" tabindex="28" href="" title="Vai avanti" role="button" aria-label="Vai alla pagina di avvisi succesiva"> &gt;&gt;
+                <a id="Next" class="Button" tabindex="28" href="" title="Vai avanti" role="button" aria-label="Vai alla pagina di avvisi succesiva"> Successivo &gt;
                 </a>
             </p>
 

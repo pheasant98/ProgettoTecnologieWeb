@@ -32,19 +32,19 @@
                         Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
                     </span>
             <div id="UserTools" class="ImgBackground" title="area dedicata alla registrazione, login e logout" aria-label="area dedicata alla registrazione, login e logout" tabindex="4">
-                <ul>
+                <ul id="UserMenu">
                     <li>
-                        <a id="logIn" class="Button" href="" title="LogIn" role="button" aria-label="porta alla pagina di login" xml:lang="en">
+                        <a id="logIn" class="Button" href="Login.html" title="LogIn" role="button" aria-label="porta alla pagina di login" xml:lang="en">
                             LogIn
                         </a>
                     </li>
                     <li>
-                        <a id="profile" class="Button" href="" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente">
+                        <a id="profile" class="Button" href="AreaUtente.html" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente">
                             Area utente
                         </a>
                     </li>
                     <li>
-                        <a id="logOut" class="Button" href="" title="LogOut" role="button" aria-label="esci dal tuo profilo" xml:lang="en">
+                        <a id="logOut" class="Button" href="Index.html" title="LogOut" role="button" aria-label="esci dal tuo profilo" xml:lang="en">
                             LogOut
                         </a>
                     </li>
@@ -103,10 +103,10 @@
         </div>
 
         <div id="content" role="main">
-            <h2 class="H2Eventi">Eventi</h2>
+            <h2 class="title-content">Eventi</h2>
             <dl id="Eventi">
                 <dt>
-                    <a href="Evento1.html" tabindex="20" class="eventosingolo">Titolo: Messaggeri dell'ignoto</a>
+                    <a href="EventoSingolo.html" tabindex="20">Titolo: Messaggeri dell'ignoto</a>
                 </dt>
                 <dd>
                     <a href="#p2" tabindex="19" class="skip">Salta l'evento</a>
@@ -123,7 +123,7 @@
                     affascianto gli artisti nei secoli.
                 </dd>
                 <dt>
-                    <a href="Evento2.html" tabindex="22" class="eventosingolo">Titolo: L'evoluzione della rappresentazione e del significato della luce tra Cinquecento e Seicenteo</a>
+                    <a href="Evento2.html" tabindex="22">Titolo: L'evoluzione della rappresentazione e del significato della luce tra Cinquecento e Seicenteo</a>
                 </dt>
                 <dd>
                     <a href="#p3" tabindex="21" class="skip">Salta l'evento</a>
@@ -139,7 +139,7 @@
                     minuzioso di opere pittoriche e scultoree rappresentative delle due epoche.
                 </dd>
                 <dt>
-                    <a href="Evento3.html" tabindex="24" class="eventosingolo">Titolo: Volto di fanciullo</a>
+                    <a href="Evento3.html" tabindex="24">Titolo: Volto di fanciullo</a>
                 </dt>
                 <dd>
                     <a href="#p4" tabindex="23" class="skip">Salta l'evento</a>
@@ -156,10 +156,10 @@
                     pieghe del loro volto.
                 </dd>
             </dl>
-            <p>
-                <a id="Back" class="Button" tabindex="25" href="" title="Torna indietro" role="button" aria-label="Torna alla pagina dell'evento precedente"> &lt;&lt;
+            <p id="paragraphButton">
+                <a id="Back" class="Button" tabindex="25" href="" title="Torna indietro" role="button" aria-label="Torna alla pagina dell'evento precedente"> &lt; Precedente
                 </a>
-                <a id="Next" class="Button" tabindex="26" href="" title="Vai avanti" role="button" aria-label="Vai alla pagina dell'evento succesivo"> &gt;&gt;
+                <a id="Next" class="Button" tabindex="26" href="" title="Vai avanti" role="button" aria-label="Vai alla pagina dell'evento succesivo"> Successivo &gt;
                 </a>
             </p>
             <p>
