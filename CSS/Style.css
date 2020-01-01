@@ -75,6 +75,8 @@ html, body {
     background-color: #CCCCCC;
     padding: 1em;
     margin: 0.2em;
+    width: 10em;
+    border: 1px solid #000000;
     box-shadow: 0px 0px 2px 0px rgba(0,0,0,1), 0px 2px 3px rgba(0,0,0,1)
 }
 .Button:hover{
@@ -83,7 +85,6 @@ html, body {
 
 .Button:active{
     background-color: #FFFFFF;
-    border: 1px solid #000000;
     box-shadow: none;
 }
 /* fine bottoni*/
@@ -92,15 +93,31 @@ html, body {
     border: 2px solid #000000;
 }
 
-#breadcrumb {
+#labelS {
+    position: absolute;
+    height: 0px;
+    overflow: hidden;
+}
+
+#breadcrumbs {
+    background-color: #EEEEEE;
     border-radius: 20px;
     color: #000000;
+    font-size: 1.5em;
+    margin: 1em;
+    padding: 0.5em;
+}
+
+#breadcrumbs > p{
+    display: inline;
 }
 
 #content {
     background-color: #FFFFFF;
     color: #000000;
     border-radius: 20px;
+    margin: 1.5em;
+    padding: 2em;
 }
 
 #menu {
@@ -169,6 +186,19 @@ a:visited {
     border-radius: 20px;
 }
 
+#ImgMuseo{
+    width: 100%;
+    padding: 5%;
+}
+
+#ButtonBackUp {
+    position: fixed;
+    bottom: 3em;
+    right: 3em;
+    color: transparent;
+    opacity: 0.7;
+}
+
 #footer {
     clear: both;
     border-top: 1px solid #333333;
@@ -176,8 +206,10 @@ a:visited {
     color: #FFFFFF;
     font-style: italic;
     font-weight: bold;
+    font-size: small;
+    text-align: center;
+    padding: 0.5em;
 }
-
 @media screen and (max-width:700px) {
 
     #header, #header404 {
@@ -256,23 +288,14 @@ a:visited {
     #searchBox {
         background-color: #EEEEEE;
         border-radius: 20px;
+        white-space: nowrap;
     }
 
     #filter {
         border: 0px;
-        font-size: 1.3em;
+        font-size: 1.45em;
         background: none;
-       /* padding: 0.5%;*/
-    }
-
-    option {
-        font-size: 1em;
-    }
-
-    #labelS {
-        position: absolute;
-        height: 0px;
-        overflow: hidden;
+        margin-right: 3.5%;
     }
 
     #textSearch {
@@ -286,31 +309,13 @@ a:visited {
     #Submit {
         cursor: pointer;
         border: 0px;
-        font-size: 1.3em;
+        font-size: 1.45em;
         background: none;
-    }
-
-    #breadcrumbs {
-        font-size: 1.5em;
-        margin: 1em;
-        padding: 0.5em;
-        background-color: #EEEEEE;
-        border-radius: 20px;
-    }
-
-    #breadcrumbs > p{
-        display: inline;
+        margin-left: 3.5%;
     }
 
     #breadcrumbs.hide {
         display: none;
-    }
-
-    #menu {
-        font-size: 3.5em;
-        margin: 0;
-        padding: 0;
-        border-radius: 0;
     }
 
     #menu ul {
@@ -318,17 +323,12 @@ a:visited {
         padding-bottom: 0.5em;
     }
 
-    #menu li {
-        float: none;
-    }
-
     #menu.show {
         display: block;
-    }
-
-    #content {
-        margin: 1.5em;
-        padding: 2em;
+        font-size: 3.5em;
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
     }
 
     #content.hide {
@@ -368,21 +368,116 @@ a:visited {
         font-size: 1em;
         padding: 0.5em;
     }
-     #ImgMuseo{
-         width: 100%;
-         padding: 5%;
-     }
-    #ButtonBackUp {
-        position: fixed;
-        bottom: 3em;
-        right: 3em;
-        color: transparent;
-        opacity: 0.7;
+}
+
+@media screen and (min-width: 701px) and (max-width: 830px)
+{
+    #header, #header404 {
+        padding: 2em;
     }
 
-    #footer {
-        font-size: 0.5em;
-        padding: 1em;
+    #logoImg {
+        background-position: center;
+        height: 6em;
+        width: 39%;
+    }
+
+    #ImgError404 {
+        background-size: 80%;
+        background-position: center;
+        height: 15em;
+        width: 35%;
+        transform: rotate(15deg);
+    }
+
+    #UserTools {
+        background-image: none;
+    }
+
+    #HamburgerMenu {
+       display: none;
+    }
+
+    #search {
+        clear: both;
+        padding-top: 0.5em;
         text-align: center;
+    }
+
+    #searchBox {
+        background-color: #EEEEEE;
+        border-radius: 20px;
+    }
+
+    #filter {
+        border: 0px;
+        font-size: 2em;
+        background: none;
+        margin-right: 1em ;
+
+    }
+
+    #textSearch {
+        font-size: 2em;
+        border: 0;
+        width: 50%;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
+    #Submit {
+        cursor: pointer;
+        border: 0px;
+        font-size: 2em;
+        background: none;
+        margin-left: 1em;
+    }
+
+    #menu {
+       display: block;
+    }
+
+    #menu ul {
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
+
+    #menu li{
+        font-size: 2em;
+    }
+
+    #warning {
+        padding: 0.5em;
+        margin-bottom: 1em;
+        background-color: #EEEEEE;
+        font-size: 2em;
+        border-radius: 20px;
+    }
+
+    .title-content{
+        text-align: center;
+        font-size: 3em;
+    }
+
+    .paragraph-content {
+        font-size: 2em;
+    }
+
+    #Acquista {
+        float: right;
+        font-size: 1em;
+        padding: 0.5em;
+    }
+
+    #paragraphButton{
+        text-align: center;
+        padding: 1em;
+        white-space: nowrap;
+    }
+
+    #Back,#Next{
+        display: inline;
+        font-size: 1em;
+        padding: 0.5em;
     }
 }
