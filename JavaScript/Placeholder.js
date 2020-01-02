@@ -3,6 +3,8 @@ function menu()
 {
     document.getElementById("HamburgerMenu").addEventListener("click",touch);//ascoltatore
     document.getElementById("UserTools").addEventListener("click", touch2);
+    document.getElementById("closeMenu").addEventListener("click", touch);
+    document.getElementById("skipMenu").addEventListener("click", touch)
 
     function touch()//classe gestione ascoltatore
     {
@@ -18,5 +20,4 @@ function menu()
         var UserM=document.getElementById("UserMenu");
         UserM.classList.toggle("show");
     }
-
 }
