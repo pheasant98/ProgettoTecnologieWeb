@@ -141,11 +141,12 @@ html, body {
 
 .listClass {
     list-style-type: none;
-    font-size: 1.2em;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+    margin-left: 0.5em;
 }
 .listClass li{
-    margin-bottom: 0.5em;
-    margin-left: 1em;
+    margin-bottom: 1em;
 }
 #content dt {
     font-size: 1.4em;
@@ -156,16 +157,17 @@ html, body {
     padding-left: 1em;
 }
 
-.Remove{
-    position: relative;
-    left:80%;
+.Remove,.Print{
     width: 2.5em;
 }
 
-.Print{
-    position: relative;
-    left: 81%;
-    width: 2.5em;
+.ViewMore{
+    width: 3em;
+    height: 2.5em;
+}
+
+.Remove:active,.ViewMore:active,.Print:active{
+    border-style: inset;
 }
 
 #clause {
@@ -219,6 +221,13 @@ a:visited {
     height: 12em;
     width: 80%;
     margin: 0.5em 10%;
+
+}
+
+#Back,#Next{
+    display: inline;
+    font-size: 1em;
+    padding: 0.5em;
 
 }
 
@@ -342,7 +351,7 @@ a:visited {
         border: 0px;
         font-size: 1.45em;
         background: none;
-        margin-left: 3.5%;
+        margin-left: 3.1%;
     }
 
     #breadcrumbs.hide {
@@ -417,11 +426,6 @@ a:visited {
         white-space: nowrap;
     }
 
-    #Back,#Next{
-        display: inline;
-        font-size: 1em;
-        padding: 0.5em;
-    }
 }
 
 @media screen and (min-width: 701px) and (max-width: 830px)
@@ -527,12 +531,6 @@ a:visited {
         text-align: center;
         padding: 1em;
         white-space: nowrap;
-    }
-
-    #Back,#Next{
-        display: inline;
-        font-size: 1em;
-        padding: 0.5em;
     }
 }
 
@@ -654,11 +652,5 @@ a:visited {
         text-align: center;
         padding: 1em;
         white-space: nowrap;
-    }
-
-    #Back,#Next{
-        display: inline;
-        font-size: 1em;
-        padding: 0.5em;
     }
 }
