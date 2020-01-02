@@ -152,7 +152,20 @@ html, body {
 }
 
 #content dd {
-    text-indent: 1em;
+    padding-top:0.5em;
+    padding-left: 1em;
+}
+
+.Remove{
+    position: relative;
+    left:80%;
+    width: 2.5em;
+}
+
+.Print{
+    position: relative;
+    left: 81%;
+    width: 2.5em;
 }
 
 #clause {
