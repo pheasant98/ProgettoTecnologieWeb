@@ -210,10 +210,12 @@ a:visited {
 }
 
 #ImgMuseo{
-    width: 100%;
-    padding: 5%;
-    max-height: 30em;
-    max-width: 40em;
+   /* padding: 5%;*/
+    text-align: center;
+ /*   max-height: 30em;
+    max-width: 40em;*/
+    padding-bottom: 1em;
+    padding-top: 1em;
 }
 
 #Map{
@@ -249,6 +251,9 @@ a:visited {
     font-size: small;
     text-align: center;
     padding: 0.5em;
+}
+#ImgOpera{
+    text-align: center;
 }
 @media screen and (max-width:700px) {
 
