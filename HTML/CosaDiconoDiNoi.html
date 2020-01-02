@@ -16,7 +16,7 @@
     <meta content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto" name="author"/>
 
     <link href="../CSS/Style.css" media="screen" rel="stylesheet" type="text/css"/>
-    <link href="" media="print" rel="stylesheet" type="text/css"/>
+    <link href="../CSS/Print.css" media="print" rel="stylesheet" type="text/css"/>
     <link href="" rel="icon"/>
     <script src="../JavaScript/Placeholder.js" type="text/javascript"></script>
 
@@ -105,8 +105,7 @@
 
 <div id="content" role="main">
     <h2>Cosa dicono di noi</h2>
-    <a aria-label="Vai alla pagina dedicata alla scrittura di una recensione" href="" tabindex="13" title="Lascia una recensione">Lascia una recensione</a>
-    <a aria-label="Vai alle recensioni precedenti" href="" tabindex="14" title="Precedenti">Precedenti</a>
+    <a aria-label="Vai alla pagina dedicata alla scrittura di una recensione" href="LasciaUnaRecensione.html" tabindex="13" title="Lascia una recensione">Lascia una recensione</a>
     <div class="review">
         <p class="reviewAuthor">&lt;Utente&gt; &lt;Data&gt;</p>
         <p class="reviewObject">Oggetto BELLO</p>
@@ -122,7 +121,8 @@
         <p class="reviewObject">Oggetto BELLO</p>
         <p class="reviewDescription">Contenuto BELLO</p>
     </div>
-    <a aria-label="Vai alle recensioni successive" href="" tabindex="15" title="Successive">Successive</a>
+    <a id="Back" class="Button" aria-label="Vai alle recensioni precedenti" href="" tabindex="14" title="Precedenti">Precedenti</a>
+    <a id="Next" class="Button" aria-label="Vai alle recensioni successive" href="" tabindex="15" title="Successive">Successive</a>
     <!-- Da vedere bene -->
     <p>
         <a aria-label="Torna su" href="#header" id="ButtonBackUp" tabindex="12" title="Torna su">
