@@ -139,6 +139,14 @@ html, body {
     border-radius: 20px;
 }
 
+.listClass {
+    list-style-type: none;
+    font-size: 1.2em;
+}
+.listClass li{
+    margin-bottom: 0.5em;
+    margin-left: 1em;
+}
 #content dt {
     font-size: 1.4em;
 }
@@ -191,6 +199,14 @@ a:visited {
     padding: 5%;
     max-height: 30em;
     max-width: 40em;
+}
+
+#Map{
+    display: block;
+    height: 12em;
+    width: 80%;
+    margin: 0.5em 10%;
+
 }
 
 #ButtonBackUp {
@@ -612,7 +628,7 @@ a:visited {
     }
 
     .paragraph-content {
-        font-size: 2em;
+        font-size: 1.5em;
     }
 
     #Acquista {
