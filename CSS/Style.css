@@ -196,11 +196,13 @@ html, body {
 .Navigation a{
     display: inline-block;
 }
+
 #FeedBackBox{
     font-size: 1.3em;
     margin: 1em 1em;
     border-style: none;
 }
+
 #textTitle{
     display: block;
     position: relative;
@@ -292,7 +294,7 @@ a:visited {
 }
 
 .ImgValid {
-    display: inline;
+    display: inline-block;
 }
 
 #ImgOpera{
@@ -630,7 +632,7 @@ a:visited {
         bottom: 10em;
         height: 50%;
         display: block;
-        width: 22em;
+        width: 20em;
         margin-top: 0;
     }
 
@@ -644,7 +646,7 @@ a:visited {
     }
 
     #content{
-        margin-left: 25em;
+        margin-left: 23em;
     }
 
     #warning {
