@@ -630,7 +630,7 @@ a:visited {
         bottom: 10em;
         height: 50%;
         display: block;
-        width: 22em;
+        width: 20em;
         margin-top: 0;
     }
 
@@ -644,7 +644,7 @@ a:visited {
     }
 
     #content{
-        margin-left: 25em;
+        margin-left: 23em;
     }
 
     #warning {
