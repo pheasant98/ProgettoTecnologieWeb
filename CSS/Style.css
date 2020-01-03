@@ -148,9 +148,11 @@ html, body {
     margin-left: 0.5em;
     font-size: 1.2em;
 }
+
 .listClass li{
     margin-bottom: 1em;
 }
+
 #content dt {
     font-size: 1.4em;
 }
@@ -186,12 +188,32 @@ html, body {
     margin-top: 1em;
     margin-bottom: 4em;
 }
+
 #Continue{
     font-size: 1.1em;
 }
 
 .Navigation a{
     display: inline-block;
+}
+#FeedBackBox{
+    font-size: 1.3em;
+    margin: 1em 1em;
+    border-style: none;
+}
+#textTitle{
+    display: block;
+    position: relative;
+    left:37%;
+    bottom:2em;
+}
+
+#textArea{
+    display: block;
+    position: relative;
+    width: 60%;
+    left:37%;
+    bottom:2em;
 }
 
 #clause {
