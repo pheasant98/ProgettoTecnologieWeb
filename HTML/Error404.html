@@ -29,9 +29,9 @@
 </div>
 
 <div id="content" role="main">
-    <a href="#searchBox" tabindex="1" class="skip">Salta il testo</a>
+    <a class="skip" href="#searchBox" tabindex="1">Salta il testo</a>
     <h2 class="title-content">Hai proprio l'aria di chi si è perso nei corridoi del museo...</h2>
-    <p id="ImgError404"  class="ImgBackground"title="Cornice vuote di un ritratto" role="img" aria-label="Cornice vuote di un ritratto">Cornice vuota con ritratto</p>
+    <p id="ImgError404" class="ImgBackground"title="Cornice vuote di un ritratto" role="img" aria-label="Cornice vuote di un ritratto">Cornice vuota con ritratto</p>
     <p class="paragraph-content">
         ...vorremmo aiutarti a trovare la strada giusta!
     </p>
@@ -42,34 +42,34 @@
         <li>
             <form id="search" action="" method="post" role="search"> <!-- Nascondi con CSS -->
                 <fieldset id="searchBox">
-                    <select name="filter" id="filter" tabindex="3" aria-label="Seleziona il filtro per la ricerca">
+                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
                         <option selected="selected" value="Opera">Opera</option>
-                        <option value="Evento" tabindex="4">Evento</option>
-                        <option value="Avviso" tabindex="5">Avviso</option>
+                        <option value="Evento">Evento</option>
+                        <option value="Avviso">Avviso</option>
                     </select>
                     <label id="labelS" for="textSearch">Cerca nel sito</label>
-                    <input name="ricerca" id="textSearch" type="text" tabindex="2" role="search"/>
-                    <input name="invio" id="Submit" tabindex="6" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
+                    <input id="textSearch" name="ricerca" type="text" role="search" tabindex="2"/>
+                    <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="6"/>
                 </fieldset>
             </form>
         </li>
        <li>
-            <a id="ToHome" class="Button" tabindex="7" href="Index.html" title="Home" role="button" aria-label="porta alla pagina di home"> <span xml:lang="en"> Home </span></a>
+            <a id="ToHome" class="Button" href="Index.html" title="Home" role="button" aria-label="porta alla pagina di home" tabindex="7" xml:lang="en"> Home </a>
         </li>
     </ul>
-    <a id="ButtonBackUp" tabindex="8" href="#header404" title="Torna su" aria-label="Torna su" >
+    <a id="ButtonBackUp" href="#header404" title="Torna su" aria-label="Torna su" tabindex="8">
         <img alt="Torna su" src="../Images/TornaSu.png"/>
     </a>
 </div>
 
 <div id="footer" aria-label="footer">
-    <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
     <p>
         Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
     </p>
     <p>
         Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
     </p>
+    <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
     <img alt="Simbolo di validazione CSS" src="../Images/vcss-blue.gif"/>
 </div>
 
