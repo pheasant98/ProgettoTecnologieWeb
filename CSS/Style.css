@@ -196,11 +196,13 @@ html, body {
 .Navigation a{
     display: inline-block;
 }
+
 #FeedBackBox{
     font-size: 1.3em;
     margin: 1em 1em;
     border-style: none;
 }
+
 #textTitle{
     display: block;
     position: relative;
