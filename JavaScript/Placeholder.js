@@ -1,8 +1,8 @@
 window.onload = menu;
 function menu()
 {
-    document.getElementById("HamburgerMenu").addEventListener("click",touch);//ascoltatore
-    document.getElementById("UserTools").addEventListener("click", touch2);
+    document.getElementById("HamburgerMenu").addEventListener("focus",touch);//ascoltatore
+    document.getElementById("UserTools").addEventListener("focus", touch2);
     document.getElementById("closeMenu").addEventListener("click", touch);
     document.getElementById("skipMenu").addEventListener("click", touch)
 
