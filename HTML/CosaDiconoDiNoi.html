@@ -58,7 +58,7 @@
                 <option value="Avviso">Avviso</option>
             </select>
             <label id="labelS" for="textSearch">Cerca nel sito</label>
-            <input id="textSearch"name="ricerca" role="search" type="text" tabindex="1"/>
+            <input id="textSearch" name="ricerca" role="search" type="text" tabindex="1"/>
             <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
         </fieldset>
     </form>
@@ -106,27 +106,47 @@
 </div>
 
 <div id="content" role="main">
-    <h2>Cosa dicono di noi</h2>
-    <a href="LasciaUnaRecensione.html" title="Lascia una recensione" aria-label="Vai alla pagina dedicata alla scrittura di una recensione" tabindex="18">Lascia una recensione</a>
-    <div class="review">
-        <p class="reviewAuthor">&lt;Utente&gt; &lt;Data&gt;</p>
-        <p class="reviewObject">Oggetto BELLO</p>
-        <p class="reviewDescription">Contenuto BELLO</p>
-    </div>
-    <div class="review">
-        <p class="reviewAuthor">&lt;Utente&gt; &lt;Data&gt;</p>
-        <p class="reviewObject">Oggetto BELLO</p>
-        <p class="reviewDescription">Contenuto BELLO</p>
-    </div>
-    <div class="review">
-        <p class="reviewAuthor">&lt;Utente&gt; &lt;Data&gt;</p>
-        <p class="reviewObject">Oggetto BELLO</p>
-        <p class="reviewDescription">Contenuto BELLO</p>
-    </div>
+    <h2 class="title-content">Cosa dicono di noi</h2>
+    <p class="paragraph-content">
+        Desideri lasciare una recensione?
+    </p>
+    <a id="reviewButton" class="Button" tabindex="22" href="" title="Pagina di scrittura di una recensione" role="button" aria-label="porta alla pagina di scrittura della recensione">Lascia una recensione</a>
+    <p id="clause">
+        Per lasciare una recensione devi essere registrato.
+    </p>
+    <dl>
+        <dt class="reviewObject">
+            Oggetto BELLO
+        </dt>
+        <dd>
+            <a href="#p3" class="skip" tabindex="21">Salta l'evento</a>
+            <p class="reviewAuthor">&lt;Utente&gt;</p>
+            <p class="reviewData">Data: &lt;Data&gt;</p>
+            <p class="reviewDescription">Contenuto BELLO</p>
+        </dd>
+        <dt class="reviewObject">
+            Oggetto BELLO
+        </dt>
+        <dd>
+            <a href="#p3" class="skip" tabindex="21">Salta l'evento</a>
+            <p class="reviewAuthor">&lt;Utente&gt;</p>
+            <p class="reviewData">Data: &lt;Data&gt;</p>
+            <p class="reviewDescription">Contenuto BELLO</p>
+        </dd>
+        <dt class="reviewObject">
+            Oggetto BELLO
+        </dt>
+        <dd>
+            <a href="#p3" class="skip" tabindex="21">Salta l'evento</a>
+            <p class="reviewAuthor">&lt;Utente&gt;</p>
+            <p class="reviewData">Data: &lt;Data&gt;</p>
+            <p class="reviewDescription">Contenuto BELLO</p>
+        </dd>
+    </dl>
 
     <p class="Navigation">
-    <a id="Back" class="Button" href="" title="Precedenti" aria-label="Vai alle recensioni precedenti" tabindex="19">&lt; Precedenti</a>
-    <a id="Next" class="Button" href="" title="Successive" aria-label="Vai alle recensioni successive" tabindex="20">Successive &gt;</a>
+    <a id="Back" class="Button" href="" title="Precedente" aria-label="Vai alle recensioni precedenti" tabindex="19">&lt; Precedente</a>
+    <a id="Next" class="Button" href="" title="Successivo" aria-label="Vai alle recensioni successive" tabindex="20">Successivo &gt;</a>
     <!-- Da vedere bene -->
     <a id="ButtonBackUp" href="#header" title="Torna su" aria-label="Torna su" tabindex="21">
         <img alt="Torna su" src="../Images/TornaSu.png"/>

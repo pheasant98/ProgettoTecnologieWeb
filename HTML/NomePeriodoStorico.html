@@ -109,7 +109,7 @@
 </div>
 
 <div id="content" role="main">
-    <h2>Nome Periodo</h2>
+    <h2 class="title-content">Nome Periodo</h2>
     <h3>Descrizione completa</h3>
     <p>
         Descrizione
@@ -117,35 +117,35 @@
 
     <form id="operaFilter" action="" method="post"><!-- Nascondi con CSS -->
         <fieldset id="filterBox">
-            <input type="button" name="filter" id="filterButton" value="Filtra" tabindex="14"/>
             <select name="filterType" id="filterType" tabindex="14" aria-label="filtro per il tipo di opera">
                 <option value="Tipo1" selected="selected"> Tipo1 </option>
                 <option value="Tipo2"> Tipo 2 </option>
             </select>
+            <input type="button" name="filter" id="filterButton" value="Filtra" tabindex="14"/>
         </fieldset>
     </form>
 
     <h3>Elenco</h3>
-    <dl>
+    <dl class="clickableDl">
         <dt>
-            Nome prima opera
+            <a href="OperaSingola.html" tabindex="">Nome prima opera</a>
         </dt>
         <dd>
             <p>
                 nome autore: nome
             </p>
             <p>
-                tecnica:tecnica
+                tecnica: tecnica
             </p>
             <p>
-                data:data
+                data: data
             </p>
             <p>
-                foto:foto
+                foto: foto
             </p>
         </dd>
         <dt>
-            Nome seconda opera
+            <a href="OperaSingola.html" tabindex="">Nome seconda opera</a>
         </dt>
         <dd>
             <p>
@@ -163,10 +163,10 @@
         </dd>
     </dl>
 
-    <p>
-        <a id="Back" class="Button" tabindex="15" href="" title="Torna indietro" role="button" aria-label="Torna alla pagina dell'evento precedente"> &lt;&lt;
+    <p class="Navigation">
+        <a id="Back" class="Button" tabindex="15" href="" title="Torna indietro" role="button" aria-label="Torna alla pagina dell'evento precedente"> &lt; Precedente
         </a>
-        <a id="Next" class="Button" tabindex="16" href="" title="Vai avanti" role="button" aria-label="Vai alla pagina dell'evento succesivo"> &gt;&gt;
+        <a id="Next" class="Button" tabindex="16" href="" title="Vai avanti" role="button" aria-label="Vai alla pagina dell'evento succesivo"> Successivo &gt;
         </a>
     </p>
     <p>
