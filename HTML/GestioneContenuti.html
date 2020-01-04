@@ -58,7 +58,7 @@
                 <option value="Avviso">Avviso</option>
             </select>
             <label id="labelS" for="textSearch">Cerca nel sito</label>
-            <input id="textSearch"name="ricerca" role="search" type="text" tabindex="1"/>
+            <input id="textSearch" name="ricerca" role="search" type="text" tabindex="1"/>
             <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
         </fieldset>
     </form>
@@ -138,23 +138,28 @@
         Sono stati trovati # risultati:
     </p>
 
-    <ul id="Pages">
-        <li>Pagina 1
+    <ul class="listClass">
+        <li>
+            <a href="" tabindex="">Pagina 1</a>
             <img alt="Rimuovi contenuto" class="Remove" src="../Images/X.png"/>
             <img alt="Modifica dettagli contenuto" class="Modify" src="../Images/Visualizza.png"/>
         </li>
-        <li>Pagina 2
+        <li>
+            <a href="" tabindex="">Pagina 2</a>
             <img alt="Rimuovi contenuto" class="Remove" src="../Images/X.png"/>
             <img alt="Modifica dettagli contenuto" class="Modify" src="../Images/Visualizza.png"/>
         </li>
-        <li>Pagina 3
+        <li>
+            <a href="" tabindex="">Pagina 3</a>
             <img alt="Rimuovi contenuto" class="Remove" src="../Images/X.png"/>
             <img alt="Modifica dettagli contenuto" class="Modify" src="../Images/Visualizza.png"/>
         </li>
     </ul>
 
-    <a id="Back" class="Button" href="" title="Precedenti" role="button" aria-label="Vai ai contenuti precedenti" tabindex="24">Precedenti</a>
-    <a id="Next" class="Button" href="" title="Successivi" role="button" aria-label="Vai ai contenuti successivi" tabindex="25">Successivi</a>
+    <p class="Navigation">
+        <a id="Back" class="Button" href="" title="Precedenti" role="button" aria-label="Vai ai contenuti precedenti" tabindex="24">&lt; Precedente</a>
+        <a id="Next" class="Button" href="" title="Successivi" role="button" aria-label="Vai ai contenuti successivi" tabindex="25">Successivo &gt;</a>
+    </p>
 
     <a aria-label="Torna su" href="#header" id="ButtonBackUp" tabindex="26" title="Torna su">
         <img alt="Torna su" src="../Images/TornaSu.png"/>
