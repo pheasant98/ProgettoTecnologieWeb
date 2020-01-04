@@ -55,11 +55,6 @@ html, body {
     border-radius: 20px;
 }
 
-#Avvisi dd, #Eventi dd {
-    list-style-type: none;
-    padding: 0.8em;
-}
-
 #ImgError404 {
     float: right;
     background-image: url('../images/EmptyPortrait.png');
@@ -81,6 +76,7 @@ html, body {
     border: 1px solid #000000;
     box-shadow: 0px 0px 2px 0px rgba(0,0,0,1), 0px 2px 3px rgba(0,0,0,1);
 }
+
 .Button:hover{
     font-weight: bold;
 }
@@ -154,13 +150,21 @@ html, body {
 }
 
 #content dt {
-    font-size: 1.4em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    font-size: 1.3em;
 }
 
 #content dd {
-    padding-top:0.5em;
     padding-left: 1em;
-    font-size: 1.2em;
+    font-size: 1.1em;
+    padding-top: 0.2em;
+    padding-bottom: 0.5em;
+}
+
+.clickableDl dt:hover, .listClass dl:hover {
+    background-color: #EEEEEE;
+    border-radius: 20px;
 }
 
 .UserButton{
@@ -189,11 +193,11 @@ html, body {
     margin-bottom: 4em;
 }
 
-#Continue{
+#Continue {
     font-size: 1.1em;
 }
 
-.Navigation a{
+.Navigation a {
     display: inline-block;
 }
 
@@ -203,14 +207,14 @@ html, body {
     border-style: none;
 }
 
-#textTitle{
+#textTitle {
     display: block;
     position: relative;
     left:37%;
     bottom:2em;
 }
 
-#textArea{
+#textArea {
     display: block;
     position: relative;
     width: 60%;
@@ -219,7 +223,9 @@ html, body {
 }
 
 #clause {
+    clear: right;
     font-size: 0.5em;
+    padding-bottom: 1em;
 }
 
 .skip {
@@ -252,10 +258,6 @@ a:visited {
     padding: 0.3em;
 }
 
-#Avvisi dt:hover, #Eventi dt:hover {
-    background-color: #EEEEEE;
-    border-radius: 20px;
-}
 
 #ImgMuseo{
    /* padding: 5%;*/
@@ -299,6 +301,12 @@ a:visited {
 
 #ImgOpera{
     text-align: center;
+}
+
+
+#reviewButton, #buyButton {
+    float: right;
+    font-size: 0.8em;
 }
 
 
@@ -448,12 +456,6 @@ a:visited {
         font-size: 2em;
     }
 
-    #Acquista {
-        float: right;
-        font-size: 1em;
-        padding: 0.5em;
-    }
-
   /*  #paragraphButton{
         text-align: center;
         padding: 1em;
@@ -550,12 +552,6 @@ a:visited {
 
     .paragraph-content {
         font-size: 2em;
-    }
-
-    #Acquista {
-        float: right;
-        font-size: 1em;
-        padding: 0.5em;
     }
 }
 
@@ -664,11 +660,5 @@ a:visited {
 
     .paragraph-content {
         font-size: 1.5em;
-    }
-
-    #Acquista {
-        float: right;
-        font-size: 1em;
-        padding: 0.5em;
     }
 }
