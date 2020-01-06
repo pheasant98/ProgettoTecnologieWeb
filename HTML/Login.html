@@ -26,24 +26,22 @@
 
 <div id="header" role="banner">
 
-    <h1 aria-label="Immagine del logo Museo arte nel tempo" id="logoImg" class="ImgBackground" role="img" title="Immagine del logo Museo arte nel tempo">
-        Museo Arte nel Tempo
-    </h1>
+    <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
     <!-- Utilizzare il css per inserire il logo -->
-    <span aria-label="Menu a hambuger, cliccaci sopra per aprire il menu" id="HamburgerMenu" class="ImgBackground" role="img" tabindex="5" title="Menu a hambuger, cliccaci sopra per aprire il menu">
+    <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="4">
         Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
     </span>
 
     <form id="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
         <fieldset id="searchBox">
-            <select name="filter" id="filter" tabindex="2" aria-label="Seleziona il filtro per la ricerca">
+            <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
                 <option selected="selected" value="Opera">Opera</option>
                 <option value="Evento">Evento</option>
                 <option value="Avviso">Avviso</option>
             </select>
             <label id="labelS" for="textSearch">Cerca nel sito</label>
-            <input name="ricerca" id="textSearch" type="text" tabindex="1" role="search"/>
-            <input name="invio" id="Submit" tabindex="3" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
+            <input id="textSearch" name="ricerca" role="search" type="text" tabindex="1"/>
+            <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
         </fieldset>
     </form>
 </div>
@@ -53,7 +51,7 @@
         Ti trovi in:
     </p>
     <span id="path">
-        <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
+        <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="5" xml:lang="en">Home</a>
         &gt;&gt;
         <span id="pathSelected" xml:lang="en">Login</span>
     </span>
@@ -62,27 +60,32 @@
 <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
     <ul>
         <li>
-            <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu"></span>
-            <a id="skipMenu" href="#content" class="skip" tabindex="6">Vai al contenuto</a>
+            <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="14"></span>
+            <a id="skipMenu" class="skip" href="#content" tabindex="6">Vai al contenuto</a>
         </li>
         <li>
-            <a href="Index.html" tabindex="7" title="Home" aria-label="Vai alla pagina homepage del museo"><span xml:lang="en">Home</span></a>
+            <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="7" xml:lang="en">Home</a>
         </li>
         <li>
-            <a href="Opere.html" tabindex="8" title="Opere" aria-label="Vai alla pagina delle opere">Opere</a>
+            <a href="Opere.html" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="8">Opere</a>
         </li>
         <li>
-            <a href="Eventi.html" tabindex="9" title="Eventi" aria-label="Vai alla pagina degli eventi">Eventi</a>
+            <a href="Eventi.html" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="9">Eventi</a>
         </li>
         <li>
-            <a href="OpzioniAcquisto.html" tabindex="10" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti">Opzioni
+            <a href="OpzioniAcquisto.html" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti" tabindex="10">Opzioni
                 d'acquisto</a>
         </li>
-        <li><a href="Avvisi.html" tabindex="11" title="Avvisi" aria-label="Vai alla pagina degli avvisi">Avvisi</a></li>
-        <li><a href="CosaDiconoDiNoi.html" tabindex="12" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni">Cosa
+        <li>
+            <a href="Avvisi.html" title="Avvisi" aria-label="Vai alla pagina degli avvisi" tabindex="11">Avvisi</a>
+        </li>
+        <li>
+            <a href="CosaDiconoDiNoi.html" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni" tabindex="12">Cosa
             dicono di noi</a>
         </li>
-        <li><a href="Contatti.html" tabindex="13" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti">Contatti</a></li>
+        <li>
+            <a href="Contatti.html" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti" tabindex="13">Contatti</a>
+        </li>
     </ul>
 </div>
 
@@ -90,26 +93,22 @@
     <h2 class="title-content">
         Login
     </h2>
-    <form action="" aria-label="form per effettuare il login" id="loginForm" method="post" role="form">
+    <form id="loginForm" action="" method="post" role="form" aria-label="form per effettuare il login">
         <fieldset id="loginFieldSet">
-            <label for="username" id="usernameLabel" xml:lang="en">Username</label>
-            <input id="username" name="username" tabindex="14" type="text"/>
-            <label for="password" id="passwordLabel" xml:lang="en">Password</label>
-            <input id="password" name="password" tabindex="15" type="text"/>
-            <input aria-label="Pulsante per la ricerca" id="ButtonAccedi" name="accedi" tabindex="15" type="submit" value="Accedi"/>
+            <label id="usernameLabel" for="username" xml:lang="en">Username</label>
+            <input id="username" name="username" type="text" tabindex="15"/>
+            <label id="passwordLabel" for="password" xml:lang="en">Password</label>
+            <input id="password" name="password" type="text" tabindex="16"/>
+            <input id="ButtonAccedi" name="accedi" value="Accedi" type="submit" aria-label="Pulsante per la ricerca" tabindex="17"/>
         </fieldset>
     </form>
     <p>
         Non hai ancora un <span xml:lang="en">account</span>?
-        <a aria-label="porta alla pagina di registrazione" href="" role="link" tabindex="17" title="Registrati">Registrati</a>!
+        <a aria-label="porta alla pagina di registrazione" href="" role="link" tabindex="18" title="Registrati">Registrati</a>!
     </p>
-
-    <!-- Da vedere bene -->
-    <p>
-        <a aria-label="Torna su" href="#header" id="ButtonBackUp" tabindex="18" title="Torna su">
-            <img alt="Torna su" src="../Images/TornaSu.png"/>
-        </a>
-    </p>
+    <a aria-label="Torna su" href="#header" id="ButtonBackUp" tabindex="19" title="Torna su">
+        <img alt="Torna su" src="../Images/TornaSu.png"/>
+    </a>
 </div>
 
 <div aria-label="footer" id="footer">

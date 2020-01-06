@@ -26,36 +26,40 @@
 
 <div id="header" role="banner">
 
-    <h1 aria-label="Immagine del logo Museo arte nel tempo" id="logoImg" class="ImgBackground" role="img" title="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
+    <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
     <!-- Utilizzare il css per inserire il logo -->
-    <span aria-label="Menu a hambuger, cliccaci sopra per aprire il menu" id="HamburgerMenu" class="ImgBackground" role="img" tabindex="5" title="Menu a hambuger, cliccaci sopra per aprire il menu">
+    <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
         Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
     </span>
-    <div id="UserTools" class="ImgBackground" title="area dedicata alla registrazione, login e logout" aria-label="area dedicata alla registrazione, login e logout" tabindex="4">
+    <div id="LoginMenu">
+        <a id="logIn" class="Button" href="Login.html" title="LogIn" role="button" aria-label="vai alla pagina di login" tabindex="4" xml:lang="en">
+            LogIn
+        </a>
+    </div>
+    <div id="UserTools" class="ImgBackground" title="area dedicata alla registrazione, login e logout" aria-label="area dedicata alla registrazione, login e logout" tabindex="5">
         <ul id="UserMenu">
             <li>
-                <a id="profile" class="Button" href="AreaUtente.html" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente">
+                <a id="profile" class="Button" href="AreaUtente.html" title="Area utente" role="button" aria-label="vai alla pagina del profilo utente" tabindex="6">
                     Area utente
                 </a>
             </li>
             <li>
-                <a id="logOut" class="Button" href="Index.html" title="LogOut" role="button" aria-label="esci dal tuo profilo" xml:lang="en">
+                <a id="logOut" class="Button" href="Index.html" title="LogOut" role="button" aria-label="esci dal tuo profilo" tabindex="7" xml:lang="en">
                     LogOut
                 </a>
             </li>
         </ul>
     </div>
-
     <form id="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
         <fieldset id="searchBox">
-            <select name="filter" id="filter" tabindex="2" aria-label="Seleziona il filtro per la ricerca">
+            <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
                 <option selected="selected" value="Opera">Opera</option>
                 <option value="Evento">Evento</option>
                 <option value="Avviso">Avviso</option>
             </select>
             <label id="labelS" for="textSearch">Cerca nel sito</label>
-            <input name="ricerca" id="textSearch" type="text" tabindex="1" role="search"/>
-            <input name="invio" id="Submit" tabindex="3" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
+            <input id="textSearch" name="ricerca" role="search" type="text" tabindex="1"/>
+            <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
         </fieldset>
     </form>
 </div>
@@ -65,9 +69,9 @@
         Ti trovi in:
     </p>
     <span id="path">
-        <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
+        <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en" tabindex="9">Home</a>
         &gt;&gt;
-        <a href="AreaAdmin.html" title="Area Admin" aria-label="Vai alla pagina area admin" xml:lang="en">Area admin</a>
+        <a href="AreaAdmin.html" title="Area Admin" aria-label="Vai alla pagina area admin" tabindex="10">Area <span xml:lang="en">admin</span></a>
         &gt;&gt;
         <span id="pathSelected">Inserisci pagina</span>
     </span>
@@ -76,27 +80,32 @@
 <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
     <ul>
         <li>
-            <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu"></span>
-            <a id="skipMenu" href="#content" class="skip" tabindex="6">Vai al contenuto</a>
+            <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="19"></span>
+            <a id="skipMenu" href="#content" class="skip" tabindex="11">Vai al contenuto</a>
         </li>
         <li>
-            <a href="Index.html" tabindex="7" title="Home" aria-label="Vai alla pagina homepage del museo"><span xml:lang="en">Home</span></a>
+            <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="12" xml:lang="en">Home</a>
         </li>
         <li>
-            <a href="Opere.html" tabindex="8" title="Opere" aria-label="Vai alla pagina delle opere">Opere</a>
+            <a href="Opere.html" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="13">Opere</a>
         </li>
         <li>
-            <a href="Eventi.html" tabindex="9" title="Eventi" aria-label="Vai alla pagina degli eventi">Eventi</a>
+            <a href="Eventi.html" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="14">Eventi</a>
         </li>
         <li>
-            <a href="OpzioniAcquisto.html" tabindex="10" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti">Opzioni
+            <a href="OpzioniAcquisto.html" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti" tabindex="15">Opzioni
                 d'acquisto</a>
         </li>
-        <li><a href="Avvisi.html" tabindex="11" title="Avvisi" aria-label="Vai alla pagina degli avvisi">Avvisi</a></li>
-        <li><a href="CosaDiconoDiNoi.html" tabindex="12" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni">Cosa
+        <li>
+            <a href="Avvisi.html" title="Avvisi" aria-label="Vai alla pagina degli avvisi" tabindex="16">Avvisi</a>
+        </li>
+        <li>
+            <a href="CosaDiconoDiNoi.html" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni" tabindex="17">Cosa
             dicono di noi</a>
         </li>
-        <li><a href="Contatti.html" tabindex="13" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti">Contatti</a></li>
+        <li>
+            <a href="Contatti.html" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti" tabindex="18">Contatti</a>
+        </li>
     </ul>
 </div>
 
@@ -105,98 +114,96 @@
     <h2 class="H2Home">Inserimento</h2>
     <form id="Insert" action="" method="post"><!-- Nascondi con CSS -->
         <fieldset id="InsertBox">
-            <select name="filterType" id="filterType" tabindex="13" aria-label="Seleziona tipologia di pagina da creare">
+            <select name="filterType" id="filterType" aria-label="Seleziona tipologia di pagina da creare" tabindex="20">
                 <option selected="selected" value="Opera">Opera</option>
                 <option value="Evento">Evento</option>
                 <option value="Avviso">Avviso</option>
             </select>
-            <select name="filterOpera" id="filterOpera" tabindex="14" aria-label="Seleziona stile dell'opera">
+            <select name="filterOpera" id="filterOpera" aria-label="Seleziona stile dell'opera" tabindex="21">
                 <option selected="selected" value="Pittura">Pittura</option>
                 <option value="Scultura">Scultura</option>
             </select>
-            <select name="filterHistory" id="filterHistory" tabindex="15" aria-label="Seleziona il periodo storico dell'opera">
+            <select name="filterHistory" id="filterHistory" aria-label="Seleziona il periodo storico dell'opera" tabindex="22">
                 <option selected="selected" value="Quattrocento">Quattrocento</option>
                 <option value="Cinquecento">Cinquecento</option>
                 <option value="Seicento">Seicento</option>
                 <option value="Settecento">Settecento</option>
             </select>
-            <select name="filterEventType" id="filterEventType" tabindex="16" aria-label="Seleziona tipologia di evento">
+            <select name="filterEventType" id="filterEventType" aria-label="Seleziona tipologia di evento" tabindex="23">
                 <option selected="selected" value="Mostra">Mostra</option>
                 <option value="Conferenza">Conferenza</option>
             </select>
 
             <!--Opera-->
             <label id="labelAuthor" for="textAuthor">Autore</label>
-            <input name="textAuthor" id="textAuthor" type="text" tabindex="17"/>
+            <input id="textAuthor" name="textAuthor" type="text" tabindex="24"/>
 
             <label id="labelTitle" for="textTitle">Titolo</label>
-            <input name="textTitle" id="textTitle" type="text" tabindex="18"/>
+            <input id="textTitle" name="textTitle" type="text" tabindex="25"/>
 
             <label id="labelAreaDescr" for="AreaDescr">Descrizione</label>
-            <textarea id="AreaDescr" name="AreaDescr" rows="20px" cols="20px"> Scrivi qui la descrizione!</textarea>
+            <textarea id="AreaDescr" name="AreaDescr" rows="20px" cols="20px" tabindex="25"> Scrivi qui la descrizione!</textarea>
 
             <label id="labelYear" for="textYear">Anno</label>
-            <input name="textYear" id="textYear" type="text" tabindex="19"/>
+            <input id="textYear" name="textYear" type="text" tabindex="26"/>
 
             <label id="labelTechnique" for="textTechnique">Tecnica</label>
-            <input name="textTechnique" id="textTechnique" type="text" tabindex="20"/>
+            <input id="textTechnique" name="textTechnique" type="text" tabindex="27"/>
 
             <label id="labelMaterial" for="textMaterial">Materiale</label>
-            <input name="textMaterial" id="textMaterial" type="text" tabindex="21"/>
+            <input id="textMaterial" name="textMaterial" type="text" tabindex="28"/>
 
             <label id="labelSize" for="textSize">Dimensione</label>
-            <input name="textSize" id="textSize" type="text" tabindex="22"/>
+            <input id="textSize" name="textSize" type="text" tabindex="29"/>
 
             <label id="labelLoanYes" for="textLoanYes">Sì</label>
-            <input name="textLoan" id="textLoanYes" value="Si" type="radio" tabindex="23"/>
+            <input id="textLoanYes" name="textLoan" value="Si" type="radio" tabindex="30"/>
 
             <label id="labelLoanNo" for="textLoanNo">No</label>
-            <input name="textLoan" id="textLoanNo" value="No" type="radio" tabindex="24"/>
+            <input id="textLoanNo" name="textLoan" value="No" type="radio" tabindex="31"/>
 
             <!--Eventi-->
 
-            <label id="labelBegin" for="textBegin">Inzio</label>
-            <input name="textBegin" id="textBegin" type="text" tabindex="25"/>
+            <label id="labelBegin" for="textBegin">Inizio</label>
+            <input id="textBegin" name="textBegin" type="text" tabindex="32"/>
 
             <label id="labelEnd" for="textEnd">Fine</label>
-            <input name="textEnd" id="textEnd" type="text" tabindex="26"/>
+            <input id="textEnd" name="textEnd" type="text" tabindex="33"/>
 
             <label id="labelManager" for="textManager">Organizzatore</label>
-            <input name="textManager" id="textManager" type="text" tabindex="27"/>
+            <input id="textManager" name="textManager" type="text" tabindex="34"/>
 
             <!--Avvisi-->
 
             <label id="labelObject" for="textObject">Oggetto</label>
-            <input name="textObject" id="textObject" type="text" tabindex="28"/>
+            <input id="textObject" name="textObject" type="text" tabindex="35"/>
 
             <label id="labelRelease" for="textRelease">Rilascio</label>
-            <input name="textRelease" id="textRelease" type="text" tabindex="29"/>
+            <input id="textRelease" name="textRelease" type="text" tabindex="36"/>
 
             <label id="labelDeadline" for="textDeadline">Oggetto</label>
-            <input name="textDeadline" id="textDeadline" type="text" tabindex="30"/>
+            <input id="textDeadline" name="textDeadline" type="text" tabindex="37"/>
 
             <label id="labelImg" for="textImg">Inserisci Immagine</label>
-            <input name="textImg" id="textImg" type="file" tabindex="31"/>
+            <input id="textImg" name="textImg" type="file" tabindex="38"/>
 
-            <input name="InsertB" id="InsertB" tabindex="32" type="submit" value="Inserisci" aria-label="Pulsante per la ricerca"/>
+            <input id="InsertB" name="InsertB" type="submit" value="Inserisci" aria-label="Pulsante per la ricerca" tabindex="39"/>
 
         </fieldset>
     </form>
-    <p>
-        <a id="ButtonBackUp" tabindex="33" href="#header" title="Torna su" aria-label="Torna su" >
-            <img alt="Torna su" src="../Images/TornaSu.png"/>
-        </a>
-    </p>
+    <a id="ButtonBackUp" href="#header" title="Torna su" aria-label="Torna su" tabindex="40">
+        <img alt="Torna su" src="../Images/TornaSu.png"/>
+    </a>
 </div>
 
 <div aria-label="footer" id="footer">
-    <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
     <p>
         Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
     </p>
     <p>
         Studenti: Fiammetta Cannavò;, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
     </p>
+    <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
     <img alt="Simbolo di validazione CSS" src="../Images/vcss-blue.gif"/>
 </div>
 

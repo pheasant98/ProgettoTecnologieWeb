@@ -28,18 +28,23 @@
 
     <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
     <!-- Utilizzare il css per inserire il logo -->
-    <span id="HamburgerMenu" class="ImgBackground" title="Menu a hambuger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu a hambuger, cliccaci sopra per aprire il menu" tabindex="10">
+    <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
         Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
     </span>
-    <div id="UserTools" class="ImgBackground" title="area dedicata alla registrazione, login e logout" aria-label="area dedicata alla registrazione, login e logout" tabindex="4">
+    <div id="LoginMenu">
+        <a id="logIn" class="Button" href="Login.html" title="LogIn" role="button" aria-label="vai alla pagina di login" tabindex="4" xml:lang="en">
+            LogIn
+        </a>
+    </div>
+    <div id="UserTools" class="ImgBackground" title="area dedicata alla registrazione, login e logout" aria-label="area dedicata alla registrazione, login e logout" tabindex="5">
         <ul id="UserMenu">
             <li>
-                <a id="profile" class="Button" href="AreaUtente.html" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente">
+                <a id="profile" class="Button" href="AreaUtente.html" title="Area utente" role="button" aria-label="vai alla pagina del profilo utente" tabindex="6">
                     Area utente
                 </a>
             </li>
             <li>
-                <a id="logOut" class="Button" href="Index.html" title="LogOut" role="button" aria-label="esci dal tuo profilo" xml:lang="en">
+                <a id="logOut" class="Button" href="Index.html" title="LogOut" role="button" aria-label="esci dal tuo profilo" tabindex="7" xml:lang="en">
                     LogOut
                 </a>
             </li>
@@ -47,14 +52,14 @@
     </div>
     <form id="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
         <fieldset id="searchBox">
-            <select name="filter" id="filter" tabindex="2" aria-label="Seleziona il filtro per la ricerca">
-                <option selected="selected" value="Opera" tabindex="3">Opera</option>
-                <option value="Evento" tabindex="4">Evento</option>
-                <option value="Avviso" tabindex="5">Avviso</option>
+            <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
+                <option selected="selected" value="Opera">Opera</option>
+                <option value="Evento">Evento</option>
+                <option value="Avviso">Avviso</option>
             </select>
             <label id="labelS" for="textSearch">Cerca nel sito</label>
-            <input name="ricerca" id="textSearch" type="text" tabindex="1" role="search"/>
-            <input name="invio" id="Submit" tabindex="6" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
+            <input id="textSearch" name="ricerca" role="search" type="text" tabindex="1"/>
+            <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
         </fieldset>
     </form>
 </div>
@@ -63,37 +68,41 @@
     <p>
         Ti trovi in:
     </p>
-    <span id="pathSelected"><a href="Index.html" tabindex="18">Home</a> &gt;&gt; <a href="AreaAdmin.html" tabindex="18">Area Personale</a> &gt;&gt; Modifica</span>
+    <span id="path">
+        <a href="Index.html" tabindex="9">Home</a> &gt;&gt;
+        <a href="AreaAdmin.html" tabindex="10">Area Personale</a> &gt;&gt;
+        <span id="pathSelected">Modifica</span>
+    </span>
 </div>   <!-- Da rivedere come farlo -->
 
 <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
     <ul>
         <li>
-            <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu"></span>
-            <a id="skipMenu" href="#content" class="skip" tabindex="6">Vai al contenuto</a>
+            <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="18"></span>
+            <a id="skipMenu" class="skip" href="#content" tabindex="11">Vai al contenuto</a>
         </li>
         <li>
             <span xml:lang="en">Home</span>
         </li>
         <li>
-            <a href="Opere.html" tabindex="12" title="Opere" aria-label="Vai alla pagina delle opere">Opere</a>
+            <a href="Opere.html" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="12">Opere</a>
         </li>
         <li>
-            <a href="Eventi.html" tabindex="13" title="Eventi" aria-label="Vai alla pagina degli eventi">Eventi</a>
+            <a href="Eventi.html" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="13">Eventi</a>
         </li>
         <li>
-            <a href="OpzioniAcquisto.html" tabindex="14" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti">Opzioni
+            <a href="OpzioniAcquisto.html" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti" tabindex="14">Opzioni
                 d'acquisto</a>
         </li>
         <li>
-            <a href="Avvisi.html" tabindex="15" title="Avvisi" aria-label="Vai alla pagina degli avvisi">Avvisi</a>
+            <a href="Avvisi.html" title="Avvisi" aria-label="Vai alla pagina degli avvisi" tabindex="15">Avvisi</a>
         </li>
         <li>
-            <a href="CosaDiconoDiNoi.html" tabindex="16" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni">Cosa
+            <a href="CosaDiconoDiNoi.html" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni" tabindex="16">Cosa
                 dicono di noi</a>
         </li>
         <li>
-            <a href="Contatti.html" tabindex="17" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti">Contatti</a>
+            <a href="Contatti.html" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti" tabindex="17">Contatti</a>
         </li>
     </ul>
 </div>
@@ -108,121 +117,148 @@
 
             <fieldset id="BoxModificaAvviso">
                 <label id="labelDataAvviso" for="DataAvviso">Data: </label>
-                <input name="DataAvviso" id="DataAvviso" type="text" tabindex="20" aria-label="Modifica la data dell'avviso" aria-required="true"/><br/>
-                <p><a href="#InvioModifiche" tabindex="21" class="skip">Vai alla conferma delle modifiche</a></p>
+                <input id="DataAvviso" name="DataAvviso" type="text"aria-label="Modifica la data dell'avviso" aria-required="true" tabindex="20"/>
+                <p>
+                    <a class="skip" href="#InvioModifiche" tabindex="21">Vai alla conferma delle modifiche</a>
+                </p>
 
                 <label id="labelOggetto" for="Oggetto">Oggetto: </label>
-                <input name="Oggetto" id="Oggetto" type="text" tabindex="22" aria-label="Modifica l'oggetto dell'avviso" aria-required="true"/><br/>
-                <p><a href="#InvioModifiche" tabindex="23" class="skip">Vai alla conferma delle modifiche</a></p>
+                <input id="Oggetto" name="Oggetto" type="text" aria-label="Modifica l'oggetto dell'avviso" aria-required="true" tabindex="22"/>
+                <p>
+                    <a class="skip" href="#InvioModifiche" tabindex="23">Vai alla conferma delle modifiche</a>
+                </p>
 
                 <label id="labelDescrAvviso" for="AreaDescrAvviso">Descrizione: </label>
-                <textarea id="AreaDescrAvviso" name="AreaDescrAvviso" rows="10" cols="70" tabindex="24" aria-label="Modifica la descrizione dell'avviso" aria-required="true">
+                <textarea id="AreaDescrAvviso" name="AreaDescrAvviso" rows="10" cols="70" aria-label="Modifica la descrizione dell'avviso" aria-required="true" tabindex="24">
                     Inserire la descrizione dell'avviso
-                </textarea><br/>
+                </textarea>
             </fieldset>
 
             <fieldset id="BoxModificaEvento">
                 <label id="labelTipoEvento" for="TipoEvento">Tipologia: </label>
-                <select name="TIpoEvento" id="TIpoEvento" tabindex="25" aria-label="Modifica la tipologia di evento" aria-required="true">
-                    <option value="Mostra" tabindex="26">Mostra</option>
-                    <option selected="selected" value="Conferenza" tabindex="27">Conferenza</option>
-                </select><br/>
-                <p><a href="#InvioModifiche" tabindex="28" class="skip">Vai alla conferma delle modifiche</a></p>
+                <select id="TIpoEvento" name="TIpoEvento" aria-label="Modifica la tipologia di evento" aria-required="true" tabindex="25">
+                    <option value="Mostra">Mostra</option>
+                    <option selected="selected" value="Conferenza">Conferenza</option>
+                </select>
+                <p>
+                    <a class="skip" href="#InvioModifiche" tabindex="26">Vai alla conferma delle modifiche</a>
+                </p>
 
                 <label id="labelDataEvento" for="DataEvento">Data: </label>
-                <input name="DataEvento" id="DataEvento" type="text" tabindex="29" aria-label="Modifica la data dell'evento" aria-required="true"/><br/>
-                <p><a href="#InvioModifiche" tabindex="30" class="skip">Vai alla conferma delle modifiche</a></p>
+                <input id="DataEvento" name="DataEvento" type="text" aria-label="Modifica la data dell'evento" aria-required="true" tabindex="27"/>
+                <p>
+                    <a class="skip" href="#InvioModifiche" tabindex="28">Vai alla conferma delle modifiche</a>
+                </p>
 
                 <label id="labelTitoloEvento" for="TitoloEvento">Titolo: </label>
-                <input name="TitoloEvento" id="TitoloEvento" type="text" tabindex="31" aria-label="Modifica il titolo delle'evento" aria-required="true"/><br/>
-                <p><a href="#InvioModifiche" tabindex="32" class="skip">Vai alla conferma delle modifiche</a></p>
+                <input id="TitoloEvento" name="TitoloEvento" type="text" aria-label="Modifica il titolo delle'evento" aria-required="true" tabindex="29"/>
+                <p>
+                    <a class="skip" href="#InvioModifiche" tabindex="30">Vai alla conferma delle modifiche</a>
+                </p>
 
                 <label id="labelDescrEvento" for="AreaDescrEvento">Descrizione: </label>
-                <textarea id="AreaDescrEvento" name="AreaDescrEvento" rows="15" cols="70" tabindex="33" aria-label="Modifica la descrizione dell'evento" aria-required="true">
+                <textarea id="AreaDescrEvento" name="AreaDescrEvento" rows="15" cols="70" aria-label="Modifica la descrizione dell'evento" aria-required="true" tabindex="31">
                     Inserire la descrizione dell'evento
-                </textarea><br/>
+                </textarea>
             </fieldset>
 
             <fieldset id="BoxModificaOpera">
                 <label id="labelIDOpera" for="IDOpera">ID: </label>
-                <input name="IDOpera" id="IDOpera" type="hidden" tabindex="34" aria-required="true"/><br/>
+                <input id="IDOpera" name="IDOpera" type="hidden" aria-required="true" tabindex="32"/>
 
                 <label id="labelAutore" for="Autore">Autore: </label>
-                <input name="Autore" id="Autore" type="text" tabindex="35" aria-label="Modifica l'autore dell'opera" aria-required="true"/><br/>
-               <p><a href="#InvioModifiche" tabindex="36" class="skip">Vai alla conferma delle modifiche</a></p>
+                <input id="Autore" name="Autore" type="text" aria-label="Modifica l'autore dell'opera" aria-required="true" tabindex="33"/>
+               <p>
+                   <a href="#InvioModifiche" tabindex="34" class="skip">Vai alla conferma delle modifiche</a>
+               </p>
 
                 <label id="labelTitoloOpera" for="TitoloOpera">Titolo: </label>
-                <input name="TitoloOpera" id="TitoloOpera" type="text" tabindex="37" aria-label="Modifica il titolo dell'opera" aria-required="true"/><br/>
-                <p><a href="#InvioModifiche" tabindex="38" class="skip">Vai alla conferma delle modifiche</a></p>
+                <input id="TitoloOpera" name="TitoloOpera" type="text" aria-label="Modifica il titolo dell'opera" aria-required="true" tabindex="35"/>
+                <p>
+                    <a class="skip" href="#InvioModifiche" tabindex="36">Vai alla conferma delle modifiche</a>
+                </p>
 
                 <label id="labelAnno" for="Anno">Anno: </label>
-                <input name="Anno" id="Anno" type="text" tabindex="39" aria-label="Modifica l'anno dell'opera" aria-required="true"/><br/>
-                <p><a href="#InvioModifiche" tabindex="40" class="skip">Vai alla conferma delle modifiche</a></p>
+                <input id="Anno" name="Anno" type="text" aria-label="Modifica l'anno dell'opera" aria-required="true" tabindex="37"/>
+                <p>
+                    <a class="skip" href="#InvioModifiche" tabindex="38">Vai alla conferma delle modifiche</a>
+                </p>
 
                 <label id="labelPeriodoStorico" for="PeriodoStorico">Periodo storico: </label>
-                <select name="PeriodoStorico" id="PeriodoStorico" tabindex="41" aria-label="Modifica il periodo storico di appartenenza" aria-required="true">
-                    <option selected="selected" value="Quattrocento" tabindex="42">Quattrocento</option>
-                    <option value="Cinquecento" tabindex="43">Cinquecento</option>
-                    <option value="Seicento" tabindex="44">Seicento</option>
-                    <option value="Settecento" tabindex="45">Settecento</option>
-                </select><br/>
-                <p><a href="#InvioModifiche" tabindex="46" class="skip">Vai alla conferma delle modifiche</a></p>
+                <select id="PeriodoStorico" name="PeriodoStorico" aria-label="Modifica il periodo storico di appartenenza" aria-required="true" tabindex="39">
+                    <option selected="selected" value="Quattrocento">Quattrocento</option>
+                    <option value="Cinquecento">Cinquecento</option>
+                    <option value="Seicento">Seicento</option>
+                    <option value="Settecento">Settecento</option>
+                </select>
+                <p>
+                    <a class="skip" href="#InvioModifiche" tabindex="40">Vai alla conferma delle modifiche</a>
+                </p>
 
                 <label id="labelStile" for="Stile">Stile: </label>
-                <select name="Stile" id="Stile" tabindex="47" aria-label="Modifica lo stile artistico" aria-required="true">
-                    <option selected="selected" value="pittura" tabindex="48">Pittura</option>
-                    <option value="scultura" tabindex="49">Scultura</option>
-                </select><br/>
-                <p><a href="#InvioModifiche" tabindex="50" class="skip">Vai alla conferma delle modifiche</a></p>
+                <select id="Stile" name="Stile" aria-label="Modifica lo stile artistico" aria-required="true" tabindex="41">
+                    <option selected="selected" value="pittura">Pittura</option>
+                    <option value="scultura">Scultura</option>
+                </select>
+                <p>
+                    <a class="skip" href="#InvioModifiche" tabindex="42">Vai alla conferma delle modifiche</a>
+                </p>
 
                 <label id="labelTecnica" for="Tecnica">Tecnica: </label>
-                <input name="Tecnica" id="Tecnica" type="text" tabindex="51" aria-label="Modifica la tecnica del''opera" aria-required="true"/><br/>
-                <p><a href="#InvioModifiche" tabindex="52" class="skip">Vai alla conferma delle modifiche</a></p>
+                <input id="Tecnica" name="Tecnica" type="text" aria-label="Modifica la tecnica del''opera" aria-required="true" tabindex="43"/>
+                <p>
+                    <a class="skip" href="#InvioModifiche" tabindex="44">Vai alla conferma delle modifiche</a>
+                </p>
 
                 <label id="labelMateriale" for="Materiale">Materiale: </label>
-                <input name="Materiale" id="Materiale" type="text" tabindex="53" aria-label="Modifica il materiale dell'opera" aria-required="true"/><br/>
-                <p><a href="#InvioModifiche" tabindex="54" class="skip">Vai alla conferma delle modifiche</a></p>
+                <input id="Materiale" name="Materiale" type="text" aria-label="Modifica il materiale dell'opera" aria-required="true" tabindex="45"/>
+                <p>
+                    <a class="skip" href="#InvioModifiche" tabindex="46">Vai alla conferma delle modifiche</a>
+                </p>
 
                 <label id="labelUtente" for="Utente">Utente: </label>
-                <input name="Utente" id="Utente" type="hidden" tabindex="55" aria-required="true"/><br/>
+                <input id="Utente" name="Utente" type="hidden" aria-required="true" tabindex="47"/>
 
                 <label id="labelPrestito" for="Prestito">In prestito: </label>
-                <select name="Prestito" id="Prestito" tabindex="56" aria-label="Modifica lo stato dell'opera" aria-required="true">
-                    <option value="Sì" tabindex="57">Sì</option>
-                    <option selected="selected" value="No" tabindex="58">No</option>
-                </select><br/>
-                <p><a href="#InvioModifiche" tabindex="59" class="skip">Vai alla conferma delle modifiche</a></p>
+                <select id="Prestito" name="Prestito" aria-label="Modifica lo stato dell'opera" aria-required="true" tabindex="48">
+                    <option value="Sì" >Sì</option>
+                    <option selected="selected" value="No">No</option>
+                </select>
+
+                <p>
+                    <a class="skip" href="#InvioModifiche" tabindex="49">Vai alla conferma delle modifiche</a>
+                </p>
 
                 <label id="labelDescrOpera" for="AreaDescrOpera">Descrizione: </label>
-                <textarea id="AreaDescrOpera" name="AreaDescrOpera" rows="30" cols="70" tabindex="60" aria-label="Modifica la descrizione dell'opera" aria-required="true">
+                <textarea id="AreaDescrOpera" name="AreaDescrOpera" rows="30" cols="70" aria-label="Modifica la descrizione dell'opera" aria-required="true" tabindex="50">
                     Inserire la descrizione dell'opera
-                </textarea><br/>
-                <p><a href="#InvioModifiche" tabindex="61" class="skip">Vai alla conferma delle modifiche</a></p>
+                </textarea>
+                <p>
+                    <a class="skip" href="#InvioModifiche" tabindex="51">Vai alla conferma delle modifiche</a>
+                </p>
 
                 <label id="labelUploadImg" for="Immagine">Scegliere l'immagine: </label>
-                <input type="file" name="Immagine" id="Immagine" tabindex="62" aria-label="Modifica l'immagine dell'opera" aria-required="true"/><br/>
+                <input id="Immagine" name="Immagine" type="file" aria-label="Modifica l'immagine dell'opera" aria-required="true" tabindex="52"/>
             </fieldset>
 
-            <input name="annulla" id="AnnullaModifiche" tabindex="63" type="reset" value="Annulla" aria-label="Annulla le modifiche apportate"/>
-            <input name="invio" id="InvioModifiche" tabindex="64" type="submit" value="Conferma" aria-label="Invia le modifiche apportate"/>
+            <input id="AnnullaModifiche" name="annulla" value="Annulla" type="reset" aria-label="Annulla le modifiche apportate" tabindex="53"/>
+            <input id="InvioModifiche" name="invio" value="Conferma" type="submit" aria-label="Invia le modifiche apportate" tabindex="54" />
         </fieldset>
     </form>
-    <!-- Da vedere bene -->
-    <p>
-        <a id="ButtonBackUp" tabindex="65" href="#header" title="Torna su" aria-label="Torna su" >
+
+        <a id="ButtonBackUp" href="#header" title="Torna su" aria-label="Torna su" tabindex="55">
             <img alt="Torna su" src="../Images/TornaSu.png"/>
         </a>
-    </p>
 </div>
 
 <div id="footer" aria-label="footer">
-    <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
     <p>
         Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
     </p>
     <p>
         Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
     </p>
+    <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
     <img alt="Simbolo di validazione CSS" src="../Images/vcss-blue.gif"/>
 </div>
 

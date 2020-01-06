@@ -26,38 +26,40 @@
 
 <div id="header" role="banner">
 
-    <h1 aria-label="Immagine del logo Museo arte nel tempo" id="logoImg" class="ImgBackground" role="img" title="Immagine del logo Museo arte nel tempo">
-        Museo Arte nel Tempo
-    </h1>
+    <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
     <!-- Utilizzare il css per inserire il logo -->
-    <span aria-label="Menu a hambuger, cliccaci sopra per aprire il menu" id="HamburgerMenu" class="ImgBackground" role="img" tabindex="5" title="Menu a hambuger, cliccaci sopra per aprire il menu">
+    <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
         Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
     </span>
-    <div aria-label="area dedicata alla registrazione, login e logout" id="UserTools" class="ImgBackground" tabindex="4" title="area dedicata alla registrazione, login e logout">
-        <ul>
+    <div id="LoginMenu">
+        <a id="logIn" class="Button" href="Login.html" title="LogIn" role="button" aria-label="vai alla pagina di login" tabindex="4" xml:lang="en">
+            LogIn
+        </a>
+    </div>
+    <div id="UserTools" class="ImgBackground" title="area dedicata alla registrazione, login e logout" aria-label="area dedicata alla registrazione, login e logout" tabindex="5">
+        <ul id="UserMenu">
             <li>
-                <a aria-label="porta alla pagina del profilo utente" class="Button" href="" id="profile" role="button" title="Area utente">
+                <a id="profile" class="Button" href="AreaUtente.html" title="Area utente" role="button" aria-label="vai alla pagina del profilo utente" tabindex="6">
                     Area utente
                 </a>
             </li>
             <li>
-                <a aria-label="esci dal tuo profilo" class="Button" href="" id="logOut" role="button" title="LogOut" xml:lang="en">
+                <a id="logOut" class="Button" href="Index.html" title="LogOut" role="button" aria-label="esci dal tuo profilo" tabindex="7" xml:lang="en">
                     LogOut
                 </a>
             </li>
         </ul>
     </div>
-
     <form id="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
         <fieldset id="searchBox">
-            <select name="filter" id="filter" tabindex="2" aria-label="Seleziona il filtro per la ricerca">
+            <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
                 <option selected="selected" value="Opera">Opera</option>
                 <option value="Evento">Evento</option>
                 <option value="Avviso">Avviso</option>
             </select>
             <label id="labelS" for="textSearch">Cerca nel sito</label>
-            <input name="ricerca" id="textSearch" type="text" tabindex="1" role="search"/>
-            <input name="invio" id="Submit" tabindex="3" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
+            <input id="textSearch" name="ricerca" role="search" type="text" tabindex="1"/>
+            <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
         </fieldset>
     </form>
 </div>
@@ -67,42 +69,44 @@
         Ti trovi in:
     </p>
     <span id="path">
-        <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
+        <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a>
         &gt;&gt;
-        <a href="Login.html" title="Login" aria-label="Vai alla pagina Login" xml:lang="en">Login</a>
+        <a href="Login.html" title="Login" aria-label="Vai alla pagina Login" tabindex="10" xml:lang="en">Login</a>
         &gt;&gt;
-        <a href="Registrazione.html" title="Registrazione" aria-label="Vai alla pagina Registrazione">Registrazione</a>
+        <a href="Registrazione.html" title="Registrazione" aria-label="Vai alla pagina Registrazione" tabindex="11">Registrazione</a>
         &gt;&gt;
         <span id="pathSelected">Registrazione completata</span>
     </span>
 </div>
 
-<div aria-label="menu per la navigazione nel sito" id="menu" role="navigation">
+<div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
     <ul>
         <li>
-            <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu"></span>
-            <a id="skipMenu" href="#content" class="skip" tabindex="6">Vai al contenuto</a>
+            <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="20"></span>
+            <a id="skipMenu" class="skip" href="#content" tabindex="12">Vai al contenuto</a>
         </li>
         <li>
-            <a aria-label="Vai alla pagina homepage del museo" href="Index.html" tabindex="7" title="Home"><span xml:lang="en">Home</span></a>
+            <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="13" xml:lang="en">Home</a>
         </li>
         <li>
-            <a aria-label="Vai alla pagina delle opere" href="Opere.html" tabindex="8" title="Opere">Opere</a>
+            <a href="Opere.html" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="14">Opere</a>
         </li>
         <li>
-            <a aria-label="Vai alla pagina degli eventi" href="Eventi.html" tabindex="9" title="Eventi">Eventi</a>
+            <a href="Eventi.html" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="15">Eventi</a>
         </li>
         <li>
-            <a aria-label="Vai alla pagina dedicata agli acquisti" href="OpzioniAcquisto.html" tabindex="10" title="Opzioni d'acquisto">Opzioni d'acquisto</a>
+            <a href="OpzioniAcquisto.html" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti" tabindex="16">Opzioni
+                d'acquisto</a>
         </li>
         <li>
-            <a aria-label="Vai alla pagina degli avvisi" href="Avvisi.html" tabindex="11" title="Avvisi">Avvisi</a>
+            <a href="Avvisi.html" title="Avvisi" aria-label="Vai alla pagina degli avvisi" tabindex="17">Avvisi</a>
         </li>
         <li>
-            <a aria-label="Vai alla pagina cosa dicono di noi" href="CosaDiconoDiNoi.html" tabindex="11" title="Cosa dicono di noi">Cosa dicono di noi</a>
+            <a href="CosaDiconoDiNoi.html" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni" tabindex="18">Cosa
+                dicono di noi</a>
         </li>
         <li>
-            <a aria-label="Vai alla pagina dedicata ai contatti" href="Contatti.html" tabindex="13" title="Contatti">Contatti</a>
+            <a href="Contatti.html" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti" tabindex="19">Contatti</a>
         </li>
     </ul>
 </div>
@@ -116,16 +120,14 @@
         <span xml:lang="en">login</span> per effettuare l'accesso al proprio
         <span xml:lang="en">account</span> ed usufruire dei servizi riservati agli utenti registrati
     </p>
-    <a aria-label="porta alla pagina di login" id="loginButton" class="Button" href="" role="button" tabindex="14" title="LogIn">
+    <a id="loginButton" class="Button" href="" title="LogIn" role="button" aria-label="porta alla pagina di login" tabindex="21">
         <span xml:lang="en">LogIn</span>
     </a>
 
-    <!-- Da vedere bene -->
-    <p>
-        <a aria-label="Torna su" href="#header" id="ButtonBackUp" tabindex="15" title="Torna su">
-            <img alt="Torna su" src="../Images/TornaSu.png"/>
-        </a>
-    </p>
+    <a aria-label="Torna su" href="#header" id="ButtonBackUp" tabindex="15" title="Torna su">
+        <img alt="Torna su" src="../Images/TornaSu.png"/>
+    </a>
+
 </div>
 
 <div aria-label="footer" id="footer">

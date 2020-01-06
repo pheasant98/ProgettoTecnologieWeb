@@ -27,34 +27,38 @@
 
     <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
     <!-- Utilizzare il css per inserire il logo -->
-    <span id="HamburgerMenu" class="ImgBackground" title="Menu a hambuger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu a hambuger, cliccaci sopra per aprire il menu" tabindex="5">
-            Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
-        </span>
-    <div id="UserTools" class="ImgBackground" title="area dedicata alla registrazione, login e logout" aria-label="area dedicata alla registrazione, login e logout" tabindex="4">
+    <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
+        Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
+    </span>
+    <div id="LoginMenu">
+        <a id="logIn" class="Button" href="Login.html" title="LogIn" role="button" aria-label="vai alla pagina di login" tabindex="4" xml:lang="en">
+            LogIn
+        </a>
+    </div>
+    <div id="UserTools" class="ImgBackground" title="area dedicata alla registrazione, login e logout" aria-label="area dedicata alla registrazione, login e logout" tabindex="5">
         <ul id="UserMenu">
             <li>
-                <a id="profile" class="Button" href="AreaUtente.html" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente">
+                <a id="profile" class="Button" href="AreaUtente.html" title="Area utente" role="button" aria-label="vai alla pagina del profilo utente" tabindex="6">
                     Area utente
                 </a>
             </li>
             <li>
-                <a id="logOut" class="Button" href="Index.html" title="LogOut" role="button" aria-label="esci dal tuo profilo" xml:lang="en">
+                <a id="logOut" class="Button" href="Index.html" title="LogOut" role="button" aria-label="esci dal tuo profilo" tabindex="7" xml:lang="en">
                     LogOut
                 </a>
             </li>
         </ul>
     </div>
-
     <form id="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
         <fieldset id="searchBox">
-            <select name="filter" id="filter" tabindex="2" aria-label="Seleziona il filtro per la ricerca">
+            <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
                 <option selected="selected" value="Opera">Opera</option>
                 <option value="Evento">Evento</option>
                 <option value="Avviso">Avviso</option>
             </select>
             <label id="labelS" for="textSearch">Cerca nel sito</label>
-            <input name="ricerca" id="textSearch" type="text" tabindex="1" role="search"/>
-            <input name="invio" id="Submit" tabindex="3" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
+            <input id="textSearch" name="ricerca" role="search" type="text" tabindex="1"/>
+            <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
         </fieldset>
     </form>
 </div>
@@ -63,37 +67,40 @@
     <p>
         Ti trovi in:
     </p>
-    <span id="pathSelected"><a href="" tabindex="14" xml:lang="en">Area personale</a> &gt;&gt; Modifica dati utente</span>
+    <span id="path">
+        <a href="" tabindex="9" xml:lang="en">Area personale</a> &gt;&gt;
+        <span id="pathSelected">Modifica dati utente</span>
+    </span>
 </div>   <!-- Da rivedere come farlo -->
 
 <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
     <ul>
         <li>
-            <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu"></span>
-            <a id="skipMenu" href="#content" class="skip" tabindex="6">Vai al contenuto</a>
+            <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="18"></span>
+            <a id="skipMenu" class="skip" href="#content" tabindex="10">Vai al contenuto</a>
         </li>
         <li>
-            <a href="Index.html" tabindex="7" title="Home" aria-label="Vai alla pagine di home">Home</a>
+            <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="11" xml:lang="en">Home</a>
         </li>
         <li>
-            <a href="" tabindex="8" title="Opere" aria-label="Vai alla pagina delle opere">Opere</a>
+            <a href="Opere.html" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="12">Opere</a>
         </li>
         <li>
-            <a href="Eventi.html" tabindex="9" title="Eventi" aria-label="Vai alla pagina degli eventi">Eventi</a>
+            <a href="Eventi.html" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="13">Eventi</a>
         </li>
         <li>
-            <a href="OpzioniAcquisto.html" tabindex="10" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti">Opzioni
+            <a href="OpzioniAcquisto.html" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti" tabindex="14">Opzioni
                 d'acquisto</a>
         </li>
         <li>
-            <a href="Avvisi.html" tabindex="11" title="Avvisi" aria-label="Vai alla pagina degli avvisi">Avvisi</a>
+            <a href="Avvisi.html" title="Avvisi" aria-label="Vai alla pagina degli avvisi" tabindex="15">Avvisi</a>
         </li>
         <li>
-            <a href="CosaDiconoDiNoi.html" tabindex="12" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni">Cosa
+            <a href="CosaDiconoDiNoi.html" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni" tabindex="16">Cosa
                 dicono di noi</a>
         </li>
         <li>
-            <a href="Contatti.html" tabindex="13" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti">Contatti</a>
+            <a href="Contatti.html" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti" tabindex="17">Contatti</a>
         </li>
     </ul>
 </div>
@@ -102,55 +109,67 @@
     <form id="ModificaDatiUtente" action="" method="post" ><!-- Nascondi con CSS -->
         <fieldset id="BoxDatiUtente">
             <label id="labelNome" for="Nome">Nome:</label>
-            <input name="Nome" id="Nome" type="text" tabindex="14" aria-label="Modifica nome utente" aria-required="true"/><br/>
-            <p><a href="#InviaModificheUtente" class="skip" tabindex="15">Salta alla conferma delle modifiche</a></p>
+            <input id="Nome" name="Nome" type="text" aria-label="Modifica nome utente" aria-required="true" tabindex="19"/><br/>
+            <p>
+                <a class="skip" href="#InviaModificheUtente" tabindex="20">Salta alla conferma delle modifiche</a>
+            </p>
 
             <label id="labelCognome" for="Cognome">Cognome:</label>
-            <input name="Cognome" id="Cognome" type="text" tabindex="16" aria-label="Modifica cpgnome utente" aria-required="true"/><br/>
-            <p><a href="#InviaModificheUtente" class="skip" tabindex="17">Salta alla conferma delle modifiche</a></p>
+            <input id="Cognome" name="Cognome" type="text" aria-label="Modifica cpgnome utente" aria-required="true" tabindex="21"/>
+            <p>
+                <a class="skip" href="#InviaModificheUtente" tabindex="22">Salta alla conferma delle modifiche</a>
+            </p>
 
             <label id="labelGenere" for="Genere">Genere: </label>
-            <select name="Genere" id="Genere" tabindex="18" aria-label="Modifica il genere">
+            <select id="Genere" name="Genere" aria-label="Modifica il genere" tabindex="23">
                 <option selected="selected" value="PreferiscoNonDichiarare">Preferisco non dichiarare</option>
                 <option value="Maschio">Maschio</option>
                 <option value="Femmina">Femmina</option>
-            </select><br/>
-            <p><a href="#InviaModificheUtente" class="skip" tabindex="19">Salta alla conferma delle modifiche</a></p>
+            </select>
+
+            <p>
+                <a class="skip" href="#InviaModificheUtente" tabindex="24">Salta alla conferma delle modifiche</a>
+            </p>
 
             <label id="labelDataNascita" for="DataNascita">Data di nascita:</label>
-            <input name="DataNascita" id="DataNascita" type="text" tabindex="20" aria-label="Modifica data di nascita utente" aria-required="true"/><br/>
-            <p><a href="#InviaModificheUtente" class="skip" tabindex="21">Salta alla conferma delle modifiche</a></p>
+            <input id="DataNascita" name="DataNascita" type="text" aria-label="Modifica data di nascita utente" aria-required="true" tabindex="25"/>
+            <p>
+                <a class="skip" href="#InviaModificheUtente" tabindex="26">Salta alla conferma delle modifiche</a>
+            </p>
 
             <label id="labelIndirizzo" for="Indirizzo">Indirizzo:</label>
-            <input name="Indirizzo" id="Indirizzo" type="text" tabindex="22" aria-label="Modifica indirizzo utente" aria-required="true"/><br/>
-            <p><a href="#InviaModificheUtente" class="skip" tabindex="23">Salta alla conferma delle modifiche</a></p>
+            <input id="Indirizzo" name="Indirizzo" type="text" aria-label="Modifica indirizzo utente" aria-required="true" tabindex="27"/>
+            <p>
+                <a class="skip" href="#InviaModificheUtente" tabindex="28">Salta alla conferma delle modifiche</a>
+            </p>
 
             <label id="labelEmail" for="Email">Email:</label>
-            <input name="Email" id="Email" type="text" tabindex="24" aria-label="Modifica email utente" aria-required="true"/><br/>
-            <p><a href="#InviaModificheUtente" class="skip" tabindex="25">Salta alla conferma delle modifiche</a></p>
+            <input id="Email" name="Email" type="text" aria-label="Modifica email utente" aria-required="true" tabindex="29"/>
+            <p>
+                <a class="skip" href="#InviaModificheUtente" tabindex="30">Salta alla conferma delle modifiche</a>
+            </p>
 
             <label id="labelNewsletter" for="Newsletter">Desidero iscrivermi alla newsletter </label>
-            <input name="Newsletter" id="Newsletter" type="checkbox" checked="checked" aria-label="Modifica l'iscrizione alla newsletter" /><br/>
+            <input id="Newsletter" name="Newsletter" type="checkbox" checked="checked" aria-label="Modifica l'iscrizione alla newsletter" tabindex="31"/>
 
-            <input name="AnnullaModificheUtente" id="AnnullaModificheUtente" tabindex="31" type="reset" value="Annulla" aria-label="Annulla le modifiche apportate"/>
-            <input name="InviaModificheUtente" id="InviaModificheUtente" tabindex="32" type="submit" value="Conferma" aria-label="Conferma le modifiche apportate"/>
+            <input id="AnnullaModificheUtente" name="AnnullaModificheUtente" type="reset" value="Annulla" aria-label="Annulla le modifiche apportate" tabindex="32"/>
+            <input id="InviaModificheUtente" name="InviaModificheUtente" type="submit" value="Conferma" aria-label="Conferma le modifiche apportate" tabindex="33"/>
         </fieldset>
     </form>
-    <p>
-        <a id="ButtonBackUp" tabindex="33" href="#header" title="Torna su" aria-label="Torna su" >
+
+        <a id="ButtonBackUp" href="#header" title="Torna su" aria-label="Torna su" tabindex="34">
             <img alt="Torna su" src="../Images/TornaSu.png"/>
         </a>
-    </p>
 </div>
 
 <div id="footer" aria-label="footer">
-    <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
     <p>
         Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
     </p>
     <p>
         Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
     </p>
+    <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
     <img alt="Simbolo di validazione CSS" src="../Images/vcss-blue.gif"/>
 </div>
 

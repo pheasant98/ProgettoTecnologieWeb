@@ -28,34 +28,38 @@
 
     <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
     <!-- Utilizzare il css per inserire il logo -->
-    <span id="HamburgerMenu" class="ImgBackground" title="Menu a hambuger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu a hambuger, cliccaci sopra per aprire il menu" tabindex="5">
+    <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
         Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
     </span>
-    <div id="UserTools" class="ImgBackground" title="area dedicata alla registrazione, login e logout" aria-label="area dedicata alla registrazione, login e logout" tabindex="4">
+    <div id="LoginMenu">
+        <a id="logIn" class="Button" href="Login.html" title="LogIn" role="button" aria-label="vai alla pagina di login" tabindex="4" xml:lang="en">
+            LogIn
+        </a>
+    </div>
+    <div id="UserTools" class="ImgBackground" title="area dedicata alla registrazione, login e logout" aria-label="area dedicata alla registrazione, login e logout" tabindex="5">
         <ul id="UserMenu">
             <li>
-                <a id="profile" class="Button" href="AreaUtente.html" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente">
+                <a id="profile" class="Button" href="AreaUtente.html" title="Area utente" role="button" aria-label="vai alla pagina del profilo utente" tabindex="6">
                     Area utente
                 </a>
             </li>
             <li>
-                <a id="logOut" class="Button" href="Index.html" title="LogOut" role="button" aria-label="esci dal tuo profilo" xml:lang="en">
+                <a id="logOut" class="Button" href="Index.html" title="LogOut" role="button" aria-label="esci dal tuo profilo" tabindex="7" xml:lang="en">
                     LogOut
                 </a>
             </li>
         </ul>
     </div>
-
     <form id="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
         <fieldset id="searchBox">
-            <select name="filter" id="filter" tabindex="2" aria-label="Seleziona il filtro per la ricerca">
+            <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
                 <option selected="selected" value="Opera">Opera</option>
                 <option value="Evento">Evento</option>
                 <option value="Avviso">Avviso</option>
             </select>
             <label id="labelS" for="textSearch">Cerca nel sito</label>
-            <input name="ricerca" id="textSearch" type="text" tabindex="1" role="search"/>
-            <input name="invio" id="Submit" tabindex="3" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
+            <input id="textSearch" name="ricerca" role="search" type="text" tabindex="1"/>
+            <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
         </fieldset>
     </form>
 </div>
@@ -65,9 +69,9 @@
         Ti trovi in:
     </p>
     <span id="path">
-        <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
+        <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a>
         &gt;&gt;
-        <a href="AreaAdmin.html" title="area admin" aria-label="Vai alla pagina area admin">Area<span xml:lang="en">Admin</span></a>
+        <a href="AreaAdmin.html" title="area admin" aria-label="Vai alla pagina area admin" tabindex="10">Area<span xml:lang="en">Admin</span></a>
         &gt;&gt;
         <span id="pathSelected">Gestione utente</span>
     </span>
@@ -77,27 +81,32 @@
 <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
     <ul>
         <li>
-            <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu"></span>
-            <a id="skipMenu" href="#content" class="skip" tabindex="6">Vai al contenuto</a>
+            <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="19"></span>
+            <a id="skipMenu" class="skip" href="#content" tabindex="11">Vai al contenuto</a>
         </li>
         <li>
-            <a href="Index.html" tabindex="7" title="Home" aria-label="Vai alla pagina homepage del museo"><span xml:lang="en">Home</span></a>
+            <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="12" xml:lang="en">Home</a>
         </li>
         <li>
-            <a href="Opere.html" tabindex="8" title="Opere" aria-label="Vai alla pagina delle opere">Opere</a>
+            <a href="Opere.html" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="13">Opere</a>
         </li>
         <li>
-            <a href="Eventi.html" tabindex="9" title="Eventi" aria-label="Vai alla pagina degli eventi">Eventi</a>
+            <a href="Eventi.html" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="14">Eventi</a>
         </li>
         <li>
-            <a href="OpzioniAcquisto.html" tabindex="10" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti">Opzioni
+            <a href="OpzioniAcquisto.html" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti" tabindex="15">Opzioni
                 d'acquisto</a>
         </li>
-        <li><a href="Avvisi.html" tabindex="11" title="Avvisi" aria-label="Vai alla pagina degli avvisi">Avvisi</a></li>
-        <li><a href="CosaDiconoDiNoi.html" tabindex="12" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni">Cosa
+        <li>
+            <a href="Avvisi.html" title="Avvisi" aria-label="Vai alla pagina degli avvisi" tabindex="16">Avvisi</a>
+        </li>
+        <li>
+            <a href="CosaDiconoDiNoi.html" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni" tabindex="17">Cosa
             dicono di noi</a>
         </li>
-        <li><a href="Contatti.html" tabindex="13" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti">Contatti</a></li>
+        <li>
+            <a href="Contatti.html" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti" tabindex="18">Contatti</a>
+        </li>
     </ul>
 </div>
 
@@ -105,46 +114,46 @@
 
     <h2 class="title-content">Elenco Utenti</h2>
     <ul class="listClass">
-        <li><a href="VisioneUtenteDaAdmin.html" tabindex="">Fiammetta Miriam Cannavò FMC 1</a>
+        <li><a href="VisioneUtenteDaAdmin.html" tabindex="20">Fiammetta Miriam Cannavò FMC 1</a>
         </li>
         <li class="UserButton">
-            <a class="Button" href="" title="Rimuovi utente" role="button" tabindex="14" aria-label="Rimuovi utente">Rimuovi</a>
-            <a class="Button" href="" title="Visualizza dettagli utente" role="button" tabindex="15" aria-label="Visualizza dettagli utente">Visualizza</a>
+            <a class="Button" href="" title="Rimuovi utente" role="button" aria-label="Rimuovi utente" tabindex="21">Rimuovi</a>
+            <a class="Button" href="" title="Visualizza dettagli utente" role="button" aria-label="Visualizza dettagli utente" tabindex="22">Visualizza</a>
         </li>
-        <li><a href="VisioneUtenteDaAdmin.html" tabindex="">Utente2</a>
-        </li>
-        <li class="UserButton">
-            <a class="Button" href="" title="Rimuovi utente" role="button" tabindex="16" aria-label="Rimuovi utente">Rimuovi</a>
-            <a class="Button" href="" title="Visualizza dettagli utente" role="button" tabindex="17" aria-label="Visualizza dettagli utente">Visualizza</a>
-        </li>
-        <li><a href="VisioneUtenteDaAdmin.html" tabindex="">Utente3</a>
+        <li><a href="VisioneUtenteDaAdmin.html" tabindex="23">Utente2</a>
         </li>
         <li class="UserButton">
-            <a class="Button" href="" title="Rimuovi utente" role="button" tabindex="18" aria-label="Rimuovi utente">Rimuovi</a>
-            <a class="Button" href="" title="Visualizza dettagli utente" role="button" tabindex="19" aria-label="Visualizza dettagli utente">Visualizza</a>
+            <a class="Button" href="" title="Rimuovi utente" role="button" aria-label="Rimuovi utente" tabindex="24">Rimuovi</a>
+            <a class="Button" href="" title="Visualizza dettagli utente" role="button" aria-label="Visualizza dettagli utente" tabindex="25">Visualizza</a>
+        </li>
+        <li><a href="VisioneUtenteDaAdmin.html" tabindex="26">Utente3</a>
+        </li>
+        <li class="UserButton">
+            <a class="Button" href="" title="Rimuovi utente" role="button" aria-label="Rimuovi utente" tabindex="27">Rimuovi</a>
+            <a class="Button" href="" title="Visualizza dettagli utente" role="button" aria-label="Visualizza dettagli utente" tabindex="28">Visualizza</a>
         </li>
     </ul>
 
     <p class="Navigation">
-        <a  class="Button" href="" title="Torna indietro" role="button" tabindex="20" aria-label="Torna alla pagina di gestione utenti precedente"> &lt; Precedente
+        <a  class="Button" href="" title="Torna indietro" role="button" aria-label="Torna alla pagina di gestione utenti precedente" tabindex="29"> &lt; Precedente
         </a>
-        <a  class="Button" href="" title="Vai avanti" role="button" tabindex="21" aria-label="Vai alla pagina di gestione utenti succesiva"> Successivo &gt;
+        <a  class="Button" href="" title="Vai avanti" role="button" aria-label="Vai alla pagina di gestione utenti succesiva" tabindex="30"> Successivo &gt;
         </a>
     </p>
 
-    <a id="ButtonBackUp" tabindex="22" href="#header" title="Torna su" aria-label="Torna su" >
+    <a id="ButtonBackUp" href="#header" title="Torna su" aria-label="Torna su" tabindex="31">
         <img alt="Torna su" src="../Images/TornaSu.png"/>
     </a>
 </div>
 
 <div id="footer" aria-label="footer">
-    <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
     <p>
         Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
     </p>
     <p>
         Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
     </p>
+    <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
     <img alt="Simbolo di validazione CSS" src="../Images/vcss-blue.gif"/>
 </div>
 
