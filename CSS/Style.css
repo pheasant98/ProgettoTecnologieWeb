@@ -71,7 +71,7 @@ html, body {
 
 #ImgError404 {
     float: right;
-    background-image: url('../images/EmptyPortrait.png');
+    background-image: url('../images/EmptyPortrait.jpg');
     text-indent: 100%;
 }
 
@@ -390,13 +390,15 @@ a:visited {
         text-align: center;
     }
 
-    #searchBox, #searchBox404 {
+    #searchBox {
         background-color: #EEEEEE;
         border-radius: 20px;
         white-space: nowrap;
     }
 
     #searchBox404 {
+        background-color: #EEEEEE;
+        border-radius: 20px;
         font-size: 0.8em;
     }
 
