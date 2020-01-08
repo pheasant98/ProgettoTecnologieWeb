@@ -22,9 +22,17 @@ html, body {
 
 #header404 {
     background-color: #333333;
-    padding: 2em;
+    padding: 1em;
     box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.16), 0 30px 30px 0 rgba(0, 0, 0, 0.12);
-    min-height: 11em;
+    min-height: 15em;
+}
+
+#content404 {
+    background-color: #FFFFFF;
+    color: #000000;
+    border-radius: 20px;
+    margin: 1.5em;
+    padding: 2em;
 }
 
 #logoImg {
@@ -93,7 +101,7 @@ html, body {
 }
 /* fine bottoni*/
 
-#searchBox{
+#searchBox, #searchBox404 {
     border: 2px solid #000000;
 }
 
@@ -325,11 +333,14 @@ a:visited {
     }
 
     #ImgError404 {
-        background-size: 80%;
+        background-size: 100%;
         background-position: center;
-        height: 15em;
-        width: 35%;
-        transform: rotate(15deg);
+        height: 13em;
+        width: 13em;
+    }
+
+    #header404 {
+        min-height: 11em;
     }
 
     #UserTools {
@@ -379,10 +390,14 @@ a:visited {
         text-align: center;
     }
 
-    #searchBox {
+    #searchBox, #searchBox404 {
         background-color: #EEEEEE;
         border-radius: 20px;
         white-space: nowrap;
+    }
+
+    #searchBox404 {
+        font-size: 0.8em;
     }
 
     #filter {
@@ -467,12 +482,6 @@ a:visited {
         font-size: 2em;
     }
 
-  /*  #paragraphButton{
-        text-align: center;
-        padding: 1em;
-        white-space: nowrap;
-    }*/
-
 }
 
 @media screen and (min-width: 701px) and (max-width: 830px)
@@ -485,11 +494,10 @@ a:visited {
     }
 
     #ImgError404 {
-        background-size: 80%;
+        background-size: 100%;
         background-position: center;
-        height: 15em;
-        width: 35%;
-        transform: rotate(15deg);
+        height: 21em;
+        width: 21em;
     }
 
     #UserTools {
@@ -506,14 +514,14 @@ a:visited {
         text-align: center;
     }
 
-    #searchBox {
+    #searchBox, #searchBox404 {
         background-color: #EEEEEE;
         border-radius: 20px;
     }
 
     #filter {
         border: 0px;
-        font-size: 2em;
+        font-size: 1.7em;
         background: none;
         margin-right: 1em ;
 
@@ -530,7 +538,7 @@ a:visited {
     #Submit {
         cursor: pointer;
         border: 0px;
-        font-size: 2em;
+        font-size: 1.7em;
         background: none;
         margin-left: 1em;
     }
@@ -568,7 +576,7 @@ a:visited {
 
 @media screen and (min-width: 831px)
 {
-    #header, #header404 {
+    #header {
         height: 21.7em;
     }
 
@@ -579,11 +587,10 @@ a:visited {
     }
 
     #ImgError404 {
-        background-size: 80%;
+        background-size: 100%;
         background-position: center;
-        height: 15em;
-        width: 35%;
-        transform: rotate(15deg);
+        height: 25em;
+        width: 25em;
     }
 
     #UserTools {
@@ -605,6 +612,13 @@ a:visited {
         border-radius: 20px;
         float: right;
         width: 50em;
+        white-space: nowrap;
+    }
+
+    #searchBox404 {
+        background-color: #EEEEEE;
+        border-radius: 20px;
+        width: 45em;
         white-space: nowrap;
     }
 
@@ -670,6 +684,6 @@ a:visited {
     }
 
     .paragraph-content {
-        font-size: 1.5em;
+        font-size: 2em;
     }
 }
