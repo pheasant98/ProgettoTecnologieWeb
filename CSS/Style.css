@@ -222,7 +222,15 @@ html, body {
     position: relative;
     width: 60%;
     left:15%;
-    bottom:2em;
+    bottom:1.4em;
+}
+
+#AreaDescr, #AreaDescr2, #AreaDescr3 {
+    display: block;
+    position: relative;
+    width: 60%;
+    left:15%;
+    bottom:1.4em;
 }
 
 #clause {
@@ -319,7 +327,8 @@ a:visited {
 
 .fieldsetContent input, .fieldsetContent label, .fieldsetContent select {
     margin-right: 2em;
-    margin-top: 2em;
+    margin-top: 1em;
+    margin-bottom: 1em;
 
 }
 
@@ -486,6 +495,10 @@ a:visited {
 
     .paragraph-content {
         font-size: 1.5em;
+    }
+
+    #AreaDescr, #AreaDescr2, #AreaDescr3 {
+        margin-left: 4em;
     }
 
 }
