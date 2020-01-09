@@ -114,7 +114,7 @@
         <h2 class="title-content">Acquisto</h2>
 
         <form id="buyForm" action="" method="post" role="form" aria-label="form per effettuare l'acquisto">
-            <fieldset id="buyFieldSet">
+            <fieldset class="fieldsetContent">
                 <legend class="Hidelegend">Acquista</legend>
                 <p>
                     <label id="dataLabel" for="data">Data</label>
@@ -128,6 +128,14 @@
 
                 <p>
                     <label id="labelTipologiaBiglietto" for="biglietto">Tipologia</label>
+                    <select id="TipologiaBiglietto" name="biglietto" tabindex="22">
+                        <option value="Biglietto" selected="selected">Biglietto</option>
+                        <option value="Pacchetto">Pacchetto</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label id="labelBiglietto" for="biglietto">Biglietto</label>
                     <select id="biglietto" name="biglietto" tabindex="22">
                         <option value="intero" selected="selected">Intero</option>
                         <option value="ridotto">Ridotto</option>
@@ -151,7 +159,7 @@
                 </p>
 
                 <p>
-                    <input id="buttonContinua" name="continua" value="Continua" type="submit" aria-label="Pulsante per proseguire nell'acquisto" tabindex="26"/>
+                    <input id="buttonContinua" name="continua" class="Button" value="Continua" type="submit" aria-label="Pulsante per proseguire nell'acquisto" tabindex="26"/>
                 </p>
             </fieldset>
         </form>

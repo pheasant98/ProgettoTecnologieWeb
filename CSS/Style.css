@@ -217,18 +217,11 @@ html, body {
     border-style: none;
 }
 
-#textTitle {
-    display: block;
-    position: relative;
-    left:37%;
-    bottom:2em;
-}
-
 #textArea {
     display: block;
     position: relative;
     width: 60%;
-    left:37%;
+    left:15%;
     bottom:2em;
 }
 
@@ -313,12 +306,19 @@ a:visited {
     text-align: center;
 }
 
-
 #reviewButton, #buyButton {
     float: right;
     font-size: 0.8em;
 }
 
+.fieldsetContent{
+    border:none;
+}
+
+#buttonContinua{
+    position: relative;
+    left:80%;
+}
 
 @media screen and (max-width:700px) {
 
@@ -480,6 +480,11 @@ a:visited {
         font-size: 2em;
     }
 
+}
+
+#buttonContinua{
+    position: relative;
+    left:70%;
 }
 
 @media screen and (min-width: 701px) and (max-width: 830px)
