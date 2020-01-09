@@ -52,6 +52,7 @@
         </div>
         <form id="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
             <fieldset id="searchBox">
+                <legend class="Hidelegend">Ricerca</legend>
                 <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
                     <option selected="selected" value="Opera">Opera</option>
                     <option value="Evento">Evento</option>
@@ -109,12 +110,13 @@
 
         <div id="content" role="main">
             <h2 class="title-content">Eventi</h2>
+            <a href="#Back" class="skip" tabindex="18">Salta gli avvisi presenti nella pagina</a>
             <dl class="clickableDl">
                 <dt>
-                    <a href="EventoSingolo.html" tabindex="18">Messaggeri dell'ignoto</a>
+                    <a href="EventoSingolo.html" tabindex="19">Messaggeri dell'ignoto</a>
                 </dt>
                 <dd>
-                    <a href="#p2" class="skip" tabindex="19">Salta l'evento</a>
+                    <a href="#e2" class="skip" tabindex="20">Salta l'evento</a>
                     <p>
                         Data: 2020.03.17
                     </p>
@@ -127,11 +129,11 @@
                         affascianto gli artisti nei secoli.
                     </p>
                 </dd>
-                <dt>
-                    <a href="EventoSingolo.html" tabindex="20">La rappresentazione e il significato della luce tra Cinquecento e Seicento</a>
+                <dt id="e2">
+                    <a href="EventoSingolo.html" tabindex="21">La rappresentazione e il significato della luce tra Cinquecento e Seicento</a>
                 </dt>
                 <dd>
-                    <a href="#p3" class="skip" tabindex="21">Salta l'evento</a>
+                    <a href="#e3" class="skip" tabindex="22">Salta l'evento</a>
                     <p>
                         Data: 2020.02.24
                     </p>
@@ -143,11 +145,11 @@
                         minuzioso di opere pittoriche e scultoree rappresentative delle due epoche.
                     </p>
                 </dd>
-                <dt>
-                    <a href="EventoSingolo.html" tabindex="22">Volto di fanciullo</a>
+                <dt id="e3">
+                    <a href="EventoSingolo.html" tabindex="23">Volto di fanciullo</a>
                 </dt>
                 <dd>
-                    <a href="#p4" class="skip" tabindex="23" >Salta l'evento</a>
+                    <a href="#Back" class="skip" tabindex="24" >Salta l'evento</a>
                     <p>
                         Data: 2019.12.13
                     </p>
@@ -162,12 +164,12 @@
                 </dd>
             </dl>
             <p class="Navigation">
-                <a id="Back" class="Button" href="" title="Torna indietro" role="button" aria-label="Torna alla pagina dell'evento precedente" tabindex="24" > &lt; Precedente
+                <a id="Back" class="Button" href="" title="Torna indietro" role="button" aria-label="Torna alla pagina dell'evento precedente" tabindex="25" > &lt; Precedente
                 </a>
-                <a id="Next" class="Button" href="" title="Vai avanti" role="button" aria-label="Vai alla pagina dell'evento succesivo" tabindex="25" > Successivo &gt;
+                <a id="Next" class="Button" href="" title="Vai avanti" role="button" aria-label="Vai alla pagina dell'evento succesivo" tabindex="26" > Successivo &gt;
                 </a>
             </p>
-            <a id="ButtonBackUp" href="#header" title="Torna su" aria-label="Torna su" tabindex="26">
+            <a id="ButtonBackUp" href="#header" title="Torna su" aria-label="Torna su" tabindex="27">
                 <img alt="Torna su" src="../Images/TornaSu.png"/>
             </a>
         </div>
