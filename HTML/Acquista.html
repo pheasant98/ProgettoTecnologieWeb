@@ -59,7 +59,7 @@
                     <option value="Avviso">Avviso</option>
                 </select>
                 <label id="labelS" for="textSearch">Cerca nel sito</label>
-                <input id="textSearch"name="ricerca" role="search" type="text" tabindex="1"/>
+                <input id="textSearch" name="ricerca" role="search" type="text" tabindex="1"/>
                 <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
             </fieldset>
         </form>
@@ -111,33 +111,48 @@
     </div>
 
     <div id="content" role="main">
-        <h2>Acquisto</h2>
+        <h2 class="title-content">Acquisto</h2>
 
         <form id="buyForm" action="" method="post" role="form" aria-label="form per effettuare l'acquisto">
             <fieldset id="buyFieldSet">
                 <legend class="Hidelegend">Acquista</legend>
-                <label id="dataLabel" for="data">Data</label>
-                <input id="data" name="data" type="text" tabindex="20"/>
-                <label id="oraLabel" for="ora">Ora</label>
-                <input id="ora" name="ora" type="text" tabindex="21"/>
+                <p>
+                    <label id="dataLabel" for="data">Data</label>
+                    <input id="data" name="data" type="text" tabindex="20"/>
+                </p>
 
-                <select id="biglietto" name="biglietto" tabindex="22">
-                    <option value="intero" selected="selected">Intero</option>
-                    <option value="ridotto">Ridotto</option>
-                </select>
+                <p>
+                    <label id="oraLabel" for="ora">Ora</label>
+                    <input id="ora" name="ora" type="text" tabindex="21"/>
+                </p>
 
-                <select id="pacchetto" name="pacchetto" tabindex="23">
-                    <option value="famiglia" selected="selected">Famiglia</option>
-                    <option value="comitiva">Comitiva</option>
-                </select>
+                <p>
+                    <label id="labelTipologiaBiglietto" for="biglietto">Tipologia</label>
+                    <select id="biglietto" name="biglietto" tabindex="22">
+                        <option value="intero" selected="selected">Intero</option>
+                        <option value="ridotto">Ridotto</option>
+                    </select>
+                </p>
 
-                <p class="pContent">Guida</p>
-                <label id="labelYes" for="guidaSì">Sì</label>
-                <input id="guidaSì" name="guidaSì" value="sì" type="radio" tabindex="24"/>
-                <label id="labelNo" for="guidaNo">No</label>
-                <input id="guidaNo" name="guidaNo" value="no" type="radio" tabindex="25"/>
+                <p>
+                    <label id="labelPacchetto" for="pacchetto">Pacchetto</label>
+                    <select id="pacchetto" name="pacchetto" tabindex="23">
+                        <option value="famiglia" selected="selected">Famiglia</option>
+                        <option value="comitiva">Comitiva</option>
+                    </select>
+                </p>
 
-                <input id="buttonContinua" name="continua" value="Continua" type="submit" aria-label="Pulsante per proseguire nell'acquisto" tabindex="26"/>
+                <p id="fieldGuida">
+                    <label id="labelGuida" for="fieldGuida">Guida</label>
+                    <label id="labelYes" for="guidaSì">Sì</label>
+                    <input id="guidaSì" name="guida" value="sì" type="radio" tabindex="24"/>
+                    <label id="labelNo" for="guidaNo">No</label>
+                    <input id="guidaNo" name="guida" value="no" type="radio" tabindex="25"/>
+                </p>
+
+                <p>
+                    <input id="buttonContinua" name="continua" value="Continua" type="submit" aria-label="Pulsante per proseguire nell'acquisto" tabindex="26"/>
+                </p>
             </fieldset>
         </form>
         <a id="ButtonBackUp" href="#header" title="Torna su" aria-label="Torna su" tabindex="27">
