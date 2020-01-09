@@ -217,18 +217,11 @@ html, body {
     border-style: none;
 }
 
-#textTitle {
-    display: block;
-    position: relative;
-    left:37%;
-    bottom:2em;
-}
-
 #textArea {
     display: block;
     position: relative;
     width: 60%;
-    left:37%;
+    left: 15%;
     bottom:2em;
 }
 
