@@ -107,15 +107,15 @@
         </div>
 
         <div id="content" role="main">
-            <h2 class="H2Modifica">Modifica della pagina numero X</h2>
+            <h2 class="title-content">Modifica della pagina numero X</h2>
             <form id="Modifica" tabindex="20" action="" method="post"><!-- Nascondi con CSS -->
-                <fieldset id="BoxModifica">
+                <fieldset id="BoxModifica" class="fieldsetContent" >
                     <legend class="Hidelegend">Modifica pagina</legend>
                     <p id="TipoPaginaAvv">Tipologia di pagina: Avviso</p>
                     <p id="TipoPaginaEven">Tipologia di pagina: Evento</p>
                     <p id="TipoPaginaOper">Tipologia di pagina: Opera</p>
 
-                    <fieldset id="BoxModificaAvviso">
+                    <fieldset id="BoxModificaAvviso" class="fieldsetContent">
                         <label id="labelDataAvviso" for="DataAvviso">Data: </label>
                         <input id="DataAvviso" name="DataAvviso" type="text"aria-label="Modifica la data dell'avviso" aria-required="true" tabindex="21"/>
                         <p>
@@ -134,7 +134,7 @@
                         </textarea>
                     </fieldset>
 
-                    <fieldset id="BoxModificaEvento">
+                    <fieldset id="BoxModificaEvento" class="fieldsetContent">
                         <label id="labelTipoEvento" for="TipoEvento">Tipologia: </label>
                         <select id="TIpoEvento" name="TipoEvento" aria-label="Modifica la tipologia di evento" aria-required="true" tabindex="26">
                             <option value="Mostra">Mostra</option>
@@ -162,7 +162,7 @@
                         </textarea>
                     </fieldset>
 
-                    <fieldset id="BoxModificaOpera">
+                    <fieldset id="BoxModificaOpera" class="fieldsetContent">
                         <label id="labelIDOpera" for="IDOpera">ID: </label>
                         <input id="IDOpera" name="IDOpera" type="hidden" aria-required="true" tabindex="33"/>
 
@@ -241,8 +241,11 @@
                         <input id="Immagine" name="Immagine" type="file" aria-label="Modifica l'immagine dell'opera" aria-required="true" tabindex="53"/>
                     </fieldset>
 
-                    <input id="AnnullaModifiche" name="annulla" value="Annulla" type="reset" aria-label="Annulla le modifiche apportate" tabindex="54"/>
-                    <input id="InvioModifiche" name="invio" value="Conferma" type="submit" aria-label="Invia le modifiche apportate" tabindex="55" />
+                    <fieldset class="Navigation">
+                        <input id="reset" class="Button" name="annulla" value="Annulla" type="reset" aria-label="Annulla le modifiche apportate" tabindex="54"/>
+                        <input id="confirm" class="Button" name="invio" value="Conferma" type="submit" aria-label="Invia le modifiche apportate" tabindex="55" />
+                    </fieldset>
+
                 </fieldset>
             </form>
 

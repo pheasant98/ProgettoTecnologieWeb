@@ -93,7 +93,7 @@
     <h2 class="H2Home">Registrazione</h2>
 
     <form id="registration" action="" method="post"><!-- Nascondi con CSS -->
-        <fieldset id="personalData" form="registration">
+        <fieldset id="personalData" form="registration" class="fieldsetContent">
             <legend class="Hidelegend">Dati personali</legend>
             <label id="labelName" for="textName">Nome:</label>
             <input id="textName" name="textName" type="text" tabindex="16"/>
@@ -116,7 +116,7 @@
             <input id="textDate" name="textDate" type="text" tabindex="21"/>
         </fieldset>
 
-        <fieldset id="contactData" form="registration">
+        <fieldset id="contactData" form="registration" class="fieldsetContent">
             <legend>Dati di contatto</legend>
             <label id="labelMail" for="textMail" xml:lang="en">E-mail:</label>
             <input id="textMail" name="textMail" type="text" tabindex="22"/>
@@ -130,7 +130,7 @@
             <input id="radioNewsletterNo" name="radioNewsletter" value="No" type="radio" tabindex="24"/>
         </fieldset>
 
-        <fieldset id="accountData" form="registration">
+        <fieldset id="accountData" form="registration" class="fieldsetContent">
             <legend>Dati d'accesso</legend>
             <label id="labelUsername" for="textUsername" xml:lang="en">Username:</label>
             <input id="textUsername" name="textUsername" type="text" tabindex="25"/>
@@ -143,9 +143,10 @@
             </label>
             <input id="textRepetePassword" name="textRepetePassword" type="password" tabindex="27"/>
         </fieldset>
-
-        <input id="reset" name="reset" value="Cancella" type="reset" aria-label="Pulsante per la cancellazione dei dati inseriti" tabindex="28"/>
-        <input id="confirm" name="confirm" value="Conferma" type="submit" aria-label="Pulsante per la conferma dati inseriti" tabindex="29"/>
+        <fieldset class="Navigation">
+            <input id="reset" class="Button" name="reset" value="Cancella" type="reset" aria-label="Pulsante per la cancellazione dei dati inseriti" tabindex="28"/>
+            <input id="confirm" class="Button" name="confirm" value="Conferma" type="submit" aria-label="Pulsante per la conferma dati inseriti" tabindex="29"/>
+        </fieldset>
     </form>
 
     <a id="ButtonBackUp" href="#header" title="Torna su" aria-label="Torna su" tabindex="30">

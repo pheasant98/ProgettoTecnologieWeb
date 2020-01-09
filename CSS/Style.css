@@ -196,6 +196,7 @@ html, body {
 .Navigation{
     list-style-type: none;
     text-align: center;
+    border-style: none;
 }
 
 #Modifica  {
@@ -332,9 +333,18 @@ a:visited {
 
 }
 
-#buttonContinua{
+#ButtonContinua{
     position: relative;
     left:70%;
+}
+
+#ButtonAccedi{
+    position: relative;
+    left:40%;
+}
+
+#reset,#confirm{
+    display: inline-block;
 }
 
 @media screen and (max-width:700px) {
@@ -706,8 +716,13 @@ a:visited {
         font-size: 1.2em;
     }
 
-    #buttonContinua{
+    #ButtonContinua{
         position: relative;
         left:70%;
+    }
+
+    #ButtonAccedi{
+        position: relative;
+        left:45%;
     }
 }
