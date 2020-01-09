@@ -313,11 +313,19 @@ a:visited {
 
 .fieldsetContent{
     border:none;
+    padding: 1em;
+    text-align: justify;
+}
+
+.fieldsetContent input, .fieldsetContent label, .fieldsetContent select {
+    margin-right: 2em;
+    margin-top: 2em;
+
 }
 
 #buttonContinua{
     position: relative;
-    left:80%;
+    left:70%;
 }
 
 @media screen and (max-width:700px) {
@@ -477,14 +485,9 @@ a:visited {
     }
 
     .paragraph-content {
-        font-size: 2em;
+        font-size: 1.5em;
     }
 
-}
-
-#buttonContinua{
-    position: relative;
-    left:70%;
 }
 
 @media screen and (min-width: 701px) and (max-width: 830px)
@@ -573,7 +576,7 @@ a:visited {
     }
 
     .paragraph-content {
-        font-size: 2em;
+        font-size: 1.3em;
     }
 }
 
@@ -687,6 +690,11 @@ a:visited {
     }
 
     .paragraph-content {
-        font-size: 2em;
+        font-size: 1.2em;
+    }
+
+    #buttonContinua{
+        position: relative;
+        left:70%;
     }
 }
