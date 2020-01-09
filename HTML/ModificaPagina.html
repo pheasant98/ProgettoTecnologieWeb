@@ -107,7 +107,7 @@
         </div>
 
         <div id="content" role="main">
-            <h2 class="H2Modifica">Modifica della pagina numero X</h2>
+            <h2 class="title-content">Modifica della pagina numero X</h2>
             <form id="Modifica" action="" method="post"><!-- Nascondi con CSS -->
                 <fieldset id="BoxModifica">
                     <legend class="Hidelegend">Modifica pagina</legend>
@@ -116,133 +116,158 @@
                     <p id="TipoPaginaOper">Tipologia di pagina: Opera</p>
 
                     <fieldset id="BoxModificaAvviso">
-                        <label id="labelDataAvviso" for="DataAvviso">Data: </label>
-                        <input id="DataAvviso" name="DataAvviso" type="text"aria-label="Modifica la data dell'avviso" aria-required="true"/>
+                        <p>
+                            <label id="labelDataAvviso" for="DataAvviso">Data: </label>
+                            <input id="DataAvviso" name="DataAvviso" type="text" aria-label="Modifica la data dell'avviso" aria-required="true"/>
+                        </p>
                         <p>
                             <a class="skip" href="#InvioModifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
-                        <label id="labelOggetto" for="Oggetto">Oggetto: </label>
-                        <input id="Oggetto" name="Oggetto" type="text" aria-label="Modifica l'oggetto dell'avviso" aria-required="true"/>
+                        <p>
+                            <label id="labelOggetto" for="Oggetto">Oggetto: </label>
+                            <input id="Oggetto" name="Oggetto" type="text" aria-label="Modifica l'oggetto dell'avviso" aria-required="true"/>
+                        </p>
                         <p>
                             <a class="skip" href="#InvioModifiche">Vai alla conferma delle modifiche</a>
                         </p>
-
-                        <label id="labelDescrAvviso" for="AreaDescrAvviso">Descrizione: </label>
-                        <textarea id="AreaDescrAvviso" name="AreaDescrAvviso" rows="10" cols="70" aria-label="Modifica la descrizione dell'avviso" aria-required="true">
-                            Inserire la descrizione dell'avviso
-                        </textarea>
                     </fieldset>
 
                     <fieldset id="BoxModificaEvento">
-                        <label id="labelTipoEvento" for="TipoEvento">Tipologia: </label>
-                        <select id="TIpoEvento" name="TipoEvento" aria-label="Modifica la tipologia di evento" aria-required="true">
-                            <option value="Mostra">Mostra</option>
-                            <option selected="selected" value="Conferenza">Conferenza</option>
-                        </select>
+                        <p>
+                            <label id="labelTipoEvento" for="TipoEvento">Tipologia: </label>
+                            <select id="TipoEvento" name="TipoEvento" aria-label="Modifica la tipologia di evento" aria-required="true">
+                                <option value="Mostra">Mostra</option>
+                                <option selected="selected" value="Conferenza">Conferenza</option>
+                            </select>
+                        </p>
                         <p>
                             <a class="skip" href="#InvioModifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
-                        <label id="labelDataEvento" for="DataEvento">Data: </label>
-                        <input id="DataEvento" name="DataEvento" type="text" aria-label="Modifica la data dell'evento" aria-required="true"/>
+                        <p>
+                            <label id="labelDataEvento" for="DataEvento">Data: </label>
+                            <input id="DataEvento" name="DataEvento" type="text" aria-label="Modifica la data dell'evento" aria-required="true"/>
+                        </p>
                         <p>
                             <a class="skip" href="#InvioModifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
-                        <label id="labelTitoloEvento" for="TitoloEvento">Titolo: </label>
-                        <input id="TitoloEvento" name="TitoloEvento" type="text" aria-label="Modifica il titolo delle'evento" aria-required="true"/>
+                        <p>
+                            <label id="labelTitoloEvento" for="TitoloEvento">Titolo: </label>
+                            <input id="TitoloEvento" name="TitoloEvento" type="text" aria-label="Modifica il titolo delle'evento" aria-required="true"/>
+                        </p>
                         <p>
                             <a class="skip" href="#InvioModifiche">Vai alla conferma delle modifiche</a>
                         </p>
-
-                        <label id="labelDescrEvento" for="AreaDescrEvento">Descrizione: </label>
-                        <textarea id="AreaDescrEvento" name="AreaDescrEvento" rows="15" cols="70" aria-label="Modifica la descrizione dell'evento" aria-required="true">
-                            Inserire la descrizione dell'evento
-                        </textarea>
                     </fieldset>
 
                     <fieldset id="BoxModificaOpera">
-                        <label id="labelIDOpera" for="IDOpera">ID: </label>
-                        <input id="IDOpera" name="IDOpera" type="hidden" aria-required="true"/>
+                        <p>
+                            <label id="labelIDOpera" for="IDOpera">ID: </label>
+                            <input id="IDOpera" name="IDOpera" type="hidden" aria-required="true"/>
+                        </p>
 
-                        <label id="labelAutore" for="Autore">Autore: </label>
-                        <input id="Autore" name="Autore" type="text" aria-label="Modifica l'autore dell'opera" aria-required="true"/>
-                       <p>
+                        <p>
+                            <label id="labelAutore" for="Autore">Autore: </label>
+                            <input id="Autore" name="Autore" type="text" aria-label="Modifica l'autore dell'opera" aria-required="true"/>
+                        </p>
+                        <p>
                            <a href="#InvioModifiche" class="skip">Vai alla conferma delle modifiche</a>
-                       </p>
+                        </p>
 
-                        <label id="labelTitoloOpera" for="TitoloOpera">Titolo: </label>
-                        <input id="TitoloOpera" name="TitoloOpera" type="text" aria-label="Modifica il titolo dell'opera" aria-required="true"/>
+                        <p>
+                            <label id="labelTitoloOpera" for="TitoloOpera">Titolo: </label>
+                            <input id="TitoloOpera" name="TitoloOpera" type="text" aria-label="Modifica il titolo dell'opera" aria-required="true"/>
+                        </p>
                         <p>
                             <a class="skip" href="#InvioModifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
-                        <label id="labelAnno" for="Anno">Anno: </label>
-                        <input id="Anno" name="Anno" type="text" aria-label="Modifica l'anno dell'opera" aria-required="true"/>
+                        <p>
+                            <label id="labelAnno" for="Anno">Anno: </label>
+                            <input id="Anno" name="Anno" type="text" aria-label="Modifica l'anno dell'opera" aria-required="true"/>
+                        </p>
                         <p>
                             <a class="skip" href="#InvioModifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
-                        <label id="labelPeriodoStorico" for="PeriodoStorico">Periodo storico: </label>
-                        <select id="PeriodoStorico" name="PeriodoStorico" aria-label="Modifica il periodo storico di appartenenza" aria-required="true">
-                            <option selected="selected" value="Quattrocento">Quattrocento</option>
-                            <option value="Cinquecento">Cinquecento</option>
-                            <option value="Seicento">Seicento</option>
-                            <option value="Settecento">Settecento</option>
-                        </select>
+                        <p>
+                            <label id="labelPeriodoStorico" for="PeriodoStorico">Periodo storico: </label>
+                            <select id="PeriodoStorico" name="PeriodoStorico" aria-label="Modifica il periodo storico di appartenenza" aria-required="true">
+                                <option selected="selected" value="Quattrocento">Quattrocento</option>
+                                <option value="Cinquecento">Cinquecento</option>
+                                <option value="Seicento">Seicento</option>
+                                <option value="Settecento">Settecento</option>
+                            </select>
+                        </p>
                         <p>
                             <a class="skip" href="#InvioModifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
-                        <label id="labelStile" for="Stile">Stile: </label>
-                        <select id="Stile" name="Stile" aria-label="Modifica lo stile artistico" aria-required="true">
-                            <option selected="selected" value="pittura">Pittura</option>
-                            <option value="scultura">Scultura</option>
-                        </select>
+                        <p>
+                            <label id="labelStile" for="Stile">Stile: </label>
+                            <select id="Stile" name="Stile" aria-label="Modifica lo stile artistico" aria-required="true">
+                                <option selected="selected" value="pittura">Pittura</option>
+                                <option value="scultura">Scultura</option>
+                            </select>
+                        </p>
                         <p>
                             <a class="skip" href="#InvioModifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
-                        <label id="labelTecnica" for="Tecnica">Tecnica: </label>
-                        <input id="Tecnica" name="Tecnica" type="text" aria-label="Modifica la tecnica del''opera" aria-required="true"/>
+                        <p>
+                            <label id="labelTecnica" for="Tecnica">Tecnica: </label>
+                            <input id="Tecnica" name="Tecnica" type="text" aria-label="Modifica la tecnica del''opera" aria-required="true"/>
+                        </p>
                         <p>
                             <a class="skip" href="#InvioModifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
-                        <label id="labelMateriale" for="Materiale">Materiale: </label>
-                        <input id="Materiale" name="Materiale" type="text" aria-label="Modifica il materiale dell'opera" aria-required="true"/>
+                        <p>
+                            <label id="labelMateriale" for="Materiale">Materiale: </label>
+                            <input id="Materiale" name="Materiale" type="text" aria-label="Modifica il materiale dell'opera" aria-required="true"/>
+                        </p>
                         <p>
                             <a class="skip" href="#InvioModifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
-                        <label id="labelUtente" for="Utente">Utente: </label>
-                        <input id="Utente" name="Utente" type="hidden" aria-required="true"/>
+                        <p>
+                            <label id="labelUtente" for="Utente">Utente: </label>
+                            <input id="Utente" name="Utente" type="hidden" aria-required="true"/>
+                        </p>
 
-                        <label id="labelPrestito" for="Prestito">In prestito: </label>
-                        <select id="Prestito" name="Prestito" aria-label="Modifica lo stato dell'opera" aria-required="true">
-                            <option value="Sì">Sì</option>
-                            <option selected="selected" value="No">No</option>
-                        </select>
+                        <fieldset id="fieldLoan">
+                            <label id="labelLoan" for="fieldLoan">In prestito</label>
+                            <label id="labelLoanYes" for="textLoanYes">Sì</label>
+                            <input id="textLoanYes" name="textLoan" value="Si" type="radio"/>
+                            <label id="labelLoanNo" for="textLoanNo">No</label>
+                            <input id="textLoanNo" name="textLoan" value="No" type="radio"/>
+                        </fieldset>
+                        <p>
+                            <a class="skip" href="#InvioModifiche">Vai alla conferma delle modifiche</a>
+                        </p>
 
                         <p>
                             <a class="skip" href="#InvioModifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
-                        <label id="labelDescrOpera" for="AreaDescrOpera">Descrizione: </label>
-                        <textarea id="AreaDescrOpera" name="AreaDescrOpera" rows="30" cols="70" aria-label="Modifica la descrizione dell'opera" aria-required="true">
-                            Inserire la descrizione dell'opera
-                        </textarea>
                         <p>
-                            <a class="skip" href="#InvioModifiche">Vai alla conferma delle modifiche</a>
+                            <label id="labelUploadImg" for="Immagine">Scegliere l'immagine: </label>
+                            <input id="Immagine" name="Immagine" type="file" aria-label="Modifica l'immagine dell'opera" aria-required="true"/>
                         </p>
-
-                        <label id="labelUploadImg" for="Immagine">Scegliere l'immagine: </label>
-                        <input id="Immagine" name="Immagine" type="file" aria-label="Modifica l'immagine dell'opera" aria-required="true"/>
                     </fieldset>
+                    <p>
+                        <label id="labelTextArea" for="textArea">Descrizione: </label>
+                        <textarea id="textArea" name="textArea" rows="10" cols="70" aria-label="Modifica la descrizione" aria-required="true">
+                                Inserire la descrizione
+                        </textarea>
+                    </p>
 
-                    <input id="AnnullaModifiche" name="annulla" value="Annulla" type="reset" aria-label="Annulla le modifiche apportate"/>
-                    <input id="InvioModifiche" name="invio" value="Conferma" type="submit" aria-label="Invia le modifiche apportate"/>
+                    <p class="Navigation">
+                        <input id="AnnullaModifiche" name="annulla" value="Annulla" type="reset" aria-label="Annulla le modifiche apportate"/>
+                        <input id="InvioModifiche" name="invio" value="Conferma" type="submit" aria-label="Invia le modifiche apportate"/>
+                    </p>
                 </fieldset>
             </form>
 

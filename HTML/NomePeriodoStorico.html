@@ -119,9 +119,11 @@
 
     <form id="operaFilter" action="" method="post"><!-- Nascondi con CSS -->
         <fieldset id="filterBox">
+            <legend class="Hidelegend">Periodo storico</legend>
+            <label id="labelfilterType" for="filterType">Selezionare il tipo di opera</label>
             <select name="filterType" id="filterType" aria-label="filtro per il tipo di opera">
-                <option value="Tipo1" selected="selected"> Tipo1 </option>
-                <option value="Tipo2"> Tipo 2 </option>
+                <option value="Scultura" selected="selected"> Scultura </option>
+                <option value="Pittura"> Pittura </option>
             </select>
             <input id="filterButton" name="filter" value="Filtra" type="button"/>
         </fieldset>
