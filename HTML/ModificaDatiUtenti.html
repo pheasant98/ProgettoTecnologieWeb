@@ -107,55 +107,72 @@
     </div>
 
     <div id="content" role="main">
-        <h2 class="H2ModificaUtente">Modifica dati</h2>
+        <h2 class="title-content">Modifica dati</h2>
             <form id="ModificaDatiUtente" action="" method="post" ><!-- Nascondi con CSS -->
                 <fieldset id="BoxDatiUtente">
                     <legend class="Hidelegend">Modifica dati utente</legend>
-                    <label id="labelNome" for="Nome">Nome:</label>
-                    <input id="Nome" name="Nome" type="text" aria-label="Modifica nome utente" aria-required="true"/>
+
+                    <p>
+                        <label id="labelNome" for="Nome">Nome</label>
+                        <input id="Nome" name="Nome" type="text" aria-label="Modifica nome utente" aria-required="true"/>
+                    </p>
                     <p>
                         <a class="skip" href="#InviaModificheUtente">Salta alla conferma delle modifiche</a>
                     </p>
 
-                    <label id="labelCognome" for="Cognome">Cognome:</label>
-                    <input id="Cognome" name="Cognome" type="text" aria-label="Modifica cpgnome utente" aria-required="true"/>
+                    <p>
+                        <label id="labelCognome" for="Cognome">Cognome</label>
+                        <input id="Cognome" name="Cognome" type="text" aria-label="Modifica cpgnome utente" aria-required="true"/>
+                    </p>
                     <p>
                         <a class="skip" href="#InviaModificheUtente">Salta alla conferma delle modifiche</a>
                     </p>
 
-                    <label id="labelGenere" for="Genere">Genere: </label>
-                    <select id="Genere" name="Genere" aria-label="Modifica il genere">
-                        <option selected="selected" value="PreferiscoNonDichiarare">Preferisco non dichiarare</option>
-                        <option value="Maschio">Maschio</option>
-                        <option value="Femmina">Femmina</option>
-                    </select>
+                    <p>
+                        <label id="labelGenere" for="Genere">Genere</label>
+                        <select id="Genere" name="Genere" aria-label="Modifica il genere">
+                            <option selected="selected" value="PreferiscoNonDichiarare">Preferisco non dichiarare</option>
+                            <option value="Maschio">Maschio</option>
+                            <option value="Femmina">Femmina</option>
+                        </select>
+                    </p>
                     <p>
                         <a class="skip" href="#InviaModificheUtente">Salta alla conferma delle modifiche</a>
                     </p>
 
-                    <label id="labelDataNascita" for="DataNascita">Data di nascita:</label>
-                    <input id="DataNascita" name="DataNascita" type="text" aria-label="Modifica data di nascita utente" aria-required="true"/>
+                    <p>
+                        <label id="labelDataNascita" for="DataNascita">Data di nascita</label>
+                        <input id="DataNascita" name="DataNascita" type="text" aria-label="Modifica data di nascita utente" aria-required="true"/>
+                    </p>
                     <p>
                         <a class="skip" href="#InviaModificheUtente">Salta alla conferma delle modifiche</a>
                     </p>
 
-                    <label id="labelIndirizzo" for="Indirizzo">Indirizzo:</label>
-                    <input id="Indirizzo" name="Indirizzo" type="text" aria-label="Modifica indirizzo utente" aria-required="true"/>
+                    <p>
+                        <label id="labelIndirizzo" for="Indirizzo">Indirizzo</label>
+                        <input id="Indirizzo" name="Indirizzo" type="text" aria-label="Modifica indirizzo utente" aria-required="true"/>
+                    </p>
                     <p>
                         <a class="skip" href="#InviaModificheUtente">Salta alla conferma delle modifiche</a>
                     </p>
 
-                    <label id="labelEmail" for="Email">Email:</label>
-                    <input id="Email" name="Email" type="text" aria-label="Modifica email utente" aria-required="true"/>
+                    <p>
+                        <label id="labelEmail" for="Email">Email</label>
+                        <input id="Email" name="Email" type="text" aria-label="Modifica email utente" aria-required="true"/>
+                    </p>
                     <p>
                         <a class="skip" href="#InviaModificheUtente">Salta alla conferma delle modifiche</a>
                     </p>
 
-                    <label id="labelNewsletter" for="Newsletter">Desidero iscrivermi alla newsletter </label>
-                    <input id="Newsletter" name="Newsletter" type="checkbox" checked="checked" aria-label="Modifica l'iscrizione alla newsletter"/>
+                    <p>
+                        <label id="labelNewsletter" for="Newsletter">Desidero iscrivermi alla newsletter </label>
+                        <input id="Newsletter" name="Newsletter" type="checkbox" checked="checked" aria-label="Modifica l'iscrizione alla newsletter"/>
+                    </p>
 
-                    <input id="AnnullaModificheUtente" name="AnnullaModificheUtente" type="reset" value="Annulla" aria-label="Annulla le modifiche apportate"/>
-                    <input id="InviaModificheUtente" name="InviaModificheUtente" type="submit" value="Conferma" aria-label="Conferma le modifiche apportate"/>
+                    <p class="Navigation">
+                        <input id="AnnullaModificheUtente" name="AnnullaModificheUtente" type="reset" value="Annulla" aria-label="Annulla le modifiche apportate"/>
+                        <input id="InviaModificheUtente" name="InviaModificheUtente" type="submit" value="Conferma" aria-label="Conferma le modifiche apportate"/>
+                    </p>
                 </fieldset>
             </form>
 
