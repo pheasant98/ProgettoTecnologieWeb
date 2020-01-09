@@ -112,12 +112,11 @@
 </div>
 
 <div id="content" role="main">
-    <h2 class="H2Home">Contenuti del sito</h2>
+    <h2 class="title-content">Contenuti del sito</h2>
 
     <form id="contentFilter" action="" method="post"><!-- Nascondi con CSS -->
-        <fieldset id="filterBox">
+        <fieldset class="Navigation">
             <legend class="Hidelegend">Gestione contenuti</legend>
-            <input id="filterButton" name="filter" value="Filtra" type="button" tabindex="20"/>
             <select id="filterContent" name="filterContent" aria-label="Filtro per il tipo di contenuto" tabindex="21">
                 <option selected="selected" value="Opera"> Opera</option>
                 <option value="Evento"> Evento</option>
@@ -133,6 +132,7 @@
                 <option selected="selected" value="Pittura"> Pittura</option>
                 <option value="Scultura"> Scultura</option>
             </select>
+            <input id="confirm" class="Button" name="filter" value="Filtra" type="button" tabindex="20"/>
         </fieldset>
     </form>
 
@@ -143,18 +143,24 @@
     <ul class="listClass">
         <li>
             <a href="" tabindex="24">Pagina 1</a>
-            <a class="Button" href="" title="Rimuovi contenuto" role="button" aria-label="Rimuovi contenuto" tabindex="25">Rimuovi</a>
-            <a class="Button" href="" title="Modifica dettagli contenuto" role="button" aria-label="Modifica dettagli contenuto" tabindex="26">Modifica</a>
+            <p class="UserButton">
+                <a class="Button" href="" title="Rimuovi contenuto" role="button" aria-label="Rimuovi contenuto" tabindex="">Rimuovi</a>
+                <a class="Button" href="" title="Modifica dettagli contenuto" role="button" aria-label="Modifica dettagli contenuto" tabindex="">Modifica</a>
+            </p>
         </li>
         <li>
             <a href="" tabindex="">Pagina 2</a>
-            <a class="Button" href="" title="Rimuovi contenuto" role="button" aria-label="Rimuovi contenuto" tabindex="">Rimuovi</a>
-            <a class="Button" href="" title="Modifica dettagli contenuto" role="button" aria-label="Modifica dettagli contenuto" tabindex="">Modifica</a>
+            <p class="UserButton">
+                <a class="Button" href="" title="Rimuovi contenuto" role="button" aria-label="Rimuovi contenuto" tabindex="">Rimuovi</a>
+                <a class="Button" href="" title="Modifica dettagli contenuto" role="button" aria-label="Modifica dettagli contenuto" tabindex="">Modifica</a>
+            </p>
         </li>
         <li>
             <a href="" tabindex="" >Pagina 3</a>
-            <a class="Button" href="" title="Rimuovi contenuto" role="button" aria-label="Rimuovi contenuto" tabindex="">Rimuovi</a>
-            <a class="Button" href="" title="Modifica dettagli contenuto" role="button" aria-label="Modifica dettagli contenuto" tabindex="">Modifica</a>
+            <p class="UserButton">
+                <a class="Button" href="" title="Rimuovi contenuto" role="button" aria-label="Rimuovi contenuto" tabindex="">Rimuovi</a>
+                <a class="Button" href="" title="Modifica dettagli contenuto" role="button" aria-label="Modifica dettagli contenuto" tabindex="">Modifica</a>
+            </p>
         </li>
     </ul>
 
