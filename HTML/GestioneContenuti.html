@@ -50,148 +50,142 @@
                     </li>
                 </ul>
             </div>
-            <form id="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
-                <fieldset id="searchBox">
-                    <legend class="Hidelegend">Ricerca</legend>
-                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
-                        <option selected="selected" value="Opera">Opera</option>
-                        <option value="Evento">Evento</option>
-                        <option value="Avviso">Avviso</option>
-                    </select>
-                    <label id="labelS" for="textSearch">Cerca nel sito</label>
-                    <input id="textSearch" name="ricerca" role="search" type="text" tabindex="1"/>
-                    <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
-                </fieldset>
-            </form>
-        </div>
+    <form id="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
+        <fieldset id="searchBox">
+            <legend class="Hidelegend">Ricerca</legend>
+            <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
+                <option selected="selected" value="Opera">Opera</option>
+                <option value="Evento">Evento</option>
+                <option value="Avviso">Avviso</option>
+            </select>
+            <label id="labelS" for="textSearch">Cerca nel sito</label>
+            <input id="textSearch" name="ricerca" role="search" type="text" tabindex="1"/>
+            <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
+        </fieldset>
+    </form>
+</div>
 
-        <div aria-label="breadcrumbs" id="breadcrumbs">
-            <p>
-                Ti trovi in:
+<div aria-label="breadcrumbs" id="breadcrumbs">
+    <p>
+        Ti trovi in:
+    </p>
+    <span id="path">
+        <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a>
+        &gt;&gt;
+        <a href="AreaAdmin.html" title="Area Personale" aria-label="Vai alla pagina area admin" tabindex="10">Area Personale</a>
+        &gt;&gt;
+        <span id="pathSelected">Gestione Contenuti</span>
+    </span>
+
+</div>
+
+<div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
+    <ul>
+        <li>
+            <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="19"></span>
+            <a id="skipMenu" class="skip" href="#content" tabindex="11">Vai al contenuto</a>
+        </li>
+        <li>
+            <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="12" xml:lang="en">Home</a>
+        </li>
+        <li>
+            <a href="Opere.html" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="13">Opere</a>
+        </li>
+        <li>
+            <a href="Eventi.html" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="14">Eventi</a>
+        </li>
+        <li>
+            <a href="OpzioniAcquisto.html" title="Opzioni d'acquisto" aria-label="Vai alla pagina degli acquisti" tabindex="15">Opzioni
+                d'acquisto</a>
+        </li>
+        <li>
+            <a href="Avvisi.html" title="Avvisi" aria-label="Vai alla pagina degli avvisi" tabindex="16">Avvisi</a>
+        </li>
+        <li>
+            <a href="CosaDiconoDiNoi.html" title="Cosa dicono di noi" aria-label="Vai alla pagina delle recensioni" tabindex="17">Cosa
+                dicono di noi</a>
+        </li>
+        <li>
+            <a href="Contatti.html" title="Contatti" aria-label="Vai alla pagina dei contatti" tabindex="18">Contatti</a>
+        </li>
+    </ul>
+</div>
+
+<div id="content" role="main">
+    <h2 class="title-content">Contenuti del sito</h2>
+
+    <form id="contentFilter" action="" method="post"><!-- Nascondi con CSS -->
+        <fieldset class="Navigation">
+            <legend class="Hidelegend">Gestione contenuti</legend>
+            <select id="filterContent" name="filterContent" aria-label="Filtro per il tipo di contenuto" tabindex="21">
+                <option selected="selected" value="Opera"> Opera</option>
+                <option value="Evento"> Evento</option>
+                <option value="Avviso"> Avviso</option>
+            </select>
+            <select id="filterPeriod" name="filterPeriod" aria-label="Filtro per il periodo storico" tabindex="22">
+                <option selected="selected" value="Quattrocento"> Quattrocento</option>
+                <option value="Cinquecento"> Cinquecento</option>
+                <option value="Seicento"> Seicento</option>
+                <option value="Settecento"> Settecento</option>
+            </select>
+            <select id="filterOpera" name="filterOpera" aria-label="Filtro per il tipo di opera" tabindex="23">
+                <option selected="selected" value="Pittura"> Pittura</option>
+                <option value="Scultura"> Scultura</option>
+            </select>
+            <input id="confirm" class="Button" name="filter" value="Filtra" type="button" tabindex="20"/>
+        </fieldset>
+    </form>
+
+    <p>
+        Sono stati trovati # risultati:
+    </p>
+
+    <ul class="listClass">
+        <li>
+            <a href="" tabindex="24">Pagina 1</a>
+            <p class="UserButton">
+                <a class="Button" href="" title="Rimuovi contenuto" role="button" aria-label="Rimuovi contenuto" tabindex="">Rimuovi</a>
+                <a class="Button" href="" title="Modifica dettagli contenuto" role="button" aria-label="Modifica dettagli contenuto" tabindex="">Modifica</a>
             </p>
-            <span id="path">
-                <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a>
-                &gt;&gt;
-                <a href="AreaAdmin.html" title="Area Personale" aria-label="Vai alla pagina area admin" tabindex="10">Area Personale</a>
-                &gt;&gt;
-                <span id="pathSelected">Gestione Contenuti</span>
-            </span>
-
-        </div>
-
-        <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
-            <ul>
-                <li>
-                    <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="19"></span>
-                    <a id="skipMenu" class="skip" href="#content" tabindex="11">Vai al contenuto</a>
-                </li>
-                <li>
-                    <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="12" xml:lang="en">Home</a>
-                </li>
-                <li>
-                    <a href="Opere.html" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="13">Opere</a>
-                </li>
-                <li>
-                    <a href="Eventi.html" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="14">Eventi</a>
-                </li>
-                <li>
-                    <a href="OpzioniAcquisto.html" title="Opzioni d'acquisto" aria-label="Vai alla pagina degli acquisti" tabindex="15">Opzioni
-                        d'acquisto</a>
-                </li>
-                <li>
-                    <a href="Avvisi.html" title="Avvisi" aria-label="Vai alla pagina degli avvisi" tabindex="16">Avvisi</a>
-                </li>
-                <li>
-                    <a href="CosaDiconoDiNoi.html" title="Cosa dicono di noi" aria-label="Vai alla pagina delle recensioni" tabindex="17">Cosa
-                        dicono di noi</a>
-                </li>
-                <li>
-                    <a href="Contatti.html" title="Contatti" aria-label="Vai alla pagina dei contatti" tabindex="18">Contatti</a>
-                </li>
-            </ul>
-        </div>
-
-        <div id="content" role="main">
-            <h2 class="H2Home">Contenuti del sito</h2>
-
-            <form id="contentFilter" action="" method="post"><!-- Nascondi con CSS -->
-                <fieldset id="filterBox">
-                    <legend class="Hidelegend">Gestione contenuti</legend>
-
-                    <p>
-                        <label id="labelFiltro" for="filterContent">Selezionare il contenuto</label>
-                        <select id="filterContent" name="filterContent" aria-label="Filtro per il tipo di contenuto">
-                            <option selected="selected" value="Opera"> Opera</option>
-                            <option value="Evento"> Evento</option>
-                            <option value="Avviso"> Avviso</option>
-                        </select>
-                        <input id="filterButton" name="filter" value="Filtra" type="button"/>
-                    </p>
-
-                    <p>
-                        <label id="labelPeriod" for="filterPeriod">Selezionare il periodo storico</label>
-                        <select id="filterPeriod" name="filterPeriod" aria-label="Filtro per il periodo storico">
-                            <option selected="selected" value="Quattrocento"> Quattrocento</option>
-                            <option value="Cinquecento"> Cinquecento</option>
-                            <option value="Seicento"> Seicento</option>
-                            <option value="Settecento"> Settecento</option>
-                        </select>
-                    </p>
-
-                    <p>
-                        <label id="labeOpera" for="filterOpera">Selezionare il tipo di opera</label>
-                        <select id="filterOpera" name="filterOpera" aria-label="Filtro per il tipo di opera">
-                            <option selected="selected" value="Pittura"> Pittura</option>
-                            <option value="Scultura"> Scultura</option>
-                        </select>
-                    </p>
-                </fieldset>
-            </form>
-
-            <p>
-                Sono stati trovati # risultati:
+        </li>
+        <li>
+            <a href="" tabindex="">Pagina 2</a>
+            <p class="UserButton">
+                <a class="Button" href="" title="Rimuovi contenuto" role="button" aria-label="Rimuovi contenuto" tabindex="">Rimuovi</a>
+                <a class="Button" href="" title="Modifica dettagli contenuto" role="button" aria-label="Modifica dettagli contenuto" tabindex="">Modifica</a>
             </p>
-
-            <ul class="listClass">
-                <li>
-                    <a href="" tabindex="24">Pagina 1</a>
-                    <a class="Button" href="" title="Rimuovi contenuto" role="button" aria-label="Rimuovi contenuto">Rimuovi</a>
-                    <a class="Button" href="" title="Modifica dettagli contenuto" role="button" aria-label="Modifica dettagli contenuto">Modifica</a>
-                </li>
-                <li>
-                    <a href="" tabindex="">Pagina 2</a>
-                    <a class="Button" href="" title="Rimuovi contenuto" role="button" aria-label="Rimuovi contenuto">Rimuovi</a>
-                    <a class="Button" href="" title="Modifica dettagli contenuto" role="button" aria-label="Modifica dettagli contenuto">Modifica</a>
-                </li>
-                <li>
-                    <a href="" tabindex="" >Pagina 3</a>
-                    <a class="Button" href="" title="Rimuovi contenuto" role="button" aria-label="Rimuovi contenuto">Rimuovi</a>
-                    <a class="Button" href="" title="Modifica dettagli contenuto" role="button" aria-label="Modifica dettagli contenuto">Modifica</a>
-                </li>
-            </ul>
-
-            <p class="Navigation">
-                <a  class="Button" href="" title="Torna indietro" role="button" aria-label="Torna alla pagina di gestione utenti precedente"> &lt; Precedente
-                </a>
-                <a  class="Button" href="" title="Vai avanti" role="button" aria-label="Vai alla pagina di gestione utenti succesiva"> Successivo &gt;
-                </a>
+        </li>
+        <li>
+            <a href="" tabindex="" >Pagina 3</a>
+            <p class="UserButton">
+                <a class="Button" href="" title="Rimuovi contenuto" role="button" aria-label="Rimuovi contenuto" tabindex="">Rimuovi</a>
+                <a class="Button" href="" title="Modifica dettagli contenuto" role="button" aria-label="Modifica dettagli contenuto" tabindex="">Modifica</a>
             </p>
+        </li>
+    </ul>
 
-            <a aria-label="Torna su" href="#header" id="ButtonBackUp" title="Torna su">
-                <img alt="Torna su" src="../Images/TornaSu.png"/>
-            </a>
-        </div>
+    <p class="Navigation">
+        <a  class="Button" href="" title="Torna indietro" role="button" aria-label="Torna alla pagina di gestione utenti precedente" tabindex="29"> &lt; Precedente
+        </a>
+        <a  class="Button" href="" title="Vai avanti" role="button" aria-label="Vai alla pagina di gestione utenti succesiva" tabindex="30"> Successivo &gt;
+        </a>
+    </p>
 
-        <div aria-label="footer" id="footer">
-            <p>
-                Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
-            </p>
-            <p>
-                Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
-            </p>
-            <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
-            <img alt="Simbolo di validazione CSS" src="../Images/vcss-blue.gif"/>
-        </div>
+    <a aria-label="Torna su" href="#header" id="ButtonBackUp" tabindex="35" title="Torna su">
+        <img alt="Torna su" src="../Images/TornaSu.png"/>
+    </a>
+</div>
 
-    </body>
+<div aria-label="footer" id="footer">
+    <p>
+        Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
+    </p>
+    <p>
+        Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
+    </p>
+    <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
+    <img alt="Simbolo di validazione CSS" src="../Images/vcss-blue.gif"/>
+</div>
+
+</body>
 </html>

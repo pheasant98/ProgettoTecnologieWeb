@@ -95,20 +95,18 @@
         Login
     </h2>
     <form id="loginForm" action="" method="post" role="form" aria-label="form per effettuare il login">
-        <fieldset id="loginFieldSet">
+        <fieldset class="fieldsetContent">
             <legend class="Hidelegend">Login</legend>
-            <p>
+            <p class="Navigation">
                 <label id="usernameLabel" for="username" xml:lang="en">Username</label>
                 <input id="username" name="username" type="text" tabindex="15"/>
             </p>
-
-            <p>
+            <p class="Navigation">
                 <label id="passwordLabel" for="password" xml:lang="en">Password</label>
                 <input id="password" name="password" type="text" tabindex="16"/>
             </p>
-
-            <p>
-                <input id="ButtonAccedi" name="accedi" value="Accedi" type="submit" aria-label="Pulsante per la ricerca" tabindex="17"/>
+            <p class="Navigation">
+                <input id="confirm" class="Button" name="accedi" value="Accedi" type="submit" aria-label="Pulsante per accedere al proprio account" tabindex="17"/>
             </p>
         </fieldset>
     </form>

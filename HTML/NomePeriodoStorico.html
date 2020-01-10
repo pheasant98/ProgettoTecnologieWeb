@@ -118,14 +118,14 @@
     </p>
 
     <form id="operaFilter" action="" method="post"><!-- Nascondi con CSS -->
-        <fieldset id="filterBox">
+        <fieldset class="Navigation">
             <legend class="Hidelegend">Periodo storico</legend>
             <label id="labelfilterType" for="filterType">Selezionare il tipo di opera</label>
             <select name="filterType" id="filterType" aria-label="filtro per il tipo di opera">
                 <option value="Scultura" selected="selected"> Scultura </option>
                 <option value="Pittura"> Pittura </option>
             </select>
-            <input id="filterButton" name="filter" value="Filtra" type="button"/>
+            <input id="confirm" class="Button" name="filter" value="Filtra" type="button" tabindex="21"/>
         </fieldset>
     </form>
 

@@ -93,7 +93,7 @@
     <h2 class="title-content">Registrazione</h2>
 
     <form id="registration" action="" method="post"><!-- Nascondi con CSS -->
-        <fieldset id="personalData">
+        <fieldset id="personalData" form="registration" class="fieldsetContent">
             <legend class="Hidelegend">Dati personali</legend>
 
             <p>
@@ -122,7 +122,7 @@
             </p>
         </fieldset>
 
-        <fieldset id="contactData">
+        <fieldset id="contactData" form="registration" class="fieldsetContent">
             <legend>Dati di contatto</legend>
 
             <p>
@@ -139,7 +139,7 @@
             </fieldset>
         </fieldset>
 
-        <fieldset id="accountData">
+        <fieldset id="accountData" form="registration" class="fieldsetContent">
             <legend>Dati d'accesso</legend>
 
             <p>
@@ -160,10 +160,10 @@
             </p>
         </fieldset>
 
-        <p class="Navigation">
-            <input id="reset" name="reset" value="Cancella" type="reset" aria-label="Pulsante per la cancellazione dei dati inseriti" tabindex="28"/>
-            <input id="confirm" name="confirm" value="Conferma" type="submit" aria-label="Pulsante per la conferma dati inseriti" tabindex="29"/>
-        </p>
+        <fieldset class="Navigation">
+            <input id="reset" class="Button" name="reset" value="Cancella" type="reset" aria-label="Pulsante per la cancellazione dei dati inseriti" tabindex="28"/>
+            <input id="confirm" class="Button" name="confirm" value="Conferma" type="submit" aria-label="Pulsante per la conferma dati inseriti" tabindex="29"/>
+        </fieldset>
     </form>
 
     <a id="ButtonBackUp" href="#header" title="Torna su" aria-label="Torna su" tabindex="30">
