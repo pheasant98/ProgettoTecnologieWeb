@@ -109,19 +109,19 @@
         <div id="content" role="main">
             <h2 class="title">Modifica della pagina numero X</h2>
             <form id="Modifica" tabindex="20" action="" method="post"><!-- Nascondi con CSS -->
-                <fieldset id="BoxModifica" class="fieldsetContent" >
+                <fieldset id="BoxModifica" class="fieldset" >
                     <legend class="Hidelegend">Modifica pagina</legend>
                     <p id="TipoPaginaAvv">Tipologia di pagina: Avviso</p>
                     <p id="TipoPaginaEven">Tipologia di pagina: Evento</p>
                     <p id="TipoPaginaOper">Tipologia di pagina: Opera</p>
 
-                    <fieldset id="BoxModificaAvviso" class="fieldsetContent">
+                    <fieldset id="BoxModificaAvviso" class="fieldset">
                         <p>
                             <label id="labelDataAvviso" for="DataAvviso">Data: </label>
                             <input id="DataAvviso" name="DataAvviso" type="text" aria-label="Modifica la data dell'avviso" aria-required="true"/>
                         </p>
                         <p>
-                            <a class="skip" href="#InvioModifiche">Vai alla conferma delle modifiche</a>
+                            <a class="skip" href="#confirm">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
@@ -129,11 +129,11 @@
                             <input id="Oggetto" name="Oggetto" type="text" aria-label="Modifica l'oggetto dell'avviso" aria-required="true"/>
                         </p>
                         <p>
-                            <a class="skip" href="#InvioModifiche">Vai alla conferma delle modifiche</a>
+                            <a class="skip" href="#confirm">Vai alla conferma delle modifiche</a>
                         </p>
                     </fieldset>
 
-                    <fieldset id="BoxModificaEvento" class="fieldsetContent">
+                    <fieldset id="BoxModificaEvento" class="fieldset">
                         <p>
                             <label id="labelTipoEvento" for="TipoEvento">Tipologia: </label>
                             <select id="TipoEvento" name="TipoEvento" aria-label="Modifica la tipologia di evento" aria-required="true">
@@ -142,7 +142,7 @@
                             </select>
                         </p>
                         <p>
-                            <a class="skip" href="#InvioModifiche">Vai alla conferma delle modifiche</a>
+                            <a class="skip" href="#confirm">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
@@ -150,7 +150,7 @@
                             <input id="DataEvento" name="DataEvento" type="text" aria-label="Modifica la data dell'evento" aria-required="true"/>
                         </p>
                         <p>
-                            <a class="skip" href="#InvioModifiche">Vai alla conferma delle modifiche</a>
+                            <a class="skip" href="#confirm">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
@@ -158,11 +158,11 @@
                             <input id="TitoloEvento" name="TitoloEvento" type="text" aria-label="Modifica il titolo delle'evento" aria-required="true"/>
                         </p>
                         <p>
-                            <a class="skip" href="#InvioModifiche">Vai alla conferma delle modifiche</a>
+                            <a class="skip" href="#confirm">Vai alla conferma delle modifiche</a>
                         </p>
                     </fieldset>
 
-                    <fieldset id="BoxModificaOpera" class="fieldsetContent">
+                    <fieldset id="BoxModificaOpera" class="fieldset">
                         <p>
                             <label id="labelIDOpera" for="IDOpera">ID: </label>
                             <input id="IDOpera" name="IDOpera" type="hidden" aria-required="true"/>
@@ -172,7 +172,7 @@
                             <input id="Autore" name="Autore" type="text" aria-label="Modifica l'autore dell'opera" aria-required="true"/>
                         </p>
                         <p>
-                           <a href="#InvioModifiche" class="skip">Vai alla conferma delle modifiche</a>
+                           <a href="#confirm" class="skip">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
@@ -180,7 +180,7 @@
                             <input id="TitoloOpera" name="TitoloOpera" type="text" aria-label="Modifica il titolo dell'opera" aria-required="true"/>
                         </p>
                         <p>
-                            <a class="skip" href="#InvioModifiche">Vai alla conferma delle modifiche</a>
+                            <a class="skip" href="#confirm">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
@@ -188,7 +188,7 @@
                             <input id="Anno" name="Anno" type="text" aria-label="Modifica l'anno dell'opera" aria-required="true"/>
                         </p>
                         <p>
-                            <a class="skip" href="#InvioModifiche">Vai alla conferma delle modifiche</a>
+                            <a class="skip" href="#confirm">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
@@ -201,7 +201,7 @@
                             </select>
                         </p>
                         <p>
-                            <a class="skip" href="#InvioModifiche">Vai alla conferma delle modifiche</a>
+                            <a class="skip" href="#confirm">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
@@ -212,7 +212,7 @@
                             </select>
                         </p>
                         <p>
-                            <a class="skip" href="#InvioModifiche">Vai alla conferma delle modifiche</a>
+                            <a class="skip" href="#confirm">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
@@ -220,7 +220,7 @@
                             <input id="Tecnica" name="Tecnica" type="text" aria-label="Modifica la tecnica del''opera" aria-required="true"/>
                         </p>
                         <p>
-                            <a class="skip" href="#InvioModifiche">Vai alla conferma delle modifiche</a>
+                            <a class="skip" href="#confirm">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
@@ -228,7 +228,7 @@
                             <input id="Materiale" name="Materiale" type="text" aria-label="Modifica il materiale dell'opera" aria-required="true"/>
                         </p>
                         <p>
-                            <a class="skip" href="#InvioModifiche">Vai alla conferma delle modifiche</a>
+                            <a class="skip" href="#confirm">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
@@ -236,7 +236,7 @@
                             <input id="Utente" name="Utente" type="hidden" aria-required="true"/>
                         </p>
 
-                        <fieldset id="fieldLoan">
+                        <fieldset id="fieldLoan" class="fieldset">
                             <label id="labelLoan" for="fieldLoan">In prestito</label>
                             <label id="labelLoanYes" for="textLoanYes">Sì</label>
                             <input id="textLoanYes" name="textLoan" value="Si" type="radio"/>
@@ -244,11 +244,11 @@
                             <input id="textLoanNo" name="textLoan" value="No" type="radio"/>
                         </fieldset>
                         <p>
-                            <a class="skip" href="#InvioModifiche">Vai alla conferma delle modifiche</a>
+                            <a class="skip" href="#confirm">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
-                            <a class="skip" href="#InvioModifiche">Vai alla conferma delle modifiche</a>
+                            <a class="skip" href="#confirm">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>

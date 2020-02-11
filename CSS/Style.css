@@ -102,7 +102,7 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     border: 2px solid #000000;
 }
 
-#labelS,.Hidelegend {
+#labelS,.Hidelegend { /* regole per nascondere label e hidelegend*/
     position: absolute;
     height: 0px;
     overflow: hidden;
@@ -177,7 +177,7 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     border-radius: 20px;
 }
 
-.UserButton{ /* regole per i bottoni utente*/
+.UserButton{ /* regole per i bottoni utente posiziona i bottoni a sinistra*/
     text-align: right;
     list-style-type: none;
     border-style: none;
@@ -194,7 +194,7 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     margin-right: 5.5em;
 }
 
-.Navigation{/* regola per il posizionamento al centro dei bottoni per la navigazione*/
+.Navigation{/* regola per il posizionamento al centro del contenuto per la navigazione*/
     list-style-type: none;
     text-align: center;
     border-style: none;
@@ -318,28 +318,23 @@ a:visited {
 
 #reviewButton, #buyButton {
     float: right;
-    font-size: 0.8em;
+    font-size: 1em;
 }
 
-.fieldsetContent{
+.fieldset{ /*regole per template di fieldset, principalmente toglie il bordo */
     border:none;
     padding: 1em;
     text-align: justify;
 }
 
-.fieldsetContent input, .fieldsetContent label, .fieldsetContent select {
+.fieldset input, .fieldset label, .fieldset select {
     margin-right: 2em;
     margin-top: 1em;
     margin-bottom: 1em;
 
 }
 
-#ButtonAccedi{
-    position: relative;
-    left:40%;
-}
-
-#reset,#confirm{
+#Back,#Next,#reset,#confirm{
     display: inline-block;
 }
 
