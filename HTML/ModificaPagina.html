@@ -2,7 +2,6 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN" "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
 
-<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">-->
 <html xml:lang="it" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -12,7 +11,7 @@
         <meta name="language" content="italian it"/>
         <meta name="title" content="Modifica pagina | Museo arte nel tempo"/>
         <meta name="description" content=""/>
-        <meta name="keywords" content="arte, pittura, scultura, museo"/>       <!-- Rivedere per sicurezza -->
+        <meta name="keywords" content="arte, pittura, scultura, museo"/>
         <meta name="author" content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto"/>
 
         <link rel="stylesheet" media="screen" href="../CSS/Style.css" type="text/css"/>
@@ -23,14 +22,12 @@
 
     <body>
         <div id="header" role="banner">
-
             <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
-            <!-- Utilizzare il css per inserire il logo -->
             <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
-                Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
+                Menu ad <span xml:lang="en">hamburger</span>
             </span>
             <span id="loginMenuPlaceholder"/>
-            <form id="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
+            <form id="search" action="" method="post" role="search">
                 <fieldset id="searchBox">
                     <legend class="Hidelegend">Ricerca</legend>
                     <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="2">
@@ -54,7 +51,7 @@
                 <a href="AreaAdmin.html" tabindex="10">Area Personale</a> &gt;&gt;
                 <span id="pathSelected">Modifica</span>
             </span>
-        </div>   <!-- Da rivedere come farlo -->
+        </div>
 
         <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
             <ul>
@@ -90,7 +87,7 @@
 
         <div id="content" role="main">
             <h2 class="title">Modifica della pagina numero X</h2>
-            <form id="Modifica" tabindex="20" action="" method="post"><!-- Nascondi con CSS -->
+            <form id="Modifica" tabindex="20" action="" method="post">
                 <fieldset id="BoxModifica" class="fieldset" >
                     <legend class="Hidelegend">Modifica pagina</legend>
                     <p id="TipoPaginaAvv">Tipologia di pagina: Avviso</p>
@@ -172,7 +169,6 @@
                         <p>
                             <a class="skip" href="#confirm">Vai alla conferma delle modifiche</a>
                         </p>
-
                         <p>
                             <label id="labelPeriodoStorico" for="PeriodoStorico">Periodo storico: </label>
                             <select id="PeriodoStorico" name="PeriodoStorico" aria-label="Modifica il periodo storico di appartenenza" aria-required="true">
@@ -185,7 +181,6 @@
                         <p>
                             <a class="skip" href="#confirm">Vai alla conferma delle modifiche</a>
                         </p>
-
                         <p>
                             <label id="labelStile" for="Stile">Stile: </label>
                             <select id="Stile" name="Stile" aria-label="Modifica lo stile artistico" aria-required="true">
@@ -196,7 +191,6 @@
                         <p>
                             <a class="skip" href="#confirm">Vai alla conferma delle modifiche</a>
                         </p>
-
                         <p>
                             <label id="labelTecnica" for="Tecnica">Tecnica: </label>
                             <input id="Tecnica" name="Tecnica" type="text" aria-label="Modifica la tecnica del''opera" aria-required="true"/>
@@ -204,7 +198,6 @@
                         <p>
                             <a class="skip" href="#confirm">Vai alla conferma delle modifiche</a>
                         </p>
-
                         <p>
                             <label id="labelMateriale" for="Materiale">Materiale: </label>
                             <input id="Materiale" name="Materiale" type="text" aria-label="Modifica il materiale dell'opera" aria-required="true"/>
@@ -212,12 +205,10 @@
                         <p>
                             <a class="skip" href="#confirm">Vai alla conferma delle modifiche</a>
                         </p>
-
                         <p>
                             <label id="labelUtente" for="Utente">Utente: </label>
                             <input id="Utente" name="Utente" type="hidden" aria-required="true"/>
                         </p>
-
                         <fieldset id="fieldLoan" class="fieldset">
                             <label id="labelLoan" for="fieldLoan">In prestito</label>
                             <label id="labelLoanYes" for="textLoanYes">Sì</label>
@@ -232,12 +223,12 @@
                         <p>
                             <a class="skip" href="#confirm">Vai alla conferma delle modifiche</a>
                         </p>
-
                         <p>
                             <label id="labelUploadImg" for="Immagine">Scegliere l'immagine: </label>
                             <input id="Immagine" name="Immagine" type="file" aria-label="Modifica l'immagine dell'opera" aria-required="true"/>
                         </p>
                     </fieldset>
+
                     <p>
                         <label id="labelTextArea" for="textArea">Descrizione: </label>
                         <textarea id="textArea" name="textArea" rows="10" cols="70" aria-label="Modifica la descrizione" aria-required="true">
@@ -249,13 +240,12 @@
                         <input id="reset" class="Button" name="annulla" value="Annulla" type="reset" aria-label="Annulla le modifiche apportate" tabindex="54"/>
                         <input id="confirm" class="Button" name="invio" value="Conferma" type="submit" aria-label="Invia le modifiche apportate" tabindex="55" />
                     </fieldset>
-
                 </fieldset>
             </form>
 
-                <a id="ButtonBackUp" href="#header" title="Torna su" aria-label="Torna su">
-                    <img alt="Torna su" src="../Images/TornaSu.png"/>
-                </a>
+            <a id="ButtonBackUp" href="#header" title="Torna su" aria-label="Torna su">
+                <img alt="Torna su" src="../Images/TornaSu.png"/>
+            </a>
         </div>
 
         <div id="footer" aria-label="footer">
@@ -268,6 +258,5 @@
             <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
             <img alt="Simbolo di validazione CSS" src="../Images/vcss-blue.gif"/>
         </div>
-
     </body>
 </html>

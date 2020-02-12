@@ -2,8 +2,6 @@
     require_once("PHP/DatabaseAccess.php");
     require_once("PHP/Utilities.php");
 
-
-
     function getLastNews() {
         $databaseAccess = new DatabaseAccess();
 

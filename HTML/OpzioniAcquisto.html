@@ -2,7 +2,6 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN" "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
 
-<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">-->
 <html xml:lang="it" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -12,7 +11,7 @@
         <meta name="language" content="italian it"/>
         <meta name="title" content="Opzioni d'acquisto | Museo arte nel tempo"/>
         <meta name="description" content=""/>
-        <meta name="keywords" content="arte, pittura, scultura, museo"/>       <!-- Rivedere per sicurezza -->
+        <meta name="keywords" content="arte, pittura, scultura, museo"/>
         <meta name="author" content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto"/>
 
         <link rel="stylesheet" media="screen" href="../CSS/Style.css" type="text/css"/>
@@ -20,16 +19,17 @@
         <link rel="icon" href=""/>
         <script src="../JavaScript/Placeholder.js" type="text/javascript"></script>
     </head>
+
     <body>
         <div id="header" role="banner">
-
             <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
-            <!-- Utilizzare il css per inserire il logo -->
             <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
-            Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
+                Menu ad <span xml:lang="en">hamburger</span>
             </span>
+
             <span id="loginMenuPlaceholder"/>
-            <form id="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
+
+            <form id="search" action="" method="post" role="search">
                 <fieldset id="searchBox">
                     <legend class="Hidelegend">Ricerca</legend>
                     <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
@@ -43,6 +43,7 @@
                 </fieldset>
             </form>
         </div>
+
         <div id="breadcrumbs" aria-label="breadcrumbs">
             <p>
                 Ti trovi in:
@@ -52,7 +53,7 @@
                 &gt;&gt;
                 <span id="pathSelected">Opzioni d'acquisto</span>
             </span>
-        </div>   <!-- Da rivedere come farlo -->
+        </div>
 
         <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
             <ul>
@@ -90,23 +91,21 @@
             <a class="skip" href="#o2" tabindex="18">Salta la sezione dei biglietti</a>
             <dl>
                 <dt>Intero: </dt>
-                    <dd>11.90€ cadauno.</dd>
+                <dd>11.90€ cadauno.</dd>
                 <dt>Ridotto (fino ai 14 anni): </dt>
-                    <dd>7.50€ cadauno.</dd>
+                <dd>7.50€ cadauno.</dd>
             </dl>
             <p id="o2" class="paragraph">Pacchetti</p>
             <a class="skip" href="#o3" tabindex="19">Salta la sezione dei pacchetti</a>
             <dl>
                 <dt>Famiglia: </dt>
-                    <dd>include 2 biglietti interi, a prezzo standard, e fino a 6 biglietti ridotti, ad un prezzo speciale di 6€ cadauno.</dd>
+                <dd>include 2 biglietti interi, a prezzo standard, e fino a 6 biglietti ridotti, ad un prezzo speciale di 6€ cadauno.</dd>
                 <dt>Comitiva: </dt>
-                    <dd>include biglietti interi, ad un prezzo speciale di 10€ cadauno, e ridotti, ad un prezzo speciale di 6.50€ cadauno.</dd>
+                <dd>include biglietti interi, ad un prezzo speciale di 10€ cadauno, e ridotti, ad un prezzo speciale di 6.50€ cadauno.</dd>
             </dl>
             <p id="o3" class="paragraph">Abbonamenti</p>
             <a class="skip" href="#o4" tabindex="20">Salta la sezione degli abbonamenti</a>
-            <dl>
-                <dd>Per gli abbonamenti è previsto l'acquisto solo presso la sede fisica del nostro museo.</dd>
-            </dl>
+            <p>Per gli abbonamenti è previsto l'acquisto solo presso la sede fisica del nostro museo.</p>
             <p id="o4" class="paragraph"> Desideri effettuare un acquisto? </p>
             <a class="skip" href="#ButtonBackUp" tabindex="21">Salta la sezione degli abbonamenti</a>
             <a id="buyButton" class="Button" href="Acquista.html" title="Pagina acquisto biglietti e pacchetti" role="button" aria-label="porta alla pagina dell'acquisto di biglietti o pacchetti" tabindex="22">Acquista</a>
