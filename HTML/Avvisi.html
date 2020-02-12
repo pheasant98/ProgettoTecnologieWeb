@@ -32,7 +32,7 @@
             </span>
             <span id="loginMenuPlaceholder"/>
 
-            <form id="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
+            <form id="search" name="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
                 <fieldset id="searchBox">
                     <legend class="Hidelegend">Ricerca</legend>
                     <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="2">
@@ -41,7 +41,7 @@
                         <option value="Avviso">Avviso</option>
                     </select>
                     <label id="labelS" for="textSearch">Cerca nel sito</label>
-                    <input id="textSearch" name="ricerca" role="search" type="text" tabindex="1"/>
+                    <input id="textSearch" name="ricerca" type="text" aria-label="casella di ricerca" tabindex="1"/>
                     <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="3"/>
                 </fieldset>
             </form>
@@ -62,7 +62,7 @@
             <ul>
                 <li>
                     <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="17"></span>
-                    <a id="skipMenu" class="skip" href="#content" tabindex="10">Vai al contenuto</a>
+                    <a id="skipMenu" class="skip" href="#content" aria-label="Vai al contenuto" tabindex="10">Vai al contenuto</a>
                 </li>
                 <li>
                     <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="11" xml:lang="en">Home</a>
@@ -92,13 +92,13 @@
 
         <div id="content" role="main">
             <h2 class="title">Avvisi</h2>
-            <a href="#Back" class="skip">Salta gli avvisi presenti nella pagina</a>
+            <a href="#Back" class="skip" aria-label="Salta gli avvisi">Salta gli avvisi presenti nella pagina</a>
             <dl class="clickableDl">
                 <dt>
-                    <a href="AvvisoSingolo.html">Oggetto: chiusura per controllo generale della sicurezza</a>
+                    <a href="AvvisoSingolo.html" aria-label="Vai all'avviso di cui oggetto">Oggetto: chiusura per controllo generale della sicurezza</a>
                 </dt>
                 <dd>
-                    <a href="#a2" class="skip">Salta l'avviso</a>
+                    <a href="#a2" class="skip" aria-label="Salta l'avviso">Salta l'avviso</a>
                     <p>
                         Data: 2020.01.29
                     </p>
@@ -108,10 +108,10 @@
                     </p>
                 </dd>
                 <dt id="a2">
-                    <a href="AvvisoSingolo.html">Oggetto: apertura straordinaria</a>
+                    <a href="AvvisoSingolo.html" aria-label="Vai all'avviso di cui oggetto">Oggetto: apertura straordinaria</a>
                 </dt>
                 <dd>
-                    <a href="#a3"  class="skip">Salta l'avviso</a>
+                    <a href="#a3"  class="skip" aria-label="Salta l'avviso">Salta l'avviso</a>
                     <p>
                         Data: 2020.01.20
                     </p>
@@ -121,10 +121,10 @@
                     </p>
                 </dd>
                 <dt id="a3">
-                    <a href="AvvisoSingolo.html">Oggetto: riapertura del museo</a>
+                    <a href="AvvisoSingolo.html" aria-label="Vai all'avviso di cui oggetto">Oggetto: riapertura del museo</a>
                 </dt>
                 <dd>
-                    <a href="#a4" class="skip">Salta l'avviso</a>
+                    <a href="#a4" class="skip" aria-label="Salta l'avviso">Salta l'avviso</a>
                     <p>
                         Data: 2020.01.13
                     </p>
@@ -134,10 +134,10 @@
                     </p>
                 </dd>
                 <dt id="a4">
-                    <a href="AvvisoSingolo.html">Oggetto: chiusura invernale</a>
+                    <a href="AvvisoSingolo.html" aria-label="Vai all'avviso di cui oggetto">Oggetto: chiusura invernale</a>
                 </dt>
                 <dd>
-                    <a href="#Back" class="skip">Salta l'avviso</a>
+                    <a href="#Back" class="skip" aria-label="Salta l'avviso">Salta l'avviso</a>
                 <p>
                     Data: 2019.12.28
                 </p>
@@ -156,7 +156,7 @@
                 </a>
             </p>
 
-            <a id="ButtonBackUp" href="#header" title="Torna su" aria-label="Torna su">
+            <a id="ButtonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
                 <img alt="Torna su" src="../Images/TornaSu.png"/>
             </a>
 
