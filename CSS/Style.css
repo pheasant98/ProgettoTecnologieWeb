@@ -1,5 +1,5 @@
 /* parte di CSS comune per tutti i dispositivi*/
-* {
+* {/*rende la pagina vuota e imposta un iterlinea di 1.5 per l'accessibilità della pagina*/
     padding: 0em;
     margin: 0em;
     font-family: sans-serif;
@@ -8,26 +8,26 @@
     line-height: 1.5em;
 }
 
-html, body {
+html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     margin: auto;
     min-width: 380px;
     background-color: #CCCCCC;
 }
 
-#header {
+#header {/*colore+ombreggiatura del header*/
     background-color: #333333;
     padding: 2em;
     box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.16), 0 30px 30px 0 rgba(0, 0, 0, 0.12);
 }
 
-#header404 {
+#header404 { /*header per pagina 404*/
     background-color: #333333;
     padding: 1em;
     box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.16), 0 30px 30px 0 rgba(0, 0, 0, 0.12);
     min-height: 15em;
 }
 
-#content404 {
+#content404 { /* da unire con content perchè sono uguali*/
     background-color: #FFFFFF;
     color: #000000;
     border-radius: 20px;
@@ -35,30 +35,30 @@ html, body {
     padding: 2em;
 }
 
-#logoImg {
+#logoImg { /* regole per impostare il logo in modo accessibile*/
     float:left;
     background-image: url('../images/logo.PNG');
     text-indent: 100%;
 }
 
-#UserTools {
+#UserTools { /*regole per impostare icona per il menu utente*/
     float:right;
     background-image: url('../images/MenuUser.png');
     background-color: #CCCCCC;
 }
 
-#LoginMenu a{
+#LoginMenu a{ /*pulsante di login*/
     float:right;
 }
 
-#HamburgerMenu {
+#HamburgerMenu { /*regole per impostare icona per il menu utente*/
     float:right;
     background-image: url('../images/HamburgerMenu.png');
     text-indent: 100%;
     background-color: #CCCCCC;
 }
 
-.ImgBackground{
+.ImgBackground{ /*regole per inserire una immagine con la tecnica image replacement*/
     display: block;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -102,13 +102,13 @@ html, body {
     border: 2px solid #000000;
 }
 
-#labelS,.Hidelegend {
+#labelS,.Hidelegend { /* regole per nascondere label e hidelegend*/
     position: absolute;
     height: 0px;
     overflow: hidden;
 }
 
-#breadcrumbs {
+#breadcrumbs { /*barra di contesto*/
     background-color: #EEEEEE;
     border-radius: 20px;
     color: #000000;
@@ -117,7 +117,7 @@ html, body {
     padding: 0.5em;
 }
 
-#breadcrumbs > p{
+#breadcrumbs > p{ /*mette in linea testo del primo paragrafo*/
     display: inline;
 }
 
@@ -129,7 +129,7 @@ html, body {
     padding: 2em;
 }
 
-#menu {
+#menu {/*menu di navigazione*/
     display: none;
     background-color: #EEEEEE;
     margin: 1.5em;
@@ -137,7 +137,7 @@ html, body {
     white-space: nowrap;
 }
 
-#menu ul {
+#menu ul {/*toglie pallini dal menu*/
     list-style-type: none;
     text-align: center;
 }
@@ -148,14 +148,14 @@ html, body {
     border-radius: 20px;
 }
 
-.listClass {
+.listClass {/*regola per template di un lista*/
     list-style-type: none;
     margin-bottom: 2.5em;
     margin-top: 1.5em;
     margin-left: 0.5em;
 }
 
-.listClass li{
+.listClass li{/*regola per template di un lista*/
     margin-bottom: 1em;
 }
 
@@ -177,25 +177,27 @@ html, body {
     border-radius: 20px;
 }
 
-.UserButton{
+.UserButton{ /* regole per i bottoni utente posiziona i bottoni a sinistra*/
     text-align: right;
     list-style-type: none;
+    border-style: none;
 }
 
-.UserButton a{
+.UserButton a{ /* regole per i bottoni utente*/
     font-size: 0.8em;
     display: inline-block;
 }
 
-.UserButton span{
+.UserButton span{ /* regole per i bottoni utente*/
     font-size: 1.3em;
     display: block;
     margin-right: 5.5em;
 }
 
-.Navigation{
+.Navigation{/* regola per il posizionamento al centro del contenuto per la navigazione*/
     list-style-type: none;
     text-align: center;
+    border-style: none;
 }
 
 #Modifica  {
@@ -217,19 +219,20 @@ html, body {
     border-style: none;
 }
 
-#textTitle {
-    display: block;
-    position: relative;
-    left:37%;
-    bottom:2em;
-}
-
 #textArea {
     display: block;
     position: relative;
     width: 60%;
-    left:37%;
-    bottom:2em;
+    left:15%;
+    bottom:1.4em;
+}
+
+#AreaDescr, #AreaDescr2, #AreaDescr3 {
+    display: block;
+    position: relative;
+    width: 60%;
+    left:15%;
+    bottom:1.4em;
 }
 
 #clause {
@@ -238,15 +241,15 @@ html, body {
     padding-bottom: 1em;
 }
 
-.skip {
+.skip { /*regola per nascondere il salta contenuto*/
     position: absolute;
     left: -9999px;
 }
 
-.skip:focus {
+.skip:focus {/*viene mostarto quando viene attivato dal tab*/
     position: static;
 }
-
+/* colori link*/
 a {
     color: #0000FF;
     text-decoration: none;
@@ -259,7 +262,7 @@ a:active {
 a:visited {
     color: #663366;
 }
-
+/*******/
 #Error404Options {
     list-style-type: none;
 }
@@ -267,9 +270,9 @@ a:visited {
 #Error404Options li {
     padding: 0.3em;
 }
+/*******/
 
-
-#ImgMuseo{
+#ImgMuseo{/*img in home*/
    /* padding: 5%;*/
     text-align: center;
  /*   max-height: 30em;
@@ -278,14 +281,14 @@ a:visited {
     padding-top: 1em;
 }
 
-#Map{
+#Map{/*regole per posizionamento e dimensionamento della mappa*/
     display: block;
     height: 12em;
     width: 80%;
     margin: 0.5em 10%;
 }
 
-#ButtonBackUp {
+#ButtonBackUp { /*torna su*/
     position: fixed;
     bottom: 3em;
     right: 3em;
@@ -313,12 +316,27 @@ a:visited {
     text-align: center;
 }
 
-
 #reviewButton, #buyButton {
     float: right;
-    font-size: 0.8em;
+    font-size: 1em;
 }
 
+.fieldset{ /*regole per template di fieldset, principalmente toglie il bordo */
+    border:none;
+    padding: 1em;
+    text-align: justify;
+}
+
+.fieldset input, .fieldset label, .fieldset select {
+    margin-right: 2em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+}
+
+#Back,#Next,#reset,#confirm{
+    display: inline-block;
+}
 
 @media screen and (max-width:700px) {
 
@@ -398,7 +416,7 @@ a:visited {
         font-size: 0.8em;
     }
 
-    #filter {
+    #filter, #filterType, #filterContent, #filterPeriod, #filterOpera {
         border: 0px;
         font-size: 1.3em;
         background: none;
@@ -421,7 +439,7 @@ a:visited {
         margin-left: 1%;
     }
 
-    #breadcrumbs.hide {
+    #breadcrumbs.hide {/* nasconde la barra di contesto*/
         display: none;
     }
 
@@ -430,7 +448,7 @@ a:visited {
         padding-bottom: 0.5em;
     }
 
-    #menu.show {
+    #menu.show { /* mostra il menu*/
         display: block;
         font-size: 3.5em;
         margin: 0;
@@ -438,7 +456,7 @@ a:visited {
         border-radius: 0;
     }
 
-    #closeMenu  {
+    #closeMenu  { /* X*/
         background-image: url('../Images/Close.png');
         background-position: center;
         background-repeat: no-repeat;
@@ -460,24 +478,28 @@ a:visited {
         top:7.8em;
     }
 
-    #content.hide {
+    #content.hide {/*nasconde il content*/
         display: none;
     }
 
-    #warning {
+    #warning { /* regole per la sezioni avvisi*/
         padding: 0.5em;
         margin-bottom: 1em;
         background-color: #EEEEEE;
         border-radius: 20px;
     }
 
-    .title-content{
+    .title{
         text-align: center;
         font-size: 3em;
     }
 
-    .paragraph-content {
-        font-size: 2em;
+    .paragraph {
+        font-size: 1.5em;
+    }
+
+    #AreaDescr, #AreaDescr2, #AreaDescr3 {
+        margin-left: 4em;
     }
 
 }
@@ -517,7 +539,7 @@ a:visited {
         border-radius: 20px;
     }
 
-    #filter {
+    #filter, #filterType, #filterContent, #filterPeriod, #filterOpera {
         border: 0px;
         font-size: 1.7em;
         background: none;
@@ -562,13 +584,13 @@ a:visited {
         border-radius: 20px;
     }
 
-    .title-content{
+    .title{
         text-align: center;
         font-size: 3em;
     }
 
-    .paragraph-content {
-        font-size: 2em;
+    .paragraph {
+        font-size: 1.3em;
     }
 }
 
@@ -620,7 +642,7 @@ a:visited {
         white-space: nowrap;
     }
 
-    #filter {
+    #filter, #filterType, #filterContent, #filterPeriod, #filterOpera {
         border: 0px;
         font-size: 2em;
         background: none;
@@ -676,12 +698,13 @@ a:visited {
         border-radius: 20px;
     }
 
-    .title-content{
+    .title{
         text-align: center;
         font-size: 3em;
     }
 
-    .paragraph-content {
-        font-size: 2em;
+    .paragraph {
+        font-size: 1.2em;
     }
+
 }

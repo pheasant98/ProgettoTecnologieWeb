@@ -95,24 +95,30 @@
 </div>
 
 <div id="content" role="main">
-    <h2 class="title-content">
+    <h2 class="title">
         Login
     </h2>
     <form id="loginForm" action="" method="post" role="form" aria-label="form per effettuare il login">
-        <fieldset id="loginFieldSet">
+        <fieldset class="fieldset">
             <legend class="Hidelegend">Login</legend>
-            <label id="usernameLabel" for="username" xml:lang="en">Username</label>
-            <input id="username" name="username" type="text" tabindex="15"/>
-            <label id="passwordLabel" for="password" xml:lang="en">Password</label>
-            <input id="password" name="password" type="text" tabindex="16"/>
-            <input id="ButtonAccedi" name="accedi" value="Accedi" type="submit" aria-label="Pulsante per la ricerca" tabindex="17"/>
+            <p class="Navigation">
+                <label id="usernameLabel" for="username" xml:lang="en">Username</label>
+                <input id="username" name="username" type="text" tabindex="15"/>
+            </p>
+            <p class="Navigation">
+                <label id="passwordLabel" for="password" xml:lang="en">Password</label>
+                <input id="password" name="password" type="text" tabindex="16"/>
+            </p>
+            <p class="Navigation">
+                <input id="confirm" class="Button" name="accedi" value="Accedi" type="submit" aria-label="Pulsante per accedere al proprio account" tabindex="17"/>
+            </p>
         </fieldset>
     </form>
     <p>
         Non hai ancora un <span xml:lang="en">account</span>?
-        <a aria-label="porta alla pagina di registrazione" href="" role="link" tabindex="18" title="Registrati">Registrati</a>!
+        <a aria-label="porta alla pagina di registrazione" href="" role="link" title="Registrati">Registrati</a>!
     </p>
-    <a aria-label="Torna su" href="#header" id="ButtonBackUp" tabindex="19" title="Torna su">
+    <a aria-label="Torna su" href="#header" id="ButtonBackUp" title="Torna su">
         <img alt="Torna su" src="../Images/TornaSu.png"/>
     </a>
 </div>

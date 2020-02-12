@@ -31,6 +31,7 @@
             <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
                 Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
             </span>
+<
             <span id="loginMenuPlaceholder"/>
             <form id="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
                 <fieldset id="searchBox">
@@ -94,39 +95,27 @@
         </div>
 
         <div id="content" role="main">
-            <h2 class="H2Home">Contenuti del sito</h2>
+            <h2 class="title">Contenuti del sito</h2>
 
             <form id="contentFilter" action="" method="post"><!-- Nascondi con CSS -->
-                <fieldset id="filterBox">
+                <fieldset class="Navigation">
                     <legend class="Hidelegend">Gestione contenuti</legend>
-
-                    <p>
-                        <label id="labelFiltro" for="filterContent">Selezionare il contenuto</label>
-                        <select id="filterContent" name="filterContent" aria-label="Filtro per il tipo di contenuto" tabindex="20">
-                            <option selected="selected" value="Opera"> Opera</option>
-                            <option value="Evento"> Evento</option>
-                            <option value="Avviso"> Avviso</option>
-                        </select>
-                        <input id="filterButton" name="filter" value="Filtra" type="button" tabindex="21"/>
-                    </p>
-
-                    <p>
-                        <label id="labelPeriod" for="filterPeriod">Selezionare il periodo storico</label>
-                        <select id="filterPeriod" name="filterPeriod" aria-label="Filtro per il periodo storico" tabindex="22">
-                            <option selected="selected" value="Quattrocento"> Quattrocento</option>
-                            <option value="Cinquecento"> Cinquecento</option>
-                            <option value="Seicento"> Seicento</option>
-                            <option value="Settecento"> Settecento</option>
-                        </select>
-                    </p>
-
-                    <p>
-                        <label id="labeOpera" for="filterOpera">Selezionare il tipo di opera</label>
-                        <select id="filterOpera" name="filterOpera" aria-label="Filtro per il tipo di opera" tabindex="23">
-                            <option selected="selected" value="Pittura"> Pittura</option>
-                            <option value="Scultura"> Scultura</option>
-                        </select>
-                    </p>
+                    <select id="filterContent" name="filterContent" aria-label="Filtro per il tipo di contenuto" tabindex="21">
+                        <option selected="selected" value="Opera"> Opera</option>
+                        <option value="Evento"> Evento</option>
+                        <option value="Avviso"> Avviso</option>
+                    </select>
+                    <select id="filterPeriod" name="filterPeriod" aria-label="Filtro per il periodo storico" tabindex="22">
+                        <option selected="selected" value="Quattrocento"> Quattrocento</option>
+                        <option value="Cinquecento"> Cinquecento</option>
+                        <option value="Seicento"> Seicento</option>
+                        <option value="Settecento"> Settecento</option>
+                    </select>
+                    <select id="filterOpera" name="filterOpera" aria-label="Filtro per il tipo di opera" tabindex="23">
+                        <option selected="selected" value="Pittura"> Pittura</option>
+                        <option value="Scultura"> Scultura</option>
+                    </select>
+                    <input id="confirm" class="Button" name="filter" value="Filtra" type="button" tabindex="20"/>
                 </fieldset>
             </form>
 
@@ -137,18 +126,24 @@
             <ul class="listClass">
                 <li>
                     <a href="" tabindex="24">Pagina 1</a>
-                    <a class="Button" href="" title="Rimuovi contenuto" role="button" aria-label="Rimuovi contenuto" tabindex="25">Rimuovi</a>
-                    <a class="Button" href="" title="Modifica dettagli contenuto" role="button" aria-label="Modifica dettagli contenuto" tabindex="26">Modifica</a>
+                    <p class="UserButton">
+                        <a class="Button" href="" title="Rimuovi contenuto" role="button" aria-label="Rimuovi contenuto" tabindex="">Rimuovi</a>
+                        <a class="Button" href="" title="Modifica dettagli contenuto" role="button" aria-label="Modifica dettagli contenuto" tabindex="">Modifica</a>
+                    </p>
                 </li>
                 <li>
                     <a href="" tabindex="">Pagina 2</a>
-                    <a class="Button" href="" title="Rimuovi contenuto" role="button" aria-label="Rimuovi contenuto" tabindex="">Rimuovi</a>
-                    <a class="Button" href="" title="Modifica dettagli contenuto" role="button" aria-label="Modifica dettagli contenuto" tabindex="">Modifica</a>
+                    <p class="UserButton">
+                        <a class="Button" href="" title="Rimuovi contenuto" role="button" aria-label="Rimuovi contenuto" tabindex="">Rimuovi</a>
+                        <a class="Button" href="" title="Modifica dettagli contenuto" role="button" aria-label="Modifica dettagli contenuto" tabindex="">Modifica</a>
+                    </p>
                 </li>
                 <li>
                     <a href="" tabindex="" >Pagina 3</a>
-                    <a class="Button" href="" title="Rimuovi contenuto" role="button" aria-label="Rimuovi contenuto" tabindex="">Rimuovi</a>
-                    <a class="Button" href="" title="Modifica dettagli contenuto" role="button" aria-label="Modifica dettagli contenuto" tabindex="">Modifica</a>
+                    <p class="UserButton">
+                        <a class="Button" href="" title="Rimuovi contenuto" role="button" aria-label="Rimuovi contenuto" tabindex="">Rimuovi</a>
+                        <a class="Button" href="" title="Modifica dettagli contenuto" role="button" aria-label="Modifica dettagli contenuto" tabindex="">Modifica</a>
+                    </p>
                 </li>
             </ul>
 

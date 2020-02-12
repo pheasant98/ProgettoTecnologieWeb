@@ -90,62 +90,80 @@
 </div>
 
 <div id="content" role="main">
-    <h2 class="H2Home">Registrazione</h2>
+    <h2 class="title">Registrazione</h2>
 
     <form id="registration" action="" method="post"><!-- Nascondi con CSS -->
-        <fieldset id="personalData" form="registration">
+        <fieldset id="personalData" form="registration" class="fieldset">
             <legend class="Hidelegend">Dati personali</legend>
-            <label id="labelName" for="textName">Nome:</label>
-            <input id="textName" name="textName" type="text" tabindex="16"/>
 
-            <label id="labelSurname" for="textSurname">Cognome:</label>
-            <input id="textSurname" name="textSurname" type="text" tabindex="17"/>
+            <p>
+                <label id="labelName" for="textName">Nome</label>
+                <input id="textName" name="textName" type="text" tabindex="16"/>
+            </p>
 
-            <label id="labelSex" for="radioSexM">Sesso:</label>
+            <p>
+                <label id="labelSurname" for="textSurname">Cognome</label>
+                <input id="textSurname" name="textSurname" type="text" tabindex="17"/>
+            </p>
 
-            <label id="labelSexM" for="radioSexM">Maschile</label>
-            <input id="radioSexM" name="radioSex" value="M" type="radio" tabindex="18"/>
+            <fieldset id="fieldSex" class="fieldset">
+                    <label id="labelSex" for="fieldSex">Sesso</label>
+                    <label id="labelSexM" for="radioSexM">Maschile</label>
+                    <input id="radioSexM" name="radioSex" value="M" type="radio" tabindex="18"/>
+                    <label id="labelSexF" for="radioSexF">Femminile</label>
+                    <input id="radioSexF" name="radioSex" value="F" type="radio" tabindex="19"/>
+                    <label id="labelSexA" for="radioSexA">Preferisco non dichiarare</label>
+                    <input id="radioSexA" name="radioSex" value="A" type="radio" tabindex="20"/>
+            </fieldset>
 
-            <label id="labelSexF" for="radioSexF">Femminile</label>
-            <input id="radioSexF" name="radioSex" value="F" type="radio" tabindex="19"/>
-
-            <label id="labelSexA" for="radioSexA">Preferisco non dichiarare</label>
-            <input id="radioSexA" name="radioSex" value="A" type="radio" tabindex="20"/>
-
-            <label id="labelDate" for="textDate">Data di nascita:</label>
-            <input id="textDate" name="textDate" type="text" tabindex="21"/>
+            <p>
+                <label id="labelDate" for="textDate">Data di nascita</label>
+                <input id="textDate" name="textDate" type="text" tabindex="21"/>
+            </p>
         </fieldset>
 
-        <fieldset id="contactData" form="registration">
+        <fieldset id="contactData" form="registration" class="fieldset">
             <legend>Dati di contatto</legend>
-            <label id="labelMail" for="textMail" xml:lang="en">E-mail:</label>
-            <input id="textMail" name="textMail" type="text" tabindex="22"/>
 
-            <label id="labelNewsletter" for="radioNewsletterYes">Iscrizione alla <span xml:lang="en">newsletter</span>:</label>
+            <p>
+                <label id="labelMail" for="textMail" xml:lang="en">E-mail</label>
+                <input id="textMail" name="textMail" type="text" tabindex="22"/>
+            </p>
 
-            <label id="labelNewsletterYes" for="radioNewsletterYes">Sì</label>
-            <input id="radioNewsletterYes" name="radioNewsletter" value="Si" ype="radio" tabindex="23"/>
-
-            <label id="labelNewsletterNo" for="radioNewsletterNo">No</label>
-            <input id="radioNewsletterNo" name="radioNewsletter" value="No" type="radio" tabindex="24"/>
+            <fieldset id="fieldNewsletter" class="fieldset">
+                <label id="labelNewsletter" for="fieldNewsletter">Iscrizione alla <span xml:lang="en">newsletter</span></label>
+                <label id="labelNewsletterYes" for="radioNewsletterYes">Sì</label>
+                <input id="radioNewsletterYes" name="radioNewsletter" value="Si" type="radio" tabindex="23"/>
+                <label id="labelNewsletterNo" for="radioNewsletterNo">No</label>
+                <input id="radioNewsletterNo" name="radioNewsletter" value="No" type="radio" tabindex="24"/>
+            </fieldset>
         </fieldset>
 
-        <fieldset id="accountData" form="registration">
+        <fieldset id="accountData" form="registration" class="fieldset">
             <legend>Dati d'accesso</legend>
-            <label id="labelUsername" for="textUsername" xml:lang="en">Username:</label>
-            <input id="textUsername" name="textUsername" type="text" tabindex="25"/>
 
-            <label id="labelPassword" for="textPassword" xml:lang="en">Password:</label>
-            <input id="textPassword" name="textPassword" type="password" tabindex="26"/>
+            <p>
+                <label id="labelUsername" for="textUsername" xml:lang="en">Username</label>
+                <input id="textUsername" name="textUsername" type="text" tabindex="25"/>
+            </p>
 
-            <label id="labelRepetePassword" for="textRepetePassword">Ripetere
-                <span xml:lang="en">password</span>:
-            </label>
-            <input id="textRepetePassword" name="textRepetePassword" type="password" tabindex="27"/>
+            <p>
+                <label id="labelPassword" for="textPassword" xml:lang="en">Password</label>
+                <input id="textPassword" name="textPassword" type="password" tabindex="26"/>
+            </p>
+
+            <p>
+                <label id="labelRepetePassword" for="textRepetePassword">Ripetere
+                    <span xml:lang="en">password</span>
+                </label>
+                <input id="textRepetePassword" name="textRepetePassword" type="password" tabindex="27"/>
+            </p>
         </fieldset>
 
-        <input id="reset" name="reset" value="Cancella" type="reset" aria-label="Pulsante per la cancellazione dei dati inseriti" tabindex="28"/>
-        <input id="confirm" name="confirm" value="Conferma" type="submit" aria-label="Pulsante per la conferma dati inseriti" tabindex="29"/>
+        <fieldset class="Navigation">
+            <input id="reset" class="Button" name="reset" value="Cancella" type="reset" aria-label="Pulsante per la cancellazione dei dati inseriti" tabindex="28"/>
+            <input id="confirm" class="Button" name="confirm" value="Conferma" type="submit" aria-label="Pulsante per la conferma dati inseriti" tabindex="29"/>
+        </fieldset>
     </form>
 
     <a id="ButtonBackUp" href="#header" title="Torna su" aria-label="Torna su" tabindex="30">
