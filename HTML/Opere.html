@@ -25,29 +25,10 @@
 <div id="header" role="banner">
     <h1 aria-label="Immagine del logo Museo arte nel tempo" class="ImgBackground" id="logoImg" role="img" title="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
     <!-- Utilizzare il css per inserire il logo -->
-    <span aria-label="Menu a hambuger, cliccaci sopra per aprire il menu" class="ImgBackground" id="HamburgerMenu" role="img" tabindex="5" title="Menu a hambuger, cliccaci sopra per aprire il menu">
-                Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
-            </span>
-    <div id="UserTools" class="ImgBackground" title="area dedicata alla registrazione, login e logout" aria-label="area dedicata alla registrazione, login e logout" tabindex="4">
-        <ul id="UserMenu">
-            <li>
-                <a id="logIn" class="Button" href="Login.html" title="LogIn" role="button" aria-label="porta alla pagina di login" xml:lang="en">
-                    LogIn
-                </a>
-            </li>
-            <li>
-                <a id="profile" class="Button" href="AreaUtente.html" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente">
-                    Area utente
-                </a>
-            </li>
-            <li>
-                <a id="logOut" class="Button" href="Index.html" title="LogOut" role="button" aria-label="esci dal tuo profilo" xml:lang="en">
-                    LogOut
-                </a>
-            </li>
-        </ul>
-    </div>
-
+    <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
+        Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
+    </span>
+    <span id="loginMenuPlaceholder"/>
     <form action="" id="search" method="post" role="search"><!-- Nascondi con CSS -->
         <fieldset id="searchBox">
             <legend class="Hidelegend">Ricerca</legend>

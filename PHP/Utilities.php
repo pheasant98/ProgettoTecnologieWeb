@@ -17,7 +17,7 @@
         }
 
         if ($isAuthenticated) {
-            $login = "  <div id=\"UserTools\" class=\"ImgBackground\" title=\"area dedicata alla registrazione, login e logout\" aria-label=\"area dedicata alla registrazione, login e logout\" tabindex=\"5\">
+            $login = "<div id=\"UserTools\" class=\"ImgBackground\" title=\"area dedicata alla registrazione, login e logout\" aria-label=\"area dedicata alla registrazione, login e logout\" tabindex=\"5\">
                         <ul id=\"UserMenu\">
                             <li>
                                 <a id=\"profile\" class=\"Button\" href=\"" . $path . "AreaPersonale.php\" title=\"Area utente\" role=\"button\" aria-label=\"vai alla pagina del profilo utente\" tabindex=\"6\">
@@ -32,7 +32,7 @@
                         </ul>
                     </div>";
         } else {
-            $login = "  <div id=\"LoginMenu\">
+            $login = "<div id=\"LoginMenu\">
                         <a id=\"logIn\" class=\"Button\" href=\"" . $path . "Login.php\" title=\"LogIn\" role=\"button\" aria-label=\"vai alla pagina di login\" tabindex=\"4\" xml:lang=\"en\">
                             LogIn
                         </a>
