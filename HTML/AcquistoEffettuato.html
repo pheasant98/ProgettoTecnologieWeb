@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN" "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
+
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">-->
+<html xml:lang="it" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <title>Acquisto effettuato | Museo arte nel tempo</title>
+
+    <meta name="language" content="italian it"/>
+    <meta name="title" content="Acquisto effettuato | Museo arte nel tempo"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content="arte, pittura, scultura, museo"/>       <!-- Rivedere per sicurezza -->
+    <meta name="author" content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto"/>
+
+    <link rel="stylesheet" media="screen" href="../CSS/Style.css" type="text/css"/>
+    <link rel="stylesheet" media="print" href="../CSS/Print.css" type="text/css"/>
+    <link rel="icon" href=""/>
+    <script src="../JavaScript/Placeholder.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+<div id="header" role="banner">
+
+    <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
+    <!-- Utilizzare il css per inserire il logo -->
+    <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
+            Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
+        </span>
+    <span id="loginMenuPlaceholder"/>
+    <form id="search" name="search" action="" method="post" role="search" aria-label="form per la ricerca nella pagina"><!-- Nascondi con CSS -->
+        <fieldset id="searchBox">
+            <legend class="Hidelegend">Ricerca</legend>
+            <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
+                <option selected="selected" value="Opera">Opera</option>
+                <option value="Evento">Evento</option>
+                <option value="Avviso">Avviso</option>
+            </select>
+            <label id="labelS" for="textSearch">Cerca nel sito</label>
+            <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
+            <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
+        </fieldset>
+    </form>
+</div>
+
+<div id="breadcrumbs" aria-label="breadcrumbs">
+    <p>
+        Ti trovi in:
+    </p>
+    <span id="path">
+            <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a>
+            &gt;&gt;
+            <a href="Opzioni d'acquisto.html" title="Opzioni d'acquisto" aria-label="Vai alla pagina opzioni d'acquisto del museo" tabindex="10">Opzioni d'acquisto</a>
+            &gt;&gt;
+            <a href="Acquista.html" title="Acquista" aria-label="Vai alla pagina acquista del museo" tabindex="11">Acquista</a>
+            &gt;&gt;
+            <a href="RiepilogoAcquisto.html" title="Acquista" aria-label="Vai alla pagina riepilogo degli acquisti del museo" tabindex="12">Acquista</a>
+            &gt;&gt;
+            <span id="pathSelected">Acquisto effettuato</span>
+        </span>
+</div>
+
+<div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
+    <ul>
+        <li>
+            <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="21"></span>
+            <a id="skipMenu" class="skip" href="#content" aria-label="Vai al contenuto" tabindex="13">Vai al contenuto</a>
+        </li>
+        <li>
+            <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="14" xml:lang="en">Home</a>
+        </li>
+        <li>
+            <a href="Opere.html" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="15">Opere</a>
+        </li>
+        <li>
+            <a href="Eventi.html" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="16">Eventi</a>
+        </li>
+        <li>
+            <a href="OpzioniAcquisto.html" title="Opzioni d'acquisto" aria-label="Vai alla pagina degli acquisti" tabindex="17">Opzioni
+                d'acquisto</a>
+        </li>
+        <li>
+            <a href="Avvisi.html" title="Avvisi" aria-label="Vai alla pagina degli avvisi" tabindex="18">Avvisi</a>
+        </li>
+        <li>
+            <a href="CosaDiconoDiNoi.html" title="Cosa dicono di noi" aria-label="Vai alla pagina delle recensioni" tabindex="19">Cosa
+                dicono di noi</a>
+        </li>
+        <li>
+            <a href="Contatti.html" title="Contatti" aria-label="Vai alla pagina dei contatti" tabindex="20">Contatti</a>
+        </li>
+    </ul>
+</div>
+
+<div id="content" role="main">
+    <h2 class="title">
+        Acquisto effettuato
+    </h2>
+    <p>
+        L'acquisto è stato portato a termine con successo, è ora possibile tornare alla pagina del proprio
+        <span xml:lang="en">account</span> ed usufruire dei servizi riservati agli utenti registrati
+    </p>
+
+    <a id="ButtonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
+        <img alt="Torna su" src="../Images/TornaSu.png"/>
+    </a>
+</div>
+
+<div id="footer" aria-label="footer">
+    <p>
+        Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
+    </p>
+    <p>
+        Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
+    </p>
+    <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
+    <img alt="Simbolo di validazione CSS" src="../Images/vcss-blue.gif"/>
+</div>
+
+</body>
+</html>
