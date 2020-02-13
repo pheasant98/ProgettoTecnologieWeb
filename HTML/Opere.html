@@ -29,7 +29,7 @@
         Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
     </span>
     <span id="loginMenuPlaceholder"/>
-    <form action="" id="search" method="post" role="search"><!-- Nascondi con CSS -->
+    <form id="search" name="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
         <fieldset id="searchBox">
             <legend class="Hidelegend">Ricerca</legend>
             <select aria-label="Seleziona il filtro per la ricerca" id="filter" name="filter" tabindex="2">
@@ -38,8 +38,8 @@
                 <option value="Avviso">Avviso</option>
             </select>
             <label for="textSearch" id="labelS">Cerca nel sito</label>
-            <input id="textSearch" name="ricerca" role="search" tabindex="1" type="text"/>
-            <input aria-label="Pulsante per la ricerca" id="Submit" name="invio" tabindex="3" type="submit" value="Cerca"/>
+            <input id="textSearch" name="ricerca" type="text" aria-label="Casella di testo" tabindex="1"/>
+            <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="3"/>
         </fieldset>
     </form>
 </div>
@@ -59,7 +59,7 @@
     <ul>
         <li>
             <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="17"></span>
-            <a id="skipMenu" href="#content" class="skip" tabindex="10">Vai al contenuto</a>
+            <a id="skipMenu" href="#content" class="skip" aria-label="Vai al contenuto" tabindex="10">Vai al contenuto</a>
         </li>
         <li>
             <a aria-label="Vai alla pagina homepage del museo" href="Index.html" title="Home" tabindex="11" xml:lang="en">Home</a>
@@ -92,7 +92,7 @@
     <p>Tutte le opere presenti all'interno del museo sono state suddivise in base al periodo storico di appartenenza, che ne fornisce una classificazione temporale.</p>
     <dl id="periodiStorici">
         <dt>
-            <a class="periodoStorico" href="">Quattrocento</a>
+            <a class="periodoStorico" href="" aria-label="">Quattrocento</a>
         </dt>
         <dd>
             <img alt="Immagine rappresentativa del periodo storico" src=""/>
@@ -129,7 +129,7 @@
         </dd>
     </dl>
     <!-- Da vedere bene -->
-    <a aria-label="Torna su" href="#header" id="ButtonBackUp" title="Torna su">
+    <a id="ButtonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
         <img alt="Torna su" src="../Images/TornaSu.png"/>
     </a>
 </div>

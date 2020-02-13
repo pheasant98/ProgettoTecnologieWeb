@@ -32,7 +32,7 @@
         Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
     </span>
         <span id="loginMenuPlaceholder"/>
-        <form id="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
+        <form id="search" name="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
             <fieldset id="searchBox">
                 <legend class="Hidelegend">Ricerca</legend>
                 <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
@@ -41,7 +41,7 @@
                     <option value="Avviso">Avviso</option>
                 </select>
                 <label id="labelS" for="textSearch">Cerca nel sito</label>
-                <input id="textSearch"name="ricerca" role="search" type="text" tabindex="1"/>
+                <input id="textSearch" name="ricerca" type="text" aria-label="casella di ricerca" tabindex="1"/>
                 <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
             </fieldset>
         </form>
@@ -63,7 +63,7 @@
             <ul>
                 <li>
                     <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="17"></span>
-                    <a id="skipMenu" href="#content" class="skip" tabindex="10">Vai al contenuto</a>
+                    <a id="skipMenu" href="#content" class="skip" aria-label="Vai al contenuto" tabindex="10">Vai al contenuto</a>
                 </li>
                 <li>
                     <a href="Index.html" aria-label="Vai alla pagina homepage del museo" title="Home" tabindex="11" xml:lang="en">Home</a>
@@ -92,7 +92,7 @@
         <div id="content" role="main">
 
             <h2 class="title">Contatti</h2>
-            <a class="skip" href="#ulOrari">Salta i contatti</a>
+            <a class="skip" href="#ulOrari" aria-label="Salta i contatti">Salta i contatti</a>
             <ul class="listClass">
                 <li>
                     Nome Museo: Museo Arte nel tempo
@@ -104,16 +104,16 @@
                     Cap, Città, Provincia: 31050 Povegliano <abbr title="Treviso">TV</abbr>
                 </li>
                 <li>
-                    Telefono: <a href="tel:347 968 6063">347 968 6063</a>
+                    Telefono: <a href="tel:347 968 6063" aria-label="chiama il questo numero">347 968 6063</a>
                 </li>
                 <li>
                     <span xml:lang="en">Email: </span>
-                    <a href="mailto:MuseoArteNelTempo@MAT.it">MuseoArteNelTempo@MAT.it</a>
+                    <a href="mailto:MuseoArteNelTempo@MAT.it" aria-label="Vai al sito web">MuseoArteNelTempo@MAT.it</a>
                 </li>
             </ul>
 
             <h2 id="ulOrari" class="title">Orari sede</h2>
-            <a href="#pMappa" class="skip">Salta alla mappa</a>
+            <a href="#pMappa" class="skip" aria-label="Salta alla mappa">Salta alla mappa</a>
             <ul class="listClass">
                 <li>
                     Lunedì: dalle 8:00 alle 19:00
@@ -147,7 +147,7 @@
                </object>
             </p>
 
-            <a id="ButtonBackUp" href="#header" title="Torna su" aria-label="Torna su">
+            <a id="ButtonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
                     <img alt="Torna su" src="../Images/TornaSu.png"/>
             </a>
 

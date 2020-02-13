@@ -32,7 +32,7 @@
         Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
     </span>
     <span id="loginMenuPlaceholder"/>
-    <form id="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
+    <form id="search" name="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
         <fieldset id="searchBox">
             <legend class="Hidelegend">Ricerca</legend>
             <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
@@ -41,7 +41,7 @@
                 <option value="Avviso">Avviso</option>
             </select>
             <label id="labelS" for="textSearch">Cerca nel sito</label>
-            <input id="textSearch" name="ricerca" role="search" type="text" tabindex="1"/>
+            <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
             <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
         </fieldset>
     </form>
@@ -65,7 +65,7 @@
     <ul>
         <li>
             <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="19"></span>
-            <a id="skipMenu" href="#content" class="skip" tabindex="11">Vai al contenuto</a>
+            <a id="skipMenu" href="#content" class="skip" role="button" aria-label="Vai al contenuto" tabindex="11">Vai al contenuto</a>
         </li>
         <li>
             <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="12" xml:lang="en">Home</a>
@@ -97,26 +97,26 @@
 
     <h2 class="title">Lascia una recensione</h2>
 
-    <form id="FeedBack" action="" method="post">
+    <form id="FeedBack" name="feedback" action="" method="post" role="form">
         <fieldset id="FeedBackBox">
             <legend class="Hidelegend">Lascia una recensione</legend>
             <p>
                 <label id="labelTitle" for="textTitle">Titolo</label>
-                 <input id="textTitle" name="textTitle" type="text" aria-required="true" tabindex="20"/>
+                <input id="textTitle" name="textTitle" type="text" aria-label="Inserisci il titolo" aria-required="true"/>
             </p>
 
             <p>
                 <label id="labelTextArea" for="textArea">Contenuto</label>
-                <textarea id="textArea" name="FeedbackArea" rows="20" cols="30" aria-required="true" tabindex="21">Scrivi qui la tua recensione!</textarea>
+                <textarea id="textArea" name="FeedbackArea" rows="20" cols="30" aria-label="Inserisci la recensione" aria-required="true">Scrivi qui la tua recensione!</textarea>
             </p>
 
             <p>
-                <input id="SubmitRec" class="Button" name="FeedBackButton" value="Invia" type="submit" aria-label="Pulsante per inviare la recensione" tabindex="22"/>
+                <input id="SubmitRec" class="Button" name="FeedBackButton" value="Invia" type="submit" role="button" aria-label="Pulsante per inviare la recensione"/>
             </p>
         </fieldset>
     </form>
 
-    <a id="ButtonBackUp" tabindex="17" href="#header" title="Torna su" aria-label="Torna su" >
+    <a id="ButtonBackUp" tabindex="17" href="#header" title="Torna su" role="button" aria-label="Torna su" >
         <img alt="Torna su" src="../Images/TornaSu.png"/>
     </a>
 

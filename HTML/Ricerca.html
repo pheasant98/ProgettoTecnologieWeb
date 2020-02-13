@@ -32,7 +32,7 @@
         Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
     </span>
     <span id="loginMenuPlaceholder"/>
-    <form id="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
+    <form id="search" name="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
         <fieldset id="searchBox">
             <legend class="Hidelegend">Ricerca</legend>
             <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
@@ -41,7 +41,7 @@
                 <option value="Avviso">Avviso</option>
             </select>
             <label id="labelS" for="textSearch">Cerca nel sito</label>
-            <input id="textSearch" name="ricerca" role="search" type="text" tabindex="1"/>
+            <input id="textSearch" name="ricerca" type="text" aria-label="search" tabindex="1"/>
             <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
         </fieldset>
     </form>
@@ -62,7 +62,7 @@
     <ul>
         <li>
             <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="18"></span>
-            <a id="skipMenu" class="skip" href="#content" tabindex="10">Vai al contenuto</a>
+            <a id="skipMenu" class="skip" href="#content" aria-label="Vai al contenuto" tabindex="10">Vai al contenuto</a>
         </li>
         <li>
             <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="11" xml:lang="en">Home</a>
@@ -94,11 +94,11 @@
     <h2 class="title">Ricerca</h2>
     <p>Categoria</p> <span>***</span>  <p>Numero risultati:</p> <span>***</span>
     <ul class="listClass">
-        <li><a href="#" class="page-link">1</a></li>
-        <li><a href="#" class="page-link">2</a></li>
-        <li><a href="#" class="page-link">3</a></li>
-        <li><a href="#" class="page-link">***</a></li>
-        <li><a href="#" class="page-link">***</a></li>
+        <li><a href="#" class="page-link" aria-label="">1</a></li>
+        <li><a href="#" class="page-link" aria-label="">2</a></li>
+        <li><a href="#" class="page-link" aria-label="">3</a></li>
+        <li><a href="#" class="page-link" aria-label="">***</a></li>
+        <li><a href="#" class="page-link" aria-label="">***</a></li>
     </ul>
     <!-- Da capire in base a come risulteranno le ricerche -->
     <ul class="listClass">
@@ -109,7 +109,7 @@
         </li>
     </ul>
 
-    <a id="ButtonBackUp" href="#header" title="Torna su" aria-label="Torna su" tabindex="19">
+    <a id="ButtonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
         <img alt="Torna su" src="../Images/TornaSu.png"/>
     </a>
 </div>

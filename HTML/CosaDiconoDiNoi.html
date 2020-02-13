@@ -32,7 +32,7 @@
         Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
     </span>
     <span id="loginMenuPlaceholder"/>
-    <form id="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
+    <form id="search" name="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
         <fieldset id="searchBox">
             <legend class="Hidelegend">Ricerca</legend>
             <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
@@ -41,7 +41,7 @@
                 <option value="Avviso">Avviso</option>
             </select>
             <label id="labelS" for="textSearch">Cerca nel sito</label>
-            <input id="textSearch" name="ricerca" role="search" type="text" tabindex="1"/>
+            <input id="textSearch" name="ricerca" type="text" aria-label="casella di ricerca" tabindex="1"/>
             <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
         </fieldset>
     </form>
@@ -61,7 +61,7 @@
     <ul>
         <li>
             <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="17"></span>
-            <a id="skipMenu" href="#content" class="skip" tabindex="10">Vai al contenuto</a>
+            <a id="skipMenu" href="#content" class="skip" aria-label="Vai al contenuto" tabindex="10">Vai al contenuto</a>
         </li>
         <li>
             <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="11" xml:lang="en">Home</a>
@@ -93,7 +93,7 @@
     <p class="paragraph">
         Desideri lasciare una recensione?
     </p>
-    <a id="reviewButton" class="Button" tabindex="22" href="" title="Pagina di scrittura di una recensione" role="button" aria-label="porta alla pagina di scrittura della recensione">Lascia una recensione</a>
+    <a id="reviewButton" class="Button" href="" title="Pagina di scrittura di una recensione" role="button" aria-label="Vai alla pagina di scrittura della recensione">Lascia una recensione</a>
     <p id="clause">
         Per lasciare una recensione devi essere registrato.
     </p>
@@ -102,7 +102,7 @@
             Oggetto BELLO
         </dt>
         <dd>
-            <a href="#p3" class="skip" tabindex="21">Salta l'evento</a>
+            <a href="#p3" class="skip" aria-label="Salta l'evento">Salta l'evento</a>
             <p class="reviewAuthor">&lt;Utente&gt;</p>
             <p class="reviewData">Data: &lt;Data&gt;</p>
             <p class="reviewDescription">Contenuto BELLO</p>
@@ -111,7 +111,7 @@
             Oggetto BELLO
         </dt>
         <dd>
-            <a href="#p3" class="skip" tabindex="21">Salta l'evento</a>
+            <a href="#p3" class="skip" aria-label="Salta l'evento">Salta l'evento</a>
             <p class="reviewAuthor">&lt;Utente&gt;</p>
             <p class="reviewData">Data: &lt;Data&gt;</p>
             <p class="reviewDescription">Contenuto BELLO</p>
@@ -120,7 +120,7 @@
             Oggetto BELLO
         </dt>
         <dd>
-            <a href="#p3" class="skip" tabindex="21">Salta l'evento</a>
+            <a href="#p3" class="skip" aria-label="Salta l'evento">Salta l'evento</a>
             <p class="reviewAuthor">&lt;Utente&gt;</p>
             <p class="reviewData">Data: &lt;Data&gt;</p>
             <p class="reviewDescription">Contenuto BELLO</p>
@@ -128,10 +128,10 @@
     </dl>
 
     <p class="Navigation">
-    <a id="Back" class="Button" href="" title="Precedente" aria-label="Vai alle recensioni precedenti" tabindex="19">&lt; Precedente</a>
-    <a id="Next" class="Button" href="" title="Successivo" aria-label="Vai alle recensioni successive" tabindex="20">Successivo &gt;</a>
+    <a id="Back" class="Button" href="" title="Precedente" role="button" aria-label="Vai alle recensioni precedenti">&lt; Precedente</a>
+    <a id="Next" class="Button" href="" title="Successivo" role="button" aria-label="Vai alle recensioni successive">Successivo &gt;</a>
     <!-- Da vedere bene -->
-    <a id="ButtonBackUp" href="#header" title="Torna su" aria-label="Torna su" tabindex="21">
+    <a id="ButtonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
         <img alt="Torna su" src="../Images/TornaSu.png"/>
     </a>
     </p>

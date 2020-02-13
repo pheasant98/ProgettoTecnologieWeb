@@ -27,7 +27,7 @@
         </div>
 
         <div id="content404" role="main">
-            <a class="skip" href="#searchBox404" tabindex="1">Salta il testo</a>
+            <a class="skip" href="#searchBox404" aria-label="Salta il testo">Salta il testo</a>
             <h2 class="title">Hai proprio l'aria di chi si è perso nei corridoi del museo...</h2>
             <p id="ImgError404" class="ImgBackground" title="Cornice vuote di un ritratto" role="img" aria-label="Cornice vuote di un ritratto">Cornice vuota con ritratto</p>
             <p class="paragraph">
@@ -38,25 +38,25 @@
             </p>
             <ul id="Error404Options">
                 <li>
-                    <form id="search" action="" method="post" role="search"> <!-- Nascondi con CSS -->
+                    <form id="search" name="search" action="" method="post" role="search"> <!-- Nascondi con CSS -->
                         <fieldset id="searchBox404">
                             <legend class="Hidelegend">Ricerca</legend>
-                            <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="2">
+                            <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca">
                                 <option selected="selected" value="Opera">Opera</option>
                                 <option value="Evento">Evento</option>
                                 <option value="Avviso">Avviso</option>
                             </select>
                             <label id="labelS" for="textSearch">Cerca nel sito</label>
-                            <input id="textSearch" name="ricerca" type="text" role="search" tabindex="3"/>
-                            <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="4"/>
+                            <input id="textSearch" name="ricerca" type="text" aria-label="casella di ricerca"/>
+                            <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca"/>
                         </fieldset>
                     </form>
                 </li>
                <li class="Navigation">
-                    <a id="ToHome" class="Button" href="Index.html" title="Home" role="button" aria-label="porta alla pagina di home" tabindex="5" xml:lang="en"> Home </a>
+                    <a id="ToHome" class="Button" href="Index.html" title="Home" role="button" aria-label="porta alla pagina di home" xml:lang="en"> Home </a>
                 </li>
             </ul>
-            <a id="ButtonBackUp" href="#header404" title="Torna su" aria-label="Torna su" tabindex="6">
+            <a id="ButtonBackUp" href="#header404" title="Torna su" role="button" aria-label="Torna su">
                 <img alt="Torna su" src="../Images/TornaSu.png"/>
             </a>
         </div>

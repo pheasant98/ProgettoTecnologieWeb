@@ -32,7 +32,7 @@
         Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
     </span>
     <span id="loginMenuPlaceholder"/>
-    <form id="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
+    <form id="search" name="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
         <fieldset id="searchBox">
             <legend class="Hidelegend">Ricerca</legend>
             <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
@@ -41,7 +41,7 @@
                 <option value="Avviso">Avviso</option>
             </select>
             <label id="labelS" for="textSearch">Cerca nel sito</label>
-            <input id="textSearch" name="ricerca" role="search" type="text" tabindex="1"/>
+            <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
             <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
         </fieldset>
     </form>
@@ -64,7 +64,7 @@
     <ul>
         <li>
             <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="19"></span>
-            <a id="skipMenu" class="skip" href="#content" tabindex="11">Vai al contenuto</a>
+            <a id="skipMenu" class="skip" href="#content" aria-label="Vai al contenuto" tabindex="11">Vai al contenuto</a>
         </li>
         <li>
             <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="12" xml:lang="en">Home</a>
@@ -106,7 +106,7 @@
                 Ora di visita: orario
             </p>
             <p>
-                <input id="printTicket1" class="Button" name="print" value="Stampa" type="button" aria-label="Pulsante per la stampa della prenotazione corrente" tabindex="20"/>
+                <input id="printTicket1" class="Button" name="print" value="Stampa" type="button" aria-label="Pulsante per la stampa della prenotazione corrente"/>
             </p>
         </dd>
         <dt>
@@ -120,18 +120,18 @@
                 Ora di visita: orario
             </p>
             <p>
-                <input id="printTicket2" class="Button" name="print" value="Stampa" type="button" aria-label="Pulsante per la stampa della prenotazione corrente" tabindex="21"/>
+                <input id="printTicket2" class="Button" name="print" value="Stampa" type="button" aria-label="Pulsante per la stampa della prenotazione corrente"/>
             </p>
         </dd>
     </dl>
 
     <p class="Navigation">
-        <a id="Back" class="Button" href="" title="Torna indietro" role="button" aria-label="Torna alla pagina dell'evento precedente" tabindex="22"> &lt; Precedente
+        <a id="Back" class="Button" href="" title="Torna indietro" role="button" aria-label="Torna alla pagina dell'evento precedente"> &lt; Precedente
         </a>
-        <a id="Next" class="Button" href="" title="Vai avanti" role="button" aria-label="Vai alla pagina dell'evento succesivo" tabindex="23"> Successivo &gt;
+        <a id="Next" class="Button" href="" title="Vai avanti" role="button" aria-label="Vai alla pagina dell'evento succesivo"> Successivo &gt;
         </a>
     </p>
-    <a id="ButtonBackUp" tabindex="24" href="#header" title="Torna su" aria-label="Torna su">
+    <a id="ButtonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
         <img alt="Torna su" src="../Images/TornaSu.png"/>
     </a>
 

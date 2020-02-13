@@ -31,7 +31,7 @@
         Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
     </span>
     <span id="loginMenuPlaceholder"/>
-    <form id="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
+    <form id="search" name="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
         <fieldset id="searchBox">
             <legend class="Hidelegend">Ricerca</legend>
             <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
@@ -40,7 +40,7 @@
                 <option value="Avviso">Avviso</option>
             </select>
             <label id="labelS" for="textSearch">Cerca nel sito</label>
-            <input id="textSearch" name="ricerca" role="search" type="text" tabindex="1"/>
+            <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
             <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
         </fieldset>
     </form>
@@ -57,7 +57,7 @@
         <ul>
             <li>
                 <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="16"></span>
-                <a id="skipMenu" href="#content" class="skip" tabindex="9">Vai al contenuto</a>
+                <a id="skipMenu" href="#content" class="skip" aria-label="Vai al contenuto" tabindex="9">Vai al contenuto</a>
             </li>
             <li>
                 <span xml:lang="en">Home</span>
@@ -93,7 +93,7 @@
 
         <h2 class="title">Lorem Ipsum</h2>
         <p id="p1" class="paragraph">
-            <a class="skip" href="#p2">Salta il testo</a>               <!-- Da nascondere con il CSS -->
+            <a class="skip" href="#p2" aria-label="Salta il testo">Salta il testo</a>               <!-- Da nascondere con il CSS -->
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Vestibulum id augue quis orci porttitor consequat sit amet at velit.
             Mauris odio dolor, vestibulum vel pharetra ut, varius non nibh.
@@ -107,7 +107,7 @@
         </p>
 
         <p id="p2" class="paragraph">
-            <a class="skip" href="#ButtonBackUp">Salta il testo</a>
+            <a class="skip" href="#ButtonBackUp" aria-label="Salta il testo">Salta il testo</a>
             Pellentesque nec facilisis eros, non egestas nisl.
             Cras facilisis, metus dapibus viverra consequat, mauris enim facilisis mauris, feugiat laoreet ligula leo ac
             diam.
@@ -115,7 +115,7 @@
             Nullam vel aliquet libero, fringilla faucibus felis.
         </p>
 
-        <a id="ButtonBackUp" href="#header" title="Torna su" aria-label="Torna su">
+        <a id="ButtonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
             <img alt="Torna su" src="Images/TornaSu.png"/>
         </a>
     </div>
