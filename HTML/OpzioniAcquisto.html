@@ -29,7 +29,7 @@
             Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
             </span>
             <span id="loginMenuPlaceholder"/>
-            <form id="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
+            <form id="search" name="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
                 <fieldset id="searchBox">
                     <legend class="Hidelegend">Ricerca</legend>
                     <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
@@ -38,7 +38,7 @@
                         <option value="Avviso">Avviso</option>
                     </select>
                     <label id="labelS" for="textSearch">Cerca nel sito</label>
-                    <input id="textSearch" name="ricerca" role="search" type="text" tabindex="1"/>
+                    <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
                     <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
                 </fieldset>
             </form>
@@ -58,7 +58,7 @@
             <ul>
                 <li>
                     <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="17"></span>
-                    <a id="skipMenu" class="skip" href="#content" tabindex="10">Vai al contenuto</a>
+                    <a id="skipMenu" class="skip" href="#content" aria-label="Vai al contenuto" tabindex="10">Vai al contenuto</a>
                 </li>
                 <li>
                     <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="11" xml:lang="en">Home</a>
@@ -87,7 +87,7 @@
         <div id="content" role="main">
             <h2 class="title">Opzioni d'acquisto</h2>
             <p class="paragraph">Biglietti</p>
-            <a class="skip" href="#o2" tabindex="18">Salta la sezione dei biglietti</a>
+            <a class="skip" href="#o2" aria-label="Salta la sezione dei biglietti">Salta la sezione dei biglietti</a>
             <dl>
                 <dt>Intero: </dt>
                     <dd>11.90€ cadauno.</dd>
@@ -95,7 +95,7 @@
                     <dd>7.50€ cadauno.</dd>
             </dl>
             <p id="o2" class="paragraph">Pacchetti</p>
-            <a class="skip" href="#o3" tabindex="19">Salta la sezione dei pacchetti</a>
+            <a class="skip" href="#o3" aria-label="Salta la sezione dei pacchetti">Salta la sezione dei pacchetti</a>
             <dl>
                 <dt>Famiglia: </dt>
                     <dd>include 2 biglietti interi, a prezzo standard, e fino a 6 biglietti ridotti, ad un prezzo speciale di 6€ cadauno.</dd>
@@ -103,17 +103,17 @@
                     <dd>include biglietti interi, ad un prezzo speciale di 10€ cadauno, e ridotti, ad un prezzo speciale di 6.50€ cadauno.</dd>
             </dl>
             <p id="o3" class="paragraph">Abbonamenti</p>
-            <a class="skip" href="#o4" tabindex="20">Salta la sezione degli abbonamenti</a>
+            <a class="skip" href="#o4" aria-label="Salta la sezione degli abbonamenti">Salta la sezione degli abbonamenti</a>
             <dl>
                 <dd>Per gli abbonamenti è previsto l'acquisto solo presso la sede fisica del nostro museo.</dd>
             </dl>
             <p id="o4" class="paragraph"> Desideri effettuare un acquisto? </p>
-            <a class="skip" href="#ButtonBackUp" tabindex="21">Salta la sezione degli abbonamenti</a>
-            <a id="buyButton" class="Button" href="Acquista.html" title="Pagina acquisto biglietti e pacchetti" role="button" aria-label="porta alla pagina dell'acquisto di biglietti o pacchetti" tabindex="22">Acquista</a>
+            <a class="skip" href="#o5" aria-label="Salta la sezione degli abbonamenti">Salta la sezione degli abbonamenti</a>
+            <a id="buyButton" class="Button" href="Acquista.html" title="Pagina acquisto biglietti e pacchetti" role="button" aria-label="porta alla pagina dell'acquisto di biglietti o pacchetti">Acquista</a>
             <p id="clause">
                 Per effettuare l'acquisto devi essere registrato.
             </p>
-            <a id="ButtonBackUp" href="#header" title="Torna su" aria-label="Torna su" tabindex="23">
+            <a id="ButtonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
                 <img alt="Torna su" src="../Images/TornaSu.png"/>
             </a>
         </div>

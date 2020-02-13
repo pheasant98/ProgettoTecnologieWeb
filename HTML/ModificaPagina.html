@@ -30,7 +30,7 @@
                 Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
             </span>
             <span id="loginMenuPlaceholder"/>
-            <form id="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
+            <form id="search" name="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
                 <fieldset id="searchBox">
                     <legend class="Hidelegend">Ricerca</legend>
                     <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="2">
@@ -39,7 +39,7 @@
                         <option value="Avviso">Avviso</option>
                     </select>
                     <label id="labelS" for="textSearch">Cerca nel sito</label>
-                    <input id="textSearch" name="ricerca" role="search" type="text" tabindex="1"/>
+                    <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
                     <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="3"/>
                 </fieldset>
             </form>
@@ -50,8 +50,8 @@
                 Ti trovi in:
             </p>
             <span id="path">
-                <a href="Index.html" tabindex="9">Home</a> &gt;&gt;
-                <a href="AreaAdmin.html" tabindex="10">Area Personale</a> &gt;&gt;
+                <a href="Index.html" aria-label="Vai alla pagina homepage del museo" tabindex="9">Home</a> &gt;&gt;
+                <a href="AreaAdmin.html" aria-label="Vai alla pagina AreaAdmin" tabindex="10">Area Personale</a> &gt;&gt;
                 <span id="pathSelected">Modifica</span>
             </span>
         </div>   <!-- Da rivedere come farlo -->
@@ -60,7 +60,7 @@
             <ul>
                 <li>
                     <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="19"></span>
-                    <a id="skipMenu" class="skip" href="#content" tabindex="11">Vai al contenuto</a>
+                    <a id="skipMenu" class="skip" href="#content" aria-label="Vai al contenuto" tabindex="11">Vai al contenuto</a>
                 </li>
                 <li>
                     <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="12" xml:lang="en">Home</a>
@@ -90,8 +90,8 @@
 
         <div id="content" role="main">
             <h2 class="title">Modifica della pagina numero X</h2>
-            <form id="Modifica" tabindex="20" action="" method="post"><!-- Nascondi con CSS -->
-                <fieldset id="BoxModifica" class="fieldset" >
+            <form id="Modifica" name="Modifica" action="" method="post"><!-- Nascondi con CSS -->
+                <fieldset id="BoxModifica" class="fieldset">
                     <legend class="Hidelegend">Modifica pagina</legend>
                     <p id="TipoPaginaAvv">Tipologia di pagina: Avviso</p>
                     <p id="TipoPaginaEven">Tipologia di pagina: Evento</p>
@@ -103,7 +103,7 @@
                             <input id="DataAvviso" name="DataAvviso" type="text" aria-label="Modifica la data dell'avviso" aria-required="true"/>
                         </p>
                         <p>
-                            <a class="skip" href="#confirm">Vai alla conferma delle modifiche</a>
+                            <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
@@ -111,7 +111,7 @@
                             <input id="Oggetto" name="Oggetto" type="text" aria-label="Modifica l'oggetto dell'avviso" aria-required="true"/>
                         </p>
                         <p>
-                            <a class="skip" href="#confirm">Vai alla conferma delle modifiche</a>
+                            <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
                     </fieldset>
 
@@ -124,7 +124,7 @@
                             </select>
                         </p>
                         <p>
-                            <a class="skip" href="#confirm">Vai alla conferma delle modifiche</a>
+                            <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
@@ -132,7 +132,7 @@
                             <input id="DataEvento" name="DataEvento" type="text" aria-label="Modifica la data dell'evento" aria-required="true"/>
                         </p>
                         <p>
-                            <a class="skip" href="#confirm">Vai alla conferma delle modifiche</a>
+                            <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
@@ -140,21 +140,21 @@
                             <input id="TitoloEvento" name="TitoloEvento" type="text" aria-label="Modifica il titolo delle'evento" aria-required="true"/>
                         </p>
                         <p>
-                            <a class="skip" href="#confirm">Vai alla conferma delle modifiche</a>
+                            <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
                     </fieldset>
 
                     <fieldset id="BoxModificaOpera" class="fieldset">
                         <p>
                             <label id="labelIDOpera" for="IDOpera">ID: </label>
-                            <input id="IDOpera" name="IDOpera" type="hidden" aria-required="true"/>
+                            <input id="IDOpera" name="IDOpera" type="hidden" aria-label="Id dell'opera"/>
                         </p>
                         <p>
                             <label id="labelAutore" for="Autore">Autore: </label>
                             <input id="Autore" name="Autore" type="text" aria-label="Modifica l'autore dell'opera" aria-required="true"/>
                         </p>
                         <p>
-                           <a href="#confirm" class="skip">Vai alla conferma delle modifiche</a>
+                           <a href="#confirm" class="skip" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
@@ -162,7 +162,7 @@
                             <input id="TitoloOpera" name="TitoloOpera" type="text" aria-label="Modifica il titolo dell'opera" aria-required="true"/>
                         </p>
                         <p>
-                            <a class="skip" href="#confirm">Vai alla conferma delle modifiche</a>
+                            <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
@@ -170,7 +170,7 @@
                             <input id="Anno" name="Anno" type="text" aria-label="Modifica l'anno dell'opera" aria-required="true"/>
                         </p>
                         <p>
-                            <a class="skip" href="#confirm">Vai alla conferma delle modifiche</a>
+                            <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
@@ -183,7 +183,7 @@
                             </select>
                         </p>
                         <p>
-                            <a class="skip" href="#confirm">Vai alla conferma delle modifiche</a>
+                            <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
@@ -194,7 +194,7 @@
                             </select>
                         </p>
                         <p>
-                            <a class="skip" href="#confirm">Vai alla conferma delle modifiche</a>
+                            <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
@@ -202,7 +202,7 @@
                             <input id="Tecnica" name="Tecnica" type="text" aria-label="Modifica la tecnica del''opera" aria-required="true"/>
                         </p>
                         <p>
-                            <a class="skip" href="#confirm">Vai alla conferma delle modifiche</a>
+                            <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
@@ -210,7 +210,7 @@
                             <input id="Materiale" name="Materiale" type="text" aria-label="Modifica il materiale dell'opera" aria-required="true"/>
                         </p>
                         <p>
-                            <a class="skip" href="#confirm">Vai alla conferma delle modifiche</a>
+                            <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
@@ -221,16 +221,16 @@
                         <fieldset id="fieldLoan" class="fieldset">
                             <label id="labelLoan" for="fieldLoan">In prestito</label>
                             <label id="labelLoanYes" for="textLoanYes">Sì</label>
-                            <input id="textLoanYes" name="textLoan" value="Si" type="radio"/>
+                            <input id="textLoanYes" name="textLoan" value="Si" type="radio" aria-label="Pulsante per dire si al prestito"/>
                             <label id="labelLoanNo" for="textLoanNo">No</label>
-                            <input id="textLoanNo" name="textLoan" value="No" type="radio"/>
+                            <input id="textLoanNo" name="textLoan" value="No" type="radio" aria-label="Pulsante per dire no al prestito"/>
                         </fieldset>
                         <p>
-                            <a class="skip" href="#confirm">Vai alla conferma delle modifiche</a>
+                            <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
-                            <a class="skip" href="#confirm">Vai alla conferma delle modifiche</a>
+                            <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
@@ -246,14 +246,14 @@
                     </p>
 
                     <fieldset class="Navigation">
-                        <input id="reset" class="Button" name="annulla" value="Annulla" type="reset" aria-label="Annulla le modifiche apportate" tabindex="54"/>
-                        <input id="confirm" class="Button" name="invio" value="Conferma" type="submit" aria-label="Invia le modifiche apportate" tabindex="55" />
+                        <input id="reset" class="Button" name="annulla" value="Annulla" type="reset" aria-label="Annulla le modifiche apportate"/>
+                        <input id="confirm" class="Button" name="invio" value="Conferma" type="submit" aria-label="Invia le modifiche apportate"/>
                     </fieldset>
 
                 </fieldset>
             </form>
 
-                <a id="ButtonBackUp" href="#header" title="Torna su" aria-label="Torna su">
+                <a id="ButtonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
                     <img alt="Torna su" src="../Images/TornaSu.png"/>
                 </a>
         </div>

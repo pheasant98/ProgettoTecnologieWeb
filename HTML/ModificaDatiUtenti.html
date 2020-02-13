@@ -31,7 +31,7 @@
             Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
         </span>
         <span id="loginMenuPlaceholder"/>
-        <form id="search" action="" method="post" role="search">
+        <form id="search" name="search" action="" method="post" role="search">
             <fieldset id="searchBox">
                 <legend class="Hidelegend">Ricerca</legend>
                 <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
@@ -40,7 +40,7 @@
                     <option value="Avviso">Avviso</option>
                 </select>
                 <label id="labelS" for="textSearch">Cerca nel sito</label>
-                <input id="textSearch" name="ricerca" role="search" type="text" tabindex="1"/>
+                <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
                 <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
             </fieldset>
         </form>
@@ -51,7 +51,8 @@
             Ti trovi in:
         </p>
         <span id="path">
-            <a href="Index.html" tabindex="9" xml:lang="en">Home</a> &gt;&gt; <a href="AreaUtente.html" tabindex="10">Area personale</a> &gt;&gt;
+            <a href="Index.html" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a> &gt;&gt;
+            <a href="AreaUtente.html" aria-label="Vai alla pagina Area personale" tabindex="10">Area personale</a> &gt;&gt;
             <span id="pathSelected">Modifica dati utente</span>
         </span>
     </div>
@@ -60,7 +61,7 @@
         <ul>
             <li>
                 <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="19"></span>
-                <a id="skipMenu" class="skip" href="#content" tabindex="11">Vai al contenuto</a>
+                <a id="skipMenu" class="skip" href="#content" aria-label="Vai la contenuto" tabindex="11">Vai al contenuto</a>
             </li>
             <li>
                 <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="12" xml:lang="en">Home</a>
@@ -90,7 +91,7 @@
 
     <div id="content" role="main">
         <h2 class="title">Modifica dati</h2>
-            <form id="ModificaDatiUtente" action="" method="post" ><!-- Nascondi con CSS -->
+            <form id="ModificaDatiUtente" name="ModificaDati" action="" method="post" ><!-- Nascondi con CSS -->
                 <fieldset class="fieldset">
                     <legend class="Hidelegend">Modifica dati utente</legend>
 
@@ -99,7 +100,7 @@
                         <input id="Nome" name="Nome" type="text" aria-label="Modifica nome utente" aria-required="true"/>
                     </p>
                     <p>
-                        <a class="skip" href="#InviaModificheUtente">Salta alla conferma delle modifiche</a>
+                        <a class="skip" href="#InviaModificheUtente" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                     </p>
 
                     <p>
@@ -107,7 +108,7 @@
                         <input id="Cognome" name="Cognome" type="text" aria-label="Modifica cpgnome utente" aria-required="true"/>
                     </p>
                     <p>
-                        <a class="skip" href="#InviaModificheUtente">Salta alla conferma delle modifiche</a>
+                        <a class="skip" href="#InviaModificheUtente" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                     </p>
 
                     <p>
@@ -119,7 +120,7 @@
                         </select>
                     </p>
                     <p>
-                        <a class="skip" href="#InviaModificheUtente">Salta alla conferma delle modifiche</a>
+                        <a class="skip" href="#InviaModificheUtente" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                     </p>
 
                     <p>
@@ -127,7 +128,7 @@
                         <input id="DataNascita" name="DataNascita" type="text" aria-label="Modifica data di nascita utente" aria-required="true"/>
                     </p>
                     <p>
-                        <a class="skip" href="#InviaModificheUtente">Salta alla conferma delle modifiche</a>
+                        <a class="skip" href="#InviaModificheUtente" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                     </p>
 
                     <p>
@@ -135,7 +136,7 @@
                         <input id="Indirizzo" name="Indirizzo" type="text" aria-label="Modifica indirizzo utente" aria-required="true"/>
                     </p>
                     <p>
-                        <a class="skip" href="#InviaModificheUtente">Salta alla conferma delle modifiche</a>
+                        <a class="skip" href="#InviaModificheUtente" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                     </p>
 
                     <p>
@@ -143,7 +144,7 @@
                         <input id="Email" name="Email" type="text" aria-label="Modifica email utente" aria-required="true"/>
                     </p>
                     <p>
-                        <a class="skip" href="#InviaModificheUtente">Salta alla conferma delle modifiche</a>
+                        <a class="skip" href="#InviaModificheUtente" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                     </p>
 
                     <p>
@@ -152,13 +153,13 @@
                     </p>
 
                     <p class="Navigation">
-                        <input id="reset" class=Button name="AnnullaModificheUtente" type="reset" value="Annulla" aria-label="Annulla le modifiche apportate"/>
-                        <input id="confirm" class=Button name="InviaModificheUtente" type="submit" value="Conferma" aria-label="Conferma le modifiche apportate"/>
+                        <input id="reset" class=Button name="AnnullaModificheUtente" type="reset" value="Annulla" role="button" aria-label="Annulla le modifiche apportate"/>
+                        <input id="confirm" class=Button name="InviaModificheUtente" type="submit" value="Conferma" role="button" aria-label="Conferma le modifiche apportate"/>
                     </p>
                 </fieldset>
             </form>
 
-            <a id="ButtonBackUp" href="#header" title="Torna su" aria-label="Torna su">
+            <a id="ButtonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
                 <img alt="Torna su" src="../Images/TornaSu.png"/>
             </a>
         </div>

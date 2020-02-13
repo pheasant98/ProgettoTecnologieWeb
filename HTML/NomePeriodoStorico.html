@@ -32,7 +32,7 @@
         Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
     </span>
     <span id="loginMenuPlaceholder"/>
-    <form id="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
+    <form id="search" name="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
         <fieldset id="searchBox">
             <legend class="Hidelegend">Ricerca</legend>
             <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
@@ -41,7 +41,7 @@
                 <option value="Avviso">Avviso</option>
             </select>
             <label id="labelS" for="textSearch">Cerca nel sito</label>
-            <input id="textSearch" name="ricerca" role="search" type="text" tabindex="1"/>
+            <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
             <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
         </fieldset>
     </form>
@@ -64,7 +64,7 @@
     <ul>
         <li>
             <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="19"></span>
-            <a id="skipMenu" class="skip" href="#content" tabindex="11">Vai al contenuto</a>
+            <a id="skipMenu" class="skip" href="#content" aria-label="Vai al contenuto" tabindex="11">Vai al contenuto</a>
         </li>
         <li>
             <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="12" xml:lang="en">Home</a>
@@ -107,14 +107,14 @@
                 <option value="Scultura" selected="selected"> Scultura </option>
                 <option value="Pittura"> Pittura </option>
             </select>
-            <input id="confirm" class="Button" name="filter" value="Filtra" type="button" tabindex="21"/>
+            <input id="confirm" class="Button" name="filter" value="Filtra" type="button" aria-label="Conferma"/>
         </fieldset>
     </form>
 
     <h3>Elenco</h3>
     <dl class="clickableDl">
         <dt>
-            <a href="OperaSingola.html">Nome prima opera</a>
+            <a href="OperaSingola.html" aria-label="">Nome prima opera</a>
         </dt>
         <dd>
             <p>
@@ -131,7 +131,7 @@
             </p>
         </dd>
         <dt>
-            <a href="OperaSingola.html">Nome seconda opera</a>
+            <a href="OperaSingola.html" aria-label="">Nome seconda opera</a>
         </dt>
         <dd>
             <p>
@@ -155,7 +155,7 @@
         <a id="Next" class="Button" href="" title="Vai avanti" role="button" aria-label="Vai alla pagina dell'evento succesivo"> Successivo &gt;
         </a>
     </p>
-    <a id="ButtonBackUp" href="#header" title="Torna su" aria-label="Torna su">
+    <a id="ButtonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
         <img alt="Torna su" src="../Images/TornaSu.png"/>
     </a>
 

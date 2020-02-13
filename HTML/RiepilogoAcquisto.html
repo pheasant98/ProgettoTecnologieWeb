@@ -32,7 +32,7 @@
         Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
     </span>
     <span id="loginMenuPlaceholder"/>
-    <form id="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
+    <form id="search" name="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
         <fieldset id="searchBox">
             <legend class="Hidelegend">Ricerca</legend>
             <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
@@ -41,7 +41,7 @@
                 <option value="Avviso">Avviso</option>
             </select>
             <label id="labelS" for="textSearch">Cerca nel sito</label>
-            <input id="textSearch" name="ricerca" role="search" type="text" tabindex="1"/>
+            <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
             <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
         </fieldset>
     </form>
@@ -67,7 +67,7 @@
     <ul>
         <li>
             <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="20"></span>
-            <a id="skipMenu" class="skip" href="#content" tabindex="12">Vai al contenuto</a>
+            <a id="skipMenu" class="skip" href="#content" aria-label="Vai al contenuto" tabindex="12">Vai al contenuto</a>
         </li>
         <li>
             <a href="Index.html" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="13" xml:lang="en">Home</a>
@@ -119,10 +119,10 @@
 
     <p class="UserButton">
         <span>Totale:</span>
-        <a id="Continue" class="Button" href="" title="Prosegui con il pagamento" role="button" aria-label="Prosegui con il pagamento" tabindex="21"> Continua </a>
+        <a id="Continue" class="Button" href="" title="Prosegui con il pagamento" role="button" aria-label="Prosegui con il pagamento"> Continua </a>
     </p>
 
-    <a id="ButtonBackUp" href="#header" title="Torna su" aria-label="Torna su" tabindex="22">
+    <a id="ButtonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
         <img alt="Torna su" src="../Images/TornaSu.png"/>
     </a>
 
