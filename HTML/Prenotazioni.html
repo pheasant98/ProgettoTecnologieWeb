@@ -91,11 +91,13 @@
 
         <div id="content" role="main">
             <h2 class="title"> Prenotazioni effettuate</h2>
+            <a href="#Back" class="skip">Salta le prenotazioni presenti nella pagina</a>
             <dl>
                 <dt>
                     Prenotazione 1
                 </dt>
                 <dd>
+                    <a href="#p2" class="skip">Salta la prenotazione</a>
                     <p>
                         Data: data
                     </p>
@@ -106,10 +108,11 @@
                         <input id="printTicket1" class="Button" name="print" value="Stampa" type="button" aria-label="Pulsante per la stampa della prenotazione corrente" tabindex="20"/>
                     </p>
                 </dd>
-                <dt>
+                <dt id="p2">
                     Prenotazione 2
                 </dt>
                 <dd>
+                    <a href="#Back" class="skip">Salta la prenotazione</a>
                     <p>
                         Data: data
                     </p>
@@ -123,10 +126,8 @@
             </dl>
 
             <p class="Navigation">
-                <a id="Back" class="Button" href="" title="Torna indietro" role="button" aria-label="Torna alla pagina dell'evento precedente" tabindex="22"> &lt; Precedente
-                </a>
-                <a id="Next" class="Button" href="" title="Vai avanti" role="button" aria-label="Vai alla pagina dell'evento succesivo" tabindex="23"> Successivo &gt;
-                </a>
+                <a id="Back" class="Button" href="" title="Prenotazioni precedenti" role="button" aria-label="Torna alle prenotazioni precedenti" tabindex="22"> &lt; Precedente</a>
+                <a id="Next" class="Button" href="" title="Prenotazioni successive" role="button" aria-label="Vai alle prenotazioni successive" tabindex="23"> Successivo &gt;</a>
             </p>
 
             <a id="ButtonBackUp" tabindex="24" href="#header" title="Torna su" aria-label="Torna su">

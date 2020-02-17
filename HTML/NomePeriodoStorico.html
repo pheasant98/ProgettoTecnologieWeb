@@ -108,12 +108,19 @@
                 </fieldset>
             </form>
 
+            <p>
+                Sono stati trovati # contenuti:
+            </p>
+
+            <a href="#Back" class="skip">Salta le opere presenti nella pagina</a>
+
             <h3>Elenco</h3>
             <dl class="clickableDl">
                 <dt>
                     <a href="OperaSingola.html">Nome prima opera</a>
                 </dt>
                 <dd>
+                    <a href="#o2" class="skip">Salta l'opera</a>
                     <p>
                         nome autore: nome
                     </p>
@@ -127,10 +134,11 @@
                         foto: foto
                     </p>
                 </dd>
-                <dt>
+                <dt id="o2">
                     <a href="OperaSingola.html">Nome seconda opera</a>
                 </dt>
                 <dd>
+                    <a href="#Back" class="skip">Salta l'opera</a>
                     <p>
                         nome autore: nome
                     </p>
@@ -147,10 +155,8 @@
             </dl>
 
             <p class="Navigation">
-                <a id="Back" class="Button" href="" title="Torna indietro" role="button" aria-label="Torna alla pagina dell'evento precedente"> &lt; Precedente
-                </a>
-                <a id="Next" class="Button" href="" title="Vai avanti" role="button" aria-label="Vai alla pagina dell'evento succesivo"> Successivo &gt;
-                </a>
+                <a id="Back" class="Button" href="" title="Opere precedenti" role="button" aria-label="Torna alle opere precedenti"> &lt; Precedente</a>
+                <a id="Next" class="Button" href="" title="Opere successive" role="button" aria-label="Vai alle opere successive"> Successivo &gt;</a>
             </p>
 
             <a id="ButtonBackUp" href="#header" title="Torna su" aria-label="Torna su">

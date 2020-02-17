@@ -114,26 +114,31 @@
             </form>
 
             <p>
-                Sono stati trovati # risultati:
+                Sono stati trovati # contenuti:
             </p>
+
+            <a href="#Back" class="skip">Salta i contenuti presenti nella pagina</a>
 
             <ul class="listClass">
                 <li>
-                    <a href="" tabindex="24">Pagina 1</a>
+                    <a id="c1" href="" tabindex="24">Pagina 1</a>
+                    <a href="#c2" class="skip">Salta il contenuto</a>
                     <p class="UserButton">
                         <a class="Button" href="" title="Rimuovi contenuto" role="button" aria-label="Rimuovi contenuto" tabindex="">Rimuovi</a>
                         <a class="Button" href="" title="Modifica dettagli contenuto" role="button" aria-label="Modifica dettagli contenuto" tabindex="">Modifica</a>
                     </p>
                 </li>
                 <li>
-                    <a href="" tabindex="">Pagina 2</a>
+                    <a id="c2" href="" tabindex="">Pagina 2</a>
+                    <a href="#c3" class="skip">Salta il contenuto</a>
                     <p class="UserButton">
                         <a class="Button" href="" title="Rimuovi contenuto" role="button" aria-label="Rimuovi contenuto" tabindex="">Rimuovi</a>
                         <a class="Button" href="" title="Modifica dettagli contenuto" role="button" aria-label="Modifica dettagli contenuto" tabindex="">Modifica</a>
                     </p>
                 </li>
                 <li>
-                    <a href="" tabindex="">Pagina 3</a>
+                    <a id="c3" href="" tabindex="">Pagina 3</a>
+                    <a href="#Back" class="skip">Salta il contenuto</a>
                     <p class="UserButton">
                         <a class="Button" href="" title="Rimuovi contenuto" role="button" aria-label="Rimuovi contenuto" tabindex="">Rimuovi</a>
                         <a class="Button" href="" title="Modifica dettagli contenuto" role="button" aria-label="Modifica dettagli contenuto" tabindex="">Modifica</a>
@@ -142,10 +147,8 @@
             </ul>
 
             <p class="Navigation">
-                <a  class="Button" href="" title="Torna indietro" role="button" aria-label="Torna alla pagina di gestione utenti precedente" tabindex="29"> &lt; Precedente
-                </a>
-                <a  class="Button" href="" title="Vai avanti" role="button" aria-label="Vai alla pagina di gestione utenti succesiva" tabindex="30"> Successivo &gt;
-                </a>
+                <a id="Back" class="Button" href="" title="Contenuti precedenti" role="button" aria-label="Torna ai contenuti precedenti" tabindex="29"> &lt; Precedente </a>
+                <a id="Next" class="Button" href="" title="Contenuti successivi" role="button" aria-label="Vai ai contenuti successivi" tabindex="30"> Successivo &gt; </a>
             </p>
 
             <a aria-label="Torna su" href="#header" id="ButtonBackUp" tabindex="35" title="Torna su">
