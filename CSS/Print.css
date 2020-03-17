@@ -2,23 +2,25 @@
 * {/*rende la pagina vuota e imposta un iterlinea di 1.5 per l'accessibilità della pagina*/
     padding: 0em;
     margin: 0em;
-    font-family: sans-serif;
+    font-family: arial, helvetica, sans-serif;
     box-sizing: border-box;
     max-width: 100%;
-    line-height: 1.5em;
 }
 
 html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
-    margin: auto;
-    min-width: 380px;
-    background-color: #CCCCCC;
+    font-size: 1em;
+    background-color: #FFFFFF;
+    color: #000000;
 }
 
 #header {/*colore+ombreggiatura del header*/
-    background-color: #333333;
+    display: none;
+    /*background-color: #333333;
     padding: 2em;
-    /*box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.16), 0 30px 30px 0 rgba(0, 0, 0, 0.12);*/
+    box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.16), 0 30px 30px 0 rgba(0, 0, 0, 0.12);*/
 }
+
+
 
 #header404 { /*header per pagina 404*/
     background-color: #333333;
@@ -131,7 +133,7 @@ fine bottoni
     color: #000000;
     border-radius: 20px;
     margin: 1.5em;
-    padding: 2em;
+    /*padding: 2em;*/
 }
 
 
@@ -261,8 +263,13 @@ fine bottoni
 
 /* colori link*/
 a {
-    color: #0000FF;
+    color: #000000;
     /*text-decoration: none;*/
+}
+
+a:link:after, a:visited:after {
+    content: " [" attr(href) "] ";
+    font-size:90%;
 }
 
 /*
@@ -294,11 +301,13 @@ a:visited {
     padding-top: 1em;
 }
 
+
 #Map{/*regole per posizionamento e dimensionamento della mappa*/
-    display: block;
+    display: none;
+    /*display: block;
     height: 12em;
     width: 80%;
-    margin: 0.5em 10%;
+    margin: 0.5em 10%;*/
 }
 
 
@@ -339,7 +348,12 @@ a:visited {
 
 }
 
-#Back,#Next,#reset,#confirm{
+#Back,#Next {
+    display: none;
+}
+
+
+/*#Back,#Next,*/#reset,#confirm{
     display: inline-block;
 }
 
@@ -445,8 +459,9 @@ a:visited {
 }
 
 .title{
-    text-align: center;
-    font-size: 3em;
+    /*text-align: center;*/
+    font-size: 2.5em;
+    line-height: 2em;
 }
 
 .paragraph {
