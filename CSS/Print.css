@@ -21,20 +21,21 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
 }
 
 
-
 #header404 { /*header per pagina 404*/
-    background-color: #333333;
+    display: none;
+    /*background-color: #333333;
     padding: 1em;
-    /*box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.16), 0 30px 30px 0 rgba(0, 0, 0, 0.12);*/
-    min-height: 15em;
+    box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.16), 0 30px 30px 0 rgba(0, 0, 0, 0.12);
+    min-height: 15em;*/
 }
 
 #content404 { /* da unire con content perchè sono uguali*/
     background-color: #FFFFFF;
     color: #000000;
-    border-radius: 20px;
     margin: 1.5em;
-    padding: 2em;
+    clear: both;
+    /*border-radius: 20px;
+    padding: 2em;*/
 }
 
 #logoImg { /* regole per impostare il logo in modo accessibile*/
@@ -70,13 +71,14 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
 }
 
 #ImgError404 {
-    float: right;
+    display: none;
+    /*float: right;
     background-image: url('../images/EmptyPortrait.jpg');
     text-indent: 100%;
     background-size: 100%;
     background-position: center;
     height: 25em;
-    width: 25em;
+    width: 25em;*/
 }
 /*bottoni*/
 
