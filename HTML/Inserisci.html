@@ -2,276 +2,267 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN" "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
 
-<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">-->
 <html xml:lang="it" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 
-    <title>Inserisci | Museo arte nel tempo</title>
+        <title>Inserisci | Museo arte nel tempo</title>
 
-    <meta content="italian it" name="language"/>
-    <meta content="Inserisci | Museo arte nel tempo" name="title"/>
-    <meta content="Inserimento di una nuova pagina nel sito web" name="description"/>
-    <meta content="arte, pittura, scultura, museo" name="keywords"/>       <!-- Rivedere per sicurezza -->
-    <meta content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto" name="author"/>
+        <meta content="italian it" name="language"/>
+        <meta content="Inserisci | Museo arte nel tempo" name="title"/>
+        <meta content="Inserimento di una nuova pagina nel sito web" name="description"/>
+        <meta content="arte, pittura, scultura, museo" name="keywords"/>
+        <meta content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto" name="author"/>
 
-    <link href="../CSS/Style.css" media="screen" rel="stylesheet" type="text/css"/>
-    <link href="../CSS/Print.css" media="print" rel="stylesheet" type="text/css"/>
-    <link href="" rel="icon"/>
-    <script src="../JavaScript/Placeholder.js" type="text/javascript"></script>
+        <link href="../CSS/Style.css" media="screen" rel="stylesheet" type="text/css"/>
+        <link href="../CSS/Print.css" media="print" rel="stylesheet" type="text/css"/>
+        <link href="" rel="icon"/>
+        <script src="../JavaScript/Placeholder.js" type="text/javascript"></script>
+    </head>
 
-</head>
+    <body>
+        <div id="header" role="banner">
+            <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
 
-<body>
+            <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
+                Menu ad <span xml:lang="en">hamburger</span>
+            </span>
 
-<div id="header" role="banner">
+            <span id="loginMenuPlaceholder"/>
 
-    <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
-    <!-- Utilizzare il css per inserire il logo -->
-    <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
-        Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
-    </span>
-    <span id="loginMenuPlaceholder"/>
-    <form id="search" name="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
-        <fieldset id="searchBox">
-            <legend class="Hidelegend">Ricerca</legend>
-            <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
-                <option selected="selected" value="Opera">Opera</option>
-                <option value="Evento">Evento</option>
-                <option value="Avviso">Avviso</option>
-            </select>
-            <label id="labelS" for="textSearch">Cerca nel sito</label>
-            <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
-            <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
-        </fieldset>
-    </form>
-</div>
-
-<div aria-label="breadcrumbs" id="breadcrumbs">
-    <p>
-        Ti trovi in:
-    </p>
-    <span id="path">
-        <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en" tabindex="9">Home</a>
-        &gt;&gt;
-        <a href="AreaAdmin.html" title="Area Admin" aria-label="Vai alla pagina area admin" tabindex="10">Area personale</a>
-        &gt;&gt;
-        <span id="pathSelected">Inserisci pagina</span>
-    </span>
-</div>   <!-- Da rivedere come farlo -->
-
-<div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
-    <ul>
-        <li>
-            <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="19"></span>
-            <a id="skipMenu" href="#content" class="skip" aria-label="Vai al contenuto" tabindex="11">Vai al contenuto</a>
-        </li>
-        <li>
-            <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="12" xml:lang="en">Home</a>
-        </li>
-        <li>
-            <a href="Opere.html" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="13">Opere</a>
-        </li>
-        <li>
-            <a href="Eventi.html" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="14">Eventi</a>
-        </li>
-        <li>
-            <a href="OpzioniAcquisto.html" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti" tabindex="15">Opzioni
-                d'acquisto</a>
-        </li>
-        <li>
-            <a href="Avvisi.html" title="Avvisi" aria-label="Vai alla pagina degli avvisi" tabindex="16">Avvisi</a>
-        </li>
-        <li>
-            <a href="CosaDiconoDiNoi.html" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni" tabindex="17">Cosa
-            dicono di noi</a>
-        </li>
-        <li>
-            <a href="Contatti.html" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti" tabindex="18">Contatti</a>
-        </li>
-    </ul>
-</div>
-
-<div id="content" role="main">
-
-    <h2 class="title">Inserimento</h2>
-    <form id="Insert" name="Inserimento" action="" method="post" role="form">
-        <fieldset id="InsertField" class="fieldset">
-            <fieldset id="Choice" class="fieldset">
-                <legend class="Hidelegend">Scelta tipologia pagina</legend>
-                <p>
-                    <label id="LabelFilterType" for="filterType">Pagina su</label>
-                    <select name="filterType" id="filterType" aria-label="Seleziona tipologia di pagina da creare">
+            <form id="search" name="search" action="" method="post" role="search">
+                <fieldset id="searchBox">
+                    <legend class="Hidelegend">Ricerca</legend>
+                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
                         <option selected="selected" value="Opera">Opera</option>
                         <option value="Evento">Evento</option>
                         <option value="Avviso">Avviso</option>
                     </select>
-                </p>
-            </fieldset>
-
-                <!--Opera-->
-            <fieldset id="Opera" class="fieldset">
-                <legend class="Hidelegend">campi opera</legend>
-                <p>
-                    <label id="labelAuthor" for="textAuthor">Autore</label>
-                    <input id="textAuthor" name="textAuthor" type="text" aria-label="Inserisci l'autore"/>
-                </p>
-
-                <p>
-                    <label id="labelTitle" for="textTitle">Titolo</label>
-                    <input id="textTitle" name="textTitle" type="text" aria-label="Inserisci il titolo"/>
-                </p>
-
-                <p>
-                    <label id="labelAreaDescr" for="AreaDescr">Descrizione</label>
-                    <textarea id="AreaDescr" name="AreaDescr" rows="20px" cols="20px" aria-label="Inserisci la descrizione"> Scrivi qui la descrizione!</textarea>
-                </p>
-
-                <p>
-                    <label id="labelYear" for="textYear">Anno</label>
-                    <input id="textYear" name="textYear" type="text"/>
-                </p>
-
-                <p>
-                    <label id="LabelFilterHistory" for="filterHistory">Periodo opera</label>
-                    <select name="filterHistory" id="filterHistory" aria-label="Seleziona il periodo storico dell'opera">
-                        <option selected="selected" value="Quattrocento">Quattrocento</option>
-                        <option value="Cinquecento">Cinquecento</option>
-                        <option value="Seicento">Seicento</option>
-                        <option value="Settecento">Settecento</option>
-                    </select>
-                </p>
-
-                <p>
-                    <label id="LabelFilterOpera" for="filterOpera">Stile opera</label>
-                    <select name="filterOpera" id="filterOpera" aria-label="Seleziona stile dell'opera">
-                        <option selected="selected" value="Pittura">Pittura</option>
-                        <option value="Scultura">Scultura</option>
-                    </select>
-                </p>
-
-                <p>
-                    <label id="labelTechnique" for="textTechnique">Tecnica</label>
-                    <input id="textTechnique" name="textTechnique" type="text" aria-label="Inserisci la dimensione"/>
-                </p>
-
-                <p>
-                    <label id="labelMaterial" for="textMaterial">Materiale</label>
-                    <input id="textMaterial" name="textMaterial" type="text" aria-label="Inserisci la dimensione"/>
-                </p>
-
-                <p>
-                    <label id="labelSize" for="textSize">Dimensione</label>
-                    <input id="textSize" name="textSize" type="text" aria-label="Inserisci la dimensione"/>
-                </p>
-
-                <fieldset class="fieldset">
-                    <legend class="Hidelegend">Campi prestito</legend>
-                    <label id="labelLoanYes" for="textLoanYes">Sì</label>
-                    <input id="textLoanYes" name="textLoan" value="Si" type="radio" aria-label="Pulsante per dire di si al prestito"/>
-                    <label id="labelLoanNo" for="textLoanNo">No</label>
-                    <input id="textLoanNo" name="textLoan" value="No" type="radio" aria-label="Pulsante per dire di no al prestito"/>
+                    <label id="labelS" for="textSearch">Cerca nel sito</label>
+                    <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
+                    <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
                 </fieldset>
+            </form>
+        </div>
 
-                <p>
-                    <label id="labelImg" for="textImg">Inserisci Immagine</label>
-                    <input id="textImg" name="textImg" type="file" aria-label="Inserisci l'immagine"/>
-                </p>
+        <div aria-label="breadcrumbs" id="breadcrumbs">
+            <p>
+                Ti trovi in:
+            </p>
+            <span id="path">
+                <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en" tabindex="9">Home</a>
+                &gt;&gt;
+                <a href="AreaAdmin.html" title="Area personale" aria-label="Vai alla pagina area personale" tabindex="10">Area personale</a>
+                &gt;&gt;
+                <span id="pathSelected">Inserisci pagina</span>
+            </span>
+        </div>
 
-                <input id="InsertB2" class="Button" name="InsertB" type="submit" value="Inserisci" role="button" aria-label="Pulsante per la ricerca"/>
+        <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
+            <ul>
+                <li>
+                    <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="19"></span>
+                    <a id="skipMenu" href="#content" class="skip" aria-label="Vai al contenuto" tabindex="11">Vai al contenuto</a>
+                </li>
+                <li>
+                    <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="12" xml:lang="en">Home</a>
+                </li>
+                <li>
+                    <a href="Opere.html" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="13">Opere</a>
+                </li>
+                <li>
+                    <a href="Eventi.html" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="14">Eventi</a>
+                </li>
+                <li>
+                    <a href="OpzioniAcquisto.html" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti" tabindex="15">Opzioni
+                        d'acquisto</a>
+                </li>
+                <li>
+                    <a href="Avvisi.html" title="Avvisi" aria-label="Vai alla pagina degli avvisi" tabindex="16">Avvisi</a>
+                </li>
+                <li>
+                    <a href="CosaDiconoDiNoi.html" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni" tabindex="17">Cosa
+                    dicono di noi</a>
+                </li>
+                <li>
+                    <a href="Contatti.html" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti" tabindex="18">Contatti</a>
+                </li>
+            </ul>
+        </div>
 
-            </fieldset>
+        <div id="content" role="main">
+            <h2 class="title">Inserimento</h2>
+            <form id="Insert" name="Inserimento" action="" method="post" role="form">
+                <fieldset id="InsertField" class="fieldset">
+                    <fieldset id="Choice" class="fieldset">
+                        <legend class="Hidelegend">Scelta tipologia pagina</legend>
+                        <p>
+                            <label id="LabelFilterType" for="filterType">Pagina su</label>
+                            <select name="filterType" id="filterType" aria-label="Seleziona tipologia di pagina da creare">
+                                <option selected="selected" value="Opera">Opera</option>
+                                <option value="Evento">Evento</option>
+                                <option value="Avviso">Avviso</option>
+                            </select>
+                        </p>
+                    </fieldset>
 
-                <!--Eventi-->
-            <fieldset id="event" class="fieldset">
-                <legend class="Hidelegend">campi evento</legend>
+                    <fieldset id="Opera" class="fieldset">
+                        <legend class="Hidelegend">campi opera</legend>
+                        <p>
+                            <label id="labelAuthor" for="textAuthor">Autore</label>
+                            <input id="textAuthor" name="textAuthor" type="text" aria-label="Inserisci l'autore"/>
+                        </p>
 
-                <p>
-                    <label id="labelTitle2" for="textTitle2">Titolo</label>
-                    <input id="textTitle2" name="textTitle2" type="text" aria-label="Inserisci il titolo"/>
-                </p>
+                        <p>
+                            <label id="labelTitle" for="textTitle">Titolo</label>
+                            <input id="textTitle" name="textTitle" type="text" aria-label="Inserisci il titolo"/>
+                        </p>
 
-                <p>
-                    <label id="labelAreaDescr2" for="AreaDescr2">Descrizione</label>
-                    <textarea id="AreaDescr2" name="AreaDescr2" rows="20px" cols="20px" aria-label="Inserisci la descrizione"> Scrivi qui la descrizione!</textarea>
-                </p>
+                        <p>
+                            <label id="labelAreaDescr" for="AreaDescr">Descrizione</label>
+                            <textarea id="AreaDescr" name="AreaDescr" rows="20px" cols="20px" aria-label="Inserisci la descrizione"> Scrivi qui la descrizione!</textarea>
+                        </p>
 
-                <p>
-                    <label id="labelBegin" for="textBegin">Inizio</label>
-                    <input id="textBegin" name="textBegin" type="text" aria-label="Inserisci la data di inizio"/>
-                </p>
+                        <p>
+                            <label id="labelYear" for="textYear">Anno</label>
+                            <input id="textYear" name="textYear" type="text"/>
+                        </p>
 
-                <p>
-                    <label id="labelEnd" for="textEnd">Fine</label>
-                    <input id="textEnd" name="textEnd" type="text" aria-label="Inserisci la data di fine"/>
-                </p>
+                        <p>
+                            <label id="LabelFilterHistory" for="filterHistory">Periodo opera</label>
+                            <select name="filterHistory" id="filterHistory" aria-label="Seleziona il periodo storico dell'opera">
+                                <option selected="selected" value="Quattrocento">Quattrocento</option>
+                                <option value="Cinquecento">Cinquecento</option>
+                                <option value="Seicento">Seicento</option>
+                                <option value="Settecento">Settecento</option>
+                            </select>
+                        </p>
 
-                <p>
-                    <label id="LabelFilterEventType" for="filterEventType">Tipo evento</label>
-                    <select name="filterEventType" id="filterEventType" aria-label="Seleziona tipologia di evento">
-                        <option selected="selected" value="Mostra">Mostra</option>
-                        <option value="Conferenza">Conferenza</option>
-                    </select>
-                </p>
+                        <p>
+                            <label id="LabelFilterOpera" for="filterOpera">Stile opera</label>
+                            <select name="filterOpera" id="filterOpera" aria-label="Seleziona stile dell'opera">
+                                <option selected="selected" value="Pittura">Pittura</option>
+                                <option value="Scultura">Scultura</option>
+                            </select>
+                        </p>
 
-                <p>
-                    <label id="labelManager" for="textManager">Organizzatore</label>
-                    <input id="textManager" name="textManager" type="text" aria-label="Inserisci l'organizzatore"/>
-                </p>
+                        <p>
+                            <label id="labelTechnique" for="textTechnique">Tecnica</label>
+                            <input id="textTechnique" name="textTechnique" type="text" aria-label="Inserisci la dimensione"/>
+                        </p>
 
-                <p>
-                    <label id="labelImg2" for="textImg2">Inserisci Immagine</label>
-                    <input id="textImg2" name="textImg2" type="file" aria-label="Inserisci il file corrispondente all'immagine"/>
-                </p>
+                        <p>
+                            <label id="labelMaterial" for="textMaterial">Materiale</label>
+                            <input id="textMaterial" name="textMaterial" type="text" aria-label="Inserisci la dimensione"/>
+                        </p>
 
-                <input id="InsertB3" class="Button" name="InsertB" type="submit" value="Inserisci" role="button" aria-label="Pulsante per la ricerca"/>
+                        <p>
+                            <label id="labelSize" for="textSize">Dimensione</label>
+                            <input id="textSize" name="textSize" type="text" aria-label="Inserisci la dimensione"/>
+                        </p>
 
-            </fieldset>
+                        <fieldset class="fieldset">
+                            <legend class="Hidelegend">Campi prestito</legend>
+                            <label id="labelLoanYes" for="textLoanYes">Sì</label>
+                            <input id="textLoanYes" name="textLoan" value="Si" type="radio" aria-label="Pulsante per dire di si al prestito"/>
+                            <label id="labelLoanNo" for="textLoanNo">No</label>
+                            <input id="textLoanNo" name="textLoan" value="No" type="radio" aria-label="Pulsante per dire di no al prestito"/>
+                        </fieldset>
 
-                <!--Avvisi-->
-            <fieldset id="News" class="fieldset">
-                <legend class="Hidelegend">Campo avviso</legend>
-                <p>
-                    <label id="labelObject" for="textObject">Oggetto</label>
-                    <input id="textObject" name="textObject" type="text"/>
-                </p>
+                        <p>
+                            <label id="labelImg" for="textImg">Inserisci Immagine</label>
+                            <input id="textImg" name="textImg" type="file" aria-label="Inserisci l'immagine"/>
+                        </p>
 
-                <p>
-                    <label id="labelAreaDescr3" for="AreaDescr3">Descrizione</label>
-                    <textarea id="AreaDescr3" name="AreaDescr3" rows="20px" cols="20px" aria-label="Inserisci la descrizione"> Scrivi qui la descrizione!</textarea>
-                </p>
+                        <input id="InsertB2" class="Button" name="InsertB" type="submit" value="Inserisci" role="button" aria-label="Pulsante per la ricerca"/>
+                    </fieldset>
 
-                <p>
-                    <label id="labelRelease" for="textRelease">Rilascio</label>
-                    <input id="textRelease" name="textRelease" type="text" aria-label=""/>
-                </p>
+                    <fieldset id="event" class="fieldset">
+                        <legend class="Hidelegend">campi evento</legend>
 
-                <p>
-                    <label id="labelDeadline" for="textDeadline">Scadenza date</label>
-                    <input id="textDeadline" name="textDeadline" type="text" aria-label=""/>
-                </p>
+                        <p>
+                            <label id="labelTitle2" for="textTitle2">Titolo</label>
+                            <input id="textTitle2" name="textTitle2" type="text" aria-label="Inserisci il titolo"/>
+                        </p>
 
-                <input id="InsertB4" class="Button" name="InsertB" type="submit" value="Inserisci" aria-label="Pulsante per la ricerca"/>
-            </fieldset>
-        </fieldset>
-    </form>
+                        <p>
+                            <label id="labelAreaDescr2" for="AreaDescr2">Descrizione</label>
+                            <textarea id="AreaDescr2" name="AreaDescr2" rows="20px" cols="20px" aria-label="Inserisci la descrizione"> Scrivi qui la descrizione!</textarea>
+                        </p>
 
-    <a id="ButtonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
-        <img alt="Torna su" src="../Images/TornaSu.png"/>
-    </a>
+                        <p>
+                            <label id="labelBegin" for="textBegin">Inizio</label>
+                            <input id="textBegin" name="textBegin" type="text" aria-label="Inserisci la data di inizio"/>
+                        </p>
 
-</div>
+                        <p>
+                            <label id="labelEnd" for="textEnd">Fine</label>
+                            <input id="textEnd" name="textEnd" type="text" aria-label="Inserisci la data di fine"/>
+                        </p>
 
-<div aria-label="footer" id="footer">
-    <p>
-        Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
-    </p>
-    <p>
-        Studenti: Fiammetta Cannavò;, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
-    </p>
-    <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
-    <img alt="Simbolo di validazione CSS" src="../Images/vcss-blue.gif"/>
-</div>
+                        <p>
+                            <label id="LabelFilterEventType" for="filterEventType">Tipo evento</label>
+                            <select name="filterEventType" id="filterEventType" aria-label="Seleziona tipologia di evento">
+                                <option selected="selected" value="Mostra">Mostra</option>
+                                <option value="Conferenza">Conferenza</option>
+                            </select>
+                        </p>
 
-</body>
+                        <p>
+                            <label id="labelManager" for="textManager">Organizzatore</label>
+                            <input id="textManager" name="textManager" type="text" aria-label="Inserisci l'organizzatore"/>
+                        </p>
+
+                        <p>
+                            <label id="labelImg2" for="textImg2">Inserisci Immagine</label>
+                            <input id="textImg2" name="textImg2" type="file" aria-label="Inserisci il file corrispondente all'immagine"/>
+                        </p>
+
+                        <input id="InsertB3" class="Button" name="InsertB" type="submit" value="Inserisci" role="button" aria-label="Pulsante per la ricerca"/>
+
+                    </fieldset>
+
+                    <fieldset id="News" class="fieldset">
+                        <legend class="Hidelegend">Campo avviso</legend>
+                        <p>
+                            <label id="labelObject" for="textObject">Oggetto</label>
+                            <input id="textObject" name="textObject" type="text"/>
+                        </p>
+
+                        <p>
+                            <label id="labelAreaDescr3" for="AreaDescr3">Descrizione</label>
+                            <textarea id="AreaDescr3" name="AreaDescr3" rows="20px" cols="20px" aria-label="Inserisci la descrizione"> Scrivi qui la descrizione!</textarea>
+                        </p>
+
+                        <p>
+                            <label id="labelRelease" for="textRelease">Rilascio</label>
+                            <input id="textRelease" name="textRelease" type="text" aria-label=""/>
+                        </p>
+
+                        <p>
+                            <label id="labelDeadline" for="textDeadline">Scadenza date</label>
+                            <input id="textDeadline" name="textDeadline" type="text" aria-label=""/>
+                        </p>
+
+                        <input id="InsertB4" class="Button" name="InsertB" type="submit" value="Inserisci" aria-label="Pulsante per la ricerca"/>
+                    </fieldset>
+                </fieldset>
+            </form>
+
+            <a id="ButtonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
+                <img alt="Torna su" src="../Images/TornaSu.png"/>
+            </a>
+        </div>
+
+        <div aria-label="footer" id="footer">
+            <p>
+                Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
+            </p>
+            <p>
+                Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
+            </p>
+            <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
+            <img alt="Simbolo di validazione CSS" src="../Images/vcss-blue.gif"/>
+        </div>
+    </body>
 </html>

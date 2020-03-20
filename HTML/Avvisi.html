@@ -2,7 +2,6 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN" "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
 
-<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">-->
 <html xml:lang="it" xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -12,27 +11,26 @@
         <meta name="language" content="italian it"/>
         <meta name="title" content="Avvisi | Museo arte nel tempo"/>
         <meta name="description" content="Elenco di informazioni relative allo stato del museo"/>
-        <meta name="keywords" content="arte, pittura, scultura, museo, avvisi"/>       <!-- Rivedere per sicurezza -->
+        <meta name="keywords" content="arte, pittura, scultura, museo, avvisi"/>
         <meta name="author" content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto"/>
 
         <link rel="stylesheet" media="screen" href="../CSS/Style.css" type="text/css"/>
         <link rel="stylesheet" media="print" href="../CSS/Print.css" type="text/css"/>
         <link rel="icon" href=""/>
+
         <script src="../JavaScript/Placeholder.js" type="text/javascript"></script>
     </head>
 
     <body>
-
         <div id="header" role="banner">
-
             <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
-            <!-- Utilizzare il css per inserire il logo -->
-            <span id="HamburgerMenu" class="ImgBackground" title="Menu a hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu a hamburger, cliccaci sopra per aprire il menu" tabindex="8">
-                Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
+            <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
+                Menu ad <span xml:lang="en">hamburger</span>
             </span>
+
             <span id="loginMenuPlaceholder"/>
 
-            <form id="search" name="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
+            <form id="search" name="search" action="" method="post" role="search">
                 <fieldset id="searchBox">
                     <legend class="Hidelegend">Ricerca</legend>
                     <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="2">
@@ -56,7 +54,7 @@
                 &gt;&gt;
                 <span id="pathSelected">Avvisi</span>
             </span>
-        </div>   <!-- Da rivedere come farlo -->
+        </div>
 
         <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
             <ul>
@@ -78,7 +76,7 @@
                         d'acquisto</a>
                 </li>
                 <li>
-                    Avvisi
+                    <em>Avvisi</em>
                 </li>
                 <li>
                     <a href="CosaDiconoDiNoi.html" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni" tabindex="15">Cosa
@@ -92,7 +90,13 @@
 
         <div id="content" role="main">
             <h2 class="title">Avvisi</h2>
+
+            <p>
+                Sono stati trovati # avvisi:
+            </p>
+
             <a href="#Back" class="skip" aria-label="Salta gli avvisi">Salta gli avvisi presenti nella pagina</a>
+
             <dl class="clickableDl">
                 <dt>
                     <a href="AvvisoSingolo.html" aria-label="Vai all'avviso di cui oggetto">Oggetto: chiusura per controllo generale della sicurezza</a>
@@ -117,7 +121,7 @@
                     </p>
                     <p>
                         Si comunica che il museo resterà aperto il giorno lunedì 20 gennaio p.v. in occasione del
-                        finesettimana dedicato alla promozione della cutlura e dell'arte indetto dal Comune.
+                        fine-settimana dedicato alla promozione della cultura e dell'arte indetto dal Comune.
                     </p>
                 </dd>
                 <dt id="a3">
@@ -147,11 +151,12 @@
                 </p>
                 </dd>
             </dl>
+
             <p class="Navigation">
-                <a id="Back" class="Button" href="Avvisi.html" title="Torna indietro" role="button" aria-label="Torna alla pagina di avvisi precedente">
+                <a id="Back" class="Button" href="" title="Avvisi precedenti" role="button" aria-label="Torna agli avvisi precedenti">
                     &lt; Precedente
                 </a>
-                <a id="Next" class="Button" href="Avvisi.html" title="Vai avanti" role="button" aria-label="Vai alla pagina di avvisi succesiva">
+                <a id="Next" class="Button" href="" title="Avvisi successivi" role="button" aria-label="Vai agli avvisi successivi">
                     Successivo &gt;
                 </a>
             </p>
@@ -159,7 +164,6 @@
             <a id="ButtonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
                 <img alt="Torna su" src="../Images/TornaSu.png"/>
             </a>
-
         </div>
 
         <div id="footer" aria-label="footer">
@@ -172,6 +176,5 @@
             <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
             <img alt="Simbolo di validazione CSS" src="../Images/vcss-blue.gif"/>
         </div>
-
     </body>
 </html>
