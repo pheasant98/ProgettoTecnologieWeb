@@ -2,174 +2,188 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN" "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
 
-<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">-->
 <html xml:lang="it" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 
-    <title>Nome periodo storico | Museo arte nel tempo</title>
+        <title><span id='titlePlaceholder'/> | Museo arte nel tempo</title>
 
-    <meta content="italian it" name="language"/>
-    <meta content="Nome periodo storico | Museo arte nel tempo" name="title"/>
-    <meta content="Elenco di opere appartenenti a un specifico periodo " name="description"/>
-    <meta content="arte, pittura, scultura, museo" name="keywords"/>       <!-- Rivedere per sicurezza -->
-    <meta content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto" name="author"/>
+        <meta content="italian it" name="language"/>
+        <meta content="<span id='titlePlaceholder'/> | Museo arte nel tempo" name="title"/>
+        <meta content="Elenco di opere appartenenti a un specifico periodo " name="description"/>
+        <meta content="arte, pittura, scultura, museo" name="keywords"/>
+        <meta content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto" name="author"/>
 
-    <link href="../CSS/Style.css" media="screen" rel="stylesheet" type="text/css"/>
-    <link href="../CSS/Print.css" media="print" rel="stylesheet" type="text/css"/>
-    <link href="" rel="icon"/>
-    <script src="../JavaScript/Placeholder.js" type="text/javascript"></script>
+        <link href="../CSS/Style.css" media="screen" rel="stylesheet" type="text/css"/>
+        <link href="../CSS/Print.css" media="print" rel="stylesheet" type="text/css"/>
+        <link href="" rel="icon"/>
 
-</head>
+        <script src="../JavaScript/Placeholder.js" type="text/javascript"></script>
+    </head>
 
-<body>
+    <body>
+        <div id="header" role="banner">
+            <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
 
-<div id="header" role="banner">
+            <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
+                Menu ad <span xml:lang="en">hamburger</span>
+            </span>
 
-    <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
-    <!-- Utilizzare il css per inserire il logo -->
-    <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
-        Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
-    </span>
-    <span id="loginMenuPlaceholder"/>
-    <form id="search" name="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
-        <fieldset id="searchBox">
-            <legend class="Hidelegend">Ricerca</legend>
-            <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
-                <option selected="selected" value="Opera">Opera</option>
-                <option value="Evento">Evento</option>
-                <option value="Avviso">Avviso</option>
-            </select>
-            <label id="labelS" for="textSearch">Cerca nel sito</label>
-            <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
-            <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
-        </fieldset>
-    </form>
-</div>
+            <span id="loginMenuPlaceholder"/>
 
-<div aria-label="breadcrumbs" id="breadcrumbs">
-    <p>
-        Ti trovi in:
-    </p>
-    <span id="path">
-        <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a>
-        &gt;&gt;
-        <a href="Opere.html" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="10">Opere</a>
-        &gt;&gt;
-        <span id="pathSelected">Nome periodo storico</span>
-    </span>
-</div>   <!-- Da rivedere come farlo -->
+            <form id="search" name="search" action="" method="post" role="search">
+                <fieldset id="searchBox">
+                    <legend class="Hidelegend">Ricerca</legend>
+                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
+                        <option selected="selected" value="Opera">Opera</option>
+                        <option value="Evento">Evento</option>
+                        <option value="Avviso">Avviso</option>
+                    </select>
+                    <label id="labelS" for="textSearch">Cerca nel sito</label>
+                    <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
+                    <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
+                </fieldset>
+            </form>
+        </div>
 
-<div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
-    <ul>
-        <li>
-            <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="19"></span>
-            <a id="skipMenu" class="skip" href="#content" aria-label="Vai al contenuto" tabindex="11">Vai al contenuto</a>
-        </li>
-        <li>
-            <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="12" xml:lang="en">Home</a>
-        </li>
-        <li>
-            <a href="Opere.html" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="13">Opere</a>
-        </li>
-        <li>
-            <a href="Eventi.html" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="14">Eventi</a>
-        </li>
-        <li>
-            <a href="OpzioniAcquisto.html" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti" tabindex="15">Opzioni
-                d'acquisto</a>
-        </li>
-        <li>
-            <a href="Avvisi.html" title="Avvisi" aria-label="Vai alla pagina degli avvisi" tabindex="16">Avvisi</a>
-        </li>
-        <li>
-            <a href="CosaDiconoDiNoi.html" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni" tabindex="17">Cosa
-                dicono di noi</a>
-        </li>
-        <li>
-            <a href="Contatti.html" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti" tabindex="18">Contatti</a>
-        </li>
-    </ul>
-</div>
-
-<div id="content" role="main">
-    <h2 class="title">Nome Periodo</h2>
-    <h3>Descrizione completa</h3>
-    <p>
-        Descrizione
-    </p>
-
-    <form id="operaFilter" action="" method="post"><!-- Nascondi con CSS -->
-        <fieldset class="Navigation">
-            <legend class="Hidelegend">Periodo storico</legend>
-            <label id="labelfilterType" for="filterType">Selezionare il tipo di opera</label>
-            <select name="filterType" id="filterType" aria-label="filtro per il tipo di opera">
-                <option value="Scultura" selected="selected"> Scultura </option>
-                <option value="Pittura"> Pittura </option>
-            </select>
-            <input id="confirm" class="Button" name="filter" value="Filtra" type="button" aria-label="Conferma"/>
-        </fieldset>
-    </form>
-
-    <h3>Elenco</h3>
-    <dl class="clickableDl">
-        <dt>
-            <a href="OperaSingola.html" aria-label="">Nome prima opera</a>
-        </dt>
-        <dd>
+        <div aria-label="breadcrumbs" id="breadcrumbs">
             <p>
-                nome autore: nome
+                Ti trovi in:
+            </p>
+
+            <span id="path">
+                <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a>
+                &gt;&gt;
+                <a href="Opere.html" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="10">Opere</a>
+                &gt;&gt;
+                <span id="pathSelected">Nome periodo storico</span>
+            </span>
+        </div>
+
+        <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
+            <ul>
+                <li>
+                    <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="19"></span>
+                    <a id="skipMenu" class="skip" href="#content" aria-label="Vai al contenuto" tabindex="11">Vai al contenuto</a>
+                </li>
+                <li>
+                    <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="12" xml:lang="en">Home</a>
+                </li>
+                <li>
+                    <a href="Opere.html" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="13">Opere</a>
+                </li>
+                <li>
+                    <a href="Eventi.html" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="14">Eventi</a>
+                </li>
+                <li>
+                    <a href="OpzioniAcquisto.html" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti" tabindex="15">Opzioni
+                        d'acquisto</a>
+                </li>
+                <li>
+                    <a href="Avvisi.html" title="Avvisi" aria-label="Vai alla pagina degli avvisi" tabindex="16">Avvisi</a>
+                </li>
+                <li>
+                    <a href="CosaDiconoDiNoi.html" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni" tabindex="17">Cosa
+                        dicono di noi</a>
+                </li>
+                <li>
+                    <a href="Contatti.html" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti" tabindex="18">Contatti</a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="content" role="main">
+            <h2 class="title">Nome Periodo</h2>
+            <h3>Descrizione completa</h3>
+            <p>
+                Descrizione
+            </p>
+
+            <form id="operaFilter" action="" method="post">
+                <fieldset class="Navigation">
+                    <legend class="Hidelegend">Periodo storico</legend>
+                    <label id="labelfilterType" for="filterType">Selezionare il tipo di opera</label>
+                    <select name="filterType" id="filterType" aria-label="filtro per il tipo di opera">
+                        <option value="Scultura" selected="selected"> Scultura </option>
+                        <option value="Pittura"> Pittura </option>
+                    </select>
+                    <input id="confirm" class="Button" name="filter" value="Filtra" type="button" aria-label="Conferma"/>
+                </fieldset>
+            </form>
+
+            <p>
+                Sono stati trovati # contenuti:
+            </p>
+            <a href="#Back" class="skip">Salta le opere presenti nella pagina</a>
+
+            <h3>Elenco</h3>
+            <dl class="clickableDl">
+                <dt id="o1">
+                    <a href="OperaSingola.html">Nome prima opera</a>
+                </dt>
+                <dd>
+                    <a href="#o2" class="skip">Salta l'opera</a>
+
+                    <p>
+                        nome autore: nome
+                    </p>
+
+                    <p>
+                        tecnica: tecnica
+                    </p>
+
+                    <p>
+                        data: data
+                    </p>
+
+                    <p>
+                        foto: foto
+                    </p>
+                </dd>
+
+                <dt id="o2">
+                    <a href="OperaSingola.html">Nome seconda opera</a>
+                </dt>
+                <dd>
+                    <a href="#Back" class="skip">Salta l'opera</a>
+
+                    <p>
+                        nome autore: nome
+                    </p>
+
+                    <p>
+                        tecnica: tecnica
+                    </p>
+
+                    <p>
+                        data: data
+                    </p>
+
+                    <p>
+                        foto: foto
+                    </p>
+                </dd>
+            </dl>
+
+            <p class="Navigation">
+                <a id="Back" class="Button" href="" title="Opere precedenti" role="button" aria-label="Torna alle opere precedenti"> &lt; Precedente</a>
+                <a id="Next" class="Button" href="" title="Opere successive" role="button" aria-label="Vai alle opere successive"> Successivo &gt;</a>
+            </p>
+
+            <a id="ButtonBackUp" href="#header" title="Torna su" aria-label="Torna su">
+                <img alt="Torna su" src="../Images/TornaSu.png"/>
+            </a>
+        </div>
+
+        <div aria-label="footer" id="footer">
+            <p>
+                Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
             </p>
             <p>
-                tecnica: tecnica
+                Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
             </p>
-            <p>
-                data: data
-            </p>
-            <p>
-                foto: foto
-            </p>
-        </dd>
-        <dt>
-            <a href="OperaSingola.html" aria-label="">Nome seconda opera</a>
-        </dt>
-        <dd>
-            <p>
-                nome autore: nome
-            </p>
-            <p>
-                tecnica:tecnica
-            </p>
-            <p>
-                data:data
-            </p>
-            <p>
-                foto:foto
-            </p>
-        </dd>
-    </dl>
-
-    <p class="Navigation">
-        <a id="Back" class="Button" href="NomePeriodoStorico.html" title="Torna indietro" role="button" aria-label="Torna alla pagina dell'evento precedente"> &lt; Precedente
-        </a>
-        <a id="Next" class="Button" href="NomePeriodoStorico.html" title="Vai avanti" role="button" aria-label="Vai alla pagina dell'evento succesivo"> Successivo &gt;
-        </a>
-    </p>
-    <a id="ButtonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
-        <img alt="Torna su" src="../Images/TornaSu.png"/>
-    </a>
-</div>
-
-<div aria-label="footer" id="footer">
-    <p>
-        Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
-    </p>
-    <p>
-        Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
-    </p>
-    <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
-    <img alt="Simbolo di validazione CSS" src="../Images/vcss-blue.gif"/>
-</div>
-
-</body>
+            <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
+            <img alt="Simbolo di validazione CSS" src="../Images/vcss-blue.gif"/>
+        </div>
+    </body>
 </html>

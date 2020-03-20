@@ -2,147 +2,149 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN" "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
 
-<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">-->
 <html xml:lang="it" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-    <title>Opere | Museo arte nel tempo</title>
+        <title>Opere | Museo arte nel tempo</title>
 
-    <meta content="italian it" name="language"/>
-    <meta content="Opere | Museo arte nel tempo" name="title"/>
-    <meta content="Elenco dei periodi storici in cui sono suddivise le opere del museo" name="description"/>
-    <meta content="arte, pittura, scultura, museo" name="keywords"/>       <!-- Rivedere per sicurezza -->
-    <meta content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto" name="author"/>
+        <meta name="language" content="italian it"/>
+        <meta name="title" content="Opere | Museo arte nel tempo"/>
+        <meta name="description" content="Elenco dei periodi storici in cui sono suddivise le opere del museo"/>
+        <meta name="keywords" content="arte, pittura, scultura, museo"/>
+        <meta name="author" content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto"/>
 
-    <link href="../CSS/Style.css" media="screen" rel="stylesheet" type="text/css"/>
-    <link href="../CSS/Print.css" media="print" rel="stylesheet" type="text/css"/>
-    <link href="" rel="icon"/>
-    <script src="../JavaScript/Placeholder.js" type="text/javascript"></script>
-</head>
+        <link rel="stylesheet" media="screen" href="../CSS/Style.css" type="text/css"/>
+        <link rel="stylesheet" media="print" href="../CSS/Print.css" type="text/css"/>
+        <link rel="icon" href=""/>
 
-<body>
-<div id="header" role="banner">
-    <h1 aria-label="Immagine del logo Museo arte nel tempo" class="ImgBackground" id="logoImg" role="img" title="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
-    <!-- Utilizzare il css per inserire il logo -->
-    <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
-        Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
-    </span>
-    <span id="loginMenuPlaceholder"/>
-    <form id="search" name="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
-        <fieldset id="searchBox">
-            <legend class="Hidelegend">Ricerca</legend>
-            <select aria-label="Seleziona il filtro per la ricerca" id="filter" name="filter" tabindex="2">
-                <option selected="selected" value="Opera">Opera</option>
-                <option value="Evento">Evento</option>
-                <option value="Avviso">Avviso</option>
-            </select>
-            <label for="textSearch" id="labelS">Cerca nel sito</label>
-            <input id="textSearch" name="ricerca" type="text" aria-label="Casella di testo" tabindex="1"/>
-            <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="3"/>
-        </fieldset>
-    </form>
-</div>
+        <script src="../JavaScript/Placeholder.js" type="text/javascript"></script>
+    </head>
 
-<div aria-label="breadcrumbs" id="breadcrumbs">
-    <p>
-        Ti trovi in:
-    </p>
-    <span id="path">
-        <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a>
-        &gt;&gt;
-        <span id="pathSelected">Opere</span>
-    </span>
-</div>   <!-- Da rivedere come farlo -->
+    <body>
+        <div id="header" role="banner">
+            <h1 aria-label="Immagine del logo Museo arte nel tempo" class="ImgBackground" id="logoImg" role="img" title="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
 
-<div aria-label="menu per la navigazione nel sito" id="menu" role="navigation">
-    <ul>
-        <li>
-            <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="17"></span>
-            <a id="skipMenu" href="#content" class="skip" aria-label="Vai al contenuto" tabindex="10">Vai al contenuto</a>
-        </li>
-        <li>
-            <a aria-label="Vai alla pagina homepage del museo" href="../Index.php" title="Home" tabindex="11" xml:lang="en">Home</a>
-        </li>
-        <li>
-            Opere
-        </li>
-        <li>
-            <a href="Eventi.html" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="12">Eventi</a>
-        </li>
-        <li>
-            <a href="OpzioniAcquisto.html" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti" tabindex="13">Opzioni
-                d'acquisto</a>
-        </li>
-        <li>
-            <a href="Avvisi.html" title="Avvisi" aria-label="Vai alla pagina degli avvisi" tabindex="14">Avvisi</a>
-        </li>
-        <li>
-            <a href="CosaDiconoDiNoi.html" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni" tabindex="15">Cosa
-                dicono di noi</a>
-        </li>
-        <li>
-            <a href="Contatti.html" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti" tabindex="16">Contatti</a>
-        </li>
-    </ul>
-</div>
+            <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
+                Menu ad <span xml:lang="en">hamburger</span>
+            </span>
 
-<div id="content" role="main">
-    <h2 class="title">Opere</h2>
-    <p>Tutte le opere presenti all'interno del museo sono state suddivise in base al periodo storico di appartenenza, che ne fornisce una classificazione temporale.</p>
-    <dl id="periodiStorici">
-        <dt>
-            <a class="periodoStorico" href="NomePeriodoStorico.html" aria-label="">Quattrocento</a>
-        </dt>
-        <dd>
-            <img alt="Immagine rappresentativa del periodo storico" src=""/>
+            <span id="loginMenuPlaceholder"/>
+
+            <form id="search" name="search" action="" method="post" role="search">
+                <fieldset id="searchBox">
+                    <legend class="Hidelegend">Ricerca</legend>
+                    <select aria-label="Seleziona il filtro per la ricerca" id="filter" name="filter" tabindex="2">
+                        <option selected="selected" value="Opera">Opera</option>
+                        <option value="Evento">Evento</option>
+                        <option value="Avviso">Avviso</option>
+                    </select>
+                    <label for="textSearch" id="labelS">Cerca nel sito</label>
+                    <input id="textSearch" name="ricerca" type="text" aria-label="Casella di testo" tabindex="1"/>
+                    <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="3"/>
+                </fieldset>
+            </form>
+        </div>
+
+        <div aria-label="breadcrumbs" id="breadcrumbs">
             <p>
-                Breve descrizione
+                Ti trovi in:
             </p>
-        </dd>
-        <dt>
-            <a class="periodoStorico" href="NomePeriodoStorico.html">Cinquecento</a>
-        </dt>
-        <dd>
-            <img alt="Immagine rappresentativa del periodo storico" src=""/>
-            <p>
-                Breve descrizione
-            </p>
-        </dd>
-        <dt>
-            <a class="periodoStorico" href="NomePeriodoStorico.html">Seicento</a>
-        </dt>
-        <dd>
-            <img alt="Immagine rappresentativa del periodo storico" src=""/>
-            <p>
-                Breve descrizione
-            </p>
-        </dd>
-        <dt>
-            <a class="periodoStorico" href="NomePeriodoStorico.html">Settecento</a>
-        </dt>
-        <dd>
-            <img alt="Immagine rappresentativa del periodo storico" src=""/>
-            <p>
-                Breve descrizione
-            </p>
-        </dd>
-    </dl>
-    <!-- Da vedere bene -->
-    <a id="ButtonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
-        <img alt="Torna su" src="../Images/TornaSu.png"/>
-    </a>
-</div>
+            <span id="path">
+                <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a>
+                &gt;&gt;
+                <span id="pathSelected">Opere</span>
+            </span>
+        </div>
 
-<div aria-label="footer" id="footer">
-    <p>
-        Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
-    </p>
-    <p>
-        Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
-    </p>
-    <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
-    <img alt="Simbolo di validazione CSS" src="../Images/vcss-blue.gif"/>
-</div>
-</body>
+        <div aria-label="menu per la navigazione nel sito" id="menu" role="navigation">
+            <ul>
+                <li>
+                    <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="17"></span>
+                    <a id="skipMenu" href="#content" class="skip" aria-label="Vai al contenuto" tabindex="10">Vai al contenuto</a>
+                </li>
+                <li>
+                    <a aria-label="Vai alla pagina homepage del museo" href="../Index.php" title="Home" tabindex="11" xml:lang="en">Home</a>
+                </li>
+                <li>
+                    <em>Opere</em>
+                </li>
+                <li>
+                    <a href="Eventi.html" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="12">Eventi</a>
+                </li>
+                <li>
+                    <a href="OpzioniAcquisto.html" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti" tabindex="13">Opzioni
+                        d'acquisto</a>
+                </li>
+                <li>
+                    <a href="Avvisi.html" title="Avvisi" aria-label="Vai alla pagina degli avvisi" tabindex="14">Avvisi</a>
+                </li>
+                <li>
+                    <a href="CosaDiconoDiNoi.html" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni" tabindex="15">Cosa
+                        dicono di noi</a>
+                </li>
+                <li>
+                    <a href="Contatti.html" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti" tabindex="16">Contatti</a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="content" role="main">
+            <h2 class="title">Opere</h2>
+            <p>Tutte le opere presenti all'interno del museo sono state suddivise in base al periodo storico di appartenenza, che ne fornisce una classificazione temporale.</p>
+            <dl id="periodiStorici">
+                <dt>
+                    <a class="periodoStorico" href="NomePeriodoStorico.html" aria-label="">Quattrocento</a>
+                </dt>
+                <dd>
+                    <img alt="Immagine rappresentativa del periodo storico" src=""/>
+                    <p>
+                        Breve descrizione
+                    </p>
+                </dd>
+                <dt>
+                    <a class="periodoStorico" href="NomePeriodoStorico.html">Cinquecento</a>
+                </dt>
+                <dd>
+                    <img alt="Immagine rappresentativa del periodo storico" src=""/>
+                    <p>
+                        Breve descrizione
+                    </p>
+                </dd>
+                <dt>
+                    <a class="periodoStorico" href="NomePeriodoStorico.html">Seicento</a>
+                </dt>
+                <dd>
+                    <img alt="Immagine rappresentativa del periodo storico" src=""/>
+                    <p>
+                        Breve descrizione
+                    </p>
+                </dd>
+                <dt>
+                    <a class="periodoStorico" href="">Settecento</a>
+                </dt>
+                <dd>
+                    <img alt="Immagine rappresentativa del periodo storico" src=""/>
+                    <p>
+                        Breve descrizione
+                    </p>
+                </dd>
+            </dl>
+
+            <a aria-label="Torna su" href="#header" id="ButtonBackUp" title="Torna su">
+                <img alt="Torna su" src="../Images/TornaSu.png"/>
+            </a>
+        </div>
+
+        <div aria-label="footer" id="footer">
+            <p>
+                Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
+            </p>
+            <p>
+                Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
+            </p>
+            <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
+            <img alt="Simbolo di validazione CSS" src="../Images/vcss-blue.gif"/>
+        </div>
+    </body>
 </html>

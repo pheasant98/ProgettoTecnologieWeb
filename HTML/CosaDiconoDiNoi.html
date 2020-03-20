@@ -2,151 +2,158 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN" "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
 
-<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">-->
 <html xml:lang="it" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-    <title>Cosa dicono di noi | Museo arte nel tempo</title>
+        <title>Cosa dicono di noi | Museo arte nel tempo</title>
 
-    <meta content="italian it" name="language"/>
-    <meta content="Cosa dicono di noi | Museo arte nel tempo" name="title"/>
-    <meta content="recensioni del museo scritte da utenti registarti" name="description"/>
-    <meta content="arte, pittura, scultura, museo" name="keywords"/>       <!-- Rivedere per sicurezza -->
-    <meta content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto" name="author"/>
+        <meta name="language" content="italian it"/>
+        <meta name="title" content="Cosa dicono di noi | Museo arte nel tempo"/>
+        <meta name="description" content="recensioni del museo scritte da utenti registarti"/>
+        <meta name="keywords" content="arte, pittura, scultura, museo"/>
+        <meta name="author" content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto"/>
 
-    <link href="../CSS/Style.css" media="screen" rel="stylesheet" type="text/css"/>
-    <link href="../CSS/Print.css" media="print" rel="stylesheet" type="text/css"/>
-    <link href="" rel="icon"/>
-    <script src="../JavaScript/Placeholder.js" type="text/javascript"></script>
+        <link rel="stylesheet" media="screen" href="../CSS/Style.css" type="text/css"/>
+        <link rel="stylesheet" media="print" href="../CSS/Print.css" type="text/css"/>
+        <link rel="icon" href=""/>
 
-</head>
+        <script src="../JavaScript/Placeholder.js" type="text/javascript"></script>
+    </head>
 
-<body>
+    <body>
+        <div id="header" role="banner">
+            <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
+            <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
+                Menu ad <span xml:lang="en">hamburger</span>
+            </span>
 
-<div id="header" role="banner">
+            <span id="loginMenuPlaceholder"/>
 
-    <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
-    <!-- Utilizzare il css per inserire il logo -->
-    <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
-        Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
-    </span>
-    <span id="loginMenuPlaceholder"/>
-    <form id="search" name="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
-        <fieldset id="searchBox">
-            <legend class="Hidelegend">Ricerca</legend>
-            <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
-                <option selected="selected" value="Opera">Opera</option>
-                <option value="Evento">Evento</option>
-                <option value="Avviso">Avviso</option>
-            </select>
-            <label id="labelS" for="textSearch">Cerca nel sito</label>
-            <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
-            <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
-        </fieldset>
-    </form>
-</div>
-<div aria-label="breadcrumbs" id="breadcrumbs">
-    <p>
-        Ti trovi in:
-    </p>
-    <span id="path">
-        <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a>
-        &gt;&gt;
-        <span id="pathSelected">Cosa dicono di noi</span>
-    </span>
-</div>   <!-- Da rivedere come farlo -->
+            <form id="search" action="" method="post" role="search">
+                <fieldset id="searchBox">
+                    <legend class="Hidelegend">Ricerca</legend>
+                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
+                        <option selected="selected" value="Opera">Opera</option>
+                        <option value="Evento">Evento</option>
+                        <option value="Avviso">Avviso</option>
+                    </select>
+                    <label id="labelS" for="textSearch">Cerca nel sito</label>
+                    <input id="textSearch" name="ricerca" role="search" type="text" tabindex="1"/>
+                    <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
+                </fieldset>
+            </form>
+        </div>
 
-<div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
-    <ul>
-        <li>
-            <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="17"></span>
-            <a id="skipMenu" href="#content" class="skip" aria-label="Vai al contenuto" tabindex="10">Vai al contenuto</a>
-        </li>
-        <li>
-            <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="11" xml:lang="en">Home</a>
-        </li>
-        <li>
-            <a href="Opere.html" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="12">Opere</a>
-        </li>
-        <li>
-            <a href="Eventi.html" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="13">Eventi</a>
-        </li>
-        <li>
-            <a href="OpzioniAcquisto.html" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti" tabindex="14">Opzioni
-                d'acquisto</a>
-        </li>
-        <li>
-            <a href="Avvisi.html" title="Avvisi" aria-label="Vai alla pagina degli avvisi" tabindex="15">Avvisi</a>
-        </li>
-        <li>
-            Cosa dicono di noi
-        </li>
-        <li>
-            <a href="Contatti.html" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti" tabindex="16">Contatti</a>
-        </li>
-    </ul>
-</div>
+        <div aria-label="breadcrumbs" id="breadcrumbs">
+            <p>
+                Ti trovi in:
+            </p>
+            <span id="path">
+                <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a>
+                &gt;&gt;
+                <span id="pathSelected">Cosa dicono di noi</span>
+            </span>
+        </div>
 
-<div id="content" role="main">
-    <h2 class="title">Cosa dicono di noi</h2>
-    <p class="paragraph">
-        Desideri lasciare una recensione?
-    </p>
-    <a id="reviewButton" class="Button" href="LasciaUnaRecensione.html" title="Pagina di scrittura di una recensione" role="button" aria-label="Vai alla pagina di scrittura della recensione">Lascia una recensione</a>
-    <p id="clause">
-        Per lasciare una recensione devi essere registrato.
-    </p>
-    <dl>
-        <dt class="reviewObject">
-            Oggetto BELLO
-        </dt>
-        <dd>
-            <a href="#p3" class="skip" aria-label="Salta l'evento">Salta l'evento</a>
-            <p class="reviewAuthor">&lt;Utente&gt;</p>
-            <p class="reviewData">Data: &lt;Data&gt;</p>
-            <p class="reviewDescription">Contenuto BELLO</p>
-        </dd>
-        <dt class="reviewObject">
-            Oggetto BELLO
-        </dt>
-        <dd>
-            <a href="#p3" class="skip" aria-label="Salta l'evento">Salta l'evento</a>
-            <p class="reviewAuthor">&lt;Utente&gt;</p>
-            <p class="reviewData">Data: &lt;Data&gt;</p>
-            <p class="reviewDescription">Contenuto BELLO</p>
-        </dd>
-        <dt class="reviewObject">
-            Oggetto BELLO
-        </dt>
-        <dd>
-            <a href="#p3" class="skip" aria-label="Salta l'evento">Salta l'evento</a>
-            <p class="reviewAuthor">&lt;Utente&gt;</p>
-            <p class="reviewData">Data: &lt;Data&gt;</p>
-            <p class="reviewDescription">Contenuto BELLO</p>
-        </dd>
-    </dl>
+        <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
+            <ul>
+                <li>
+                    <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="17"></span>
+                    <a id="skipMenu" href="#content" class="skip" aria-label="Vai al contenuto" tabindex="10">Vai al contenuto</a>
+                </li>
+                <li>
+                    <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="11" xml:lang="en">Home</a>
+                </li>
+                <li>
+                    <a href="Opere.html" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="12">Opere</a>
+                </li>
+                <li>
+                    <a href="Eventi.html" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="13">Eventi</a>
+                </li>
+                <li>
+                    <a href="OpzioniAcquisto.html" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti" tabindex="14">Opzioni
+                        d'acquisto</a>
+                </li>
+                <li>
+                    <a href="Avvisi.html" title="Avvisi" aria-label="Vai alla pagina degli avvisi" tabindex="15">Avvisi</a>
+                </li>
+                <li>
+                    <em>Cosa dicono di noi</em>
+                </li>
+                <li>
+                    <a href="Contatti.html" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti" tabindex="16">Contatti</a>
+                </li>
+            </ul>
+        </div>
 
-    <p class="Navigation">
-    <a id="Back" class="Button" href="CosaDiconoDiNoi.html" title="Precedente" role="button" aria-label="Vai alle recensioni precedenti">&lt; Precedente</a>
-    <a id="Next" class="Button" href="CosaDiconoDiNoi.html" title="Successivo" role="button" aria-label="Vai alle recensioni successive">Successivo &gt;</a>
-    <!-- Da vedere bene -->
-    <a id="ButtonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
-        <img alt="Torna su" src="../Images/TornaSu.png"/>
-    </a>
-    </p>
-</div>
+        <div id="content" role="main">
+            <h2 class="title">Cosa dicono di noi</h2>
 
-<div id="footer" aria-label="footer">
-    <p>
-        Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
-    </p>
-    <p>
-        Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
-    </p>
-    <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
-    <img alt="Simbolo di validazione CSS" src="../Images/vcss-blue.gif"/>
-</div>
+            <p class="paragraph">
+                Desideri lasciare una recensione?
+            </p>
 
-</body>
+            <a id="reviewButton" class="Button" href="LasciaUnaRecensione.html" title="Pagina di scrittura di una recensione" role="button" aria-label="Vai alla pagina di scrittura della recensione">Lascia una recensione</a>
+
+            <p id="clause">
+                Per lasciare una recensione devi essere registrato.
+            </p>
+            <p>
+                Sono state trovate #recensioni:
+            </p>
+
+            <a href="#Back" class="skip">Salta le recensioni presenti nella pagina</a>
+
+            <dl>
+                <dt id="r1" class="reviewObject">
+                    Oggetto BELLO
+                </dt>
+                <dd>
+                    <a href="#r2" class="skip" aria-label="Salta l'evento">Salta l'evento</a>
+                    <p class="reviewAuthor">&lt;Utente&gt;</p>
+                    <p class="reviewData">Data: &lt;Data&gt;</p>
+                    <p class="reviewDescription">Contenuto BELLO</p>
+                </dd>
+                <dt id="r2" class="reviewObject">
+                    Oggetto BELLO
+                </dt>
+                <dd>
+                    <a href="#r3" class="skip" aria-label="Salta l'evento">Salta l'evento</a>
+                    <p class="reviewAuthor">&lt;Utente&gt;</p>
+                    <p class="reviewData">Data: &lt;Data&gt;</p>
+                    <p class="reviewDescription">Contenuto BELLO</p>
+                </dd>
+                <dt id="r3" class="reviewObject">
+                    Oggetto BELLO
+                </dt>
+                <dd>
+                    <a href="#Back" class="skip" aria-label="Salta l'evento">Salta l'evento</a>
+                    <p class="reviewAuthor">&lt;Utente&gt;</p>
+                    <p class="reviewData">Data: &lt;Data&gt;</p>
+                    <p class="reviewDescription">Contenuto BELLO</p>
+                </dd>
+            </dl>
+
+            <p class="Navigation">
+                <a id="Back" class="Button" href="" title="Recensioni precedenti" aria-label="Torna alle recensioni precedenti">&lt; Precedente</a>
+                <a id="Next" class="Button" href="" title="Recensioni successive" aria-label="Vai alle recensioni successive">Successivo &gt;</a>
+            </p>
+
+            <a id="ButtonBackUp" href="#header" title="Torna su" aria-label="Torna su" tabindex="21">
+                <img alt="Torna su" src="../Images/TornaSu.png"/>
+            </a>
+        </div>
+
+        <div id="footer" aria-label="footer">
+            <p>
+                Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
+            </p>
+            <p>
+                Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
+            </p>
+            <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
+            <img alt="Simbolo di validazione CSS" src="../Images/vcss-blue.gif"/>
+        </div>
+    </body>
 </html>

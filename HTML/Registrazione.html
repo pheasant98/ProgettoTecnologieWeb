@@ -2,184 +2,177 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN" "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
 
-<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">-->
 <html xml:lang="it" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <head>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 
-    <title>Registrazione | Museo arte nel tempo</title>
+        <title>Registrazione | Museo arte nel tempo</title>
 
-    <meta content="italian it" name="language"/>
-    <meta content="Registrazione | Museo arte nel tempo" name="title"/>
-    <meta content="registrazione nel sito web del museo di un nuovo account" name="description"/>
-    <meta content="arte, pittura, scultura, museo" name="keywords"/>       <!-- Rivedere per sicurezza -->
-    <meta content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto" name="author"/>
+        <meta content="italian it" name="language"/>
+        <meta content="Registrazione | Museo arte nel tempo" name="title"/>
+        <meta content="registrazione nel sito web del museo di un nuovo account" name="description"/>
+        <meta content="arte, pittura, scultura, museo" name="keywords"/>
+        <meta content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto" name="author"/>
 
-    <link href="../CSS/Style.css" media="screen" rel="stylesheet" type="text/css"/>
-    <link href="../CSS/Print.css" media="print" rel="stylesheet" type="text/css"/>
-    <link href="" rel="icon"/>
-    <script src="../JavaScript/Placeholder.js" type="text/javascript"></script>
-</head>
+        <link href="../CSS/Style.css" media="screen" rel="stylesheet" type="text/css"/>
+        <link href="../CSS/Print.css" media="print" rel="stylesheet" type="text/css"/>
+        <link href="" rel="icon"/>
+        <script src="../JavaScript/Placeholder.js" type="text/javascript"></script>
+    </head>
 
-<body>
-<div id="header" role="banner">
-    <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
-    <!-- Utilizzare il css per inserire il logo -->
-    <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="4">
-        Menu ad <span xml:lang="en">hamburger</span> <!--Da controllare con screen reader-->
-    </span>
+    <body>
+        <div id="header" role="banner">
+            <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
 
-    <form id="search" name="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
-        <fieldset id="searchBox">
-            <legend class="Hidelegend">Ricerca</legend>
-            <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
-                <option selected="selected" value="Opera">Opera</option>
-                <option value="Evento">Evento</option>
-                <option value="Avviso">Avviso</option>
-            </select>
-            <label id="labelS" for="textSearch">Cerca nel sito</label>
-            <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
-            <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
-        </fieldset>
-    </form>
-</div>
+            <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="4">
+                Menu ad <span xml:lang="en">hamburger</span>
+            </span>
 
-<div aria-label="breadcrumbs" id="breadcrumbs">
-    <p>
-        Ti trovi in:
-    </p>
-    <span id="path">
-        <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="5" xml:lang="en">Home</a>
-        &gt;&gt;
-        <a href="Login.html" title="Login" aria-label="Vai alla pagina di login" tabindex="6" xml:lang="en">Login</a>
-        &gt;&gt;
-        <span id="pathSelected">Registrazione</span>
-    </span>
-</div>   <!-- Da rivedere come farlo -->
+            <span id="loginMenuPlaceholder"/>
 
-<div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
-    <ul>
-        <li>
-            <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="15"></span>
-            <a id="skipMenu" class="skip" href="#content" aria-label="Vai al contenuto" tabindex="7">Vai al contenuto</a>
-        </li>
-        <li>
-            <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="8" xml:lang="en">Home</a>
-        </li>
-        <li>
-            <a href="Opere.html" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="9">Opere</a>
-        </li>
-        <li>
-            <a href="Eventi.html" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="10">Eventi</a>
-        </li>
-        <li>
-            <a href="OpzioniAcquisto.html" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti" tabindex="11">Opzioni
-                d'acquisto</a>
-        </li>
-        <li>
-            <a href="Avvisi.html" title="Avvisi" aria-label="Vai alla pagina degli avvisi" tabindex="12">Avvisi</a>
-        </li>
-        <li>
-            <a href="CosaDiconoDiNoi.html" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni" tabindex="13">Cosa
-                dicono di noi</a>
-        </li>
-        <li>
-            <a href="Contatti.html" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti" tabindex="14">Contatti</a>
-        </li>
-    </ul>
-</div>
+            <form id="search" name="search" action="" method="post" role="search">
+                <fieldset id="searchBox">
+                    <legend class="Hidelegend">Ricerca</legend>
+                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
+                        <option selected="selected" value="Opera">Opera</option>
+                        <option value="Evento">Evento</option>
+                        <option value="Avviso">Avviso</option>
+                    </select>
+                    <label id="labelS" for="textSearch">Cerca nel sito</label>
+                    <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
+                    <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
+                </fieldset>
+            </form>
+        </div>
 
-<div id="content" role="main">
-    <h2 class="title">Registrazione</h2>
-
-    <form id="registration" name="registrazione" action="" method="post"><!-- Nascondi con CSS -->
-        <fieldset id="personalData" form="registration" class="fieldset">
-            <legend class="Hidelegend">Dati personali</legend>
-
+        <div aria-label="breadcrumbs" id="breadcrumbs">
             <p>
-                <label id="labelName" for="textName">Nome</label>
-                <input id="textName" name="textName" type="text" aria-label="Inserisci il nome"/>
+                Ti trovi in:
             </p>
+            <span id="path">
+                <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="5" xml:lang="en">Home</a>
+                &gt;&gt;
+                <a href="Login.html" title="Login" aria-label="Vai alla pagina di login" tabindex="6" xml:lang="en">Login</a>
+                &gt;&gt;
+                <span id="pathSelected">Registrazione</span>
+            </span>
+        </div>
 
+        <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
+            <ul>
+                <li>
+                    <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="15"></span>
+                    <a id="skipMenu" class="skip" href="#content" aria-label="Vai al contenuto" tabindex="7">Vai al contenuto</a>
+                </li>
+                <li>
+                    <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="8" xml:lang="en">Home</a>
+                </li>
+                <li>
+                    <a href="Opere.html" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="9">Opere</a>
+                </li>
+                <li>
+                    <a href="Eventi.html" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="10">Eventi</a>
+                </li>
+                <li>
+                    <a href="OpzioniAcquisto.html" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti" tabindex="11">Opzioni
+                        d'acquisto</a>
+                </li>
+                <li>
+                    <a href="Avvisi.html" title="Avvisi" aria-label="Vai alla pagina degli avvisi" tabindex="12">Avvisi</a>
+                </li>
+                <li>
+                    <a href="CosaDiconoDiNoi.html" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni" tabindex="13">Cosa
+                        dicono di noi</a>
+                </li>
+                <li>
+                    <a href="Contatti.html" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti" tabindex="14">Contatti</a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="content" role="main">
+            <h2 class="title">Registrazione</h2>
+
+            <form id="registration" name="registrazione" action="" method="post">
+                <fieldset id="personalData" form="registration" class="fieldset">
+                    <legend class="Hidelegend">Dati personali</legend>
+
+                    <p>
+                        <label id="labelName" for="textName">Nome</label>
+                        <input id="textName" name="textName" type="text" aria-label="Inserisci il nome"/>
+                    </p>
+
+                    <p>
+                        <label id="labelSurname" for="textSurname">Cognome</label>
+                        <input id="textSurname" name="textSurname" type="text" aria-label="Inserisci il cognome"/>
+                    </p>
+
+                    <fieldset id="fieldSex" class="fieldset">
+                        <label id="labelSex" for="fieldSex">Sesso</label>
+                        <label id="labelSexM" for="radioSexM">Maschile</label>
+                        <input id="radioSexM" name="radioSex" value="M" type="radio" aria-label="Pulsante per dichiarare sesso maschile"/>
+                        <label id="labelSexF" for="radioSexF">Femminile</label>
+                        <input id="radioSexF" name="radioSex" value="F" type="radio" aria-label="Pulsante per dichiarare sesso femminile"/>
+                        <label id="labelSexA" for="radioSexA">Preferisco non dichiarare</label>
+                        <input id="radioSexA" name="radioSex" value="A" type="radio" aria-label="Pulsante per non dichiarare il sesso"/>
+                    </fieldset>
+
+                    <p>
+                        <label id="labelDate" for="textDate">Data di nascita</label>
+                        <input id="textDate" name="textDate" type="text" aria-label="Inserisci la data di nascita"/>
+                        <label id="labelMail" for="textMail" xml:lang="en">E-mail</label>
+                        <input id="textMail" name="textMail" type="text" aria-label="Inserisci l'indirizzo E-mail"/>
+                    </p>
+
+                    <fieldset id="fieldNewsletter" class="fieldset">
+                        <label id="labelNewsletter" for="fieldNewsletter">Iscrizione alla <span xml:lang="en">newsletter</span></label>
+                        <label id="labelNewsletterYes" for="radioNewsletterYes">Sì</label>
+                        <input id="radioNewsletterYes" name="radioNewsletter" value="Si" type="radio" aria-label="Pulsante per dire no alla newsletter"/>
+                        <label id="labelNewsletterNo" for="radioNewsletterNo">No</label>
+                        <input id="radioNewsletterNo" name="radioNewsletter" value="No" type="radio" aria-label="Pulsante per dire si alla newsletter"/>
+                    </fieldset>
+                </fieldset>
+
+                <fieldset id="accountData" form="registration" class="fieldset">
+                    <legend>Dati d'accesso</legend>
+
+                    <p>
+                        <label id="labelUsername" for="textUsername" xml:lang="en">Username</label>
+                        <input id="textUsername" name="textUsername" type="text" aria-label="Inserisci lo username"/>
+                    </p>
+
+                    <p>
+                        <label id="labelPassword" for="textPassword" xml:lang="en">Password</label>
+                        <input id="textPassword" name="textPassword" type="password" aria-label="Inserisci la password"/>
+                    </p>
+
+                    <p>
+                        <label id="labelRepetePassword" for="textRepetePassword">Ripetere
+                            <span xml:lang="en">password</span>
+                        </label>
+                        <input id="textRepetePassword" name="textRepetePassword" type="password" aria-label="Inserisci nuovamente la password"/>
+                    </p>
+                </fieldset>
+                <fieldset class="Navigation">
+                    <input id="reset" class="Button" name="reset" value="Cancella" type="reset" aria-label="Pulsante per la cancellazione dei dati inseriti"/>
+                    <input id="confirm" class="Button" name="confirm" value="Conferma" type="submit" aria-label="Pulsante per la conferma dati inseriti"/>
+                </fieldset>
+            </form>
+
+            <a id="ButtonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
+                <img alt="Torna su" src="../Images/TornaSu.png"/>
+            </a>
+        </div>
+
+        <div aria-label="footer" id="footer">
             <p>
-                <label id="labelSurname" for="textSurname">Cognome</label>
-                <input id="textSurname" name="textSurname" type="text" aria-label="Inserisci il cognome"/>
+                Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
             </p>
-
-            <fieldset id="fieldSex" class="fieldset">
-                    <label id="labelSex" for="fieldSex">Sesso</label>
-                    <label id="labelSexM" for="radioSexM">Maschile</label>
-                    <input id="radioSexM" name="radioSex" value="M" type="radio" aria-label="Pulsante per dichiarare sesso maschile"/>
-                    <label id="labelSexF" for="radioSexF">Femminile</label>
-                    <input id="radioSexF" name="radioSex" value="F" type="radio" aria-label="Pulsante per dichiarare sesso femminile"/>
-                    <label id="labelSexA" for="radioSexA">Preferisco non dichiarare</label>
-                    <input id="radioSexA" name="radioSex" value="A" type="radio" aria-label="Pulsante per non dichiarare il sesso"/>
-            </fieldset>
-
             <p>
-                <label id="labelDate" for="textDate">Data di nascita</label>
-                <input id="textDate" name="textDate" type="text" aria-label="Inserisci la data di nascita"/>
+                Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
             </p>
-        </fieldset>
-
-        <fieldset id="contactData" form="registration" class="fieldset">
-            <legend>Dati di contatto</legend>
-
-            <p>
-                <label id="labelMail" for="textMail" xml:lang="en">E-mail</label>
-                <input id="textMail" name="textMail" type="text" aria-label="Inserisci l'indirizzo E-mail"/>
-            </p>
-
-            <fieldset id="fieldNewsletter" class="fieldset">
-                <label id="labelNewsletter" for="fieldNewsletter">Iscrizione alla <span xml:lang="en">newsletter</span></label>
-                <label id="labelNewsletterYes" for="radioNewsletterYes">Sì</label>
-                <input id="radioNewsletterYes" name="radioNewsletter" value="Si" type="radio" aria-label="Pulsante per dire no alla newsletter"/>
-                <label id="labelNewsletterNo" for="radioNewsletterNo">No</label>
-                <input id="radioNewsletterNo" name="radioNewsletter" value="No" type="radio" aria-label="Pulsante per dire si alla newsletter"/>
-            </fieldset>
-        </fieldset>
-
-        <fieldset id="accountData" form="registration" class="fieldset">
-            <legend>Dati d'accesso</legend>
-
-            <p>
-                <label id="labelUsername" for="textUsername" xml:lang="en">Username</label>
-                <input id="textUsername" name="textUsername" type="text" aria-label="Inserisci lo username"/>
-            </p>
-
-            <p>
-                <label id="labelPassword" for="textPassword" xml:lang="en">Password</label>
-                <input id="textPassword" name="textPassword" type="password" aria-label="Inserisci la password"/>
-            </p>
-
-            <p>
-                <label id="labelRepetePassword" for="textRepetePassword">Ripetere
-                    <span xml:lang="en">password</span>
-                </label>
-                <input id="textRepetePassword" name="textRepetePassword" type="password" aria-label="Inserisci nuovamente la password"/>
-            </p>
-        </fieldset>
-
-        <fieldset class="Navigation">
-            <input id="reset" class="Button" name="reset" value="Cancella" type="reset" aria-label="Pulsante per la cancellazione dei dati inseriti"/>
-            <input id="confirm" class="Button" name="confirm" value="Conferma" type="submit" aria-label="Pulsante per la conferma dati inseriti"/>
-        </fieldset>
-    </form>
-
-    <a id="ButtonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
-        <img alt="Torna su" src="../Images/TornaSu.png"/>
-    </a>
-</div>
-
-<div aria-label="footer" id="footer">
-    <p>
-        Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
-    </p>
-    <p>
-        Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
-    </p>
-    <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
-    <img alt="Simbolo di validazione CSS" src="../Images/vcss-blue.gif"/>
-</div>
-</body>
+            <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
+            <img alt="Simbolo di validazione CSS" src="../Images/vcss-blue.gif"/>
+        </div>
+    </body>
 </html>
