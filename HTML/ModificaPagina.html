@@ -17,6 +17,7 @@
         <link rel="stylesheet" media="screen" href="../CSS/Style.css" type="text/css"/>
         <link rel="stylesheet" media="print" href="../CSS/Print.css" type="text/css"/>
         <link rel="icon" href=""/>
+
         <script src="../JavaScript/Placeholder.js" type="text/javascript"></script>
     </head>
 
@@ -33,11 +34,13 @@
             <form id="search" name="search" action="" method="post" role="search">
                 <fieldset id="searchBox">
                     <legend class="Hidelegend">Ricerca</legend>
+
                     <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="2">
                         <option selected="selected" value="Opera">Opera</option>
                         <option value="Evento">Evento</option>
                         <option value="Avviso">Avviso</option>
                     </select>
+
                     <label id="labelS" for="textSearch">Cerca nel sito</label>
                     <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
                     <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="3"/>
@@ -49,6 +52,7 @@
             <p>
                 Ti trovi in:
             </p>
+
             <span id="path">
                 <a href="../Index.php" aria-label="Vai alla pagina homepage del museo" tabindex="9">Home</a> &gt;&gt;
                 <a href="AreaAdmin.html" aria-label="Vai alla pagina Area personale" tabindex="10">Area personale</a> &gt;&gt;
@@ -62,26 +66,33 @@
                     <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="19"></span>
                     <a id="skipMenu" class="skip" href="#content" aria-label="Vai al contenuto" tabindex="11">Vai al contenuto</a>
                 </li>
+
                 <li>
                     <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="12" xml:lang="en">Home</a>
                 </li>
+
                 <li>
                     <a href="Opere.html" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="13">Opere</a>
                 </li>
+
                 <li>
                     <a href="Eventi.html" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="14">Eventi</a>
                 </li>
+
                 <li>
                     <a href="OpzioniAcquisto.html" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti" tabindex="15">Opzioni
                         d'acquisto</a>
                 </li>
+
                 <li>
                     <a href="Avvisi.html" title="Avvisi" aria-label="Vai alla pagina degli avvisi" tabindex="16">Avvisi</a>
                 </li>
+
                 <li>
                     <a href="CosaDiconoDiNoi.html" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni" tabindex="17">Cosa
                         dicono di noi</a>
                 </li>
+
                 <li>
                     <a href="Contatti.html" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti" tabindex="18">Contatti</a>
                 </li>
@@ -90,18 +101,25 @@
 
         <div id="content" role="main">
             <h2 class="title">Modifica della pagina numero X</h2>
+
             <form id="Modifica" name="Modifica" action="" method="post">
                 <fieldset id="BoxModifica" class="fieldset">
                     <legend class="Hidelegend">Modifica pagina</legend>
+
                     <p id="TipoPaginaAvv">Tipologia di pagina: Avviso</p>
+
                     <p id="TipoPaginaEven">Tipologia di pagina: Evento</p>
+
                     <p id="TipoPaginaOper">Tipologia di pagina: Opera</p>
 
                     <fieldset id="BoxModificaAvviso" class="fieldset">
+                        <legend class="Hidelegend">Modifica avviso</legend>
+
                         <p>
                             <label id="labelDataAvviso" for="DataAvviso">Data: </label>
                             <input id="DataAvviso" name="DataAvviso" type="text" aria-label="Modifica la data dell'avviso" aria-required="true"/>
                         </p>
+
                         <p>
                             <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
@@ -110,12 +128,15 @@
                             <label id="labelOggetto" for="Oggetto">Oggetto: </label>
                             <input id="Oggetto" name="Oggetto" type="text" aria-label="Modifica l'oggetto dell'avviso" aria-required="true"/>
                         </p>
+
                         <p>
                             <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
                     </fieldset>
 
                     <fieldset id="BoxModificaEvento" class="fieldset">
+                        <legend class="Hidelegend">Modifica evento</legend>
+
                         <p>
                             <label id="labelTipoEvento" for="TipoEvento">Tipologia: </label>
                             <select id="TipoEvento" name="TipoEvento" aria-label="Modifica la tipologia di evento" aria-required="true">
@@ -123,6 +144,7 @@
                                 <option selected="selected" value="Conferenza">Conferenza</option>
                             </select>
                         </p>
+
                         <p>
                             <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
@@ -131,6 +153,7 @@
                             <label id="labelDataEvento" for="DataEvento">Data: </label>
                             <input id="DataEvento" name="DataEvento" type="text" aria-label="Modifica la data dell'evento" aria-required="true"/>
                         </p>
+
                         <p>
                             <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
@@ -139,20 +162,25 @@
                             <label id="labelTitoloEvento" for="TitoloEvento">Titolo: </label>
                             <input id="TitoloEvento" name="TitoloEvento" type="text" aria-label="Modifica il titolo delle'evento" aria-required="true"/>
                         </p>
+
                         <p>
                             <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
                     </fieldset>
 
                     <fieldset id="BoxModificaOpera" class="fieldset">
+                        <legend class="Hidelegend">Modifica opera</legend>
+
                         <p>
                             <label id="labelIDOpera" for="IDOpera">ID: </label>
                             <input id="IDOpera" name="IDOpera" type="hidden" aria-label="Id dell'opera"/>
                         </p>
+
                         <p>
                             <label id="labelAutore" for="Autore">Autore: </label>
                             <input id="Autore" name="Autore" type="text" aria-label="Modifica l'autore dell'opera" aria-required="true"/>
                         </p>
+
                         <p>
                            <a href="#confirm" class="skip" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
@@ -161,6 +189,7 @@
                             <label id="labelTitoloOpera" for="TitoloOpera">Titolo: </label>
                             <input id="TitoloOpera" name="TitoloOpera" type="text" aria-label="Modifica il titolo dell'opera" aria-required="true"/>
                         </p>
+
                         <p>
                             <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
@@ -169,9 +198,11 @@
                             <label id="labelAnno" for="Anno">Anno: </label>
                             <input id="Anno" name="Anno" type="text" aria-label="Modifica l'anno dell'opera" aria-required="true"/>
                         </p>
+
                         <p>
                             <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
+
                         <p>
                             <label id="labelPeriodoStorico" for="PeriodoStorico">Periodo storico: </label>
                             <select id="PeriodoStorico" name="PeriodoStorico" aria-label="Modifica il periodo storico di appartenenza" aria-required="true">
@@ -181,9 +212,11 @@
                                 <option value="Settecento">Settecento</option>
                             </select>
                         </p>
+
                         <p>
                             <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
+
                         <p>
                             <label id="labelStile" for="Stile">Stile: </label>
                             <select id="Stile" name="Stile" aria-label="Modifica lo stile artistico" aria-required="true">
@@ -191,34 +224,44 @@
                                 <option value="scultura">Scultura</option>
                             </select>
                         </p>
+
                         <p>
                             <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
+
                         <p>
                             <label id="labelTecnica" for="Tecnica">Tecnica: </label>
                             <input id="Tecnica" name="Tecnica" type="text" aria-label="Modifica la tecnica del''opera" aria-required="true"/>
                         </p>
+
                         <p>
                             <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
+
                         <p>
                             <label id="labelMateriale" for="Materiale">Materiale: </label>
                             <input id="Materiale" name="Materiale" type="text" aria-label="Modifica il materiale dell'opera" aria-required="true"/>
                         </p>
+
                         <p>
                             <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
+
                         <p>
                             <label id="labelUtente" for="Utente">Utente: </label>
                             <input id="Utente" name="Utente" type="hidden" aria-required="true"/>
                         </p>
+
                         <fieldset id="fieldLoan" class="fieldset">
+                            <legend class="Hidelegend">Stato</legend>
+
                             <label id="labelLoan" for="fieldLoan">In prestito</label>
                             <label id="labelLoanYes" for="textLoanYes">Sì</label>
                             <input id="textLoanYes" name="textLoan" value="Si" type="radio" aria-label="Pulsante per dire si al prestito"/>
                             <label id="labelLoanNo" for="textLoanNo">No</label>
                             <input id="textLoanNo" name="textLoan" value="No" type="radio" aria-label="Pulsante per dire no al prestito"/>
                         </fieldset>
+
                         <p>
                             <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
@@ -226,6 +269,7 @@
                         <p>
                             <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
+
                         <p>
                             <label id="labelUploadImg" for="Immagine">Scegliere l'immagine: </label>
                             <input id="Immagine" name="Immagine" type="file" aria-label="Modifica l'immagine dell'opera" aria-required="true"/>
@@ -238,10 +282,10 @@
                         </textarea>
                     </p>
 
-                    <fieldset class="Navigation">
+                    <p class="Navigation">
                         <input id="reset" class="Button" name="annulla" value="Annulla" type="reset" aria-label="Annulla le modifiche apportate"/>
                         <input id="confirm" class="Button" name="invio" value="Conferma" type="submit" aria-label="Invia le modifiche apportate"/>
-                    </fieldset>
+                    </p>
                 </fieldset>
             </form>
 
@@ -254,9 +298,11 @@
             <p>
                 Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
             </p>
+
             <p>
                 Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
             </p>
+
             <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
             <img alt="Simbolo di validazione CSS" src="../Images/vcss-blue.gif"/>
         </div>

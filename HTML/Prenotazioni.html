@@ -4,15 +4,15 @@
 
 <html xml:lang="it" xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
         <title>Prenotazioni | Museo arte nel tempo</title>
 
-        <meta content="italian it" name="language"/>
-        <meta content="Prenotazioni | Museo arte nel tempo" name="title"/>
-        <meta content="Elenco di prenotazioni effettuate" name="description"/>
-        <meta content="arte, pittura, scultura, museo" name="keywords"/>
-        <meta content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto" name="author"/>
+        <meta name="language" content="italian it"/>
+        <meta name="title" content="Prenotazioni | Museo arte nel tempo"/>
+        <meta name="description" content="Elenco di prenotazioni effettuate"/>
+        <meta name="keywords" content="arte, pittura, scultura, museo"/>
+        <meta name="author" content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto"/>
 
         <link href="../CSS/Style.css" media="screen" rel="stylesheet" type="text/css"/>
         <link href="../CSS/Print.css" media="print" rel="stylesheet" type="text/css"/>
@@ -34,11 +34,13 @@
             <form id="search" name="search" action="" method="post" role="search">
                 <fieldset id="searchBox">
                     <legend class="Hidelegend">Ricerca</legend>
+
                     <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
                         <option selected="selected" value="Opera">Opera</option>
                         <option value="Evento">Evento</option>
                         <option value="Avviso">Avviso</option>
                     </select>
+
                     <label id="labelS" for="textSearch">Cerca nel sito</label>
                     <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
                     <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
@@ -50,6 +52,7 @@
             <p>
                 Ti trovi in:
             </p>
+
             <span id="path">
                 <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a>
                 &gt;&gt;
@@ -65,26 +68,33 @@
                     <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="19"></span>
                     <a id="skipMenu" class="skip" href="#content" aria-label="Vai al contenuto" tabindex="11">Vai al contenuto</a>
                 </li>
+
                 <li>
                     <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="12" xml:lang="en">Home</a>
                 </li>
+
                 <li>
                     <a href="Opere.html" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="13">Opere</a>
                 </li>
+
                 <li>
                     <a href="Eventi.html" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="14">Eventi</a>
                 </li>
+
                 <li>
                     <a href="OpzioniAcquisto.html" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti" tabindex="15">Opzioni
                         d'acquisto</a>
                 </li>
+
                 <li>
                     <a href="Avvisi.html" title="Avvisi" aria-label="Vai alla pagina degli avvisi" tabindex="16">Avvisi</a>
                 </li>
+
                 <li>
                     <a href="CosaDiconoDiNoi.html" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni" tabindex="17">Cosa
                         dicono di noi</a>
                 </li>
+
                 <li>
                     <a href="Contatti.html" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti" tabindex="18">Contatti</a>
                 </li>
@@ -93,34 +103,43 @@
 
         <div id="content" role="main">
             <h2 class="title"> Prenotazioni effettuate</h2>
+
             <a href="#Back" class="skip">Salta le prenotazioni presenti nella pagina</a>
+
             <dl>
                 <dt>
                     Prenotazione 1
                 </dt>
                 <dd>
                     <a href="#p2" class="skip">Salta la prenotazione</a>
+
                     <p>
                         Data: data
                     </p>
+
                     <p>
                         Ora di visita: orario
                     </p>
+
                     <p>
                         <input id="printTicket1" class="Button" name="print" value="Stampa" type="button" aria-label="Pulsante per la stampa della prenotazione corrente"/>
                     </p>
                 </dd>
+
                 <dt id="p2">
                     Prenotazione 2
                 </dt>
                 <dd>
                     <a href="#Back" class="skip">Salta la prenotazione</a>
+
                     <p>
                         Data: data
                     </p>
+
                     <p>
                         Ora di visita: orario
                     </p>
+
                     <p>
                         <input id="printTicket2" class="Button" name="print" value="Stampa" type="button" aria-label="Pulsante per la stampa della prenotazione corrente"/>
                     </p>
@@ -141,9 +160,11 @@
             <p>
                 Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
             </p>
+
             <p>
                 Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
             </p>
+
             <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
             <img alt="Simbolo di validazione CSS" src="../Images/vcss-blue.gif"/>
         </div>

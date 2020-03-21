@@ -4,19 +4,20 @@
 
 <html xml:lang="it" xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
         <title>Registrazione | Museo arte nel tempo</title>
 
-        <meta content="italian it" name="language"/>
-        <meta content="Registrazione | Museo arte nel tempo" name="title"/>
-        <meta content="registrazione nel sito web del museo di un nuovo account" name="description"/>
-        <meta content="arte, pittura, scultura, museo" name="keywords"/>
-        <meta content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto" name="author"/>
+        <meta name="language" content="italian it"/>
+        <meta name="title" content="Registrazione | Museo arte nel tempo"/>
+        <meta name="description" content="Registrazione nel sito web del museo di un nuovo account"/>
+        <meta name="keywords" content="arte, pittura, scultura, museo"/>
+        <meta name="author" content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto"/>
 
         <link href="../CSS/Style.css" media="screen" rel="stylesheet" type="text/css"/>
         <link href="../CSS/Print.css" media="print" rel="stylesheet" type="text/css"/>
         <link href="" rel="icon"/>
+
         <script src="../JavaScript/Placeholder.js" type="text/javascript"></script>
     </head>
 
@@ -33,11 +34,13 @@
             <form id="search" name="search" action="" method="post" role="search">
                 <fieldset id="searchBox">
                     <legend class="Hidelegend">Ricerca</legend>
+
                     <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
                         <option selected="selected" value="Opera">Opera</option>
                         <option value="Evento">Evento</option>
                         <option value="Avviso">Avviso</option>
                     </select>
+
                     <label id="labelS" for="textSearch">Cerca nel sito</label>
                     <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
                     <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
@@ -49,6 +52,7 @@
             <p>
                 Ti trovi in:
             </p>
+
             <span id="path">
                 <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="5" xml:lang="en">Home</a>
                 &gt;&gt;
@@ -64,26 +68,33 @@
                     <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="15"></span>
                     <a id="skipMenu" class="skip" href="#content" aria-label="Vai al contenuto" tabindex="7">Vai al contenuto</a>
                 </li>
+
                 <li>
                     <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="8" xml:lang="en">Home</a>
                 </li>
+
                 <li>
                     <a href="Opere.html" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="9">Opere</a>
                 </li>
+
                 <li>
                     <a href="Eventi.html" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="10">Eventi</a>
                 </li>
+
                 <li>
                     <a href="OpzioniAcquisto.html" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti" tabindex="11">Opzioni
                         d'acquisto</a>
                 </li>
+
                 <li>
                     <a href="Avvisi.html" title="Avvisi" aria-label="Vai alla pagina degli avvisi" tabindex="12">Avvisi</a>
                 </li>
+
                 <li>
                     <a href="CosaDiconoDiNoi.html" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni" tabindex="13">Cosa
                         dicono di noi</a>
                 </li>
+
                 <li>
                     <a href="Contatti.html" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti" tabindex="14">Contatti</a>
                 </li>
@@ -108,7 +119,8 @@
                     </p>
 
                     <fieldset id="fieldSex" class="fieldset">
-                        <label id="labelSex" for="fieldSex">Sesso</label>
+                        <legend class="Hidelegend">Sesso</legend>
+
                         <label id="labelSexM" for="radioSexM">Maschile</label>
                         <input id="radioSexM" name="radioSex" value="M" type="radio" aria-label="Pulsante per dichiarare sesso maschile"/>
                         <label id="labelSexF" for="radioSexF">Femminile</label>
@@ -125,6 +137,8 @@
                     </p>
 
                     <fieldset id="fieldNewsletter" class="fieldset">
+                        <legend class="Hidelegend">News</legend>
+
                         <label id="labelNewsletter" for="fieldNewsletter">Iscrizione alla <span xml:lang="en">newsletter</span></label>
                         <label id="labelNewsletterYes" for="radioNewsletterYes">Sì</label>
                         <input id="radioNewsletterYes" name="radioNewsletter" value="Si" type="radio" aria-label="Pulsante per dire no alla newsletter"/>
@@ -147,16 +161,17 @@
                     </p>
 
                     <p>
-                        <label id="labelRepetePassword" for="textRepetePassword">Ripetere
-                            <span xml:lang="en">password</span>
+                        <label id="labelRepetePassword" for="textRepetePassword">
+                            Ripetere <span xml:lang="en">password</span>
                         </label>
                         <input id="textRepetePassword" name="textRepetePassword" type="password" aria-label="Inserisci nuovamente la password"/>
                     </p>
                 </fieldset>
-                <fieldset class="Navigation">
+
+                <p class="Navigation">
                     <input id="reset" class="Button" name="reset" value="Cancella" type="reset" aria-label="Pulsante per la cancellazione dei dati inseriti"/>
                     <input id="confirm" class="Button" name="confirm" value="Conferma" type="submit" aria-label="Pulsante per la conferma dati inseriti"/>
-                </fieldset>
+                </p>
             </form>
 
             <a id="ButtonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
@@ -168,9 +183,11 @@
             <p>
                 Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
             </p>
+
             <p>
                 Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
             </p>
+
             <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
             <img alt="Simbolo di validazione CSS" src="../Images/vcss-blue.gif"/>
         </div>
