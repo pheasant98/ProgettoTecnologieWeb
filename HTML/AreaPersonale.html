@@ -10,14 +10,16 @@
 
         <meta name="language" content="italian it"/>
         <meta name="title" content="Area personale | Museo arte nel tempo"/>
+        <meta name="description" content="Visualizzazione del proprio profilo dove e possibile modificarlo, e possibile effettuare la gestione delle pagine presenti
+    nel sito web e di aggiungerne di nuove, e inoltre possibile gestire gli utenti registrati nel sito web"/>
         <meta name="description" content="Visualizzazione del proprio profilo dove e possibile modificarlo e inoltre possibile gestire le proprie prenotazioni e recensioni effettuate
     oltre ad effettuare di nuove"/>
         <meta name="keywords" content="arte, pittura, scultura, museo"/>
         <meta name="author" content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto"/>
 
-        <link href="../CSS/Style.css" media="screen" rel="stylesheet" type="text/css"/>
-        <link href="../CSS/Print.css" media="print" rel="stylesheet" type="text/css"/>
-        <link href="" rel="icon"/>
+        <link rel="stylesheet" media="screen" href="../CSS/Style.css" type="text/css"/>
+        <link rel="stylesheet" media="print" href="../CSS/Print.css" type="text/css"/>
+        <link rel="icon" href=""/>
 
         <script src="../JavaScript/Placeholder.js" type="text/javascript"></script>
     </head>
@@ -26,7 +28,7 @@
         <div id="header" role="banner">
             <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
 
-            <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu a hamburger, cliccaci sopra per aprire il menu" tabindex="6">
+            <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="6">
                 Menu ad <span xml:lang="en">hamburger</span>
             </span>
 
@@ -49,7 +51,7 @@
             </form>
         </div>
 
-        <div aria-label="breadcrumbs" id="breadcrumbs">
+        <div id="breadcrumbs" aria-label="breadcrumbs">
             <p>
                 Ti trovi in:
             </p>
@@ -101,34 +103,62 @@
         </div>
 
         <div id="content" role="main">
+            <h2 id="Welcome" class="title">Ciao Federico!</h2>
+
             <p class="paragraph">
-                Ciao &lt;username&gt;, questi sono i tuoi dati:
+                Questi sono i tuoi dati:
             </p>
 
             <ul class="listClass">
-                <li>Nome:</li>
+                <li>
+                    Nome: Federico
+                </li>
 
-                <li>Cognome:</li>
+                <li>
+                    Cognome: Perin
+                </li>
 
-                <li>Sesso:</li>
+                <li>
+                    Sesso: M
+                </li>
 
-                <li>Data di nascita:</li>
+                <li>
+                    Data di nascita: 25/11/1998
+                </li>
 
-                <li>Indirizzo <span xml:lang="en">e-mail</span>:</li>
+                <li>
+                    Indirizzo <span xml:lang="en">e-mail</span>: federico.p98@<span xml:lang="en">outlook</span>.it
+                </li>
             </ul>
 
-            <p class="paragraph">
+            <p id="adminP" class="paragraph">Funzionalità</p>
+
+            <p id="userP" class="paragraph">
                 Ora che hai effettuato l'accesso al sito, puoi utilizzare il tuo
                 <span xml:lang="en">account</span> per acquistare dei biglietti, effettuando delle prenotazioni, oppure per lasciare delle recensioni riguardo le visite che hai fatto al museo.
             </p>
 
-            <p class="paragraph">
-                Inoltre, se lo desideri, da questa pagina puoi anche scegliere di modificare i tuoi dati personali.
-            </p>
-
-            <ul class="Navigation">
+            <ul id="adminUl" class="Navigation">
                 <li>
-                    <a href="ModificaDatiUtenti.html" id="Modifica" class="Button" title="Modifica dati profilo" aria-label="Vai alla pagina per la modifica dei dati del profilo">Modifica profilo</a>
+                    <a id="ModificaAdmin" class="Button" href="ModificaDatiUtenti.html" title="vai alla pagina modifica dati utente" role="button" aria-label="vai alla pagina modifica dati utente">Modifica profilo</a>
+                </li>
+
+                <li>
+                    <a id="Inserisci" class="Button" href="Inserisci.html" title="vai alla pagina inserisci pagina" role="button" aria-label="vai alla pagina inserisci pagina">Inserisci pagina</a>
+                </li>
+
+                <li>
+                    <a id="GestioneUtenti" class="Button" href="GestioneUtenti.html" title="vai alla pagina Gestione Utenti" role="button" aria-label="vai alla pagina iGestione Utenti">Gestione utenti</a>
+                </li>
+
+                <li>
+                    <a id="ContenutoSito" class="Button" href="GestioneContenuti.html" title="vai alla pagina Contenuto Sito" role="button" aria-label="vai alla pagina Contenuto Sito">Contenuto sito</a>
+                </li>
+            </ul>
+
+            <ul id="userUl" class="Navigation">
+                <li>
+                    <a href="ModificaDatiUtenti.html" id="ModificaUser" class="Button" title="Modifica dati profilo" aria-label="Vai alla pagina per la modifica dei dati del profilo">Modifica profilo</a>
                 </li>
 
                 <li>
