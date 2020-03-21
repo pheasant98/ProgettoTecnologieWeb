@@ -14,20 +14,47 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
 }
 
 #header {/*colore+ombreggiatura del header*/
-    display: none;
-    /*background-color: #333333;
-    padding: 2em;
-    box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.16), 0 30px 30px 0 rgba(0, 0, 0, 0.12);*/
+    /*display: none;
+    background-color: #333333;*/
+    padding: 1.5em;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+    min-height: 10em;
+    /*box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.16), 0 30px 30px 0 rgba(0, 0, 0, 0.12);*/
 }
 
 
 #header404 { /*header per pagina 404*/
-    display: none;
-    /*background-color: #333333;
+    /*display: none;
+    background-color: #333333;*/
     padding: 1em;
-    box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.16), 0 30px 30px 0 rgba(0, 0, 0, 0.12);
-    min-height: 15em;*/
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+    /*box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.16), 0 30px 30px 0 rgba(0, 0, 0, 0.12);*/
+    min-height: 15em;
 }
+
+/*
+#headerStampa {
+    padding: 1.5em;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+    min-height: 9em;
+}
+
+#logoImgStampa {
+    float: right;
+    width: 30%;
+}
+
+#headerStampa > h2 {
+    padding-top: 1.5em;
+}
+*/
+
 
 #content404 { /* da unire con content perchè sono uguali*/
     background-color: #FFFFFF;
@@ -38,18 +65,21 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     padding: 2em;*/
 }
 
-#logoImg { /* regole per impostare il logo in modo accessibile*/
+
+#logoImg {  /*regole per impostare il logo in modo accessibile*/
+    /*display: none;*/
     background-image: url('../images/logo.PNG');
-    float:left;
+    float:right;
     text-indent: 100%;
     background-position: center;
-    height: 6em;
-    width: 9.2em;
+    height: 4.4em;
+    width: 6em;
 }
 
 #UserTools { /*regole per impostare icona per il menu utente*/
     display: none;
 }
+
 
 #LoginMenu a{ /*pulsante di login*/
     display: none;
@@ -59,7 +89,6 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
 #HamburgerMenu { /*regole per impostare icona per il menu utente*/
     display: none;
 }
-
 
 .ImgBackground{ /*regole per inserire una immagine con la tecnica image replacement*/
     display: block;
@@ -85,15 +114,15 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
 .Button {
     display: block;
     text-align: center;
+    font-size: 0.7em;
     outline: none;
     cursor: pointer;
     border-radius: 20px;
-    background-color: #CCCCCC;
     padding: 1em;
     margin: 0.2em;
     width: 10em;
     border: 1px solid #000000;
-    box-shadow: 0px 0px 2px 0px rgba(0,0,0,1), 0px 2px 3px rgba(0,0,0,1);
+    /*box-shadow: 0px 0px 2px 0px rgba(0,0,0,1), 0px 2px 3px rgba(0,0,0,1);*/
 }
 
 /*
@@ -172,12 +201,12 @@ fine bottoni
 #content dt {
     padding-top: 0.2em;
     padding-bottom: 0.2em;
-    font-size: 1.3em;
+    font-size: 1.2em;
 }
 
 #content dd {
     padding-left: 1em;
-    font-size: 1.1em;
+    font-size: 1em;
     padding-top: 0.2em;
     padding-bottom: 0.5em;
 }
@@ -201,7 +230,7 @@ fine bottoni
 }
 
 .UserButton span{ /* regole per i bottoni utente*/
-    font-size: 1.3em;
+    font-size: 1em;
     display: block;
     margin-right: 5.5em;
 }
@@ -218,7 +247,7 @@ fine bottoni
 }
 
 #Continue {
-    font-size: 1.1em;
+    font-size: 1em;
 }
 
 .Navigation a {
@@ -226,7 +255,7 @@ fine bottoni
 }
 
 #FeedBackBox{
-    font-size: 1.3em;
+    font-size: 1em;
     margin: 1em 1em;
     border-style: none;
 }
@@ -235,16 +264,16 @@ fine bottoni
     display: block;
     position: relative;
     width: 60%;
-    left:15%;
-    bottom:1.4em;
+    left: 15%;
+    bottom: 1.4em;
 }
 
 #AreaDescr, #AreaDescr2, #AreaDescr3 {
     display: block;
     position: relative;
     width: 60%;
-    left:15%;
-    bottom:1.4em;
+    left: 15%;
+    bottom: 1.4em;
 }
 
 #clause {
@@ -303,7 +332,6 @@ a:visited {
     padding-top: 1em;
 }
 
-
 #Map{/*regole per posizionamento e dimensionamento della mappa*/
     display: none;
     /*display: block;
@@ -312,11 +340,9 @@ a:visited {
     margin: 0.5em 10%;*/
 }
 
-
 #ButtonBackUp {  /*torna su*/
     display: none;
 }
-
 
 #footer {
     display: none;
@@ -338,7 +364,7 @@ a:visited {
 }
 
 .fieldset{ /*regole per template di fieldset, principalmente toglie il bordo */
-    border:none;
+    border: none;
     padding: 1em;
     text-align: justify;
 }
@@ -406,12 +432,11 @@ a:visited {
 
 #filter, #filterType, #filterContent, #filterPeriod, #filterOpera {
     border: 0px;
-    font-size: 2em;
+    font-size: 1.5em;
     background: none;
     margin-right: 5% ;
 
 }
-
 
 #textSearch {
     display: none;
@@ -425,7 +450,7 @@ a:visited {
 #Submit {
     cursor: pointer;
     border: 0px;
-    font-size: 2em;
+    font-size: 1.5em;
     background: none;
     margin-left: 5%;
 }
@@ -467,5 +492,5 @@ a:visited {
 }
 
 .paragraph {
-    font-size: 1.2em;
+    font-size: 1em;
 }

@@ -27,6 +27,20 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     min-height: 15em;
 }
 
+#headerTitle {
+    font-size: 2.5em;
+    padding: 0.3em 5em;
+}
+/*
+#headerStampa{
+    display: none;
+}
+
+#logoImgStampa {
+    display: none;
+}
+*/
+
 #content404 { /* da unire con content perchè sono uguali*/
     background-color: #FFFFFF;
     color: #000000;
@@ -40,6 +54,7 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     background-image: url('../images/logo.PNG');
     text-indent: 100%;
 }
+
 
 #UserTools { /*regole per impostare icona per il menu utente*/
     float:right;
