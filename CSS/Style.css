@@ -83,8 +83,13 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
 
 #ImgError404 {
     float: right;
-    background-image: url('../images/EmptyPortrait.jpg');
+    background-image: url('../images/EmptyPortrait.png');
     text-indent: 100%;
+}
+
+.imgPeriodi {
+    width: 9.75em;
+    height: 7.5em;
 }
 /*bottoni*/
 
