@@ -115,6 +115,20 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     border: 1px solid #000000;
 }
 
+.elementForm{
+    display: block;
+    width: 100%;
+    height: 2.6em;
+    font-size: 1em;
+    font-weight: 400;
+    background-clip: padding-box;
+    border: 1px solid #AAAAAA;
+    border-radius: 0.25em;
+    padding: 0.375em 0.75em;
+}
+.selectForm{
+    cursor: pointer;
+}
 /*
 #searchBox, #searchBox404 {
     border: 2px solid #000000;
@@ -207,7 +221,6 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
 }
 
 #FeedBackBox{
-    font-size: 1em;
     margin: 1em 1em;
     border-style: none;
 }
@@ -218,6 +231,8 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     width: 60%;
     left: 15%;
     bottom: 1.4em;
+    border-radius: 0.25em;
+    padding: 0.375em 0.75em;
 }
 
 #AreaDescr, #AreaDescr2, #AreaDescr3 {
@@ -226,6 +241,8 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     width: 60%;
     left: 15%;
     bottom: 1.4em;
+    border-radius: 0.25em;
+    padding: 0.375em 0.75em;
 }
 
 #clause {
