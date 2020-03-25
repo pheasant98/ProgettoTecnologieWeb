@@ -27,7 +27,7 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     min-height: 15em;
 }
 
-#headerTitle {
+.headerTitle {
     display: none;
 }
 /*

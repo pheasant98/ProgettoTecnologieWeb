@@ -1,4 +1,4 @@
-/* parte di CSS comune per tutti i dispositivi*/
+
 * {/*rende la pagina vuota e imposta un iterlinea di 1.5 per l'accessibilità della pagina*/
     padding: 0em;
     margin: 0em;
@@ -13,56 +13,47 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     color: #000000;
 }
 
-#header {/*colore+ombreggiatura del header*/
-    padding: 0.7em 1em;
+#header {
+    padding: 0.7em 1.3em 0em 1.1em;
     border-bottom-width: 2px;
     border-bottom-style: solid;
     border-bottom-color: black;
-    min-height: 9em;
+    min-height: 8em;
 }
 
 
-#headerTitle {
+.headerTitle {
+    padding: 1.5em 0em;
+}
+
+.headerTitle > h1 {
+    font-size: 2em;
+}
+
+.headerTitle > h2 {
     font-size: 1.7em;
-    padding: 1.4em 0em;
 }
 
 
 #header404 { /*header per pagina 404*/
-    padding: 1em;
+    padding: 0.7em 1.3em 0em 1.1em;
     border-bottom-width: 2px;
     border-bottom-style: solid;
     border-bottom-color: black;
-    min-height: 10em;
+    min-height: 8em;
 }
-
-/*
-#headerStampa {
-    padding: 1.5em;
-    border-bottom-width: 2px;
-    border-bottom-style: solid;
-    border-bottom-color: black;
-    min-height: 9em;
-}
-
-#logoImgStampa {
-    float: right;
-    width: 30%;
-}
-
-#headerStampa > h2 {
-    padding-top: 1.5em;
-}
-*/
-
 
 #content404 { /* da unire con content perchè sono uguali*/
     background-color: #FFFFFF;
     color: #000000;
-    margin: 1.5em;
+    margin: 1.3em;
     clear: both;
-    /*border-radius: 20px;
-    padding: 2em;*/
+}
+
+#content404 > .title {
+    font-size: 2.2em;
+    line-height: 1.1em;
+    padding-bottom: 0.4em;
 }
 
 
@@ -72,8 +63,8 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     float:right;
     text-indent: 100%;
     background-position: center;
-    height: 4.4em;
-    width: 6em;
+    height: 3.6em;
+    width: 5em;
 }
 
 #UserTools { /*regole per impostare icona per il menu utente*/
@@ -101,13 +92,6 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
 
 #ImgError404 {
     display: none;
-    /*float: right;
-    background-image: url('../images/EmptyPortrait.jpg');
-    text-indent: 100%;
-    background-size: 100%;
-    background-position: center;
-    height: 25em;
-    width: 25em;*/
 }
 /*bottoni*/
 
@@ -122,20 +106,9 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     margin: 0.2em;
     width: 10em;
     border: 1px solid #000000;
-    /*box-shadow: 0px 0px 2px 0px rgba(0,0,0,1), 0px 2px 3px rgba(0,0,0,1);*/
 }
 
 /*
-.Button:hover{
-    font-weight: bold;
-}
-
-.Button:active{
-    background-color: #FFFFFF;
-    box-shadow: none;
-}
-fine bottoni
-
 #searchBox, #searchBox404 {
     border: 2px solid #000000;
 }
@@ -152,18 +125,12 @@ fine bottoni
     display: none;
 }
 
-/*
-#breadcrumbs > p{ mette in linea testo del primo paragrafo
-    display: inline;
-}
-*/
-
 #content {
     clear: both;
     background-color: #FFFFFF;
     color: #000000;
     border-radius: 20px;
-    margin: 1.5em;
+    margin: 1.3em;
     /*padding: 2em;*/
 }
 
@@ -171,21 +138,6 @@ fine bottoni
 #menu {
     display: none;
 }
-
-/*
-#menu ul { toglie pallini dal menu
-    list-style-type: none;
-    text-align: center;
-}
-*/
-
-/*
-#menu li:hover {
-    background-color: #FFFFFF;
-    font-weight: bold;
-    border-radius: 20px;
-}
-*/
 
 .listClass {/*regola per template di un lista*/
     list-style-type: none;
@@ -210,13 +162,6 @@ fine bottoni
     padding-top: 0.2em;
     padding-bottom: 0.5em;
 }
-
-/*
-.clickableDl dt:hover, .listClass dl:hover {
-    background-color: #EEEEEE;
-    border-radius: 20px;
-}
-*/
 
 .UserButton{ /* regole per i bottoni utente posiziona i bottoni a sinistra*/
     text-align: right;
@@ -286,16 +231,9 @@ fine bottoni
     display: none;
 }
 
-/*
-.skip:focus { viene mostarto quando viene attivato dal tab
-    position: static;
-}
-*/
-
 /* colori link*/
 a {
     color: #000000;
-    /*text-decoration: none;*/
 }
 
 a:link:after, a:visited:after {
@@ -303,15 +241,6 @@ a:link:after, a:visited:after {
     font-size:90%;
 }
 
-/*
-a:active {
-    color: #990000;
-}
-
-a:visited {
-    color: #663366;
-}
-*/
 
 /*******/
 #Error404Options {
@@ -324,20 +253,13 @@ a:visited {
 /*******/
 
 #ImgMuseo{/*img in home*/
-    /* padding: 5%;*/
     text-align: center;
-    /*   max-height: 30em;
-       max-width: 40em;*/
     padding-bottom: 1em;
     padding-top: 1em;
 }
 
 #Map{/*regole per posizionamento e dimensionamento della mappa*/
     display: none;
-    /*display: block;
-    height: 12em;
-    width: 80%;
-    margin: 0.5em 10%;*/
 }
 
 #ButtonBackUp {  /*torna su*/
@@ -347,12 +269,6 @@ a:visited {
 #footer {
     display: none;
 }
-
-/*
-.ImgValid {
-    display: inline-block;
-}
-*/
 
 #ImgOpera{
     text-align: center;
@@ -385,19 +301,6 @@ a:visited {
     display: inline-block;
 }
 
-/*
-#header {
-    height: 21.7em;
-}
-*/
-
-/*
-#logoImg {
-    background-position: center;
-    height: 6em;
-    width: 9.2em;
-}
-*/
 
 /*
 #ImgError404 {
@@ -454,32 +357,6 @@ a:visited {
     background: none;
     margin-left: 5%;
 }
-
-/*
-#menu {
-    float: left;
-    position: static;
-    top: 24em;
-    bottom: 10em;
-    height: 50%;
-    display: block;
-    width: 20em;
-    margin-top: 0;
-}
-
-#menu ul {
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-}
-
-#menu li{
-    font-size: 2em;
-}
-
-#content{
-    margin-left: 23em;
-}
-*/
 
 #warning {
     display: none;
