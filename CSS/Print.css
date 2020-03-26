@@ -71,17 +71,6 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     display: none;
 }
 
-/*
-#LoginMenu a{ pulsante di login
-    display: none;
-}
-
-
-#HamburgerMenu { regole per impostare icona per il menu utente
-    display: none;
-}
-*/
-
 .ImgBackground{ /*regole per inserire una immagine con la tecnica image replacement*/
     display: block;
     background-size: 100%;
@@ -90,12 +79,6 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     overflow: hidden;
     border-radius: 20px;
 }
-
-/*
-#ImgError404 {
-    display: none;
-}
- */
 
 
 .imgPeriodi {
@@ -135,23 +118,11 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     cursor: pointer;
 }
 
-/*
-#searchBox, #searchBox404 {
-    border: 2px solid #000000;
-}
-*/
-
 #labelS,.Hidelegend { /* regole per nascondere label e hidelegend*/
     position: absolute;
     height: 0px;
     overflow: hidden;
 }
-
-/*
-#breadcrumbs {
-    display: none;
-}
- */
 
 #content {
     clear: both;
@@ -161,12 +132,6 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     margin: 1.3em;
     /*padding: 2em;*/
 }
-
-/*
-#menu {
-    display: none;
-}
- */
 
 .listClass {/*regola per template di un lista*/
     list-style-type: none;
@@ -233,16 +198,6 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     border-style: none;
 }
 
-#textArea {
-    display: block;
-    position: relative;
-    width: 60%;
-    left: 15%;
-    bottom: 1.4em;
-    border-radius: 0.25em;
-    padding: 0.375em 0.75em;
-}
-
 #AreaDescr, #AreaDescr2, #AreaDescr3 {
     display: block;
     position: relative;
@@ -258,12 +213,6 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     font-size: 0.7em;
     padding-bottom: 1em;
 }
-
-/*
-.skip { regola per nascondere il salta contenuto
-    display: none;
-}
-*/
 
 /* colori link*/
 a {
@@ -292,20 +241,6 @@ a:link:after, a:visited:after {
     padding-top: 1em;
 }
 
-/*
-#Map {regole per posizionamento e dimensionamento della mappa
-    display: none;
-}
-
-#ButtonBackUp {  torna su
-    display: none;
-}
-
-#footer {
-    display: none;
-}
-*/
-
 #ImgOpera{
     text-align: center;
 }
@@ -327,40 +262,13 @@ a:link:after, a:visited:after {
     margin-bottom: 1em;
 }
 
-/*
-#Back,#Next {
-    display: none;
-}
-*/
-
 #reset,#confirm{
     display: inline-block;
 }
 
-/*
-#ImgError404 {
-    background-size: 100%;
-    background-position: center;
-    height: 25em;
-    width: 25em;
-}
-*/
-
 #UserTools {
     background-image: none;
 }
-
-/*
-#search {
-    display: none;
-    padding-top: 0.5em;
-    text-align: center;
-}
-
-#searchBox {
-    display: none;
-}
-*/
 
 #searchBox404 {
     background-color: #EEEEEE;
@@ -376,17 +284,6 @@ a:link:after, a:visited:after {
     margin-right: 5% ;
 }
 
-/*
-#textSearch {
-    display: none;
-    /*font-size: 2em;
-    border: 0;
-    width: 12em;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-}
- */
-
 #Submit {
     cursor: pointer;
     border: 0px;
@@ -394,13 +291,6 @@ a:link:after, a:visited:after {
     background: none;
     margin-left: 5%;
 }
-
-/*
-#warning {
-    display: none;
-}
-
- */
 
 .title{
     font-size: 2.5em;

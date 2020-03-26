@@ -30,15 +30,6 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
 .headerTitle {
     display: none;
 }
-/*
-#headerStampa{
-    display: none;
-}
-
-#logoImgStampa {
-    display: none;
-}
-*/
 
 #content404 { /* da unire con content perchè sono uguali*/
     background-color: #FFFFFF;
@@ -53,7 +44,6 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     background-image: url('../images/logo.PNG');
     text-indent: 100%;
 }
-
 
 #UserTools { /*regole per impostare icona per il menu utente*/
     float:right;
@@ -249,16 +239,6 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
 #FeedBackBox{
     margin: 1em 1em;
     border-style: none;
-}
-
-#textArea {
-    display: block;
-    position: relative;
-    width: 60%;
-    left:15%;
-    bottom:1.4em;
-    border-radius: 0.25em;
-    padding: 0.375em 0.75em;
 }
 
 #AreaDescr, #AreaDescr2, #AreaDescr3 {
