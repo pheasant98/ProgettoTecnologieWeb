@@ -68,7 +68,6 @@
         <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
             <ul>
                 <li>
-                    <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="19"></span>
                     <a id="skipMenu" class="skip" href="#content" aria-label="Vai al contenuto" tabindex="11">Vai al contenuto</a>
                 </li>
 
@@ -107,7 +106,7 @@
         <div id="content" role="main">
             <h2 class="title">Modifica della pagina numero X</h2>
 
-            <form id="Modifica" name="Modifica" action="" method="post">
+            <form name="Modifica" action="" method="post">
                 <fieldset id="BoxModifica" class="fieldset">
                     <legend class="Hidelegend">Modifica pagina</legend>
 
@@ -144,7 +143,7 @@
 
                         <p>
                             <label id="labelTipoEvento" for="TipoEvento">Tipologia: </label>
-                            <select id="TipoEvento"  class="selectForm elementForm" name="TipoEvento" aria-label="Modifica la tipologia di evento" aria-required="true">
+                            <select id="TipoEvento"  class=" elementForm" name="TipoEvento" aria-label="Modifica la tipologia di evento" aria-required="true">
                                 <option value="Mostra">Mostra</option>
                                 <option selected="selected" value="Conferenza">Conferenza</option>
                             </select>
@@ -210,7 +209,7 @@
 
                         <p>
                             <label id="labelPeriodoStorico" for="PeriodoStorico">Periodo storico: </label>
-                            <select id="PeriodoStorico" class="selectForm elementForm"name="PeriodoStorico" aria-label="Modifica il periodo storico di appartenenza" aria-required="true">
+                            <select id="PeriodoStorico" class="elementForm" name="PeriodoStorico" aria-label="Modifica il periodo storico di appartenenza" aria-required="true">
                                 <option selected="selected" value="Quattrocento">Quattrocento</option>
                                 <option value="Cinquecento">Cinquecento</option>
                                 <option value="Seicento">Seicento</option>
@@ -224,7 +223,7 @@
 
                         <p>
                             <label id="labelStile" for="Stile">Stile: </label>
-                            <select id="Stile" class="selectForm elementForm"name="Stile" aria-label="Modifica lo stile artistico" aria-required="true">
+                            <select id="Stile" class="elementForm" name="Stile" aria-label="Modifica lo stile artistico" aria-required="true">
                                 <option selected="selected" value="pittura">Pittura</option>
                                 <option value="scultura">Scultura</option>
                             </select>
@@ -283,7 +282,7 @@
 
                     <p>
                         <label id="labelTextArea" for="AreaDescr">Descrizione: </label>
-                        <textarea id="AreaDescr" name="textArea" rows="10" cols="70" aria-label="Modifica la descrizione" aria-required="true">Inserire la descrizione
+                        <textarea id="AreaDescr" class="elementForm" name="textArea" rows="10" cols="70" aria-label="Modifica la descrizione" aria-required="true">Inserire la descrizione
                         </textarea>
                     </p>
 

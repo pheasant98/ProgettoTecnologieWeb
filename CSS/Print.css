@@ -114,10 +114,6 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     padding: 0.375em 0.75em;
 }
 
-.selectForm{
-    cursor: pointer;
-}
-
 #labelS,.Hidelegend { /* regole per nascondere label e hidelegend*/
     position: absolute;
     height: 0px;
@@ -130,7 +126,6 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     color: #000000;
     border-radius: 20px;
     margin: 1.3em;
-    /*padding: 2em;*/
 }
 
 .listClass {/*regola per template di un lista*/
@@ -180,15 +175,6 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     border-style: none;
 }
 
-#Modifica  {
-    margin-top: 1em;
-    margin-bottom: 4em;
-}
-
-#Continue {
-    font-size: 1em;
-}
-
 .Navigation a {
     display: inline-block;
 }
@@ -199,13 +185,9 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
 }
 
 #AreaDescr, #AreaDescr2, #AreaDescr3 {
-    display: block;
-    position: relative;
-    width: 60%;
-    left: 15%;
-    bottom: 1.4em;
-    border-radius: 0.25em;
-    padding: 0.375em 0.75em;
+    height: 20em;
+    margin-bottom: 1em;
+    margin-top: 1em;
 }
 
 #clause {
@@ -257,7 +239,7 @@ a:link:after, a:visited:after {
 }
 
 .fieldset input, .fieldset label, .fieldset select {
-    margin-right: 2em;
+    margin-right: 1.5em;
     margin-top: 1em;
     margin-bottom: 1em;
 }

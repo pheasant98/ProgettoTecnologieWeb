@@ -70,7 +70,6 @@
         <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
             <ul>
                 <li>
-                    <span id="closeMenu" title="chiudi menu" aria-label="chiudi menu" tabindex="19"></span>
                     <a id="skipMenu" class="skip" href="#content" aria-label="Vai al contenuto" tabindex="11">Vai al contenuto</a>
                 </li>
 
@@ -125,7 +124,7 @@
 
                     <p>
                         <label id="labelTipologiaBiglietto" for="TipologiaBiglietto">Tipologia</label>
-                        <select id="TipologiaBiglietto" class="elementForm selectForm" name="TipologiaBiglietto" aria-label="seleziona la tipologia del biglietto">
+                        <select id="TipologiaBiglietto" class="elementForm" name="TipologiaBiglietto" aria-label="seleziona la tipologia del biglietto">
                             <option value="Biglietto" selected="selected">Biglietto</option>
                             <option value="Pacchetto">Pacchetto</option>
                         </select>
@@ -133,7 +132,7 @@
 
                     <p>
                         <label id="labelBiglietto" for="biglietto">Biglietto</label>
-                        <select id="biglietto" class="elementForm selectForm" name="biglietto" aria-label="seleziona il biglietto">
+                        <select id="biglietto" class="elementForm" name="biglietto" aria-label="seleziona il biglietto">
                             <option value="Intero" selected="selected">Intero</option>
                             <option value="Ridotto">Ridotto</option>
                         </select>
@@ -141,7 +140,7 @@
 
                     <p>
                         <label id="labelPacchetto" for="pacchetto">Pacchetto</label>
-                        <select id="pacchetto" class="elementForm selectForm" name="pacchetto" aria-label="seleziona il pacchetto">
+                        <select id="pacchetto" class="elementForm" name="pacchetto" aria-label="seleziona il pacchetto">
                             <option value="famiglia" selected="selected">Famiglia</option>
                             <option value="comitiva">Comitiva</option>
                         </select>
@@ -157,7 +156,7 @@
                         <input id="guidaNo" name="guida" value="no" type="radio" aria-label="Pulsante per dire di no alla guida"/>
                     </fieldset>
 
-                    <p class="UserButton">
+                    <p>
                         <input id="confirm" name="continua" class="Button" value="Continua" type="submit" aria-label="Pulsante per proseguire nell'acquisto"/>
                     </p>
                 </fieldset>
