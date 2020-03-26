@@ -251,7 +251,6 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
 /* colori link*/
 a {
     color: #0000FF;
-    text-decoration: none;
 }
 
 a:active {
@@ -325,6 +324,7 @@ a:visited {
 
 #Back,#Next,#reset,#confirm{
     display: inline-block;
+    text-decoration: underline;
 }
 
 @media screen and (max-width:700px) {
