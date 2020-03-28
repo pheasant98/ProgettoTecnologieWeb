@@ -89,7 +89,8 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
 /*bottoni*/
 
 .Button {
-    display: block;
+    display: none;
+    /*display: block;
     text-align: center;
     font-size: 0.7em;
     outline: none;
@@ -100,7 +101,9 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     width: 10em;
     border: 1px solid #000000;
     background-color: #FFFFFF;
+    */
 }
+
 
 .elementForm{
     display: block;
@@ -196,16 +199,20 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     padding-bottom: 1em;
 }
 
-/* colori link*/
+/* gestione link*/
 a {
     color: #000000;
 }
 
 a:link:after, a:visited:after {
     content: " [" attr(href) "] ";
-    font-size:90%;
+    font-size: 70%;
 }
 
+
+#HomepageButton, #UserButton, #o4, #clause, #Continue, #userUl, #adminUl /*questi ultimi non so se lasciarli*/, .UserButton, #registrati, #loginButton {
+    display: none;
+}
 
 /*******/
 #Error404Options {
@@ -245,7 +252,7 @@ a:link:after, a:visited:after {
 }
 
 #reset,#confirm{
-    display: inline-block;
+    display: none;
 }
 
 #UserTools {
