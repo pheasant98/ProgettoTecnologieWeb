@@ -1,5 +1,5 @@
-
-* {/*rende la pagina vuota e imposta un iterlinea di 1.5 per l'accessibilità della pagina*/
+/* Rende la pagina vuota e imposta un iterlinea di 1.5 per l'accessibilità della pagina */
+* {
     padding: 0em;
     margin: 0em;
     font-family: arial, helvetica, sans-serif;
@@ -7,7 +7,8 @@
     max-width: 100%;
 }
 
-html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
+/* Impostazione colore di sfondo e larghezza minima della pagina */
+html, body {
     font-size: 1em;
     background-color: #FFFFFF;
     color: #000000;
@@ -17,10 +18,9 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     padding: 0.7em 1.3em 0em 1.1em;
     border-bottom-width: 2px;
     border-bottom-style: solid;
-    border-bottom-color: black;
+    border-bottom-color: #000000;
     min-height: 8em;
 }
-
 
 .headerTitle {
     padding: 1.5em 0em;
@@ -34,12 +34,11 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     font-size: 1.7em;
 }
 
-
-#header404 { /*header per pagina 404*/
+#header404 {
     padding: 0.7em 1.3em 0em 1.1em;
     border-bottom-width: 2px;
     border-bottom-style: solid;
-    border-bottom-color: black;
+    border-bottom-color: #000000;
     min-height: 8em;
 }
 
@@ -56,10 +55,10 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     padding-bottom: 0.4em;
 }
 
-
-#logoImg {  /*regole per impostare il logo in modo accessibile*/
+/* Regole per impostare il logo in modo accessibile */
+#logoImg {
     background-image: url('../images/logo.PNG');
-    float:right;
+    float: right;
     text-indent: 100%;
     background-position: center;
     height: 3.6em;
@@ -71,7 +70,8 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     display: none;
 }
 
-.ImgBackground{ /*regole per inserire una immagine con la tecnica image replacement*/
+/* Regole per inserire una immagine con la tecnica image replacement */
+.ImgBackground {
     display: block;
     background-size: 100%;
     background-repeat: no-repeat;
@@ -80,17 +80,15 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     border-radius: 20px;
 }
 
-
 .imgPeriodi {
     width: 9.75em;
     height: 7.5em;
 }
 
-/*bottoni*/
-
 .Button {
     display: none;
-    /*display: block;
+    /*
+    display: block;
     text-align: center;
     font-size: 0.7em;
     outline: none;
@@ -104,8 +102,7 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     */
 }
 
-
-.elementForm{
+.elementForm {
     display: block;
     width: 100%;
     height: 2.6em;
@@ -117,7 +114,8 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     padding: 0.375em 0.75em;
 }
 
-#labelS,.Hidelegend { /* regole per nascondere label e hidelegend*/
+/* Regole per nascondere le label e le legend */
+#labelS, .Hidelegend {
     position: absolute;
     height: 0px;
     overflow: hidden;
@@ -131,14 +129,15 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     margin: 1.3em;
 }
 
-.listClass {/*regola per template di un lista*/
+/* Regole per template di un lista */
+.listClass {
     list-style-type: none;
     margin-bottom: 2.5em;
     margin-top: 1.5em;
     margin-left: 0.5em;
 }
 
-.listClass li{/*regola per template di un lista*/
+.listClass li {
     margin-bottom: 1em;
 }
 
@@ -155,24 +154,26 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     padding-bottom: 0.5em;
 }
 
-.UserButton{ /* regole per i bottoni utente posiziona i bottoni a sinistra*/
+/* Regole per i bottoni utente, posiziona i bottoni a sinistra */
+.UserButton {
     text-align: right;
     list-style-type: none;
     border-style: none;
 }
 
-.UserButton a{ /* regole per i bottoni utente*/
+.UserButton a {
     font-size: 0.8em;
     display: inline-block;
 }
 
-.UserButton span{ /* regole per i bottoni utente*/
+.UserButton span {
     font-size: 1em;
     display: block;
     margin-right: 5.5em;
 }
 
-.Navigation{/* regola per il posizionamento al centro del contenuto per la navigazione*/
+/* Regola per il posizionamento al centro del contenuto per la navigazione */
+.Navigation {
     list-style-type: none;
     text-align: center;
     border-style: none;
@@ -182,7 +183,7 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     display: inline-block;
 }
 
-#FeedBackBox{
+#FeedBackBox {
     margin: 1em 1em;
     border-style: none;
 }
@@ -199,7 +200,7 @@ html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
     padding-bottom: 1em;
 }
 
-/* gestione link*/
+/* Gestione link */
 a {
     color: #000000;
 }
@@ -209,12 +210,10 @@ a:link:after, a:visited:after {
     font-size: 70%;
 }
 
-
 #HomepageButton, #UserButton, #o4, #clause, #Continue, #userUl, #adminUl /*questi ultimi non so se lasciarli*/, .UserButton, #registrati, #loginButton {
     display: none;
 }
 
-/*******/
 #Error404Options {
     list-style-type: none;
 }
@@ -222,15 +221,15 @@ a:link:after, a:visited:after {
 #Error404Options li {
     padding: 0.3em;
 }
-/*******/
 
-#ImgMuseo{/*img in home*/
+/* Immagini nella pagina home */
+#ImgMuseo {
     text-align: center;
     padding-bottom: 1em;
     padding-top: 1em;
 }
 
-#ImgOpera{
+#ImgOpera {
     text-align: center;
 }
 
@@ -239,7 +238,8 @@ a:link:after, a:visited:after {
     font-size: 1em;
 }
 
-.fieldset{ /*regole per template di fieldset, principalmente toglie il bordo */
+/* Regole per template del fieldset, principalmente toglie il bordo */
+.fieldset {
     border: none;
     padding: 1em;
     text-align: justify;
@@ -251,7 +251,7 @@ a:link:after, a:visited:after {
     margin-bottom: 1em;
 }
 
-#reset,#confirm{
+#reset, #confirm {
     display: none;
 }
 
@@ -270,7 +270,7 @@ a:link:after, a:visited:after {
     border: 0px;
     font-size: 1.5em;
     background: none;
-    margin-right: 5% ;
+    margin-right: 5%;
 }
 
 #Submit {
@@ -281,7 +281,7 @@ a:link:after, a:visited:after {
     margin-left: 5%;
 }
 
-.title{
+.title {
     font-size: 2.5em;
     line-height: 2em;
 }
