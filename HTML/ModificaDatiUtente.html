@@ -31,7 +31,7 @@
 
             <div class="headerTitle">
                 <h1>Museo Arte nel Tempo</h1>
-                <h2>Dal Rinascimaneto al Neoclassicismo</h2>
+                <h2>Dal Rinascimento al Neoclassicismo</h2>
             </div>
             <span id="loginMenuPlaceholder"/>
 
@@ -45,7 +45,7 @@
                         <option value="Avviso">Avviso</option>
                     </select>
 
-                    <label id="hideLabel" for="textSearch">Cerca nel sito</label>
+                    <label id="hideLabel" for="searchText">Cerca nel sito</label>
                     <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
                     <input id="submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
                 </fieldset>
@@ -107,7 +107,7 @@
         <div id="content" role="main">
             <h2 class="title">Modifica dati</h2>
 
-            <form id="ModificaDatiUtente" name="ModificaDati" action="" method="post" >
+            <form id="ModificaDatiUtente" name="ModificaDati" action="AreaPersonale.html" method="post" >
                 <fieldset class="fieldset">
                     <legend class="hideLegend">Modifica dati utente</legend>
 
@@ -129,14 +129,16 @@
                         <a class="skipInformation" href="#confirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
                     </p>
 
-                    <p>
-                        <label id="labelGenere" for="Genere">Genere</label>
-                        <select id="Genere" class=" formElement" name="Genere" aria-label="Modifica il genere">
-                            <option selected="selected" value="PreferiscoNonDichiarare">Preferisco non dichiarare</option>
-                            <option value="Maschio">Maschio</option>
-                            <option value="Femmina">Femmina</option>
-                        </select>
-                    </p>
+                    <fieldset id="fieldSex" class="fieldset">
+                        <legend class="hideLegend">Sesso</legend>
+
+                        <label id="labelSexM" for="radioSexM">Maschile</label>
+                        <input id="radioSexM" name="radioSex" value="M" type="radio" aria-label="Pulsante per dichiarare sesso maschile"/>
+                        <label id="labelSexF" for="radioSexF">Femminile</label>
+                        <input id="radioSexF" name="radioSex" value="F" type="radio" aria-label="Pulsante per dichiarare sesso femminile"/>
+                        <label id="labelSexA" for="radioSexA">Preferisco non dichiarare</label>
+                        <input id="radioSexA" name="radioSex" value="A" type="radio" aria-label="Pulsante per non dichiarare il sesso"/>
+                    </fieldset>
 
                     <p>
                         <a class="skipInformation" href="#confirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>

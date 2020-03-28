@@ -31,7 +31,7 @@
 
             <div class="headerTitle">
                 <h1>Museo Arte nel Tempo</h1>
-                <h2>Dal Rinascimaneto al Neoclassicismo</h2>
+                <h2>Dal Rinascimento al Neoclassicismo</h2>
             </div>
 
             <span id="loginMenuPlaceholder"/>
@@ -46,7 +46,7 @@
                         <option value="Avviso">Avviso</option>
                     </select>
 
-                    <label id="hideLabel" for="textSearch">Cerca nel sito</label>
+                    <label id="hideLabel" for="searchText">Cerca nel sito</label>
                     <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
                     <input id="submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
                 </fieldset>
@@ -108,7 +108,7 @@
         <div id="content" role="main">
             <h2 class="title">Lascia una recensione</h2>
 
-            <form id="FeedBack" name="feedback" action="" method="post" role="form">
+            <form id="FeedBack" name="feedback" action="<span id='pageOfOriginPlaceholder'/>" method="post" role="form">
                 <fieldset id="feedbackBox">
                     <legend class="hideLegend">Lascia una recensione</legend>
 
@@ -118,7 +118,7 @@
                     </p>
 
                     <p>
-                        <label id="labelTextArea" for="AreaDescr">Contenuto</label>
+                        <label id="labelTextArea" for="operaDescriptionArea">Contenuto</label>
                         <textarea id="operaDescriptionArea" class="formElement" name="FeedbackArea" rows="20" cols="30" aria-label="Inserisci la recensione" aria-required="true">Scrivi qui la tua recensione!</textarea>
                     </p>
 
