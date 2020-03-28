@@ -129,7 +129,6 @@ a:link:after, a:visited:after {
     border-style: none;
 }
 
-/* TODO capire se bisogna mettere o no il bordo e quindi se va rimossa o non, o semplicemente modificata a dovere */
 .fieldset {
     /* border: none; */
     padding: 1em;
@@ -221,7 +220,7 @@ a:link:after, a:visited:after {
     padding-top: 1em;
 }
 
-#operaImage {
+#operaImageUpload {
     text-align: center;
 }
 
@@ -243,15 +242,10 @@ a:link:after, a:visited:after {
     background-image: none;
 }
 
-#hideLabel, .hideLegend {
-    position: absolute;
-    height: 0px;
-    overflow: hidden;
-}
-
 #search, #searchBox, #searchText, #hamburgerMenu, #userTools, #userButton, #homepageButton, #userOperationsList,
-#adminOperationsList, #loginButton, #register, #loginMenu a, #breadcrumbs, #menu, #imageError404, #buyOption4, #clause,
-#map, #warning, #continue, #buttonNext, #buttonBack, #buttonBackUp, #reset, #confirm, #footer, .skipInformation,
-.button, .userButton {
+#adminOperationsList, #loginButton, #register, #loginMenu a, #breadcrumbs, #menu, #operaImageUpload, #eventImageUpload,
+#imageUpload, #labelImageUpload, #labelEventImageUpload, #labelOperaImageUpload, #imageError404, #buyOption4, #clause,
+#map, #warning, #continue, #buttonNext, #buttonBack, #buttonBackUp, #reset, #confirm, #footer, .skipInformation, .button,
+.userButton {
     display: none;
 }
