@@ -23,9 +23,9 @@
 
     <body>
         <div id="header" role="banner">
-            <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
+            <h1 id="logoImage" class="backgroundImage" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
 
-            <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
+            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
                 Menu ad <span xml:lang="en">hamburger</span>
             </span>
 
@@ -38,7 +38,7 @@
 
             <form id="search" name="search" action="" method="post" role="search">
                 <fieldset id="searchBox">
-                    <legend class="Hidelegend">Ricerca</legend>
+                    <legend class="hideLegend">Ricerca</legend>
 
                     <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="2">
                         <option selected="selected" value="Opera">Opera</option>
@@ -46,9 +46,9 @@
                         <option value="Avviso">Avviso</option>
                     </select>
 
-                    <label id="labelS" for="textSearch">Cerca nel sito</label>
-                    <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
-                    <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="3"/>
+                    <label id="hideLabel" for="textSearch">Cerca nel sito</label>
+                    <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
+                    <input id="submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="3"/>
                 </fieldset>
             </form>
         </div>
@@ -69,7 +69,7 @@
             <ul>
                 <li>
 
-                    <a id="skipMenu" class="skip" href="#content" aria-label="Vai al contenuto" tabindex="10">Vai al contenuto</a>
+                    <a id="skipMenu" class="skipInformation" href="#content" aria-label="Vai al contenuto" tabindex="10">Vai al contenuto</a>
                 </li>
 
                 <li>
@@ -111,14 +111,14 @@
                 Sono stati trovati # avvisi:
             </p>
 
-            <a href="#Back" class="skip" aria-label="Salta gli avvisi">Salta gli avvisi presenti nella pagina</a>
+            <a href="#buttonBack" class="skipInformation" aria-label="Salta gli avvisi">Salta gli avvisi presenti nella pagina</a>
 
             <dl class="clickableDl">
                 <dt>
                     <a href="AvvisoSingolo.html" aria-label="Vai all'avviso di cui oggetto">Oggetto: chiusura per controllo generale della sicurezza</a>
                 </dt>
                 <dd>
-                    <a href="#a2" class="skip" aria-label="Salta l'avviso">Salta l'avviso</a>
+                    <a href="#a2" class="skipInformation" aria-label="Salta l'avviso">Salta l'avviso</a>
 
                     <p>
                         Data: 2020.01.29
@@ -134,7 +134,7 @@
                     <a href="AvvisoSingolo.html" aria-label="Vai all'avviso di cui oggetto">Oggetto: apertura straordinaria</a>
                 </dt>
                 <dd>
-                    <a href="#a3"  class="skip" aria-label="Salta l'avviso">Salta l'avviso</a>
+                    <a href="#a3" class="skipInformation" aria-label="Salta l'avviso">Salta l'avviso</a>
 
                     <p>
                         Data: 2020.01.20
@@ -150,7 +150,7 @@
                     <a href="AvvisoSingolo.html" aria-label="Vai all'avviso di cui oggetto">Oggetto: riapertura del museo</a>
                 </dt>
                 <dd>
-                    <a href="#a4" class="skip" aria-label="Salta l'avviso">Salta l'avviso</a>
+                    <a href="#a4" class="skipInformation" aria-label="Salta l'avviso">Salta l'avviso</a>
 
                     <p>
                         Data: 2020.01.13
@@ -166,7 +166,7 @@
                     <a href="AvvisoSingolo.html" aria-label="Vai all'avviso di cui oggetto">Oggetto: chiusura invernale</a>
                 </dt>
                 <dd>
-                    <a href="#Back" class="skip" aria-label="Salta l'avviso">Salta l'avviso</a>
+                    <a href="#buttonBack" class="skipInformation" aria-label="Salta l'avviso">Salta l'avviso</a>
 
                     <p>
                         Data: 2019.12.28
@@ -179,16 +179,16 @@
                 </dd>
             </dl>
 
-            <p class="Navigation">
-                <a id="Back" class="Button" href="" title="Avvisi precedenti" role="button" aria-label="Torna agli avvisi precedenti">
+            <p class="navigation">
+                <a id="buttonBack" class="button" href="" title="Avvisi precedenti" role="button" aria-label="Torna agli avvisi precedenti">
                     &lt; Precedente
                 </a>
-                <a id="Next" class="Button" href="" title="Avvisi successivi" role="button" aria-label="Vai agli avvisi successivi">
+                <a id="buttonNext" class="button" href="" title="Avvisi successivi" role="button" aria-label="Vai agli avvisi successivi">
                     Successivo &gt;
                 </a>
             </p>
 
-            <a id="ButtonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
+            <a id="buttonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
                 <img alt="Torna su" src="../Images/TornaSu.png"/>
             </a>
         </div>

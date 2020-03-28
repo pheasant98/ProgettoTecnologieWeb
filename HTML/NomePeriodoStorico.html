@@ -23,9 +23,9 @@
 
     <body>
         <div id="header" role="banner">
-            <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
+            <h1 id="logoImage" class="backgroundImage" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
 
-            <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
+            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
                 Menu ad <span xml:lang="en">hamburger</span>
             </span>
 
@@ -38,7 +38,7 @@
 
             <form id="search" name="search" action="" method="post" role="search">
                 <fieldset id="searchBox">
-                    <legend class="Hidelegend">Ricerca</legend>
+                    <legend class="hideLegend">Ricerca</legend>
 
                     <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
                         <option selected="selected" value="Opera">Opera</option>
@@ -46,9 +46,9 @@
                         <option value="Avviso">Avviso</option>
                     </select>
 
-                    <label id="labelS" for="textSearch">Cerca nel sito</label>
-                    <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
-                    <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
+                    <label id="hideLabel" for="textSearch">Cerca nel sito</label>
+                    <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
+                    <input id="submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
                 </fieldset>
             </form>
         </div>
@@ -70,7 +70,7 @@
         <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
             <ul>
                 <li>
-                    <a id="skipMenu" class="skip" href="#content" aria-label="Vai al contenuto" tabindex="11">Vai al contenuto</a>
+                    <a id="skipMenu" class="skipInformation" href="#content" aria-label="Vai al contenuto" tabindex="11">Vai al contenuto</a>
                 </li>
 
                 <li>
@@ -115,8 +115,8 @@
             </p>
 
             <form id="operaFilter" action="" method="post">
-                <fieldset class="Navigation">
-                    <legend class="Hidelegend">Periodo storico</legend>
+                <fieldset class="navigation">
+                    <legend class="hideLegend">Periodo storico</legend>
 
                     <label id="labelfilterType" for="filterType">Selezionare il tipo di opera</label>
                     <select name="filterType" id="filterType" aria-label="filtro per il tipo di opera">
@@ -124,7 +124,7 @@
                         <option value="Pittura"> Pittura </option>
                     </select>
 
-                    <input id="confirm" class="Button" name="filter" value="Filtra" type="button" aria-label="Conferma"/>
+                    <input id="confirm" class="button" name="filter" value="Filtra" type="button" aria-label="Conferma"/>
                 </fieldset>
             </form>
 
@@ -132,7 +132,7 @@
                 Sono stati trovati # contenuti:
             </p>
 
-            <a href="#Back" class="skip">Salta le opere presenti nella pagina</a>
+            <a href="#buttonBack" class="skipInformation">Salta le opere presenti nella pagina</a>
 
             <h3>Elenco</h3>
 
@@ -141,7 +141,7 @@
                     <a href="OperaSingola.html">Nome prima opera</a>
                 </dt>
                 <dd>
-                    <a href="#o2" class="skip">Salta l'opera</a>
+                    <a href="#o2" class="skipInformation">Salta l'opera</a>
 
                     <p>
                         nome autore: nome
@@ -164,7 +164,7 @@
                     <a href="OperaSingola.html">Nome seconda opera</a>
                 </dt>
                 <dd>
-                    <a href="#Back" class="skip">Salta l'opera</a>
+                    <a href="#buttonBack" class="skipInformation">Salta l'opera</a>
 
                     <p>
                         nome autore: nome
@@ -184,12 +184,12 @@
                 </dd>
             </dl>
 
-            <p class="Navigation">
-                <a id="Back" class="Button" href="" title="Opere precedenti" role="button" aria-label="Torna alle opere precedenti"> &lt; Precedente</a>
-                <a id="Next" class="Button" href="" title="Opere successive" role="button" aria-label="Vai alle opere successive"> Successivo &gt;</a>
+            <p class="navigation">
+                <a id="buttonBack" class="button" href="" title="Opere precedenti" role="button" aria-label="Torna alle opere precedenti"> &lt; Precedente</a>
+                <a id="buttonNext" class="button" href="" title="Opere successive" role="button" aria-label="Vai alle opere successive"> Successivo &gt;</a>
             </p>
 
-            <a id="ButtonBackUp" href="#header" title="Torna su" aria-label="Torna su">
+            <a id="buttonBackUp" href="#header" title="Torna su" aria-label="Torna su">
                 <img alt="Torna su" src="../Images/TornaSu.png"/>
             </a>
         </div>

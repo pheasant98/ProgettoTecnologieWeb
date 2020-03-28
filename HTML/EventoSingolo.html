@@ -22,9 +22,9 @@
 
     <body>
         <div id="header" role="banner">
-            <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
+            <h1 id="logoImage" class="backgroundImage" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
 
-            <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
+            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
                 Menu ad <span xml:lang="en">hamburger</span>
             </span>
 
@@ -37,7 +37,7 @@
 
             <form id="search" name="search" action="" method="post" role="search">
                 <fieldset id="searchBox">
-                    <legend class="Hidelegend">Ricerca</legend>
+                    <legend class="hideLegend">Ricerca</legend>
 
                     <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
                         <option selected="selected" value="Opera">Opera</option>
@@ -45,9 +45,9 @@
                         <option value="Avviso">Avviso</option>
                     </select>
 
-                    <label id="labelS" for="textSearch">Cerca nel sito</label>
-                    <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
-                    <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
+                    <label id="hideLabel" for="textSearch">Cerca nel sito</label>
+                    <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
+                    <input id="submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
                 </fieldset>
             </form>
         </div>
@@ -69,7 +69,7 @@
         <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
             <ul>
                 <li>
-                    <a id="skipMenu" class="skip" href="#content" tabindex="11" aria-label="Vai al contenuto">Vai al contenuto</a>
+                    <a id="skipMenu" class="skipInformation" href="#content" tabindex="11" aria-label="Vai al contenuto">Vai al contenuto</a>
                 </li>
 
                 <li>
@@ -110,14 +110,14 @@
             <h3 class="H2Home">Dettagli</h3>
 
             <p class="pContent">
-                <a class="skip" href="#HEventi2" aria-label="Salta i dettagli">Salta dettagli</a>
+                <a class="skipInformation" href="#HEventi2" aria-label="Salta i dettagli">Salta dettagli</a>
                 Donec consequat tortor nisl, quis sodales sapien molestie eget.
             </p>
 
             <h3 id="HEventi2" class="H2Home">Descrizione</h3>
 
             <p class="pContent">
-                <a class="skip" href="#footer" aria-label="Salta il testo">Salta il testo</a>
+                <a class="skipInformation" href="#footer" aria-label="Salta il testo">Salta il testo</a>
                 Pellentesque nec facilisis eros, non egestas nisl.
                 Cras facilisis, metus dapibus viverra consequat, mauris enim facilisis mauris, feugiat laoreet ligula leo ac
                 diam.
@@ -125,7 +125,7 @@
                 Nullam vel aliquet libero, fringilla faucibus felis.
             </p>
 
-            <a id="ButtonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
+            <a id="buttonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
                 <img alt="Torna su" src="../Images/TornaSu.png"/>
             </a>
         </div>

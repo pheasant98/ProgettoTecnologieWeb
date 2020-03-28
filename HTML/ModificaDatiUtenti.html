@@ -23,9 +23,9 @@
 
     <body>
         <div id="header" role="banner">
-            <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
+            <h1 id="logoImage" class="backgroundImage" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
 
-            <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
+            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
                 Menu ad <span xml:lang="en">hamburger</span>
             </span>
 
@@ -37,7 +37,7 @@
 
             <form id="search" name="search" action="" method="post" role="search">
                 <fieldset id="searchBox">
-                    <legend class="Hidelegend">Ricerca</legend>
+                    <legend class="hideLegend">Ricerca</legend>
 
                     <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
                         <option selected="selected" value="Opera">Opera</option>
@@ -45,9 +45,9 @@
                         <option value="Avviso">Avviso</option>
                     </select>
 
-                    <label id="labelS" for="textSearch">Cerca nel sito</label>
-                    <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
-                    <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
+                    <label id="hideLabel" for="textSearch">Cerca nel sito</label>
+                    <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
+                    <input id="submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
                 </fieldset>
             </form>
         </div>
@@ -69,7 +69,7 @@
         <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
             <ul>
                 <li>
-                    <a id="skipMenu" class="skip" href="#content" aria-label="Vai la contenuto" tabindex="11">Vai al contenuto</a>
+                    <a id="skipMenu" class="skipInformation" href="#content" aria-label="Vai la contenuto" tabindex="11">Vai al contenuto</a>
                 </li>
 
                 <li>
@@ -109,29 +109,29 @@
 
             <form id="ModificaDatiUtente" name="ModificaDati" action="" method="post" >
                 <fieldset class="fieldset">
-                    <legend class="Hidelegend">Modifica dati utente</legend>
+                    <legend class="hideLegend">Modifica dati utente</legend>
 
                     <p>
                         <label id="labelNome" for="Nome">Nome</label>
-                        <input id="Nome" class="elementForm" name="Nome" type="text" aria-label="Modifica nome utente" aria-required="true"/>
+                        <input id="Nome" class="formElement" name="Nome" type="text" aria-label="Modifica nome utente" aria-required="true"/>
                     </p>
 
                     <p>
-                        <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
+                        <a class="skipInformation" href="#confirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
                     </p>
 
                     <p>
                         <label id="labelCognome" for="Cognome">Cognome</label>
-                        <input id="Cognome" class="elementForm" name="Cognome" type="text" aria-label="Modifica cognome utente" aria-required="true"/>
+                        <input id="Cognome" class="formElement" name="Cognome" type="text" aria-label="Modifica cognome utente" aria-required="true"/>
                     </p>
 
                     <p>
-                        <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
+                        <a class="skipInformation" href="#confirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
                     </p>
 
                     <p>
                         <label id="labelGenere" for="Genere">Genere</label>
-                        <select id="Genere" class=" elementForm" name="Genere" aria-label="Modifica il genere">
+                        <select id="Genere" class=" formElement" name="Genere" aria-label="Modifica il genere">
                             <option selected="selected" value="PreferiscoNonDichiarare">Preferisco non dichiarare</option>
                             <option value="Maschio">Maschio</option>
                             <option value="Femmina">Femmina</option>
@@ -139,34 +139,34 @@
                     </p>
 
                     <p>
-                        <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
+                        <a class="skipInformation" href="#confirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
                     </p>
 
                     <p>
                         <label id="labelDataNascita" for="DataNascita">Data di nascita</label>
-                        <input id="DataNascita" class="elementForm" name="DataNascita" type="text" aria-label="Modifica data di nascita utente" aria-required="true"/>
+                        <input id="DataNascita" class="formElement" name="DataNascita" type="text" aria-label="Modifica data di nascita utente" aria-required="true"/>
                     </p>
 
                     <p>
-                        <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
+                        <a class="skipInformation" href="#confirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
                     </p>
 
                     <p>
                         <label id="labelIndirizzo" for="Indirizzo">Indirizzo</label>
-                        <input id="Indirizzo" class="elementForm" name="Indirizzo" type="text" aria-label="Modifica indirizzo utente" aria-required="true"/>
+                        <input id="Indirizzo" class="formElement" name="Indirizzo" type="text" aria-label="Modifica indirizzo utente" aria-required="true"/>
                     </p>
 
                     <p>
-                        <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
+                        <a class="skipInformation" href="#confirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
                     </p>
 
                     <p>
                         <label id="labelEmail" for="Email">Email</label>
-                        <input id="Email" class="elementForm" name="Email" type="text" aria-label="Modifica email utente" aria-required="true"/>
+                        <input id="Email" class="formElement" name="Email" type="text" aria-label="Modifica email utente" aria-required="true"/>
                     </p>
 
                     <p>
-                        <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
+                        <a class="skipInformation" href="#confirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
                     </p>
 
                     <p>
@@ -174,14 +174,14 @@
                         <input id="Newsletter" name="Newsletter" type="checkbox" checked="checked" aria-label="Modifica l'iscrizione alla newsletter"/>
                     </p>
 
-                    <p class="Navigation">
-                        <input id="reset" class="Button" name="AnnullaModificheUtente" type="reset" value="Annulla" role="button" aria-label="Annulla le modifiche apportate"/>
-                        <input id="confirm" class="Button" name="InviaModificheUtente" type="submit" value="Conferma" role="button" aria-label="Conferma le modifiche apportate"/>
+                    <p class="navigation">
+                        <input id="reset" class="button" name="AnnullaModificheUtente" type="reset" value="Annulla" role="button" aria-label="Annulla le modifiche apportate"/>
+                        <input id="confirm" class="button" name="InviaModificheUtente" type="submit" value="Conferma" role="button" aria-label="Conferma le modifiche apportate"/>
                     </p>
                 </fieldset>
             </form>
 
-            <a id="ButtonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
+            <a id="buttonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
                 <img alt="Torna su" src="../Images/TornaSu.png"/>
             </a>
         </div>

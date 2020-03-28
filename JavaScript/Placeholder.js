@@ -1,8 +1,8 @@
 window.onload = menu;
 function menu()
 {
-    document.getElementById("HamburgerMenu").addEventListener("click",touch);//ascoltatore
-    document.getElementById("UserTools").addEventListener("click", touch2);
+    document.getElementById("hamburgerMenu").addEventListener("click",touch);//ascoltatore
+    document.getElementById("userTools").addEventListener("click", touch2);
    // document.getElementById("skipMenu").addEventListener("click", touch)
 
     function touch()//classe gestione ascoltatore

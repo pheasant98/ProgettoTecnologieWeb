@@ -23,9 +23,9 @@
 
     <body>
         <div id="header" role="banner">
-            <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
+            <h1 id="logoImage" class="backgroundImage" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
 
-            <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
+            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
                 Menu ad <span xml:lang="en">hamburger</span>
             </span>
 
@@ -38,7 +38,7 @@
 
             <form id="search" name="search" action="" method="post" role="search">
                 <fieldset id="searchBox">
-                    <legend class="Hidelegend">Ricerca</legend>
+                    <legend class="hideLegend">Ricerca</legend>
 
                     <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
                         <option selected="selected" value="Opera">Opera</option>
@@ -46,9 +46,9 @@
                         <option value="Avviso">Avviso</option>
                     </select>
 
-                    <label id="labelS" for="textSearch">Cerca nel sito</label>
-                    <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
-                    <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
+                    <label id="hideLabel" for="textSearch">Cerca nel sito</label>
+                    <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
+                    <input id="submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
                 </fieldset>
             </form>
         </div>
@@ -68,7 +68,7 @@
         <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
             <ul>
                 <li>
-                    <a id="skipMenu" class="skip" href="#content" aria-label="Vai al contenuto" tabindex="10">Vai al contenuto</a>
+                    <a id="skipMenu" class="skipInformation" href="#content" aria-label="Vai al contenuto" tabindex="10">Vai al contenuto</a>
                 </li>
 
                 <li>
@@ -104,43 +104,43 @@
         <div id="content" role="main">
             <h2 class="title">Opzioni d'acquisto</h2>
 
-            <h3 class="paragraph">Biglietti</h3>
+            <h3 id="buyOption1" class="paragraph">Biglietti</h3>
 
-            <a class="skip" href="#o2" aria-label="Salta la sezione dei biglietti">Salta la sezione dei biglietti</a>
+            <a class="skipInformation" href="#buyOption2" aria-label="Salta la sezione dei biglietti">Salta la sezione dei biglietti</a>
 
-            <ul class="listClass">
+            <ul class="list">
                 <li>Intero: 11.90€ cadauno;</li>
 
                 <li>Ridotto (fino ai 14 anni): 7.50€ cadauno.</li>
             </ul>
 
-            <h3 id="o2" class="paragraph">Pacchetti</h3>
+            <h3 id="buyOption2" class="paragraph">Pacchetti</h3>
 
-            <a class="skip" href="#o3" aria-label="Salta la sezione dei pacchetti">Salta la sezione dei pacchetti</a>
+            <a class="skipInformation" href="#buyOption3" aria-label="Salta la sezione dei pacchetti">Salta la sezione dei pacchetti</a>
 
-            <ul class="listClass">
+            <ul class="list">
                 <li>Famiglia: include 2 biglietti interi, a prezzo standard, e fino a 6 biglietti ridotti, ad un prezzo speciale di 6€ cadauno;</li>
 
                 <li>Comitiva: include biglietti interi, ad un prezzo speciale di 10€ cadauno, e ridotti, ad un prezzo speciale di 6.50€ cadauno.</li>
             </ul>
 
-            <h3 id="o3" class="paragraph">Abbonamenti</h3>
+            <h3 id="buyOption3" class="paragraph">Abbonamenti</h3>
 
-            <a class="skip" href="#o4" aria-label="Salta la sezione degli abbonamenti">Salta la sezione degli abbonamenti</a>
+            <a class="skipInformation" href="#buyOption4" aria-label="Salta la sezione degli abbonamenti">Salta la sezione degli abbonamenti</a>
 
             <p>
                 Per gli abbonamenti è previsto l'acquisto solo presso la sede fisica del nostro museo.
             </p>
 
-            <p id="o4" class="paragraph"> Desideri effettuare un acquisto? </p>
+            <p id="buyOption4" class="paragraph"> Desideri effettuare un acquisto? </p>
 
-            <a id="buyButton" class="Button" href="Acquista.html" title="Pagina acquisto biglietti e pacchetti" role="button" aria-label="porta alla pagina dell'acquisto di biglietti o pacchetti">Acquista</a>
+            <a id="buyButton" class="button" href="Acquista.html" title="Pagina acquisto biglietti e pacchetti" role="button" aria-label="porta alla pagina dell'acquisto di biglietti o pacchetti">Acquista</a>
 
             <p id="clause">
                 Per effettuare l'acquisto devi essere registrato.
             </p>
 
-            <a id="ButtonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
+            <a id="buttonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
                 <img alt="Torna su" src="../Images/TornaSu.png"/>
             </a>
         </div>

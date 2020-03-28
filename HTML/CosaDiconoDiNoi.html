@@ -23,9 +23,9 @@
 
     <body>
         <div id="header" role="banner">
-            <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
+            <h1 id="logoImage" class="backgroundImage" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
 
-            <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
+            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
                 Menu ad <span xml:lang="en">hamburger</span>
             </span>
 
@@ -38,7 +38,7 @@
 
             <form id="search" name="search" action="" method="post" role="search">
                 <fieldset id="searchBox">
-                    <legend class="Hidelegend">Ricerca</legend>
+                    <legend class="hideLegend">Ricerca</legend>
 
                     <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
                         <option selected="selected" value="Opera">Opera</option>
@@ -46,9 +46,9 @@
                         <option value="Avviso">Avviso</option>
                     </select>
 
-                    <label id="labelS" for="textSearch">Cerca nel sito</label>
-                    <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
-                    <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
+                    <label id="hideLabel" for="textSearch">Cerca nel sito</label>
+                    <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
+                    <input id="submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
                 </fieldset>
             </form>
         </div>
@@ -68,7 +68,7 @@
         <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
             <ul>
                 <li>
-                    <a id="skipMenu" href="#content" class="skip" aria-label="Vai al contenuto" tabindex="10">Vai al contenuto</a>
+                    <a id="skipMenu" href="#content" class="skipInformation" aria-label="Vai al contenuto" tabindex="10">Vai al contenuto</a>
                 </li>
 
                 <li>
@@ -109,7 +109,7 @@
                 Desideri lasciare una recensione?
             </p>
 
-            <a id="reviewButton" class="Button" href="LasciaUnaRecensione.html" title="Pagina di scrittura di una recensione" role="button" aria-label="Vai alla pagina di scrittura della recensione">Lascia una recensione</a>
+            <a id="reviewButton" class="button" href="LasciaUnaRecensione.html" title="Pagina di scrittura di una recensione" role="button" aria-label="Vai alla pagina di scrittura della recensione">Lascia una recensione</a>
 
             <p id="clause">
                 Per lasciare una recensione devi essere registrato.
@@ -119,14 +119,14 @@
                 Sono state trovate #recensioni:
             </p>
 
-            <a href="#Back" class="skip">Salta le recensioni presenti nella pagina</a>
+            <a href="#buttonBack" class="skipInformation">Salta le recensioni presenti nella pagina</a>
 
             <dl>
                 <dt id="r1" class="reviewObject">
                     Oggetto BELLO
                 </dt>
                 <dd>
-                    <a href="#r2" class="skip" aria-label="Salta l'evento">Salta l'evento</a>
+                    <a href="#r2" class="skipInformation" aria-label="Salta l'evento">Salta l'evento</a>
 
                     <p class="reviewAuthor">&lt;Utente&gt;</p>
 
@@ -139,7 +139,7 @@
                     Oggetto BELLO
                 </dt>
                 <dd>
-                    <a href="#r3" class="skip" aria-label="Salta l'evento">Salta l'evento</a>
+                    <a href="#r3" class="skipInformation" aria-label="Salta l'evento">Salta l'evento</a>
 
                     <p class="reviewAuthor">&lt;Utente&gt;</p>
 
@@ -152,7 +152,7 @@
                     Oggetto BELLO
                 </dt>
                 <dd>
-                    <a href="#Back" class="skip" aria-label="Salta l'evento">Salta l'evento</a>
+                    <a href="#buttonBack" class="skipInformation" aria-label="Salta l'evento">Salta l'evento</a>
 
                     <p class="reviewAuthor">&lt;Utente&gt;</p>
 
@@ -162,12 +162,12 @@
                 </dd>
             </dl>
 
-            <p class="Navigation">
-                <a id="Back" class="Button" href="" title="Recensioni precedenti" aria-label="Torna alle recensioni precedenti">&lt; Precedente</a>
-                <a id="Next" class="Button" href="" title="Recensioni successive" aria-label="Vai alle recensioni successive">Successivo &gt;</a>
+            <p class="navigation">
+                <a id="buttonBack" class="button" href="" title="Recensioni precedenti" aria-label="Torna alle recensioni precedenti">&lt; Precedente</a>
+                <a id="buttonNext" class="button" href="" title="Recensioni successive" aria-label="Vai alle recensioni successive">Successivo &gt;</a>
             </p>
 
-            <a id="ButtonBackUp" href="#header" title="Torna su" aria-label="Torna su" tabindex="21">
+            <a id="buttonBackUp" href="#header" title="Torna su" aria-label="Torna su" tabindex="21">
                 <img alt="Torna su" src="../Images/TornaSu.png"/>
             </a>
         </div>

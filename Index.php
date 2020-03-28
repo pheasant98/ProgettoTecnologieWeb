@@ -23,8 +23,7 @@
                                     <a id=\"a" . $newsID . "\" href=\"AvvisoSingolo.php?id=" . $row["ID"] . "\">Oggetto: " . $row["Oggetto"] . "</a>
                                 </dt>
                                 <dd>
-                                    <a href=\"#" . $skipID . "1\" class=\"skip\">Salta l'avviso</a>
-                                    <p> Data: " . englishToItalianDateFormat($row["DataTermine"]) . "</p>
+                                    <a href=\"#" . $skipID . "\'' . englishToItalianDateFormat($row["DataTermine"]) . "</p>
                                     <p>" . $row["Descrizione"] . "</p>
                                 </dd>";
 
