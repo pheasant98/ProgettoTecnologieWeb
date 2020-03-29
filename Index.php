@@ -3,42 +3,43 @@
     require_once("PHP/Utilities.php");
 
     function getLastNews() {
-        $databaseAccess = new DatabaseAccess();
+        $database_access = new DatabaseAccess();
 
-        $databaseAccess->openConnection();
-        $result = $databaseAccess->getLastTwoNews();
+        $database_access->openConnection();
+        $result = $database_access->getLastTwoNews();
 
         if ($result) {
-            $newsList = "<dl class=\"clickableDl\">";
+            $news_list = "<dl class=\"clickableDl\">";
 
-            $newsID = '0';
+            $news_id = '0';
             if (count($result) == 1) {
-                $skipID = "p";
+                $skip_id = "p";
             } else {
-                $skipID = "a";
+                $skip_id = "a";
             }
 
             foreach ($result as $row) {
-                $newsList .= "  <dt>
-                                    <a id=\"a" . $newsID . "\" href=\"AvvisoSingolo.php?id=" . $row["ID"] . "\">Oggetto: " . $row["Oggetto"] . "</a>
-                                </dt>
-                                <dd>
-                                    <a href=\"#" . $skipID . "\'' . englishToItalianDateFormat($row["DataTermine"]) . "</p>
+                $news_list .= "<dt>
+                                    <a id=\"a" . $news_id . "\" href=\"AvvisoSingolo.php?id=" . $row["ID"] . "\">Oggetto: " . $row["Oggetto"] . "</a>
+                               </dt>
+                               <dd>
+                                    <a href=\"#" . $skip_id . "1\" class=\"skip\">Salta l'avviso</a>
+                                    <p> Data: " . englishToItalianDateFormat($row["DataTermine"]) . "</p>
                                     <p>" . $row["Descrizione"] . "</p>
-                                </dd>";
+                               </dd>";
 
-                $newsID = "1";
-                $skipID = "p";
+                $news_id = "1";
+                $skip_id = "p";
             }
 
-            $newsList .= "</dl>";
+            $news_list .= "</dl>";
         } else {
-            $newsList = "<p id=\"warning\">Non ci sono nuovi avvisi</p>";
+            $news_list = "<p id=\"warning\">Non ci sono nuovi avvisi</p>";
         }
 
-        $databaseAccess->closeConnection();
+        $database_access->closeConnection();
 
-        return $newsList;
+        return $news_list;
     }
 
     session_start();

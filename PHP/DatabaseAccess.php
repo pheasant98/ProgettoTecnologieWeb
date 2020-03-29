@@ -29,18 +29,18 @@ class DatabaseAccess {
         if ($this->connection) {
             $query = "SELECT * FROM Avvisi WHERE DataTermine <= NOW() ORDER BY DataTermine DESC LIMIT 2";
 
-            $resultSet = mysqli_query($this->connection, $query);
+            $result_set = mysqli_query($this->connection, $query);
 
-            if ($resultSet && mysqli_num_rows($resultSet) > 0) {
-                $resultArray = array();
+            if ($result_set && mysqli_num_rows($result_set) > 0) {
+                $result_array = array();
 
-                while ($resultRow = mysqli_fetch_assoc($resultSet)) {
-                    array_push($resultArray, $resultRow);
+                while ($result_row = mysqli_fetch_assoc($result_set)) {
+                    array_push($result_array, $result_row);
                 }
 
-                $resultSet->free();
+                $result_set->free();
 
-                return $resultArray;
+                return $result_array;
             } else {
                 return null;
             }

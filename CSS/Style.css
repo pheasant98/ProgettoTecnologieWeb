@@ -4,7 +4,7 @@
 * {
     padding: 0em;
     margin: 0em;
-    font-family: sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
     max-width: 100%;
     line-height: 1.5em;
@@ -343,6 +343,8 @@ a:visited {
     text-decoration: underline;
 }
 
+/* Layout per smartphone */
+
 @media screen and (max-width:700px) {
     #logoImage {
         background-position: center;
@@ -489,6 +491,8 @@ a:visited {
     }
 }
 
+/* Layout per tablet */
+
 @media screen and (min-width: 701px) and (max-width: 830px) {
     #logoImage {
         background-position: center;
@@ -576,6 +580,8 @@ a:visited {
         font-size: 1.3em;
     }
 }
+
+/* Layout per desktop */
 
 @media screen and (min-width: 831px) {
     #header {
