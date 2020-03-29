@@ -144,10 +144,6 @@ html, body {
     padding: 0.5em;
 }
 
-#breadcrumbs > p { /* TODO: decidere se è sensato */
-    display: inline;
-}
-
 #content {
     background-color: #FFFFFF;
     color: #000000;
@@ -201,6 +197,7 @@ html, body {
     padding-bottom: 0.5em;
 }
 
+/* FIXME: nome */
 .clickableDl dt:hover, .list dl:hover {
     background-color: #EEEEEE;
     border-radius: 20px;
@@ -312,6 +309,7 @@ a:visited {
     padding: 0.5em;
 }
 
+/* FIXME: nome */
 .ImgValid {
     display: inline-block;
 }
@@ -338,6 +336,8 @@ a:visited {
     margin-bottom: 1em;
 }
 
+
+/* TODO: valutare nome "buttonReset" e "buttonConfirm" */
 #buttonBack, #buttonNext, #reset, #confirm {
     display: inline-block;
     text-decoration: underline;
@@ -345,7 +345,40 @@ a:visited {
 
 /* Layout per smartphone */
 
-@media screen and (max-width:700px) {
+@media screen and (max-width: 700px) {
+    /* Regole per gli header delle pagine */
+    #headerError404 {
+        min-height: 11em;
+    }
+
+    /* Regole per le barre di ricerca delle pagine */
+    #search {
+        clear: both;
+        padding-top: 0.5em;
+        text-align: center;
+    }
+
+    #searchText {
+        font-size: 1.6em;
+        border: 0;
+        width: 50%;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
+    #searchBox {
+        background-color: #EEEEEE;
+        border-radius: 20px;
+        white-space: nowrap;
+    }
+
+    #searchBoxError404 {
+        background-color: #EEEEEE;
+        border-radius: 20px;
+        font-size: 0.8em;
+    }
+
+    /* Regole per le immagini delle pagine */
     #logoImage {
         background-position: center;
         height: 4em;
@@ -360,25 +393,18 @@ a:visited {
         margin-left: 27%;
     }
 
-    #headerError404 {
-        min-height: 11em;
+    /* Regole per i breadcrumbs delle pagine */
+    #breadcrumbs.hide {
+        display: none;
     }
 
-    #userTools {
-        background-position: center;
-        height: 8em;
-        width: 20%;
-    }
-
+    /* Regole per i menu delle pagine */
     #loginMenu a {
         margin-top: 2em;
         width: 27%;
     }
 
-    #userTools:active {
-        border-style: inset;
-    }
-
+    /* FIXME: camelCase */
     #UserMenu {
         display: none;
     }
@@ -405,51 +431,6 @@ a:visited {
         border-style: inset;
     }
 
-    #search {
-        clear: both;
-        padding-top: 0.5em;
-        text-align: center;
-    }
-
-    #searchBox {
-        background-color: #EEEEEE;
-        border-radius: 20px;
-        white-space: nowrap;
-    }
-
-    #searchBoxError404 {
-        background-color: #EEEEEE;
-        border-radius: 20px;
-        font-size: 0.8em;
-    }
-
-    #filter, #filterType, #filterContent, #filterPeriod, #filterOpera {
-        border: 0;
-        font-size: 1.3em;
-        background: none;
-        margin-right: 1%;
-    }
-
-    #searchText {
-        font-size: 1.6em;
-        border: 0;
-        width: 50%;
-        margin-top: 0.5em;
-        margin-bottom: 0.5em;
-    }
-
-    #submit {
-        cursor: pointer;
-        border: 0;
-        font-size: 1.3em;
-        background: none;
-        margin-left: 1%;
-    }
-
-    #breadcrumbs.hide {
-        display: none;
-    }
-
     #menu ul {
         padding-top: 0.5em;
         padding-bottom: 0.5em;
@@ -470,8 +451,19 @@ a:visited {
         top:7.8em;
     }
 
+    /* Regole per i contenuti delle pagine */
     #content.hide {
         display: none;
+    }
+
+    #userTools {
+        background-position: center;
+        height: 8em;
+        width: 20%;
+    }
+
+    #userTools:active {
+        border-style: inset;
     }
 
     #warning {
@@ -479,6 +471,22 @@ a:visited {
         margin-bottom: 1em;
         background-color: #EEEEEE;
         border-radius: 20px;
+    }
+
+    #filter, #filterType, #filterContent, #filterPeriod, #filterOpera {
+        border: 0;
+        font-size: 1.3em;
+        background: none;
+        margin-right: 1%;
+    }
+
+    /* TODO: valutare nome "buttonSubmit" */
+    #submit {
+        cursor: pointer;
+        border: 0;
+        font-size: 1.3em;
+        background: none;
+        margin-left: 1%;
     }
 
     .title {
@@ -494,6 +502,27 @@ a:visited {
 /* Layout per tablet */
 
 @media screen and (min-width: 701px) and (max-width: 830px) {
+    /* Regole per le barre di ricerca delle pagine */
+    #search {
+        clear: both;
+        padding-top: 0.5em;
+        text-align: center;
+    }
+
+    #searchText {
+        font-size: 2em;
+        border: 0;
+        width: 50%;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
+    #searchBox, #searchBoxError404 {
+        background-color: #EEEEEE;
+        border-radius: 20px;
+    }
+
+    /* Regole per le immagini delle pagine */
     #logoImage {
         background-position: center;
         height: 6em;
@@ -508,50 +537,13 @@ a:visited {
         width: 21em;
     }
 
-    #userTools {
-        background-image: none;
-    }
-
+    /* Regole per i menu delle pagine */
     #hamburgerMenu {
        display: none;
     }
 
-    #search {
-        clear: both;
-        padding-top: 0.5em;
-        text-align: center;
-    }
-
-    #searchBox, #searchBoxError404 {
-        background-color: #EEEEEE;
-        border-radius: 20px;
-    }
-
-    #filter, #filterType, #filterContent, #filterPeriod, #filterOpera {
-        border: 0;
-        font-size: 1.7em;
-        background: none;
-        margin-right: 1em;
-    }
-
-    #searchText {
-        font-size: 2em;
-        border: 0;
-        width: 50%;
-        margin-top: 0.5em;
-        margin-bottom: 0.5em;
-    }
-
-    #submit {
-        cursor: pointer;
-        border: 0;
-        font-size: 1.7em;
-        background: none;
-        margin-left: 1em;
-    }
-
     #menu {
-       display: block;
+        display: block;
     }
 
     #menu ul {
@@ -563,12 +555,32 @@ a:visited {
         font-size: 2em;
     }
 
+    /* Regole per i contenuti delle pagine */
+    #userTools {
+        background-image: none;
+    }
+
     #warning {
         padding: 0.5em;
         margin-bottom: 1em;
         background-color: #EEEEEE;
         font-size: 2em;
         border-radius: 20px;
+    }
+
+    #filter, #filterType, #filterContent, #filterPeriod, #filterOpera {
+        border: 0;
+        font-size: 1.7em;
+        background: none;
+        margin-right: 1em;
+    }
+
+    #submit {
+        cursor: pointer;
+        border: 0;
+        font-size: 1.7em;
+        background: none;
+        margin-left: 1em;
     }
 
     .title {
@@ -584,36 +596,24 @@ a:visited {
 /* Layout per desktop */
 
 @media screen and (min-width: 831px) {
+    /* Regole per gli header delle pagine */
     #header {
         height: 21.7em;
     }
 
-    #logoImage {
-        background-position: center;
-        height: 6em;
-        width: 9.2em;
-    }
-
-    #imageError404 {
-        float: right;
-        background-size: 100%;
-        background-position: center;
-        height: 25em;
-        width: 25em;
-    }
-
-    #userTools {
-        background-image: none;
-    }
-
-    #hamburgerMenu {
-        display: none;
-    }
-
+    /* Regole per le barre di ricerca delle pagine */
     #search {
         clear: both;
         padding-top: 0.5em;
         text-align: center;
+    }
+
+    #searchText {
+        font-size: 2em;
+        border: 0;
+        width: 12em;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
     }
 
     #searchBox {
@@ -631,27 +631,24 @@ a:visited {
         white-space: nowrap;
     }
 
-    #filter, #filterType, #filterContent, #filterPeriod, #filterOpera {
-        border: 0;
-        font-size: 2em;
-        background: none;
-        margin-right: 5%;
+    /* Regole per le immagini delle pagine */
+    #logoImage {
+        background-position: center;
+        height: 6em;
+        width: 9.2em;
     }
 
-    #searchText {
-        font-size: 2em;
-        border: 0;
-        width: 12em;
-        margin-top: 0.5em;
-        margin-bottom: 0.5em;
+    #imageError404 {
+        float: right;
+        background-size: 100%;
+        background-position: center;
+        height: 25em;
+        width: 25em;
     }
 
-    #submit {
-        cursor: pointer;
-        border: 0;
-        font-size: 2em;
-        background: none;
-        margin-left: 5%;
+    /* Regole per i menu delle pagine */
+    #hamburgerMenu {
+        display: none;
     }
 
     #menu {
@@ -674,8 +671,13 @@ a:visited {
         font-size: 2em;
     }
 
+    /* Regole per i contenuti delle pagine */
     #content {
         margin-left: 23em;
+    }
+
+    #userTools {
+        background-image: none;
     }
 
     #warning {
@@ -684,6 +686,21 @@ a:visited {
         background-color: #EEEEEE;
         font-size: 2em;
         border-radius: 20px;
+    }
+
+    #filter, #filterType, #filterContent, #filterPeriod, #filterOpera {
+        border: 0;
+        font-size: 2em;
+        background: none;
+        margin-right: 5%;
+    }
+
+    #submit {
+        cursor: pointer;
+        border: 0;
+        font-size: 2em;
+        background: none;
+        margin-left: 5%;
     }
 
     .title {
