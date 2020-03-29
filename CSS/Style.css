@@ -9,6 +9,7 @@
   font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
   max-width: 100%;
+  /* max-width: 1024px; */
   line-height: 1.5em;
 }
 
@@ -57,6 +58,10 @@ a:visited {
 #searchBox,
 #searchBoxError404 {
   border: 2px solid #000;
+  background-color: #eee;
+  border-radius: 20px;
+  clear: both;
+  margin: auto;
 }
 
 /* Regole per le immagini delle pagine */
@@ -257,10 +262,9 @@ a:visited {
 }
 
 .fieldset input,
-.fieldset label,
 .fieldset select {
   margin-right: 1.5em;
-  margin-top: 1em;
+  /* margin-top: 1em; */
   margin-bottom: 1em;
 }
 
@@ -269,16 +273,16 @@ a:visited {
   border-style: none;
 }
 
+#feedbackBox input {
+  margin-bottom: 1em;
+}
+
 #operaDescriptionArea,
 #eventDescriptionArea,
 #noticeDescriptionArea {
   height: 20em;
   margin-bottom: 1em;
-  margin-top: 1em;
-}
-
-#operaImageUpload {
-  text-align: center;
+  /* margin-top: 1em; */
 }
 
 .formElement {
@@ -297,6 +301,7 @@ a:visited {
 #buyButton {
   float: right;
   font-size: 1em;
+  width: auto;
 }
 
 #buttonBack,
@@ -304,7 +309,6 @@ a:visited {
 #buttonReset,
 #buttonConfirm {
   display: inline-block;
-  text-decoration: underline;
 }
 
 #buttonBackUp {
@@ -315,27 +319,36 @@ a:visited {
   opacity: 0.7;
 }
 
+#buttonHomeError404 {
+  margin: 1em auto auto;
+}
+
 .button {
   display: block;
   text-align: center;
+  text-decoration: underline;
+  color: #000;
   outline: none;
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 15px;
   background-color: #ccc;
   padding: 1em;
   margin: 0.2em;
   width: 10em;
   border: 1px solid #000;
-  box-shadow: 0 0 2px 0 #000, 0 2px 3px #000;
 }
 
 .button:hover {
   font-weight: bold;
+  box-shadow: 0 0 2px 0 #333, 0 2px 3px #333;
 }
 
 .button:active {
-  background-color: #fff;
   box-shadow: none;
+}
+
+.userOperationButton {
+  width: 100%;
 }
 
 /* Posizionamento al centro del contenuto per la navigazione */
@@ -381,14 +394,10 @@ a:visited {
   }
 
   #searchBox {
-    background-color: #eee;
-    border-radius: 20px;
     white-space: nowrap;
   }
 
   #searchBoxError404 {
-    background-color: #eee;
-    border-radius: 20px;
     font-size: 0.8em;
   }
 
@@ -533,12 +542,6 @@ a:visited {
     margin-bottom: 0.5em;
   }
 
-  #searchBox,
-  #searchBoxError404 {
-    background-color: #eee;
-    border-radius: 20px;
-  }
-
   /* Regole per le immagini delle pagine */
   #logoImage {
     background-position: center;
@@ -646,8 +649,6 @@ a:visited {
   }
 
   #searchBoxError404 {
-    background-color: #eee;
-    border-radius: 20px;
     width: 45em;
     white-space: nowrap;
   }
