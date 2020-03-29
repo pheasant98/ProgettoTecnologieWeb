@@ -1,708 +1,739 @@
 /* Layout comune a tutti i tipi di dispositivo */
 
 /* Regole per i tag delle pagine */
+
 /* Rende la pagina vuota e imposta un iterlinea di 1.5 per l'accessibilità della pagina */
 * {
-    padding: 0em;
-    margin: 0em;
-    font-family: Arial, Helvetica, sans-serif;
-    box-sizing: border-box;
-    max-width: 100%;
-    line-height: 1.5em;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  max-width: 100%;
+  line-height: 1.5em;
 }
 
 /* Impostazione colore di sfondo e larghezza minima della pagina */
-html, body {
-    margin: auto;
-    min-width: 380px;
-    background-color: #CCCCCC;
+html,
+body {
+  margin: auto;
+  min-width: 380px;
+  background-color: #ccc;
 }
 
 a {
-    color: #0000FF;
+  color: #00f;
 }
 
 a:active {
-    color: #990000;
+  color: #900;
 }
 
 a:visited {
-    color: #663366;
+  color: #636;
 }
 
 /* Regole per gli header delle pagine */
+
 /* Colore e ombreggiatura dell'header */
 #header {
-    background-color: #333333;
-    padding: 2em;
-    box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.16), 0 30px 30px 0 rgba(0, 0, 0, 0.12);
+  background-color: #333;
+  padding: 2em;
+  box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.16), 0 30px 30px 0 rgba(0, 0, 0, 0.12);
 }
 
 /* Header per pagina 404 */
 #headerError404 {
-    background-color: #333333;
-    padding: 1em;
-    box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.16), 0 30px 30px 0 rgba(0, 0, 0, 0.12);
-    min-height: 15em;
+  background-color: #333;
+  padding: 1em;
+  box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.16), 0 30px 30px 0 rgba(0, 0, 0, 0.12);
+  min-height: 15em;
 }
 
 .headerTitle {
-    display: none;
+  display: none;
 }
 
 /* Regole per le barre di ricerca delle pagine */
-#searchBox, #searchBoxError404 {
-    border: 2px solid #000000;
+#searchBox,
+#searchBoxError404 {
+  border: 2px solid #000;
 }
 
 /* Regole per le immagini delle pagine */
+
 /* Logo accessibile */
 #logoImage {
-    float: left;
-    background-image: url('../images/logo.PNG');
-    text-indent: 100%;
+  float: left;
+  background-image: url('../images/logo.PNG');
+  text-indent: 100%;
 }
 
 #imageError404 {
-    background-image: url('../images/EmptyPortrait.png');
-    text-indent: 100%;
+  background-image: url('../images/EmptyPortrait.png');
+  text-indent: 100%;
 }
 
 /* Homepage image */
 #museumImage {
-    /* padding: 5%; */
-    text-align: center;
-    /* max-height: 30em;
+  /* padding: 5%; */
+  text-align: center;
+
+  /* max-height: 30em;
     max-width: 40em; */
-    padding-bottom: 1em;
-    padding-top: 1em;
+  padding-bottom: 1em;
+  padding-top: 1em;
 }
 
 /* Inserimento di un'immagine con la tecnica image replacement */
 .backgroundImage {
-    display: block;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    white-space: nowrap;
-    overflow: hidden;
-    border-radius: 20px;
+  display: block;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  white-space: nowrap;
+  overflow: hidden;
+  border-radius: 20px;
 }
 
 .historicalPeriodImage {
-    width: 9.75em;
-    height: 7.5em;
+  width: 9.75em;
+  height: 7.5em;
 }
 
 .validationImage {
-    display: inline-block;
+  display: inline-block;
 }
 
 /* Regole per i breadcrumbs delle pagine */
 #breadcrumbs {
-    background-color: #EEEEEE;
-    border-radius: 20px;
-    color: #000000;
-    font-size: 1.5em;
-    margin: 1em;
-    padding: 0.5em;
+  background-color: #eee;
+  border-radius: 20px;
+  color: #000;
+  font-size: 1.5em;
+  margin: 1em;
+  padding: 0.5em;
 }
 
 /* Regole per i menu delle pagine */
+
 /* Pulsante di login */
+.userButton a {
+  font-size: 0.8em;
+  display: inline-block;
+}
+
+.navigation a {
+  display: inline-block;
+}
+
 #loginMenu a {
-    float: right;
+  float: right;
 }
 
 /* Icona per il menu utente */
 #hamburgerMenu {
-    float: right;
-    background-image: url('../images/HamburgerMenu.png');
-    text-indent: 100%;
-    background-color: #CCCCCC;
+  float: right;
+  background-image: url('../images/HamburgerMenu.png');
+  text-indent: 100%;
+  background-color: #ccc;
 }
 
 #menu {
-    display: none;
-    background-color: #EEEEEE;
-    margin: 1.5em;
-    border-radius: 20px;
-    white-space: nowrap;
+  display: none;
+  background-color: #eee;
+  margin: 1.5em;
+  border-radius: 20px;
+  white-space: nowrap;
 }
 
 /* Toglie i pallini dal menu */
 #menu ul {
-    list-style-type: none;
-    text-align: center;
+  list-style-type: none;
+  text-align: center;
+}
+
+.list li {
+  margin-bottom: 1em;
 }
 
 #menu li:hover {
-    background-color: #FFFFFF;
-    font-weight: bold;
-    border-radius: 20px;
+  background-color: #fff;
+  font-weight: bold;
+  border-radius: 20px;
 }
 
 /* Regole per i contenuti delle pagine */
-#content, #contentError404 {
-    background-color: #FFFFFF;
-    color: #000000;
-    border-radius: 20px;
-    margin: 1.5em;
-    padding: 2em;
+#content,
+#contentError404 {
+  background-color: #fff;
+  color: #000;
+  border-radius: 20px;
+  margin: 1.5em;
+  padding: 2em;
+}
+
+.clickableList dt:hover,
+.list dl:hover {
+  background-color: #eee;
+  border-radius: 20px;
 }
 
 #content dt {
-    padding-top: 0.2em;
-    padding-bottom: 0.2em;
-    font-size: 1.3em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  font-size: 1.3em;
 }
 
 #content dd {
-    padding-left: 1em;
-    font-size: 1.1em;
-    padding-top: 0.2em;
-    padding-bottom: 0.5em;
+  padding-left: 1em;
+  font-size: 1.1em;
+  padding-top: 0.2em;
+  padding-bottom: 0.5em;
 }
 
 /* Icona per il menu utente */
 #userTools {
-    float: right;
-    background-image: url('../images/MenuUser.png');
-    background-color: #CCCCCC;
+  float: right;
+  background-image: url('../images/MenuUser.png');
+  background-color: #ccc;
 }
 
 /* Posiziona i bottoni utente a sinistra */
 .userButton {
-    text-align: right;
-    list-style-type: none;
-    border-style: none;
-}
-
-.userButton a {
-    font-size: 0.8em;
-    display: inline-block;
+  text-align: right;
+  list-style-type: none;
+  border-style: none;
 }
 
 .userButton span {
-    font-size: 1.3em;
-    display: block;
-    margin-right: 5.5em;
+  font-size: 1.3em;
+  display: block;
+  margin-right: 5.5em;
 }
 
 /* Nascondere il salta contenuto */
 .skipInformation {
-    position: absolute;
-    left: -9999px;
+  position: absolute;
+  left: -9999px;
 }
 
 /* Visualizzo salta contenuto attivato dal tab */
 .skipInformation:focus {
-    position: static;
+  position: static;
 }
 
-#hideLabel, .hideLegend {
-    position: absolute;
-    height: 0;
-    overflow: hidden;
+#hideLabel,
+.hideLegend {
+  position: absolute;
+  height: 0;
+  overflow: hidden;
 }
 
 /* Template di un lista */
 .list {
-    list-style-type: none;
-    margin-bottom: 2.5em;
-    margin-top: 1.5em;
-    margin-left: 0.5em;
-}
-
-.list li {
-    margin-bottom: 1em;
-}
-
-.clickableList dt:hover, .list dl:hover {
-    background-color: #EEEEEE;
-    border-radius: 20px;
+  list-style-type: none;
+  margin-bottom: 2.5em;
+  margin-top: 1.5em;
+  margin-left: 0.5em;
 }
 
 #clause {
-    clear: right;
-    font-size: 0.7em;
-    padding-bottom: 1em;
+  clear: right;
+  font-size: 0.7em;
+  padding-bottom: 1em;
 }
 
 #map {
-    display: block;
-    height: 12em;
-    width: 80%;
-    margin: 0.5em 10%;
+  display: block;
+  height: 12em;
+  width: 80%;
+  margin: 0.5em 10%;
 }
 
 /* Toglie il bordo */
 .fieldset {
-    border: none;
-    padding: 1em;
-    text-align: justify;
+  border: none;
+  padding: 1em;
+  text-align: justify;
 }
 
-.fieldset input, .fieldset label, .fieldset select {
-    margin-right: 1.5em;
-    margin-top: 1em;
-    margin-bottom: 1em;
+.fieldset input,
+.fieldset label,
+.fieldset select {
+  margin-right: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 #feedbackBox {
-    margin: 1em 1em;
-    border-style: none;
+  margin: 1em 1em;
+  border-style: none;
 }
 
-#operaDescriptionArea, #eventDescriptionArea, #noticeDescriptionArea {
-    height: 20em;
-    margin-bottom: 1em;
-    margin-top: 1em;
+#operaDescriptionArea,
+#eventDescriptionArea,
+#noticeDescriptionArea {
+  height: 20em;
+  margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 #operaImageUpload {
-    text-align: center;
+  text-align: center;
 }
 
 .formElement {
-    display: block;
-    width: 100%;
-    height: 2.6em;
-    font-size: 1em;
-    font-weight: 400;
-    background-clip: padding-box;
-    border: 1px solid #AAAAAA;
-    border-radius: 0.25em;
-    padding: 0.375em 0.75em;
+  display: block;
+  width: 100%;
+  height: 2.6em;
+  font-size: 1em;
+  font-weight: 400;
+  background-clip: padding-box;
+  border: 1px solid #aaa;
+  border-radius: 0.25em;
+  padding: 0.375em 0.75em;
 }
 
-#reviewButton, #buyButton {
-    float: right;
-    font-size: 1em;
+#reviewButton,
+#buyButton {
+  float: right;
+  font-size: 1em;
 }
 
-#buttonBack, #buttonNext, #buttonReset, #buttonConfirm {
-    display: inline-block;
-    text-decoration: underline;
+#buttonBack,
+#buttonNext,
+#buttonReset,
+#buttonConfirm {
+  display: inline-block;
+  text-decoration: underline;
 }
 
 #buttonBackUp {
-    position: fixed;
-    bottom: 3em;
-    right: 3em;
-    color: transparent;
-    opacity: 0.7;
+  position: fixed;
+  bottom: 3em;
+  right: 3em;
+  color: transparent;
+  opacity: 0.7;
 }
 
 .button {
-    display: block;
-    text-align: center;
-    outline: none;
-    cursor: pointer;
-    border-radius: 20px;
-    background-color: #CCCCCC;
-    padding: 1em;
-    margin: 0.2em;
-    width: 10em;
-    border: 1px solid #000000;
-    box-shadow: 0 0 2px 0 #000000, 0 2px 3px #000000;
+  display: block;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  border-radius: 20px;
+  background-color: #ccc;
+  padding: 1em;
+  margin: 0.2em;
+  width: 10em;
+  border: 1px solid #000;
+  box-shadow: 0 0 2px 0 #000, 0 2px 3px #000;
 }
 
 .button:hover {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .button:active {
-    background-color: #FFFFFF;
-    box-shadow: none;
+  background-color: #fff;
+  box-shadow: none;
 }
 
 /* Posizionamento al centro del contenuto per la navigazione */
 .navigation {
-    list-style-type: none;
-    text-align: center;
-    border-style: none;
-}
-
-.navigation a {
-    display: inline-block;
+  list-style-type: none;
+  text-align: center;
+  border-style: none;
 }
 
 #footer {
-    clear: both;
-    border-top: 1px solid #333333;
-    background-color: #333333;
-    color: #FFFFFF;
-    font-style: italic;
-    font-weight: bold;
-    font-size: small;
-    text-align: center;
-    padding: 0.5em;
+  clear: both;
+  border-top: 1px solid #333;
+  background-color: #333;
+  color: #fff;
+  font-style: italic;
+  font-weight: bold;
+  font-size: small;
+  text-align: center;
+  padding: 0.5em;
 }
 
 /* Layout per smartphone */
 
 @media screen and (max-width: 700px) {
-    /* Regole per gli header delle pagine */
-    #headerError404 {
-        min-height: 11em;
-    }
+  /* Regole per gli header delle pagine */
+  #headerError404 {
+    min-height: 11em;
+  }
 
-    /* Regole per le barre di ricerca delle pagine */
-    #search {
-        clear: both;
-        padding-top: 0.5em;
-        text-align: center;
-    }
+  /* Regole per le barre di ricerca delle pagine */
+  #search {
+    clear: both;
+    padding-top: 0.5em;
+    text-align: center;
+  }
 
-    #searchText {
-        font-size: 1.6em;
-        border: 0;
-        width: 50%;
-        margin-top: 0.5em;
-        margin-bottom: 0.5em;
-    }
+  #searchText {
+    font-size: 1.6em;
+    border: 0;
+    width: 50%;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
 
-    #searchBox {
-        background-color: #EEEEEE;
-        border-radius: 20px;
-        white-space: nowrap;
-    }
+  #searchBox {
+    background-color: #eee;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
 
-    #searchBoxError404 {
-        background-color: #EEEEEE;
-        border-radius: 20px;
-        font-size: 0.8em;
-    }
+  #searchBoxError404 {
+    background-color: #eee;
+    border-radius: 20px;
+    font-size: 0.8em;
+  }
 
-    /* Regole per le immagini delle pagine */
-    #logoImage {
-        background-position: center;
-        height: 4em;
-        width: 39%;
-    }
+  /* Regole per le immagini delle pagine */
+  #logoImage {
+    background-position: center;
+    height: 4em;
+    width: 39%;
+  }
 
-    #imageError404 {
-        background-size: 100%;
-        background-position: center;
-        height: 13em;
-        width: 13em;
-        margin-left: 27%;
-    }
+  #imageError404 {
+    background-size: 100%;
+    background-position: center;
+    height: 13em;
+    width: 13em;
+    margin-left: 27%;
+  }
 
-    /* Regole per i breadcrumbs delle pagine */
-    #breadcrumbs.hide {
-        display: none;
-    }
+  /* Regole per i breadcrumbs delle pagine */
+  #breadcrumbs.hide {
+    display: none;
+  }
 
-    /* Regole per i menu delle pagine */
-    #loginMenu a {
-        margin-top: 2em;
-        width: 27%;
-    }
+  /* Regole per i menu delle pagine */
+  #loginMenu a {
+    margin-top: 2em;
+    width: 27%;
+  }
 
-    #userMenu {
-        display: none;
-    }
+  #userMenu {
+    display: none;
+  }
 
-    #userMenu.show {
-        display: block;
-        position: absolute;
-        top: 9.1em;
-        right: 31.85%;
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
-        list-style-type: none;
-        background-color: #333333;
-    }
+  #userMenu.show {
+    display: block;
+    position: absolute;
+    top: 9.1em;
+    right: 31.85%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    list-style-type: none;
+    background-color: #333;
+  }
 
-    #hamburgerMenu {
-        background-position: center;
-        height: 8em;
-        width: 20%;
-        margin-left: 7%;
-    }
+  #hamburgerMenu {
+    background-position: center;
+    height: 8em;
+    width: 20%;
+    margin-left: 7%;
+  }
 
-    #hamburgerMenu:active {
-        border-style: inset;
-    }
+  #hamburgerMenu:active {
+    border-style: inset;
+  }
 
-    #menu ul {
-        padding-top: 0.5em;
-        padding-bottom: 0.5em;
-    }
+  #menu ul {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
 
-    #menu.show {
-        display: block;
-        font-size: 3.5em;
-        margin: 0;
-        padding: 0;
-        border-radius: 0;
-    }
+  #menu.show {
+    display: block;
+    font-size: 3.5em;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+  }
 
-    #skipMenu:focus {
-        display: block;
-        font-size: 0.7em;
-        left:1em;
-        top:7.8em;
-    }
+  #skipMenu:focus {
+    display: block;
+    font-size: 0.7em;
+    left: 1em;
+    top: 7.8em;
+  }
 
-    /* Regole per i contenuti delle pagine */
-    #content.hide {
-        display: none;
-    }
+  /* Regole per i contenuti delle pagine */
+  #content.hide {
+    display: none;
+  }
 
-    #userTools {
-        background-position: center;
-        height: 8em;
-        width: 20%;
-    }
+  #userTools {
+    background-position: center;
+    height: 8em;
+    width: 20%;
+  }
 
-    #userTools:active {
-        border-style: inset;
-    }
+  #userTools:active {
+    border-style: inset;
+  }
 
-    #warning {
-        padding: 0.5em;
-        margin-bottom: 1em;
-        background-color: #EEEEEE;
-        border-radius: 20px;
-    }
+  #warning {
+    padding: 0.5em;
+    margin-bottom: 1em;
+    background-color: #eee;
+    border-radius: 20px;
+  }
 
-    #filter, #filterType, #filterContent, #filterPeriod, #filterOpera {
-        border: 0;
-        font-size: 1.3em;
-        background: none;
-        margin-right: 1%;
-    }
+  #filter,
+  #filterType,
+  #filterContent,
+  #filterPeriod,
+  #filterOpera {
+    border: 0;
+    font-size: 1.3em;
+    background: none;
+    margin-right: 1%;
+  }
 
-    #buttonSubmit {
-        cursor: pointer;
-        border: 0;
-        font-size: 1.3em;
-        background: none;
-        margin-left: 1%;
-    }
+  #buttonSubmit {
+    cursor: pointer;
+    border: 0;
+    font-size: 1.3em;
+    background: none;
+    margin-left: 1%;
+  }
 
-    .title {
-        text-align: center;
-        font-size: 3em;
-    }
+  .title {
+    text-align: center;
+    font-size: 3em;
+  }
 
-    .paragraph {
-        font-size: 1.5em;
-    }
+  .paragraph {
+    font-size: 1.5em;
+  }
 }
 
 /* Layout per tablet */
 
 @media screen and (min-width: 701px) and (max-width: 830px) {
-    /* Regole per le barre di ricerca delle pagine */
-    #search {
-        clear: both;
-        padding-top: 0.5em;
-        text-align: center;
-    }
+  /* Regole per le barre di ricerca delle pagine */
+  #search {
+    clear: both;
+    padding-top: 0.5em;
+    text-align: center;
+  }
 
-    #searchText {
-        font-size: 2em;
-        border: 0;
-        width: 50%;
-        margin-top: 0.5em;
-        margin-bottom: 0.5em;
-    }
+  #searchText {
+    font-size: 2em;
+    border: 0;
+    width: 50%;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
 
-    #searchBox, #searchBoxError404 {
-        background-color: #EEEEEE;
-        border-radius: 20px;
-    }
+  #searchBox,
+  #searchBoxError404 {
+    background-color: #eee;
+    border-radius: 20px;
+  }
 
-    /* Regole per le immagini delle pagine */
-    #logoImage {
-        background-position: center;
-        height: 6em;
-        width: 39%;
-    }
+  /* Regole per le immagini delle pagine */
+  #logoImage {
+    background-position: center;
+    height: 6em;
+    width: 39%;
+  }
 
-    #imageError404 {
-        float: right;
-        background-size: 100%;
-        background-position: center;
-        height: 21em;
-        width: 21em;
-    }
+  #imageError404 {
+    float: right;
+    background-size: 100%;
+    background-position: center;
+    height: 21em;
+    width: 21em;
+  }
 
-    /* Regole per i menu delle pagine */
-    #hamburgerMenu {
-       display: none;
-    }
+  /* Regole per i menu delle pagine */
+  #hamburgerMenu {
+    display: none;
+  }
 
-    #menu {
-        display: block;
-    }
+  #menu {
+    display: block;
+  }
 
-    #menu ul {
-        padding-top: 0.5em;
-        padding-bottom: 0.5em;
-    }
+  #menu ul {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
 
-    #menu li {
-        font-size: 2em;
-    }
+  #menu li {
+    font-size: 2em;
+  }
 
-    /* Regole per i contenuti delle pagine */
-    #userTools {
-        background-image: none;
-    }
+  /* Regole per i contenuti delle pagine */
+  #userTools {
+    background-image: none;
+  }
 
-    #warning {
-        padding: 0.5em;
-        margin-bottom: 1em;
-        background-color: #EEEEEE;
-        font-size: 2em;
-        border-radius: 20px;
-    }
+  #warning {
+    padding: 0.5em;
+    margin-bottom: 1em;
+    background-color: #eee;
+    font-size: 2em;
+    border-radius: 20px;
+  }
 
-    #filter, #filterType, #filterContent, #filterPeriod, #filterOpera {
-        border: 0;
-        font-size: 1.7em;
-        background: none;
-        margin-right: 1em;
-    }
+  #filter,
+  #filterType,
+  #filterContent,
+  #filterPeriod,
+  #filterOpera {
+    border: 0;
+    font-size: 1.7em;
+    background: none;
+    margin-right: 1em;
+  }
 
-    #buttonSubmit {
-        cursor: pointer;
-        border: 0;
-        font-size: 1.7em;
-        background: none;
-        margin-left: 1em;
-    }
+  #buttonSubmit {
+    cursor: pointer;
+    border: 0;
+    font-size: 1.7em;
+    background: none;
+    margin-left: 1em;
+  }
 
-    .title {
-        text-align: center;
-        font-size: 3em;
-    }
+  .title {
+    text-align: center;
+    font-size: 3em;
+  }
 
-    .paragraph {
-        font-size: 1.3em;
-    }
+  .paragraph {
+    font-size: 1.3em;
+  }
 }
 
 /* Layout per desktop */
 
 @media screen and (min-width: 831px) {
-    /* Regole per gli header delle pagine */
-    #header {
-        height: 21.7em;
-    }
+  /* Regole per gli header delle pagine */
+  #header {
+    height: 21.7em;
+  }
 
-    /* Regole per le barre di ricerca delle pagine */
-    #search {
-        clear: both;
-        padding-top: 0.5em;
-        text-align: center;
-    }
+  /* Regole per le barre di ricerca delle pagine */
+  #search {
+    clear: both;
+    padding-top: 0.5em;
+    text-align: center;
+  }
 
-    #searchText {
-        font-size: 2em;
-        border: 0;
-        width: 12em;
-        margin-top: 0.5em;
-        margin-bottom: 0.5em;
-    }
+  #searchText {
+    font-size: 2em;
+    border: 0;
+    width: 12em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
 
-    #searchBox {
-        background-color: #EEEEEE;
-        border-radius: 20px;
-        float: right;
-        width: 50em;
-        white-space: nowrap;
-    }
+  #searchBox {
+    background-color: #eee;
+    border-radius: 20px;
+    float: right;
+    width: 50em;
+    white-space: nowrap;
+  }
 
-    #searchBoxError404 {
-        background-color: #EEEEEE;
-        border-radius: 20px;
-        width: 45em;
-        white-space: nowrap;
-    }
+  #searchBoxError404 {
+    background-color: #eee;
+    border-radius: 20px;
+    width: 45em;
+    white-space: nowrap;
+  }
 
-    /* Regole per le immagini delle pagine */
-    #logoImage {
-        background-position: center;
-        height: 6em;
-        width: 9.2em;
-    }
+  /* Regole per le immagini delle pagine */
+  #logoImage {
+    background-position: center;
+    height: 6em;
+    width: 9.2em;
+  }
 
-    #imageError404 {
-        float: right;
-        background-size: 100%;
-        background-position: center;
-        height: 25em;
-        width: 25em;
-    }
+  #imageError404 {
+    float: right;
+    background-size: 100%;
+    background-position: center;
+    height: 25em;
+    width: 25em;
+  }
 
-    /* Regole per i menu delle pagine */
-    #hamburgerMenu {
-        display: none;
-    }
+  /* Regole per i menu delle pagine */
+  #hamburgerMenu {
+    display: none;
+  }
 
-    #menu {
-        float: left;
-        position: static;
-        top: 24em;
-        bottom: 10em;
-        height: 50%;
-        display: block;
-        width: 20em;
-        margin-top: 0;
-    }
+  #menu {
+    float: left;
+    position: static;
+    top: 24em;
+    bottom: 10em;
+    height: 50%;
+    display: block;
+    width: 20em;
+    margin-top: 0;
+  }
 
-    #menu ul {
-        padding-top: 0.5em;
-        padding-bottom: 0.5em;
-    }
+  #menu ul {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+  }
 
-    #menu li {
-        font-size: 2em;
-    }
+  #menu li {
+    font-size: 2em;
+  }
 
-    /* Regole per i contenuti delle pagine */
-    #content {
-        margin-left: 23em;
-    }
+  /* Regole per i contenuti delle pagine */
+  #content {
+    margin-left: 23em;
+  }
 
-    #userTools {
-        background-image: none;
-    }
+  #userTools {
+    background-image: none;
+  }
 
-    #warning {
-        padding: 0.5em;
-        margin-bottom: 1em;
-        background-color: #EEEEEE;
-        font-size: 2em;
-        border-radius: 20px;
-    }
+  #warning {
+    padding: 0.5em;
+    margin-bottom: 1em;
+    background-color: #eee;
+    font-size: 2em;
+    border-radius: 20px;
+  }
 
-    #filter, #filterType, #filterContent, #filterPeriod, #filterOpera {
-        border: 0;
-        font-size: 2em;
-        background: none;
-        margin-right: 5%;
-    }
+  #filter,
+  #filterType,
+  #filterContent,
+  #filterPeriod,
+  #filterOpera {
+    border: 0;
+    font-size: 2em;
+    background: none;
+    margin-right: 5%;
+  }
 
-    #buttonSubmit {
-        cursor: pointer;
-        border: 0;
-        font-size: 2em;
-        background: none;
-        margin-left: 5%;
-    }
+  #buttonSubmit {
+    cursor: pointer;
+    border: 0;
+    font-size: 2em;
+    background: none;
+    margin-left: 5%;
+  }
 
-    .title {
-        text-align: center;
-        font-size: 3em;
-    }
+  .title {
+    text-align: center;
+    font-size: 3em;
+  }
 
-    .paragraph {
-        font-size: 1.2em;
-    }
+  .paragraph {
+    font-size: 1.2em;
+  }
 }

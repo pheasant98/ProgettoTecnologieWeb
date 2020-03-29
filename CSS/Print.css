@@ -1,251 +1,293 @@
 /* Regole generali per le pagine */
 
 * {
-    padding: 0em;
-    margin: 0em;
-    font-family: "Times New Roman", Georgia, sans-serif;
-    box-sizing: border-box;
-    max-width: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: "Times New Roman", Georgia, sans-serif;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
-html, body {
-    font-size: 1em;
-    background-color: #FFFFFF;
-    color: #000000;
+html,
+body {
+  font-size: 1em;
+  background-color: #fff;
+  color: #000;
 }
 
 a {
-    color: #000000;
+  color: #000;
 }
 
-a:link:after, a:visited:after {
-    content: " [" attr(href) "] ";
-    font-size: 70%;
+a:link::after,
+a:visited::after {
+  content: " [" attr(href) "] ";
+  font-size: 70%;
 }
 
 /* Regole per gli header delle pagine */
 
 #header {
-    padding: 0.7em 1.3em 0em 1.1em;
-    border-bottom-width: 2px;
-    border-bottom-style: solid;
-    border-bottom-color: #000000;
-    min-height: 8em;
+  padding: 0.7em 1.3em 0 1.1em;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: #000;
+  min-height: 8em;
 }
 
 .headerTitle {
-    padding: 1.5em 0em;
+  padding: 1.5em 0;
 }
 
 .headerTitle > h1 {
-    font-size: 2em;
+  font-size: 2em;
 }
 
 .headerTitle > h2 {
-    font-size: 1.7em;
+  font-size: 1.7em;
 }
 
 #headerError404 {
-    padding: 0.7em 1.3em 0em 1.1em;
-    border-bottom-width: 2px;
-    border-bottom-style: solid;
-    border-bottom-color: #000000;
-    min-height: 8em;
+  padding: 0.7em 1.3em 0 1.1em;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: #000;
+  min-height: 8em;
 }
 
 #logoImage {
-    background-image: url('../images/logo.PNG');
-    float: right;
-    text-indent: 100%;
-    background-position: center;
-    height: 3.6em;
-    width: 5em;
+  background-image: url('../images/logo.PNG');
+  float: right;
+  text-indent: 100%;
+  background-position: center;
+  height: 3.6em;
+  width: 5em;
 }
 
 /* Regole per il contenuto principale delle pagine */
 
-#content, #contentError404 {
-    clear: both;
-    background-color: #FFFFFF;
-    color: #000000;
-    border-radius: 20px;
-    margin: 1.3em;
-}
-
-#contentError404 > .title {
-    font-size: 2.2em;
-    line-height: 1.1em;
-    padding-bottom: 0.4em;
-}
-
-#content dt {
-    padding-top: 0.2em;
-    padding-bottom: 0.2em;
-    font-size: 1.2em;
-}
-
-#content dd {
-    padding-left: 1em;
-    font-size: 1em;
-    padding-top: 0.2em;
-    padding-bottom: 0.5em;
+#content,
+#contentError404 {
+  clear: both;
+  background-color: #fff;
+  color: #000;
+  border-radius: 20px;
+  margin: 1.3em;
 }
 
 .title {
-    font-size: 2.5em;
-    line-height: 2em;
+  font-size: 2.5em;
+  line-height: 2em;
 }
 
-#filter, #filterType, #filterContent, #filterPeriod, #filterOpera {
-    border: 0px;
-    font-size: 1.5em;
-    background: none;
-    margin-right: 5%;
+#contentError404 > .title {
+  font-size: 2.2em;
+  line-height: 1.1em;
+  padding-bottom: 0.4em;
+}
+
+#content dt {
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  font-size: 1.2em;
+}
+
+#content dd {
+  padding-left: 1em;
+  font-size: 1em;
+  padding-top: 0.2em;
+  padding-bottom: 0.5em;
+}
+
+#filter,
+#filterType,
+#filterContent,
+#filterPeriod,
+#filterOpera {
+  border: 0;
+  font-size: 1.5em;
+  background: none;
+  margin-right: 5%;
 }
 
 .paragraph {
-    font-size: 1em;
+  font-size: 1em;
 }
 
 .list {
-    list-style-type: none;
-    margin-bottom: 2.5em;
-    margin-top: 1.5em;
-    margin-left: 0.5em;
+  list-style-type: none;
+  margin-bottom: 2.5em;
+  margin-top: 1.5em;
+  margin-left: 0.5em;
 }
 
 .list li {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 #clause {
-    clear: right;
-    font-size: 0.7em;
-    padding-bottom: 1em;
+  clear: right;
+  font-size: 0.7em;
+  padding-bottom: 1em;
 }
 
 #feedbackBox {
-    margin: 1em 1em;
-    border-style: none;
+  margin: 1em 1em;
+  border-style: none;
 }
 
 .fieldset {
-    /* border: none; */
-    padding: 1em;
-    text-align: justify;
+  /* border: none; */
+  padding: 1em;
+  text-align: justify;
 }
 
-.fieldset input, .fieldset label, .fieldset select {
-    margin-right: 1.5em;
-    margin-top: 1em;
-    margin-bottom: 1em;
+.fieldset input,
+.fieldset label,
+.fieldset select {
+  margin-right: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .formElement {
-    display: block;
-    width: 100%;
-    height: 2.6em;
-    font-size: 1em;
-    font-weight: 400;
-    background-clip: padding-box;
-    border: 1px solid #AAAAAA;
-    border-radius: 0.25em;
-    padding: 0.375em 0.75em;
+  display: block;
+  width: 100%;
+  height: 2.6em;
+  font-size: 1em;
+  font-weight: 400;
+  background-clip: padding-box;
+  border: 1px solid #aaa;
+  border-radius: 0.25em;
+  padding: 0.375em 0.75em;
 }
 
-#operaDescriptionArea, #eventDescriptionArea, #noticeDescriptionArea {
-    height: 20em;
-    margin-bottom: 1em;
-    margin-top: 1em;
+#operaDescriptionArea,
+#eventDescriptionArea,
+#noticeDescriptionArea {
+  height: 20em;
+  margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 .navigation {
-    list-style-type: none;
-    text-align: center;
-    border-style: none;
+  list-style-type: none;
+  text-align: center;
+  border-style: none;
 }
 
 .navigation a {
-    display: inline-block;
+  display: inline-block;
 }
 
 .userButton {
-    text-align: right;
-    list-style-type: none;
-    border-style: none;
+  text-align: right;
+  list-style-type: none;
+  border-style: none;
 }
 
 .userButton a {
-    font-size: 0.8em;
-    display: inline-block;
+  font-size: 0.8em;
+  display: inline-block;
 }
 
 .userButton span {
-    font-size: 1em;
-    display: block;
-    margin-right: 5.5em;
+  font-size: 1em;
+  display: block;
+  margin-right: 5.5em;
 }
 
 #buttonSubmit {
-    cursor: pointer;
-    border: 0px;
-    font-size: 1.5em;
-    background: none;
-    margin-left: 5%;
+  cursor: pointer;
+  border: 0;
+  font-size: 1.5em;
+  background: none;
+  margin-left: 5%;
 }
 
-#reviewButton, #buyButton {
-    float: right;
-    font-size: 1em;
+#reviewButton,
+#buyButton {
+  float: right;
+  font-size: 1em;
 }
 
 #searchBoxError404 {
-    background-color: #EEEEEE;
-    border-radius: 20px;
-    width: 45em;
-    white-space: nowrap;
+  background-color: #eee;
+  border-radius: 20px;
+  width: 45em;
+  white-space: nowrap;
 }
 
 #error404Options {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 #error404Options li {
-    padding: 0.3em;
+  padding: 0.3em;
 }
 
 #museumImage {
-    text-align: center;
-    padding-bottom: 1em;
-    padding-top: 1em;
+  text-align: center;
+  padding-bottom: 1em;
+  padding-top: 1em;
 }
 
 #operaImageUpload {
-    text-align: center;
+  text-align: center;
 }
 
 .historicalPeriodImage {
-    width: 9.75em;
-    height: 7.5em;
+  width: 9.75em;
+  height: 7.5em;
 }
 
 .backgroundImage {
-    display: block;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    white-space: nowrap;
-    overflow: hidden;
-    border-radius: 20px;
+  display: block;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  white-space: nowrap;
+  overflow: hidden;
+  border-radius: 20px;
 }
 
 #userTools {
-    background-image: none;
+  background-image: none;
 }
 
-#search, #searchBox, #searchText, #hamburgerMenu, #userTools, #userButton, #homepageButton, #userOperationsList,
-#adminOperationsList, #loginButton, #register, #loginMenu a, #breadcrumbs, #menu, #operaImageUpload, #eventImageUpload,
-#imageUpload, #labelImageUpload, #labelEventImageUpload, #labelOperaImageUpload, #imageError404, #buyOption4, #clause,
-#map, #warning, #continue, #buttonNext, #buttonBack, #buttonBackUp, #buttonReset, #buttonConfirm, #footer, .skipInformation, .button,
+#search,
+#searchBox,
+#searchText,
+#hamburgerMenu,
+#userTools,
+#userButton,
+#homepageButton,
+#userOperationsList,
+#adminOperationsList,
+#loginButton,
+#register,
+#loginMenu a,
+#breadcrumbs,
+#menu,
+#operaImageUpload,
+#eventImageUpload,
+#imageUpload,
+#labelImageUpload,
+#labelEventImageUpload,
+#labelOperaImageUpload,
+#imageError404,
+#buyOption4,
+#clause,
+#map,
+#warning,
+#continue,
+#buttonNext,
+#buttonBack,
+#buttonBackUp,
+#buttonReset,
+#buttonConfirm,
+#footer,
+.skipInformation,
+.button,
 .userButton {
-    display: none;
+  display: none;
 }
