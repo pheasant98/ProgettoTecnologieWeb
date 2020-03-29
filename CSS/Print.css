@@ -186,7 +186,7 @@ a:link:after, a:visited:after {
     margin-right: 5.5em;
 }
 
-#submit {
+#buttonSubmit {
     cursor: pointer;
     border: 0px;
     font-size: 1.5em;
@@ -245,7 +245,7 @@ a:link:after, a:visited:after {
 #search, #searchBox, #searchText, #hamburgerMenu, #userTools, #userButton, #homepageButton, #userOperationsList,
 #adminOperationsList, #loginButton, #register, #loginMenu a, #breadcrumbs, #menu, #operaImageUpload, #eventImageUpload,
 #imageUpload, #labelImageUpload, #labelEventImageUpload, #labelOperaImageUpload, #imageError404, #buyOption4, #clause,
-#map, #warning, #continue, #buttonNext, #buttonBack, #buttonBackUp, #reset, #confirm, #footer, .skipInformation, .button,
+#map, #warning, #continue, #buttonNext, #buttonBack, #buttonBackUp, #buttonReset, #buttonConfirm, #footer, .skipInformation, .button,
 .userButton {
     display: none;
 }

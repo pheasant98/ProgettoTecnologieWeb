@@ -1,12 +1,13 @@
 <?php
+
     require_once("PHP/DatabaseAccess.php");
     require_once("PHP/Utilities.php");
 
-    function getLastNews() {
+    function get_last_news() {
         $database_access = new DatabaseAccess();
 
-        $database_access->openConnection();
-        $result = $database_access->getLastTwoNews();
+        $database_access->open_connection();
+        $result = $database_access->get_last_two_news();
 
         if ($result) {
             $news_list = "<dl class=\"clickableDl\">";
@@ -24,7 +25,7 @@
                                </dt>
                                <dd>
                                     <a href=\"#" . $skip_id . "1\" class=\"skip\">Salta l'avviso</a>
-                                    <p> Data: " . englishToItalianDateFormat($row["DataTermine"]) . "</p>
+                                    <p> Data: " . english_italian_date_format($row["DataTermine"]) . "</p>
                                     <p>" . $row["Descrizione"] . "</p>
                                </dd>";
 
@@ -37,7 +38,7 @@
             $news_list = "<p id=\"warning\">Non ci sono nuovi avvisi</p>";
         }
 
-        $database_access->closeConnection();
+        $database_access->close_connection();
 
         return $news_list;
     }
@@ -45,11 +46,12 @@
     session_start();
 
     $document = file_get_contents("HTML/Index.html");
-    $login = getAuthenticationMenu(isset($_SESSION['username']));
-    $news = getLastNews();
+    $login = get_authentication_menu(isset($_SESSION['username']));
+    $news = get_last_news();
 
     $document = str_replace("<span id=\"loginMenuPlaceholder\"/>", $login, $document);
     $document = str_replace("<span id=\"newsPlaceholder\"/>", $news, $document);
 
     echo $document;
+
 ?>

@@ -1,25 +1,23 @@
 <?php
-    function englishToItalianDateFormat($stringDate) {
-        $timestamp = strtotime($stringDate);
+
+    function english_italian_date_format($string_date) {
+        $timestamp = strtotime($string_date);
         return date("d-m-Y", $timestamp);
     }
 
-    function italianToEnglishDateFormat($stringDate) {
-        $timestamp = strtotime($stringDate);
+    function italian_english_date_format($string_date) {
+        $timestamp = strtotime($string_date);
         return date("Y-m-d", $timestamp);
     }
 
-    function getAuthenticationMenu($isAuthenticated, $isIndex = false) {
+    function get_authentication_menu($is_authenticated, $is_index = false) {
         $path = "";
-        if ($isIndex) {
+        if ($is_index) {
             $path = "PHP/";
         }
 
-        if ($isAuthenticated) {
-            $login = "<div id=\"UserTools\" class=\"ImgBackground\" title=\"area dedicata alla registrazione, login e logout\" aria-label=\"area dedicata alla registrazione, login e logout\" tabindex=\"5\">
-                        <ul id=\"UserMenu\">
-                            <li>
-                                <a id=\"profile\" class=\"Button\" href=\"" . $path . "AreaPersonale.php\" title=\"Area utente\" role=\"button\" aria-label=\"vai alla pagina del profilo utente\" tabindex=\"6\">
+        if ($is_authenticated) {
+            $login = " . $path . "AreaPersonale.php\" title=\"Area utente\" role=\"button\" aria-label=\"vai alla pagina del profilo utente\" tabindex=\"6\">
                                     Area utente
                                 </a>
                             </li>
@@ -40,4 +38,5 @@
 
         return $login;
     }
+
 ?>
