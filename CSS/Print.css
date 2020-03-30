@@ -27,7 +27,8 @@ a:visited::after {
 
 /* Regole per gli header delle pagine */
 
-#header {
+#header,
+#headerError404 {
   padding: 0.7em 1.3em 0 1.1em;
   border-bottom-width: 2px;
   border-bottom-style: solid;
@@ -45,14 +46,6 @@ a:visited::after {
 
 .headerTitle > h2 {
   font-size: 1.7em;
-}
-
-#headerError404 {
-  padding: 0.7em 1.3em 0 1.1em;
-  border-bottom-width: 2px;
-  border-bottom-style: solid;
-  border-bottom-color: #000;
-  min-height: 8em;
 }
 
 #logoImage {
@@ -136,18 +129,26 @@ a:visited::after {
   border-style: none;
 }
 
-.fieldset {
-  /* border: none; */
+.fieldset,
+.hideFieldset {
+  margin-bottom: 1em;
   padding: 1em;
   text-align: justify;
 }
 
 .fieldset input,
-.fieldset label,
 .fieldset select {
   margin-right: 1.5em;
-  margin-top: 1em;
   margin-bottom: 1em;
+}
+
+.hideFieldset {
+  border: none;
+  margin-bottom: 0;
+}
+
+.hideLegend {
+  display: none;
 }
 
 .formElement {
@@ -167,28 +168,26 @@ a:visited::after {
 #noticeDescriptionArea {
   height: 20em;
   margin-bottom: 1em;
-  margin-top: 1em;
 }
 
-.navigation {
+.navigation,
+.userButton {
   list-style-type: none;
   text-align: center;
   border-style: none;
 }
 
-.navigation a {
+.navigation a,
+.userButton a {
   display: inline-block;
 }
 
 .userButton {
   text-align: right;
-  list-style-type: none;
-  border-style: none;
 }
 
 .userButton a {
   font-size: 0.8em;
-  display: inline-block;
 }
 
 .userButton span {
