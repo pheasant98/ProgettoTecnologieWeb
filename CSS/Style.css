@@ -9,8 +9,9 @@
   font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
   max-width: 100%;
-  /* max-width: 1024px; */
   line-height: 1.5em;
+
+  /* max-width: 1024px; */
 }
 
 /* Impostazione colore di sfondo e larghezza minima della pagina */
@@ -36,17 +37,16 @@ a:visited {
 /* Regole per gli header delle pagine */
 
 /* Colore e ombreggiatura dell'header */
-#header {
+#header,
+#headerError404 {
   background-color: #333;
   padding: 2em;
-  box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.16), 0 30px 30px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.10), 0 10px 10px 0 rgba(0, 0, 0, 0.20);
 }
 
 /* Header per pagina 404 */
 #headerError404 {
-  background-color: #333;
   padding: 1em;
-  box-shadow: 0 16px 20px 0 rgba(0, 0, 0, 0.16), 0 30px 30px 0 rgba(0, 0, 0, 0.12);
   min-height: 15em;
 }
 
@@ -80,11 +80,6 @@ a:visited {
 
 /* Homepage image */
 #museumImage {
-  /*
-  padding: 5%;
-  max-height: 30em;
-  max-width: 40em;
-  */
   text-align: center;
   padding-bottom: 1em;
   padding-top: 1em;
@@ -97,7 +92,6 @@ a:visited {
   background-repeat: no-repeat;
   white-space: nowrap;
   overflow: hidden;
-  /* border-radius: 20px; */
 }
 
 .historicalPeriodImage {
@@ -140,7 +134,6 @@ a:visited {
   float: right;
   background-image: url('../images/HamburgerMenu1.png');
   text-indent: 100%;
-  /* background-color: #ccc; */
 }
 
 #menu {
@@ -256,17 +249,22 @@ a:visited {
 }
 
 /* Toglie il bordo */
-.fieldset {
-  border: none;
+.fieldset,
+.hideFieldset {
   padding: 1em;
+  margin-bottom: 1em;
   text-align: justify;
 }
 
 .fieldset input,
 .fieldset select {
   margin-right: 1.5em;
-  /* margin-top: 1em; */
   margin-bottom: 1em;
+}
+
+.hideFieldset {
+  border: none;
+  margin-bottom: 0;
 }
 
 #feedbackBox {
@@ -283,7 +281,6 @@ a:visited {
 #noticeDescriptionArea {
   height: 20em;
   margin-bottom: 1em;
-  /* margin-top: 1em; */
 }
 
 .formElement {
@@ -642,8 +639,6 @@ a:visited {
   }
 
   #searchBox {
-    background-color: #eee;
-    border-radius: 20px;
     float: right;
     width: 50em;
     white-space: nowrap;

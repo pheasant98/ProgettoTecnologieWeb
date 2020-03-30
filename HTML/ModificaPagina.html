@@ -104,7 +104,7 @@
             <h2 class="title">Modifica della pagina numero X</h2>
 
             <form name="Modifica" action="" method="post">
-                <fieldset id="BoxModifica" class="fieldset">
+                <fieldset id="BoxModifica" class="hideFieldset">
                     <legend class="hideLegend">Modifica pagina</legend>
 
                     <p id="TipoPaginaAvv">Tipologia di pagina: Avviso</p>
@@ -114,7 +114,7 @@
                     <p id="TipoPaginaOper">Tipologia di pagina: Opera</p>
 
                     <fieldset id="BoxModificaAvviso" class="fieldset">
-                        <legend class="hideLegend">Modifica avviso</legend>
+                        <legend>Informazioni modificabili per l'avviso</legend>
 
                         <p>
                             <label id="labelDataAvviso" for="DataAvviso">Data: </label>
@@ -129,14 +129,10 @@
                             <label id="labelOggetto" for="Oggetto">Oggetto: </label>
                             <input id="Oggetto" class="formElement" name="Oggetto" type="text" aria-label="Modifica l'oggetto dell'avviso" aria-required="true"/>
                         </p>
-
-                        <p>
-                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
-                        </p>
                     </fieldset>
 
                     <fieldset id="BoxModificaEvento" class="fieldset">
-                        <legend class="hideLegend">Modifica evento</legend>
+                        <legend>Informazioni modificabili per l'evento</legend>
 
                         <p>
                             <label id="labelTipoEvento" for="TipoEvento">Tipologia: </label>
@@ -167,14 +163,23 @@
                         <p>
                             <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
+
+                        <p>
+                            <label id="labelImageUploadEvento" for="imageUploadEvento">Scegliere l'immagine: </label>
+                            <input id="imageUploadEvento" class="formElement" name="Immagine" type="file" aria-label="Modifica l'immagine dell'opera" aria-required="true"/>
+                        </p>
                     </fieldset>
 
                     <fieldset id="BoxModificaOpera" class="fieldset">
-                        <legend class="hideLegend">Modifica opera</legend>
+                        <legend>Informazioni modificabili per l'opera</legend>
 
                         <p>
                             <label id="labelIDOpera" for="IDOpera">ID: </label>
                             <input id="IDOpera" class="formElement" name="IDOpera" type="hidden" aria-label="Id dell'opera"/>
+                        </p>
+
+                        <p>
+                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
@@ -249,14 +254,12 @@
                         </p>
 
                         <p>
-                            <label id="labelUtente" for="Utente">Utente: </label>
                             <input id="Utente" class="formElement" name="Utente" type="hidden" aria-required="true"/>
                         </p>
 
                         <fieldset id="fieldLoan" class="fieldset">
-                            <legend class="hideLegend">Stato</legend>
+                            <legend>Opera in prestito?</legend>
 
-                            <label id="labelLoan" for="fieldLoan">In prestito</label>
                             <label id="labelLoanYes" for="textLoanYes">Sì</label>
                             <input id="textLoanYes" name="textLoan" value="Si" type="radio" aria-label="Pulsante per dire si al prestito"/>
                             <label id="labelLoanNo" for="textLoanNo">No</label>
@@ -268,18 +271,18 @@
                         </p>
 
                         <p>
+                            <label id="labelTextArea" for="operaDescriptionArea">Descrizione: </label>
+                            <textarea id="operaDescriptionArea" class="formElement" name="textArea" rows="10" cols="70" aria-label="Modifica la descrizione" aria-required="true">Inserire la descrizione
+                            </textarea>
+                        </p>
+
+                        <p>
                             <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
                             <label id="labelImageUpload" for="imageUpload">Scegliere l'immagine: </label>
                             <input id="imageUpload" class="formElement" name="Immagine" type="file" aria-label="Modifica l'immagine dell'opera" aria-required="true"/>
-                        </p>
-
-                        <p>
-                            <label id="labelTextArea" for="operaDescriptionArea">Descrizione: </label>
-                            <textarea id="operaDescriptionArea" class="formElement" name="textArea" rows="10" cols="70" aria-label="Modifica la descrizione" aria-required="true">Inserire la descrizione
-                            </textarea>
                         </p>
                     </fieldset>
 

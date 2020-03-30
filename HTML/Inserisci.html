@@ -106,13 +106,15 @@
             <h2 class="title">Inserimento</h2>
 
             <form id="Insert" name="Inserimento" action="" method="post" role="form">
-                <fieldset id="InsertField" class="fieldset">
+                <fieldset id="InsertField" class="hideFieldset">
+                    <legend class="hideLegend">Informazioni da inserire</legend>
+
                     <fieldset id="Choice" class="fieldset">
-                        <legend class="hideLegend">Scelta tipologia pagina</legend>
+                        <legend>Tipologia della pagina</legend>
 
                         <p>
                             <label id="LabelFilterType" for="filterType1">Pagina su</label>
-                            <select name="filterType" id="filterType1" class="formElement" aria-label="Seleziona tipologia di pagina da creare">
+                            <select name="filterType" id="filterType1" class="formElement" aria-label="Seleziona la tipologia di pagina da creare">
                                 <option selected="selected" value="Opera">Opera</option>
                                 <option value="Evento">Evento</option>
                                 <option value="Avviso">Avviso</option>
@@ -121,7 +123,7 @@
                     </fieldset>
 
                     <fieldset id="Opera" class="fieldset">
-                        <legend class="hideLegend">campi opera</legend>
+                        <legend>Informazioni dell'opera</legend>
 
                         <p>
                             <label id="labelAuthor" for="textAuthor">Autore</label>
@@ -177,7 +179,7 @@
                         </p>
 
                         <fieldset class="fieldset">
-                            <legend class="hideLegend">Campi prestito</legend>
+                            <legend>Opera in prestito?</legend>
 
                             <label id="labelLoanYes" for="textLoanYes">Sì</label>
                             <input id="textLoanYes" name="textLoan" value="Si" type="radio" aria-label="Pulsante per dire di si al prestito"/>
@@ -194,7 +196,7 @@
                     </fieldset>
 
                     <fieldset id="event" class="fieldset">
-                        <legend class="hideLegend">campi evento</legend>
+                        <legend>Informazioni dell'evento</legend>
 
                         <p>
                             <label id="labelTitle2" for="textTitle2">Titolo</label>
@@ -238,7 +240,7 @@
                     </fieldset>
 
                     <fieldset id="News" class="fieldset">
-                        <legend class="hideLegend">Campo avviso</legend>
+                        <legend>Informazioni dell'avviso</legend>
 
                         <p>
                             <label id="labelObject" for="textObject">Oggetto</label>
