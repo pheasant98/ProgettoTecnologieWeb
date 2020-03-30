@@ -617,7 +617,7 @@ a:visited {
 
 /* Layout per desktop */
 
-@media screen and (min-width: 831px) {
+@media screen and (min-width: 830px) {
   /* Regole per gli header delle pagine */
   #header {
     height: 21.7em;
