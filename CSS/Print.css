@@ -133,15 +133,6 @@ a:visited::after {
   margin-left: 0.5em;
 }
 
-#feedbackBox {
-  margin: 1em 1em;
-  border-style: none;
-}
-
-#feedbackBox input {
-  margin-bottom: 1em;
-}
-
 #loginForm p {
   margin-bottom: 1.5em;
 }
@@ -157,6 +148,15 @@ a:visited::after {
 .fieldset input,
 .fieldset select {
   margin-right: 1.5em;
+  margin-bottom: 1em;
+}
+
+#feedbackBox {
+  margin: 1em 1em;
+  border-style: none;
+}
+
+#feedbackBox input {
   margin-bottom: 1em;
 }
 
