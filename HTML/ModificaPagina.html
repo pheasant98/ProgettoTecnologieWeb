@@ -23,22 +23,22 @@
 
     <body>
         <div id="header" role="banner">
-            <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
+            <h1 id="logoImage" class="backgroundImage" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
 
-            <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
+            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
                 Menu ad <span xml:lang="en">hamburger</span>
             </span>
 
             <div class="headerTitle">
                 <h1>Museo Arte nel Tempo</h1>
-                <h2>Dal Rinascimaneto al Neoclassicismo</h2>
+                <h2>Dal Rinascimento al Neoclassicismo</h2>
             </div>
 
             <span id="loginMenuPlaceholder"/>
 
             <form id="search" name="search" action="" method="post" role="search">
                 <fieldset id="searchBox">
-                    <legend class="Hidelegend">Ricerca</legend>
+                    <legend class="hideLegend">Ricerca</legend>
 
                     <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="2">
                         <option selected="selected" value="Opera">Opera</option>
@@ -46,9 +46,9 @@
                         <option value="Avviso">Avviso</option>
                     </select>
 
-                    <label id="labelS" for="textSearch">Cerca nel sito</label>
-                    <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
-                    <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="3"/>
+                    <label id="hideLabel" for="searchText">Cerca nel sito</label>
+                    <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
+                    <input id="buttonSubmit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="3"/>
                 </fieldset>
             </form>
         </div>
@@ -56,19 +56,16 @@
         <div id="breadcrumbs" aria-label="breadcrumbs">
             <p>
                 Ti trovi in:
-            </p>
-
-            <span id="path">
                 <a href="../Index.php" aria-label="Vai alla pagina homepage del museo" tabindex="9">Home</a> &gt;&gt;
                 <a href="AreaPersonale.html" aria-label="Vai alla pagina Area personale" tabindex="10">Area personale</a> &gt;&gt;
-                <span id="pathSelected">Modifica</span>
-            </span>
+                <strong>Modifica</strong>
+            </p>
         </div>
 
         <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
             <ul>
                 <li>
-                    <a id="skipMenu" class="skip" href="#content" aria-label="Vai al contenuto" tabindex="11">Vai al contenuto</a>
+                    <a id="skipMenu" class="skipInformation" href="#content" aria-label="Vai al contenuto" tabindex="11">Vai al contenuto</a>
                 </li>
 
                 <li>
@@ -107,8 +104,8 @@
             <h2 class="title">Modifica della pagina numero X</h2>
 
             <form name="Modifica" action="" method="post">
-                <fieldset id="BoxModifica" class="fieldset">
-                    <legend class="Hidelegend">Modifica pagina</legend>
+                <fieldset id="BoxModifica" class="hideFieldset">
+                    <legend class="hideLegend">Modifica pagina</legend>
 
                     <p id="TipoPaginaAvv">Tipologia di pagina: Avviso</p>
 
@@ -117,99 +114,104 @@
                     <p id="TipoPaginaOper">Tipologia di pagina: Opera</p>
 
                     <fieldset id="BoxModificaAvviso" class="fieldset">
-                        <legend class="Hidelegend">Modifica avviso</legend>
+                        <legend>Informazioni modificabili per l'avviso</legend>
 
                         <p>
                             <label id="labelDataAvviso" for="DataAvviso">Data: </label>
-                            <input id="DataAvviso" class="elementForm" name="DataAvviso" type="text" aria-label="Modifica la data dell'avviso" aria-required="true"/>
+                            <input id="DataAvviso" class="formElement" name="DataAvviso" type="text" aria-label="Modifica la data dell'avviso" aria-required="true"/>
                         </p>
 
                         <p>
-                            <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
+                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
                             <label id="labelOggetto" for="Oggetto">Oggetto: </label>
-                            <input id="Oggetto" class="elementForm" name="Oggetto" type="text" aria-label="Modifica l'oggetto dell'avviso" aria-required="true"/>
-                        </p>
-
-                        <p>
-                            <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
+                            <input id="Oggetto" class="formElement" name="Oggetto" type="text" aria-label="Modifica l'oggetto dell'avviso" aria-required="true"/>
                         </p>
                     </fieldset>
 
                     <fieldset id="BoxModificaEvento" class="fieldset">
-                        <legend class="Hidelegend">Modifica evento</legend>
+                        <legend>Informazioni modificabili per l'evento</legend>
 
                         <p>
                             <label id="labelTipoEvento" for="TipoEvento">Tipologia: </label>
-                            <select id="TipoEvento"  class=" elementForm" name="TipoEvento" aria-label="Modifica la tipologia di evento" aria-required="true">
+                            <select id="TipoEvento" class=" formElement" name="TipoEvento" aria-label="Modifica la tipologia di evento" aria-required="true">
                                 <option value="Mostra">Mostra</option>
                                 <option selected="selected" value="Conferenza">Conferenza</option>
                             </select>
                         </p>
 
                         <p>
-                            <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
+                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
                             <label id="labelDataEvento" for="DataEvento">Data: </label>
-                            <input id="DataEvento" class="elementForm" name="DataEvento" type="text" aria-label="Modifica la data dell'evento" aria-required="true"/>
+                            <input id="DataEvento" class="formElement" name="DataEvento" type="text" aria-label="Modifica la data dell'evento" aria-required="true"/>
                         </p>
 
                         <p>
-                            <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
+                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
                             <label id="labelTitoloEvento" for="TitoloEvento">Titolo: </label>
-                            <input id="TitoloEvento" class="elementForm" name="TitoloEvento" type="text" aria-label="Modifica il titolo delle'evento" aria-required="true"/>
+                            <input id="TitoloEvento" class="formElement" name="TitoloEvento" type="text" aria-label="Modifica il titolo delle'evento" aria-required="true"/>
                         </p>
 
                         <p>
-                            <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
+                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
+                        </p>
+
+                        <p>
+                            <label id="labelImageUploadEvento" for="imageUploadEvento">Scegliere l'immagine: </label>
+                            <input id="imageUploadEvento" class="formElement" name="Immagine" type="file" aria-label="Modifica l'immagine dell'opera" aria-required="true"/>
                         </p>
                     </fieldset>
 
                     <fieldset id="BoxModificaOpera" class="fieldset">
-                        <legend class="Hidelegend">Modifica opera</legend>
+                        <legend>Informazioni modificabili per l'opera</legend>
 
                         <p>
                             <label id="labelIDOpera" for="IDOpera">ID: </label>
-                            <input id="IDOpera" class="elementForm" name="IDOpera" type="hidden" aria-label="Id dell'opera"/>
+                            <input id="IDOpera" class="formElement" name="IDOpera" type="hidden" aria-label="Id dell'opera"/>
+                        </p>
+
+                        <p>
+                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
                             <label id="labelAutore" for="Autore">Autore: </label>
-                            <input id="Autore" class="elementForm" name="Autore" type="text" aria-label="Modifica l'autore dell'opera" aria-required="true"/>
+                            <input id="Autore" class="formElement" name="Autore" type="text" aria-label="Modifica l'autore dell'opera" aria-required="true"/>
                         </p>
 
                         <p>
-                           <a href="#confirm" class="skip" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
+                           <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
                             <label id="labelTitoloOpera" for="TitoloOpera">Titolo: </label>
-                            <input id="TitoloOpera" class="elementForm" name="TitoloOpera" type="text" aria-label="Modifica il titolo dell'opera" aria-required="true"/>
+                            <input id="TitoloOpera" class="formElement" name="TitoloOpera" type="text" aria-label="Modifica il titolo dell'opera" aria-required="true"/>
                         </p>
 
                         <p>
-                            <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
+                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
                             <label id="labelAnno" for="Anno">Anno: </label>
-                            <input id="Anno" class="elementForm" name="Anno" type="text" aria-label="Modifica l'anno dell'opera" aria-required="true"/>
+                            <input id="Anno" class="formElement" name="Anno" type="text" aria-label="Modifica l'anno dell'opera" aria-required="true"/>
                         </p>
 
                         <p>
-                            <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
+                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
                             <label id="labelPeriodoStorico" for="PeriodoStorico">Periodo storico: </label>
-                            <select id="PeriodoStorico" class="elementForm" name="PeriodoStorico" aria-label="Modifica il periodo storico di appartenenza" aria-required="true">
+                            <select id="PeriodoStorico" class="formElement" name="PeriodoStorico" aria-label="Modifica il periodo storico di appartenenza" aria-required="true">
                                 <option selected="selected" value="Quattrocento">Quattrocento</option>
                                 <option value="Cinquecento">Cinquecento</option>
                                 <option value="Seicento">Seicento</option>
@@ -218,82 +220,80 @@
                         </p>
 
                         <p>
-                            <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
+                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
                             <label id="labelStile" for="Stile">Stile: </label>
-                            <select id="Stile" class="elementForm" name="Stile" aria-label="Modifica lo stile artistico" aria-required="true">
+                            <select id="Stile" class="formElement" name="Stile" aria-label="Modifica lo stile artistico" aria-required="true">
                                 <option selected="selected" value="pittura">Pittura</option>
                                 <option value="scultura">Scultura</option>
                             </select>
                         </p>
 
                         <p>
-                            <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
+                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
                             <label id="labelTecnica" for="Tecnica">Tecnica: </label>
-                            <input id="Tecnica" class="elementForm" name="Tecnica" type="text" aria-label="Modifica la tecnica del''opera" aria-required="true"/>
+                            <input id="Tecnica" class="formElement" name="Tecnica" type="text" aria-label="Modifica la tecnica del''opera" aria-required="true"/>
                         </p>
 
                         <p>
-                            <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
+                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
                             <label id="labelMateriale" for="Materiale">Materiale: </label>
-                            <input id="Materiale" class="elementForm" name="Materiale" type="text" aria-label="Modifica il materiale dell'opera" aria-required="true"/>
+                            <input id="Materiale" class="formElement" name="Materiale" type="text" aria-label="Modifica il materiale dell'opera" aria-required="true"/>
                         </p>
 
                         <p>
-                            <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
+                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
-                            <label id="labelUtente" for="Utente">Utente: </label>
-                            <input id="Utente" class="elementForm" name="Utente" type="hidden" aria-required="true"/>
+                            <input id="Utente" class="formElement" name="Utente" type="hidden" aria-required="true"/>
                         </p>
 
                         <fieldset id="fieldLoan" class="fieldset">
-                            <legend class="Hidelegend">Stato</legend>
+                            <legend>Opera in prestito?</legend>
 
-                            <label id="labelLoan" for="fieldLoan">In prestito</label>
                             <label id="labelLoanYes" for="textLoanYes">Sì</label>
                             <input id="textLoanYes" name="textLoan" value="Si" type="radio" aria-label="Pulsante per dire si al prestito"/>
                             <label id="labelLoanNo" for="textLoanNo">No</label>
-                            <input id="textLoanNo" name="textLoan" value="No" type="radio" aria-label="Pulsante per dire no al prestito"/>
+                            <input id="textLoanNo" name="textLoan" value="No" type="radio" checked="checked" aria-label="Pulsante per dire no al prestito"/>
                         </fieldset>
 
                         <p>
-                            <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
+                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
-                            <a class="skip" href="#confirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
+                            <label id="labelTextArea" for="operaDescriptionArea">Descrizione: </label>
+                            <textarea id="operaDescriptionArea" class="formElement" name="textArea" rows="10" cols="70" aria-label="Modifica la descrizione" aria-required="true">Inserire la descrizione
+                            </textarea>
                         </p>
 
                         <p>
-                            <label id="labelUploadImg" for="Immagine">Scegliere l'immagine: </label>
-                            <input id="Immagine" class="elementForm" name="Immagine" type="file" aria-label="Modifica l'immagine dell'opera" aria-required="true"/>
+                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
+                        </p>
+
+                        <p>
+                            <label id="labelImageUpload" for="imageUpload">Scegliere l'immagine: </label>
+                            <input id="imageUpload" class="formElement" name="Immagine" type="file" aria-label="Modifica l'immagine dell'opera" aria-required="true"/>
                         </p>
                     </fieldset>
 
-                    <p>
-                        <label id="labelTextArea" for="AreaDescr">Descrizione: </label>
-                        <textarea id="AreaDescr" class="elementForm" name="textArea" rows="10" cols="70" aria-label="Modifica la descrizione" aria-required="true">Inserire la descrizione
-                        </textarea>
-                    </p>
-
-                    <p class="Navigation">
-                        <input id="reset" class="Button" name="annulla" value="Annulla" type="reset" aria-label="Annulla le modifiche apportate"/>
-                        <input id="confirm" class="Button" name="invio" value="Conferma" type="submit" aria-label="Invia le modifiche apportate"/>
+                    <p class="navigation">
+                        <input id="buttonConfirm" class="button" name="invio" value="Conferma" type="submit" aria-label="Invia le modifiche apportate"/>
+                        <input id="buttonReset" class="button" name="annulla" value="Annulla" type="reset" aria-label="Annulla le modifiche apportate"/>
                     </p>
                 </fieldset>
             </form>
 
-            <a id="ButtonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
+            <a id="buttonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
                 <img alt="Torna su" src="../Images/TornaSu.png"/>
             </a>
         </div>

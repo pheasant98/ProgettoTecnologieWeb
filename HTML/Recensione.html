@@ -23,22 +23,22 @@
 
     <body>
         <div id="header" role="banner">
-            <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
+            <h1 id="logoImage" class="backgroundImage" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
 
-            <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
+            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
                 Menu ad <span xml:lang="en">hamburger</span>
             </span>
 
             <div class="headerTitle">
                 <h1>Museo Arte nel Tempo</h1>
-                <h2>Dal Rinascimaneto al Neoclassicismo</h2>
+                <h2>Dal Rinascimento al Neoclassicismo</h2>
             </div>
 
             <span id="loginMenuPlaceholder"/>
 
             <form id="search" name="search" action="" method="post" role="search">
                 <fieldset id="searchBox">
-                    <legend class="Hidelegend">Ricerca</legend>
+                    <legend class="hideLegend">Ricerca</legend>
 
                     <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
                         <option selected="selected" value="Opera">Opera</option>
@@ -46,9 +46,9 @@
                         <option value="Avviso">Avviso</option>
                     </select>
 
-                    <label id="labelS" for="textSearch">Cerca nel sito</label>
-                    <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
-                    <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
+                    <label id="hideLabel" for="searchText">Cerca nel sito</label>
+                    <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
+                    <input id="buttonSubmit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
                 </fieldset>
             </form>
         </div>
@@ -56,21 +56,18 @@
         <div id="breadcrumbs" aria-label="breadcrumbs">
             <p>
                 Ti trovi in:
-            </p>
-
-            <span id="path">
                 <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a>
                 &gt;&gt;
                 <a href="AreaPersonale.html" title="Area Utente" aria-label="Vai alla pagina area utente" tabindex="10">Area personale</a>
                 &gt;&gt;
-                <span id="pathSelected">Recensioni</span>
-            </span>
+                <strong>Recensioni</strong>
+            </p>
         </div>
 
         <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
             <ul>
                 <li>
-                    <a id="skipMenu" class="skip" href="#content" aria-label="Vai al contenuto" tabindex="11">Vai al contenuto</a>
+                    <a id="skipMenu" class="skipInformation" href="#content" aria-label="Vai al contenuto" tabindex="11">Vai al contenuto</a>
                 </li>
 
                 <li>
@@ -108,14 +105,14 @@
         <div id="content" role="main">
             <h2 class="title">Recensioni effettuate</h2>
 
-            <a href="#Back" class="skip">Salta le recensioni presenti nella pagina</a>
+            <a href="#buttonBack" class="skipInformation">Salta le recensioni presenti nella pagina</a>
 
             <dl>
                 <dt>
                     Recensione 1
                 </dt>
                 <dd>
-                    <a href="#r2" class="skip">Salta la recensione</a>
+                    <a href="#r2" class="skipInformation">Salta la recensione</a>
 
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -128,8 +125,8 @@
                         Vestibulum id augue quis orci porttitor consequat sit amet at velit.
                     </p>
 
-                    <p class="UserButton">
-                        <a class="Button" href="" title="Rimuovi recensione" role="button" aria-label="Rimuovi recensione">Rimuovi</a>
+                    <p class="userButton">
+                        <a class="button" href="" title="Rimuovi recensione" role="button" aria-label="Rimuovi recensione">Rimuovi</a>
                     </p>
                 </dd>
 
@@ -137,7 +134,7 @@
                     Recensione 2
                 </dt>
                 <dd>
-                    <a href="#r3" class="skip">Salta la recensione</a>
+                    <a href="#r3" class="skipInformation">Salta la recensione</a>
 
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -150,8 +147,8 @@
                         Vestibulum id augue quis orci porttitor consequat sit amet at velit.
                     </p>
 
-                    <p class="UserButton">
-                        <a class="Button" href="" title="Rimuovi recensione" role="button" aria-label="Rimuovi recensione">Rimuovi</a>
+                    <p class="userButton">
+                        <a class="button" href="" title="Rimuovi recensione" role="button" aria-label="Rimuovi recensione">Rimuovi</a>
                     </p>
                 </dd>
 
@@ -159,7 +156,7 @@
                     Recensione 3
                 </dt>
                 <dd>
-                    <a href="#Back" class="skip">Salta la recensione</a>
+                    <a href="#buttonBack" class="skipInformation">Salta la recensione</a>
 
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -172,18 +169,18 @@
                         Vestibulum id augue quis orci porttitor consequat sit amet at velit.
                     </p>
 
-                    <p class="UserButton">
-                        <a class="Button" href="" title="Rimuovi recensione" role="button" aria-label="Rimuovi recensione">Rimuovi</a>
+                    <p class="userButton">
+                        <a class="button" href="" title="Rimuovi recensione" role="button" aria-label="Rimuovi recensione">Rimuovi</a>
                     </p>
                 </dd>
             </dl>
 
-            <p class="Navigation">
-                <a id="Back" class="Button" href="" title="Recensioni precedenti" role="button" aria-label="Torna alle recensioni precedenti"> &lt; Precedente</a>
-                <a id="Next" class="Button" href="" title="Recensioni successive" role="button" aria-label="Vai alle recensioni successive"> Successivo &gt;</a>
+            <p class="navigation">
+                <a id="buttonBack" class="button" href="" title="Recensioni precedenti" role="button" aria-label="Torna alle recensioni precedenti"> &lt; Precedente</a>
+                <a id="buttonNext" class="button" href="" title="Recensioni successive" role="button" aria-label="Vai alle recensioni successive"> Successivo &gt;</a>
             </p>
 
-            <a id="ButtonBackUp" href="#header" title="Torna su" aria-label="Torna su">
+            <a id="buttonBackUp" href="#header" title="Torna su" aria-label="Torna su">
                 <img alt="Torna su" src="../Images/TornaSu.png"/>
             </a>
         </div>

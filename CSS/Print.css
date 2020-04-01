@@ -1,291 +1,294 @@
+/* Regole generali per le pagine */
 
-* {/*rende la pagina vuota e imposta un iterlinea di 1.5 per l'accessibilità della pagina*/
-    padding: 0em;
-    margin: 0em;
-    font-family: arial, helvetica, sans-serif;
-    box-sizing: border-box;
-    max-width: 100%;
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Times New Roman", Georgia, sans-serif;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
-html, body { /*impostazione colore di sfondo e larghezza minima della pagina*/
-    font-size: 1em;
-    background-color: #FFFFFF;
-    color: #000000;
+html,
+body {
+  font-size: 1em;
+  background-color: #fff;
+  color: #000;
 }
 
-#header {
-    padding: 0.7em 1.3em 0em 1.1em;
-    border-bottom-width: 2px;
-    border-bottom-style: solid;
-    border-bottom-color: black;
-    min-height: 8em;
+a {
+  color: #000;
 }
 
+a:link::after,
+a:visited::after {
+  content: " [" attr(href) "] ";
+  font-size: 70%;
+}
+
+/* Regole per gli header delle pagine */
+
+#header,
+#headerError404 {
+  padding: 0.7em 1.3em 0 1.1em;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: #000;
+  min-height: 8em;
+}
 
 .headerTitle {
-    padding: 1.5em 0em;
+  padding: 1.5em 0;
 }
 
 .headerTitle > h1 {
-    font-size: 2em;
+  font-size: 2em;
 }
 
 .headerTitle > h2 {
-    font-size: 1.7em;
+  font-size: 1.7em;
 }
 
-
-#header404 { /*header per pagina 404*/
-    padding: 0.7em 1.3em 0em 1.1em;
-    border-bottom-width: 2px;
-    border-bottom-style: solid;
-    border-bottom-color: black;
-    min-height: 8em;
+#logoImage {
+  background-image: url('../images/logo.PNG');
+  float: right;
+  text-indent: 100%;
+  background-position: center;
+  height: 3.6em;
+  width: 5em;
 }
 
-#content404 { /* da unire con content perchè sono uguali*/
-    background-color: #FFFFFF;
-    color: #000000;
-    margin: 1.3em;
-    clear: both;
+/* Regole per il contenuto principale delle pagine */
+
+#content,
+#contentError404 {
+  clear: both;
+  background-color: #fff;
+  color: #000;
+  border-radius: 20px;
+  margin: 1.3em;
 }
 
-#content404 > .title {
-    font-size: 2.2em;
-    line-height: 1.1em;
-    padding-bottom: 0.4em;
+.title {
+  font-size: 2.5em;
+  line-height: 2em;
 }
 
-
-#logoImg {  /*regole per impostare il logo in modo accessibile*/
-    background-image: url('../images/logo.PNG');
-    float:right;
-    text-indent: 100%;
-    background-position: center;
-    height: 3.6em;
-    width: 5em;
+.subtitle {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
 }
 
-#UserTools, #LoginMenu a, #HamburgerMenu, #menu, .skip, #ImgError404, #breadcrumbs, #Map,
-    #ButtonBackUp ,#footer, #Back,#Next, #warning, #textSearch, #search, #searchBox, #Back, #Next {
-    display: none;
-}
-
-.ImgBackground{ /*regole per inserire una immagine con la tecnica image replacement*/
-    display: block;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    white-space: nowrap;
-    overflow: hidden;
-    border-radius: 20px;
-}
-
-
-.imgPeriodi {
-    width: 9.75em;
-    height: 7.5em;
-}
-
-/*bottoni*/
-
-.Button {
-    display: none;
-    /*display: block;
-    text-align: center;
-    font-size: 0.7em;
-    outline: none;
-    cursor: pointer;
-    border-radius: 20px;
-    padding: 1em;
-    margin: 0.2em;
-    width: 10em;
-    border: 1px solid #000000;
-    background-color: #FFFFFF;
-    */
-}
-
-
-.elementForm{
-    display: block;
-    width: 100%;
-    height: 2.6em;
-    font-size: 1em;
-    font-weight: 400;
-    background-clip: padding-box;
-    border: 1px solid #AAAAAA;
-    border-radius: 0.25em;
-    padding: 0.375em 0.75em;
-}
-
-#labelS,.Hidelegend { /* regole per nascondere label e hidelegend*/
-    position: absolute;
-    height: 0px;
-    overflow: hidden;
-}
-
-#content {
-    clear: both;
-    background-color: #FFFFFF;
-    color: #000000;
-    border-radius: 20px;
-    margin: 1.3em;
-}
-
-.listClass {/*regola per template di un lista*/
-    list-style-type: none;
-    margin-bottom: 2.5em;
-    margin-top: 1.5em;
-    margin-left: 0.5em;
-}
-
-.listClass li{/*regola per template di un lista*/
-    margin-bottom: 1em;
+#contentError404 > .title {
+  font-size: 2.2em;
+  line-height: 1.1em;
+  padding-bottom: 0.4em;
 }
 
 #content dt {
-    padding-top: 0.2em;
-    padding-bottom: 0.2em;
-    font-size: 1.2em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  font-size: 1.2em;
 }
 
 #content dd {
-    padding-left: 1em;
-    font-size: 1em;
-    padding-top: 0.2em;
-    padding-bottom: 0.5em;
+  padding-left: 1em;
+  font-size: 1em;
+  padding-top: 0.2em;
+  padding-bottom: 0.5em;
 }
 
-.UserButton{ /* regole per i bottoni utente posiziona i bottoni a sinistra*/
-    text-align: right;
-    list-style-type: none;
-    border-style: none;
-}
-
-.UserButton a{ /* regole per i bottoni utente*/
-    font-size: 0.8em;
-    display: inline-block;
-}
-
-.UserButton span{ /* regole per i bottoni utente*/
-    font-size: 1em;
-    display: block;
-    margin-right: 5.5em;
-}
-
-.Navigation{/* regola per il posizionamento al centro del contenuto per la navigazione*/
-    list-style-type: none;
-    text-align: center;
-    border-style: none;
-}
-
-.Navigation a {
-    display: inline-block;
-}
-
-#FeedBackBox{
-    margin: 1em 1em;
-    border-style: none;
-}
-
-#AreaDescr, #AreaDescr2, #AreaDescr3 {
-    height: 20em;
-    margin-bottom: 1em;
-    margin-top: 1em;
-}
-
-#clause {
-    clear: right;
-    font-size: 0.7em;
-    padding-bottom: 1em;
-}
-
-/* gestione link*/
-a {
-    color: #000000;
-}
-
-a:link:after, a:visited:after {
-    content: " [" attr(href) "] ";
-    font-size: 70%;
-}
-
-
-#HomepageButton, #UserButton, #o4, #clause, #Continue, #userUl, #adminUl /*questi ultimi non so se lasciarli*/, .UserButton, #registrati, #loginButton {
-    display: none;
-}
-
-/*******/
-#Error404Options {
-    list-style-type: none;
-}
-
-#Error404Options li {
-    padding: 0.3em;
-}
-/*******/
-
-#ImgMuseo{/*img in home*/
-    text-align: center;
-    padding-bottom: 1em;
-    padding-top: 1em;
-}
-
-#ImgOpera{
-    text-align: center;
-}
-
-#reviewButton, #buyButton {
-    float: right;
-    font-size: 1em;
-}
-
-.fieldset{ /*regole per template di fieldset, principalmente toglie il bordo */
-    border: none;
-    padding: 1em;
-    text-align: justify;
-}
-
-.fieldset input, .fieldset label, .fieldset select {
-    margin-right: 1.5em;
-    margin-top: 1em;
-    margin-bottom: 1em;
-}
-
-#reset,#confirm{
-    display: none;
-}
-
-#UserTools {
-    background-image: none;
-}
-
-#searchBox404 {
-    background-color: #EEEEEE;
-    border-radius: 20px;
-    width: 45em;
-    white-space: nowrap;
-}
-
-#filter, #filterType, #filterContent, #filterPeriod, #filterOpera {
-    border: 0px;
-    font-size: 1.5em;
-    background: none;
-    margin-right: 5% ;
-}
-
-#Submit {
-    cursor: pointer;
-    border: 0px;
-    font-size: 1.5em;
-    background: none;
-    margin-left: 5%;
-}
-
-.title{
-    font-size: 2.5em;
-    line-height: 2em;
+#filter,
+#filterType,
+#filterContent,
+#filterPeriod,
+#filterOpera {
+  border: 0;
+  font-size: 1.5em;
+  background: none;
+  margin-right: 5%;
 }
 
 .paragraph {
-    font-size: 1em;
+  font-size: 1em;
+}
+
+.list {
+  list-style-type: none;
+  margin-bottom: 2.5em;
+  margin-top: 1.5em;
+  margin-left: 0.5em;
+}
+
+.list li {
+  margin-bottom: 1em;
+}
+
+#seasonTicket {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  margin-left: 0.5em;
+}
+
+#totalCost {
+  margin-left: 0.5em;
+}
+
+#loginForm p {
+  margin-bottom: 1.5em;
+}
+
+.fieldset,
+.hideFieldset {
+  margin-bottom: 1em;
+  padding: 1em;
+  text-align: justify;
+  border-radius: 0.25em;
+}
+
+.fieldset input,
+.fieldset select {
+  margin-right: 1.5em;
+  margin-bottom: 1em;
+}
+
+#feedbackBox {
+  margin: 1em 1em;
+  border-style: none;
+}
+
+#feedbackBox input {
+  margin-bottom: 1em;
+}
+
+.hideFieldset {
+  border: none;
+  margin-bottom: 0;
+}
+
+.hideLegend {
+  display: none;
+}
+
+.formElement {
+  display: block;
+  width: 100%;
+  height: 2.6em;
+  font-size: 1em;
+  font-weight: 400;
+  background-clip: padding-box;
+  border: 1px solid #aaa;
+  border-radius: 0.25em;
+  padding: 0.375em 0.75em;
+}
+
+#operaDescriptionArea,
+#eventDescriptionArea,
+#noticeDescriptionArea {
+  height: 20em;
+  margin-bottom: 1em;
+}
+
+.navigation {
+  list-style-type: none;
+  text-align: center;
+  border-style: none;
+  margin-top: 1em;
+}
+
+.navigation a {
+  display: inline-block;
+}
+
+#buttonSubmit {
+  cursor: pointer;
+  border: 0;
+  font-size: 1.5em;
+  background: none;
+  margin-left: 5%;
+}
+
+#reviewButton,
+#buyButton {
+  float: right;
+  font-size: 1em;
+}
+
+#searchBoxError404 {
+  background-color: #eee;
+  border-radius: 20px;
+  width: 45em;
+  white-space: nowrap;
+}
+
+#error404Options {
+  list-style-type: none;
+}
+
+#error404Options li {
+  padding: 0.3em;
+}
+
+#museumImage {
+  text-align: center;
+  padding-bottom: 1em;
+  padding-top: 1em;
+}
+
+.historicalPeriodImage {
+  width: 9.75em;
+  height: 7.5em;
+}
+
+.backgroundImage {
+  display: block;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  white-space: nowrap;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+#operaImage {
+  text-align: center;
+  margin-top: 1em;
+}
+
+#search,
+#searchBox,
+#searchText,
+#searchError404,
+#hamburgerMenu,
+#userTools,
+#userButton,
+#homepageButton,
+#userOperationsList,
+#adminOperationsList,
+#loginButton,
+#register,
+#loginMenu a,
+#breadcrumbs,
+#menu,
+#operaImageUpload,
+#eventImageUpload,
+#imageUpload,
+#labelImageUpload,
+#labelEventImageUpload,
+#labelOperaImageUpload,
+#imageError404,
+#buyOption4,
+#clause,
+#reviewAsk,
+#map,
+#warning,
+#continue,
+#buttonNext,
+#buttonBack,
+#buttonBackUp,
+#buttonReset,
+#buttonConfirm,
+#footer,
+.skipInformation,
+.button,
+.userButton {
+  display: none;
 }

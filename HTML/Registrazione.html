@@ -23,22 +23,22 @@
 
     <body>
         <div id="header" role="banner">
-            <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
+            <h1 id="logoImage" class="backgroundImage" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
 
-            <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="4">
+            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="4">
                 Menu ad <span xml:lang="en">hamburger</span>
             </span>
 
             <div class="headerTitle">
                 <h1>Museo Arte nel Tempo</h1>
-                <h2>Dal Rinascimaneto al Neoclassicismo</h2>
+                <h2>Dal Rinascimento al Neoclassicismo</h2>
             </div>
 
             <span id="loginMenuPlaceholder"/>
 
             <form id="search" name="search" action="" method="post" role="search">
                 <fieldset id="searchBox">
-                    <legend class="Hidelegend">Ricerca</legend>
+                    <legend class="hideLegend">Ricerca</legend>
 
                     <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
                         <option selected="selected" value="Opera">Opera</option>
@@ -46,9 +46,9 @@
                         <option value="Avviso">Avviso</option>
                     </select>
 
-                    <label id="labelS" for="textSearch">Cerca nel sito</label>
-                    <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
-                    <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
+                    <label id="hideLabel" for="searchText">Cerca nel sito</label>
+                    <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
+                    <input id="buttonSubmit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
                 </fieldset>
             </form>
         </div>
@@ -56,21 +56,18 @@
         <div aria-label="breadcrumbs" id="breadcrumbs">
             <p>
                 Ti trovi in:
-            </p>
-
-            <span id="path">
                 <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="5" xml:lang="en">Home</a>
                 &gt;&gt;
                 <a href="Login.html" title="Login" aria-label="Vai alla pagina di login" tabindex="6" xml:lang="en">Login</a>
                 &gt;&gt;
-                <span id="pathSelected">Registrazione</span>
-            </span>
+                <strong>Registrazione</strong>
+            </p>
         </div>
 
         <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
             <ul>
                 <li>
-                    <a id="skipMenu" class="skip" href="#content" aria-label="Vai al contenuto" tabindex="7">Vai al contenuto</a>
+                    <a id="skipMenu" class="skipInformation" href="#content" aria-label="Vai al contenuto" tabindex="7">Vai al contenuto</a>
                 </li>
 
                 <li>
@@ -110,40 +107,45 @@
 
             <form id="registration" name="registrazione" action="RegistrazioneCompletata.html" method="post">
                 <fieldset id="personalData" class="fieldset">
-                    <legend class="Hidelegend">Dati personali</legend>
+                    <legend>Dati personali</legend>
 
                     <p>
                         <label id="labelName" for="textName">Nome</label>
-                        <input id="textName"  class="elementForm" name="textName" type="text" aria-label="Inserisci il nome"/>
+                        <input id="textName" class="formElement" name="textName" type="text" aria-label="Inserisci il nome"/>
                     </p>
 
                     <p>
                         <label id="labelSurname" for="textSurname">Cognome</label>
-                        <input id="textSurname"  class="elementForm" name="textSurname" type="text" aria-label="Inserisci il cognome"/>
+                        <input id="textSurname" class="formElement" name="textSurname" type="text" aria-label="Inserisci il cognome"/>
                     </p>
 
                     <fieldset id="fieldSex" class="fieldset">
-                        <legend class="Hidelegend">Sesso</legend>
+                        <legend>Sesso</legend>
 
-                        <label id="labelSexM" for="radioSexM">Maschile</label>
-                        <input id="radioSexM" name="radioSex" value="M" type="radio" aria-label="Pulsante per dichiarare sesso maschile"/>
-                        <label id="labelSexF" for="radioSexF">Femminile</label>
-                        <input id="radioSexF" name="radioSex" value="F" type="radio" aria-label="Pulsante per dichiarare sesso femminile"/>
-                        <label id="labelSexA" for="radioSexA">Preferisco non dichiarare</label>
-                        <input id="radioSexA" name="radioSex" value="A" type="radio" aria-label="Pulsante per non dichiarare il sesso"/>
+                        <p>
+                            <input id="radioSexM" name="radioSex" value="M" type="radio" aria-label="Pulsante per dichiarare sesso maschile"/>
+                            <label id="labelSexM" for="radioSexM">Maschile</label>
+                        </p>
+                        <p>
+                            <input id="radioSexF" name="radioSex" value="F" type="radio" aria-label="Pulsante per dichiarare sesso femminile"/>
+                            <label id="labelSexF" for="radioSexF">Femminile</label>
+                        </p>
+                        <p>
+                            <input id="radioSexA" name="radioSex" value="A" type="radio" checked="checked" aria-label="Pulsante per non dichiarare il sesso"/>
+                            <label id="labelSexA" for="radioSexA">Preferisco non dichiarare</label>
+                        </p>
                     </fieldset>
 
                     <p>
                         <label id="labelDate" for="textDate">Data di nascita</label>
-                        <input id="textDate"  class="elementForm" name="textDate" type="text" aria-label="Inserisci la data di nascita"/>
+                        <input id="textDate" class="formElement" name="textDate" type="text" aria-label="Inserisci la data di nascita"/>
                         <label id="labelMail" for="textMail" xml:lang="en">E-mail</label>
-                        <input id="textMail"  class="elementForm" name="textMail" type="text" aria-label="Inserisci l'indirizzo E-mail"/>
+                        <input id="textMail" class="formElement" name="textMail" type="text" aria-label="Inserisci l'indirizzo E-mail"/>
                     </p>
 
                     <fieldset id="fieldNewsletter" class="fieldset">
-                        <legend class="Hidelegend">News</legend>
+                        <legend>Iscrizione alla <span xml:lang="en">newsletter</span></legend>
 
-                        <label id="labelNewsletter" for="fieldNewsletter">Iscrizione alla <span xml:lang="en">newsletter</span></label>
                         <label id="labelNewsletterYes" for="radioNewsletterYes">Sì</label>
                         <input id="radioNewsletterYes" name="radioNewsletter" value="Si" type="radio" aria-label="Pulsante per dire no alla newsletter"/>
                         <label id="labelNewsletterNo" for="radioNewsletterNo">No</label>
@@ -156,29 +158,27 @@
 
                     <p>
                         <label id="labelUsername" for="textUsername" xml:lang="en">Username</label>
-                        <input id="textUsername"  class="elementForm" name="textUsername" type="text" aria-label="Inserisci lo username"/>
+                        <input id="textUsername" class="formElement" name="textUsername" type="text" aria-label="Inserisci lo username"/>
                     </p>
 
                     <p>
                         <label id="labelPassword" for="textPassword" xml:lang="en">Password</label>
-                        <input id="textPassword"  class="elementForm" name="textPassword" type="password" aria-label="Inserisci la password"/>
+                        <input id="textPassword" class="formElement" name="textPassword" type="password" aria-label="Inserisci la password"/>
                     </p>
 
                     <p>
-                        <label id="labelRepetePassword" for="textRepetePassword">
-                            Ripetere <span xml:lang="en">password</span>
-                        </label>
-                        <input id="textRepetePassword"  class="elementForm" name="textRepetePassword" type="password" aria-label="Inserisci nuovamente la password"/>
+                        <label id="labelRepetePassword" for="textRepetePassword">Ripetere <span xml:lang="en">password</span></label>
+                        <input id="textRepetePassword" class="formElement" name="textRepetePassword" type="password" aria-label="Inserisci nuovamente la password"/>
                     </p>
                 </fieldset>
 
-                <p class="Navigation">
-                    <input id="reset" class="Button" name="reset" value="Cancella" type="reset" aria-label="Pulsante per la cancellazione dei dati inseriti"/>
-                    <input id="confirm" class="Button" name="confirm" value="Conferma" type="submit" aria-label="Pulsante per la conferma dati inseriti"/>
+                <p class="navigation">
+                    <input id="buttonConfirm" class="button" name="confirm" value="Registrati" type="submit" aria-label="Pulsante per la conferma dati inseriti"/>
+                    <input id="buttonReset" class="button" name="reset" value="Cancella" type="reset" aria-label="Pulsante per la cancellazione dei dati inseriti"/>
                 </p>
             </form>
 
-            <a id="ButtonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
+            <a id="buttonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
                 <img alt="Torna su" src="../Images/TornaSu.png"/>
             </a>
         </div>

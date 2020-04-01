@@ -23,32 +23,32 @@
 
     <body>
         <div id="header" role="banner">
-            <h1 aria-label="Immagine del logo Museo arte nel tempo" class="ImgBackground" id="logoImg" role="img" title="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
+            <h1 aria-label="Immagine del logo Museo arte nel tempo" class="backgroundImage" id="logoImage" role="img" title="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
 
-            <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
+            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
                 Menu ad <span xml:lang="en">hamburger</span>
             </span>
 
             <div class="headerTitle">
                 <h1>Museo Arte nel Tempo</h1>
-                <h2>Dal Rinascimaneto al Neoclassicismo</h2>
+                <h2>Dal Rinascimento al Neoclassicismo</h2>
             </div>
 
             <span id="loginMenuPlaceholder"/>
 
             <form id="search" name="search" action="" method="post" role="search">
                 <fieldset id="searchBox">
-                    <legend class="Hidelegend">Ricerca</legend>
+                    <legend class="hideLegend">Ricerca</legend>
 
-                    <select aria-label="Seleziona il filtro per la ricerca" id="filter" name="filter" tabindex="2">
+                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="2">
                         <option selected="selected" value="Opera">Opera</option>
                         <option value="Evento">Evento</option>
                         <option value="Avviso">Avviso</option>
                     </select>
 
-                    <label for="textSearch" id="labelS">Cerca nel sito</label>
-                    <input id="textSearch" name="ricerca" type="text" aria-label="Casella di testo" tabindex="1"/>
-                    <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="3"/>
+                    <label id="hideLabel" for="searchText">Cerca nel sito</label>
+                    <input id="searchText" name="ricerca" type="text" aria-label="Casella di testo" tabindex="1"/>
+                    <input id="buttonSubmit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="3"/>
                 </fieldset>
             </form>
         </div>
@@ -56,19 +56,16 @@
         <div aria-label="breadcrumbs" id="breadcrumbs">
             <p>
                 Ti trovi in:
-            </p>
-
-            <span id="path">
                 <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a>
                 &gt;&gt;
-                <span id="pathSelected">Opere</span>
-            </span>
+                <strong>Opere</strong>
+            </p>
         </div>
 
         <div aria-label="menu per la navigazione nel sito" id="menu" role="navigation">
             <ul>
                 <li>
-                    <a id="skipMenu" href="#content" class="skip" aria-label="Vai al contenuto" tabindex="10">Vai al contenuto</a>
+                    <a id="skipMenu" href="#content" class="skipInformation" aria-label="Vai al contenuto" tabindex="10">Vai al contenuto</a>
                 </li>
 
                 <li>
@@ -76,7 +73,7 @@
                 </li>
 
                 <li>
-                    <em>Opere</em>
+                    <strong>Opere</strong>
                 </li>
 
                 <li>
@@ -106,14 +103,14 @@
         <div id="content" role="main">
             <h2 class="title">Opere</h2>
 
-            <p>Tutte le opere presenti all'interno del museo sono state suddivise in base al periodo storico di appartenenza, che ne fornisce una classificazione temporale.</p>
+            <p class="paragraph">Tutte le opere presenti all'interno del museo sono state suddivise in base al periodo storico di appartenenza, che ne fornisce una classificazione temporale.</p>
 
             <dl id="periodiStorici">
                 <dt>
                     <a class="periodoStorico" href="NomePeriodoStorico.html" aria-label="">Quattrocento</a>
                 </dt>
                 <dd>
-                    <img class="imgPeriodi" alt="Immagine rappresentativa del periodo storico" src="../Images/quattrocento.png"/>
+                    <img class="historicalPeriodImage" alt="Immagine rappresentativa del periodo storico" src="../Images/quattrocento.png"/>
 
                     <p>
                         Breve descrizione
@@ -124,7 +121,7 @@
                     <a class="periodoStorico" href="NomePeriodoStorico.html">Cinquecento</a>
                 </dt>
                 <dd>
-                    <img class="imgPeriodi" alt="Immagine rappresentativa del periodo storico" src="../Images/cinquecento.png"/>
+                    <img class="historicalPeriodImage" alt="Immagine rappresentativa del periodo storico" src="../Images/cinquecento.png"/>
 
                     <p>
                         Breve descrizione
@@ -135,7 +132,7 @@
                     <a class="periodoStorico" href="NomePeriodoStorico.html">Seicento</a>
                 </dt>
                 <dd>
-                    <img class="imgPeriodi" alt="Immagine rappresentativa del periodo storico" src="../Images/seicento.png"/>
+                    <img class="historicalPeriodImage" alt="Immagine rappresentativa del periodo storico" src="../Images/seicento.png"/>
 
                     <p>
                         Breve descrizione
@@ -146,7 +143,7 @@
                     <a class="periodoStorico" href="NomePeriodoStorico.html">Settecento</a>
                 </dt>
                 <dd>
-                    <img class="imgPeriodi" alt="Immagine rappresentativa del periodo storico" src="../Images/settecento.png"/>
+                    <img class="historicalPeriodImage" alt="Immagine rappresentativa del periodo storico" src="../Images/settecento.png"/>
 
                     <p>
                         Breve descrizione
@@ -154,7 +151,7 @@
                 </dd>
             </dl>
 
-            <a aria-label="Torna su" href="#header" id="ButtonBackUp" title="Torna su">
+            <a aria-label="Torna su" href="#header" id="buttonBackUp" title="Torna su">
                 <img alt="Torna su" src="../Images/TornaSu.png"/>
             </a>
         </div>

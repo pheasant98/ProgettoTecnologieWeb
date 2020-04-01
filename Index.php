@@ -1,55 +1,57 @@
 <?php
+
     require_once("PHP/DatabaseAccess.php");
     require_once("PHP/Utilities.php");
 
-    function getLastNews() {
-        $databaseAccess = new DatabaseAccess();
+    function get_last_news() {
+        $database_access = new DatabaseAccess();
 
-        $databaseAccess->openConnection();
-        $result = $databaseAccess->getLastTwoNews();
+        $database_access->open_connection();
+        $result = $database_access->get_last_two_news();
 
         if ($result) {
-            $newsList = "<dl class=\"clickableDl\">";
+            $news_list = "<dl class=\"clickableDl\">";
 
-            $newsID = '0';
+            $news_id = '0';
             if (count($result) == 1) {
-                $skipID = "p";
+                $skip_id = "p";
             } else {
-                $skipID = "a";
+                $skip_id = "a";
             }
 
             foreach ($result as $row) {
-                $newsList .= "  <dt>
-                                    <a id=\"a" . $newsID . "\" href=\"AvvisoSingolo.php?id=" . $row["ID"] . "\">Oggetto: " . $row["Oggetto"] . "</a>
-                                </dt>
-                                <dd>
-                                    <a href=\"#" . $skipID . "1\" class=\"skip\">Salta l'avviso</a>
-                                    <p> Data: " . englishToItalianDateFormat($row["DataTermine"]) . "</p>
+                $news_list .= "<dt>
+                                    <a id=\"a" . $news_id . "\" href=\"AvvisoSingolo.php?id=" . $row["ID"] . "\">Oggetto: " . $row["Oggetto"] . "</a>
+                               </dt>
+                               <dd>
+                                    <a href=\"#" . $skip_id . "1\" class=\"skip\">Salta l'avviso</a>
+                                    <p> Data: " . english_italian_date_format($row["DataTermine"]) . "</p>
                                     <p>" . $row["Descrizione"] . "</p>
-                                </dd>";
+                               </dd>";
 
-                $newsID = "1";
-                $skipID = "p";
+                $news_id = "1";
+                $skip_id = "p";
             }
 
-            $newsList .= "</dl>";
+            $news_list .= "</dl>";
         } else {
-            $newsList = "<p id=\"warning\">Non ci sono nuovi avvisi</p>";
+            $news_list = "<p id=\"warning\">Non ci sono nuovi avvisi</p>";
         }
 
-        $databaseAccess->closeConnection();
+        $database_access->close_connection();
 
-        return $newsList;
+        return $news_list;
     }
 
     session_start();
 
     $document = file_get_contents("HTML/Index.html");
-    $login = getAuthenticationMenu(isset($_SESSION['username']));
-    $news = getLastNews();
+    $login = get_authentication_menu(isset($_SESSION['username']));
+    $news = get_last_news();
 
     $document = str_replace("<span id=\"loginMenuPlaceholder\"/>", $login, $document);
     $document = str_replace("<span id=\"newsPlaceholder\"/>", $news, $document);
 
     echo $document;
+
 ?>

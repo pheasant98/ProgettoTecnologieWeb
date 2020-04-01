@@ -1,0 +1,3 @@
+# Index e fallback
+DirectoryIndex index.php
+ErrorDocument 404 /php/fallback.php

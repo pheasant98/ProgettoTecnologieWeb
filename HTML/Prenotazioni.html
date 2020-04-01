@@ -23,22 +23,22 @@
 
     <body>
         <div id="header" role="banner">
-            <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
+            <h1 id="logoImage" class="backgroundImage" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
 
-            <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
+            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
                 Menu ad <span xml:lang="en">hamburger</span>
             </span>
 
             <div class="headerTitle">
                 <h1>Museo Arte nel Tempo</h1>
-                <h2>Dal Rinascimaneto al Neoclassicismo</h2>
+                <h2>Dal Rinascimento al Neoclassicismo</h2>
             </div>
 
             <span id="loginMenuPlaceholder"/>
 
             <form id="search" name="search" action="" method="post" role="search">
                 <fieldset id="searchBox">
-                    <legend class="Hidelegend">Ricerca</legend>
+                    <legend class="hideLegend">Ricerca</legend>
 
                     <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
                         <option selected="selected" value="Opera">Opera</option>
@@ -46,9 +46,9 @@
                         <option value="Avviso">Avviso</option>
                     </select>
 
-                    <label id="labelS" for="textSearch">Cerca nel sito</label>
-                    <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
-                    <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
+                    <label id="hideLabel" for="searchText">Cerca nel sito</label>
+                    <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
+                    <input id="buttonSubmit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
                 </fieldset>
             </form>
         </div>
@@ -56,21 +56,18 @@
         <div aria-label="breadcrumbs" id="breadcrumbs">
             <p>
                 Ti trovi in:
-            </p>
-
-            <span id="path">
                 <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a>
                 &gt;&gt;
                 <a href="AreaPersonale.html" title="Area utente" aria-label="Vai alla pagina area utente del museo" tabindex="10">Area personale</a>
                 &gt;&gt;
-                <span id="pathSelected">Prenotazioni</span>
-            </span>
+                <strong>Prenotazioni</strong>
+            </p>
         </div>
 
         <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
             <ul>
                 <li>
-                    <a id="skipMenu" class="skip" href="#content" aria-label="Vai al contenuto" tabindex="11">Vai al contenuto</a>
+                    <a id="skipMenu" class="skipInformation" href="#content" aria-label="Vai al contenuto" tabindex="11">Vai al contenuto</a>
                 </li>
 
                 <li>
@@ -108,14 +105,14 @@
         <div id="content" role="main">
             <h2 class="title"> Prenotazioni effettuate</h2>
 
-            <a href="#Back" class="skip">Salta le prenotazioni presenti nella pagina</a>
+            <a href="#buttonBack" class="skipInformation">Salta le prenotazioni presenti nella pagina</a>
 
             <dl>
                 <dt>
                     Prenotazione 1
                 </dt>
                 <dd>
-                    <a href="#p2" class="skip">Salta la prenotazione</a>
+                    <a href="#p2" class="skipInformation">Salta la prenotazione</a>
 
                     <p>
                         Data: data
@@ -126,7 +123,7 @@
                     </p>
 
                     <p>
-                        <input id="printTicket1" class="Button" name="print" value="Stampa" type="button" aria-label="Pulsante per la stampa della prenotazione corrente"/>
+                        <input id="printTicket1" class="button" name="print" value="Stampa" type="button" aria-label="Pulsante per la stampa della prenotazione corrente"/>
                     </p>
                 </dd>
 
@@ -134,7 +131,7 @@
                     Prenotazione 2
                 </dt>
                 <dd>
-                    <a href="#Back" class="skip">Salta la prenotazione</a>
+                    <a href="#buttonBack" class="skipInformation">Salta la prenotazione</a>
 
                     <p>
                         Data: data
@@ -145,17 +142,17 @@
                     </p>
 
                     <p>
-                        <input id="printTicket2" class="Button" name="print" value="Stampa" type="button" aria-label="Pulsante per la stampa della prenotazione corrente"/>
+                        <input id="printTicket2" class="button" name="print" value="Stampa" type="button" aria-label="Pulsante per la stampa della prenotazione corrente"/>
                     </p>
                 </dd>
             </dl>
 
-            <p class="Navigation">
-                <a id="Back" class="Button" href="" title="Prenotazioni precedenti" role="button" aria-label="Torna alle prenotazioni precedenti"> &lt; Precedente</a>
-                <a id="Next" class="Button" href="" title="Prenotazioni successive" role="button" aria-label="Vai alle prenotazioni successive"> Successivo &gt;</a>
+            <p class="navigation">
+                <a id="buttonBack" class="button" href="" title="Prenotazioni precedenti" role="button" aria-label="Torna alle prenotazioni precedenti"> &lt; Precedente</a>
+                <a id="buttonNext" class="button" href="" title="Prenotazioni successive" role="button" aria-label="Vai alle prenotazioni successive"> Successivo &gt;</a>
             </p>
 
-            <a id="ButtonBackUp" tabindex="24" href="#header" title="Torna su" aria-label="Torna su">
+            <a id="buttonBackUp" href="#header" title="Torna su" aria-label="Torna su">
                 <img alt="Torna su" src="../Images/TornaSu.png"/>
             </a>
         </div>

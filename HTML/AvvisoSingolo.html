@@ -23,22 +23,22 @@
 
     <body>
         <div id="header" role="banner">
-            <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
+            <h1 id="logoImage" class="backgroundImage" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
 
-            <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu a hamburger, cliccaci sopra per aprire il menu" tabindex="8">
+            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
                 Menu ad <span xml:lang="en">hamburger</span>
             </span>
 
             <div class="headerTitle">
                 <h1>Museo Arte nel Tempo</h1>
-                <h2>Dal Rinascimaneto al Neoclassicismo</h2>
+                <h2>Dal Rinascimento al Neoclassicismo</h2>
             </div>
 
             <span id="loginMenuPlaceholder"/>
 
             <form id="search" name="search" action="" method="post" role="search">
                 <fieldset id="searchBox">
-                    <legend class="Hidelegend">Ricerca</legend>
+                    <legend class="hideLegend">Ricerca</legend>
 
                     <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="2">
                         <option selected="selected" value="Opera">Opera</option>
@@ -46,28 +46,28 @@
                         <option value="Avviso">Avviso</option>
                     </select>
 
-                    <label id="labelS" for="textSearch">Cerca nel sito</label>
-                    <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
-                    <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="3"/>
+                    <label id="hideLabel" for="searchText">Cerca nel sito</label>
+                    <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
+                    <input id="buttonSubmit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="3"/>
                 </fieldset>
             </form>
         </div>
 
         <div id="breadcrumbs" aria-label="breadcrumbs">
-            <p>Ti trovi in: </p>
-
-            <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
-            &gt;&gt;
-            <a href="Avvisi.html" title="Avvisi" aria-label="Vai alla pagina degli avvisi">Avvisi</a>
-            &gt;&gt;
-            <span id="pathSelected">Avviso</span>
+            <p>
+                Ti trovi in:
+                <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
+                &gt;&gt;
+                <a href="Avvisi.html" title="Avvisi" aria-label="Vai alla pagina degli avvisi">Avvisi</a>
+                &gt;&gt;
+                <strong>Avviso singoli</strong>
+            </p>
         </div>
 
         <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
             <ul>
                 <li>
-
-                    <a id="skipMenu" class="skip" href="#content" aria-label="Vai al contenuto" tabindex="10">Vai al contenuto</a>
+                    <a id="skipMenu" class="skipInformation" href="#content" aria-label="Vai al contenuto" tabindex="10">Vai al contenuto</a>
                 </li>
 
                 <li>
@@ -105,11 +105,11 @@
         <div id="content" role="main">
             <h2 id="hWarning" class="title">Avviso1</h2>
 
-            <h3 class="H2Home">Dettagli</h3>
+            <h3>Dettagli</h3>
 
-            <ul class="listClass">
+            <ul class="list">
                 <li>
-                    <a class="skip" href="#hWarning2" aria-label="Salta i dettagli">Salta dettagli</a>
+                    <a class="skipInformation" href="#hWarning2" aria-label="Salta i dettagli">Salta dettagli</a>
                 </li>
 
                 <li>
@@ -125,10 +125,10 @@
                 </li>
             </ul>
 
-            <h3 id="hWarning2" class="H2Home">Descrizione</h3>
+            <h3 id="hWarning2" class="subtitle">Descrizione</h3>
 
-            <p class="paragraph">
-                <a class="skip" href="#footer" aria-label="Salta il testo">Salta il testo</a>
+            <p>
+                <a class="skipInformation" href="#footer" aria-label="Salta il testo">Salta il testo</a>
 
                 Pellentesque nec facilisis eros, non egestas nisl.
                 Cras facilisis, metus dapibus viverra consequat, mauris enim facilisis mauris, feugiat laoreet ligula leo ac
@@ -137,7 +137,7 @@
                 Nullam vel aliquet libero, fringilla faucibus felis.
             </p>
 
-            <a id="ButtonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
+            <a id="buttonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
                 <img alt="Torna su" src="../Images/TornaSu.png"/>
             </a>
         </div>

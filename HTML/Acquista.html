@@ -23,22 +23,22 @@
 
     <body>
         <div id="header" role="banner">
-            <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
+            <h1 id="logoImage" class="backgroundImage" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
 
-            <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
+            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
                 Menu ad <span xml:lang="en">hamburger</span>
             </span>
 
             <div class="headerTitle">
                 <h1>Museo Arte nel Tempo</h1>
-                <h2>Dal Rinascimaneto al Neoclassicismo</h2>
+                <h2>Dal Rinascimento al Neoclassicismo</h2>
             </div>
 
             <span id="loginMenuPlaceholder"/>
 
             <form id="search" name="search" action="" method="post" role="search" aria-label="form per la ricerca nella pagina">
                 <fieldset id="searchBox">
-                    <legend class="Hidelegend">Ricerca</legend>
+                    <legend class="hideLegend">Ricerca</legend>
 
                     <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
                         <option selected="selected" value="Opera">Opera</option>
@@ -46,9 +46,9 @@
                         <option value="Avviso">Avviso</option>
                     </select>
 
-                    <label id="labelS" for="textSearch">Cerca nel sito</label>
-                    <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
-                    <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
+                    <label id="hideLabel" for="searchText">Cerca nel sito</label>
+                    <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
+                    <input id="buttonSubmit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
                 </fieldset>
             </form>
         </div>
@@ -56,21 +56,18 @@
         <div id="breadcrumbs" aria-label="breadcrumbs">
             <p>
                 Ti trovi in:
-            </p>
-
-            <span id="path">
                 <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a>
                 &gt;&gt;
                 <a href="OpzioniAcquisto.html" title="Opzioni d'acquisto" aria-label="Vai alla pagina opzioni d'acquisto del museo" tabindex="10">Opzioni d'acquisto</a>
                 &gt;&gt;
-                <span id="pathSelected">Acquista</span>
-            </span>
+                <strong>Acquista</strong>
+            </p>
         </div>
 
         <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
             <ul>
                 <li>
-                    <a id="skipMenu" class="skip" href="#content" aria-label="Vai al contenuto" tabindex="11">Vai al contenuto</a>
+                    <a id="skipMenu" class="skipInformation" href="#content" aria-label="Vai al contenuto" tabindex="11">Vai al contenuto</a>
                 </li>
 
                 <li>
@@ -106,63 +103,63 @@
         </div>
 
         <div id="content" role="main">
-            <h2 class="title">Acquisto</h2>
+            <h2 class="title">Acquista</h2>
 
             <form id="buyForm" name="acquisto" action="RiepilogoAcquisto.html" method="post" role="form" aria-label="form per effettuare l'acquisto">
                 <fieldset class="fieldset">
-                    <legend class="Hidelegend">Acquista</legend>
+                    <legend>Informazioni per l'acquisto</legend>
 
                     <p>
                         <label id="dataLabel" for="data">Data</label>
-                        <input id="data" class="elementForm" name="data" type="text" aria-label="casella per inserire la data"/>
+                        <input id="data" class="formElement" name="data" type="text" aria-label="casella per inserire la data"/>
                     </p>
 
                     <p>
                         <label id="oraLabel" for="ora">Ora</label>
-                        <input id="ora" class="elementForm" name="ora" type="text" aria-label="casella per inserire l'ora"/>
+                        <input id="ora" class="formElement" name="ora" type="text" aria-label="casella per inserire l'ora"/>
                     </p>
 
                     <p>
-                        <label id="labelTipologiaBiglietto" for="TipologiaBiglietto">Tipologia</label>
-                        <select id="TipologiaBiglietto" class="elementForm" name="TipologiaBiglietto" aria-label="seleziona la tipologia del biglietto">
+                        <label id="labelTipologiaBiglietto" for="TipologiaBiglietto">Cosa desideri acquistare?</label>
+                        <select id="TipologiaBiglietto" class="formElement" name="TipologiaBiglietto" aria-label="seleziona la tipologia del biglietto">
                             <option value="Biglietto" selected="selected">Biglietto</option>
                             <option value="Pacchetto">Pacchetto</option>
                         </select>
                     </p>
 
                     <p>
-                        <label id="labelBiglietto" for="biglietto">Biglietto</label>
-                        <select id="biglietto" class="elementForm" name="biglietto" aria-label="seleziona il biglietto">
+                        <label id="labelBiglietto" for="biglietto">Tipologia</label>
+                        <select id="biglietto" class="formElement" name="biglietto" aria-label="seleziona il biglietto">
                             <option value="Intero" selected="selected">Intero</option>
                             <option value="Ridotto">Ridotto</option>
                         </select>
                     </p>
 
                     <p>
-                        <label id="labelPacchetto" for="pacchetto">Pacchetto</label>
-                        <select id="pacchetto" class="elementForm" name="pacchetto" aria-label="seleziona il pacchetto">
+                        <label id="labelPacchetto" for="pacchetto">Tipologia</label>
+                        <select id="pacchetto" class="formElement" name="pacchetto" aria-label="seleziona il pacchetto">
                             <option value="famiglia" selected="selected">Famiglia</option>
                             <option value="comitiva">Comitiva</option>
                         </select>
                     </p>
 
                     <fieldset id="fieldGuida" class="fieldset">
-                        <legend class="Hidelegend">Guida</legend>
+                        <legend>Visita guidata</legend>
 
-                        <label id="labelGuida" for="fieldGuida">Guida</label>
                         <label id="labelYes" for="guidaSì">Sì</label>
-                        <input id="guidaSì" name="guida" value="sì" type="radio" aria-label="Pulsante per dire di sì alla guida"/>
+                        <input id="guidaSì" name="guida" value="sì" type="radio" checked="checked" aria-label="Pulsante per dire di sì alla guida"/>
                         <label id="labelNo" for="guidaNo">No</label>
                         <input id="guidaNo" name="guida" value="no" type="radio" aria-label="Pulsante per dire di no alla guida"/>
                     </fieldset>
 
-                    <p>
-                        <input id="confirm" name="continua" class="Button" value="Continua" type="submit" aria-label="Pulsante per proseguire nell'acquisto"/>
+                    <p class="navigation">
+                        <input id="buttonConfirm" class="button" name="AcquistaNuovoBiglietto" type="submit" value="Acquista" role="button" aria-label="Acquista un nuovo biglietto con le informazioni specificate"/>
+                        <input id="buttonReset" class="button" name="CancellaDati" type="reset" value="Cancella" role="button" aria-label="Cancella i dati inseriti"/>
                     </p>
                 </fieldset>
             </form>
 
-            <a id="ButtonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
+            <a id="buttonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
                 <img alt="Torna su" src="../Images/TornaSu.png"/>
             </a>
         </div>

@@ -10,7 +10,7 @@
 
         <meta name="language" content="italian it"/>
         <meta name="title" content="Acquisto effettuato | Museo arte nel tempo"/>
-        <meta name="description" content="Acquisto del pacchetto selezionato è andato a buon fine"/>
+        <meta name="description" content="Acquisto del pacchetto selezionato andato a buon fine"/>
         <meta name="keywords" content="arte, pittura, scultura, museo"/>
         <meta name="author" content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto"/>
 
@@ -23,22 +23,22 @@
 
     <body>
         <div id="header" role="banner">
-            <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
+            <h1 id="logoImage" class="backgroundImage" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
 
-            <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
+            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
                 Menu ad <span xml:lang="en">hamburger</span>
             </span>
 
-            <span id="loginMenuPlaceholder"/>
-
             <div class="headerTitle">
                 <h1>Museo Arte nel Tempo</h1>
-                <h2>Dal Rinascimaneto al Neoclassicismo</h2>
+                <h2>Dal Rinascimento al Neoclassicismo</h2>
             </div>
+
+            <span id="loginMenuPlaceholder"/>
 
             <form id="search" name="search" action="" method="post" role="search" aria-label="form per la ricerca nella pagina">
                 <fieldset id="searchBox">
-                    <legend class="Hidelegend">Ricerca</legend>
+                    <legend class="hideLegend">Ricerca</legend>
 
                     <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
                         <option selected="selected" value="Opera">Opera</option>
@@ -46,9 +46,9 @@
                         <option value="Avviso">Avviso</option>
                     </select>
 
-                    <label id="labelS" for="textSearch">Cerca nel sito</label>
-                    <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
-                    <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
+                    <label id="hideLabel" for="searchText">Cerca nel sito</label>
+                    <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
+                    <input id="buttonSubmit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
                 </fieldset>
             </form>
         </div>
@@ -56,9 +56,6 @@
         <div id="breadcrumbs" aria-label="breadcrumbs">
             <p>
                 Ti trovi in:
-            </p>
-
-            <span id="path">
                 <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a>
                 &gt;&gt;
                 <a href="OpzioniAcquisto.html" title="Opzioni d'acquisto" aria-label="Vai alla pagina opzioni d'acquisto del museo" tabindex="10">Opzioni d'acquisto</a>
@@ -67,15 +64,14 @@
                 &gt;&gt;
                 <a href="RiepilogoAcquisto.html" title="Acquista" aria-label="Vai alla pagina riepilogo degli acquisti del museo" tabindex="12">Riepilogo acquisto</a>
                 &gt;&gt;
-                <span id="pathSelected">Acquisto effettuato</span>
-            </span>
+                <strong>Acquisto effettuato</strong>
+            </p>
         </div>
 
         <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
             <ul>
                 <li>
-
-                    <a id="skipMenu" class="skip" href="#content" aria-label="Vai al contenuto" tabindex="13">Vai al contenuto</a>
+                    <a id="skipMenu" class="skipInformation" href="#content" aria-label="Vai al contenuto" tabindex="13">Vai al contenuto</a>
                 </li>
 
                 <li>
@@ -118,12 +114,12 @@
                 <span xml:lang="en">account</span> per usufruire dei servizi dedicati.
             </p>
 
-            <p class="Navigation">
-                <a id="HomepageButton" class="Button" href="../Index.php" title="" role="button" aria-label="vai alla homepage del sito">Home</a>
-                <a id="UserButton" class="Button" href="AreaPersonale.html" title="" role="button" aria-label="vai alla pagina dell'area utente">Area personale</a>
+            <p class="navigation">
+                <a id="homepageButton" class="button" href="../Index.php" title="" role="button" aria-label="vai alla homepage del sito">Home</a>
+                <a id="userButton" class="button" href="AreaPersonale.html" title="" role="button" aria-label="vai alla pagina dell'area utente">Area personale</a>
             </p>
 
-            <a id="ButtonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
+            <a id="buttonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
                 <img alt="Torna su" src="../Images/TornaSu.png"/>
             </a>
         </div>

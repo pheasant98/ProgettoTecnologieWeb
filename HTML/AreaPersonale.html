@@ -26,22 +26,22 @@
 
     <body>
         <div id="header" role="banner">
-            <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
+            <h1 id="logoImage" class="backgroundImage" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
 
-            <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="6">
+            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="6">
                 Menu ad <span xml:lang="en">hamburger</span>
             </span>
 
-            <span id="loginMenuPlaceholder"/>
-
             <div class="headerTitle">
                 <h1>Museo Arte nel Tempo</h1>
-                <h2>Dal Rinascimaneto al Neoclassicismo</h2>
+                <h2>Dal Rinascimento al Neoclassicismo</h2>
             </div>
+
+            <span id="loginMenuPlaceholder"/>
 
             <form id="search" name="search" action="" method="post" role="search">
                 <fieldset id="searchBox">
-                    <legend class="Hidelegend">Ricerca</legend>
+                    <legend class="hideLegend">Ricerca</legend>
 
                     <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="2">
                         <option selected="selected" value="Opera">Opera</option>
@@ -49,9 +49,9 @@
                         <option value="Avviso">Avviso</option>
                     </select>
 
-                    <label id="labelS" for="textSearch">Cerca nel sito</label>
-                    <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
-                    <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="3"/>
+                    <label id="hideLabel" for="searchText">Cerca nel sito</label>
+                    <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
+                    <input id="buttonSubmit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="3"/>
                 </fieldset>
             </form>
         </div>
@@ -59,20 +59,16 @@
         <div id="breadcrumbs" aria-label="breadcrumbs">
             <p>
                 Ti trovi in:
-            </p>
-
-            <span id="path">
                 <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="7" xml:lang="en">Home</a>
                 &gt;&gt;
-                <span id="pathSelected">Area personale</span>
-            </span>
+                <strong>Area personale</strong>
+            </p>
         </div>
 
         <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
             <ul>
                 <li>
-
-                    <a id="skipMenu" class="skip" href="#content" aria-label="Vai al contenuto" tabindex="8">Vai al contenuto</a>
+                    <a id="skipMenu" class="skipInformation" href="#content" aria-label="Vai al contenuto" tabindex="8">Vai al contenuto</a>
                 </li>
 
                 <li>
@@ -114,7 +110,7 @@
                 Questi sono i tuoi dati:
             </p>
 
-            <ul class="listClass">
+            <ul class="list">
                 <li>
                     Nome: Federico
                 </li>
@@ -136,54 +132,54 @@
                 </li>
             </ul>
 
-            <h3 id="adminH3" class="paragraph">Funzionalità</h3>
+            <h3 id="adminH3" class="subtitle">Funzionalità</h3>
 
             <p id="userP" class="paragraph">
                 Ora che hai effettuato l'accesso al sito, puoi utilizzare il tuo
                 <span xml:lang="en">account</span> per acquistare dei biglietti, effettuando delle prenotazioni, oppure per lasciare delle recensioni riguardo le visite che hai fatto al museo.
             </p>
 
-            <ul id="adminUl" class="Navigation">
+            <ul id="adminOperationsList" class="navigation">
                 <li>
-                    <a id="ModificaAdmin" class="Button" href="ModificaDatiUtenti.html" title="vai alla pagina modifica dati utente" role="button" aria-label="vai alla pagina modifica dati utente">Modifica profilo</a>
+                    <a id="ModificaAdmin" class="button userOperationButton" href="ModificaDatiUtente.html" title="vai alla pagina modifica dati utente" role="button" aria-label="vai alla pagina modifica dati utente">Modifica profilo</a>
                 </li>
 
                 <li>
-                    <a id="Inserisci" class="Button" href="Inserisci.html" title="vai alla pagina inserisci pagina" role="button" aria-label="vai alla pagina inserisci pagina">Inserisci pagina</a>
+                    <a id="Inserisci" class="button userOperationButton" href="Inserisci.html" title="vai alla pagina inserisci pagina" role="button" aria-label="vai alla pagina inserisci pagina">Inserisci pagina</a>
                 </li>
 
                 <li>
-                    <a id="GestioneUtenti" class="Button" href="GestioneUtenti.html" title="vai alla pagina Gestione Utenti" role="button" aria-label="vai alla pagina iGestione Utenti">Gestione utenti</a>
+                    <a id="GestioneUtenti" class="button userOperationButton" href="GestioneUtenti.html" title="vai alla pagina Gestione Utenti" role="button" aria-label="vai alla pagina iGestione Utenti">Gestione utenti</a>
                 </li>
 
                 <li>
-                    <a id="ContenutoSito" class="Button" href="GestioneContenuti.html" title="vai alla pagina Contenuto Sito" role="button" aria-label="vai alla pagina Contenuto Sito">Contenuto sito</a>
-                </li>
-            </ul>
-
-            <ul id="userUl" class="Navigation">
-                <li>
-                    <a href="ModificaDatiUtenti.html" id="ModificaUser" class="Button" title="Modifica dati profilo" aria-label="Vai alla pagina per la modifica dei dati del profilo">Modifica profilo</a>
-                </li>
-
-                <li>
-                    <a href="Prenotazioni.html" class="Button" title="Gestisci le tue prenotazioni" aria-label="Vai alla pagina per la gestione delle prenotazioni effettuate">Gestisci le prenotazioni</a>
-                </li>
-
-                <li>
-                    <a href="Recensione.html" class="Button" title="Gestisci le tue recensioni" aria-label="Vai alla pagina per la gestione delle recensioni lasciate">Gestisci le recensioni</a>
-                </li>
-
-                <li>
-                    <a href="OpzioniAcquisto.html" class="Button" title="Effettua una nuova prenotazione" aria-label="Vai alla pagina per effettuare una nuova prenotazione">Effettua una prenotazione</a>
-                </li>
-
-                <li>
-                    <a href="LasciaUnaRecensione.html" class="Button" title="Lascia una nuova recensione" aria-label="Vai alla pagina per lasciare una nuova recensione">Lascia una recensione</a>
+                    <a id="ContenutoSito" class="button userOperationButton" href="GestioneContenuti.html" title="vai alla pagina Contenuto Sito" role="button" aria-label="vai alla pagina Contenuto Sito">Contenuto sito</a>
                 </li>
             </ul>
 
-            <a id="ButtonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
+            <ul id="userOperationsList" class="navigation">
+                <li>
+                    <a href="ModificaDatiUtente.html" id="ModificaUser" class="button userOperationButton" title="Modifica dati profilo" aria-label="Vai alla pagina per la modifica dei dati del profilo">Modifica profilo</a>
+                </li>
+
+                <li>
+                    <a href="Prenotazioni.html" class="button userOperationButton" title="Gestisci le tue prenotazioni" aria-label="Vai alla pagina per la gestione delle prenotazioni effettuate">Gestisci le prenotazioni</a>
+                </li>
+
+                <li>
+                    <a href="Recensione.html" class="button userOperationButton" title="Gestisci le tue recensioni" aria-label="Vai alla pagina per la gestione delle recensioni lasciate">Gestisci le recensioni</a>
+                </li>
+
+                <li>
+                    <a href="OpzioniAcquisto.html" class="button userOperationButton" title="Effettua una nuova prenotazione" aria-label="Vai alla pagina per effettuare una nuova prenotazione">Effettua una prenotazione</a>
+                </li>
+
+                <li>
+                    <a href="LasciaUnaRecensione.html" class="button userOperationButton" title="Lascia una nuova recensione" aria-label="Vai alla pagina per lasciare una nuova recensione">Lascia una recensione</a>
+                </li>
+            </ul>
+
+            <a id="buttonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
                 <img alt="Torna su" src="../Images/TornaSu.png"/>
             </a>
         </div>

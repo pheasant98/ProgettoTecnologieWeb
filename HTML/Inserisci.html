@@ -23,22 +23,22 @@
 
     <body>
         <div id="header" role="banner">
-            <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
+            <h1 id="logoImage" class="backgroundImage" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
 
-            <span id="HamburgerMenu" class="ImgBackground" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
+            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
                 Menu ad <span xml:lang="en">hamburger</span>
             </span>
 
             <div class="headerTitle">
                 <h1>Museo Arte nel Tempo</h1>
-                <h2>Dal Rinascimaneto al Neoclassicismo</h2>
+                <h2>Dal Rinascimento al Neoclassicismo</h2>
             </div>
 
             <span id="loginMenuPlaceholder"/>
 
             <form id="search" name="search" action="" method="post" role="search">
                 <fieldset id="searchBox">
-                    <legend class="Hidelegend">Ricerca</legend>
+                    <legend class="hideLegend">Ricerca</legend>
 
                     <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
                         <option selected="selected" value="Opera">Opera</option>
@@ -46,9 +46,9 @@
                         <option value="Avviso">Avviso</option>
                     </select>
 
-                    <label id="labelS" for="textSearch">Cerca nel sito</label>
-                    <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
-                    <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
+                    <label id="hideLabel" for="searchText">Cerca nel sito</label>
+                    <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
+                    <input id="buttonSubmit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
                 </fieldset>
             </form>
         </div>
@@ -56,21 +56,18 @@
         <div aria-label="breadcrumbs" id="breadcrumbs">
             <p>
                 Ti trovi in:
-            </p>
-
-            <span id="path">
                 <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en" tabindex="9">Home</a>
                 &gt;&gt;
                 <a href="AreaPersonale.html" title="Area personale" aria-label="Vai alla pagina area personale" tabindex="10">Area personale</a>
                 &gt;&gt;
-                <span id="pathSelected">Inserisci pagina</span>
-            </span>
+                <strong>Inserisci pagina</strong>
+            </p>
         </div>
 
         <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
             <ul>
                 <li>
-                    <a id="skipMenu" href="#content" class="skip" aria-label="Vai al contenuto" tabindex="11">Vai al contenuto</a>
+                    <a id="skipMenu" href="#content" class="skipInformation" aria-label="Vai al contenuto" tabindex="11">Vai al contenuto</a>
                 </li>
 
                 <li>
@@ -109,13 +106,15 @@
             <h2 class="title">Inserimento</h2>
 
             <form id="Insert" name="Inserimento" action="" method="post" role="form">
-                <fieldset id="InsertField" class="fieldset">
+                <fieldset id="InsertField" class="hideFieldset">
+                    <legend class="hideLegend">Informazioni da inserire</legend>
+
                     <fieldset id="Choice" class="fieldset">
-                        <legend class="Hidelegend">Scelta tipologia pagina</legend>
+                        <legend>Tipologia della pagina</legend>
 
                         <p>
                             <label id="LabelFilterType" for="filterType1">Pagina su</label>
-                            <select name="filterType" id="filterType1" class="elementForm" aria-label="Seleziona tipologia di pagina da creare">
+                            <select name="filterType" id="filterType1" class="formElement" aria-label="Seleziona la tipologia di pagina da creare">
                                 <option selected="selected" value="Opera">Opera</option>
                                 <option value="Evento">Evento</option>
                                 <option value="Avviso">Avviso</option>
@@ -124,31 +123,31 @@
                     </fieldset>
 
                     <fieldset id="Opera" class="fieldset">
-                        <legend class="Hidelegend">campi opera</legend>
+                        <legend>Informazioni dell'opera</legend>
 
                         <p>
                             <label id="labelAuthor" for="textAuthor">Autore</label>
-                            <input id="textAuthor" class="elementForm" name="textAuthor" type="text" aria-label="Inserisci l'autore"/>
+                            <input id="textAuthor" class="formElement" name="textAuthor" type="text" aria-label="Inserisci l'autore"/>
                         </p>
 
                         <p>
                             <label id="labelTitle" for="textTitle">Titolo</label>
-                            <input id="textTitle" class="elementForm" name="textTitle" type="text" aria-label="Inserisci il titolo"/>
+                            <input id="textTitle" class="formElement" name="textTitle" type="text" aria-label="Inserisci il titolo"/>
                         </p>
 
                         <p>
-                            <label id="labelAreaDescr" for="AreaDescr">Descrizione</label>
-                            <textarea id="AreaDescr" class="elementForm" name="AreaDescr" rows="20px" cols="20px" aria-label="Inserisci la descrizione"> Scrivi qui la descrizione!</textarea>
+                            <label id="labelAreaDescr" for="operaDescriptionArea">Descrizione</label>
+                            <textarea id="operaDescriptionArea" class="formElement" name="AreaDescr" rows="20px" cols="20px" aria-label="Inserisci la descrizione"> Scrivi qui la descrizione!</textarea>
                         </p>
 
                         <p>
                             <label id="labelYear" for="textYear">Anno</label>
-                            <input id="textYear" class="elementForm" name="textYear" type="text"/>
+                            <input id="textYear" class="formElement" name="textYear" type="text"/>
                         </p>
 
                         <p>
                             <label id="LabelFilterHistory" for="filterHistory">Periodo opera</label>
-                            <select name="filterHistory" id="filterHistory" class="elementForm" aria-label="Seleziona il periodo storico dell'opera">
+                            <select name="filterHistory" id="filterHistory" class="formElement" aria-label="Seleziona il periodo storico dell'opera">
                                 <option selected="selected" value="Quattrocento">Quattrocento</option>
                                 <option value="Cinquecento">Cinquecento</option>
                                 <option value="Seicento">Seicento</option>
@@ -158,7 +157,7 @@
 
                         <p>
                             <label id="LabelFilterOpera" for="filterOpera1">Stile opera</label>
-                            <select name="filterOpera" id="filterOpera1" class="elementForm" aria-label="Seleziona stile dell'opera">
+                            <select name="filterOpera" id="filterOpera1" class="formElement" aria-label="Seleziona stile dell'opera">
                                 <option selected="selected" value="Pittura">Pittura</option>
                                 <option value="Scultura">Scultura</option>
                             </select>
@@ -166,62 +165,65 @@
 
                         <p>
                             <label id="labelTechnique" for="textTechnique">Tecnica</label>
-                            <input id="textTechnique" class="elementForm" name="textTechnique" type="text" aria-label="Inserisci la dimensione"/>
+                            <input id="textTechnique" class="formElement" name="textTechnique" type="text" aria-label="Inserisci la dimensione"/>
                         </p>
 
                         <p>
                             <label id="labelMaterial" for="textMaterial">Materiale</label>
-                            <input id="textMaterial" class="elementForm" name="textMaterial" type="text" aria-label="Inserisci la dimensione"/>
+                            <input id="textMaterial" class="formElement" name="textMaterial" type="text" aria-label="Inserisci la dimensione"/>
                         </p>
 
                         <p>
                             <label id="labelSize" for="textSize">Dimensione</label>
-                            <input id="textSize" class="elementForm" name="textSize" type="text" aria-label="Inserisci la dimensione"/>
+                            <input id="textSize" class="formElement" name="textSize" type="text" aria-label="Inserisci la dimensione"/>
                         </p>
 
                         <fieldset class="fieldset">
-                            <legend class="Hidelegend">Campi prestito</legend>
+                            <legend>Opera in prestito?</legend>
 
                             <label id="labelLoanYes" for="textLoanYes">Sì</label>
                             <input id="textLoanYes" name="textLoan" value="Si" type="radio" aria-label="Pulsante per dire di si al prestito"/>
                             <label id="labelLoanNo" for="textLoanNo">No</label>
-                            <input id="textLoanNo"  name="textLoan" value="No" type="radio" aria-label="Pulsante per dire di no al prestito"/>
+                            <input id="textLoanNo" name="textLoan" value="No" type="radio" checked="checked" aria-label="Pulsante per dire di no al prestito"/>
                         </fieldset>
 
                         <p>
-                            <label id="labelImg" for="textImg">Inserisci Immagine</label>
-                            <input id="textImg" class="elementForm" name="textImg" type="file" aria-label="Inserisci l'immagine"/>
+                            <label id="labelOperaImageUpload" for="operaImageUpload">Inserisci Immagine</label>
+                            <input id="operaImageUpload" class="formElement" name="textImg" type="file" aria-label="Inserisci l'immagine"/>
                         </p>
 
-                        <input id="InsertB2" class="Button" name="InsertB" type="submit" value="Inserisci" role="button" aria-label="Pulsante per la ricerca"/>
+                        <p class="navigation">
+                            <input id="buttonConfirm" class="button" name="InserisciNuovaOpera" type="submit" value="Inserisci" role="button" aria-label="Inserisci la nuova opera con le informazioni specificate"/>
+                            <input id="buttonReset" class="button" name="CancellaModificheUtente" type="reset" value="Cancella" role="button" aria-label="Cancella i dati inseriti"/>
+                        </p>
                     </fieldset>
 
                     <fieldset id="event" class="fieldset">
-                        <legend class="Hidelegend">campi evento</legend>
+                        <legend>Informazioni dell'evento</legend>
 
                         <p>
                             <label id="labelTitle2" for="textTitle2">Titolo</label>
-                            <input id="textTitle2" class="elementForm" name="textTitle2" type="text" aria-label="Inserisci il titolo"/>
+                            <input id="textTitle2" class="formElement" name="textTitle2" type="text" aria-label="Inserisci il titolo"/>
                         </p>
 
                         <p>
-                            <label id="labelAreaDescr2" for="AreaDescr2">Descrizione</label>
-                            <textarea id="AreaDescr2"  class="elementForm"  name="AreaDescr2" rows="20px" cols="20px" aria-label="Inserisci la descrizione"> Scrivi qui la descrizione!</textarea>
+                            <label id="labelEventDescriptionArea" for="eventDescriptionArea">Descrizione</label>
+                            <textarea id="eventDescriptionArea" class="formElement" name="AreaDescr2" rows="20px" cols="20px" aria-label="Inserisci la descrizione">Scrivi qui la descrizione!</textarea>
                         </p>
 
                         <p>
                             <label id="labelBegin" for="textBegin">Inizio</label>
-                            <input id="textBegin" class="elementForm" name="textBegin" type="text" aria-label="Inserisci la data di inizio"/>
+                            <input id="textBegin" class="formElement" name="textBegin" type="text" aria-label="Inserisci la data di inizio"/>
                         </p>
 
                         <p>
                             <label id="labelEnd" for="textEnd">Fine</label>
-                            <input id="textEnd" class="elementForm" name="textEnd" type="text" aria-label="Inserisci la data di fine"/>
+                            <input id="textEnd" class="formElement" name="textEnd" type="text" aria-label="Inserisci la data di fine"/>
                         </p>
 
                         <p>
                             <label id="LabelFilterEventType" for="filterEventType">Tipo evento</label>
-                            <select name="filterEventType" id="filterEventType" class="elementForm" aria-label="Seleziona tipologia di evento">
+                            <select name="filterEventType" id="filterEventType" class="formElement" aria-label="Seleziona tipologia di evento">
                                 <option selected="selected" value="Mostra">Mostra</option>
                                 <option value="Conferenza">Conferenza</option>
                             </select>
@@ -229,46 +231,52 @@
 
                         <p>
                             <label id="labelManager" for="textManager">Organizzatore</label>
-                            <input id="textManager" name="textManager" class="elementForm" type="text" aria-label="Inserisci l'organizzatore"/>
+                            <input id="textManager" name="textManager" class="formElement" type="text" aria-label="Inserisci l'organizzatore"/>
                         </p>
 
                         <p>
-                            <label id="labelImg2" for="textImg2">Inserisci Immagine</label>
-                            <input id="textImg2" name="textImg2" class="elementForm" type="file" aria-label="Inserisci il file corrispondente all'immagine"/>
+                            <label id="labelEventImageUpload" for="eventImageUpload">Inserisci Immagine</label>
+                            <input id="eventImageUpload" name="textImg2" class="formElement" type="file" aria-label="Inserisci il file corrispondente all'immagine"/>
                         </p>
 
-                        <input id="InsertB3" class="Button" name="InsertB" type="submit" value="Inserisci" role="button" aria-label="Pulsante per la ricerca"/>
+                        <p class="navigation">
+                            <input id="buttonConfirm" class="button" name="InserisciNuovoEvento" type="submit" value="Inserisci" role="button" aria-label="Inserisci il nuovo evento con le informazioni specificate"/>
+                            <input id="buttonReset" class="button" name="CancellaModificheUtente" type="reset" value="Cancella" role="button" aria-label="Cancella i dati inseriti"/>
+                        </p>
                     </fieldset>
 
                     <fieldset id="News" class="fieldset">
-                        <legend class="Hidelegend">Campo avviso</legend>
+                        <legend>Informazioni dell'avviso</legend>
 
                         <p>
                             <label id="labelObject" for="textObject">Oggetto</label>
-                            <input id="textObject" class="elementForm" name="textObject" type="text"/>
+                            <input id="textObject" class="formElement" name="textObject" type="text"/>
                         </p>
 
                         <p>
-                            <label id="labelAreaDescr3" for="AreaDescr3">Descrizione</label>
-                            <textarea id="AreaDescr3" class="elementForm"  name="AreaDescr3" rows="20px" cols="20px" aria-label="Inserisci la descrizione"> Scrivi qui la descrizione!</textarea>
+                            <label id="labelAreaDescr3" for="noticeDescriptionArea">Descrizione</label>
+                            <textarea id="noticeDescriptionArea" class="formElement" name="AreaDescr3" rows="20px" cols="20px" aria-label="Inserisci la descrizione"> Scrivi qui la descrizione!</textarea>
                         </p>
 
                         <p>
                             <label id="labelRelease" for="textRelease">Rilascio</label>
-                            <input id="textRelease" class="elementForm" name="textRelease" type="text" aria-label=""/>
+                            <input id="textRelease" class="formElement" name="textRelease" type="text" aria-label=""/>
                         </p>
 
                         <p>
                             <label id="labelDeadline" for="textDeadline">Scadenza date</label>
-                            <input id="textDeadline" class="elementForm" name="textDeadline" type="text" aria-label=""/>
+                            <input id="textDeadline" class="formElement" name="textDeadline" type="text" aria-label=""/>
                         </p>
 
-                        <input id="InsertB4" class="Button" name="InsertB" type="submit" value="Inserisci" aria-label="Pulsante per la ricerca"/>
+                        <p class="navigation">
+                            <input id="buttonConfirm" class="button" name="InserisciNuovoAvviso" type="submit" value="Inserisci" role="button" aria-label="Inserisci il nuovo avviso con le informazioni specificate"/>
+                            <input id="buttonReset" class="button" name="CancellaModificheUtente" type="reset" value="Cancella" role="button" aria-label="Cancella i dati inseriti"/>
+                        </p>
                     </fieldset>
                 </fieldset>
             </form>
 
-            <a id="ButtonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
+            <a id="buttonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
                 <img alt="Torna su" src="../Images/TornaSu.png"/>
             </a>
         </div>

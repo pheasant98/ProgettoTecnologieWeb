@@ -22,22 +22,61 @@
     </head>
 
     <body>
-        <div id="header404" role="banner">
-            <h1 id="logoImg" class="ImgBackground" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
+        <div id="headerError404" role="banner">
+            <h1 id="logoImage" class="backgroundImage" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
 
             <div class="headerTitle">
                 <h1>Museo Arte nel Tempo</h1>
-                <h2>Dal Rinascimaneto al Neoclassicismo</h2>
+                <h2>Dal Rinascimento al Neoclassicismo</h2>
             </div>
-
         </div>
 
-        <div id="content404" role="main">
-            <a class="skip" href="#searchBox404" aria-label="Salta il testo">Salta il testo</a>
+        <!--
+        <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
+            <ul>
+                <li>
+                    <a id="skipMenu" class="skipInformation" href="#contentError404" aria-label="Vai al contenuto" tabindex="6">Vai al contenuto</a>
+                </li>
+
+                <li>
+                    <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="7" xml:lang="en">Home</a>
+                </li>
+
+                <li>
+                    <a href="Opere.html" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="8">Opere</a>
+                </li>
+
+                <li>
+                    <a href="Eventi.html" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="9">Eventi</a>
+                </li>
+
+                <li>
+                    <a href="OpzioniAcquisto.html" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti" tabindex="10">Opzioni
+                        d'acquisto</a>
+                </li>
+
+                <li>
+                    <a href="Avvisi.html" title="Avvisi" aria-label="Vai alla pagina degli avvisi" tabindex="11">Avvisi</a>
+                </li>
+
+                <li>
+                    <a href="CosaDiconoDiNoi.html" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni" tabindex="12">Cosa
+                        dicono di noi</a>
+                </li>
+
+                <li>
+                    <a href="Contatti.html" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti" tabindex="13">Contatti</a>
+                </li>
+            </ul>
+        </div>
+        -->
+
+        <div id="contentError404" role="main">
+            <a class="skipInformation" href="#searchBoxError404" aria-label="Salta il testo">Salta il testo</a>
 
             <h2 class="title">Hai proprio l'aria di chi si è perso nei corridoi del museo...</h2>
 
-            <p id="ImgError404" class="ImgBackground" title="Cornice vuote di un ritratto" role="img" aria-label="Cornice vuote di un ritratto">Cornice vuota con ritratto</p>
+            <p id="imageError404" class="backgroundImage" title="Cornice vuote di un ritratto" role="img" aria-label="Cornice vuote di un ritratto">Cornice vuota con ritratto</p>
 
             <p class="paragraph">
                 ...vorremmo aiutarti a trovare la strada giusta!
@@ -46,23 +85,26 @@
             <p class="paragraph">
                 Prova a spiegarci meglio cosa ti serve, oppure permettici di riaccompagnarti all'ingresso!
             </p>
-            <form id="search" name="search" action="" method="post" role="search">
-                <fieldset id="searchBox404" >
-                    <legend class="Hidelegend">Ricerca</legend>
+
+            <form id="searchError404" name="search" action="" method="post" role="search">
+                <fieldset id="searchBoxError404" >
+                    <legend class="hideLegend">Ricerca</legend>
+
                     <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca">
                         <option selected="selected" value="Opera">Opera</option>
                         <option value="Evento">Evento</option>
                         <option value="Avviso">Avviso</option>
                     </select>
-                    <label id="labelS" for="textSearch">Cerca nel sito</label>
-                    <input id="textSearch" name="ricerca" type="text" aria-label="Casella di ricerca"/>
-                    <input id="Submit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca"/>
+
+                    <label id="hideLabel" for="searchText">Cerca nel sito</label>
+                    <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca"/>
+                    <input id="buttonSubmit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca"/>
                 </fieldset>
             </form>
 
-            <a id="ToHome" class="Button" href="../Index.php" title="Home" role="button" aria-label="porta alla pagina di home" xml:lang="en"> Home </a>
+            <a id="buttonHomeError404" class="button" href="../Index.php" title="Home" role="button" aria-label="porta alla pagina di home" xml:lang="en"> Home </a>
 
-            <a id="ButtonBackUp" href="#header404" title="Torna su" role="button" aria-label="Torna su">
+            <a id="buttonBackUp" href="#headerError404" title="Torna su" role="button" aria-label="Torna su">
                 <img alt="Torna su" src="../Images/TornaSu.png"/>
             </a>
         </div>

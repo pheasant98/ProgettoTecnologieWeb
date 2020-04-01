@@ -1,22 +1,27 @@
 window.onload = menu;
-function menu()
-{
-    document.getElementById("HamburgerMenu").addEventListener("click",touch);//ascoltatore
-    document.getElementById("UserTools").addEventListener("click", touch2);
-   // document.getElementById("skipMenu").addEventListener("click", touch)
 
-    function touch()//classe gestione ascoltatore
-    {
-        var Hmenu=document.getElementById("menu");//prende l'id dell'elemento cliccato
-        Hmenu.classList.toggle("show"); //inserisci dentro al tag con l'id cliccato, la nuova classe
-        var Content=document.getElementById("content");
-        Content.classList.toggle("hide");
-        var Breadcrumbs=document.getElementById("breadcrumbs");
-        Breadcrumbs.classList.toggle("hide");
-    }
+function touch() {
+    let menus;
+    let content;
+    let breadcrumbs;
 
-    function touch2() {
-        var UserM=document.getElementById("UserMenu");
-        UserM.classList.toggle("show");
-    }
+    menus = document.getElementById("menu");
+    menus.classList.toggle("show");
+
+    content = document.getElementById("content");
+    content.classList.toggle("hide");
+
+    breadcrumbs = document.getElementById("breadcrumbs");
+    breadcrumbs.classList.toggle("hide");
+}
+
+function touchSecond() {
+    let user = document.getElementById("userMenu");
+    user.classList.toggle("show");
+}
+
+function menu() {
+    document.getElementById("hamburgerMenu").addEventListener("click", touch);
+    document.getElementById("userTools").addEventListener("click", touchSecond);
+    // document.getElementById("skipMenu").addEventListener("click", touch)
 }

@@ -3,3 +3,9 @@
 
 # File di dizionario per PHPStorm
 Configuration
+
+# NPM package file
+package.json
+package-lock.json
+.stylelintrc.json
+node_modules
