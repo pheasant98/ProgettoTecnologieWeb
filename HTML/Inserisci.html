@@ -184,7 +184,7 @@
                             <label id="labelLoanYes" for="textLoanYes">Sì</label>
                             <input id="textLoanYes" name="textLoan" value="Si" type="radio" aria-label="Pulsante per dire di si al prestito"/>
                             <label id="labelLoanNo" for="textLoanNo">No</label>
-                            <input id="textLoanNo"  name="textLoan" value="No" type="radio" aria-label="Pulsante per dire di no al prestito"/>
+                            <input id="textLoanNo" name="textLoan" value="No" type="radio" checked="checked" aria-label="Pulsante per dire di no al prestito"/>
                         </fieldset>
 
                         <p>
@@ -192,7 +192,10 @@
                             <input id="operaImageUpload" class="formElement" name="textImg" type="file" aria-label="Inserisci l'immagine"/>
                         </p>
 
-                        <input id="InsertB2" class="button" name="InsertB" type="submit" value="Inserisci" role="button" aria-label="Pulsante per la ricerca"/>
+                        <p class="navigation">
+                            <input id="buttonConfirm" class="button" name="InserisciNuovaOpera" type="submit" value="Inserisci" role="button" aria-label="Inserisci la nuova opera con le informazioni specificate"/>
+                            <input id="buttonReset" class="button" name="CancellaModificheUtente" type="reset" value="Cancella" role="button" aria-label="Cancella i dati inseriti"/>
+                        </p>
                     </fieldset>
 
                     <fieldset id="event" class="fieldset">
@@ -205,7 +208,7 @@
 
                         <p>
                             <label id="labelEventDescriptionArea" for="eventDescriptionArea">Descrizione</label>
-                            <textarea id="eventDescriptionArea" class="formElement" name="AreaDescr2" rows="20px" cols="20px" aria-label="Inserisci la descrizione"> Scrivi qui la descrizione!</textarea>
+                            <textarea id="eventDescriptionArea" class="formElement" name="AreaDescr2" rows="20px" cols="20px" aria-label="Inserisci la descrizione">Scrivi qui la descrizione!</textarea>
                         </p>
 
                         <p>
@@ -236,7 +239,10 @@
                             <input id="eventImageUpload" name="textImg2" class="formElement" type="file" aria-label="Inserisci il file corrispondente all'immagine"/>
                         </p>
 
-                        <input id="InsertB3" class="button" name="InsertB" type="submit" value="Inserisci" role="button" aria-label="Pulsante per la ricerca"/>
+                        <p class="navigation">
+                            <input id="buttonConfirm" class="button" name="InserisciNuovoEvento" type="submit" value="Inserisci" role="button" aria-label="Inserisci il nuovo evento con le informazioni specificate"/>
+                            <input id="buttonReset" class="button" name="CancellaModificheUtente" type="reset" value="Cancella" role="button" aria-label="Cancella i dati inseriti"/>
+                        </p>
                     </fieldset>
 
                     <fieldset id="News" class="fieldset">
@@ -262,7 +268,10 @@
                             <input id="textDeadline" class="formElement" name="textDeadline" type="text" aria-label=""/>
                         </p>
 
-                        <input id="InsertB4" class="button" name="InsertB" type="submit" value="Inserisci" aria-label="Pulsante per la ricerca"/>
+                        <p class="navigation">
+                            <input id="buttonConfirm" class="button" name="InserisciNuovoAvviso" type="submit" value="Inserisci" role="button" aria-label="Inserisci il nuovo avviso con le informazioni specificate"/>
+                            <input id="buttonReset" class="button" name="CancellaModificheUtente" type="reset" value="Cancella" role="button" aria-label="Cancella i dati inseriti"/>
+                        </p>
                     </fieldset>
                 </fieldset>
             </form>

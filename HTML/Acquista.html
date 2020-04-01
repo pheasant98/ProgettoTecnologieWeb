@@ -147,13 +147,14 @@
                         <legend>Visita guidata</legend>
 
                         <label id="labelYes" for="guidaSì">Sì</label>
-                        <input id="guidaSì" name="guida" value="sì" type="radio" aria-label="Pulsante per dire di sì alla guida"/>
+                        <input id="guidaSì" name="guida" value="sì" type="radio" checked="checked" aria-label="Pulsante per dire di sì alla guida"/>
                         <label id="labelNo" for="guidaNo">No</label>
                         <input id="guidaNo" name="guida" value="no" type="radio" aria-label="Pulsante per dire di no alla guida"/>
                     </fieldset>
 
-                    <p>
-                        <input id="buttonConfirm" name="continua" class="button" value="Continua" type="submit" aria-label="Pulsante per proseguire nell'acquisto"/>
+                    <p class="navigation">
+                        <input id="buttonConfirm" class="button" name="AcquistaNuovoBiglietto" type="submit" value="Acquista" role="button" aria-label="Acquista un nuovo biglietto con le informazioni specificate"/>
+                        <input id="buttonReset" class="button" name="CancellaDati" type="reset" value="Cancella" role="button" aria-label="Cancella i dati inseriti"/>
                     </p>
                 </fieldset>
             </form>

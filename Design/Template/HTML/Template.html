@@ -28,15 +28,16 @@
             <a id="logIn" class="" href="" title="LogIn" role="button" aria-label="porta alla pagina di login"> <span xml:lang="en"> LogIn </span></a>
             <a id="profile" href="" title="Area utente" role="button" aria-label="porta alla pagina del profilo utente"> Area utente </a>
             <a id="logOut" href="" title="LogOut" role="button" aria-label="esci dal tuo profilo"> <span xml:lang="en"> LogOut </span> </a>
-            <form id="search" action="" method="post" role="search"><!-- Nascondi con CSS -->
+            <form id="search" action="" method="post" role="search" aria-label="descrizione"><!-- Nascondi con CSS -->
                 <fieldset>
+                    <legend>Legenda</legend>
                     <select name="test" id="filter" class="" tabindex="0"  aria-label="Seleziona il filtro per la ricerca">
                         <option value="" selected="selected"></option>
                         <option value="" ></option>
                         <option value="" ></option>
                     </select>
                     <label for="searchText">Cerca nel sito</label>
-                    <input id="searchText" class="" type="text" tabindex="1" role="search"/>
+                    <input id="searchText" class="" type="text" tabindex="1" role="search" aria-label="descrizione"/>
                     <input type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
                 </fieldset>
             </form>

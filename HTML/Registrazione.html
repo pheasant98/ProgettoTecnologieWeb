@@ -122,12 +122,18 @@
                     <fieldset id="fieldSex" class="fieldset">
                         <legend>Sesso</legend>
 
-                        <label id="labelSexM" for="radioSexM">Maschile</label>
-                        <input id="radioSexM" name="radioSex" value="M" type="radio" aria-label="Pulsante per dichiarare sesso maschile"/>
-                        <label id="labelSexF" for="radioSexF">Femminile</label>
-                        <input id="radioSexF" name="radioSex" value="F" type="radio" aria-label="Pulsante per dichiarare sesso femminile"/>
-                        <label id="labelSexA" for="radioSexA">Preferisco non dichiarare</label>
-                        <input id="radioSexA" name="radioSex" value="A" type="radio" aria-label="Pulsante per non dichiarare il sesso"/>
+                        <p>
+                            <input id="radioSexM" name="radioSex" value="M" type="radio" aria-label="Pulsante per dichiarare sesso maschile"/>
+                            <label id="labelSexM" for="radioSexM">Maschile</label>
+                        </p>
+                        <p>
+                            <input id="radioSexF" name="radioSex" value="F" type="radio" aria-label="Pulsante per dichiarare sesso femminile"/>
+                            <label id="labelSexF" for="radioSexF">Femminile</label>
+                        </p>
+                        <p>
+                            <input id="radioSexA" name="radioSex" value="A" type="radio" checked="checked" aria-label="Pulsante per non dichiarare il sesso"/>
+                            <label id="labelSexA" for="radioSexA">Preferisco non dichiarare</label>
+                        </p>
                     </fieldset>
 
                     <p>
@@ -167,8 +173,8 @@
                 </fieldset>
 
                 <p class="navigation">
+                    <input id="buttonConfirm" class="button" name="confirm" value="Registrati" type="submit" aria-label="Pulsante per la conferma dati inseriti"/>
                     <input id="buttonReset" class="button" name="reset" value="Cancella" type="reset" aria-label="Pulsante per la cancellazione dei dati inseriti"/>
-                    <input id="buttonConfirm" class="button" name="confirm" value="Conferma" type="submit" aria-label="Pulsante per la conferma dati inseriti"/>
                 </p>
             </form>
 

@@ -130,12 +130,18 @@
                     <fieldset id="fieldSex" class="fieldset">
                         <legend>Sesso</legend>
 
-                        <label id="labelSexM" for="radioSexM">Maschile</label>
-                        <input id="radioSexM" name="radioSex" value="M" type="radio" aria-label="Pulsante per dichiarare sesso maschile"/>
-                        <label id="labelSexF" for="radioSexF">Femminile</label>
-                        <input id="radioSexF" name="radioSex" value="F" type="radio" aria-label="Pulsante per dichiarare sesso femminile"/>
-                        <label id="labelSexA" for="radioSexA">Preferisco non dichiarare</label>
-                        <input id="radioSexA" name="radioSex" value="A" type="radio" aria-label="Pulsante per non dichiarare il sesso"/>
+                        <p>
+                            <input id="radioSexM" name="radioSex" value="M" type="radio" aria-label="Pulsante per dichiarare sesso maschile"/>
+                            <label id="labelSexM" for="radioSexM">Maschile</label>
+                        </p>
+                        <p>
+                            <input id="radioSexF" name="radioSex" value="F" type="radio" aria-label="Pulsante per dichiarare sesso femminile"/>
+                            <label id="labelSexF" for="radioSexF">Femminile</label>
+                        </p>
+                        <p>
+                            <input id="radioSexA" name="radioSex" value="A" type="radio" checked="checked" aria-label="Pulsante per non dichiarare il sesso"/>
+                            <label id="labelSexA" for="radioSexA">Preferisco non dichiarare</label>
+                        </p>
                     </fieldset>
 
                     <p>
@@ -171,12 +177,12 @@
 
                     <p>
                         <label id="labelNewsletter" for="Newsletter">Desidero iscrivermi alla newsletter </label>
-                        <input id="Newsletter" name="Newsletter" type="checkbox" checked="checked" aria-label="Modifica l'iscrizione alla newsletter"/>
+                        <input id="Newsletter" name="Newsletter" type="checkbox" aria-label="Modifica l'iscrizione alla newsletter"/>
                     </p>
 
                     <p class="navigation">
-                        <input id="buttonReset" class="button" name="AnnullaModificheUtente" type="reset" value="Annulla" role="button" aria-label="Annulla le modifiche apportate"/>
                         <input id="buttonConfirm" class="button" name="InviaModificheUtente" type="submit" value="Conferma" role="button" aria-label="Conferma le modifiche apportate"/>
+                        <input id="buttonReset" class="button" name="CancellaModificheUtente" type="reset" value="Cancella" role="button" aria-label="Cancella i dati inseriti"/>
                     </p>
                 </fieldset>
             </form>
