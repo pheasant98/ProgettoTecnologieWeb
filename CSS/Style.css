@@ -11,7 +11,7 @@
   max-width: 100%;
   line-height: 1.5em;
 
-  /* max-width: 1024px; */
+  /* TODO: max-width: 1024px; */
 }
 
 /* Impostazione colore di sfondo e larghezza minima della pagina */
@@ -235,12 +235,6 @@ a:visited {
   text-align: right;
   list-style-type: none;
   border-style: none;
-}
-
-.userButton span {
-  font-size: 1.3em;
-  display: block;
-  margin-right: 5.5em;
 }
 
 /* Nascondere il salta contenuto */
