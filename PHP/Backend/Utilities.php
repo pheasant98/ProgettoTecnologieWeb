@@ -1,16 +1,16 @@
 <?php
 
-    function english_italian_date_format($string_date) {
+    function englishItalianDate($string_date) {
         $timestamp = strtotime($string_date);
         return date("d-m-Y", $timestamp);
     }
 
-    function italian_english_date_format($string_date) {
+    function italianEnglishDate($string_date) {
         $timestamp = strtotime($string_date);
         return date("Y-m-d", $timestamp);
     }
 
-    function get_authentication_menu($is_authenticated, $is_index = false) {
+    function getAuthenticationMenu($is_authenticated, $is_index = false) {
         $path = "";
         if ($is_index) {
             $path = "PHP/";
