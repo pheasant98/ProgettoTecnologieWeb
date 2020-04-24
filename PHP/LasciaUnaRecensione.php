@@ -1,7 +1,7 @@
 <?php
 
 # Inclusione del file con la classe per l'interazione con il database
-require_once('Backend/DatabaseAccess.php');
+require_once('Database/DatabaseAccess.php');
 
 # Funzione per il controllo degli errori
 function checkInput($title, $content) {
@@ -68,10 +68,8 @@ session_start();
 
 $document = file_get_contents("../HTML/LasciaUnaRecensione.html");
 $login = getAuthenticationMenu(isset($_SESSION['username']));
-$news = get_last_news();
 
 $document = str_replace("<span id=\"loginMenuPlaceholder\"/>", $login, $document);
-$document = str_replace("<span id=\"newsPlaceholder\"/>", $news, $document);
 
 echo $document;
 
