@@ -2,6 +2,7 @@
 
 # Inclusione del file con la classe per l'interazione con il database
 require_once('Database/DatabaseAccess.php');
+require_once('Utilities/Utilities.php');
 
 # Funzione per il controllo degli errori
 function checkInput($title, $content) {
