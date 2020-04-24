@@ -1,6 +1,6 @@
 <?php
 
-require_once("../Database/DatabaseAccess.php");
+require_once("Database/DatabaseAccess.php");
 
 class ReviewsRepository {
     private $dbConnection;

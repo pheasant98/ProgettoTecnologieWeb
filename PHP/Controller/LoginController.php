@@ -1,8 +1,8 @@
 <?php
 
 class LoginController {
-    public static function getAuthenticationMenu($is_authenticated) {
-        if ($is_authenticated) {
+    public static function getAuthenticationMenu() {
+        if (isset($_SESSION['username'])) {
             $login = "<div id=\"loginMenu\">
                         <ul>
                             <li>
@@ -26,6 +26,10 @@ class LoginController {
         }
 
         return $login;
+    }
+
+    public static function isAuthenticatedUser() {
+        return isset($_SESSION['username']);
     }
 }
 
