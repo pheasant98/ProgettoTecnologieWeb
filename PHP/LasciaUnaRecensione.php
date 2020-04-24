@@ -2,7 +2,7 @@
 
 # Inclusione del file con la classe per l'interazione con il database
 require_once('Database/DatabaseAccess.php');
-require_once('Utilities/Utilities.php');
+require_once ('Controller/LoginController.php');
 
 # Funzione per il controllo degli errori
 function checkInput($title, $content) {
@@ -68,7 +68,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'submit') {
 session_start();
 
 $document = file_get_contents("../HTML/LasciaUnaRecensione.html");
-$login = getAuthenticationMenu(isset($_SESSION['username']));
+$login = LoginController::getAuthenticationMenu(isset($_SESSION['username']));
 
 $document = str_replace("<span id=\"loginMenuPlaceholder\"/>", $login, $document);
 
