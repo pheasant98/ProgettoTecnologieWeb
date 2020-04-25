@@ -40,6 +40,9 @@ class ReviewsController {
                 # Messaggio di errore nell'inserimento
                 $message = "<p class=\"error\">Errore nell'inserimento della nuova recensione</p>";
             }
+
+            $reviews->close();
+            unset($reviews);
         } else {
             # Composizione dei messaggi di errori
             $message = "<ul>" . $message;

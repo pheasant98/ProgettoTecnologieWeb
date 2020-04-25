@@ -1,12 +1,17 @@
 <?php
 
-require_once("../Database/DatabaseAccess.php");
+require_once("Database/DatabaseAccess.php");
 
 class ArtworksRepository {
     private $dbConnection;
 
     public function __construct() {
         $this->dbConnection = new DatabaseAccess();
+    }
+
+    public function close() {
+        $this->dbConnection->closeConnection();
+        unset($this->dbConnection);
     }
 
     public function postPainting($author, $title, $description, $years, $technique, $dimensions, $loan, $image, $user) {
@@ -24,19 +29,19 @@ class ArtworksRepository {
     public function getArtworks($offset) {
         $statement = $this->dbConnection->prepareQuery("SELECT * FROM Opere ORDER BY Titolo LIMIT 5, ?;");
         $statement->bind_param('i', $offset);
-        return mysqli_fetch_assoc($this->dbConnection->executeStatement($statement));
+        return $this->dbConnection->executeSelectStatement($statement);
     }
 
     public function getArtworksByType($type, $offset) {
         $statement = $this->dbConnection->prepareQuery("SELECT * FROM Opere WHERE Stile= ? ORDER BY Titolo LIMIT 5, ?;");
         $statement->bind_param('si', $type, $offset);
-        return mysqli_fetch_assoc($this->dbConnection->executeStatement($statement));
+        return $this->dbConnection->executeSelectStatement($statement);
     }
 
     public function getArtwork($id) {
         $statement = $this->dbConnection->prepareQuery("SELECT * FROM Opere WHERE ID= ?;");
         $statement->bind_param('i', $id);
-        return mysqli_fetch_assoc($this->dbConnection->executeStatement($statement));
+        return $this->dbConnection->executeSelectStatement($statement);
     }
 
     public function updatePainting($id, $author, $title, $description, $years, $technique, $dimensions, $loan, $image, $user) {

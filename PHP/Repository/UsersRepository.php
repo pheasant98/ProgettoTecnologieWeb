@@ -1,12 +1,17 @@
 <?php
 
-require_once("../Database/DatabaseAccess.php");
+require_once("Database/DatabaseAccess.php");
 
 class UsersRepository {
     private $dbConnection;
 
     public function __construct() {
         $this->dbConnection = new DatabaseAccess();
+    }
+
+    public function close() {
+        $this->dbConnection->closeConnection();
+        unset($this->dbConnection);
     }
 
     public function postUser($name, $surname, $birthday, $sex, $username, $mail, $password, $admin=false) {
@@ -19,13 +24,13 @@ class UsersRepository {
     public function getUsers($offset) {
         $statement = $this->dbConnection->prepareQuery("SELECT * FROM Utenti ORDER BY Username LIMIT 5, ?;");
         $statement->bind_param('i', $offset);
-        return mysqli_fetch_assoc($this->dbConnection->executeStatement($statement));
+        return $this->dbConnection->executeSelectStatement($statement);
     }
 
     public function getUser($id) {
         $statement = $this->dbConnection->prepareQuery("SELECT * FROM Utenti WHERE ID=?;");
         $statement->bind_param('i', $id);
-        return mysqli_fetch_assoc($this->dbConnection->executeStatement($statement));
+        return $this->dbConnection->executeSelectStatement($statement);
     }
 
     public function updateUser($id, $name, $surname, $birthday, $sex, $username, $mail, $password, $admin=false) {

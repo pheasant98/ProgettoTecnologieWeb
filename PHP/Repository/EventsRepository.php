@@ -1,12 +1,17 @@
 <?php
 
-require_once("../Database/DatabaseAccess.php");
+require_once("Database/DatabaseAccess.php");
 
 class EventsRepository {
     private $dbConnection;
 
     public function __construct() {
         $this->dbConnection = new DatabaseAccess();
+    }
+
+    public function close() {
+        $this->dbConnection->closeConnection();
+        unset($this->dbConnection);
     }
 
     public function postEvent($title, $description, $beginDate, $endDate, $type, $manager, $image, $user) {
@@ -18,19 +23,19 @@ class EventsRepository {
     public function getEvents($offset) {
         $statement = $this->dbConnection->prepareQuery("SELECT * FROM Eventi ORDER BY DataInizio, DataFine DESC LIMIT 5, ?;");
         $statement->bind_param('i', $offset);
-        return mysqli_fetch_assoc($this->dbConnection->executeStatement($statement));
+        return $this->dbConnection->executeSelectStatement($statement);
     }
 
     public function getEventsByType($type, $offset) {
         $statement = $this->dbConnection->prepareQuery("SELECT * FROM Eventi WHERE Tipologia=? ORDER BY DataInizio, DataFine DESC LIMIT 5, ?;");
         $statement->bind_param('si', $type, $offset);
-        return mysqli_fetch_assoc($this->dbConnection->executeStatement($statement));
+        return $this->dbConnection->executeSelectStatement($statement);
     }
 
     public function getEvent($id) {
         $statement = $this->dbConnection->prepareQuery("SELECT * FROM Eventi WHERE ID = ?;");
         $statement->bind_param('i', $id);
-        return mysqli_fetch_assoc($this->dbConnection->executeStatement($statement));
+        return $this->dbConnection->executeSelectStatement($statement);
     }
 
     public function updateEvent($id, $title, $description, $beginDate, $endDate, $type, $manager, $image, $user) {

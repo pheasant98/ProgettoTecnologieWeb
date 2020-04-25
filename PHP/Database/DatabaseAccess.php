@@ -4,14 +4,15 @@ class DatabaseAccess {
     private $connection;
 
     public function __construct($database = "mtoffole", $pass = "", $user = "mtoffole", $host = "localhost") {
-        if (!($this->connection = @mysqli_connect($host, $user, $pass, $database))) {
-            error_log("Errno: " . mysqli_connect_errno() . " Error: " . mysqli_connect_error());
+        if (!($this->connection = @new mysqli($host, $user, $pass, $database))) {
+            error_log("Error number: " . $this->connection->connect_errno . " Error message: " . $this->connection->connect_error);
             echo "I dati non sono al momento disponibili. Se l'errore persiste si prega di segnalarlo al supporto tecnico.";
         }
     }
 
     public function closeConnection() {
         @$this->connection->close();
+        unset($this->connection);
     }
 
     public function prepareQuery($query) {
@@ -19,12 +20,16 @@ class DatabaseAccess {
     }
 
     public function executeNotSelectStatement($statement) {
-        return @$statement->execute();
+        $result = @$statement->execute();
+        $statement->close();
+        return $result;
     }
 
     public function executeSelectStatement($statement) {
         @$statement->execute();
-        return @$statement->get_result();
+        $result = @$statement->get_result();
+        $statement->close();
+        return $result;
     }
 }
 
