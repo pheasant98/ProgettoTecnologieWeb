@@ -18,8 +18,13 @@ class DatabaseAccess {
         return @$this->connection->prepare($query);
     }
 
-    public function executeStatement($statement) {
-        
+    public function executeNotSelectStatement($statement) {
+        return @$statement->execute();
+    }
+
+    public function executeSelectStatement($statement) {
+        @$statement->execute();
+        return @$statement->get_result();
     }
 }
 
