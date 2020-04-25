@@ -11,11 +11,15 @@ class DatabaseAccess {
     }
 
     public function closeConnection() {
-        @mysqli_close($this->connection);
+        @$this->connection->close();
     }
 
-    public function executeQuery($query) {
-        return @mysqli_query($this->connection, $query);
+    public function prepareQuery($query) {
+        return @$this->connection->prepare($query);
+    }
+
+    public function executeStatement($statement) {
+        
     }
 }
 
