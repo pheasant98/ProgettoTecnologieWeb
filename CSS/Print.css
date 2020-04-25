@@ -123,16 +123,6 @@ a:visited::after {
   margin-bottom: 1em;
 }
 
-#seasonTicket {
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
-  margin-left: 0.5em;
-}
-
-#totalCost {
-  margin-left: 0.5em;
-}
-
 #loginForm p {
   margin-bottom: 1.5em;
 }
@@ -234,11 +224,6 @@ a:visited::after {
   padding-top: 1em;
 }
 
-.historicalPeriodImage {
-  width: 9.75em;
-  height: 7.5em;
-}
-
 .backgroundImage {
   display: block;
   background-size: 100%;
@@ -280,7 +265,6 @@ a:visited::after {
 #reviewAsk,
 #map,
 #warning,
-#continue,
 #buttonNext,
 #buttonBack,
 #buttonBackUp,

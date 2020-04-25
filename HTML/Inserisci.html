@@ -43,7 +43,6 @@
                     <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
                         <option selected="selected" value="Opera">Opera</option>
                         <option value="Evento">Evento</option>
-                        <option value="Avviso">Avviso</option>
                     </select>
 
                     <label id="hideLabel" for="searchText">Cerca nel sito</label>
@@ -56,7 +55,7 @@
         <div aria-label="breadcrumbs" id="breadcrumbs">
             <p>
                 Ti trovi in:
-                <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en" tabindex="9">Home</a>
+                <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en" tabindex="9">Home</a>
                 &gt;&gt;
                 <a href="AreaPersonale.html" title="Area personale" aria-label="Vai alla pagina area personale" tabindex="10">Area personale</a>
                 &gt;&gt;
@@ -71,7 +70,7 @@
                 </li>
 
                 <li>
-                    <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="12" xml:lang="en">Home</a>
+                    <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="12" xml:lang="en">Home</a>
                 </li>
 
                 <li>
@@ -83,21 +82,12 @@
                 </li>
 
                 <li>
-                    <a href="OpzioniAcquisto.html" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti" tabindex="15">Opzioni
-                        d'acquisto</a>
-                </li>
-
-                <li>
-                    <a href="Avvisi.html" title="Avvisi" aria-label="Vai alla pagina degli avvisi" tabindex="16">Avvisi</a>
-                </li>
-
-                <li>
-                    <a href="CosaDiconoDiNoi.html" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni" tabindex="17">Cosa
+                    <a href="CosaDiconoDiNoi.html" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni" tabindex="15">Cosa
                     dicono di noi</a>
                 </li>
 
                 <li>
-                    <a href="Contatti.html" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti" tabindex="18">Contatti</a>
+                    <a href="Contatti.html" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti" tabindex="16">Contatti</a>
                 </li>
             </ul>
         </div>
@@ -117,7 +107,6 @@
                             <select name="filterType" id="filterType1" class="formElement" aria-label="Seleziona la tipologia di pagina da creare">
                                 <option selected="selected" value="Opera">Opera</option>
                                 <option value="Evento">Evento</option>
-                                <option value="Avviso">Avviso</option>
                             </select>
                         </p>
                     </fieldset>
@@ -143,16 +132,6 @@
                         <p>
                             <label id="labelYear" for="textYear">Anno</label>
                             <input id="textYear" class="formElement" name="textYear" type="text"/>
-                        </p>
-
-                        <p>
-                            <label id="LabelFilterHistory" for="filterHistory">Periodo opera</label>
-                            <select name="filterHistory" id="filterHistory" class="formElement" aria-label="Seleziona il periodo storico dell'opera">
-                                <option selected="selected" value="Quattrocento">Quattrocento</option>
-                                <option value="Cinquecento">Cinquecento</option>
-                                <option value="Seicento">Seicento</option>
-                                <option value="Settecento">Settecento</option>
-                            </select>
                         </p>
 
                         <p>
@@ -245,34 +224,6 @@
                         </p>
                     </fieldset>
 
-                    <fieldset id="News" class="fieldset">
-                        <legend>Informazioni dell'avviso</legend>
-
-                        <p>
-                            <label id="labelObject" for="textObject">Oggetto</label>
-                            <input id="textObject" class="formElement" name="textObject" type="text"/>
-                        </p>
-
-                        <p>
-                            <label id="labelAreaDescr3" for="noticeDescriptionArea">Descrizione</label>
-                            <textarea id="noticeDescriptionArea" class="formElement" name="AreaDescr3" rows="20px" cols="20px" aria-label="Inserisci la descrizione"> Scrivi qui la descrizione!</textarea>
-                        </p>
-
-                        <p>
-                            <label id="labelRelease" for="textRelease">Rilascio</label>
-                            <input id="textRelease" class="formElement" name="textRelease" type="text" aria-label=""/>
-                        </p>
-
-                        <p>
-                            <label id="labelDeadline" for="textDeadline">Scadenza date</label>
-                            <input id="textDeadline" class="formElement" name="textDeadline" type="text" aria-label=""/>
-                        </p>
-
-                        <p class="navigation">
-                            <input id="buttonConfirm" class="button" name="InserisciNuovoAvviso" type="submit" value="Inserisci" role="button" aria-label="Inserisci il nuovo avviso con le informazioni specificate"/>
-                            <input id="buttonReset" class="button" name="CancellaModificheUtente" type="reset" value="Cancella" role="button" aria-label="Cancella i dati inseriti"/>
-                        </p>
-                    </fieldset>
                 </fieldset>
             </form>
 
