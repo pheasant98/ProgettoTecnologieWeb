@@ -6,24 +6,25 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-        <title>Opere | Museo arte nel tempo</title>
+        <title><span id='titlePlaceholder'/> | Museo arte nel tempo</title>
 
         <meta name="language" content="italian it"/>
-        <meta name="title" content="Opere | Museo arte nel tempo"/>
-        <meta name="description" content="Elenco dei periodi storici in cui sono suddivise le opere del museo"/>
+        <meta name="title" content="<span id='titlePlaceholder'/> | Museo arte nel tempo"/>
+        <!--Cambiare la description togliendo periodi storici-->
+        <meta name="description" content="Elenco di opere appartenenti a un specifico periodo"/>
         <meta name="keywords" content="arte, pittura, scultura, museo"/>
         <meta name="author" content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto"/>
 
-        <link rel="stylesheet" media="screen" href="../CSS/Style.css" type="text/css"/>
-        <link rel="stylesheet" media="print" href="../CSS/Print.css" type="text/css"/>
-        <link rel="icon" href=""/>
+        <link href="../CSS/Style.css" media="screen" rel="stylesheet" type="text/css"/>
+        <link href="../CSS/Print.css" media="print" rel="stylesheet" type="text/css"/>
+        <link href="" rel="icon"/>
 
         <script src="../JavaScript/Placeholder.js" type="text/javascript"></script>
     </head>
 
     <body>
         <div id="header" role="banner">
-            <h1 aria-label="Immagine del logo Museo arte nel tempo" class="backgroundImage" id="logoImage" role="img" title="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
+            <h1 id="logoImage" class="backgroundImage" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
 
             <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
                 Menu ad <span xml:lang="en">hamburger</span>
@@ -40,15 +41,14 @@
                 <fieldset id="searchBox">
                     <legend class="hideLegend">Ricerca</legend>
 
-                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="2">
+                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
                         <option selected="selected" value="Opera">Opera</option>
                         <option value="Evento">Evento</option>
-                        <option value="Avviso">Avviso</option>
                     </select>
 
                     <label id="hideLabel" for="searchText">Cerca nel sito</label>
-                    <input id="searchText" name="ricerca" type="text" aria-label="Casella di testo" tabindex="1"/>
-                    <input id="buttonSubmit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="3"/>
+                    <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
+                    <input id="buttonSubmit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
                 </fieldset>
             </form>
         </div>
@@ -56,37 +56,28 @@
         <div aria-label="breadcrumbs" id="breadcrumbs">
             <p>
                 Ti trovi in:
-                <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a>
+                <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a>
                 &gt;&gt;
                 <strong>Opere</strong>
             </p>
         </div>
 
-        <div aria-label="menu per la navigazione nel sito" id="menu" role="navigation">
+        <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
             <ul>
                 <li>
-                    <a id="skipMenu" href="#content" class="skipInformation" aria-label="Vai al contenuto" tabindex="10">Vai al contenuto</a>
+                    <a id="skipMenu" class="skipInformation" href="#content" aria-label="Vai al contenuto" tabindex="11">Vai al contenuto</a>
                 </li>
 
                 <li>
-                    <a aria-label="Vai alla pagina homepage del museo" href="../Index.php" title="Home" tabindex="11" xml:lang="en">Home</a>
+                    <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="12" xml:lang="en">Home</a>
                 </li>
 
                 <li>
-                    <strong>Opere</strong>
+                    <a href="Opere.html" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="13">Opere</a>
                 </li>
 
                 <li>
-                    <a href="Eventi.html" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="12">Eventi</a>
-                </li>
-
-                <li>
-                    <a href="OpzioniAcquisto.html" title="Opzioni d'acquisto" aria-label="Vai alla pagina dedicata agli acquisti" tabindex="13">Opzioni
-                        d'acquisto</a>
-                </li>
-
-                <li>
-                    <a href="Avvisi.html" title="Avvisi" aria-label="Vai alla pagina degli avvisi" tabindex="14">Avvisi</a>
+                    <a href="Eventi.html" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="14">Eventi</a>
                 </li>
 
                 <li>
@@ -101,57 +92,90 @@
         </div>
 
         <div id="content" role="main">
-            <h2 class="title">Opere</h2>
 
-            <p class="paragraph">Tutte le opere presenti all'interno del museo sono state suddivise in base al periodo storico di appartenenza, che ne fornisce una classificazione temporale.</p>
+            <!--
+            <h3 class="subtitle">Descrizione completa</h3>
+            <p>
+                Descrizione
+            </p>
+            -->
 
-            <dl id="periodiStorici">
-                <dt>
-                    <a class="periodoStorico" href="NomePeriodoStorico.html" aria-label="">Quattrocento</a>
+            <form id="operaFilter" action="" method="post">
+                <fieldset class="navigation">
+                    <legend class="hideLegend">Filtro</legend>
+
+                    <label id="labelFilterType" for="filterType">Filtra le opere per</label>
+                    <select name="filterType" id="filterType" aria-label="filtro per il tipo di opera">
+                        <option value="Scultura" selected="selected"> Sculture </option>
+                        <option value="Pittura"> Pitture </option>
+                    </select>
+
+                    <input id="buttonConfirm" class="button" name="filter" value="Filtra" type="button" aria-label="Conferma"/>
+                </fieldset>
+            </form>
+
+            <p>
+                Sono stati trovati # contenuti:
+            </p>
+
+            <a href="#buttonBack" class="skipInformation">Salta le opere presenti nella pagina</a>
+
+            <h3 class="subtitle">Elenco</h3>
+
+            <dl class="clickableList">
+                <dt id="o1">
+                    <a href="OperaSingola.html">Nome prima opera</a>
                 </dt>
                 <dd>
-                    <img class="historicalPeriodImage" alt="Immagine rappresentativa del periodo storico" src="../Images/quattrocento.png"/>
+                    <a href="#o2" class="skipInformation">Salta l'opera</a>
 
                     <p>
-                        Breve descrizione
+                        nome autore: nome
+                    </p>
+
+                    <p>
+                        tecnica: tecnica
+                    </p>
+
+                    <p>
+                        data: data
+                    </p>
+
+                    <p>
+                        <img alt="Immagine dell'opera" src=""/>
                     </p>
                 </dd>
 
-                <dt>
-                    <a class="periodoStorico" href="NomePeriodoStorico.html">Cinquecento</a>
+                <dt id="o2">
+                    <a href="OperaSingola.html">Nome seconda opera</a>
                 </dt>
                 <dd>
-                    <img class="historicalPeriodImage" alt="Immagine rappresentativa del periodo storico" src="../Images/cinquecento.png"/>
+                    <a href="#buttonBack" class="skipInformation">Salta l'opera</a>
 
                     <p>
-                        Breve descrizione
+                        nome autore: nome
                     </p>
-                </dd>
-
-                <dt>
-                    <a class="periodoStorico" href="NomePeriodoStorico.html">Seicento</a>
-                </dt>
-                <dd>
-                    <img class="historicalPeriodImage" alt="Immagine rappresentativa del periodo storico" src="../Images/seicento.png"/>
 
                     <p>
-                        Breve descrizione
+                        tecnica: tecnica
                     </p>
-                </dd>
-
-                <dt>
-                    <a class="periodoStorico" href="NomePeriodoStorico.html">Settecento</a>
-                </dt>
-                <dd>
-                    <img class="historicalPeriodImage" alt="Immagine rappresentativa del periodo storico" src="../Images/settecento.png"/>
 
                     <p>
-                        Breve descrizione
+                        data: data
+                    </p>
+
+                    <p>
+                        <img alt="Immagine dell'opera" src=""/>
                     </p>
                 </dd>
             </dl>
 
-            <a aria-label="Torna su" href="#header" id="buttonBackUp" title="Torna su">
+            <p class="navigation">
+                <a id="buttonBack" class="button" href="" title="Opere precedenti" role="button" aria-label="Torna alle opere precedenti"> &lt; Precedente</a>
+                <a id="buttonNext" class="button" href="" title="Opere successive" role="button" aria-label="Vai alle opere successive"> Successivo &gt;</a>
+            </p>
+
+            <a id="buttonBackUp" href="#header" title="Torna su" aria-label="Torna su">
                 <img alt="Torna su" src="../Images/TornaSu.png"/>
             </a>
         </div>

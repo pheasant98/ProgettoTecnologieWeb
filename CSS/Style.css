@@ -109,11 +109,6 @@ a:visited {
   overflow: hidden;
 }
 
-.historicalPeriodImage {
-  width: 9.75em;
-  height: 7.5em;
-}
-
 .validationImage {
   display: inline-block;
 }
@@ -263,21 +258,10 @@ a:visited {
   margin-left: 0.5em;
 }
 
-#seasonTicket {
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
-  margin-left: 0.5em;
-}
-
 #clause {
   clear: right;
   font-size: 0.9em;
   padding-bottom: 1em;
-}
-
-#totalCost {
-  text-align: right;
-  margin-right: 9em;
 }
 
 #map {
