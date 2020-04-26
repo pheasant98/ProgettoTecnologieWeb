@@ -1,6 +1,6 @@
 <?php
 
-require_once("../Database/DatabaseAccess.php");
+require_once("Database/DatabaseAccess.php");
 
 class UsersRepository {
     private $dbConnection;
@@ -9,26 +9,41 @@ class UsersRepository {
         $this->dbConnection = new DatabaseAccess();
     }
 
+    public function close() {
+        $this->dbConnection->closeConnection();
+        unset($this->dbConnection);
+    }
+
     public function postUser($name, $surname, $birthday, $sex, $username, $mail, $password, $admin=false) {
         $hashed_password = hash('sha256', $password);
-        return $this->dbConnection->executeQuery("INSERT INTO Utenti (ID, Nome, Cognome, DataNascita, Sesso, Username, Email, Password, Admin) VALUES (NULL, '$name', '$surname', '$birthday', '$sex', '$username', '$mail', '$hashed_password', $admin);");
+        $statement = $this->dbConnection->prepareQuery("INSERT INTO Utenti (ID, Nome, Cognome, DataNascita, Sesso, Username, Email, Password, Admin) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?);");
+        $statement->bind_param('sssssssi', $name, $surname, $birthday, $sex, $username, $mail, $hashed_password, $admin);
+        return $this->dbConnection->executeNotSelectStatement($statement);
     }
 
     public function getUsers($offset) {
-        return mysqli_fetch_assoc($this->dbConnection->executeQuery("SELECT * FROM Utenti ORDER BY Username LIMIT 5, $offset;"));
+        $statement = $this->dbConnection->prepareQuery("SELECT * FROM Utenti ORDER BY Username LIMIT 5, ?;");
+        $statement->bind_param('i', $offset);
+        return $this->dbConnection->executeSelectStatement($statement);
     }
 
     public function getUser($id) {
-        return mysqli_fetch_assoc($this->dbConnection->executeQuery("SELECT * FROM Utenti WHERE ID=$id;"));
+        $statement = $this->dbConnection->prepareQuery("SELECT * FROM Utenti WHERE ID=?;");
+        $statement->bind_param('i', $id);
+        return $this->dbConnection->executeSelectStatement($statement);
     }
 
     public function updateUser($id, $name, $surname, $birthday, $sex, $username, $mail, $password, $admin=false) {
         $hashed_password = hash('sha256', $password);
-        return $this->dbConnection->executeQuery("UPDATE Utenti SET Nome='$name', Cognome='$surname', DataNascita='$birthday', Sesso='$sex', Username='$username', Email='$mail', Password='$hashed_password', Admin=$admin WHERE ID=$id;");
+        $statement = $this->dbConnection->prepareQuery("UPDATE Utenti SET Nome=?, Cognome=?, DataNascita=?, Sesso=?, Username=?, Email=?, Password=?, Admin=? WHERE ID=?;");
+        $statement->bind_param('sssssssii', $name, $surname, $birthday, $sex, $username, $mail, $hashed_password, $admin, $id);
+        return $this->dbConnection->executeNotSelectStatement($statement);
     }
 
     public function deleteUser($id) {
-        return $this->dbConnection->executeQuery("DELETE FROM Utenti WHERE ID=$id;");
+        $statement = $this->dbConnection->prepareQuery("DELETE FROM Utenti WHERE ID=?");
+        $statement->bind_param('i', $id);
+        return $this->dbConnection->executeNotSelectStatement($statement);
     }
 }
 

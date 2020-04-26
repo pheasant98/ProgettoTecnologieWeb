@@ -8,15 +8,15 @@ class ReviewsController {
         $message = "";
 
         if (!strlen($title)) {
-            $message .= "[Il titolo inserito non può essere vuoto]";
+            $message .= "[Il titolo della recensione non può essere vuoto]";
         } elseif (strlen($title) < 3) {
-            $message .= "[Il titolo inserito deve essere lungo almeno 3 caratteri]";
+            $message .= "[Il titolo della recensione deve essere lungo almeno 3 caratteri]";
         }
 
         if (strlen($content) == 0) {
-            $message .= "[La descrizione inserita non può essere vuota]";
+            $message .= "[Il contenuto della recensione non può essere vuoto]";
         } elseif (strlen($content) < 30) {
-            $message .= "[La descrizione inserita deve essere lunga almeno 30 caratteri]";
+            $message .= "[Il contenuto della recensione deve essere lungo almeno 30 caratteri]";
         }
 
         return $message;
@@ -40,6 +40,9 @@ class ReviewsController {
                 # Messaggio di errore nell'inserimento
                 $message = "<p class=\"error\">Errore nell'inserimento della nuova recensione</p>";
             }
+
+            $reviews->close();
+            unset($reviews);
         } else {
             # Composizione dei messaggi di errori
             $message = "<ul>" . $message;
