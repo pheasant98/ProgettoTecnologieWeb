@@ -25,6 +25,11 @@ class EventsRepository {
         return mysqli_fetch_assoc($this->dbConnection->executeQuery("SELECT * FROM Eventi WHERE ID = $id;"));
     }
 
+    public function getEventsCount() {
+        $statement = $this->dbConnection->prepareQuery("SELECT COUNT(*) FROM Eventi;");
+        return 
+    }
+
     public function updateEvent($id, $title, $description, $beginDate, $endDate, $type, $manager, $image, $user) {
         return $this->dbConnection->executeQuery("UPDATE Eventi SET Titlo='$title', Descrizione='$description', DataInizio='$beginDate', DataFine='$endDate', Tipologia='$type', Organizzatore='$manager', Immagine='$image', Utente=$user WHERE ID=$id;");
     }
