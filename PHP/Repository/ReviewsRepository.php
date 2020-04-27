@@ -21,13 +21,13 @@ class ReviewsRepository {
     }
 
     public function getAllReview($offset) {
-        $statement = $this->dbConnection->prepareQuery("SELECT * FROM Recensioni ORDER BY DataPubblicazione DESC LIMIT 5, ?;");
+        $statement = $this->dbConnection->prepareQuery("SELECT * FROM Recensioni ORDER BY DataPubblicazione DESC LIMIT 5, OFFSET ?;");
         $statement->bind_param('i', $offset);
         return $this->dbConnection->executeSelectStatement($statement);
     }
 
     public function getUserReview($user, $offset) {
-        $statement = $this->dbConnection->prepareQuery("SELECT * FROM Recensioni WHERE Utente = ? ORDER BY DataPubblicazione DESC LIMIT 5, ?;");
+        $statement = $this->dbConnection->prepareQuery("SELECT * FROM Recensioni WHERE Utente = ? ORDER BY DataPubblicazione DESC LIMIT 5, OFFSET ?;");
         $statement->bind_param('si', $user, $offset);
         return $this->dbConnection->executeSelectStatement($statement);
     }

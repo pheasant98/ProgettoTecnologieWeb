@@ -21,13 +21,13 @@ class EventsRepository {
     }
 
     public function getEvents($offset) {
-        $statement = $this->dbConnection->prepareQuery("SELECT * FROM Eventi ORDER BY DataInizio, DataFine DESC LIMIT 5, ?;");
+        $statement = $this->dbConnection->prepareQuery("SELECT * FROM Eventi ORDER BY DataInizio, DataFine DESC LIMIT 5 OFFSET ?;");
         $statement->bind_param('i', $offset);
         return $this->dbConnection->executeSelectStatement($statement);
     }
 
     public function getEventsByType($type, $offset) {
-        $statement = $this->dbConnection->prepareQuery("SELECT * FROM Eventi WHERE Tipologia=? ORDER BY DataInizio, DataFine DESC LIMIT 5, ?;");
+        $statement = $this->dbConnection->prepareQuery("SELECT * FROM Eventi WHERE Tipologia=? ORDER BY DataInizio, DataFine DESC LIMIT 5 OFFSET ?;");
         $statement->bind_param('si', $type, $offset);
         return $this->dbConnection->executeSelectStatement($statement);
     }
@@ -39,8 +39,8 @@ class EventsRepository {
     }
 
     public function getEventsCount() {
-        $statement = $this->dbConnection->prepareQuery("SELECT COUNT(*) FROM Eventi;");
-        return 
+        $statement = $this->dbConnection->prepareQuery("SELECT COUNT(*) AS Totale FROM Eventi;");
+        return $this->dbConnection->executeSelectStatement($statement);
     }
 
     public function updateEvent($id, $title, $description, $beginDate, $endDate, $type, $manager, $image, $user) {
