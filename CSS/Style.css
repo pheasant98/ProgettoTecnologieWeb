@@ -390,10 +390,15 @@ a:visited {
 
 .button:active {
   box-shadow: none;
+  color: #000;
 }
 
 .button:visited {
   color: #000;
+}
+
+.disabledButton {
+  pointer-events: none;
 }
 
 .userOperationButton {

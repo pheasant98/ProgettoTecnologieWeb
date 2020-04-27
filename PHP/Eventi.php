@@ -12,7 +12,7 @@ session_start();
 $events_controller = new EventsController();
 $event_counter = $events_controller->getEventsCount();
 
-if ($_GET["page"] < 1 || (($_GET["page"] - 1) > ($event_counter["Totale"] / 5))) {
+if (!isset($_GET["page"]) || $_GET["page"] < 1 || (($_GET["page"] - 1) > ($event_counter["Totale"] / 5))) {
     header('Location: Error.php');
 }
 
