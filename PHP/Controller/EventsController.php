@@ -1,6 +1,6 @@
 <?php
 
-require_once ('Repository/EventsRepository.php');
+require_once('Repository/EventsRepository.php');
 
 class EventsController {
     private $events;
