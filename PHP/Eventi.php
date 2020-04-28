@@ -22,7 +22,7 @@ $login = LoginController::getAuthenticationMenu();
 $offset = ($_GET["page"] - 1) * 5;
 $event_list = "<dl class=\"clickableList\">" . $events_controller->getEvents($offset) . "</dl>";
 $back_events = "";
-if ($_GET["page"] == 1) {
+if ($_GET["page"] > 1) {
     $back_events = "Eventi.php?page=" . ($_GET["page"] - 1);
 }
 $next_events = "Eventi.php?page=" . ($_GET["page"] + 1);

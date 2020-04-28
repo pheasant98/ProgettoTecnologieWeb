@@ -22,7 +22,7 @@ class UsersRepository {
     }
 
     public function getUsers($offset) {
-        $statement = $this->dbConnection->prepareQuery("SELECT * FROM Utenti ORDER BY Username LIMIT 5, OFFSET ?;");
+        $statement = $this->dbConnection->prepareQuery("SELECT * FROM Utenti ORDER BY Username LIMIT 5 OFFSET ?;");
         $statement->bind_param('i', $offset);
         return $this->dbConnection->executeSelectStatement($statement);
     }
