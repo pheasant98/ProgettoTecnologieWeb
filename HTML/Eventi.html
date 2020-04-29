@@ -91,6 +91,22 @@
         </div>
 
         <div id="content" role="main">
+
+            <form id="eventFilter" action="" method="get">
+                <fieldset class="navigation">
+                    <legend class="hideLegend">Filtro</legend>
+
+                    <label id="labelFilterType" for="filterType">Visualizza</label>
+                    <select name="filterType" id="filterType" aria-label="filtro per il tipo di evento">
+                        <option value="Tutte gli eventi"> Tutti gli eventi </option>
+                        <option value="Mostre"> Mostre </option>
+                        <option value="Conferenze"> Conferenze </option>
+                    </select>
+
+                    <input id="buttonConfirm" class="button" name="filter" value="Filtra" type="submit" aria-label="Filtra"/>
+                </fieldset>
+            </form>
+
             <h3 class="title">Eventi</h3>
 
             <p>
