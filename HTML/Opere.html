@@ -99,12 +99,12 @@
 
                     <label id="labelFilterType" for="filterType">Visualizza</label>
                     <select name="filterType" id="filterType" aria-label="filtro per lo stile dell'opera">
-                        <option value="Tutte le opere"> Tutte </option>
-                        <option value="Scultura"> Sculture </option>
+                        <option value="TutteLeOpere"> Tutte le opere </option>
+                        <option value="Sculture"> Sculture </option>
                         <option value="Dipinti"> Dipinti </option>
                     </select>
 
-                    <input id="buttonConfirm" class="button" name="filter" value="Filtra" type="submit" aria-label="Filtra"/>
+                    <input id="buttonConfirm" class="button" value="Filtra" type="submit" aria-label="Filtra"/>
                 </fieldset>
             </form>
 
@@ -119,9 +119,8 @@
             <span id="artworkListPlaceholder"/>
 
             <p class="navigation">
-                <!--style="pointer-events: none"-->
-                <a id="buttonBack" class="button" href="<span id='buttonBackPlaceholder'/>" title="Opere precedenti" role="button" aria-label="Torna alle opere precedenti"> &lt; Precedente</a>
-                <a id="buttonNext" class="button" href="<span id='buttonNextPlaceholder'/>" title="Opere successive" role="button" aria-label="Vai alle opere successive"> Successivo &gt;</a>
+                <span id='buttonBackPlaceholder'/>
+                <span id='buttonNextPlaceholder'/>
             </p>
 
             <a id="buttonBackUp" href="#header" title="Torna su" aria-label="Torna su">

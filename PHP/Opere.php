@@ -10,31 +10,48 @@ require_once ("Controller/ArtworksController.php");
 session_start();
 
 $artworks_controller = new ArtworksController();
-$artworks_counter = $artworks_controller->getArtworksCount();
+$artworks_count = $artworks_controller->getArtworksCount();
+$filterType = "";
+
+if (isset($_GET["filterType"])) {
+    if ($_GET["filterType"] == "Dipinti") {
+        $filterType ="Dipinto";
+        $artworks_count = $artworks_controller->getArtworksCountByStyle($filterType);
+    } elseif ($_GET["filterType"] == "Sculture") {
+        $filterType ="Scultura";
+        $artworks_count = $artworks_controller->getArtworksCountByStyle($filterType);
+    }
+}
 
 if (!isset($_GET["page"])) {
-    header('Location: Opere.php?page=1');
-} elseif (($_GET["page"] < 1) || (($_GET["page"] - 1) > ($artworks_counter["Totale"] / 5))) {
+    $page = 1;
+} elseif (($_GET["page"] < 1) || (($_GET["page"] - 1) > ($artworks_count / 5))) {
     header('Location: Error.php');
+} else {
+    $page = $_GET["page"];
 }
+
+$offset = ($page - 1) * 5;
 
 $document = file_get_contents("../HTML/Opere.html");
 $login = LoginController::getAuthenticationMenu();
+$artworks_list = "<dl class=\"clickableList\">" . $artworks_controller->getArtworks($filterType, $offset) . "</dl>";
 
-$offset = ($_GET["page"] - 1) * 5;
-$artwork_list = "<dl class=\"clickableList\">" . $artworks_controller->getArtworks($offset) . "</dl>";
 $back_artworks = "";
-if ($_GET["page"] > 1) {
-    $back_artworks = "Opere.php?page=" . ($_GET["page"] - 1);
+if ($page > 1) {
+    $back_artworks = "<a id=\"buttonBack\" class=\"button\" href=\"?page=" . ($page - 1) . "&amp;filterType=" . $_GET["filterType"] . "\" title=\"Opere precedenti\" role=\"button\" aria-label=\"Torna alle opere precedenti\"> &lt; Precedente</a>";
 }
-$next_artworks = "Opere.php?page=" . ($_GET["page"] + 1);
-if (($_GET["page"] * 5) >= $artworks_counter) {
-    $next_artworks = "";
+
+$next_artworks = "";
+if (($page * 5) < $artworks_count) {
+    $page_next_artworks = "?page=" . ($page + 1);
+    $next_artworks = "<a id=\"buttonNext\" class=\"button\" href=\"?page=" . ($page + 1) . "&amp;filterType=" . $_GET["filterType"] . "\" title=\"Opere successive\" role=\"button\" aria-label=\"Vai alle opere successive\"> Successivo &gt;</a>";
 }
+
 
 $document = str_replace("<span id=\"loginMenuPlaceholder\"/>", $login, $document);
-$document = str_replace("<span id=\"artworksNumberPlaceholder\"/>", $artworks_counter["Totale"], $document);
-$document = str_replace("<span id=\"artworkListPlaceholder\"/>", $artwork_list, $document);
+$document = str_replace("<span id=\"artworksNumberPlaceholder\"/>", $artworks_count, $document);
+$document = str_replace("<span id=\"artworkListPlaceholder\"/>", $artworks_list, $document);
 $document = str_replace("<span id='buttonBackPlaceholder'/>", $back_artworks, $document);
 $document = str_replace("<span id='buttonNextPlaceholder'/>", $next_artworks, $document);
 

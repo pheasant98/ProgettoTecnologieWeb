@@ -10,11 +10,20 @@ class ArtworksController {
     }
 
     public function getArtworksCount() {
-        return mysqli_fetch_assoc($this->artworks->getArtworksCount());
+        return mysqli_fetch_assoc($this->artworks->getArtworksCount())["Totale"];
     }
 
-    public function getArtworks($offset) {
-        $result_set = $this->artworks->getArtworks($offset);
+    public function getArtworksCountByStyle($style) {
+        return mysqli_fetch_assoc($this->artworks->getArtworksCountByStyle($style))["Totale"];
+    }
+
+    public function getArtworks($style, $offset) {
+        if ($style == "") {
+            $result_set = $this->artworks->getArtworks($offset);
+        } else {
+            $result_set = $this->artworks->getArtworksByStyle($style, $offset);
+        }
+
         $id_ref = "o";
         $button_ref = "buttonBack";
         $counter = 1;

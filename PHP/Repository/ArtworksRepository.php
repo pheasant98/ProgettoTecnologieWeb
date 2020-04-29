@@ -37,14 +37,20 @@ class ArtworksRepository {
         return $this->dbConnection->executeSelectStatement($statement);
     }
 
-    public function getArtworksByType($type, $offset) {
-        $statement = $this->dbConnection->prepareQuery("SELECT * FROM Opere WHERE Stile= ? ORDER BY Titolo LIMIT 5 OFFSET ?;");
-        $statement->bind_param('si', $type, $offset);
+    public function getArtworksByStyle($style, $offset) {
+        $statement = $this->dbConnection->prepareQuery("SELECT * FROM Opere WHERE Stile=? ORDER BY Titolo LIMIT 5 OFFSET ?;");
+        $statement->bind_param('si', $style, $offset);
+        return $this->dbConnection->executeSelectStatement($statement);
+    }
+
+    public function getArtworksCountByStyle($style) {
+        $statement = $this->dbConnection->prepareQuery("SELECT COUNT(*) AS Totale FROM Opere WHERE Stile=?;");
+        $statement->bind_param('s', $style);
         return $this->dbConnection->executeSelectStatement($statement);
     }
 
     public function getArtwork($id) {
-        $statement = $this->dbConnection->prepareQuery("SELECT * FROM Opere WHERE ID= ?;");
+        $statement = $this->dbConnection->prepareQuery("SELECT * FROM Opere WHERE ID=?;");
         $statement->bind_param('i', $id);
         return $this->dbConnection->executeSelectStatement($statement);
     }
