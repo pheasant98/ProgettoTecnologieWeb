@@ -5,7 +5,7 @@ require_once('Repository/ArtworksRepository.php');
 class ArtworksController {
     private $artworks;
 
-    function __construct() {
+    public function __construct() {
         $this->artworks = new ArtworksRepository();
     }
 

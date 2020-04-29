@@ -12,9 +12,11 @@ session_start();
 $artworks_controller = new ArtworksController();
 $artworks_counter = $artworks_controller->getArtworksCount();
 
-/*if (!isset($_GET["page"]) || $_GET["page"] < 1 || (($_GET["page"] - 1) > ($artworks_counter["Totale"] / 5))) {
+if (!isset($_GET["page"])) {
+    header('Location: Opere.php?page=1');
+} elseif (($_GET["page"] < 1) || (($_GET["page"] - 1) > ($artworks_counter["Totale"] / 5))) {
     header('Location: Error.php');
-}*/
+}
 
 $document = file_get_contents("../HTML/Opere.html");
 $login = LoginController::getAuthenticationMenu();
