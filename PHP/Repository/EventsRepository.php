@@ -26,20 +26,26 @@ class EventsRepository {
         return $this->dbConnection->executeSelectStatement($statement);
     }
 
+    public function getEventsCount() {
+        $statement = $this->dbConnection->prepareQuery("SELECT COUNT(*) AS Totale FROM Eventi;");
+        return $this->dbConnection->executeSelectStatement($statement);
+    }
+
     public function getEventsByType($type, $offset) {
         $statement = $this->dbConnection->prepareQuery("SELECT * FROM Eventi WHERE Tipologia=? ORDER BY DataInizio, DataFine DESC LIMIT 5 OFFSET ?;");
         $statement->bind_param('si', $type, $offset);
         return $this->dbConnection->executeSelectStatement($statement);
     }
 
-    public function getEvent($id) {
-        $statement = $this->dbConnection->prepareQuery("SELECT * FROM Eventi WHERE ID = ?;");
-        $statement->bind_param('i', $id);
+    public function getEventsCountByType($type) {
+        $statement = $this->dbConnection->prepareQuery("SELECT COUNT(*) AS Totale FROM Eventi WHERE Tipologia=?;");
+        $statement->bind_param('s', $type);
         return $this->dbConnection->executeSelectStatement($statement);
     }
 
-    public function getEventsCount() {
-        $statement = $this->dbConnection->prepareQuery("SELECT COUNT(*) AS Totale FROM Eventi;");
+    public function getEvent($id) {
+        $statement = $this->dbConnection->prepareQuery("SELECT * FROM Eventi WHERE ID=?;");
+        $statement->bind_param('i', $id);
         return $this->dbConnection->executeSelectStatement($statement);
     }
 

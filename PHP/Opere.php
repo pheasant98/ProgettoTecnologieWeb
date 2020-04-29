@@ -11,15 +11,17 @@ session_start();
 
 $artworks_controller = new ArtworksController();
 $artworks_count = $artworks_controller->getArtworksCount();
-$filterType = "";
+$filter_type = "";
+$link_filter_type = "";
 
 if (isset($_GET["filterType"])) {
+    $link_filter_type = "&amp;filterType=" . $_GET["filterType"];
     if ($_GET["filterType"] == "Dipinti") {
-        $filterType ="Dipinto";
-        $artworks_count = $artworks_controller->getArtworksCountByStyle($filterType);
+        $filter_type = "Dipinto";
+        $artworks_count = $artworks_controller->getArtworksCountByStyle($filter_type);
     } elseif ($_GET["filterType"] == "Sculture") {
-        $filterType ="Scultura";
-        $artworks_count = $artworks_controller->getArtworksCountByStyle($filterType);
+        $filter_type = "Scultura";
+        $artworks_count = $artworks_controller->getArtworksCountByStyle($filter_type);
     }
 }
 
@@ -30,22 +32,20 @@ if (!isset($_GET["page"])) {
 } else {
     $page = $_GET["page"];
 }
-
 $offset = ($page - 1) * 5;
 
 $document = file_get_contents("../HTML/Opere.html");
 $login = LoginController::getAuthenticationMenu();
-$artworks_list = "<dl class=\"clickableList\">" . $artworks_controller->getArtworks($filterType, $offset) . "</dl>";
 
+$artworks_list = "<dl class=\"clickableList\">" . $artworks_controller->getArtworks($filter_type, $offset) . "</dl>";
 $back_artworks = "";
 if ($page > 1) {
-    $back_artworks = "<a id=\"buttonBack\" class=\"button\" href=\"?page=" . ($page - 1) . "&amp;filterType=" . $_GET["filterType"] . "\" title=\"Opere precedenti\" role=\"button\" aria-label=\"Torna alle opere precedenti\"> &lt; Precedente</a>";
+    $back_artworks = "<a id=\"buttonBack\" class=\"button\" href=\"?page=" . ($page - 1) . $link_filter_type . "\" title=\"Opere precedenti\" role=\"button\" aria-label=\"Torna alle opere precedenti\"> &lt; Precedente</a>";
 }
 
 $next_artworks = "";
 if (($page * 5) < $artworks_count) {
-    $page_next_artworks = "?page=" . ($page + 1);
-    $next_artworks = "<a id=\"buttonNext\" class=\"button\" href=\"?page=" . ($page + 1) . "&amp;filterType=" . $_GET["filterType"] . "\" title=\"Opere successive\" role=\"button\" aria-label=\"Vai alle opere successive\"> Successivo &gt;</a>";
+    $next_artworks = "<a id=\"buttonNext\" class=\"button\" href=\"?page=" . ($page + 1) . $link_filter_type . "\" title=\"Opere successive\" role=\"button\" aria-label=\"Vai alle opere successive\"> Successivo &gt;</a>";
 }
 
 
