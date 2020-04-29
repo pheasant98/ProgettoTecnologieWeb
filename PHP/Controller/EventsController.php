@@ -10,12 +10,20 @@ class EventsController {
     }
 
     public function getEventsCount() {
-        return mysqli_fetch_assoc($this->events->getEventsCount());
+        return mysqli_fetch_assoc($this->events->getEventsCount())["Totale"];
     }
 
-    public function getEvents($offset) {
-        $result_set = $this->events->getEvents($offset);
-        $id_ref = "e";
+    public function getEventsCountByType($type) {
+        return mysqli_fetch_assoc($this->events->getEventsCountByType($type))["Totale"];
+    }
+
+    public function getEvents($type, $offset) {
+        if($type == "") {
+            $result_set = $this->events->getEvents($offset);
+        } else {
+            $result_set = $this->events->getEventsByType($type, $offset);
+        }
+        $id_ref = "event";
         $button_ref = "buttonBack";
         $counter = 1;
         $content = "";
@@ -37,10 +45,6 @@ class EventsController {
 
                     <p>
                         Tipologia: " . $row["Tipologia"] . "
-                    </p>
-
-                    <p>
-                        " . $row["Descrizione"] . "
                     </p>
                 </dd>
             ";

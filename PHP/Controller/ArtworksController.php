@@ -24,7 +24,7 @@ class ArtworksController {
             $result_set = $this->artworks->getArtworksByStyle($style, $offset);
         }
 
-        $id_ref = "o";
+        $id_ref = "artwork";
         $button_ref = "buttonBack";
         $counter = 1;
         $content = "";
@@ -46,10 +46,6 @@ class ArtworksController {
 
                     <p>
                         Data: " . $row["Anni"] . "
-                    </p>
-                    
-                    <p>
-                        Data: " . $row["Immagine"] . "
                     </p>
                     
                     <img alt=\"Immagine dell'opera\" src=\"../" . $row["Immagine"] . "\"/>
