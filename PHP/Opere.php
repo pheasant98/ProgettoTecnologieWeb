@@ -37,7 +37,7 @@ $offset = ($page - 1) * 5;
 $document = file_get_contents("../HTML/Opere.html");
 $login = LoginController::getAuthenticationMenu();
 
-$artworks_list = "<dl class=\"clickableList\">" . $artworks_controller->getArtworks($filter_type, $offset) . "</dl>";
+$artworks_list = '<dl class="clickableList">' . $artworks_controller->getArtworks($filter_type, $offset) . '</dl>';
 $back_artworks = "";
 if ($page > 1) {
     $back_artworks = "<a id=\"buttonBack\" class=\"button\" href=\"?page=" . ($page - 1) . $link_filter_type . "\" title=\"Opere precedenti\" role=\"button\" aria-label=\"Torna alle opere precedenti\"> &lt; Precedente</a>";
@@ -48,8 +48,14 @@ if (($page * 5) < $artworks_count) {
     $next_artworks = "<a id=\"buttonNext\" class=\"button\" href=\"?page=" . ($page + 1) . $link_filter_type . "\" title=\"Opere successive\" role=\"button\" aria-label=\"Vai alle opere successive\"> Successivo &gt;</a>";
 }
 
+$filter_select = '<select name="filterType" id="filterType" aria-label="filtro per lo stile dell\'opera">
+                    <option value="TutteLeOpere" ' . ($filter_type == '' ? 'selected="selected"' : '') . '> Tutte le opere </option>
+                    <option value="Sculture" ' . ($filter_type == 'Dipinto' ? 'selected="selected"' : '') . '> Sculture </option>
+                    <option value="Dipinti" ' . ($filter_type == 'Scultura' ? 'selected="selected"' : '') . '> Dipinti </option>
+                  </select>';
 
 $document = str_replace("<span id=\"loginMenuPlaceholder\"/>", $login, $document);
+$document = str_replace("<span id='filterSelectPlaceholder'/>", $filter_select, $document);
 $document = str_replace("<span id=\"artworksNumberPlaceholder\"/>", $artworks_count, $document);
 $document = str_replace("<span id=\"artworkListPlaceholder\"/>", $artworks_list, $document);
 $document = str_replace("<span id='buttonBackPlaceholder'/>", $back_artworks, $document);
