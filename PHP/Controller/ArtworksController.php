@@ -48,7 +48,7 @@ class ArtworksController {
                         Data: " . $row["Anni"] . "
                     </p>
                     
-                    <img alt=\"Immagine dell'opera\" src=\"../" . $row["Immagine"] . "\"/>
+                    <img alt=\"Immagine dell'opera . (titolo)\" src=\"../" . $row["Immagine"] . "\"/>
                 </dd>
             ";
             $counter++;

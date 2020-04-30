@@ -1,5 +1,6 @@
 <?php
-
+//TODO: decidere alt immagini
+//TODO: capire come compattare opere.php ed eventi.php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -50,8 +51,8 @@ if (($page * 5) < $artworks_count) {
 
 $filter_select = '<select name="filterType" id="filterType" aria-label="filtro per lo stile dell\'opera">
                     <option value="TutteLeOpere" ' . ($filter_type == '' ? 'selected="selected"' : '') . '> Tutte le opere </option>
-                    <option value="Sculture" ' . ($filter_type == 'Dipinto' ? 'selected="selected"' : '') . '> Sculture </option>
-                    <option value="Dipinti" ' . ($filter_type == 'Scultura' ? 'selected="selected"' : '') . '> Dipinti </option>
+                    <option value="Dipinti" ' . ($filter_type == 'Dipinto' ? 'selected="selected"' : '') . '> Sculture </option>
+                    <option value="Sculture" ' . ($filter_type == 'Scultura' ? 'selected="selected"' : '') . '> Dipinti </option>
                   </select>';
 
 $document = str_replace("<span id=\"loginMenuPlaceholder\"/>", $login, $document);
