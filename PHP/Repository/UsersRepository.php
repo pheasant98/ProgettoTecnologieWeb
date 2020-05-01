@@ -41,7 +41,7 @@ class UsersRepository {
     }
 
     public function deleteUser($id) {
-        $statement = $this->dbConnection->prepareQuery('DELETE FROM Utenti WHERE ID=?');
+        $statement = $this->dbConnection->prepareQuery('DELETE FROM Utenti WHERE ID=?;');
         $statement->bind_param('i', $id);
         return $this->dbConnection->executeNotSelectStatement($statement);
     }

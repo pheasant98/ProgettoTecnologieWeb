@@ -10,11 +10,11 @@ class ArtworksController {
     }
 
     public function getArtworksCount() {
-        return mysqli_fetch_assoc($this->artworks->getArtworksCount())['Totale'];
+        return $this->artworks->getArtworksCount()->fetch_assoc()['Totale'];
     }
 
     public function getArtworksCountByStyle($style) {
-        return mysqli_fetch_assoc($this->artworks->getArtworksCountByStyle($style))['Totale'];
+        return $this->artworks->getArtworksCountByStyle($style)->fetch_assoc()['Totale'];
     }
 
     public function getArtworks($style, $offset) {
@@ -29,7 +29,7 @@ class ArtworksController {
         $counter = 1;
         $content = '';
 
-        while($row = mysqli_fetch_assoc($result_set)) {
+        while($row = $result_set->fetch_assoc()) {
             $content .= '
                 <dt id="'. $id . $counter . '">
                      <a href="ContenutoSingolo.php?type=opera&id=' . $row['ID'] . '" aria-label="Vai all\'opera">' . $row['Titolo'] . '</a>

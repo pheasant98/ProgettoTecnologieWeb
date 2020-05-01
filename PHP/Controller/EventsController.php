@@ -10,11 +10,11 @@ class EventsController {
     }
 
     public function getEventsCount() {
-        return mysqli_fetch_assoc($this->events->getEventsCount())['Totale'];
+        return $this->events->getEventsCount()->fetch_assoc()['Totale'];
     }
 
     public function getEventsCountByType($type) {
-        return mysqli_fetch_assoc($this->events->getEventsCountByType($type))['Totale'];
+        return $this->events->getEventsCountByType($type)->fetch_assoc()['Totale'];
     }
 
     public function getEvents($type, $offset) {
@@ -29,7 +29,7 @@ class EventsController {
         $counter = 1;
         $content = '';
 
-        while($row = mysqli_fetch_assoc($result_set)) {
+        while($row = $result_set->fetch_assoc()) {
             $content .= '
                 <dt id="' . $id . $counter . '">
                      <a href="ContenutoSingolo.php?type=evento&id=' . $row['ID'] . '\" aria-label="Vai all\'evento">' . $row['Titolo'] . '</a>
