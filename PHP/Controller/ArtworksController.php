@@ -10,49 +10,54 @@ class ArtworksController {
     }
 
     public function getArtworksCount() {
-        return mysqli_fetch_assoc($this->artworks->getArtworksCount())["Totale"];
+        return mysqli_fetch_assoc($this->artworks->getArtworksCount())['Totale'];
     }
 
     public function getArtworksCountByStyle($style) {
-        return mysqli_fetch_assoc($this->artworks->getArtworksCountByStyle($style))["Totale"];
+        return mysqli_fetch_assoc($this->artworks->getArtworksCountByStyle($style))['Totale'];
     }
 
     public function getArtworks($style, $offset) {
-        if ($style == "") {
+        if ($style === '') {
             $result_set = $this->artworks->getArtworks($offset);
         } else {
             $result_set = $this->artworks->getArtworksByStyle($style, $offset);
         }
 
-        $id_ref = "artwork";
-        $button_ref = "buttonBack";
+        $id = 'artwork';
+        $button = 'buttonBack';
         $counter = 1;
-        $content = "";
+        $content = '';
+
         while($row = mysqli_fetch_assoc($result_set)) {
-            $content .= "
-                <dt id=\"$id_ref . '' . $counter\">
-                     <a href=\"ContenutoSingolo.php?type=opera&id=" . $row["ID"] . "\" aria-label=\"Vai all'opera\">" . $row["Titolo"] . "</a>
+            $content .= '
+                <dt id="'. $id . $counter . '">
+                     <a href="ContenutoSingolo.php?type=opera&id=' . $row['ID'] . '" aria-label="Vai all\'opera">' . $row['Titolo'] . '</a>
                 </dt>
                 <dd>
-                    <a href=\"#" . ($result_set->num_rows == $counter ? $button_ref : $id_ref . ($counter+1)) . "\" class=\"skipInformation\" aria-label=\"Salta l'opera\">Salta l'opera</a>
+                    <a href="#' . ($result_set->num_rows == $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'opera">Salta l\'opera</a>
     
                     <p>
-                        Nome autore: " . $row["Autore"] . "
+                        Nome autore: ' . $row['Autore'] . '
                     </p>
                     
                     <p>
-                        Tecnica: " . $row["Tecnica"] . "
+                        Tecnica: ' . $row['Tecnica'] . '
                     </p>
 
                     <p>
-                        Data: " . $row["Anni"] . "
+                        Data: ' . $row['Anni'] . '
                     </p>
                     
-                    <img alt=\"Immagine dell'opera . (titolo)\" src=\"../" . $row["Immagine"] . "\"/>
+                    <img alt="Immagine dell\'opera . (titolo)" src="../' . $row['Immagine'] . '"/>
                 </dd>
-            ";
+            ';
+
             $counter++;
         }
+
         return $content;
     }
 }
+
+?>

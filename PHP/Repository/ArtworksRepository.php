@@ -1,6 +1,6 @@
 <?php
 
-require_once("Database/DatabaseAccess.php");
+require_once('Database/DatabaseAccess.php');
 
 class ArtworksRepository {
     private $dbConnection;
@@ -15,60 +15,60 @@ class ArtworksRepository {
     }
 
     public function postPainting($author, $title, $description, $years, $technique, $dimensions, $loan, $image, $user) {
-        $statement = $this->dbConnection->prepareQuery("INSERT INTO Opere (ID, Autore, Titolo, Descrizione, Anni, Stile, Tecnica, Dimensioni, Prestito, Immagine, Utente) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
+        $statement = $this->dbConnection->prepareQuery('INSERT INTO Opere (ID, Autore, Titolo, Descrizione, Anni, Stile, Tecnica, Dimensioni, Prestito, Immagine, Utente) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);');
         $statement->bind_param('sssississ', $author, $title, $description, $years, $technique, $dimensions, $loan, $image, $user);
         return $this->dbConnection->executeNotSelectStatement($statement);
     }
 
     public function postSculture($author, $title, $description, $years, $material, $dimensions, $loan, $image, $user) {
-        $statement = $this->dbConnection->prepareQuery("INSERT INTO Opere (ID, Autore, Titolo, Descrizione, Anni, Stile, Materiale, Dimensioni, Prestito, Immagine, Utente) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
+        $statement = $this->dbConnection->prepareQuery('INSERT INTO Opere (ID, Autore, Titolo, Descrizione, Anni, Stile, Materiale, Dimensioni, Prestito, Immagine, Utente) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);');
         $statement->bind_param('sssississ', $author, $title, $description, $years, $material, $dimensions, $loan, $image, $user);
         return $this->dbConnection->executeNotSelectStatement($statement);
     }
 
     public function getArtworks($offset) {
-        $statement = $this->dbConnection->prepareQuery("SELECT * FROM Opere ORDER BY Titolo LIMIT 5 OFFSET ?;");
+        $statement = $this->dbConnection->prepareQuery('SELECT * FROM Opere ORDER BY Titolo LIMIT 5 OFFSET ?;');
         $statement->bind_param('i', $offset);
         return $this->dbConnection->executeSelectStatement($statement);
     }
 
     public function getArtworksCount() {
-        $statement = $this->dbConnection->prepareQuery("SELECT COUNT(*) AS Totale FROM Opere;");
+        $statement = $this->dbConnection->prepareQuery('SELECT COUNT(*) AS Totale FROM Opere;');
         return $this->dbConnection->executeSelectStatement($statement);
     }
 
     public function getArtworksByStyle($style, $offset) {
-        $statement = $this->dbConnection->prepareQuery("SELECT * FROM Opere WHERE Stile=? ORDER BY Titolo LIMIT 5 OFFSET ?;");
+        $statement = $this->dbConnection->prepareQuery('SELECT * FROM Opere WHERE Stile=? ORDER BY Titolo LIMIT 5 OFFSET ?;');
         $statement->bind_param('si', $style, $offset);
         return $this->dbConnection->executeSelectStatement($statement);
     }
 
     public function getArtworksCountByStyle($style) {
-        $statement = $this->dbConnection->prepareQuery("SELECT COUNT(*) AS Totale FROM Opere WHERE Stile=?;");
+        $statement = $this->dbConnection->prepareQuery('SELECT COUNT(*) AS Totale FROM Opere WHERE Stile=?;');
         $statement->bind_param('s', $style);
         return $this->dbConnection->executeSelectStatement($statement);
     }
 
     public function getArtwork($id) {
-        $statement = $this->dbConnection->prepareQuery("SELECT * FROM Opere WHERE ID=?;");
+        $statement = $this->dbConnection->prepareQuery('SELECT * FROM Opere WHERE ID=?;');
         $statement->bind_param('i', $id);
         return $this->dbConnection->executeSelectStatement($statement);
     }
 
     public function updatePainting($id, $author, $title, $description, $years, $technique, $dimensions, $loan, $image, $user) {
-        $statement = $this->dbConnection->prepareQuery("UPDATE Opere SET Autore=?, Titolo=?, Descrizione=?, Anni=?, Tecnica=?, Dimensioni=?, Prestito=?, Immagine=?, Utente=? WHERE ID=?;");
+        $statement = $this->dbConnection->prepareQuery('UPDATE Opere SET Autore=?, Titolo=?, Descrizione=?, Anni=?, Tecnica=?, Dimensioni=?, Prestito=?, Immagine=?, Utente=? WHERE ID=?;');
         $statement->bind_param('sssississi', $author, $title, $description, $years, $technique, $dimensions, $loan, $image, $user, $id);
         return $this->dbConnection->executeNotSelectStatement($statement);
     }
 
     public function updateSculture($id, $author, $title, $description, $years, $material, $dimensions, $loan, $image, $user) {
-        $statement = $this->dbConnection->prepareQuery("UPDATE Opere SET Autore=?, Titolo=?, Descrizione=?, Anni=?, Materiale=?, Dimensioni=?, Prestito=?, Immagine=?, Utente=? WHERE ID=?;");
+        $statement = $this->dbConnection->prepareQuery('UPDATE Opere SET Autore=?, Titolo=?, Descrizione=?, Anni=?, Materiale=?, Dimensioni=?, Prestito=?, Immagine=?, Utente=? WHERE ID=?;');
         $statement->bind_param('sssississi', $author, $title, $description, $years, $material, $dimensions, $loan, $image, $user, $id);
         return $this->dbConnection->executeNotSelectStatement($statement);
     }
 
     public function deleteArtwork($id) {
-        $statement = $this->dbConnection->prepareQuery("DELETE FROM Opere WHERE ID=?;");
+        $statement = $this->dbConnection->prepareQuery('DELETE FROM Opere WHERE ID=?;');
         $statement->bind_param('i', $id);
         return $this->dbConnection->executeNotSelectStatement($statement);
     }
