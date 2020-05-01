@@ -10,12 +10,7 @@ class EventsRepository {
     }
 
     public function __destruct() {
-        $this->close();
         unset($this->dbConnection);
-    }
-
-    public function close() {
-        $this->dbConnection->closeConnection();
     }
 
     public function postEvent($title, $description, $beginDate, $endDate, $type, $manager, $image, $user) {

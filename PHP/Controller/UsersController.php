@@ -1,6 +1,6 @@
 <?php
 
-require_once('Repository/UsersRepository.php');
+require_once ('Repository/UsersRepository.php');
 
 class UsersController {
     private $users;
@@ -9,7 +9,9 @@ class UsersController {
         $this->users = new UsersRepository();
     }
 
-
+    public function __destruct() {
+        unset($this->users);
+    }
 }
 
 ?>

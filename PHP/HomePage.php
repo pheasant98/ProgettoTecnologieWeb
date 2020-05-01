@@ -1,6 +1,5 @@
 <?php
 
-require_once('Database/DatabaseAccess.php');
 require_once('Controller/LoginController.php');
 
 session_start();

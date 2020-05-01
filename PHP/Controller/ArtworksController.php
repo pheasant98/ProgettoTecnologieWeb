@@ -9,12 +9,22 @@ class ArtworksController {
         $this->artworks = new ArtworksRepository();
     }
 
+    public function __destruct() {
+        unset($this->artworks);
+    }
+
     public function getArtworksCount() {
-        return $this->artworks->getArtworksCount()->fetch_assoc()['Totale'];
+        $result_set = $this->artworks->getArtworksCount();
+        $count = $result_set->fetch_assoc()['Totale'];
+        $result_set->free();
+        return $count;
     }
 
     public function getArtworksCountByStyle($style) {
-        return $this->artworks->getArtworksCountByStyle($style)->fetch_assoc()['Totale'];
+        $result_set = $this->artworks->getArtworksCountByStyle($style);
+        $count = $result_set->fetch_assoc()['Totale'];
+        $result_set->free();
+        return $count;
     }
 
     public function getArtworks($style, $offset) {
@@ -55,6 +65,8 @@ class ArtworksController {
 
             $counter++;
         }
+
+        $result_set->free();
 
         return $content;
     }

@@ -10,12 +10,7 @@ class ReviewsRepository {
     }
 
     public function __destruct() {
-        $this->close();
         unset($this->dbConnection);
-    }
-
-    public function close() {
-        $this->dbConnection->closeConnection();
     }
 
     public function postReview($title, $content, $user) {

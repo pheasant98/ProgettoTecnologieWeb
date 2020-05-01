@@ -19,7 +19,9 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Invia') {
     $title = $_POST['title'];
     $content = $_POST['content'];
 
-    $message = ReviewsController::addReview($title, $content, $_SESSION['Username']);
+    $reviewsController = new ReviewsController();
+    $message = $reviewsController->addReview($title, $content, $_SESSION['Username']);
+    unset($reviewsController);
 }
 
 if ($message === '') {

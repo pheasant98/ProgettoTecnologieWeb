@@ -9,12 +9,22 @@ class EventsController {
         $this->events = new EventsRepository();
     }
 
+    public function __destruct() {
+        unset($this->events);
+    }
+
     public function getEventsCount() {
-        return $this->events->getEventsCount()->fetch_assoc()['Totale'];
+        $result_set = $this->events->getEventsCount();
+        $count = $result_set->fetch_assoc()['Totale'];
+        $result_set->free();
+        return $count;
     }
 
     public function getEventsCountByType($type) {
-        return $this->events->getEventsCountByType($type)->fetch_assoc()['Totale'];
+        $result_set = $this->events->getEventsCountByType($type);
+        $count = $result_set->fetch_assoc()['Totale'];
+        $result_set->free();
+        return $count;
     }
 
     public function getEvents($type, $offset) {
@@ -53,6 +63,8 @@ class EventsController {
 
             $counter++;
         }
+
+        $result_set->free();
 
         return $content;
     }

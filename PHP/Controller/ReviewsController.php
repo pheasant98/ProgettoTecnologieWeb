@@ -3,8 +3,17 @@
 require_once ('Repository/ReviewsRepository.php');
 
 class ReviewsController {
-    # Funzione per il controllo degli errori
-    private static function checkInput($title, $content) {
+    private $reviews;
+
+    public function __construct() {
+        $this->reviews = new ReviewsRepository();
+    }
+
+    public function __destruct() {
+        unset($this->reviews);
+    }
+
+    private function checkInput($title, $content) {
         $message = '';
 
         if (!strlen($title)) {
@@ -22,27 +31,15 @@ class ReviewsController {
         return $message;
     }
 
-    # Controllo se la pagina e' stata acceduta tramite il bottone di 'submit' del form di inserimento
-    public static function addReview($title, $content, $user) {
-        # Controllo dell'input
-        $message = ReviewsController::checkInput($title, $content);
+    public function addReview($title, $content, $user) {
+        $message = $this->checkInput($title, $content);
 
-        # Controllo degli errori
         if ($message === '') {
-            # Istanziazione oggetto di interfacciamento con il database
-            $reviews = new ReviewsRepository();
-
-            # Apertura connessione al database e inserimento del personaggio nel database
-            if ($reviews->postReview($title, $content, $user)) {
-                # Messaggio di avvenuto inserimento
+            if ($this->reviews->postReview($title, $content, $user)) {
                 $message = '<p class="success">Recensione inserita correttamente</p>';
             } else {
-                # Messaggio di errore nell'inserimento
                 $message = '<p class="error">Errore nell\'inserimento della nuova recensione</p>';
             }
-
-            $reviews->close();
-            unset($reviews);
         } else {
             # Composizione dei messaggi di errori
             $message = '<ul>' . $message;
