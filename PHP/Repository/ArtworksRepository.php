@@ -14,14 +14,14 @@ class ArtworksRepository {
     }
 
     public function postPainting($author, $title, $description, $years, $technique, $dimensions, $loan, $image, $user) {
-        $statement = $this->dbConnection->prepareQuery('INSERT INTO Opere (ID, Autore, Titolo, Descrizione, Anni, Stile, Tecnica, Dimensioni, Prestito, Immagine, Utente) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);');
-        $statement->bind_param('sssississ', $author, $title, $description, $years, $technique, $dimensions, $loan, $image, $user);
+        $statement = $this->dbConnection->prepareQuery('INSERT INTO Opere (ID, Autore, Titolo, Descrizione, Anni, Stile, Tecnica, Dimensioni, Prestito, Immagine, Utente) VALUES (NULL, ?, ?, ?, ?, "Dipinti", ?, ?, ?, ?, ?);');
+        $statement->bind_param('ssssssiss', $author, $title, $description, $years, $technique, $dimensions, $loan, $image, $user);
         return $this->dbConnection->executeNotSelectStatement($statement);
     }
 
     public function postSculture($author, $title, $description, $years, $material, $dimensions, $loan, $image, $user) {
-        $statement = $this->dbConnection->prepareQuery('INSERT INTO Opere (ID, Autore, Titolo, Descrizione, Anni, Stile, Materiale, Dimensioni, Prestito, Immagine, Utente) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);');
-        $statement->bind_param('sssississ', $author, $title, $description, $years, $material, $dimensions, $loan, $image, $user);
+        $statement = $this->dbConnection->prepareQuery('INSERT INTO Opere (ID, Autore, Titolo, Descrizione, Anni, Stile, Materiale, Dimensioni, Prestito, Immagine, Utente) VALUES (NULL, ?, ?, ?, ?, "Sculture", ?, ?, ?, ?, ?);');
+        $statement->bind_param('ssssssiss', $author, $title, $description, $years, $material, $dimensions, $loan, $image, $user);
         return $this->dbConnection->executeNotSelectStatement($statement);
     }
 
@@ -56,13 +56,13 @@ class ArtworksRepository {
 
     public function updatePainting($id, $author, $title, $description, $years, $technique, $dimensions, $loan, $image, $user) {
         $statement = $this->dbConnection->prepareQuery('UPDATE Opere SET Autore=?, Titolo=?, Descrizione=?, Anni=?, Tecnica=?, Dimensioni=?, Prestito=?, Immagine=?, Utente=? WHERE ID=?;');
-        $statement->bind_param('sssississi', $author, $title, $description, $years, $technique, $dimensions, $loan, $image, $user, $id);
+        $statement->bind_param('ssssssissi', $author, $title, $description, $years, $technique, $dimensions, $loan, $image, $user, $id);
         return $this->dbConnection->executeNotSelectStatement($statement);
     }
 
     public function updateSculture($id, $author, $title, $description, $years, $material, $dimensions, $loan, $image, $user) {
         $statement = $this->dbConnection->prepareQuery('UPDATE Opere SET Autore=?, Titolo=?, Descrizione=?, Anni=?, Materiale=?, Dimensioni=?, Prestito=?, Immagine=?, Utente=? WHERE ID=?;');
-        $statement->bind_param('sssississi', $author, $title, $description, $years, $material, $dimensions, $loan, $image, $user, $id);
+        $statement->bind_param('ssssssissi', $author, $title, $description, $years, $material, $dimensions, $loan, $image, $user, $id);
         return $this->dbConnection->executeNotSelectStatement($statement);
     }
 

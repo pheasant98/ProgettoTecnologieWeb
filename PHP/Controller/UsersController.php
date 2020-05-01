@@ -12,6 +12,15 @@ class UsersController {
     public function __destruct() {
         unset($this->users);
     }
+
+    public function getUser($username) {
+        $result_set = $this->users->getUser($username);
+        $count = $result_set->fetch_assoc();
+        $result_set->free();
+        return $count;
+    }
+
+    
 }
 
 ?>
