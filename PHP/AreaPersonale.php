@@ -16,8 +16,9 @@ if (!LoginController::isAuthenticatedUser()) {
 $users_controller = new UsersController();
 $user = $users_controller->getUser($_SESSION['Username']);
 
+$operations = '<ul id="operationsList" class="navigation">';
 if ($user['Admin'] === 1) {
-    $operations = '
+    $operations .= '    
         <li>
             <a id="ModificaAdmin" class="button userOperationButton" href="ModificaDatiUtente.html" title="vai alla pagina modifica dati utente" role="button" aria-label="vai alla pagina modifica dati utente">Modifica profilo</a>
         </li>
@@ -49,11 +50,13 @@ if ($user['Admin'] === 1) {
         </li>
     ';
 }
+$operations .= '</ul>';
 
 $document = file_get_contents('../HTML/AreaPersonale.html');
 $login = LoginController::getAuthenticationMenu();
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
+$document = str_replace("<span id='namePlaceholder'/>", $user['Nome'], $document);
 $document = str_replace("<span id='operationsPlaceholder'/>", $operations, $document);
 
 echo $document;
