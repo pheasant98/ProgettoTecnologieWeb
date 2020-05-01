@@ -2,7 +2,7 @@
 
 require_once('Repository/UsersRepository.php');
 
-class UserController {
+class UsersController {
     private $users;
 
     public function __construct() {

@@ -12,9 +12,13 @@ class DatabaseAccess {
         }
     }
 
+    public function __destruct() {
+        $this->closeConnection();
+        unset($this->connection);
+    }
+
     public function closeConnection() {
         @$this->connection->close();
-        unset($this->connection);
     }
 
     public function prepareQuery($query) {

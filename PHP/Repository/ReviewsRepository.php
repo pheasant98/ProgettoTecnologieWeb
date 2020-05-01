@@ -9,9 +9,13 @@ class ReviewsRepository {
         $this->dbConnection = new DatabaseAccess();
     }
 
+    public function __destruct() {
+        $this->close();
+        unset($this->dbConnection);
+    }
+
     public function close() {
         $this->dbConnection->closeConnection();
-        unset($this->dbConnection);
     }
 
     public function postReview($title, $content, $user) {

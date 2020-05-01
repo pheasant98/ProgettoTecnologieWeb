@@ -9,9 +9,13 @@ class ArtworksRepository {
         $this->dbConnection = new DatabaseAccess();
     }
 
+    public function __destruct() {
+        $this->close();
+        unset($this->dbConnection);
+    }
+
     public function close() {
         $this->dbConnection->closeConnection();
-        unset($this->dbConnection);
     }
 
     public function postPainting($author, $title, $description, $years, $technique, $dimensions, $loan, $image, $user) {
