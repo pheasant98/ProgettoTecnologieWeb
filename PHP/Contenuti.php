@@ -8,7 +8,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 if (!isset($_GET['type']) || (($_GET['type'] !== 'Opere') && ($_GET['type'] !== 'Eventi'))) {
-    header('Location: Error.php');
+    //header('Location: Error.php');
 }
 
 session_start();
