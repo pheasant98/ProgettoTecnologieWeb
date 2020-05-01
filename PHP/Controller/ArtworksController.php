@@ -48,7 +48,7 @@ class ArtworksController {
                         Data: " . $row["Anni"] . "
                     </p>
                     
-                    <img alt=\"Immagine dell'opera . (titolo)\" src=\"../" . $row["Immagine"] . "\"/>
+                    <img alt=\"Immagine dell'opera " . $row["Titolo"] . "\" src=\"../" . $row["Immagine"] . "\"/>
                 </dd>
             ";
             $counter++;
@@ -61,7 +61,7 @@ class ArtworksController {
         $row = mysqli_fetch_assoc($result_set);
         return ' <h3 class="subtitle">' . $row["Titolo"] . '</h3>
                  <p id="operaImage">
-                    <img alt="Immagine opera" src="../' . $row["Immagine"] . '"/>
+                    <img alt="Immagine opera ' . $row["Titolo"] . '" src="../' . $row["Immagine"] . '"/>
                  </p>
                  
                  <dl>
@@ -105,6 +105,13 @@ class ArtworksController {
                      </dt>
                      <dd>
                          ' . $row["Dimensioni"] . '
+                     </dd>
+                     
+                     <dt>
+                        In prestito:
+                     </dt>
+                     <dd>
+                        ' . ($row["Prestito"] == 1 ? "sì" : "no") . '
                      </dd>
                  </dl>     
                  <p class="paragraph">
