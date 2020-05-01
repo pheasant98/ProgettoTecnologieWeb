@@ -30,7 +30,7 @@ class EventsController {
         while($row = mysqli_fetch_assoc($result_set)) {
             $content .= "
                 <dt id=\"$id_ref . '' . $counter\">
-                     <a href=\"ContenutoSingolo.php?type=evento&id=" . $row["ID"] . "\" aria-label=\"Vai all'evento\">" . $row["Titolo"] . "</a>
+                     <a href=\"ContenutoSingolo.php?type=Evento&id=" . $row["ID"] . "\" aria-label=\"Vai all'evento\">" . $row["Titolo"] . "</a>
                 </dt>
                 <dd>
                     <a href=\"#" . ($result_set->num_rows == $counter ? $button_ref : $id_ref . ($counter+1)) . "\" class=\"skipInformation\" aria-label=\"Salta l'evento\">Salta l'evento</a>
@@ -51,5 +51,44 @@ class EventsController {
             $counter++;
         }
         return $content;
+    }
+
+    public function getEvent($id) {
+        $result_set = $this->events->getEvent($id);
+        $row = mysqli_fetch_assoc($result_set);
+        return ' <h3 class="subtitle">' . $row["Titolo"] . '</h3>
+                 <dl>
+                     <dt>
+                        Tipologia:
+                     </dt>
+                     <dd>
+                         ' . $row["Tipologia"] . '
+                     </dd>
+                    
+                     <dt>
+                         Data inizio:
+                     </dt>
+                     <dd>
+                         ' . $row["DataInizio"] . '
+                     </dd>
+                    
+                     <dt>
+                         Data fine:
+                     </dt>
+                     <dd>
+                         ' . $row["DataFine"] . '
+                     </dd>
+        
+                     <dt>
+                         Organizzatore:
+                     </dt>
+                     <dd>
+                         ' . $row["Organizzatore"] . '
+                     </dd>
+                 </dl>     
+                 <p class="paragraph">
+                     ' . $row["Descrizione"] . '
+                 </p>
+                ';
     }
 }
