@@ -74,38 +74,38 @@ class EventsController {
       
         $row = $result_set->fetch_assoc();
       
-        return ' <h3 class="subtitle">' . $row["Titolo"] . '</h3>
+        return ' <h3 class="subtitle">' . $row['Titolo'] . '</h3>
                  <dl>
                      <dt>
                         Tipologia:
                      </dt>
                      <dd>
-                         ' . $row["Tipologia"] . '
+                         ' . $row['Tipologia'] . '
                      </dd>
                     
                      <dt>
                          Data inizio:
                      </dt>
                      <dd>
-                         ' . $row["DataInizio"] . '
+                         ' . $row['DataInizio'] . '
                      </dd>
                     
                      <dt>
                          Data fine:
                      </dt>
                      <dd>
-                         ' . $row["DataFine"] . '
+                         ' . $row['DataFine'] . '
                      </dd>
         
                      <dt>
                          Organizzatore:
                      </dt>
                      <dd>
-                         ' . $row["Organizzatore"] . '
+                         ' . $row['Organizzatore'] . '
                      </dd>
                  </dl>     
                  <p class="paragraph">
-                     ' . $row["Descrizione"] . '
+                     ' . $row['Descrizione'] . '
                  </p>
                 ';
     }
