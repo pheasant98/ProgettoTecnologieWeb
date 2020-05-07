@@ -52,14 +52,13 @@
         </div>
 
         <div aria-label="breadcrumbs" id="breadcrumbs">
-            <!--MODIFICARE IN PHP-->
             <p>
                 Ti trovi in:
                 <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a>
                 &gt;&gt;
-                <a href="Contenuti.php?type=Eventi" title="Eventi" aria-label="Vai alla pagina Eventi" tabindex="10" xml:lang="en">Eventi</a>
+                <span id='breadcrumbsLinkPlaceholder'/>
                 &gt;&gt;
-                <strong>Contenuto singolo</strong>
+                <strong><span id='titlePlaceholder'/></strong>
             </p>
         </div>
 
@@ -94,55 +93,7 @@
 
         <div id="content" role="main">
 
-            <!--CONTENUTO EVENTO-->
-            <h2 id="HEvent" class="title">Evento1</h2>
-
-            <h3 class="subtitle">Dettagli</h3>
-
-            <p class="paragraph">
-                <a class="skipInformation" href="#HEventi2" aria-label="Salta i dettagli">Salta dettagli</a>
-                Donec consequat tortor nisl, quis sodales sapien molestie eget.
-            </p>
-
-            <h3 id="HEventi2" class="subtitle">Descrizione</h3>
-
-            <p class="paragraph">
-                <a class="skipInformation" href="#footer" aria-label="Salta il testo">Salta il testo</a>
-                Pellentesque nec facilisis eros, non egestas nisl.
-                Cras facilisis, metus dapibus viverra consequat, mauris enim facilisis mauris, feugiat laoreet ligula leo ac
-                diam.
-                Donec consequat tortor nisl, quis sodales sapien molestie eget.
-                Nullam vel aliquet libero, fringilla faucibus felis.
-            </p>
-
-            <h2 class="title">Elenco dettagli</h2>
-
-            <p class="paragraph">
-                <a class="skipInformation" href="#p2" aria-label="Salta il testo">Salta il testo</a>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Vestibulum id augue quis orci porttitor consequat sit amet at velit.
-                Mauris odio dolor, vestibulum vel pharetra ut, varius non nibh.
-                Nullam porttitor ante sed facilisis efficitur.
-                Maecenas semper velit in feugiat interdum.
-                Duis dapibus porta rutrum.
-            </p>
-
-            <!--OPERA-->
-
-            <p id="operaImage">
-                <img alt="Immagine dell'opera ecc.." src="../Images/museo.png"/>
-            </p>
-
-            <h2 class="title">Descrizione completa</h2>
-
-            <p id="p2" class="paragraph">
-                <a class="skipInformation" href="#footer" aria-label="Salta il testo">Salta il testo</a>
-                Pellentesque nec facilisis eros, non egestas nisl.
-                Cras facilisis, metus dapibus viverra consequat, mauris enim facilisis mauris, feugiat laoreet ligula leo ac
-                diam.
-                Donec consequat tortor nisl, quis sodales sapien molestie eget.
-                Nullam vel aliquet libero, fringilla faucibus felis.
-            </p>
+            <span id='singleContentPlaceholder'/>
 
             <a id="buttonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
                 <img alt="Torna su" src="../Images/TornaSu.png"/>
