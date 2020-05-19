@@ -371,7 +371,7 @@ a:visited {
 .button {
   display: block;
   text-align: center;
-  text-decoration: underline;
+  text-decoration: none;
   color: #000;
   outline: none;
   cursor: pointer;
