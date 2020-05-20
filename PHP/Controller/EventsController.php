@@ -42,7 +42,7 @@ class EventsController {
         while($row = $result_set->fetch_assoc()) {
             $content .= '
                 <dt id="' . $id . $counter . '">
-                     <a href="ContenutoSingolo.php?type=evento&id=' . $row['ID'] . '\" aria-label="Vai all\'evento">' . $row['Titolo'] . '</a>
+                     <a href="Evento.php?id=' . $row['ID'] . '\" aria-label="Vai all\'evento">' . $row['Titolo'] . '</a>
                 </dt>
                 <dd>
                     <a href="#' . ($result_set->num_rows == $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'evento">Salta l\'evento</a>
