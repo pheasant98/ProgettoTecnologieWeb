@@ -19,7 +19,6 @@ class UsersController {
         $result_set->free();
         return $count;
     }
-
 }
 
 ?>

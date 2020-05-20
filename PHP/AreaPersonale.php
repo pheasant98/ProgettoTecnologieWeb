@@ -17,19 +17,6 @@ if (!LoginController::isAuthenticatedUser()) {
 $users_controller = new UsersController();
 $user = $users_controller->getUser($_SESSION['Username']);
 
-$user_data = '
-    <dt>Nome:</dt>
-    <dd>' . $user['Nome'] . '</dd>
-    <dt>Cognome:</dt>
-    <dd>' . $user['Cognome'] . '</dd>
-    <dt>Sesso:</dt>
-    <dd>' . ($user['Sesso'] === 'M' ? 'Maschile' : ($user['Sesso'] === 'F' ? 'Femminile' : 'Non specificato')) . '</dd>
-    <dt>Data di nascita:</dt>
-    <dd>' . DateUtilities::englishItalianDate($user['DataNascita']) . '</dd>
-    <dt>Indirizzo <span xml:lang="en">e-mail</span>:</dt>
-    <dd>' . $user['Email'] . '</dd>
-';
-
 if ($user['Admin'] === 1) {
     $functionalities = 'Ora che hai effettuato l\'accesso all\'area personale, puoi utilizzare il tuo <span xml:lang="en">account</span> per gestire gli utenti e i contenuti del sito.';
     $operations = '    
@@ -71,7 +58,11 @@ $login = LoginController::getAuthenticationMenu();
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
 $document = str_replace("<span id='namePlaceholder'/>", $user['Nome'], $document);
-$document = str_replace("<span id='userDataPlaceholder'/>", $user_data, $document);
+$document = str_replace("<span id='userNamePlaceholder'/>", $user['Nome'], $document);
+$document = str_replace("<span id='userSurnamePlaceholder'/>", $user['Cognome'], $document);
+$document = str_replace("<span id='userSexPlaceholder'/>", $user['Sesso'] === 'M' ? 'Maschile' : ($user['Sesso'] === 'F' ? 'Femminile' : 'Non specificato'), $document);
+$document = str_replace("<span id='userBirthDatePlaceholder'/>", DateUtilities::englishItalianDate($user['DataNascita']), $document);
+$document = str_replace("<span id='userMailPlaceholder'/>", $user['Email'], $document);
 $document = str_replace("<span id='functionalitiesPlaceholder'/>", $functionalities, $document);
 $document = str_replace("<span id='operationsPlaceholder'/>", $operations, $document);
 
