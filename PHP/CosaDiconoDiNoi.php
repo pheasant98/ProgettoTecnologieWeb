@@ -47,8 +47,8 @@ $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
 $document = str_replace("<span id='leaveReviewPlaceholder'/>", $leave_review, $document);
 $document = str_replace("<span id='reviewsNumberPlaceholder'/>", $reviews_count, $document);
 $document = str_replace("<span id='reviewsListPlaceholder'/>", $reviews_list, $document);
-$document = str_replace("<span id='buttonBackPlaceholder'/>", $previous_content, $document);
-$document = str_replace("<span id='buttonNextPlaceholder'/>", $next_content, $document);
+$document = str_replace("<span id='buttonBackPlaceholder'/>", $previous_reviews, $document);
+$document = str_replace("<span id='buttonNextPlaceholder'/>", $next_reviews, $document);
 
 echo $document;
 
