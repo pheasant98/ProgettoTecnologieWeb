@@ -53,20 +53,9 @@ if (($page * 5) < $content_count) {
     $next_content = '<a id="buttonNext" class="button" href="?page=' . ($page + 1) . '&amp;filterType='. $filter_type . '" title="Opere successive" role="button" aria-label="Vai alle opere successive"> Successivo &gt;</a>';
 }
 
-$filter_select = '<form id="operaFilter" action="Opere.php" method="get">
-                    <fieldset class="navigation">
-                        <legend class="hideLegend">Filtro</legend>
-                        
-                        <label id="labelFilterType" for="filterType">Visualizza</label>
-                        <select name="filterType" id="filterType" aria-label="filtro per lo stile dell\'opera">
-                            <option value="TutteLeOpere" ' . ($filter_type == '' ? 'selected="selected"' : '') . '> Tutte le opere </option>
-                            <option value="Dipinti" ' . ($filter_type == 'Dipinti' ? 'selected="selected"' : '') . '> Dipinti </option>
-                            <option value="Sculture" ' . ($filter_type == 'Sculture' ? 'selected="selected"' : '') . '> Sculture </option>
-                        </select>
-        
-                        <input id="buttonConfirm" class="button" value="Filtra" type="submit" aria-label="Filtra"/>
-                    </fieldset>
-                </form>';
+$filter_option_whole = $filter_type == '' ? ' selected="selected"' : '';
+$filter_option_paintings = $filter_type == 'Dipinti' ? ' selected="selected"' : '';
+$filter_option_sculptures = $filter_type == 'Sculture' ? ' selected="selected"' : '';
 
 require_once ('Controller/LoginController.php');
 $document = file_get_contents('../HTML/Opere.html');
@@ -75,7 +64,9 @@ $login = LoginController::getAuthenticationMenu();
 $document = str_replace("<span id='titlePlaceholder'/>", "ciao", $document);
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
 $document = str_replace("<span id='contentNumberFound'/>", $content_number_found, $document);
-$document = str_replace("<span id='filterSelectPlaceholder'/>", $filter_select, $document);
+$document = str_replace("<span id='filterOptionsWholePlaceholder'/>", $filter_option_whole, $document);
+$document = str_replace("<span id='filterOptionPaintingsPlaceholder'/>", $filter_option_paintings, $document);
+$document = str_replace("<span id='filterOptionSculpturesPlaceholder'/>", $filter_option_sculptures, $document);
 $document = str_replace("<span id='contentNumberPlaceholder'/>", $content_count, $document);
 $document = str_replace("<span id='contentListPlaceholder'/>", $content_list, $document);
 $document = str_replace("<span id='buttonBackPlaceholder'/>", $previous_content, $document);

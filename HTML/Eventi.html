@@ -73,11 +73,11 @@
                 </li>
 
                 <li>
-                    <a href="Contenuti.php?type=Opere" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="13">Opere</a>
+                    <a href="Opere.php" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="13">Opere</a>
                 </li>
 
                 <li>
-                    <a href="Contenuti.php?type=Eventi" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="14">Eventi</a>
+                    <strong>Eventi</strong>
                 </li>
 
                 <li>
@@ -92,7 +92,20 @@
         </div>
 
         <div id="content" role="main">
-            <span id='filterSelectPlaceholder'/>
+            <form id="eventFilter" action="Eventi.php" method="get">
+                <fieldset class="navigation">
+                    <legend class="hideLegend">Filtro</legend>
+
+                    <label id="labelFilterType" for="filterType">Visualizza</label>
+                    <select name="filterType" id="filterType" aria-label="filtro per la tipologia di evento">
+                        <option value="TuttiGliEventi"<span id='filterOptionWholePlaceholder'/>> Tutti gli eventi </option>
+                        <option value="Mostre"<span id='filterOptionExhibitionsPlaceholder'/>> Mostre </option>
+                        <option value="Conferenze"<span id='filterOptionConferencesPlaceholder'/>> Conferenze </option>
+                    </select>
+
+                    <input id="buttonConfirm" class="button" value="Filtra" type="submit" aria-label="Filtra"/>
+                </fieldset>
+            </form>
 
             <h3 class="subtitle"><span id='titlePlaceholder'/></h3>
 

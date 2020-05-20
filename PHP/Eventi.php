@@ -53,20 +53,9 @@ if (($page * 5) < $content_count) {
     $next_content = '<a id="buttonNext" class="button" href="?page=' . ($page + 1) . '&amp;filterType='. $filter_type . '" title="Eventi successivi" role="button" aria-label="Vai agli eventi successivi"> Successivo &gt;</a>';
 }
 
-$filter_select = '<form id="eventFilter" action="Eventi.php" method="get">
-                        <fieldset class="navigation">
-                            <legend class="hideLegend">Filtro</legend>
-                            
-                            <label id="labelFilterType" for="filterType">Visualizza</label>
-                            <select name="filterType" id="filterType" aria-label="filtro per la tipologia di evento">
-                                <option value="TuttiGliEventi" ' . ($filter_type == '' ? 'selected="selected"' : '') . '> Tutti gli eventi </option>
-                                <option value="Mostre" ' . ($filter_type == 'Mostre' ? 'selected="selected"' : '') . '> Mostre </option>
-                                <option value="Conferenze"' . ($filter_type == 'Conferenze' ? 'selected="selected"' : '') . '> Conferenze </option>
-                            </select>
-        
-                            <input id="buttonConfirm" class="button" value="Filtra" type="submit" aria-label="Filtra"/>
-                        </fieldset>
-                    </form>';
+$filter_option_whole = $filter_type == '' ? ' selected="selected"' : '';
+$filter_option_exhibitions = $filter_type == 'Mostre' ? ' selected="selected"' : '';
+$filter_option_conferences = $filter_type == 'Conferenze' ? ' selected="selected"' : '';
 
 require_once ('Controller/LoginController.php');
 $document = file_get_contents('../HTML/Eventi.html');
@@ -75,7 +64,9 @@ $login = LoginController::getAuthenticationMenu();
 $document = str_replace("<span id='titlePlaceholder'/>", "ciao", $document);
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
 $document = str_replace("<span id='contentNumberFound'/>", $content_number_found, $document);
-$document = str_replace("<span id='filterSelectPlaceholder'/>", $filter_select, $document);
+$document = str_replace("<span id='filterOptionWholePlaceholder'/>", $filter_option_whole, $document);
+$document = str_replace("<span id='filterOptionExhibitionsPlaceholder'/>", $filter_option_exhibitions, $document);
+$document = str_replace("<span id='filterOptionConferencesPlaceholder'/>", $filter_option_conferences, $document);
 $document = str_replace("<span id='contentNumberPlaceholder'/>", $content_count, $document);
 $document = str_replace("<span id='contentListPlaceholder'/>", $content_list, $document);
 $document = str_replace("<span id='buttonBackPlaceholder'/>", $previous_content, $document);
