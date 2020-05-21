@@ -42,7 +42,7 @@ class EventsController {
         while($row = $result_set->fetch_assoc()) {
             $content .= '
                 <dt id="' . $id . $counter . '">
-                     <a href="ContenutoSingolo.php?type=evento&id=' . $row['ID'] . '\" aria-label="Vai all\'evento">' . $row['Titolo'] . '</a>
+                     <a href="Evento.php?id=' . $row['ID'] . '\" aria-label="Vai all\'evento">' . $row['Titolo'] . '</a>
                 </dt>
                 <dd>
                     <a href="#' . ($result_set->num_rows == $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'evento">Salta l\'evento</a>
@@ -70,44 +70,10 @@ class EventsController {
     }
 
     public function getEvent($id) {
-        $result_set = $this->events->getEvent($id);
-      
+        return $result_set = $this->events->getEvent($id)->fetch_assoc();
         $row = $result_set->fetch_assoc();
-      
-        return ' <h3 class="subtitle">' . $row['Titolo'] . '</h3>
-                 <dl>
-                     <dt>
-                        Tipologia:
-                     </dt>
-                     <dd>
-                         ' . $row['Tipologia'] . '
-                     </dd>
-                    
-                     <dt>
-                         Data inizio:
-                     </dt>
-                     <dd>
-                         ' . $row['DataInizio'] . '
-                     </dd>
-                    
-                     <dt>
-                         Data fine:
-                     </dt>
-                     <dd>
-                         ' . $row['DataFine'] . '
-                     </dd>
-        
-                     <dt>
-                         Organizzatore:
-                     </dt>
-                     <dd>
-                         ' . $row['Organizzatore'] . '
-                     </dd>
-                 </dl>     
-                 <p class="paragraph">
-                     ' . $row['Descrizione'] . '
-                 </p>
-                ';
+        $result_set->free();
+        return $row;
     }
 }
 
