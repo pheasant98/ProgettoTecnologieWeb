@@ -46,11 +46,11 @@ $previous_content = '';
 $next_content = '';
 
 if ($page > 1) {
-    $previous_content = '<a id="buttonBack" class="button" href="?page=' . ($page - 1) . '&amp;filterType='. $filter_type . '" title="Opere precedenti" role="button" aria-label="Torna alle opere precedenti"> &lt; Precedente</a>';
+    $previous_content = '<a id="buttonBack" class="button" href="?page=' . ($page - 1) . '&amp;filterType='. $filter_type . '" title="Opere precedenti" role="button" aria-label="Torna alle opere precedenti"> &lt; Precedenti</a>';
 }
 
 if (($page * 5) < $content_count) {
-    $next_content = '<a id="buttonNext" class="button" href="?page=' . ($page + 1) . '&amp;filterType='. $filter_type . '" title="Opere successive" role="button" aria-label="Vai alle opere successive"> Successivo &gt;</a>';
+    $next_content = '<a id="buttonNext" class="button" href="?page=' . ($page + 1) . '&amp;filterType='. $filter_type . '" title="Opere successive" role="button" aria-label="Vai alle opere successive"> Successive &gt;</a>';
 }
 
 $filter_option_whole = $filter_type == '' ? ' selected="selected"' : '';
@@ -61,7 +61,6 @@ require_once ('Controller/LoginController.php');
 $document = file_get_contents('../HTML/Opere.html');
 $login = LoginController::getAuthenticationMenu();
 
-$document = str_replace("<span id='titlePlaceholder'/>", "ciao", $document);
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
 $document = str_replace("<span id='contentNumberFound'/>", $content_number_found, $document);
 $document = str_replace("<span id='filterOptionsWholePlaceholder'/>", $filter_option_whole, $document);

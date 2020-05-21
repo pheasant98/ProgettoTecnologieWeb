@@ -15,6 +15,9 @@ $controller = new ArtworksController();
 $login = LoginController::getAuthenticationMenu();
 
 $artwork = $controller->getArtwork($_GET['id']);
+
+unset($controller);
+
 $artwork_title = $artwork['Titolo'];
 $artwork_img = $artwork['Immagine'];
 $artwork_author = $artwork['Autore'];

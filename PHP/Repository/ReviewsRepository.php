@@ -29,6 +29,13 @@ class ReviewsRepository {
         $statement = $this->dbConnection->prepareQuery('SELECT COUNT(*) AS Totale FROM Recensioni;');
         return $this->dbConnection->executeSelectStatement($statement);
     }
+
+    public function getUserReviewsCount() {
+        $statement = $this->dbConnection->prepareQuery('SELECT COUNT(*) AS Totale FROM Recensioni WHERE Utente=?;');
+        $statement->bind_param('s', $user);
+        return $this->dbConnection->executeSelectStatement($statement);
+    }
+
     public function getUserReviews($user, $offset) {
         $statement = $this->dbConnection->prepareQuery('SELECT * FROM Recensioni WHERE Utente=? ORDER BY DataPubblicazione DESC LIMIT 5 OFFSET ?;');
         $statement->bind_param('si', $user, $offset);

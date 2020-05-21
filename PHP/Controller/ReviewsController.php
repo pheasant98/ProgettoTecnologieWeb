@@ -57,6 +57,13 @@ class ReviewsController {
         return $count;
     }
 
+    public function getUserReviewsCount() {
+        $result_set = $this->reviews->getUserReviewsCount();
+        $count = $result_set->fetch_assoc()['Totale'];
+        $result_set->free();
+        return $count;
+    }
+
     public function getReviews($offset) {
         $result_set = $this->reviews->getReviews($offset);
 
@@ -83,6 +90,44 @@ class ReviewsController {
 
                     <p class="reviewDescription">
                         ' . $row['Contenuto'] . '
+                    </p>
+                </dd>
+            ';
+
+            $counter++;
+        }
+
+        $result_set->free();
+
+        return $content;
+    }
+
+    public function getUserReviews($user, $offset) {
+        $result_set = $this->reviews->getUserReviews($user, $offset);
+
+        $id = 'review';
+        $button = 'buttonBack';
+        $counter = 1;
+        $content = '';
+
+        while($row = $result_set->fetch_assoc()) {
+            $content .= '
+                <dt id="' . $id . $counter . '" class="reviewObject">
+                     ' . $row['Oggetto'] . '
+                </dt>
+                <dd>
+                    <a href="#' . ($result_set->num_rows == $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta la recensione">Salta la recensione</a>
+                    
+                    <p class="reviewData">
+                        Data: ' . $row['DataPubblicazione'] . '
+                    </p>
+
+                    <p class="reviewDescription">
+                        ' . $row['Contenuto'] . '
+                    </p>
+
+                    <p class="userButton">
+                        <a class="button" href="" title="Rimuovi recensione" role="button" aria-label="Rimuovi recensione">Rimuovi</a>
                     </p>
                 </dd>
             ';
