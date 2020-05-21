@@ -6,11 +6,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-        <title>Registrazione completata | Museo arte nel tempo</title>
+        <title>Opere | Museo arte nel tempo</title>
 
         <meta name="language" content="italian it"/>
-        <meta name="title" content="Registrazione completata | Museo arte nel tempo"/>
-        <meta name="description" content="Conferma dell'avvenuta registrazione"/>
+        <meta name="title" content="Opere | Museo arte nel tempo"/>
+        <!-- TODO: Cambiare la description togliendo periodi storici -->
+        <meta name="description" content="Elenco di opere appartenenti a un specifico periodo"/>
         <meta name="keywords" content="arte, pittura, scultura, museo"/>
         <meta name="author" content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto"/>
 
@@ -26,8 +27,8 @@
             <h1 id="logoImage" class="backgroundImage" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
 
             <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
-                Menu ad <span xml:lang="en">hamburger</span>
-            </span>
+                        Menu ad <span xml:lang="en">hamburger</span>
+                    </span>
 
             <div class="headerTitle">
                 <h1>Museo Arte nel Tempo</h1>
@@ -57,61 +58,69 @@
                 Ti trovi in:
                 <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a>
                 &gt;&gt;
-                <a href="Login.html" title="Login" aria-label="Vai alla pagina Login" tabindex="10" xml:lang="en">Login</a>
-                &gt;&gt;
-                <a href="Registrazione.html" title="Registrazione" aria-label="Vai alla pagina Registrazione" tabindex="11">Registrazione</a>
-                &gt;&gt;
-                <strong>Registrazione completata</strong>
+                <strong>Opere</strong>
             </p>
         </div>
 
         <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
             <ul>
                 <li>
-                    <a id="skipMenu" class="skipInformation" href="#content" aria-label="Vai al contenuto" tabindex="12">Vai al contenuto</a>
+                    <a id="skipMenu" class="skipInformation" href="#content" aria-label="Vai al contenuto" tabindex="11">Vai al contenuto</a>
                 </li>
 
                 <li>
-                    <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="13" xml:lang="en">Home</a>
+                    <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="12" xml:lang="en">Home</a>
                 </li>
 
                 <li>
-                    <a href="Opere.php" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="14">Opere</a>
+                    <strong>Opere</strong>
                 </li>
 
                 <li>
-                    <a href="Eventi.php" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="15">Eventi</a>
+                    <a href="Eventi.php" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="14">Eventi</a>
                 </li>
 
                 <li>
-                    <a href="CosaDiconoDiNoi.php" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni" tabindex="16">Cosa
+                    <a href="CosaDiconoDiNoi.php" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni" tabindex="15">Cosa
                         dicono di noi</a>
                 </li>
 
                 <li>
-                    <a href="Contatti.php" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti" tabindex="17">Contatti</a>
+                    <a href="Contatti.php" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti" tabindex="16">Contatti</a>
                 </li>
             </ul>
         </div>
 
         <div id="content" role="main">
-            <h2 class="title">
-                Registrazione completata
-            </h2>
+            <form id="operaFilter" action="Opere.php" method="get">
+                <fieldset class="navigation">
+                    <legend class="hideLegend">Filtro</legend>
 
-            <p>
-                La registrazione è stata portata a termine con successo, è ora possibile tornare alla pagina di
-                <span xml:lang="en">login</span> per effettuare l'accesso al proprio
-                <span xml:lang="en">account</span> ed usufruire dei servizi riservati agli utenti registrati
-            </p>
+                    <label id="labelFilterType" for="filterType">Visualizza</label>
+                    <select name="filterType" id="filterType" aria-label="filtro per lo stile dell\'opera">
+                        <option value="TutteLeOpere"<span id='filterOptionsWholePlaceholder'/>> Tutte le opere </option>
+                        <option value="Dipinti"<span id='filterOptionPaintingsPlaceholder'/>> Dipinti </option>
+                        <option value="Sculture"<span id='filterOptionSculpturesPlaceholder'/>> Sculture </option>
+                    </select>
+
+                    <input id="buttonConfirm" class="button" value="Filtra" type="submit" aria-label="Filtra"/>
+                </fieldset>
+            </form>
+
+            <h3 class="subtitle">Opere</h3>
+
+            <span id='contentNumberFound'/>
+
+            <a href="#buttonBack" class="skipInformation">Salta le opere presenti nella pagina</a>
+
+            <span id='contentListPlaceholder'/>
 
             <p class="navigation">
-                <a id="loginButton" class="button" href="../PHP/Login.php" title="LogIn" role="button" aria-label="vai alla pagina di login">
-                    <span xml:lang="en">Login</span>
-                </a>
+                <span id='buttonBackPlaceholder'/>
+                <span id='buttonNextPlaceholder'/>
             </p>
 
-            <a id="buttonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
+            <a id="buttonBackUp" href="#header" title="Torna su" aria-label="Torna su">
                 <img alt="Torna su" src="../Images/TornaSu.png"/>
             </a>
         </div>
