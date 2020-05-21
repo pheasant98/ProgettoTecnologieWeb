@@ -14,7 +14,7 @@ if (!LoginController::isAuthenticatedUser()) {
 }
 
 $controller = new ReviewsController();
-$user_reviews_count = $controller->getUserReviewsCount();
+$user_reviews_count = $controller->getUserReviewsCount($_SESSION['username']);
 
 if (!isset($_GET['page'])) {
 $page = 1;

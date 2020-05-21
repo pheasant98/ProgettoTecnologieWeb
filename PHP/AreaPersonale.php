@@ -45,11 +45,11 @@ if (LoginController::isAdminUser()) {
         </li>
 
         <li>
-            <a href="RecensioniUtente.html" class="button userOperationButton" title="Gestisci le tue recensioni" aria-label="Vai alla pagina per la gestione delle recensioni lasciate">Gestisci le recensioni</a>
+            <a href="RecensioniUtente.php" class="button userOperationButton" title="Gestisci le tue recensioni" aria-label="Vai alla pagina per la gestione delle recensioni lasciate">Gestisci le recensioni</a>
         </li>
 
         <li>
-            <a href="LasciaUnaRecensione.html" class="button userOperationButton" title="Lascia una nuova recensione" aria-label="Vai alla pagina per lasciare una nuova recensione">Lascia una recensione</a>
+            <a href="LasciaUnaRecensione.php" class="button userOperationButton" title="Lascia una nuova recensione" aria-label="Vai alla pagina per lasciare una nuova recensione">Lascia una recensione</a>
         </li>
     ';
 }

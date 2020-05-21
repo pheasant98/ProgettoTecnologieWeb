@@ -57,8 +57,8 @@ class ReviewsController {
         return $count;
     }
 
-    public function getUserReviewsCount() {
-        $result_set = $this->reviews->getUserReviewsCount();
+    public function getUserReviewsCount($user) {
+        $result_set = $this->reviews->getUserReviewsCount($user);
         $count = $result_set->fetch_assoc()['Totale'];
         $result_set->free();
         return $count;

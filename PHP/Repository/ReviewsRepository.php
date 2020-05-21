@@ -30,7 +30,7 @@ class ReviewsRepository {
         return $this->dbConnection->executeSelectStatement($statement);
     }
 
-    public function getUserReviewsCount() {
+    public function getUserReviewsCount($user) {
         $statement = $this->dbConnection->prepareQuery('SELECT COUNT(*) AS Totale FROM Recensioni WHERE Utente=?;');
         $statement->bind_param('s', $user);
         return $this->dbConnection->executeSelectStatement($statement);

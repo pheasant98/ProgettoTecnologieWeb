@@ -20,7 +20,7 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Invia') {
     $content = $_POST['content'];
 
     $reviewsController = new ReviewsController();
-    $message = $reviewsController->addReview($title, $content, $_SESSION['Username']);
+    $message = $reviewsController->addReview($title, $content, $_SESSION['username']);
     unset($reviewsController);
 }
 

@@ -23,7 +23,7 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Accedi') {
         $message = '<span xml:lang="en">Username</span> e/o <span xml:lang="en">password</span> errati!';
     } else {
         $_SESSION['username'] = $user['Username'];
-        $_SESSION['admin'] = $user['admin'];
+        $_SESSION['admin'] = $user['Admin'];
         header('Location: AreaPersonale.php');
     }
 }
