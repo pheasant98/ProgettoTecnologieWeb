@@ -8,6 +8,6 @@ if (LoginController::isAuthenticatedUser()) {
     unset($_SESSION['username']);
 }
 
-header('Location: AreaPersonale.php');
+header('Location: HomePage.php');
 
 ?>
