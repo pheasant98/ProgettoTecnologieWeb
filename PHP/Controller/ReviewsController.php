@@ -5,15 +5,7 @@ require_once ('Repository/ReviewsRepository.php');
 class ReviewsController {
     private $reviews;
 
-    public function __construct() {
-        $this->reviews = new ReviewsRepository();
-    }
-
-    public function __destruct() {
-        unset($this->reviews);
-    }
-
-    private function checkInput($title, $content) {
+    private static function checkInput($title, $content) {
         $message = '';
 
         if (!strlen($title)) {
@@ -31,8 +23,16 @@ class ReviewsController {
         return $message;
     }
 
+    public function __construct() {
+        $this->reviews = new ReviewsRepository();
+    }
+
+    public function __destruct() {
+        unset($this->reviews);
+    }
+
     public function addReview($title, $content, $user) {
-        $message = $this->checkInput($title, $content);
+        $message = ReviewsController::checkInput($title, $content);
 
         if ($message === '') {
             if ($this->reviews->postReview($title, $content, $user)) {

@@ -15,9 +15,16 @@ class UsersController {
 
     public function getUser($username) {
         $result_set = $this->users->getUser($username);
-        $count = $result_set->fetch_assoc();
+        $row = $result_set->fetch_assoc();
         $result_set->free();
-        return $count;
+        return $row;
+    }
+
+    public function getUserByCredential($username, $password) {
+        $result_set = $this->users->getUserByCredential($username, $password);
+        $row = $result_set->fetch_assoc();
+        $result_set->free();
+        return $row;
     }
 }
 
