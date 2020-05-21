@@ -31,6 +31,10 @@ class LoginController {
     public static function isAuthenticatedUser() {
         return isset($_SESSION['username']);
     }
+
+    public static function isAdminUser() {
+        return isset($_SESSION['admin']) && $_SESSION['admin'] === 1;
+    }
 }
 
 ?>

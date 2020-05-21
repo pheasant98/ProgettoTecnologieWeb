@@ -57,7 +57,7 @@
                 Ti trovi in:
                 <a href="HomePage.php" title="Home" tabindex="9" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
                 &gt;&gt;
-                <a href="AreaPersonale.html" title="area admin" tabindex="10" aria-label="Vai alla pagina area admin">Area personale</a>
+                <a href="AreaPersonale.php" title="area admin" tabindex="10" aria-label="Vai alla pagina area admin">Area personale</a>
                 &gt;&gt;
                 <a href="GestioneUtenti.html" title="Gestione Utenti" tabindex="11" aria-label="Vai alla pagina di gestione degli utenti">Gestione utenti</a>
                 &gt;&gt;
@@ -95,19 +95,20 @@
         </div>
 
         <div id="content" role="main">
-            <h2 class="title">&lt;username&gt;</h2>
+            <h2 class="title"><span id='titlePlaceholder'/></h2>
 
-            <ul class="list">
-                <li>Nome:</li>
-
-                <li>Cognome:</li>
-
-                <li>Sesso:</li>
-
-                <li>Data di nascita:</li>
-
-                <li>Indirizzo <span xml:lang="en">e-mail</span>:</li>
-            </ul>
+            <dl class="list">
+                <dt>Nome:</dt>
+                <dd><span id='userNamePlaceholder'/></dd>
+                <dt>Cognome:</dt>
+                <dd><span id='userSurnamePlaceholder'/></dd>
+                <dt>Sesso:</dt>
+                <dd><span id='userSexPlaceholder'/></dd>
+                <dt>Data di nascita:</dt>
+                <dd><span id='userBirthDatePlaceholder'/></dd>
+                <dt>Indirizzo <span xml:lang="en">e-mail</span>:</dt>
+                <dd><span id='userMailPlaceholder'/></dd>
+            </dl>
 
             <a id="buttonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
                 <img alt="Torna su" src="../Images/TornaSu.png"/>
