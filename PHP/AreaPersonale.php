@@ -4,11 +4,11 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+session_start();
+
 require_once ('Utilities/DateUtilities.php');
 require_once ('Controller/LoginController.php');
 require_once ('Controller/UsersController.php');
-
-session_start();
 
 if (!LoginController::isAuthenticatedUser()) {
     header('Location: Error.php');

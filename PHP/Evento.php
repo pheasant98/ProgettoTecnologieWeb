@@ -15,6 +15,9 @@ $controller = new EventsController();
 $login = LoginController::getAuthenticationMenu();
 
 $event = $controller->getEvent($_GET['id']);
+
+unset($controller);
+
 $event_title = $event['Titolo'];
 $event_type = $event['Tipologia'];
 $event_begin_date = $event['DataInizio'];

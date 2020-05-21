@@ -61,7 +61,6 @@ require_once ('Controller/LoginController.php');
 $document = file_get_contents('../HTML/Eventi.html');
 $login = LoginController::getAuthenticationMenu();
 
-$document = str_replace("<span id='titlePlaceholder'/>", "ciao", $document);
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
 $document = str_replace("<span id='contentNumberFound'/>", $content_number_found, $document);
 $document = str_replace("<span id='filterOptionWholePlaceholder'/>", $filter_option_whole, $document);
