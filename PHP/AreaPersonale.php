@@ -16,8 +16,9 @@ if (!LoginController::isAuthenticatedUser()) {
 
 $users_controller = new UsersController();
 $user = $users_controller->getUser($_SESSION['username']);
+unset($users_controller);
 
-if ($user['Admin'] === 1) {
+if (LoginController::isAdminUser()) {
     $functionalities = 'Ora che hai effettuato l\'accesso all\'area personale, puoi utilizzare il tuo <span xml:lang="en">account</span> per gestire gli utenti e i contenuti del sito.';
     $operations = '    
         <li>

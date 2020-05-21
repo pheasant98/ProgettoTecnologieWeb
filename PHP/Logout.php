@@ -6,6 +6,7 @@ session_start();
 
 if (LoginController::isAuthenticatedUser()) {
     unset($_SESSION['username']);
+    unset($_SESSION['admin']);
 }
 
 header('Location: HomePage.php');
