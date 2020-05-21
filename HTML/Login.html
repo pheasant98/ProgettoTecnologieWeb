@@ -34,8 +34,6 @@
                 <h2>Dal Rinascimento al Neoclassicismo</h2>
             </div>
 
-            <span id='loginMenuPlaceholder'/>
-
             <form id="search" name="search" action="" method="post" role="search">
                 <fieldset id="searchBox">
                     <legend class="hideLegend">Ricerca</legend>
@@ -99,18 +97,20 @@
                 <fieldset class="hideFieldset">
                     <legend class="hideLegend">Informazioni necessarie per il login</legend>
 
+                    <span id='outputMessagePlaceholder'/>
+
                     <p>
                         <label id="usernameLabel" for="username" xml:lang="en">Username</label>
-                        <input id="username" name="username" class="formElement" type="text" aria-label="Inserisci username"/>
+                        <input id="username" class="formElement" type="text" name="username" value="<span id='usernameValuePlaceholder'/>" aria-label="Inserisci username"/>
                     </p>
 
                     <p>
                         <label id="passwordLabel" for="password" xml:lang="en">Password</label>
-                        <input id="password" name="password" class="formElement" type="text" aria-label="Inserisci password"/>
+                        <input id="password" class="formElement" type="password" name="password" aria-label="Inserisci password"/>
                     </p>
 
                     <p>
-                        <input id="buttonConfirm" class="button" name="accedi" value="Accedi" type="submit" aria-label="Pulsante per accedere al proprio account"/>
+                        <input id="buttonConfirm" class="button" name="submit" value="Accedi" type="submit" aria-label="Pulsante per accedere al proprio account"/>
                     </p>
                 </fieldset>
             </form>

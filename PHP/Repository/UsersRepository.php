@@ -32,6 +32,13 @@ class UsersRepository {
         return $this->dbConnection->executeSelectStatement($statement);
     }
 
+    public function getUserByCredential($username, $password) {
+        $hashed_password = hash('sha256', $password);
+        $statement = $this->dbConnection->prepareQuery('SELECT * FROM Utenti WHERE Username=? AND Password=?;');
+        $statement->bind_param('ss', $username, $hashed_password);
+        return $this->dbConnection->executeSelectStatement($statement);
+    }
+
     public function updateUser($old_username, $name, $surname, $birthday, $sex, $new_username, $mail, $password, $admin=false) {
         $hashed_password = hash('sha256', $password);
         $statement = $this->dbConnection->prepareQuery('UPDATE Utenti SET Nome=?, Cognome=?, DataNascita=?, Sesso=?, Username=?, Email=?, Password=?, Admin=? WHERE Username=?;');
