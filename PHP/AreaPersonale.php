@@ -44,7 +44,7 @@ if ($user['Admin'] === 1) {
         </li>
 
         <li>
-            <a href="Recensione.html" class="button userOperationButton" title="Gestisci le tue recensioni" aria-label="Vai alla pagina per la gestione delle recensioni lasciate">Gestisci le recensioni</a>
+            <a href="RecensioniUtente.html" class="button userOperationButton" title="Gestisci le tue recensioni" aria-label="Vai alla pagina per la gestione delle recensioni lasciate">Gestisci le recensioni</a>
         </li>
 
         <li>
