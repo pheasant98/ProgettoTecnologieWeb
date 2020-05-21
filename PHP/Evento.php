@@ -14,11 +14,21 @@ $controller = new EventsController();
 
 $login = LoginController::getAuthenticationMenu();
 
-$single_content = $controller->getEvent($_GET['id']);
+$event = $controller->getEvent($_GET['id']);
+$event_title = $event['Titolo'];
+$event_type = $event['Tipologia'];
+$event_begin_date = $event['DataInizio'];
+$event_end_date = $event['DataFine'];
+$event_manager = $event['Organizzatore'];
+$event_description = $event['Descrizione'];
 
-$document = str_replace("<span id='titlePlaceholder'/>", "ciao", $document);
+$document = str_replace("<span id='titlePlaceholder'/>", $event_title, $document);
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
-$document = str_replace("<span id='singleContentPlaceholder'/>", $single_content, $document);
+$document = str_replace("<span id='eventTypePlaceholder'/>", $event_type, $document);
+$document = str_replace("<span id='eventBeginDatePlaceholder'/>", $event_begin_date, $document);
+$document = str_replace("<span id='eventEndDatePlaceholder'/>", $event_end_date, $document);
+$document = str_replace("<span id='eventManagerPlaceholder'/>", $event_manager, $document);
+$document = str_replace("<span id='eventDescriptionPlaceholder'/>", $event_description, $document);
 
 echo $document;
 

@@ -70,44 +70,10 @@ class EventsController {
     }
 
     public function getEvent($id) {
-        $result_set = $this->events->getEvent($id);
-      
+        return $result_set = $this->events->getEvent($id)->fetch_assoc();
         $row = $result_set->fetch_assoc();
-      
-        return ' <h3 class="subtitle">' . $row['Titolo'] . '</h3>
-                 <dl>
-                     <dt>
-                        Tipologia:
-                     </dt>
-                     <dd>
-                         ' . $row['Tipologia'] . '
-                     </dd>
-                    
-                     <dt>
-                         Data inizio:
-                     </dt>
-                     <dd>
-                         ' . $row['DataInizio'] . '
-                     </dd>
-                    
-                     <dt>
-                         Data fine:
-                     </dt>
-                     <dd>
-                         ' . $row['DataFine'] . '
-                     </dd>
-        
-                     <dt>
-                         Organizzatore:
-                     </dt>
-                     <dd>
-                         ' . $row['Organizzatore'] . '
-                     </dd>
-                 </dl>     
-                 <p class="paragraph">
-                     ' . $row['Descrizione'] . '
-                 </p>
-                ';
+        $result_set->free();
+        return $row;
     }
 }
 
