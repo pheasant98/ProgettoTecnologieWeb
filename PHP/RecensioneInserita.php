@@ -1,0 +1,18 @@
+<?php
+
+require_once ('Controller/LoginController.php');
+
+session_start();
+
+if (LoginController::isAuthenticatedUser()) {
+    header('Location: Error.php');
+}
+
+$document = file_get_contents('../HTML/RecensioneInserita.html');
+$login = LoginController::getAuthenticationMenu();
+
+$document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
+
+echo $document;
+
+?>
