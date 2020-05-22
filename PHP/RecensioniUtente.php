@@ -16,6 +16,12 @@ if (!LoginController::isAuthenticatedUser()) {
 $controller = new ReviewsController();
 $user_reviews_count = $controller->getUserReviewsCount($_SESSION['username']);
 
+if($user_reviews_count == 1) {
+    $user_reviews_count_found = '<p> È stata trovata ' . $user_reviews_count . ' recensione: </p>';
+} else {
+    $user_reviews_count_found = '<p> Sono state trovate ' . $user_reviews_count . ' recensioni: </p>';
+}
+
 if (!isset($_GET['page'])) {
 $page = 1;
 } elseif (($_GET['page'] < 1) || (($_GET['page'] - 1) > ($user_reviews_count / 5))) {
@@ -43,7 +49,7 @@ $document = file_get_contents('../HTML/RecensioniUtente.html');
 $login = LoginController::getAuthenticationMenu();
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
-$document = str_replace("<span id='userReviewsNumberPlaceholder'/>", $user_reviews_count, $document);
+$document = str_replace("<span id='userReviewsNumberPlaceholder'/>", $user_reviews_count_found, $document);
 $document = str_replace("<span id='userReviewsListPlaceholder'/>", $user_reviews_list, $document);
 $document = str_replace("<span id='buttonBackPlaceholder'/>", $previous_reviews, $document);
 $document = str_replace("<span id='buttonNextPlaceholder'/>", $next_reviews, $document);

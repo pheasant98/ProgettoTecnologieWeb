@@ -12,6 +12,12 @@ require_once ('Controller/ReviewsController.php');
 $controller = new ReviewsController();
 $reviews_count = $controller->getReviewsCount();
 
+if($reviews_count == 1) {
+    $reviews_count_found = '<p> È stata trovata ' . $reviews_count . ' recensione: </p>';
+} else {
+    $reviews_count_found = '<p> Sono state trovate ' . $reviews_count . ' recensioni: </p>';
+}
+
 if (!isset($_GET['page'])) {
     $page = 1;
 } elseif (($_GET['page'] < 1) || (($_GET['page'] - 1) > ($reviews_count / 5))) {
@@ -45,7 +51,7 @@ $login = LoginController::getAuthenticationMenu();
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
 $document = str_replace("<span id='leaveReviewPlaceholder'/>", $leave_review, $document);
-$document = str_replace("<span id='reviewsNumberPlaceholder'/>", $reviews_count, $document);
+$document = str_replace("<span id='reviewsNumberPlaceholder'/>", $reviews_count_found, $document);
 $document = str_replace("<span id='reviewsListPlaceholder'/>", $reviews_list, $document);
 $document = str_replace("<span id='buttonBackPlaceholder'/>", $previous_reviews, $document);
 $document = str_replace("<span id='buttonNextPlaceholder'/>", $next_reviews, $document);

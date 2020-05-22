@@ -11,7 +11,7 @@ session_start();
 
 require_once ('Controller/ArtworksController.php');
 $controller = new ArtworksController();
-$content_count = $controller->getArtworksCount();
+$artwork_count = $controller->getArtworksCount();
 
 $filter_type = '';
 
@@ -19,17 +19,23 @@ if (isset($_GET['filterType'])) {
     $filter_type = $_GET['filterType'];
 
     if ($_GET['filterType'] === 'Dipinti') {
-        $content_count = $controller->getArtworksCountByStyle($filter_type);
+        $artwork_count = $controller->getArtworksCountByStyle($filter_type);
     } elseif ($_GET['filterType'] === 'Sculture') {
-        $content_count = $controller->getArtworksCountByStyle($filter_type);
+        $artwork_count = $controller->getArtworksCountByStyle($filter_type);
     } else {
         $filter_type = '';
     }
 }
 
+if($artwork_count == 1) {
+    $artwork_number_found = '<p> È stata trovata ' . $artwork_count . ' opera: </p>';
+} else {
+    $artwork_number_found = '<p> Sono state trovate ' . $artwork_count . ' opere: </p>';
+}
+
 if (!isset($_GET['page'])) {
     $page = 1;
-} elseif (($_GET['page'] < 1) || (($_GET['page'] - 1) > ($content_count / 5))) {
+} elseif (($_GET['page'] < 1) || (($_GET['page'] - 1) > ($artwork_count / 5))) {
     header('Location: Error.php');
 } else {
     $page = $_GET['page'];
@@ -37,20 +43,19 @@ if (!isset($_GET['page'])) {
 
 $offset = ($page - 1) * 5;
 
-$content_list = '<dl class="clickableList">' . $controller->getArtworks($filter_type, $offset) . '</dl>';
-$content_number_found = '<p> Sono state trovate ' . $content_count . ' opere: </p>';
+$artwork_list = '<dl class="clickableList">' . $controller->getArtworks($filter_type, $offset) . '</dl>';
 
 unset($controller);
 
-$previous_content = '';
-$next_content = '';
+$previous_artworks = '';
+$next_artworks = '';
 
 if ($page > 1) {
-    $previous_content = '<a id="buttonBack" class="button" href="?page=' . ($page - 1) . '&amp;filterType='. $filter_type . '" title="Opere precedenti" role="button" aria-label="Torna alle opere precedenti"> &lt; Precedenti</a>';
+    $previous_artworks = '<a id="buttonBack" class="button" href="?page=' . ($page - 1) . '&amp;filterType='. $filter_type . '" title="Opere precedenti" role="button" aria-label="Torna alle opere precedenti"> &lt; Precedenti</a>';
 }
 
-if (($page * 5) < $content_count) {
-    $next_content = '<a id="buttonNext" class="button" href="?page=' . ($page + 1) . '&amp;filterType='. $filter_type . '" title="Opere successive" role="button" aria-label="Vai alle opere successive"> Successive &gt;</a>';
+if (($page * 5) < $artwork_count) {
+    $next_artworks = '<a id="buttonNext" class="button" href="?page=' . ($page + 1) . '&amp;filterType='. $filter_type . '" title="Opere successive" role="button" aria-label="Vai alle opere successive"> Successive &gt;</a>';
 }
 
 $filter_option_whole = $filter_type == '' ? ' selected="selected"' : '';
@@ -62,14 +67,13 @@ $document = file_get_contents('../HTML/Opere.html');
 $login = LoginController::getAuthenticationMenu();
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
-$document = str_replace("<span id='contentNumberFound'/>", $content_number_found, $document);
+$document = str_replace("<span id='artworkNumberFoundPlaceholder'/>", $artwork_number_found, $document);
 $document = str_replace("<span id='filterOptionsWholePlaceholder'/>", $filter_option_whole, $document);
 $document = str_replace("<span id='filterOptionPaintingsPlaceholder'/>", $filter_option_paintings, $document);
 $document = str_replace("<span id='filterOptionSculpturesPlaceholder'/>", $filter_option_sculptures, $document);
-$document = str_replace("<span id='contentNumberPlaceholder'/>", $content_count, $document);
-$document = str_replace("<span id='contentListPlaceholder'/>", $content_list, $document);
-$document = str_replace("<span id='buttonBackPlaceholder'/>", $previous_content, $document);
-$document = str_replace("<span id='buttonNextPlaceholder'/>", $next_content, $document);
+$document = str_replace("<span id='artworkListPlaceholder'/>", $artwork_list, $document);
+$document = str_replace("<span id='buttonBackPlaceholder'/>", $previous_artworks, $document);
+$document = str_replace("<span id='buttonNextPlaceholder'/>", $next_artworks, $document);
 
 echo $document;
 
