@@ -99,27 +99,29 @@
                 <fieldset id="InsertField" class="hideFieldset">
                     <legend class="hideLegend">Informazioni da inserire</legend>
 
+                    <span id='outputMessagePlaceholder'/>
+
                     <fieldset id="event" class="fieldset">
                         <legend>Informazioni dell'evento</legend>
 
                         <p>
                             <label id="labelTitle2" for="textTitle2">Titolo</label>
-                            <input id="textTitle2" class="formElement" name="textTitle2" type="text" aria-label="Inserisci il titolo"/>
+                            <input id="textTitle2" class="formElement" name="title" type="text" value="<span id='titleValuePlaceholder'/>" aria-label="Inserisci il titolo"/>
                         </p>
 
                         <p>
                             <label id="labelEventDescriptionArea" for="eventDescriptionArea">Descrizione</label>
-                            <textarea id="eventDescriptionArea" class="formElement" name="AreaDescr2" rows="20px" cols="20px" aria-label="Inserisci la descrizione">Scrivi qui la descrizione!</textarea>
+                            <textarea id="eventDescriptionArea" class="formElement" name="description" rows="20px" cols="20px" aria-label="Inserisci la descrizione"><span id='descriptionValuePlaceholder'/></textarea>
                         </p>
 
                         <p>
                             <label id="labelBegin" for="textBegin">Data d'inizio</label>
-                            <input id="textBegin" class="formElement" name="textBegin" type="text" aria-label="Inserisci la data d'inizio"/>
+                            <input id="textBegin" class="formElement" name="beginDate" type="text" value="<span id='beginDateValuePlaceholder'/>" aria-label="Inserisci la data d'inizio"/>
                         </p>
 
                         <p>
                             <label id="labelEnd" for="textEnd">Data di fine</label>
-                            <input id="textEnd" class="formElement" name="textEnd" type="text" aria-label="Inserisci la data di fine"/>
+                            <input id="textEnd" class="formElement" name="endDate" type="text" value="<span id='endDateValuePlaceholder'/>" aria-label="Inserisci la data di fine"/>
                         </p>
 
                         <p>
@@ -132,12 +134,12 @@
 
                         <p>
                             <label id="labelManager" for="textManager">Organizzatore</label>
-                            <input id="textManager" name="textManager" class="formElement" type="text" aria-label="Inserisci l'organizzatore"/>
+                            <input id="textManager" class="formElement" name="manager" type="text" value="<span id='managerValuePlaceholder'/>" aria-label="Inserisci l'organizzatore"/>
                         </p>
 
                         <p class="navigation">
-                            <input id="buttonConfirm" class="button" name="InserisciNuovoEvento" type="submit" value="Inserisci" role="button" aria-label="Inserisci il nuovo evento con le informazioni specificate"/>
-                            <input id="buttonReset" class="button" name="CancellaModificheUtente" type="reset" value="Cancella" role="button" aria-label="Cancella i dati inseriti"/>
+                            <input id="buttonConfirm" class="button" name="Inserisci" type="submit" value="Inserisci" role="button" aria-label="Inserisci il nuovo evento con le informazioni specificate"/>
+                            <input id="buttonReset" class="button" name="Cancella" type="reset" value="Cancella" role="button" aria-label="Cancella i dati inseriti"/>
                         </p>
                     </fieldset>
                 </fieldset>

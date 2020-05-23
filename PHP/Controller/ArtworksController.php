@@ -19,7 +19,7 @@ class ArtworksController {
         }
 
         if (strlen($description) === 0) {
-            $message .= '[La descrizione dell\'opera non può essere vuoto]';
+            $message .= '[La descrizione dell\'opera non può essere vuota]';
         } elseif (strlen($description) < 30) {
             $message .= '[La descrizione dell\'opera deve essere lunga almeno 30 caratteri]';
         }
@@ -66,7 +66,7 @@ class ArtworksController {
                     $message = '<p class="error">Errore nell\'inserimento della nuova opera</p>';
                 }
             } else {
-                if ($this->artworks->postSculture($author, $title, $description, $years, $technique, $dimensions, $loan, $image, $user)) {
+                if ($this->artworks->postSculture($author, $title, $description, $years, $material, $dimensions, $loan, $image, $user)) {
                     $message = '<p class="success">Opera inserita correttamente</p>';
                 } else {
                     $message = '<p class="error">Errore nell\'inserimento della nuova opera</p>';
