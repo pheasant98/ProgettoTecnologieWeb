@@ -5,12 +5,81 @@ require_once('Repository/ArtworksRepository.php');
 class ArtworksController {
     private $artworks;
 
+    private static function checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions) {
+        $message = '';
+
+        if (strlen($author) === 0) {
+            $message .= '[L\'autore dell\'opera non può essere vuoto]';
+        }
+
+        if (strlen($title) === 0) {
+            $message .= '[Il titolo dell\'opera non può essere vuoto]';
+        } elseif (strlen($title) < 3) {
+            $message .= '[Il titolo dell\'opera deve essere lungo almeno 3 caratteri]';
+        }
+
+        if (strlen($description) === 0) {
+            $message .= '[La descrizione dell\'opera non può essere vuoto]';
+        } elseif (strlen($description) < 30) {
+            $message .= '[La descrizione dell\'opera deve essere lunga almeno 30 caratteri]';
+        }
+
+        if (strlen($years) === 0) {
+            $message .= '[La datazione dell\'opera non può essere vuota]';
+        }
+
+        if ($style !== 'Scultura' && $style !== 'Dipinto') {
+            $message .= '[Lo stile dell\'opera non può essere diverso dalle scelte proposte]';
+        }
+
+        if (strlen($technique) === 0) {
+            $message .= '[La tecnica dell\'opera non può essere vuota]';
+        }
+
+        if (strlen($material) === 0) {
+            $message .= '[Il materiale dell\'opera non può essere vuoto]';
+        }
+
+        if (strlen($dimensions) === 0) {
+            $message .= '[La dimensione dell\'opera non può essere vuota]';
+        }
+
+        return $message;
+    }
+
     public function __construct() {
         $this->artworks = new ArtworksRepository();
     }
 
     public function __destruct() {
         unset($this->artworks);
+    }
+
+    public function addArtwork($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $image, $user) {
+        $message = ArtworksController::checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions);
+
+        if ($message === '') {
+            if($style === 'Dipinto') {
+                if ($this->artworks->postPainting($author, $title, $description, $years, $technique, $dimensions, $loan, $image, $user)) {
+                    $message = '<p class="success">Opera inserita correttamente</p>';
+                } else {
+                    $message = '<p class="error">Errore nell\'inserimento della nuova opera</p>';
+                }
+            } else {
+                if ($this->artworks->postSculture($author, $title, $description, $years, $technique, $dimensions, $loan, $image, $user)) {
+                    $message = '<p class="success">Opera inserita correttamente</p>';
+                } else {
+                    $message = '<p class="error">Errore nell\'inserimento della nuova opera</p>';
+                }
+            }
+        } else {
+            $message = '<ul>' . $message;
+            $message = str_replace('[', '<li class="error">', $message);
+            $message = str_replace(']', '</li>', $message);
+            $message .= '</ul>';
+        }
+
+        return $message;
     }
 
     public function getArtworksCount() {
@@ -56,7 +125,7 @@ class ArtworksController {
                     </p>
 
                     <p>
-                        Data: ' . $row['Anni'] . '
+                        Data: ' . $row['Datazione'] . '
                     </p>
                     
                     <img alt="Immagine dell\'opera ' . $row['Titolo'] . '" src="../' . $row['Immagine'] . '"/>

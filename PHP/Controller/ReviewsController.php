@@ -8,7 +8,7 @@ class ReviewsController {
     private static function checkInput($title, $content) {
         $message = '';
 
-        if (!strlen($title)) {
+        if (strlen($title) === 0) {
             $message .= '[Il titolo della recensione non può essere vuoto]';
         } elseif (strlen($title) < 3) {
             $message .= '[Il titolo della recensione deve essere lungo almeno 3 caratteri]';

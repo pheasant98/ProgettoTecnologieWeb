@@ -26,7 +26,7 @@ if (LoginController::isAdminUser()) {
         </li>
 
         <li>
-            <a id="Inserisci" class="button userOperationButton" href="Inserisci.html" title="vai alla pagina inserisci pagina" role="button" aria-label="vai alla pagina inserisci pagina">Inserisci pagina</a>
+            <a id="Inserisci" class="button userOperationButton" href="InserisciOpera.html" title="vai alla pagina inserisci pagina" role="button" aria-label="vai alla pagina inserisci pagina">Inserisci pagina</a>
         </li>
 
         <li>

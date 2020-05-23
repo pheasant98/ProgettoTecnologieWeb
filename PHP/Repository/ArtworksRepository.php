@@ -14,13 +14,13 @@ class ArtworksRepository {
     }
 
     public function postPainting($author, $title, $description, $years, $technique, $dimensions, $loan, $image, $user) {
-        $statement = $this->dbConnection->prepareQuery('INSERT INTO Opere (ID, Autore, Titolo, Descrizione, Anni, Stile, Tecnica, Dimensioni, Prestito, Immagine, Utente) VALUES (NULL, ?, ?, ?, ?, "Dipinti", ?, ?, ?, ?, ?);');
+        $statement = $this->dbConnection->prepareQuery('INSERT INTO Opere (ID, Autore, Titolo, Descrizione, Datazione, Stile, Tecnica, Dimensioni, Prestito, Immagine, Utente) VALUES (NULL, ?, ?, ?, ?, "Dipinti", ?, ?, ?, ?, ?);');
         $statement->bind_param('ssssssiss', $author, $title, $description, $years, $technique, $dimensions, $loan, $image, $user);
         return $this->dbConnection->executeNotSelectStatement($statement);
     }
 
     public function postSculture($author, $title, $description, $years, $material, $dimensions, $loan, $image, $user) {
-        $statement = $this->dbConnection->prepareQuery('INSERT INTO Opere (ID, Autore, Titolo, Descrizione, Anni, Stile, Materiale, Dimensioni, Prestito, Immagine, Utente) VALUES (NULL, ?, ?, ?, ?, "Sculture", ?, ?, ?, ?, ?);');
+        $statement = $this->dbConnection->prepareQuery('INSERT INTO Opere (ID, Autore, Titolo, Descrizione, Datazione, Stile, Materiale, Dimensioni, Prestito, Immagine, Utente) VALUES (NULL, ?, ?, ?, ?, "Sculture", ?, ?, ?, ?, ?);');
         $statement->bind_param('ssssssiss', $author, $title, $description, $years, $material, $dimensions, $loan, $image, $user);
         return $this->dbConnection->executeNotSelectStatement($statement);
     }
