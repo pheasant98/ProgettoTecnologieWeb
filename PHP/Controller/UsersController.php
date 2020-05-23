@@ -13,6 +13,11 @@ class UsersController {
         unset($this->users);
     }
 
+    public function addUser($name, $surname, $sex, $date, $mail, $username, $password) {
+        // TODO: implementare
+        return '';
+    }
+
     public function getUser($username) {
         $result_set = $this->users->getUser($username);
         $row = $result_set->fetch_assoc();

@@ -57,7 +57,7 @@
                 Ti trovi in:
                 <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="5" xml:lang="en">Home</a>
                 &gt;&gt;
-                <a href="Login.html" title="Login" aria-label="Vai alla pagina di login" tabindex="6" xml:lang="en">Login</a>
+                <a href="Login.php" title="Login" aria-label="Vai alla pagina di login" tabindex="6" xml:lang="en">Login</a>
                 &gt;&gt;
                 <strong>Registrazione</strong>
             </p>
@@ -95,42 +95,47 @@
         <div id="content" role="main">
             <h2 class="title">Registrazione</h2>
 
+            <span id='outputMessagePlaceholder'/>
+
             <form id="registration" name="registrazione" action="RegistrazioneCompletata.html" method="post">
                 <fieldset id="personalData" class="fieldset">
                     <legend>Dati personali</legend>
 
                     <p>
                         <label id="labelName" for="textName">Nome</label>
-                        <input id="textName" class="formElement" name="textName" type="text" aria-label="Inserisci il nome"/>
+                        <input id="textName" class="formElement" type="text" name="name" value="<span id='nameValuePlaceholder'/>" aria-label="Inserisci il nome"/>
                     </p>
 
                     <p>
                         <label id="labelSurname" for="textSurname">Cognome</label>
-                        <input id="textSurname" class="formElement" name="textSurname" type="text" aria-label="Inserisci il cognome"/>
+                        <input id="textSurname" class="formElement" type="text" name="textSurname" value="<span id='surnameValuePlaceholder'/>" aria-label="Inserisci il cognome"/>
                     </p>
 
                     <fieldset id="fieldSex" class="fieldset">
                         <legend>Sesso</legend>
 
                         <p>
-                            <input id="radioSexM" name="radioSex" value="M" type="radio" aria-label="Pulsante per dichiarare sesso maschile"/>
+                            <input id="radioSexM" type="radio" name="sex" value="M"<span id="maleCheckedPlaceholder"/>aria-label="Pulsante per dichiarare sesso maschile"/>
                             <label id="labelSexM" for="radioSexM">Maschile</label>
                         </p>
                         <p>
-                            <input id="radioSexF" name="radioSex" value="F" type="radio" aria-label="Pulsante per dichiarare sesso femminile"/>
+                            <input id="radioSexF" type="radio" name="sex" value="F"<span id="femaleCheckedPlaceholder"/>aria-label="Pulsante per dichiarare sesso femminile"/>
                             <label id="labelSexF" for="radioSexF">Femminile</label>
                         </p>
                         <p>
-                            <input id="radioSexA" name="radioSex" value="A" type="radio" checked="checked" aria-label="Pulsante per non dichiarare il sesso"/>
+                            <input id="radioSexA" type="radio" name="sex" value="A"<span id="otherCheckedPlaceholder"/>aria-label="Pulsante per non dichiarare il sesso"/>
                             <label id="labelSexA" for="radioSexA">Preferisco non dichiarare</label>
                         </p>
                     </fieldset>
 
                     <p>
                         <label id="labelDate" for="textDate">Data di nascita</label>
-                        <input id="textDate" class="formElement" name="textDate" type="text" aria-label="Inserisci la data di nascita"/>
+                        <input id="textDate" class="formElement" type="text" name="date" value="<span id='dateValuePlaceholder'/>" aria-label="Inserisci la data di nascita"/>
+                    </p>
+
+                    <p>
                         <label id="labelMail" for="textMail" xml:lang="en">E-mail</label>
-                        <input id="textMail" class="formElement" name="textMail" type="text" aria-label="Inserisci l'indirizzo E-mail"/>
+                        <input id="textMail" class="formElement" type="text" name="mail" value="<span id='mailValuePlaceholder'/>" aria-label="Inserisci l'indirizzo E-mail"/>
                     </p>
                 </fieldset>
 
@@ -139,23 +144,23 @@
 
                     <p>
                         <label id="labelUsername" for="textUsername" xml:lang="en">Username</label>
-                        <input id="textUsername" class="formElement" name="textUsername" type="text" aria-label="Inserisci lo username"/>
+                        <input id="textUsername" class="formElement" type="text" name="username" value="<span id='usernameValuePlaceholder'/>" aria-label="Inserisci lo username"/>
                     </p>
 
                     <p>
                         <label id="labelPassword" for="textPassword" xml:lang="en">Password</label>
-                        <input id="textPassword" class="formElement" name="textPassword" type="password" aria-label="Inserisci la password"/>
+                        <input id="textPassword" class="formElement" type="password" name="password" value="<span id='passwordValuePlaceholder'/>" aria-label="Inserisci la password"/>
                     </p>
 
                     <p>
                         <label id="labelRepetePassword" for="textRepetePassword">Ripetere <span xml:lang="en">password</span></label>
-                        <input id="textRepetePassword" class="formElement" name="textRepetePassword" type="password" aria-label="Inserisci nuovamente la password"/>
+                        <input id="textRepetePassword" class="formElement" type="password" name="repetePassword" value="<span id='repetePasswordValuePlaceholder'/>" aria-label="Inserisci nuovamente la password"/>
                     </p>
                 </fieldset>
 
                 <p class="navigation">
-                    <input id="buttonConfirm" class="button" name="confirm" value="Registrati" type="submit" aria-label="Pulsante per la conferma dati inseriti"/>
-                    <input id="buttonReset" class="button" name="reset" value="Cancella" type="reset" aria-label="Pulsante per la cancellazione dei dati inseriti"/>
+                    <input id="buttonConfirm" class="button" type="submit" name="submit" value="Registrati" aria-label="Pulsante per la conferma dati inseriti"/>
+                    <input id="buttonReset" class="button" type="reset" name="reset" value="Cancella" aria-label="Pulsante per la cancellazione dei dati inseriti"/>
                 </p>
             </form>
 
