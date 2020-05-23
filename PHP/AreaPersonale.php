@@ -22,26 +22,38 @@ if (LoginController::isAdminUser()) {
     $functionalities = 'Ora che hai effettuato l\'accesso all\'area personale, puoi utilizzare il tuo <span xml:lang="en">account</span> per gestire gli utenti e i contenuti del sito.';
     $operations = '    
         <li>
-            <a id="ModificaAdmin" class="button userOperationButton" href="ModificaDatiUtente.html" title="vai alla pagina modifica dati utente" role="button" aria-label="vai alla pagina modifica dati utente">Modifica profilo</a>
+            <a id="ModificaAdmin" class="button userOperationButton" href="ModificaDatiUtente.php" title="vai alla pagina modifica dati utente" role="button" aria-label="vai alla pagina modifica dati utente">Modifica profilo</a>
         </li>
 
         <li>
-            <a id="Inserisci" class="button userOperationButton" href="InserisciOpera.html" title="vai alla pagina inserisci pagina" role="button" aria-label="vai alla pagina inserisci pagina">Inserisci pagina</a>
+            <a id="InserisciOpera" class="button userOperationButton" href="InserisciOpera.php" title="vai alla pagina inserisci opera" role="button" aria-label="vai alla pagina inserisci opera">Inserisci opera</a>
+        </li>
+        
+        <li>
+            <a id="InserisciEvento" class="button userOperationButton" href="InserisciEvento.php" title="vai alla pagina inserisci evento" role="button" aria-label="vai alla pagina inserisci evento">Inserisci evento</a>
+        </li>
+        
+        <li>
+            <a id="ModificaOpera" class="button userOperationButton" href="ModificaOpera.php" title="vai alla pagina modifica opera" role="button" aria-label="vai alla pagina modifica opera">Modifica opera</a>
+        </li>
+        
+        <li>
+            <a id="ModificaEvento" class="button userOperationButton" href="ModificaEvento.php" title="vai alla pagina modifica evento" role="button" aria-label="vai alla pagina modifica evento">Modifica evento</a>
         </li>
 
         <li>
-            <a id="GestioneUtenti" class="button userOperationButton" href="GestioneUtenti.html" title="vai alla pagina Gestione Utenti" role="button" aria-label="vai alla pagina iGestione Utenti">Gestione utenti</a>
+            <a id="GestioneUtenti" class="button userOperationButton" href="GestioneUtenti.php" title="vai alla pagina Gestione Utenti" role="button" aria-label="vai alla pagina iGestione Utenti">Gestione utenti</a>
         </li>
 
         <li>
-            <a id="ContenutoSito" class="button userOperationButton" href="GestioneContenuti.html" title="vai alla pagina Contenuto Sito" role="button" aria-label="vai alla pagina Contenuto Sito">Contenuto sito</a>
+            <a id="ContenutoSito" class="button userOperationButton" href="GestioneContenuti.php" title="vai alla pagina Contenuto Sito" role="button" aria-label="vai alla pagina Contenuto Sito">Contenuto sito</a>
         </li>
     ';
 } else {
     $functionalities = 'Ora che hai effettuato l\'accesso al sito, puoi utilizzare il tuo <span xml:lang="en">account</span> per lasciare delle recensioni riguardo le visite che hai fatto al museo.';
     $operations = '
         <li>
-            <a href="ModificaDatiUtente.html" id="ModificaUser" class="button userOperationButton" title="Modifica dati profilo" aria-label="Vai alla pagina per la modifica dei dati del profilo">Modifica profilo</a>
+            <a href="ModificaDatiUtente.php" id="ModificaUser" class="button userOperationButton" title="Modifica dati profilo" aria-label="Vai alla pagina per la modifica dei dati del profilo">Modifica profilo</a>
         </li>
 
         <li>
