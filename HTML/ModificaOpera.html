@@ -6,10 +6,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-        <title>Modifica pagina | Museo arte nel tempo</title>
+        <title>Modifica opera | Museo arte nel tempo</title>
 
         <meta name="language" content="italian it"/>
-        <meta name="title" content="Modifica pagina | Museo arte nel tempo"/>
+        <meta name="title" content="Modifica opera | Museo arte nel tempo"/>
         <meta name="description" content="Modifica informazioni delle pagine presenti nel sito web a seconda della loro tipologia"/>
         <meta name="keywords" content="arte, dipinto, scultura, museo"/>
         <meta name="author" content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto"/>
@@ -56,8 +56,8 @@
             <p>
                 Ti trovi in:
                 <a href="HomePage.php" aria-label="Vai alla pagina homepage del museo" tabindex="9">Home</a> &gt;&gt;
-                <a href="AreaPersonale.html" aria-label="Vai alla pagina Area personale" tabindex="10">Area personale</a> &gt;&gt;
-                <strong>Modifica</strong>
+                <a href="AreaPersonale.php" aria-label="Vai alla pagina Area personale" tabindex="10">Area personale</a> &gt;&gt;
+                <strong>Modifica opera</strong>
             </p>
         </div>
 
@@ -93,60 +93,12 @@
         <div id="content" role="main">
             <h2 class="title">Modifica della pagina numero X</h2>
 
-            <form name="Modifica" action="" method="post">
-                <fieldset id="BoxModifica" class="hideFieldset">
-                    <legend class="hideLegend">Modifica pagina</legend>
+            <form name="Update" action="" method="post">
+                <fieldset id="UpdateField" class="hideFieldset">
+                    <legend class="hideLegend">Modifica opera</legend>
 
-                    <p id="TipoPaginaEven">Tipologia di pagina: Evento</p>
-
-                    <p id="TipoPaginaOper">Tipologia di pagina: Opera</p>
-
-                    <fieldset id="BoxModificaEvento" class="fieldset">
-                        <legend>Informazioni modificabili per l'evento</legend>
-
-                        <p>
-                            <label id="labelTipoEvento" for="TipoEvento">Tipologia: </label>
-                            <select id="TipoEvento" class=" formElement" name="TipoEvento" aria-label="Modifica la tipologia di evento" aria-required="true">
-                                <option value="Mostra">Mostra</option>
-                                <option selected="selected" value="Conferenza">Conferenza</option>
-                            </select>
-                        </p>
-
-                        <p>
-                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
-                        </p>
-
-                        <p>
-                            <label id="labelDataEvento" for="DataEvento">Data: </label>
-                            <input id="DataEvento" class="formElement" name="DataEvento" type="text" aria-label="Modifica la data dell'evento" aria-required="true"/>
-                        </p>
-
-                        <p>
-                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
-                        </p>
-
-                        <p>
-                            <label id="labelTitoloEvento" for="TitoloEvento">Titolo: </label>
-                            <input id="TitoloEvento" class="formElement" name="TitoloEvento" type="text" aria-label="Modifica il titolo delle'evento" aria-required="true"/>
-                        </p>
-
-                        <p>
-                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
-                        </p>
-
-                        <p>
-                            <label id="labelImageUploadEvento" for="imageUploadEvento">Scegliere l'immagine: </label>
-                            <input id="imageUploadEvento" class="formElement" name="Immagine" type="file" aria-label="Modifica l'immagine dell'opera" aria-required="true"/>
-                        </p>
-                    </fieldset>
-
-                    <fieldset id="BoxModificaOpera" class="fieldset">
+                    <fieldset id="ModificaOpera" class="fieldset">
                         <legend>Informazioni modificabili per l'opera</legend>
-
-                        <p>
-                            <label id="labelIDOpera" for="IDOpera">ID: </label>
-                            <input id="IDOpera" class="formElement" name="IDOpera" type="hidden" aria-label="Id dell'opera"/>
-                        </p>
 
                         <p>
                             <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
@@ -154,7 +106,7 @@
 
                         <p>
                             <label id="labelAutore" for="Autore">Autore: </label>
-                            <input id="Autore" class="formElement" name="Autore" type="text" aria-label="Modifica l'autore dell'opera" aria-required="true"/>
+                            <input id="Autore" class="formElement" name="author" type="text" value="" aria-label="Modifica l'autore dell'opera" aria-required="true"/>
                         </p>
 
                         <p>
@@ -163,7 +115,7 @@
 
                         <p>
                             <label id="labelTitoloOpera" for="TitoloOpera">Titolo: </label>
-                            <input id="TitoloOpera" class="formElement" name="TitoloOpera" type="text" aria-label="Modifica il titolo dell'opera" aria-required="true"/>
+                            <input id="TitoloOpera" class="formElement" name="title" type="text" value="" aria-label="Modifica il titolo dell'opera" aria-required="true"/>
                         </p>
 
                         <p>
@@ -171,12 +123,8 @@
                         </p>
 
                         <p>
-                            <label id="labelAnno" for="Anno">Anno: </label>
-                            <input id="Anno" class="formElement" name="Anno" type="text" aria-label="Modifica l'anno dell'opera" aria-required="true"/>
-                        </p>
-
-                        <p>
-                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
+                            <label id="labelAnno" for="Datazione">Datazione: </label>
+                            <input id="Datazione" class="formElement" name="years" type="text" value="" aria-label="Modifica l'anno dell'opera" aria-required="true"/>
                         </p>
 
                         <p>
