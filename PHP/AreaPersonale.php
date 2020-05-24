@@ -32,14 +32,6 @@ if (LoginController::isAdminUser()) {
         <li>
             <a id="InserisciEvento" class="button userOperationButton" href="InserisciEvento.php" title="vai alla pagina inserisci evento" role="button" aria-label="vai alla pagina inserisci evento">Inserisci evento</a>
         </li>
-        
-        <li>
-            <a id="ModificaOpera" class="button userOperationButton" href="ModificaOpera.php" title="vai alla pagina modifica opera" role="button" aria-label="vai alla pagina modifica opera">Modifica opera</a>
-        </li>
-        
-        <li>
-            <a id="ModificaEvento" class="button userOperationButton" href="ModificaEvento.php" title="vai alla pagina modifica evento" role="button" aria-label="vai alla pagina modifica evento">Modifica evento</a>
-        </li>
 
         <li>
             <a id="GestioneUtenti" class="button userOperationButton" href="GestioneUtenti.php" title="vai alla pagina Gestione Utenti" role="button" aria-label="vai alla pagina iGestione Utenti">Gestione utenti</a>

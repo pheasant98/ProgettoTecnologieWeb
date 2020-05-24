@@ -28,16 +28,21 @@ class ArtworksController {
             $message .= '[La datazione dell\'opera non può essere vuota]';
         }
 
+        echo $style;
         if ($style !== 'Scultura' && $style !== 'Dipinto') {
             $message .= '[Lo stile dell\'opera non può essere diverso dalle scelte proposte]';
         }
 
-        if (strlen($technique) === 0) {
-            $message .= '[La tecnica dell\'opera non può essere vuota]';
+        if($technique != NULL) {
+            if (strlen($technique) === 0) {
+                $message .= '[La tecnica dell\'opera non può essere vuota]';
+            }
         }
 
-        if (strlen($material) === 0) {
-            $message .= '[Il materiale dell\'opera non può essere vuoto]';
+        if($material != NULL) {
+            if (strlen($material) === 0) {
+                $message .= '[Il materiale dell\'opera non può essere vuoto]';
+            }
         }
 
         if (strlen($dimensions) === 0) {
@@ -57,7 +62,7 @@ class ArtworksController {
 
     public function addArtwork($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $image, $user) {
         $message = ArtworksController::checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions);
-
+        //TODO: Sistemare loan come intero
         if ($message === '') {
             if($style === 'Dipinto') {
                 if ($this->artworks->postPainting($author, $title, $description, $years, $technique, $dimensions, $loan, $image, $user)) {
@@ -121,7 +126,7 @@ class ArtworksController {
                     </p>
                     
                     <p>
-                        Tecnica: ' . $row['Tecnica'] . '
+                        Stile: ' . $row['Stile'] . '
                     </p>
 
                     <p>
@@ -145,6 +150,33 @@ class ArtworksController {
         $row = $result_set->fetch_assoc();
         $result_set->free();
         return $row;
+    }
+
+    public function updateArtwork($id, $author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $image, $user) {
+        $message = ArtworksController::checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions);
+
+        if ($message === '') {
+            if($style === 'Dipinto') {
+                if ($this->artworks->updateArtwork($id, $author, $title, $description, $years, $technique, $material, $dimensions, $loan, $image, $user)) {
+                    $message = '<p class="success">Opera aggiornata correttamente</p>';
+                } else {
+                    $message = '<p class="error">Errore nell\'aggiornamento dell\'opera</p>';
+                }
+            } else {
+                if ($this->artworks->updateArtwork($id, $author, $title, $description, $years, $technique, $material, $dimensions, $loan, $image, $user)) {
+                    $message = '<p class="success">Opera aggiornata correttamente</p>';
+                } else {
+                    $message = '<p class="error">Errore nell\'aggiornamento dell\'opera</p>';
+                }
+            }
+        } else {
+            $message = '<ul>' . $message;
+            $message = str_replace('[', '<li class="error">', $message);
+            $message = str_replace(']', '</li>', $message);
+            $message .= '</ul>';
+        }
+
+        return $message;
     }
 }
 
