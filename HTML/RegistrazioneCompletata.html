@@ -36,18 +36,18 @@
 
             <span id='loginMenuPlaceholder'/>
 
-            <form id="search" name="search" action="" method="post" role="search">
+            <form id="search" name="search" action="" method="post" role="search" aria-label="Form per la ricerca tra i contenuti del sito">
                 <fieldset id="searchBox">
                     <legend class="hideLegend">Ricerca</legend>
 
-                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
+                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="2">
                         <option selected="selected" value="Opera">Opera</option>
                         <option value="Evento">Evento</option>
                     </select>
 
                     <label id="hideLabel" for="searchText">Cerca nel sito</label>
-                    <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
-                    <input id="buttonSubmit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
+                    <input id="searchText" name="search" type="text" aria-label="Casella di ricerca" tabindex="1"/>
+                    <input id="buttonSubmit" name="submit" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="3"/>
                 </fieldset>
             </form>
         </div>
@@ -106,7 +106,7 @@
             </p>
 
             <p class="navigation">
-                <a id="loginButton" class="button" href="../PHP/Login.php" title="LogIn" role="button" aria-label="vai alla pagina di login">
+                <a id="loginButton" class="button" href="Login.php" title="LogIn" role="button" aria-label="vai alla pagina di login">
                     <span xml:lang="en">Login</span>
                 </a>
             </p>
