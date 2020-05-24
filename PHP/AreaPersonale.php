@@ -11,7 +11,7 @@ require_once ('Controller/LoginController.php');
 require_once ('Controller/UsersController.php');
 
 if (!LoginController::isAuthenticatedUser()) {
-    header('Location: Error.php');
+    header('Location: Errore.php');
 }
 
 $users_controller = new UsersController();
