@@ -23,10 +23,10 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Registrati') {
     $mail = $_POST['mail'];
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $repete_password = $_POST['repetePassword'];
+    $repeted_password = $_POST['repetePassword'];
 
     $users_controller = new UsersController();
-    $message = $users_controller->addUser($name, $surname, $sex, $date, $mail, $username, $password);
+    $message = $users_controller->addUser($name, $surname, $sex, $date, $mail, $username, $password, $repeted_passoword);
     unset($users_controller);
 }
 
@@ -38,7 +38,7 @@ if ($message === '') {
     $mail = '';
     $username = '';
     $password = '';
-    $repete_password = '';
+    $repeted_password = '';
 }
 
 $male = ' ';
@@ -67,7 +67,7 @@ $document = str_replace("<span id='dateValuePlaceholder'/>", $date, $document);
 $document = str_replace("<span id='mailValuePlaceholder'/>", $mail, $document);
 $document = str_replace("<span id='usernameValuePlaceholder'/>", $username, $document);
 $document = str_replace("<span id='passwordValuePlaceholder'/>", $password, $document);
-$document = str_replace("<span id='repetePasswordValuePlaceholder'/>", $repete_password, $document);
+$document = str_replace("<span id='repetePasswordValuePlaceholder'/>", $repeted_password, $document);
 
 echo $document;
 
