@@ -126,9 +126,9 @@
 
                         <p>
                             <label id="LabelFilterEventType" for="filterEventType">Tipologia</label>
-                            <select name="filterEventType" id="filterEventType" class="formElement" aria-label="Seleziona la tipologia">
-                                <option selected="selected" value="Mostra">Mostra</option>
-                                <option value="Conferenza">Conferenza</option>
+                            <select id="filterEventType" class="formElement" name="type" aria-label="Seleziona la tipologia">
+                                <span id='exhibitionTypeValuePlaceholder'/>
+                                <span id='conferenceTypeValuePlaceholder'/>
                             </select>
                         </p>
 
@@ -138,8 +138,8 @@
                         </p>
 
                         <p class="navigation">
-                            <input id="buttonConfirm" class="button" name="Inserisci" type="submit" value="Inserisci" role="button" aria-label="Inserisci il nuovo evento con le informazioni specificate"/>
-                            <input id="buttonReset" class="button" name="Cancella" type="reset" value="Cancella" role="button" aria-label="Cancella i dati inseriti"/>
+                            <input id="buttonConfirm" class="button" name="submit" type="submit" value="Inserisci" role="button" aria-label="Inserisci il nuovo evento con le informazioni specificate"/>
+                            <input id="buttonReset" class="button" name="reset" type="reset" value="Cancella" role="button" aria-label="Cancella i dati inseriti"/>
                         </p>
                     </fieldset>
                 </fieldset>

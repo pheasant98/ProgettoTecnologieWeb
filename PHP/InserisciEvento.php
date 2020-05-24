@@ -9,9 +9,9 @@ require_once ('Controller/EventsController.php');
 
 session_start();
 
-if (!LoginController::isAuthenticatedUser()) {
-  header('Location: Error.php');
-}
+//if (!LoginController::isAuthenticatedUser()) {
+  //header('Location: Error.php');
+//}
 
 $message = '';
 
@@ -26,6 +26,14 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Inserisci') {
     $eventsController = new EventsController();
     $message = $eventsController->addEvent($title, $description, $beginDate, $endDate, $type, $manager, $_SESSION['username']);
     unset($eventsController);
+
+    if ($type === 'Mostra') {
+        $exhibition_type = '<option selected="selected" value="Mostra">Mostra</option>';
+        $conference_type = '<option value="Conferenza">Conferenza</option>';
+    } else {
+        $exhibition_type = '<option value="Mostra">Mostra</option>';
+        $conference_type = '<option selected="selected" value="Conferenza">Conferenza</option>';
+    }
 }
 
 if ($message === '') {
@@ -33,7 +41,8 @@ if ($message === '') {
     $description = '';
     $beginDate = '';
     $endDate = '';
-    $type = '';
+    $exhibition_type = '<option selected="selected" value="Mostra">Mostra</option>';
+    $conference_type = '<option value="Conferenza">Conferenza</option>';
     $manager = '';
 }
 
@@ -46,7 +55,8 @@ $document = str_replace("<span id='titleValuePlaceholder'/>", $title, $document)
 $document = str_replace("<span id='descriptionValuePlaceholder'/>", $description, $document);
 $document = str_replace("<span id='beginDateValuePlaceholder'/>", $beginDate, $document);
 $document = str_replace("<span id='endDateValuePlaceholder'/>", $endDate, $document);
-$document = str_replace("<span id='typeValuePlaceholder'/>", $type, $document); //TODO: Sistemare come per la select delle opere
+$document = str_replace("<span id='exhibitionTypeValuePlaceholder'/>", $exhibition_type, $document);
+$document = str_replace("<span id='conferenceTypeValuePlaceholder'/>", $conference_type, $document);
 $document = str_replace("<span id='managerValuePlaceholder'/>", $manager, $document);
 
 echo $document;

@@ -27,9 +27,9 @@ class EventsController {
         if (strlen($endDate) === 0) {
             $message .= '[La data di fine dell\'evento non può essere vuota]';
         }
-
-        if (strlen($type) === 0) {
-            $message .= '[La tipologia dell\'evento non può essere vuota]';
+        echo $type;
+        if ($type !== 'Mostra' && $type !== 'Conferenza') {
+            $message .= '[La tipologia dell\'evento è inesistente]';
         }
 
         if (strlen($manager) === 0) {
