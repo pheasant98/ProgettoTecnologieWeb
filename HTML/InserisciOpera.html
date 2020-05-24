@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN" "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
+
+<html xml:lang="it" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+        <title>Inserisci opera | Museo arte nel tempo</title>
+
+        <meta name="language" content="italian it"/>
+        <meta name="title" content="Inserisci opera | Museo arte nel tempo"/>
+        <meta name="description" content="Inserimento di una nuova opera nel sito web"/>
+        <meta name="keywords" content="arte, dipinto, scultura, museo"/>
+        <meta name="author" content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto"/>
+
+        <link href="../CSS/Style.css" media="screen" rel="stylesheet" type="text/css"/>
+        <link href="../CSS/Print.css" media="print" rel="stylesheet" type="text/css"/>
+        <link href="" rel="icon"/>
+
+        <script src="../JavaScript/Placeholder.js" type="text/javascript"></script>
+    </head>
+
+    <body>
+        <div id="header" role="banner">
+            <h1 id="logoImage" class="backgroundImage" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
+
+            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
+                Menu ad <span xml:lang="en">hamburger</span>
+            </span>
+
+            <div class="headerTitle">
+                <h1>Museo Arte nel Tempo</h1>
+                <h2>Dal Rinascimento al Neoclassicismo</h2>
+            </div>
+
+            <span id='loginMenuPlaceholder'/>
+
+            <form id="search" name="search" action="" method="post" role="search">
+                <fieldset id="searchBox">
+                    <legend class="hideLegend">Ricerca</legend>
+
+                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
+                        <option selected="selected" value="Opera">Opera</option>
+                        <option value="Evento">Evento</option>
+                    </select>
+
+                    <label id="hideLabel" for="searchText">Cerca nel sito</label>
+                    <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
+                    <input id="buttonSubmit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
+                </fieldset>
+            </form>
+        </div>
+
+        <div aria-label="breadcrumbs" id="breadcrumbs">
+            <p>
+                Ti trovi in:
+                <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en" tabindex="9">Home</a>
+                &gt;&gt;
+                <a href="AreaPersonale.php" title="Area personale" aria-label="Vai alla pagina area personale" tabindex="10">Area personale</a>
+                &gt;&gt;
+                <strong>Inserisci opera</strong>
+            </p>
+        </div>
+
+        <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
+            <ul>
+                <li>
+                    <a id="skipMenu" href="#content" class="skipInformation" aria-label="Vai al contenuto" tabindex="11">Vai al contenuto</a>
+                </li>
+
+                <li>
+                    <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="12" xml:lang="en">Home</a>
+                </li>
+
+                <li>
+                    <a href="Opere.php" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="13">Opere</a>
+                </li>
+
+                <li>
+                    <a href="Eventi.php" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="14">Eventi</a>
+                </li>
+
+                <li>
+                    <a href="CosaDiconoDiNoi.php" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni" tabindex="15">Cosa
+                    dicono di noi</a>
+                </li>
+
+                <li>
+                    <a href="Contatti.php" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti" tabindex="16">Contatti</a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="content" role="main">
+            <h2 class="title">Inserimento opera</h2>
+
+            <form id="Insert" name="Inserimento" action="" method="post" role="form">
+                <fieldset id="InsertField" class="hideFieldset">
+                    <legend class="hideLegend">Informazioni da inserire</legend>
+
+                    <span id='outputMessagePlaceholder'/>
+
+                    <fieldset id="Opera" class="fieldset">
+                        <legend>Informazioni dell'opera</legend>
+
+                        <p>
+                            <label id="labelAuthor" for="textAuthor">Autore</label>
+                            <input id="textAuthor" class="formElement" name="author" type="text" value="<span id='authorValuePlaceholder'/>" aria-label="Inserisci l'autore"/>
+                        </p>
+
+                        <p>
+                            <label id="labelTitle" for="textTitle">Titolo</label>
+                            <input id="textTitle" class="formElement" name="title" type="text" value="<span id='titleValuePlaceholder'/>" aria-label="Inserisci il titolo"/>
+                        </p>
+
+                        <p>
+                            <label id="labelAreaDescr" for="operaDescriptionArea">Descrizione</label>
+                            <textarea id="operaDescriptionArea" class="formElement" name="description" rows="20px" cols="20px" aria-label="Inserisci la descrizione"><span id='descriptionValuePlaceholder'/></textarea>
+                        </p>
+
+                        <p>
+                            <label id="labelYear" for="textYear">Datazione</label>
+                            <input id="textYear" class="formElement" name="years" type="text" value="<span id='yearsValuePlaceholder'/>" aria-label="Inserisci la datazione"/>
+                        </p>
+
+                        <p>
+                            <label id="LabelFilterOpera" for="selectStyle">Stile</label>
+                            <select name="style" id="selectStyle" class="formElement" aria-label="Seleziona lo stile">
+                                <span id='paintingStyleValuePlaceholder'/>
+                                <span id='scultureStyleValuePlaceholder'/>
+                            </select>
+                        </p>
+
+                        <p>
+                            <label id="labelTechnique" for="textTechnique">Tecnica</label>
+                            <input id="textTechnique" class="formElement" name="technique" type="text" value="<span id='techniqueValuePlaceholder'/>" aria-label="Inserisci la tecnica"/>
+                        </p>
+
+                        <p>
+                            <label id="labelMaterial" for="textMaterial">Materiale</label>
+                            <input id="textMaterial" class="formElement" name="material" type="text" value="<span id='materialValuePlaceholder'/>" aria-label="Inserisci il materiale"/>
+                        </p>
+
+                        <p>
+                            <label id="labelSize" for="textSize">Dimensioni</label>
+                            <input id="textSize" class="formElement" name="dimensions" type="text" value="<span id='dimensionsValuePlaceholder'/>" aria-label="Inserisci le dimensioni"/>
+                        </p>
+
+                        <fieldset class="fieldset">
+                            <legend>Opera in prestito?</legend>
+
+                            <label id="labelLoanYes" for="loanYes">Sì</label>
+                            <span id='loanYesValuePlaceholder'/>
+                            <label id="labelLoanNo" for="loanNo">No</label>
+                            <span id='loanNoValuePlaceholder'/>
+                        </fieldset>
+
+                        <p>
+                            <label id="labelOperaImageUpload" for="operaImageUpload">Inserisci Immagine</label>
+                            <input id="operaImageUpload" class="formElement" name="image" type="file" aria-label="Inserisci l'immagine"/>
+                        </p>
+
+                        <p class="navigation">
+                            <input id="buttonConfirm" class="button" name="submit" type="submit" value="Inserisci" role="button" aria-label="Inserisci la nuova opera con le informazioni specificate"/>
+                            <input id="buttonReset" class="button" name="reset" type="reset" value="Cancella" role="button" aria-label="Cancella i dati inseriti"/>
+                        </p>
+                    </fieldset>
+                </fieldset>
+            </form>
+
+            <a id="buttonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
+                <img alt="Torna su" src="../Images/TornaSu.png"/>
+            </a>
+        </div>
+
+        <div aria-label="footer" id="footer">
+            <p>
+                Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
+            </p>
+
+            <p>
+                Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
+            </p>
+
+            <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
+            <img alt="Simbolo di validazione CSS" src="../Images/vcss-blue.gif"/>
+        </div>
+    </body>
+</html>

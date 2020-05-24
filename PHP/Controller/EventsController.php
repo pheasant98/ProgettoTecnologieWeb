@@ -5,12 +5,65 @@ require_once('Repository/EventsRepository.php');
 class EventsController {
     private $events;
 
+    private static function checkInput($title, $description, $beginDate, $endDate, $type, $manager) {
+        $message = '';
+
+        if (strlen($title) === 0) {
+            $message .= '[Il titolo dell\'evento non può essere vuoto]';
+        } elseif (strlen($title) < 3) {
+            $message .= '[Il titolo dell\'evento deve essere lungo almeno 3 caratteri]';
+        }
+
+        if (strlen($description) === 0) {
+            $message .= '[La descrizione dell\'evento non può essere vuota]';
+        } elseif (strlen($description) < 30) {
+            $message .= '[La descrizione dell\'evento deve essere lunga almeno 30 caratteri]';
+        }
+
+        if (strlen($beginDate) === 0) {
+            $message .= '[La data d\'inizio dell\'evento non può essere vuota]';
+        }
+
+        if (strlen($endDate) === 0) {
+            $message .= '[La data di fine dell\'evento non può essere vuota]';
+        }
+        echo $type;
+        if ($type !== 'Mostra' && $type !== 'Conferenza') {
+            $message .= '[La tipologia dell\'evento è inesistente]';
+        }
+
+        if (strlen($manager) === 0) {
+            $message .= '[L\'organizzatore dell\'evento non può essere vuoto]';
+        }
+
+        return $message;
+    }
+
     public function __construct() {
         $this->events = new EventsRepository();
     }
 
     public function __destruct() {
         unset($this->events);
+    }
+
+    public function addEvent($title, $description, $beginDate, $endDate, $type, $manager, $user) {
+        $message = EventsController::checkInput($title, $description, $beginDate, $endDate, $type, $manager);
+
+        if ($message === '') {
+            if ($this->events->postEvent($title, $description, $beginDate, $endDate, $type, $manager, $user)) {
+                $message = '<p class="success">Evento inserito correttamente</p>';
+            } else {
+                $message = '<p class="error">Errore nell\'inserimento di un nuovo evento</p>';
+            }
+        } else {
+            $message = '<ul>' . $message;
+            $message = str_replace('[', '<li class="error">', $message);
+            $message = str_replace(']', '</li>', $message);
+            $message .= '</ul>';
+        }
+
+        return $message;
     }
 
     public function getEventsCount() {

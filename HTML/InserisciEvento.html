@@ -6,12 +6,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-        <title>Opere | Museo arte nel tempo</title>
+        <title>Inserisci evento | Museo arte nel tempo</title>
 
         <meta name="language" content="italian it"/>
-        <meta name="title" content="Opere | Museo arte nel tempo"/>
-        <!-- TODO: Cambiare la description togliendo periodi storici -->
-        <meta name="description" content="Elenco di opere appartenenti a un specifico periodo"/>
+        <meta name="title" content="Inserisci evento | Museo arte nel tempo"/>
+        <meta name="description" content="Inserimento di un nuovo evento nel sito web"/>
         <meta name="keywords" content="arte, dipinto, scultura, museo"/>
         <meta name="author" content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto"/>
 
@@ -56,16 +55,18 @@
         <div aria-label="breadcrumbs" id="breadcrumbs">
             <p>
                 Ti trovi in:
-                <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a>
+                <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en" tabindex="9">Home</a>
                 &gt;&gt;
-                <strong>Opere</strong>
+                <a href="AreaPersonale.php" title="Area personale" aria-label="Vai alla pagina area personale" tabindex="10">Area personale</a>
+                &gt;&gt;
+                <strong>Inserisci evento</strong>
             </p>
         </div>
 
         <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
             <ul>
                 <li>
-                    <a id="skipMenu" class="skipInformation" href="#content" aria-label="Vai al contenuto" tabindex="11">Vai al contenuto</a>
+                    <a id="skipMenu" href="#content" class="skipInformation" aria-label="Vai al contenuto" tabindex="11">Vai al contenuto</a>
                 </li>
 
                 <li>
@@ -73,7 +74,7 @@
                 </li>
 
                 <li>
-                    <strong>Opere</strong>
+                    <a href="Opere.php" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="13">Opere</a>
                 </li>
 
                 <li>
@@ -92,35 +93,59 @@
         </div>
 
         <div id="content" role="main">
-            <form id="operaFilter" action="Opere.php" method="get">
-                <fieldset class="navigation">
-                    <legend class="hideLegend">Filtro</legend>
+            <h2 class="title">Inserimento</h2>
 
-                    <label id="labelFilterType" for="filterType">Visualizza</label>
-                    <select name="filterType" id="filterType" aria-label="filtro per lo stile dell\'opera">
-                        <option value="TutteLeOpere"<span id='filterOptionsWholePlaceholder'/>> Tutte le opere </option>
-                        <option value="Dipinti"<span id='filterOptionPaintingsPlaceholder'/>> Dipinti </option>
-                        <option value="Sculture"<span id='filterOptionSculpturesPlaceholder'/>> Sculture </option>
-                    </select>
+            <form id="Insert" name="Inserimento" action="" method="post" role="form">
+                <fieldset id="InsertField" class="hideFieldset">
+                    <legend class="hideLegend">Informazioni da inserire</legend>
 
-                    <input id="buttonConfirm" class="button" value="Filtra" type="submit" aria-label="Filtra"/>
+                    <span id='outputMessagePlaceholder'/>
+
+                    <fieldset id="event" class="fieldset">
+                        <legend>Informazioni dell'evento</legend>
+
+                        <p>
+                            <label id="labelTitle2" for="textTitle2">Titolo</label>
+                            <input id="textTitle2" class="formElement" name="title" type="text" value="<span id='titleValuePlaceholder'/>" aria-label="Inserisci il titolo"/>
+                        </p>
+
+                        <p>
+                            <label id="labelEventDescriptionArea" for="eventDescriptionArea">Descrizione</label>
+                            <textarea id="eventDescriptionArea" class="formElement" name="description" rows="20px" cols="20px" aria-label="Inserisci la descrizione"><span id='descriptionValuePlaceholder'/></textarea>
+                        </p>
+
+                        <p>
+                            <label id="labelBegin" for="textBegin">Data d'inizio</label>
+                            <input id="textBegin" class="formElement" name="beginDate" type="text" value="<span id='beginDateValuePlaceholder'/>" aria-label="Inserisci la data d'inizio"/>
+                        </p>
+
+                        <p>
+                            <label id="labelEnd" for="textEnd">Data di fine</label>
+                            <input id="textEnd" class="formElement" name="endDate" type="text" value="<span id='endDateValuePlaceholder'/>" aria-label="Inserisci la data di fine"/>
+                        </p>
+
+                        <p>
+                            <label id="LabelFilterEventType" for="filterEventType">Tipologia</label>
+                            <select id="filterEventType" class="formElement" name="type" aria-label="Seleziona la tipologia">
+                                <span id='exhibitionTypeValuePlaceholder'/>
+                                <span id='conferenceTypeValuePlaceholder'/>
+                            </select>
+                        </p>
+
+                        <p>
+                            <label id="labelManager" for="textManager">Organizzatore</label>
+                            <input id="textManager" class="formElement" name="manager" type="text" value="<span id='managerValuePlaceholder'/>" aria-label="Inserisci l'organizzatore"/>
+                        </p>
+
+                        <p class="navigation">
+                            <input id="buttonConfirm" class="button" name="submit" type="submit" value="Inserisci" role="button" aria-label="Inserisci il nuovo evento con le informazioni specificate"/>
+                            <input id="buttonReset" class="button" name="reset" type="reset" value="Cancella" role="button" aria-label="Cancella i dati inseriti"/>
+                        </p>
+                    </fieldset>
                 </fieldset>
             </form>
 
-            <h3 class="subtitle">Opere</h3>
-
-            <span id='artworkNumberFoundPlaceholder'/>
-
-            <a href="#buttonBack" class="skipInformation">Salta le opere presenti nella pagina</a>
-
-            <span id='artworkListPlaceholder'/>
-
-            <p class="navigation">
-                <span id='buttonBackPlaceholder'/>
-                <span id='buttonNextPlaceholder'/>
-            </p>
-
-            <a id="buttonBackUp" href="#header" title="Torna su" aria-label="Torna su">
+            <a id="buttonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
                 <img alt="Torna su" src="../Images/TornaSu.png"/>
             </a>
         </div>
