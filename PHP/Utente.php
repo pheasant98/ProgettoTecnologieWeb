@@ -7,7 +7,7 @@ require_once ('Controller/UsersController.php');
 session_start();
 
 if (!LoginController::isAuthenticatedUser() || !LoginController::isAdminUser() || !isset($_GET['user'])) {
-    header('Location: Error.php');
+    header('Location: Errore.php');
 }
 
 $users_controller = new UsersController();

@@ -36,7 +36,7 @@ if($event_count == 1) {
 if (!isset($_GET['page'])) {
     $page = 1;
 } elseif (($_GET['page'] < 1) || (($_GET['page'] - 1) > ($event_count / 5))) {
-    header('Location: Error.php');
+    header('Location: Errore.php');
 } else {
     $page = $_GET['page'];
 }

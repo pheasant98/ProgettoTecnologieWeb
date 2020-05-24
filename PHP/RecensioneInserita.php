@@ -5,7 +5,7 @@ require_once ('Controller/LoginController.php');
 session_start();
 
 if (LoginController::isAuthenticatedUser()) {
-    header('Location: Error.php');
+    header('Location: Errore.php');
 }
 
 $document = file_get_contents('../HTML/RecensioneInserita.html');
