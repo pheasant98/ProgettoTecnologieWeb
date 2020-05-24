@@ -26,7 +26,7 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Registrati') {
     $repeted_password = $_POST['repetePassword'];
 
     $users_controller = new UsersController();
-    $message = $users_controller->addUser($name, $surname, $sex, $date, $mail, $username, $password, $repeted_passoword);
+    $message = $users_controller->addUser($name, $surname, $sex, $date, $mail, $username, $password, $repeted_password);
     unset($users_controller);
 }
 
