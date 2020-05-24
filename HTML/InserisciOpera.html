@@ -130,8 +130,8 @@
                         <p>
                             <label id="LabelFilterStyle" for="filterArtworkStyle">Stile</label>
                             <select id="filterArtworkStyle" class="formElement" name="style" aria-label="Seleziona lo stile">
-                                <span id='paintingStyleValuePlaceholder'/>
-                                <span id='scultureStyleValuePlaceholder'/>
+                                <option<span id='paintingStyleSelectedPlaceholder'/>value="Dipinto">Dipinto</option>
+                                <option<span id='scultureStyleSelectedPlaceholder'/>value="Scultura">Scultura</option>
                             </select>
                         </p>
 
@@ -155,9 +155,9 @@
                         <legend>Opera in prestito?</legend>
 
                         <label id="labelLoanYes" for="loanYes">Sì</label>
-                        <span id='loanYesValuePlaceholder'/>
+                        <input id="loanYes" name="loan" value="Si" type="radio"<span id='loanYesCheckedPlaceholder'/>aria-label="Pulsante per dire di si al prestito"/>
                         <label id="labelLoanNo" for="loanNo">No</label>
-                        <span id='loanNoValuePlaceholder'/>
+                        <input id="loanNo" name="loan" value="No" type="radio"<span id='loanNoCheckedPlaceholder'/>aria-label="Pulsante per dire di no al prestito"/>
                     </fieldset>
 
                         <p>

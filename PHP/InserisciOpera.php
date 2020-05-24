@@ -30,22 +30,6 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Inserisci') {
     $artworksController = new ArtworksController();
     $message = $artworksController->addArtwork($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $image, $_SESSION['username']);
     unset($artworksController);
-
-    if ($loan === 'No') {
-        $loan_yes = '<input id="loanYes" name="loan" value="Si" type="radio" aria-label="Pulsante per dire di si al prestito"/>';
-        $loan_no = '<input id="loanNo" name="loan" value="No" type="radio" checked="checked" aria-label="Pulsante per dire di no al prestito"/>';
-    } else {
-        $loan_yes = '<input id="loanYes" name="loan" value="Si" type="radio" checked="checked" aria-label="Pulsante per dire di si al prestito"/>';
-        $loan_no = '<input id="loanNo" name="loan" value="No" type="radio" aria-label="Pulsante per dire di no al prestito"/>';
-    }
-
-    if ($style === 'Dipinto') {
-        $painting_style = '<option selected="selected" value="Dipinto">Dipinto</option>';
-        $sculture_style = '<option value="Scultura">Scultura</option>';
-    } else {
-        $painting_style = '<option value="Dipinto">Dipinto</option>';
-        $sculture_style = '<option selected="selected" value="Scultura">Scultura</option>';
-    }
 }
 
 if ($message === '') {
@@ -53,14 +37,29 @@ if ($message === '') {
     $title = '';
     $description = '';
     $years = '';
-    $painting_style = '<option selected="selected" value="Dipinto">Dipinto</option>';
-    $sculture_style = '<option value="Scultura">Scultura</option>';
+    $style = 'Dipinto';
     $technique = '';
     $material = '';
     $dimensions = '';
-    $loan_yes = '<input id="loanYes" name="loan" value="Si" type="radio" aria-label="Pulsante per dire di si al prestito"/>';
-    $loan_no = '<input id="loanNo" name="loan" value="No" type="radio" checked="checked" aria-label="Pulsante per dire di no al prestito"/>';
+    $loan = 'No';
     //$image = $_POST['image'];
+}
+
+$loan_yes = ' ';
+$loan_no = ' ';
+$painting_style = ' ';
+$sculture_style = ' ';
+
+if ($loan === 'No') {
+    $loan_no = ' checked="checked" ';
+} else {
+    $loan_yes = ' checked="checked" ';
+}
+
+if ($style === 'Dipinto') {
+    $painting_style = ' selected="selected" ';
+} else {
+    $sculture_style = ' selected="selected" ';
 }
 
 $document = file_get_contents('../HTML/InserisciOpera.html');
@@ -72,13 +71,13 @@ $document = str_replace("<span id='authorValuePlaceholder'/>", $author, $documen
 $document = str_replace("<span id='titleValuePlaceholder'/>", $title, $document);
 $document = str_replace("<span id='descriptionValuePlaceholder'/>", $description, $document);
 $document = str_replace("<span id='yearsValuePlaceholder'/>", $years, $document);
-$document = str_replace("<span id='paintingStyleValuePlaceholder'/>", $painting_style, $document);
-$document = str_replace("<span id='scultureStyleValuePlaceholder'/>", $sculture_style, $document);
+$document = str_replace("<span id='paintingStyleSelectedPlaceholder'/>", $painting_style, $document);
+$document = str_replace("<span id='scultureStyleSelectedPlaceholder'/>", $sculture_style, $document);
 $document = str_replace("<span id='techniqueValuePlaceholder'/>", $technique, $document);
 $document = str_replace("<span id='materialValuePlaceholder'/>", $material, $document);
 $document = str_replace("<span id='dimensionsValuePlaceholder'/>", $dimensions, $document);
-$document = str_replace("<span id='loanYesValuePlaceholder'/>", $loan_yes, $document);
-$document = str_replace("<span id='loanNoValuePlaceholder'/>", $loan_no, $document);
+$document = str_replace("<span id='loanYesCheckedPlaceholder'/>", $loan_yes, $document);
+$document = str_replace("<span id='loanNoCheckedPlaceholder'/>", $loan_no, $document);
 
 echo $document;
 
