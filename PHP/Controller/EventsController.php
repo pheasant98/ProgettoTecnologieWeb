@@ -5,7 +5,7 @@ require_once('Repository/EventsRepository.php');
 class EventsController {
     private $events;
 
-    private static function checkInput($title, $description, $beginDate, $endDate, $type, $manager) {
+    private static function checkInput($title, $description, $begin_date, $end_date, $type, $manager) {
         $message = '';
 
         if (strlen($title) === 0) {
@@ -20,14 +20,14 @@ class EventsController {
             $message .= '[La descrizione dell\'evento deve essere lunga almeno 30 caratteri]';
         }
 
-        if (strlen($beginDate) === 0) {
+        if (strlen($begin_date) === 0) {
             $message .= '[La data d\'inizio dell\'evento non può essere vuota]';
         }
 
-        if (strlen($endDate) === 0) {
+        if (strlen($end_date) === 0) {
             $message .= '[La data di fine dell\'evento non può essere vuota]';
         }
-        echo $type;
+
         if ($type !== 'Mostra' && $type !== 'Conferenza') {
             $message .= '[La tipologia dell\'evento è inesistente]';
         }
@@ -47,11 +47,11 @@ class EventsController {
         unset($this->events);
     }
 
-    public function addEvent($title, $description, $beginDate, $endDate, $type, $manager, $user) {
-        $message = EventsController::checkInput($title, $description, $beginDate, $endDate, $type, $manager);
+    public function addEvent($title, $description, $begin_date, $end_date, $type, $manager, $user) {
+        $message = EventsController::checkInput($title, $description, $begin_date, $end_date, $type, $manager);
 
         if ($message === '') {
-            if ($this->events->postEvent($title, $description, $beginDate, $endDate, $type, $manager, $user)) {
+            if ($this->events->postEvent($title, $description, $begin_date, $end_date, $type, $manager, $user)) {
                 $message = '<p class="success">Evento inserito correttamente</p>';
             } else {
                 $message = '<p class="error">Errore nell\'inserimento di un nuovo evento</p>';
@@ -98,7 +98,7 @@ class EventsController {
                      <a href="Evento.php?id=' . $row['ID'] . '\" aria-label="Vai all\'evento">' . $row['Titolo'] . '</a>
                 </dt>
                 <dd>
-                    <a href="#' . ($result_set->num_rows == $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'evento">Salta l\'evento</a>
+                    <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'evento">Salta l\'evento</a>
     
                     <p>
                         Data inizio evento: ' . $row['DataInizio'] . '
@@ -127,6 +127,25 @@ class EventsController {
         $row = $result_set->fetch_assoc();
         $result_set->free();
         return $row;
+    }
+
+    public function updateEvent($id, $title, $description, $begin_date, $end_date, $type, $manager, $user) {
+        $message = EventsController::checkInput($title, $description, $begin_date, $end_date, $type, $manager);
+
+        if ($message === '') {
+            if ($this->events->updateEvent($id, $title, $description, $begin_date, $end_date, $type, $manager, $user)) {
+                $message = '<p class="success">Evento aggiornato correttamente</p>';
+            } else {
+                $message = '<p class="error">Errore nell\'aggiornamento dell\'evento</p>';
+            }
+        } else {
+            $message = '<ul>' . $message;
+            $message = str_replace('[', '<li class="error">', $message);
+            $message = str_replace(']', '</li>', $message);
+            $message .= '</ul>';
+        }
+
+        return $message;
     }
 }
 

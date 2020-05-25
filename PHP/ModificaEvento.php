@@ -10,31 +10,30 @@ require_once ('Controller/EventsController.php');
 session_start();
 
 if (!LoginController::isAuthenticatedUser()) {
-  header('Location: Error.php');
+    header('Location: Error.php');
 }
 
 $message = '';
+$eventsController = new EventsController();
+$event = $eventsController->getEvent($_GET['id']);
 
-if (isset($_POST['submit']) && $_POST['submit'] === 'Inserisci') {
+$title = $event['Titolo'];
+$description = $event['Descrizione'];
+$type = $event['Tipologia'];
+$begin_date = $event['DataInizio'];
+$end_date = $event['DataFine'];
+$manager = $event['Organizzatore'];
+
+if (isset($_POST['submit']) && $_POST['submit'] === 'Modifica') {
     $title = $_POST['title'];
     $description = $_POST['description'];
-    $beginDate = $_POST['beginDate'];
-    $endDate = $_POST['endDate'];
+    $begin_date = $_POST['beginDate'];
+    $end_date = $_POST['endDate'];
     $type = $_POST['type'];
     $manager = $_POST['manager'];
 
-    $eventsController = new EventsController();
-    $message = $eventsController->addEvent($title, $description, $beginDate, $endDate, $type, $manager, $_SESSION['username']);
+    $message = $eventsController->updateEvent($_GET['id'], $title, $description, $begin_date, $end_date, $type, $manager, $_SESSION['username']);
     unset($eventsController);
-}
-
-if ($message === '') {
-    $title = '';
-    $description = '';
-    $beginDate = '';
-    $endDate = '';
-    $type = 'Mostra';
-    $manager = '';
 }
 
 $exhibition_type = ' ';
@@ -46,7 +45,7 @@ if ($type === 'Mostra') {
     $conference_type = ' selected="selected" ';
 }
 
-$document = file_get_contents('../HTML/InserisciEvento.html');
+$document = file_get_contents('../HTML/ModificaEvento.html');
 $login = LoginController::getAuthenticationMenu();
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
@@ -55,8 +54,8 @@ $document = str_replace("<span id='titleValuePlaceholder'/>", $title, $document)
 $document = str_replace("<span id='descriptionValuePlaceholder'/>", $description, $document);
 $document = str_replace("<span id='exhibitionTypeSelectedPlaceholder'/>", $exhibition_type, $document);
 $document = str_replace("<span id='conferenceTypeSelectedPlaceholder'/>", $conference_type, $document);
-$document = str_replace("<span id='beginDateValuePlaceholder'/>", $beginDate, $document);
-$document = str_replace("<span id='endDateValuePlaceholder'/>", $endDate, $document);
+$document = str_replace("<span id='beginDateValuePlaceholder'/>", $begin_date, $document);
+$document = str_replace("<span id='endDateValuePlaceholder'/>", $end_date, $document);
 $document = str_replace("<span id='managerValuePlaceholder'/>", $manager, $document);
 
 echo $document;

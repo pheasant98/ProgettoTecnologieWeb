@@ -6,17 +6,17 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-        <title>Inserisci evento | Museo arte nel tempo</title>
+        <title>Modifica evento | Museo arte nel tempo</title>
 
         <meta name="language" content="italian it"/>
-        <meta name="title" content="Inserisci evento | Museo arte nel tempo"/>
-        <meta name="description" content="Inserimento di un nuovo evento nel sito web"/>
+        <meta name="title" content="Modifica evento | Museo arte nel tempo"/>
+        <meta name="description" content="Modifica degli eventi presenti nel sito web"/>
         <meta name="keywords" content="arte, dipinto, scultura, museo"/>
         <meta name="author" content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto"/>
 
-        <link href="../CSS/Style.css" media="screen" rel="stylesheet" type="text/css"/>
-        <link href="../CSS/Print.css" media="print" rel="stylesheet" type="text/css"/>
-        <link href="" rel="icon"/>
+        <link rel="stylesheet" media="screen" href="../CSS/Style.css" type="text/css"/>
+        <link rel="stylesheet" media="print" href="../CSS/Print.css" type="text/css"/>
+        <link rel="icon" href=""/>
 
         <script src="../JavaScript/Placeholder.js" type="text/javascript"></script>
     </head>
@@ -40,33 +40,31 @@
                 <fieldset id="searchBox">
                     <legend class="hideLegend">Ricerca</legend>
 
-                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
+                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="2">
                         <option selected="selected" value="Opera">Opera</option>
                         <option value="Evento">Evento</option>
                     </select>
 
                     <label id="hideLabel" for="searchText">Cerca nel sito</label>
                     <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
-                    <input id="buttonSubmit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
+                    <input id="buttonSubmit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="3"/>
                 </fieldset>
             </form>
         </div>
 
-        <div aria-label="breadcrumbs" id="breadcrumbs">
+        <div id="breadcrumbs" aria-label="breadcrumbs">
             <p>
                 Ti trovi in:
-                <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en" tabindex="9">Home</a>
-                &gt;&gt;
-                <a href="AreaPersonale.php" title="Area personale" aria-label="Vai alla pagina area personale" tabindex="10">Area personale</a>
-                &gt;&gt;
-                <strong>Inserisci evento</strong>
+                <a href="HomePage.php" aria-label="Vai alla pagina homepage del museo" tabindex="9">Home</a> &gt;&gt;
+                <a href="AreaPersonale.php" aria-label="Vai alla pagina Area personale" tabindex="10">Area personale</a> &gt;&gt;
+                <strong>Modifica evento</strong>
             </p>
         </div>
 
         <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
             <ul>
                 <li>
-                    <a id="skipMenu" href="#content" class="skipInformation" aria-label="Vai al contenuto" tabindex="11">Vai al contenuto</a>
+                    <a id="skipMenu" class="skipInformation" href="#content" aria-label="Vai al contenuto" tabindex="11">Vai al contenuto</a>
                 </li>
 
                 <li>
@@ -93,11 +91,11 @@
         </div>
 
         <div id="content" role="main">
-            <h2 class="title">Inserimento evento</h2>
+            <h2 class="title">Modifica dell'evento </h2>
 
-            <form id="insert" name="insertEvent" action="" method="post" role="form">
-                <fieldset id="insertEvent" class="hideFieldset">
-                    <legend class="hideLegend">Informazioni da inserire dell'evento</legend>
+            <form name="updateEvent" action="" method="post">
+                <fieldset id="updateField" class="hideFieldset">
+                    <legend class="hideLegend">Modifica evento</legend>
 
                     <span id='outputMessagePlaceholder'/>
 
@@ -105,47 +103,69 @@
                         <legend>Informazioni dell'evento</legend>
 
                         <p>
-                            <label id="labelTitle" for="title">Titolo</label>
-                            <input id="title" class="formElement" name="title" type="text" value="<span id='titleValuePlaceholder'/>" aria-label="Inserisci il titolo"/>
+                            <label id="labelTitle" for="title">Titolo: </label>
+                            <input id="title" class="formElement" name="title" type="text" value="<span id='titleValuePlaceholder'/>" aria-label="Modifica il titolo delle'evento" aria-required="true"/>
                         </p>
 
                         <p>
-                            <label id="labelDescriptionArea" for="description">Descrizione</label>
-                            <textarea id="description" class="formElement" name="description" rows="20px" cols="20px" aria-label="Inserisci la descrizione"><span id='descriptionValuePlaceholder'/></textarea>
+                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
-                            <label id="labelFilterType" for="filterEventType">Tipologia</label>
-                            <select id="filterEventType" class="formElement" name="type" aria-label="Seleziona la tipologia">
+                            <label id="labelDescription" for="description">Descrizione: </label>
+                            <textarea id="description" class="formElement" name="description" rows="10" cols="70" aria-label="Modifica la descrizione" aria-required="true"><span id='descriptionValuePlaceholder'/>
+                                    </textarea>
+                        </p>
+
+                        <p>
+                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
+                        </p>
+
+                        <p>
+                            <label id="labelType" for="type">Tipologia: </label>
+                            <select id="type" class="formElement" name="type" aria-label="Modifica la tipologia di evento" aria-required="true">
                                 <option<span id='exhibitionTypeSelectedPlaceholder'/>value="Mostra">Mostra</option>
                                 <option<span id='conferenceTypeSelectedPlaceholder'/>value="Conferenza">Conferenza</option>
                             </select>
                         </p>
-                    </fieldset>
 
+                        <p>
+                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
+                        </p>
+                    </fieldset>
                     <fieldset id="date" class="fieldset">
                         <legend>Date</legend>
                         <p>
-                            <label id="labelBeginDate" for="beginDate">Data d'inizio</label>
-                            <input id="beginDate" class="formElement" name="beginDate" type="text" value="<span id='beginDateValuePlaceholder'/>" aria-label="Inserisci la data d'inizio"/>
+                            <label id="labelBeginDate" for="beginDate">Data d'inizio: </label>
+                            <input id="beginDate" class="formElement" name="beginDate" type="text" value="<span id='beginDateValuePlaceholder'/>" aria-label="Modifica la data dell'evento" aria-required="true"/>
                         </p>
 
                         <p>
-                            <label id="labelEndDate" for="endDate">Data di fine</label>
-                            <input id="endDate" class="formElement" name="endDate" type="text" value="<span id='endDateValuePlaceholder'/>" aria-label="Inserisci la data di fine"/>
+                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
-                    </fieldset>
 
                         <p>
-                            <label id="labelManager" for="manager">Organizzatore</label>
-                            <input id="manager" class="formElement" name="manager" type="text" value="<span id='managerValuePlaceholder'/>" aria-label="Inserisci l'organizzatore"/>
+                            <label id="labelEndDate" for="endDate">Data di fine: </label>
+                            <input id="endDate" class="formElement" name="endDate" type="text" value="<span id='endDateValuePlaceholder'/>" aria-label="Modifica la data dell'evento" aria-required="true"/>
                         </p>
 
-                        <p class="navigation">
-                            <input id="buttonConfirm" class="button" name="submit" type="submit" value="Inserisci" role="button" aria-label="Inserisci il nuovo evento con le informazioni specificate"/>
-                            <input id="buttonReset" class="button" name="reset" type="reset" value="Cancella" role="button" aria-label="Cancella i dati inseriti"/>
+                        <p>
+                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
                     </fieldset>
+                    <p>
+                        <label id="labelManager" for="manager">Organizzatore</label>
+                        <input id="manager" class="formElement" name="manager" type="text" value="<span id='managerValuePlaceholder'/>" aria-label="Inserisci l'organizzatore"/>
+                    </p>
+
+                    <p>
+                        <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
+                    </p>
+
+                    <p class="navigation">
+                        <input id="buttonConfirm" class="button" name="submit" value="Modifica" type="submit" aria-label="Invia le modifiche apportate"/>
+                        <input id="buttonReset" class="button" name="cancel" value="Annulla" type="reset" aria-label="Annulla le modifiche apportate"/>
+                    </p>
                 </fieldset>
             </form>
 
@@ -154,7 +174,7 @@
             </a>
         </div>
 
-        <div aria-label="footer" id="footer">
+        <div id="footer" aria-label="footer">
             <p>
                 Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
             </p>

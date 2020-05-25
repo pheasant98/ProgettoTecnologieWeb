@@ -14,41 +14,47 @@ if (!LoginController::isAuthenticatedUser()) {
 }
 
 $message = '';
+$artworksController = new ArtworksController();
+$artwork = $artworksController->getArtwork($_GET['id']);
 
-if (isset($_POST['submit']) && $_POST['submit'] === 'Inserisci') {
+$author = $artwork['Autore'];
+$title = $artwork['Titolo'];
+$description = $artwork['Descrizione'];
+$years = $artwork['Datazione'];
+$style = $artwork['Stile'];
+$technique = $artwork['Tecnica'];
+$material = $artwork['Materiale'];
+$dimensions = $artwork['Dimensioni'];
+$loan = ($artwork['Prestito'] === 1 ? 'Si' : 'No');
+$image = $artwork['Immagine'];
+
+
+if (isset($_POST['submit']) && $_POST['submit'] === 'Modifica') {
     $author = $_POST['author'];
     $title = $_POST['title'];
     $description = $_POST['description'];
     $years = $_POST['years'];
     $style = $_POST['style'];
-    $technique = $_POST['technique'];
-    $material = $_POST['material'];
-    $dimensions = $_POST['dimensions'];
+    //TODO: sistemare visualizzazione sulla base dello style in javascript
+    if (isset($_POST['technique'])) {
+        $technique = $_POST['technique'];
+        $material = '';
+    }
+    if (isset($_POST['material'])) {
+        $material = $_POST['material'];
+        $technique = '';
+    }
     $loan = ($_POST['loan'] === 'Si' ? 1 : 0);
     $image = $_POST['image'];
-    $artworksController = new ArtworksController();
-    $message = $artworksController->addArtwork($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $image, $_SESSION['username']);
+    //TODO:sistemare la modifica delle immagini
+    $message = $artworksController->updateArtwork($_GET['id'], $author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $image, $_SESSION['username']);
     unset($artworksController);
-}
-
-if ($message === '') {
-    $author = '';
-    $title = '';
-    $description = '';
-    $years = '';
-    $style = 'Dipinto';
-    $technique = '';
-    $material = '';
-    $dimensions = '';
-    $loan = 'No';
-    //$image = $_POST['image'];
 }
 
 $loan_yes = ' ';
 $loan_no = ' ';
 $painting_style = ' ';
 $sculture_style = ' ';
-
 if ($loan === 'No') {
     $loan_no = ' checked="checked" ';
 } else {
@@ -61,7 +67,7 @@ if ($style === 'Dipinto') {
     $sculture_style = ' selected="selected" ';
 }
 
-$document = file_get_contents('../HTML/InserisciOpera.html');
+$document = file_get_contents('../HTML/ModificaOpera.html');
 $login = LoginController::getAuthenticationMenu();
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
