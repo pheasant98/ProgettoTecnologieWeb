@@ -26,6 +26,11 @@ class UsersRepository {
         return $this->dbConnection->executeSelectStatement($statement);
     }
 
+    public function getUsersCount() {
+        $statement = $this->dbConnection->prepareQuery('SELECT COUNT(*) AS Totale FROM Utenti;');
+        return $this->dbConnection->executeSelectStatement($statement);
+    }
+
     public function getUser($username) {
         $statement = $this->dbConnection->prepareQuery('SELECT * FROM Utenti WHERE Username=?;');
         $statement->bind_param('s', $username);
