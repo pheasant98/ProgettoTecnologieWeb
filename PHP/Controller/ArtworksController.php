@@ -28,7 +28,6 @@ class ArtworksController {
             $message .= '[La datazione dell\'opera non può essere vuota]';
         }
 
-        echo $style;
         if ($style !== 'Scultura' && $style !== 'Dipinto') {
             $message .= '[Lo stile dell\'opera non può essere diverso dalle scelte proposte]';
         }
@@ -119,7 +118,7 @@ class ArtworksController {
                      <a href="Opera.php?id=' . $row['ID'] . '" aria-label="Vai all\'opera">' . $row['Titolo'] . '</a>
                 </dt>
                 <dd>
-                    <a href="#' . ($result_set->num_rows == $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'opera">Salta l\'opera</a>
+                    <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'opera">Salta l\'opera</a>
     
                     <p>
                         Nome autore: ' . $row['Autore'] . '

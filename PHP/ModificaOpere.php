@@ -25,12 +25,11 @@ $style = $artwork['Stile'];
 $technique = $artwork['Tecnica'];
 $material = $artwork['Materiale'];
 $dimensions = $artwork['Dimensioni'];
-$loan = ($artwork['Prestito'] == 1 ? 'Si' : 'No');
+$loan = ($artwork['Prestito'] === 1 ? 'Si' : 'No');
 $image = $artwork['Immagine'];
 
 
 if (isset($_POST['submit']) && $_POST['submit'] === 'Modifica') {
-    $id = $_GET['id'];
     $author = $_POST['author'];
     $title = $_POST['title'];
     $description = $_POST['description'];
@@ -45,10 +44,10 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Modifica') {
         $material = $_POST['material'];
         $technique = '';
     }
-    $loan = ($_POST['loan'] == 'Si' ? 1 : 0);
+    $loan = ($_POST['loan'] === 'Si' ? 1 : 0);
     $image = $_POST['image'];
     //TODO:sistemare la modifica delle immagini
-    $message = $artworksController->updateArtwork($id, $author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $image, $_SESSION['username']);
+    $message = $artworksController->updateArtwork($_GET['id'], $author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $image, $_SESSION['username']);
     unset($artworksController);
 }
 
@@ -56,8 +55,7 @@ $loan_yes = ' ';
 $loan_no = ' ';
 $painting_style = ' ';
 $sculture_style = ' ';
-
-if ($loan == 0) {
+if ($loan === 'No') {
     $loan_no = ' checked="checked" ';
 } else {
     $loan_yes = ' checked="checked" ';

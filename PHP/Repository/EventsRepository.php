@@ -13,9 +13,9 @@ class EventsRepository {
         unset($this->dbConnection);
     }
 
-    public function postEvent($title, $description, $beginDate, $endDate, $type, $manager, $user) {
+    public function postEvent($title, $description, $begin_date, $end_date, $type, $manager, $user) {
         $statement = $this->dbConnection->prepareQuery('INSERT INTO Eventi (ID, Titolo, Descrizione, DataInizio, DataFine, Tipologia, Organizzatore, Utente) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?);');
-        $statement->bind_param('sssssss', $title, $description, $beginDate, $endDate, $type, $manager, $user);
+        $statement->bind_param('sssssss', $title, $description, $begin_date, $end_date, $type, $manager, $user);
         return $this->dbConnection->executeNotSelectStatement($statement);
     }
 
@@ -48,9 +48,9 @@ class EventsRepository {
         return $this->dbConnection->executeSelectStatement($statement);
     }
 
-    public function updateEvent($id, $title, $description, $beginDate, $endDate, $type, $manager, $user) {
-        $statement = $this->dbConnection->prepareQuery('UPDATE Eventi SET Titlo=?, Descrizione=?, DataInizio=?, DataFine=?, Tipologia=?, Organizzatore=?, Utente=? WHERE ID=?;');
-        $statement->bind_param('sssssssi', $title, $description, $beginDate, $endDate, $type, $manager, $user, $id);
+    public function updateEvent($id, $title, $description, $begin_date, $end_date, $type, $manager, $user) {
+        $statement = $this->dbConnection->prepareQuery('UPDATE Eventi SET Titolo=?, Descrizione=?, DataInizio=?, DataFine=?, Tipologia=?, Organizzatore=?, Utente=? WHERE ID=?;');
+        $statement->bind_param('sssssssi', $title, $description, $begin_date, $end_date, $type, $manager, $user, $id);
         return $this->dbConnection->executeNotSelectStatement($statement);
     }
 

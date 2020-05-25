@@ -53,10 +53,10 @@ $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
 $document = str_replace("<span id='outputMessagePlaceholder'/>", $message, $document);;
 $document = str_replace("<span id='titleValuePlaceholder'/>", $title, $document);
 $document = str_replace("<span id='descriptionValuePlaceholder'/>", $description, $document);
-$document = str_replace("<span id='beginDateValuePlaceholder'/>", $beginDate, $document);
-$document = str_replace("<span id='endDateValuePlaceholder'/>", $endDate, $document);
 $document = str_replace("<span id='exhibitionTypeSelectedPlaceholder'/>", $exhibition_type, $document);
 $document = str_replace("<span id='conferenceTypeSelectedPlaceholder'/>", $conference_type, $document);
+$document = str_replace("<span id='beginDateValuePlaceholder'/>", $beginDate, $document);
+$document = str_replace("<span id='endDateValuePlaceholder'/>", $endDate, $document);
 $document = str_replace("<span id='managerValuePlaceholder'/>", $manager, $document);
 
 echo $document;
