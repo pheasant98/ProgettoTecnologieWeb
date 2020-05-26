@@ -9,35 +9,43 @@ require_once ('Controller/UsersController.php');
 
 session_start();
 
-if (LoginController::isAuthenticatedUser()) {
-    header('Location: Errore.php');
+if (!LoginController::isAuthenticatedUser()) {
+    header('Location: Error.php');
 }
 
+$usersController = new UsersController();
 $message = '';
 
-if (isset($_POST['submit']) && $_POST['submit'] === 'Registrati') {
+if (isset($_POST['submit']) && $_POST['submit'] === 'Modifica') {
+    $name = $_POST['name'];
+    $surname = $_POST['surname'];
+    if ($_POST['sex'] === 'Maschile') {
+       $sex = 'M';
+    } elseif ($_POST['sex'] === 'Femminile') {
+        $sex = 'F';
+    } else {
+        $sex = 'A';
+    }
+    $date = $_POST['date'];
+    $mail = $_POST['mail'];
+    $username = $_POST['username'];
+    $password = hash('sha256', $_POST['password']);
+    $repeated_password = hash('sha256', $_POST['repeatePassword']);
+
+    $message = $usersController->updateUser($_GET['id'], $name, $surname, $date, $sex, $_SESSION['username'], $mail, $password, $repeated_password);
+    unset($usersController);
+}
+
+if ($message === '') {
+    $user = $usersController->getUser($_GET['user']);
+
     $name = $_POST['name'];
     $surname = $_POST['surname'];
     $sex = $_POST['sex'];
     $date = $_POST['date'];
     $mail = $_POST['mail'];
     $username = $_POST['username'];
-    $password = $_POST['password'];
-    $repeated_password = $_POST['repeatePassword'];
-
-    $users_controller = new UsersController();
-    $message = $users_controller->addUser($name, $surname, $sex, $date, $mail, $username, $password, $repeated_password);
-    unset($users_controller);
-}
-
-if ($message === '') {
-    $name = '';
-    $surname = '';
-    $sex = 'A';
-    $date = '';
-    $mail = '';
-    $username = '';
-    $password = '';
+    $password = hash('sha256', $_POST['password']);
     $repeated_password = '';
 }
 
@@ -53,7 +61,7 @@ if ($sex === 'A') {
     $female = ' checked="checked" ';
 }
 
-$document = file_get_contents('../HTML/Registrazione.html');
+$document = file_get_contents('../HTML/ModificaDatiUtente.html');
 $login = LoginController::getAuthenticationMenu();
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);

@@ -57,7 +57,7 @@
                 Ti trovi in:
                 <a href="HomePage.php" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a>
                 &gt;&gt;
-                <a href="AreaPersonale.html" aria-label="Vai alla pagina Area personale" tabindex="10">Area personale</a>
+                <a href="AreaPersonale.php" aria-label="Vai alla pagina Area personale" tabindex="10">Area personale</a>
                 &gt;&gt;
                 <strong>Modifica dati utente</strong>
             </p>
@@ -93,29 +93,44 @@
         </div>
 
         <div id="content" role="main">
-            <h2 class="title">Modifica dati</h2>
+            <h3 class="title">Modifica dati utente</h3>
 
-            <form id="ModificaDatiUtente" name="ModificaDati" action="AreaPersonale.html" method="post">
-                <fieldset class="fieldset">
-                    <legend>Dati modificabili</legend>
+            <form name="updateEvent" action="" method="post">
+                <fieldset id="updateField" class="hideFieldset">
+                    <legend class="hideLegend">Modifica utente</legend>
 
-                    <p>
-                        <label id="labelNome" for="Nome">Nome</label>
-                        <input id="Nome" class="formElement" name="Nome" type="text" aria-label="Modifica nome utente" aria-required="true"/>
-                    </p>
+                    <span id='outputMessagePlaceholder'/>
 
-                    <p>
-                        <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
-                    </p>
+                    <fieldset id="generalInformation" class="fieldset">
+                        <legend>Informazioni dell'utente</legend>
 
-                    <p>
-                        <label id="labelCognome" for="Cognome">Cognome</label>
-                        <input id="Cognome" class="formElement" name="Cognome" type="text" aria-label="Modifica cognome utente" aria-required="true"/>
-                    </p>
+                        <p>
+                            <label id="labelNome" for="Nome">Nome</label>
+                            <input id="Nome" class="formElement" name="Nome" type="text" value="" aria-label="Modifica nome utente" aria-required="true"/>
+                        </p>
 
-                    <p>
-                        <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
-                    </p>
+                        <p>
+                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
+                        </p>
+
+                        <p>
+                            <label id="labelCognome" for="Cognome">Cognome</label>
+                            <input id="Cognome" class="formElement" name="Cognome" type="text" value="" aria-label="Modifica cognome utente" aria-required="true"/>
+                        </p>
+
+                        <p>
+                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
+                        </p>
+
+                        <p>
+                            <label id="labelDataNascita" for="DataNascita">Data di nascita</label>
+                            <input id="DataNascita" class="formElement" name="DataNascita" type="text" value="" aria-label="Modifica data di nascita utente" aria-required="true"/>
+                        </p>
+
+                        <p>
+                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
+                        </p>
+                    </fieldset>
 
                     <fieldset id="fieldSex" class="fieldset">
                         <legend>Sesso</legend>
@@ -139,17 +154,8 @@
                     </p>
 
                     <p>
-                        <label id="labelDataNascita" for="DataNascita">Data di nascita</label>
-                        <input id="DataNascita" class="formElement" name="DataNascita" type="text" aria-label="Modifica data di nascita utente" aria-required="true"/>
-                    </p>
-
-                    <p>
-                        <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
-                    </p>
-
-                    <p>
                         <label id="labelEmail" for="Email">Email</label>
-                        <input id="Email" class="formElement" name="Email" type="text" aria-label="Modifica email utente" aria-required="true"/>
+                        <input id="Email" class="formElement" name="Email" type="text" value="" aria-label="Modifica email utente" aria-required="true"/>
                     </p>
 
                     <p>
@@ -157,8 +163,8 @@
                     </p>
 
                     <p class="navigation">
-                        <input id="buttonConfirm" class="button" name="InviaModificheUtente" type="submit" value="Conferma" role="button" aria-label="Conferma le modifiche apportate"/>
-                        <input id="buttonReset" class="button" name="CancellaModificheUtente" type="reset" value="Cancella" role="button" aria-label="Cancella i dati inseriti"/>
+                        <input id="buttonConfirm" class="button" name="submit" type="submit" value="Modifica" role="button" aria-label="Invia le modifiche apportate"/>
+                        <input id="buttonReset" class="button" name="cancel" type="reset" value="Cancella" role="button" aria-label="Cancella le modifiche apportate"/>
                     </p>
                 </fieldset>
             </form>

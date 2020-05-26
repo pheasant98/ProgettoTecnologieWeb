@@ -55,10 +55,10 @@ class UsersController {
         unset($this->users);
     }
 
-    public function addUser($name, $surname, $sex, $date, $mail, $username, $password, $repeted_password) {
+    public function addUser($name, $surname, $sex, $date, $mail, $username, $password, $repeated_password) {
         $message = UsersController::checkInput($name, $surname, $sex, $date, $mail, $username, $password);
 
-        $message .= $password === $repeted_password ? '' : '[La conferma della <span xml:lang="en">password</span> non corrisponde a quella inserita inizialmente]';
+        $message .= $password === $repeated_password ? '' : '[La conferma della <span xml:lang="en">password</span> non corrisponde a quella inserita inizialmente]';
 
         if ($message === '') {
             if ($this->users->postUser($name, $surname, $date, $sex, $username, $mail, $password)) {
@@ -93,31 +93,21 @@ class UsersController {
 
         while($row = $result_set->fetch_assoc()) {
             $content .= '
-                <dt id="' . $id . $counter . '">
-                     <a href="Evento.php?id=' . $row['ID'] . '\" aria-label="Vai all\'evento">' . $row['Titolo'] . '</a>
-                </dt>
-                <dd>
-                    <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'evento">Salta l\'evento</a>
-    
-                    <p>
-                        Data inizio evento: ' . $row['DataInizio'] . '
-                    </p>
-                    
-                    <p>
-                        Data chiusura evento: ' . $row['DataFine'] . '
-                    </p>
+                <li>
+                    <a id="' . $id . $counter . '" href="Utente.php?user=' . $row['Username'] . '">' .  $row['Username'] . '</a>
 
-                    <p>
-                        Tipologia: ' . $row['Tipologia'] . '
+                    <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation">Salta l\'utente</a>
+
+                    <p class="userButton">
+                        <a class="button" href="" title="Rimuovi utente" role="button" aria-label="Rimuovi utente">Rimuovi</a>
                     </p>
-                </dd>
+                </li>
             ';
 
             $counter++;
         }
 
         $result_set->free();
-
         return $content;
     }
 
@@ -133,6 +123,25 @@ class UsersController {
         $row = $result_set->fetch_assoc();
         $result_set->free();
         return $row;
+    }
+
+    public function updateArtwork($name, $surname, $date, $sex, $username, $mail, $password, $repeated_password) {
+        $message = UsersController::checkInput($name, $surname, $sex, $date, $mail, $username, $password);
+        $message .= $password === $repeated_password ? '' : '[La conferma della <span xml:lang="en">password</span> non corrisponde a quella inserita inizialmente]';
+        if ($message === '') {
+            if ($this->users->updateUser($username, $name, $surname, $date, $sex, $mail, $password)) {
+                $message = '<p class="success">Utente aggiornata correttamente</p>';
+            } else {
+                $message = '<p class="error">Errore nell\'aggiornamento dell\'utente</p>';
+            }
+        } else {
+            $message = '<ul>' . $message;
+            $message = str_replace('[', '<li class="error">', $message);
+            $message = str_replace(']', '</li>', $message);
+            $message .= '</ul>';
+        }
+
+        return $message;
     }
 }
 

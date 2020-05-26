@@ -9,36 +9,22 @@ require_once ('Controller/LoginController.php');
 
 session_start();
 
-if (!LoginController::isAuthenticatedUser()) {
-    header('Location: Error.php');
-}
+//if (!LoginController::isAuthenticatedUser()) {
+  //  header('Location: Error.php');
+//}
 
 $controller = new UsersController();
-$user_count = $controller->getEventsCount();
+$user_count = $controller->getUsersCount();
 
-$filter_type = '';
-
-if (isset($_GET['filterType'])) {
-    $filter_type = $_GET['filterType'];
-
-    if ($_GET['filterType'] === 'Mostre') {
-        $event_count = $controller->getEventsCountByType($filter_type);
-    } elseif ($_GET['filterType'] === 'Conferenze') {
-        $event_count = $controller->getEventsCountByType($filter_type);
-    } else {
-        $filter_type = '';
-    }
-}
-
-if($event_count == 1) {
-    $event_number_found = '<p> È stato trovato ' . $event_count . ' evento: </p>';
+if($user_count == 1) {
+    $user_number_found = '<p> È stato trovato ' . $user_count . ' utente: </p>';
 } else {
-    $event_number_found = '<p> Sono stati trovati ' . $event_count . ' eventi: </p>';
+    $user_number_found = '<p> Sono stati trovati ' . $user_count . ' utenti: </p>';
 }
 
 if (!isset($_GET['page'])) {
     $page = 1;
-} elseif (($_GET['page'] < 1) || (($_GET['page'] - 1) > ($event_count / 5))) {
+} elseif (($_GET['page'] < 1) || (($_GET['page'] - 1) > ($user_count / 5))) {
     header('Location: Errore.php');
 } else {
     $page = $_GET['page'];
@@ -46,36 +32,29 @@ if (!isset($_GET['page'])) {
 
 $offset = ($page - 1) * 5;
 
-$event_list = '<dl class="clickableList">' . $controller->getEvents($filter_type, $offset) . '</dl>';
+$user_list = $controller->getUsers($offset);
 
 unset($controller);
 
-$previous_events = '';
-$next_events = '';
+$previous_users = '';
+$next_users = '';
 
 if ($page > 1) {
-    $previous_events = '<a id="buttonBack" class="button" href="?page=' . ($page - 1) . '&amp;filterType='. $filter_type . '" title="Eventi precedenti" role="button" aria-label="Torna agli eventi precedenti"> &lt; Precedente</a>';
+    $previous_users = '<a id="buttonBack" class="button" href="?page=' . ($page - 1) . '" title="Utenti precedenti" role="button" aria-label="Torna agli utenti precedenti"> &lt; Precedente</a>';
 }
 
-if (($page * 5) < $event_count) {
-    $next_events = '<a id="buttonNext" class="button" href="?page=' . ($page + 1) . '&amp;filterType='. $filter_type . '" title="Eventi successivi" role="button" aria-label="Vai agli eventi successivi"> Successivo &gt;</a>';
+if (($page * 5) < $user_count) {
+    $next_users = '<a id="buttonNext" class="button" href="?page=' . ($page + 1) . '" title="Utenti successivi" role="button" aria-label="Vai agli utenti successivi"> Successivo &gt;</a>';
 }
 
-$filter_option_whole = $filter_type == '' ? ' selected="selected"' : '';
-$filter_option_exhibitions = $filter_type == 'Mostre' ? ' selected="selected"' : '';
-$filter_option_conferences = $filter_type == 'Conferenze' ? ' selected="selected"' : '';
-
-$document = file_get_contents('../HTML/Eventi.html');
+$document = file_get_contents('../HTML/GestioneUtenti.html');
 $login = LoginController::getAuthenticationMenu();
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
-$document = str_replace("<span id='eventNumberFoundPlaceholder'/>", $event_number_found, $document);
-$document = str_replace("<span id='filterOptionWholePlaceholder'/>", $filter_option_whole, $document);
-$document = str_replace("<span id='filterOptionExhibitionsPlaceholder'/>", $filter_option_exhibitions, $document);
-$document = str_replace("<span id='filterOptionConferencesPlaceholder'/>", $filter_option_conferences, $document);
-$document = str_replace("<span id='eventListPlaceholder'/>", $event_list, $document);
-$document = str_replace("<span id='buttonBackPlaceholder'/>", $previous_events, $document);
-$document = str_replace("<span id='buttonNextPlaceholder'/>", $next_events, $document);
+$document = str_replace("<span id='userNumberFoundPlaceholder'/>", $user_number_found, $document);
+$document = str_replace("<span id='userListPlaceholder'/>", $user_list, $document);
+$document = str_replace("<span id='buttonBackPlaceholder'/>", $previous_users, $document);
+$document = str_replace("<span id='buttonNextPlaceholder'/>", $next_users, $document);
 
 echo $document;
 

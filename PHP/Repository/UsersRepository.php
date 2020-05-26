@@ -13,7 +13,7 @@ class UsersRepository {
         unset($this->dbConnection);
     }
 
-    public function postUser($name, $surname, $birthday, $sex, $username, $mail, $password, $admin=false) {
+    public function postUser($name, $surname, $birthday, $sex, $username, $mail, $password, $admin=0) {
         $hashed_password = hash('sha256', $password);
         $statement = $this->dbConnection->prepareQuery('INSERT INTO Utenti (Nome, Cognome, DataNascita, Sesso, Username, Email, Password, Admin) VALUES (?, ?, ?, ?, ?, ?, ?, ?);');
         $statement->bind_param('sssssssi', $name, $surname, $birthday, $sex, $username, $mail, $hashed_password, $admin);
@@ -44,10 +44,10 @@ class UsersRepository {
         return $this->dbConnection->executeSelectStatement($statement);
     }
 
-    public function updateUser($old_username, $name, $surname, $birthday, $sex, $new_username, $mail, $password, $admin=false) {
+    public function updateUser($username, $name, $surname, $date, $sex, $mail, $password) {
         $hashed_password = hash('sha256', $password);
-        $statement = $this->dbConnection->prepareQuery('UPDATE Utenti SET Nome=?, Cognome=?, DataNascita=?, Sesso=?, Username=?, Email=?, Password=?, Admin=? WHERE Username=?;');
-        $statement->bind_param('sssssssis', $name, $surname, $birthday, $sex, $new_username, $mail, $hashed_password, $admin, $old_username);
+        $statement = $this->dbConnection->prepareQuery('UPDATE Utenti SET Nome=?, Cognome=?, DataNascita=?, Sesso=?, Email=?, Password=? WHERE Username=?;');
+        $statement->bind_param('sssssss', $name, $surname, $date, $sex, $mail, $hashed_password, $username);
         return $this->dbConnection->executeNotSelectStatement($statement);
     }
 
