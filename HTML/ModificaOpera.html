@@ -93,7 +93,7 @@
         <div id="content" role="main">
             <h2 class="title">Modifica dell'opera</h2>
 
-            <form name="updateArtwork" action="" method="post">
+            <form name="updateArtwork" action="" method="post" enctype="multipart/form-data">
                 <fieldset id="UpdateField" class="hideFieldset">
                     <legend class="hideLegend">Modifica opera</legend>
 
@@ -206,8 +206,8 @@
                         </p>
 
                     <p class="navigation">
-                        <input id="buttonConfirm" class="button" name="submit" value="Modifica" type="submit" aria-label="Invia le modifiche apportate"/>
-                        <input id="buttonReset" class="button" name="cancel" value="Cancella" type="reset" aria-label="Annulla le modifiche apportate"/>
+                        <input id="buttonConfirm" class="button" name="submit" type="submit" value="Modifica" aria-label="Invia le modifiche apportate"/>
+                        <input id="buttonReset" class="button" name="cancel" type="reset" value="Cancella" aria-label="Annulla le modifiche apportate"/>
                     </p>
                 </fieldset>
             </form>
