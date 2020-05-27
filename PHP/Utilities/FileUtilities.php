@@ -1,50 +1,75 @@
 <?php
 
 class FileUtilities {
-    public static function imageUpload() {
-        try {
-            // Undefined | Multiple Files | $_FILES Corruption Attack
-            // If this request falls under any of them, treat it invalid.
-            if (!isset($_FILES['upfile']['error']) || is_array($_FILES['upfile']['error'])) {
-                throw new RuntimeException('Invalid parameters.');
-            }
+    private $base_path;
+    private $accepted_extensions;
+    private $extension;
+    private $path;
 
-            // Check $_FILES['upfile']['error'] value.
-            switch ($_FILES['upfile']['error']) {
-                case UPLOAD_ERR_OK:
-                    break;
-                case UPLOAD_ERR_NO_FILE:
-                    throw new RuntimeException('No file sent.');
-                case UPLOAD_ERR_INI_SIZE:
-                case UPLOAD_ERR_FORM_SIZE:
-                    throw new RuntimeException('Exceeded filesize limit.');
-                default:
-                    throw new RuntimeException('Unknown errors.');
-            }
+    public function __construct() {
+        $this->base_path = '../../Images/';
+        $this->accepted_extensions = array('jpeg' => 'image/jpeg', 'jpg' => 'image/jpeg', 'png' => 'image/png');
+        $this->extension = '';
+        $this->path = '';
+    }
 
-            // You should also check filesize here.
-            if ($_FILES['upfile']['size'] > 1000000) {
-                throw new RuntimeException('Exceeded filesize limit.');
-            }
+    public function __destruct() {
+        unset($this->base_path);
+        unset($this->accepted_extensions);
+        unset($this->extension);
+        unset($this->path);
+    }
 
-            // DO NOT TRUST $_FILES['upfile']['mime'] VALUE !!
-            // Check MIME Type by yourself.
-            $finfo = new finfo(FILEINFO_MIME_TYPE);
-            $image_types = array('jpg' => 'image/jpeg', 'png' => 'image/png', 'gif' => 'image/gif');
-            if (false === $ext = array_search($finfo->file($_FILES['upfile']['tmp_name']), $image_types,true)) {
-                throw new RuntimeException('Invalid file format.');
-            }
+    public static function isSelected() {
+        return isset($_FILES['image']['error']);
+    }
 
-            // You should name it uniquely.
-            // DO NOT USE $_FILES['upfile']['name'] WITHOUT ANY VALIDATION !!
-            // On this example, obtain safe unique name from its binary data.
-            if (!move_uploaded_file($_FILES['upfile']['tmp_name'], sprintf('./uploads/%s.%s', sha1_file($_FILES['upfile']['tmp_name']), $ext))) {
-                throw new RuntimeException('Failed to move uploaded file.');
-            }
+    public static function isOneAndOnlyOneSelected() {
+        return !is_array($_FILES['image']['error']) && $_FILES['image']['error'] !== UPLOAD_ERR_NO_FILE;
+    }
 
-            echo 'File is uploaded successfully.';
-        } catch (RuntimeException $e) {
-            echo $e->getMessage();
+    public static function isSizeBounded() {
+        return $_FILES['image']['error'] !== UPLOAD_ERR_INI_SIZE && $_FILES['image']['error'] !== UPLOAD_ERR_FORM_SIZE;
+    }
+
+    public static function isUploaded() {
+        return $_FILES['image']['error'] === UPLOAD_ERR_OK;
+    }
+
+    public static function isCorrectSize() {
+        return $_FILES['image']['size'] <= 512000;
+    }
+
+    public function isCorrectExtension() {
+        $file_info = new finfo(FILEINFO_MIME_TYPE);
+        $this->extension = array_search($file_info->file($_FILES['image']['tmp_name']), $this->accepted_extensions,true);
+
+        if ($this->extension === false) {
+            $this->extension = '';
         }
+
+        return $this->extension !== '';
+    }
+
+    public function isUniqueRenamed() {
+        if ($this->extension === '') {
+            return false;
+        }
+
+        $this->path = sprintf($this->base_path . '%s.%s', sha1_file($_FILES['image']['tmp_name']), $this->extension);
+
+        if (file_exists($this->path)) {
+            return false;
+        }
+
+        if (move_uploaded_file($_FILES['image']['tmp_name'], $this->path) === false) {
+            $this->path = '';
+        }
+
+        return $this->path !== '';
+    }
+
+    public function getPath() {
+        return $this->path !== '' ? $this->path : false;
     }
 }
