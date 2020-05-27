@@ -44,8 +44,7 @@ class UsersRepository {
         return $this->dbConnection->executeSelectStatement($statement);
     }
 
-    public function updateUser($username, $name, $surname, $date, $sex, $mail, $password) {
-        $hashed_password = hash('sha256', $password);
+    public function updateUser($username, $name, $surname, $date, $sex, $mail, $hashed_password) {
         $statement = $this->dbConnection->prepareQuery('UPDATE Utenti SET Nome=?, Cognome=?, DataNascita=?, Sesso=?, Email=?, Password=? WHERE Username=?;');
         $statement->bind_param('sssssss', $name, $surname, $date, $sex, $mail, $hashed_password, $username);
         return $this->dbConnection->executeNotSelectStatement($statement);

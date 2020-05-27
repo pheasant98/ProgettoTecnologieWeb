@@ -125,11 +125,12 @@ class UsersController {
         return $row;
     }
 
-    public function updateArtwork($name, $surname, $date, $sex, $username, $mail, $password, $repeated_password) {
-        $message = UsersController::checkInput($name, $surname, $sex, $date, $mail, $username, $password);
-        $message .= $password === $repeated_password ? '' : '[La conferma della <span xml:lang="en">password</span> non corrisponde a quella inserita inizialmente]';
+    public function updateUser($username, $name, $surname, $date, $sex, $mail, $oldPassword, $newPassword, $repeated_password) {
+        //TODO: Fare controllo sulla password
+        $message = UsersController::checkInput($name, $surname, $sex, $date, $mail, $username, $newPassword);
+        $message .= $newPassword === $repeated_password ? '' : '[La conferma della <span xml:lang="en">password</span> non corrisponde a quella inserita inizialmente]';
         if ($message === '') {
-            if ($this->users->updateUser($username, $name, $surname, $date, $sex, $mail, $password)) {
+            if ($this->users->updateUser($username, $name, $surname, $date, $sex, $mail, $newPassword)) {
                 $message = '<p class="success">Utente aggiornata correttamente</p>';
             } else {
                 $message = '<p class="error">Errore nell\'aggiornamento dell\'utente</p>';

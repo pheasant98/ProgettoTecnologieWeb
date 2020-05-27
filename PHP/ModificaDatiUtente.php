@@ -10,43 +10,36 @@ require_once ('Controller/UsersController.php');
 session_start();
 
 if (!LoginController::isAuthenticatedUser()) {
-    header('Location: Error.php');
+    header('Location: Errore.php');
 }
-
-$usersController = new UsersController();
 $message = '';
+$usersController = new UsersController();
+$user = $usersController->getUser($_SESSION['username']);
+
+$name = $user['Nome'];
+$surname = $user['Cognome'];
+$sex = $user['Sesso'];
+$date = $user['DataNascita'];
+$mail = $user['Email'];
 
 if (isset($_POST['submit']) && $_POST['submit'] === 'Modifica') {
-    $name = $_POST['name'];
-    $surname = $_POST['surname'];
-    if ($_POST['sex'] === 'Maschile') {
+    $name = $_POST['Name'];
+    $surname = $_POST['Surname'];
+    if ($_POST['Sex'] === 'Maschile') {
        $sex = 'M';
-    } elseif ($_POST['sex'] === 'Femminile') {
+    } elseif ($_POST['Sex'] === 'Femminile') {
         $sex = 'F';
     } else {
         $sex = 'A';
     }
-    $date = $_POST['date'];
-    $mail = $_POST['mail'];
-    $username = $_POST['username'];
-    $password = hash('sha256', $_POST['password']);
-    $repeated_password = hash('sha256', $_POST['repeatePassword']);
+    $date = $_POST['Date'];
+    $mail = $_POST['Mail'];
+    $oldPassword = hash('sha256', $_POST['OldPassword']);
+    $newPassword = hash('sha256', $_POST['NewPassword']);
+    $repeated_password = hash('sha256', $_POST['RepeatePassword']);
 
-    $message = $usersController->updateUser($_GET['id'], $name, $surname, $date, $sex, $_SESSION['username'], $mail, $password, $repeated_password);
+    $message = $usersController->updateUser($_SESSION['username'], $name, $surname, $date, $sex, $mail, $oldPassword, $newPassword, $repeated_password);
     unset($usersController);
-}
-
-if ($message === '') {
-    $user = $usersController->getUser($_GET['user']);
-
-    $name = $_POST['name'];
-    $surname = $_POST['surname'];
-    $sex = $_POST['sex'];
-    $date = $_POST['date'];
-    $mail = $_POST['mail'];
-    $username = $_POST['username'];
-    $password = hash('sha256', $_POST['password']);
-    $repeated_password = '';
 }
 
 $male = ' ';
@@ -73,9 +66,6 @@ $document = str_replace("<span id='femaleCheckedPlaceholder'/>", $female, $docum
 $document = str_replace("<span id='otherCheckedPlaceholder'/>", $other, $document);
 $document = str_replace("<span id='dateValuePlaceholder'/>", $date, $document);
 $document = str_replace("<span id='mailValuePlaceholder'/>", $mail, $document);
-$document = str_replace("<span id='usernameValuePlaceholder'/>", $username, $document);
-$document = str_replace("<span id='passwordValuePlaceholder'/>", $password, $document);
-$document = str_replace("<span id='repeatePasswordValuePlaceholder'/>", $repeated_password, $document);
 
 echo $document;
 

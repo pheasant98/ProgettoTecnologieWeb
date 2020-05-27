@@ -37,8 +37,6 @@ if ($message === '') {
     $date = '';
     $mail = '';
     $username = '';
-    $password = '';
-    $repeated_password = '';
 }
 
 $male = ' ';
@@ -66,8 +64,6 @@ $document = str_replace("<span id='otherCheckedPlaceholder'/>", $other, $documen
 $document = str_replace("<span id='dateValuePlaceholder'/>", $date, $document);
 $document = str_replace("<span id='mailValuePlaceholder'/>", $mail, $document);
 $document = str_replace("<span id='usernameValuePlaceholder'/>", $username, $document);
-$document = str_replace("<span id='passwordValuePlaceholder'/>", $password, $document);
-$document = str_replace("<span id='repeatePasswordValuePlaceholder'/>", $repeated_password, $document);
 
 echo $document;
 
