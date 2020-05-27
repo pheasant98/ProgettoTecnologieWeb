@@ -19,12 +19,6 @@ a {
   color: #000;
 }
 
-a:link::after,
-a:visited::after {
-  content: " [" attr(href) "] ";
-  font-size: 70%;
-}
-
 /* Regole per gli header delle pagine */
 
 #header,
@@ -46,15 +40,6 @@ a:visited::after {
 
 .headerTitle > h2 {
   font-size: 1.7em;
-}
-
-#logoImage {
-  background-image: url('../images/logo.PNG');
-  float: right;
-  text-indent: 100%;
-  background-position: center;
-  height: 3.6em;
-  width: 5em;
 }
 
 /* Regole per il contenuto principale delle pagine */
@@ -270,6 +255,7 @@ a:visited::after {
 #buttonReset,
 #buttonConfirm,
 #footer,
+#logoImage,
 .skipInformation,
 .button,
 .userButton {
