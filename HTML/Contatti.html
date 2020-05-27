@@ -39,13 +39,13 @@
             <form id="search" name="search" action="" method="post" role="search">
                 <fieldset id="searchBox">
                     <legend class="hideLegend">Ricerca</legend>
-
+                    <label class="hideLabel" for="filter">filtro per la ricerca</label>
                     <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
                         <option selected="selected" value="Opera">Opera</option>
                         <option value="Evento">Evento</option>
                     </select>
 
-                    <label id="hideLabel" for="searchText">Cerca nel sito</label>
+                    <label class="hideLabel" for="searchText">Cerca nel sito</label>
                     <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
                     <input id="buttonSubmit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
                 </fieldset>

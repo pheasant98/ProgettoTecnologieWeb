@@ -39,13 +39,13 @@
             <form id="search" name="search" action="" method="post" role="search">
                 <fieldset id="searchBox">
                     <legend class="hideLegend">Ricerca</legend>
-
+                    <label class="hideLabel" for="filter">filtro per la ricerca</label>
                     <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
                         <option selected="selected" value="Opera">Opera</option>
                         <option value="Evento">Evento</option>
                     </select>
 
-                    <label id="hideLabel" for="searchText">Cerca nel sito</label>
+                    <label class="hideLabel" for="searchText">Cerca nel sito</label>
                     <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
                     <input id="buttonSubmit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
                 </fieldset>
@@ -96,14 +96,14 @@
             <h2 class="title">Contenuti del sito</h2>
 
             <form id="contentFilter" action="" method="post">
-                <fieldset class="navigation">
-                    <legend class="hideLegend">Filtro contenuti</legend>
-
+                <fieldset class="fieldset">
+                    <legend>Filtro contenuti</legend>
+                    <label class="hideLabel" for="filter">filtro per il contenuto</label>
                     <select id="filterContent" name="filterContent" aria-label="Filtro per il tipo di contenuto">
                         <option selected="selected" value="Opera"> Opera</option>
                         <option value="Evento"> Evento</option>
                     </select>
-
+                    <label class="hideLabel" for="filter">filtro per la opera</label>
                     <select id="filterOpera" name="filterOpera" aria-label="Filtro per il tipo di opera">
                         <option selected="selected" value="Dipinto"> Dipinto</option>
                         <option value="Scultura"> Scultura</option>

@@ -8,10 +8,8 @@
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
-  max-width: 100%;
   line-height: 1.5em;
-
-  /* TODO: max-width: 1024px; */
+  max-width: 1024px;
 }
 
 /* Impostazione colore di sfondo e larghezza minima della pagina */
@@ -119,7 +117,8 @@ a:visited {
   border-radius: 20px;
   color: #000;
   font-size: 1.5em;
-  margin: 1em;
+  margin-top: 0.5em;
+  margin-bottom: 0.7em;
   padding: 0.5em;
 }
 
@@ -157,9 +156,9 @@ a:visited {
 #menu {
   display: none;
   background-color: #eee;
-  margin: 1.5em;
   border-radius: 20px;
   white-space: nowrap;
+  margin-bottom: 1em;
 }
 
 /* Toglie i pallini dal menu */
@@ -176,7 +175,6 @@ a:visited {
 
 #menu li:hover {
   background-color: #fff;
-  font-weight: bold;
   border-radius: 20px;
 }
 
@@ -186,7 +184,7 @@ a:visited {
   background-color: #fff;
   color: #000;
   border-radius: 20px;
-  margin: 1.5em;
+  margin-bottom: 1em;
   padding: 2em;
 }
 
@@ -296,7 +294,7 @@ a:visited {
   margin-bottom: 0;
 }
 
-#hideLabel,
+.hideLabel,
 .hideLegend {
   position: absolute;
   height: 0;
@@ -315,7 +313,7 @@ a:visited {
 #operaDescriptionArea,
 #eventDescriptionArea,
 #noticeDescriptionArea {
-  height: 20em;
+  height: 10em;
   margin-bottom: 1em;
 }
 
@@ -579,7 +577,7 @@ a:visited {
   }
 
   #menu li {
-    font-size: 2em;
+    font-size: 1.2em;
   }
 
   /* Regole per i contenuti delle pagine */
@@ -669,7 +667,7 @@ a:visited {
 
   /* Regole per i contenuti delle pagine */
   #content {
-    margin-left: 23em;
+    margin-left: 21.5em;
   }
 
   #userTools {
