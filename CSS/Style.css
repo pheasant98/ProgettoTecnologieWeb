@@ -11,7 +11,7 @@
   max-width: 100%;
   line-height: 1.5em;
 
-  /* TODO: max-width: 1024px; */
+  max-width: 1024px;
 }
 
 /* Impostazione colore di sfondo e larghezza minima della pagina */
@@ -87,7 +87,7 @@ a:visited {
 }
 
 #imageError404 {
-  background-image: url('../images/EmptyPortrait.png');
+  background-image: url('../images/PortraitsCorridor.png');
   text-indent: 100%;
   background-size: 100%;
   background-position: center;
@@ -468,9 +468,9 @@ a:visited {
   }
 
   #imageError404 {
-    height: 13em;
-    width: 13em;
-    margin-left: 27%;
+    position: center;
+    height: 10em;
+    width: 25em;
   }
 
   /* Regole per i breadcrumbs delle pagine */
@@ -564,9 +564,9 @@ a:visited {
   }
 
   #imageError404 {
-    float: right;
-    height: 21em;
-    width: 21em;
+    position: center;
+    height: 15em;
+    width: 40em;
   }
 
   /* Regole per i menu delle pagine */
@@ -642,9 +642,9 @@ a:visited {
   }
 
   #imageError404 {
-    float: right;
+    position: center;
     height: 25em;
-    width: 25em;
+    width: 55em;
   }
 
   /* Regole per i menu delle pagine */
