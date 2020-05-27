@@ -55,10 +55,10 @@ class UsersController {
         unset($this->users);
     }
 
-    public function addUser($name, $surname, $sex, $date, $mail, $username, $password, $repeted_password) {
+    public function addUser($name, $surname, $sex, $date, $mail, $username, $password, $repeated_password) {
         $message = UsersController::checkInput($name, $surname, $sex, $date, $mail, $username, $password);
 
-        $message .= $password === $repeted_password ? '' : '[La conferma della <span xml:lang="en">password</span> non corrisponde a quella inserita inizialmente]';
+        $message .= $password === $repeated_password ? '' : '[La conferma della <span xml:lang="en">password</span> non corrisponde a quella inserita inizialmente]';
 
         if ($message === '') {
             if ($this->users->postUser($name, $surname, $date, $sex, $username, $mail, $password)) {
@@ -76,6 +76,41 @@ class UsersController {
         return $message;
     }
 
+    public function getUsersCount() {
+        $result_set = $this->users->getUsersCount();
+        $count = $result_set->fetch_assoc()['Totale'];
+        $result_set->free();
+        return $count;
+    }
+
+    public function getUsers($offset) {
+        $result_set = $this->users->getUsers($offset);
+
+        $id = 'user';
+        $button = 'buttonBack';
+        $counter = 1;
+        $content = '';
+
+        while($row = $result_set->fetch_assoc()) {
+            $content .= '
+                <li>
+                    <a id="' . $id . $counter . '" href="Utente.php?user=' . $row['Username'] . '">' .  $row['Username'] . '</a>
+
+                    <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation">Salta l\'utente</a>
+
+                    <p class="userButton">
+                        <a class="button" href="" title="Rimuovi utente" role="button" aria-label="Rimuovi utente">Rimuovi</a>
+                    </p>
+                </li>
+            ';
+
+            $counter++;
+        }
+
+        $result_set->free();
+        return $content;
+    }
+
     public function getUser($username) {
         $result_set = $this->users->getUser($username);
         $row = $result_set->fetch_assoc();
@@ -88,6 +123,26 @@ class UsersController {
         $row = $result_set->fetch_assoc();
         $result_set->free();
         return $row;
+    }
+
+    public function updateUser($username, $name, $surname, $date, $sex, $mail, $oldPassword, $newPassword, $repeated_password) {
+        //TODO: Fare controllo sulla password
+        $message = UsersController::checkInput($name, $surname, $sex, $date, $mail, $username, $newPassword);
+        $message .= $newPassword === $repeated_password ? '' : '[La conferma della <span xml:lang="en">password</span> non corrisponde a quella inserita inizialmente]';
+        if ($message === '') {
+            if ($this->users->updateUser($username, $name, $surname, $date, $sex, $mail, $newPassword)) {
+                $message = '<p class="success">Utente aggiornata correttamente</p>';
+            } else {
+                $message = '<p class="error">Errore nell\'aggiornamento dell\'utente</p>';
+            }
+        } else {
+            $message = '<ul>' . $message;
+            $message = str_replace('[', '<li class="error">', $message);
+            $message = str_replace(']', '</li>', $message);
+            $message .= '</ul>';
+        }
+
+        return $message;
     }
 }
 

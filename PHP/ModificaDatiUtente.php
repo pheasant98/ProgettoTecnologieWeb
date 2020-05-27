@@ -9,34 +9,37 @@ require_once ('Controller/UsersController.php');
 
 session_start();
 
-if (LoginController::isAuthenticatedUser()) {
+if (!LoginController::isAuthenticatedUser()) {
     header('Location: Errore.php');
 }
-
 $message = '';
+$usersController = new UsersController();
+$user = $usersController->getUser($_SESSION['username']);
 
-if (isset($_POST['submit']) && $_POST['submit'] === 'Registrati') {
-    $name = $_POST['name'];
-    $surname = $_POST['surname'];
-    $sex = $_POST['sex'];
-    $date = $_POST['date'];
-    $mail = $_POST['mail'];
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $repeated_password = $_POST['repeatePassword'];
+$name = $user['Nome'];
+$surname = $user['Cognome'];
+$sex = $user['Sesso'];
+$date = $user['DataNascita'];
+$mail = $user['Email'];
 
-    $users_controller = new UsersController();
-    $message = $users_controller->addUser($name, $surname, $sex, $date, $mail, $username, $password, $repeated_password);
-    unset($users_controller);
-}
+if (isset($_POST['submit']) && $_POST['submit'] === 'Modifica') {
+    $name = $_POST['Name'];
+    $surname = $_POST['Surname'];
+    if ($_POST['Sex'] === 'Maschile') {
+       $sex = 'M';
+    } elseif ($_POST['Sex'] === 'Femminile') {
+        $sex = 'F';
+    } else {
+        $sex = 'A';
+    }
+    $date = $_POST['Date'];
+    $mail = $_POST['Mail'];
+    $oldPassword = hash('sha256', $_POST['OldPassword']);
+    $newPassword = hash('sha256', $_POST['NewPassword']);
+    $repeated_password = hash('sha256', $_POST['RepeatePassword']);
 
-if ($message === '') {
-    $name = '';
-    $surname = '';
-    $sex = 'A';
-    $date = '';
-    $mail = '';
-    $username = '';
+    $message = $usersController->updateUser($_SESSION['username'], $name, $surname, $date, $sex, $mail, $oldPassword, $newPassword, $repeated_password);
+    unset($usersController);
 }
 
 $male = ' ';
@@ -51,7 +54,7 @@ if ($sex === 'A') {
     $female = ' checked="checked" ';
 }
 
-$document = file_get_contents('../HTML/Registrazione.html');
+$document = file_get_contents('../HTML/ModificaDatiUtente.html');
 $login = LoginController::getAuthenticationMenu();
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
@@ -63,7 +66,6 @@ $document = str_replace("<span id='femaleCheckedPlaceholder'/>", $female, $docum
 $document = str_replace("<span id='otherCheckedPlaceholder'/>", $other, $document);
 $document = str_replace("<span id='dateValuePlaceholder'/>", $date, $document);
 $document = str_replace("<span id='mailValuePlaceholder'/>", $mail, $document);
-$document = str_replace("<span id='usernameValuePlaceholder'/>", $username, $document);
 
 echo $document;
 

@@ -57,7 +57,7 @@
                 Ti trovi in:
                 <a href="HomePage.php" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a>
                 &gt;&gt;
-                <a href="AreaPersonale.html" aria-label="Vai alla pagina Area personale" tabindex="10">Area personale</a>
+                <a href="AreaPersonale.php" aria-label="Vai alla pagina Area personale" tabindex="10">Area personale</a>
                 &gt;&gt;
                 <strong>Modifica dati utente</strong>
             </p>
@@ -93,43 +93,58 @@
         </div>
 
         <div id="content" role="main">
-            <h2 class="title">Modifica dati</h2>
+            <h3 class="title">Modifica dati utente</h3>
 
-            <form id="ModificaDatiUtente" name="ModificaDati" action="AreaPersonale.html" method="post">
-                <fieldset class="fieldset">
-                    <legend>Dati modificabili</legend>
+            <form name="updateEvent" action="" method="post">
+                <fieldset id="updateField" class="hideFieldset">
+                    <legend class="hideLegend">Modifica utente</legend>
 
-                    <p>
-                        <label id="labelNome" for="Nome">Nome</label>
-                        <input id="Nome" class="formElement" name="Nome" type="text" aria-label="Modifica nome utente" aria-required="true"/>
-                    </p>
+                    <span id='outputMessagePlaceholder'/>
 
-                    <p>
-                        <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
-                    </p>
+                    <fieldset id="generalInformation" class="fieldset">
+                        <legend>Informazioni dell'utente</legend>
 
-                    <p>
-                        <label id="labelCognome" for="Cognome">Cognome</label>
-                        <input id="Cognome" class="formElement" name="Cognome" type="text" aria-label="Modifica cognome utente" aria-required="true"/>
-                    </p>
+                        <p>
+                            <label id="labelNome" for="Nome">Nome</label>
+                            <input id="Nome" class="formElement" name="Name" type="text" value="<span id='nameValuePlaceholder'/>" aria-label="Modifica nome utente" aria-required="true"/>
+                        </p>
 
-                    <p>
-                        <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
-                    </p>
+                        <p>
+                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
+                        </p>
+
+                        <p>
+                            <label id="labelCognome" for="Cognome">Cognome</label>
+                            <input id="Cognome" class="formElement" name="Surname" type="text" value="<span id='surnameValuePlaceholder'/>" aria-label="Modifica cognome utente" aria-required="true"/>
+                        </p>
+
+                        <p>
+                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
+                        </p>
+
+                        <p>
+                            <label id="labelDataNascita" for="DataNascita">Data di nascita</label>
+                            <input id="DataNascita" class="formElement" name="Date" type="text" value="<span id='dateValuePlaceholder'/>" aria-label="Modifica data di nascita utente" aria-required="true"/>
+                        </p>
+
+                        <p>
+                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
+                        </p>
+                    </fieldset>
 
                     <fieldset id="fieldSex" class="fieldset">
                         <legend>Sesso</legend>
 
                         <p>
-                            <input id="radioSexM" name="radioSex" value="M" type="radio" aria-label="Pulsante per dichiarare sesso maschile"/>
+                            <input id="radioSexM" name="Sex" value="M" type="radio"<span id='maleCheckedPlaceholder'/>aria-label="Pulsante per dichiarare sesso maschile"/>
                             <label id="labelSexM" for="radioSexM">Maschile</label>
                         </p>
                         <p>
-                            <input id="radioSexF" name="radioSex" value="F" type="radio" aria-label="Pulsante per dichiarare sesso femminile"/>
+                            <input id="radioSexF" name="Sex" value="F" type="radio"<span id='femaleCheckedPlaceholder'/>aria-label="Pulsante per dichiarare sesso femminile"/>
                             <label id="labelSexF" for="radioSexF">Femminile</label>
                         </p>
                         <p>
-                            <input id="radioSexA" name="radioSex" value="A" type="radio" checked="checked" aria-label="Pulsante per non dichiarare il sesso"/>
+                            <input id="radioSexA" name="Sex" value="A" type="radio"<span id='otherCheckedPlaceholder'/>aria-label="Pulsante per non dichiarare il sesso"/>
                             <label id="labelSexA" for="radioSexA">Preferisco non dichiarare</label>
                         </p>
                     </fieldset>
@@ -139,26 +154,44 @@
                     </p>
 
                     <p>
-                        <label id="labelDataNascita" for="DataNascita">Data di nascita</label>
-                        <input id="DataNascita" class="formElement" name="DataNascita" type="text" aria-label="Modifica data di nascita utente" aria-required="true"/>
-                    </p>
-
-                    <p>
-                        <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
-                    </p>
-
-                    <p>
                         <label id="labelEmail" for="Email">Email</label>
-                        <input id="Email" class="formElement" name="Email" type="text" aria-label="Modifica email utente" aria-required="true"/>
+                        <input id="Email" class="formElement" name="Mail" type="text" value="<span id='mailValuePlaceholder'/>" aria-label="Modifica email utente" aria-required="true"/>
                     </p>
 
                     <p>
                         <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
                     </p>
+
+                    <fieldset id="changePassword" class="fieldset">
+                        <legend>Cambio password</legend>
+
+                        <p>
+                            <label id="labelOldPassword" for="OldPassword" xml:lang="en">Vecchia password</label>
+                            <input id="OldPassword" class="formElement" type="password" name="OldPassword" aria-label="Inserisci la vecchia password"/>
+                        </p>
+
+                        <p>
+                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
+                        </p>
+
+                        <p>
+                            <label id="labelNewPassword" for="NewPassword" xml:lang="en">Nuova password</label>
+                            <input id="NewPassword" class="formElement" type="password" name="NewPassword" aria-label="Inserisci la nuova password"/>
+                        </p>
+
+                        <p>
+                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
+                        </p>
+
+                        <p>
+                            <label id="labelRepeatePassword" for="RepeatePassword">Ripetere la <span xml:lang="en">password</span></label>
+                            <input id="RepeatePassword" class="formElement" type="password" name="RepeatePassword" aria-label="Inserisci nuovamente la password"/>
+                        </p>
+                    </fieldset>
 
                     <p class="navigation">
-                        <input id="buttonConfirm" class="button" name="InviaModificheUtente" type="submit" value="Conferma" role="button" aria-label="Conferma le modifiche apportate"/>
-                        <input id="buttonReset" class="button" name="CancellaModificheUtente" type="reset" value="Cancella" role="button" aria-label="Cancella i dati inseriti"/>
+                        <input id="buttonConfirm" class="button" name="submit" type="submit" value="Modifica" role="button" aria-label="Invia le modifiche apportate"/>
+                        <input id="buttonReset" class="button" name="cancel" type="reset" value="Cancella" role="button" aria-label="Cancella le modifiche apportate"/>
                     </p>
                 </fieldset>
             </form>
