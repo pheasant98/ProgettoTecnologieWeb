@@ -57,7 +57,7 @@
                 Ti trovi in:
                 <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a>
                 &gt;&gt;
-                <a href="AreaPersonale.html" title="Area Personale" aria-label="Vai alla pagina dell'area personale" tabindex="10">Area personale</a>
+                <a href="AreaPersonale.php" title="Area Personale" aria-label="Vai alla pagina dell'area personale" tabindex="10">Area personale</a>
                 &gt;&gt;
                 <strong>Gestione contenuti</strong>
             </p>
@@ -104,10 +104,19 @@
                         <option value="Evento"> Evento</option>
                     </select>
 
-                    <select id="filterOpera" name="filterOpera" aria-label="Filtro per il tipo di opera">
+                    <select id="filterOpera" name="filterArtwork" aria-label="Filtro per il tipo di opera">
                         <option selected="selected" value="Dipinto"> Dipinto</option>
                         <option value="Scultura"> Scultura</option>
                     </select>
+
+                    <!--
+                        TODO: Aggiungere filtro tipo evento e modificarlo tramite Javascript
+                        <select id="filterEvento" name="filterEvent" aria-label="Filtro per il tipo di opera">
+                            <option selected="selected" value="Dipinto"> Dipinto</option>
+                            <option value="Scultura"> Scultura</option>
+                        </select>
+                        TODO: Sistemare nomi id in inglese
+                    -->
 
                     <input id="buttonConfirm" class="button" name="filter" value="Filtra" type="button" aria-label="Pulsante di conferma"/>
                 </fieldset>
