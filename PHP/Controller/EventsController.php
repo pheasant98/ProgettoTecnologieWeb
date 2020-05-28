@@ -122,6 +122,38 @@ class EventsController {
         return $content;
     }
 
+    public function getEventsTitle($type, $offset, $id_counter, $quantity = 5) {
+        if($type === '') {
+            $result_set = $this->events->getEventsOrderByTitle($offset, $quantity);
+        } else {
+            $result_set = $this->events->getEventsByTypeOrderByTitle($type, $offset, $quantity);
+        }
+        $id = 'content';
+        $button = 'buttonBack';
+        $counter = 1;
+        $id_counter += 1;
+        $content = '';
+
+        while($row = $result_set->fetch_assoc()) {
+            $content .= '
+                <li>
+                    <a id="' . $id . $counter . '" href="Evento.php?id=' . $row['ID'] . '" aria-label="Vai all\'evento">' . $row['Titolo'] . '</a>
+
+                    <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($id_counter + 1)) . '" class="skipInformation" aria-label="Salta l\'evento">Salta l\'evento</a>
+
+                    <p class="userButton">
+                        <a class="button" href="ModificaEvento.php?id=' . $row['ID'] . '" title="Modifica dettagli evento" role="button" aria-label="Modifica dettagli evento">Modifica</a>
+                        <a class="button" href="" title="Rimuovi evento" role="button" aria-label="Rimuovi evento">Rimuovi</a>
+                    </p>
+                </li>
+            ';
+            $counter++;
+        }
+
+        $result_set->free();
+        return $content;
+    }
+
     public function getEvent($id) {
         return $result_set = $this->events->getEvent($id)->fetch_assoc();
         $row = $result_set->fetch_assoc();

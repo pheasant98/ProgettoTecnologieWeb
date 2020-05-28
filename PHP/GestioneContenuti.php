@@ -14,18 +14,25 @@ if (!LoginController::isAuthenticatedUser()) {
     header('Location: Errore.php');
 }
 
-$controller = new UsersController();
-$user_count = $controller->getUsersCount();
+$artworks_controller = new ArtworksController();
+$events_controller = new EventsController();
+$artwork_count = $artworks_controller->getArtworksCount();
+$event_count = $events_controller->getEventsCount();
 
-if($user_count == 1) {
-    $user_number_found = '<p> È stato trovato ' . $user_count . ' utente: </p>';
+if($artwork_count == 1) {
+    $artworks_number_found = '<p> È stata trovata ' . $artwork_count . ' opera. </p>';
 } else {
-    $user_number_found = '<p> Sono stati trovati ' . $user_count . ' utenti: </p>';
+    $artworks_number_found = '<p> Sono state trovate ' . $artwork_count . ' opere. </p>';
+}
+if($event_count == 1) {
+    $events_number_found = '<p> È stato trovato ' . $event_count . ' evento. </p>';
+} else {
+    $events_number_found = '<p> Sono stati trovati ' . $event_count . ' eventi. </p>';
 }
 
 if (!isset($_GET['page'])) {
     $page = 1;
-} elseif (($_GET['page'] < 1) || (($_GET['page'] - 1) > ($user_count / 5))) {
+} elseif (($_GET['page'] < 1) || (($_GET['page'] - 1) > (($artwork_count + $event_count) / 5))) {
     header('Location: Errore.php');
 } else {
     $page = $_GET['page'];
@@ -33,29 +40,44 @@ if (!isset($_GET['page'])) {
 
 $offset = ($page - 1) * 5;
 
-$user_list = $controller->getUsers($offset);
+if ((($artwork_count - $offset) < 5) && (($artwork_count - $offset) > 0)) {
+    if($event_count > 0) {
+        $contents_list = $artworks_controller->getArtworksTitle('', $offset, true);
+        $events_offset = ($page * 5) - $artwork_count;
+        $contents_list .= $events_controller->getEventsTitle('', 0, $artwork_count, $events_offset);
+    } else {
+        $contents_list = $artworks_controller->getArtworksTitle('', $offset);
+    }
+} elseif ($offset > $artwork_count) {
+    $events_offset = $offset - $artwork_count;
+    $contents_list = $events_controller->getEventsTitle('', $events_offset, $offset);
+} else {
+    $contents_list = $artworks_controller->getArtworksTitle('', $offset);
+}
 
-unset($controller);
+unset($artworks_controller);
+unset($events_controller);
 
-$previous_users = '';
-$next_users = '';
+$previous_contents = '';
+$next_contents = '';
 
 if ($page > 1) {
-    $previous_users = '<a id="buttonBack" class="button" href="?page=' . ($page - 1) . '" title="Utenti precedenti" role="button" aria-label="Torna agli utenti precedenti"> &lt; Precedente</a>';
+    $previous_contents = '<a id="buttonBack" class="button" href="?page=' . ($page - 1) . '" title="Utenti precedenti" role="button" aria-label="Torna ai contenuti precedenti"> &lt; Precedenti</a>';
 }
 
-if (($page * 5) < $user_count) {
-    $next_users = '<a id="buttonNext" class="button" href="?page=' . ($page + 1) . '" title="Utenti successivi" role="button" aria-label="Vai agli utenti successivi"> Successivo &gt;</a>';
+if (($page * 5) < ($artwork_count + $event_count)) {
+    $next_contents = '<a id="buttonNext" class="button" href="?page=' . ($page + 1) . '" title="Utenti successivi" role="button" aria-label="Vai ai contenuti successivi"> Successivi &gt;</a>';
 }
 
-$document = file_get_contents('../HTML/GestioneUtenti.html');
+$document = file_get_contents('../HTML/GestioneContenuti.html');
 $login = LoginController::getAuthenticationMenu();
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
-$document = str_replace("<span id='userNumberFoundPlaceholder'/>", $user_number_found, $document);
-$document = str_replace("<span id='userListPlaceholder'/>", $user_list, $document);
-$document = str_replace("<span id='buttonBackPlaceholder'/>", $previous_users, $document);
-$document = str_replace("<span id='buttonNextPlaceholder'/>", $next_users, $document);
+$document = str_replace("<span id='artworksNumberFoundPlaceholder'/>", $artworks_number_found, $document);
+$document = str_replace("<span id='eventsNumberFoundPlaceholder'/>", $events_number_found, $document);
+$document = str_replace("<span id='contentsListPlaceholder'/>", $contents_list, $document);
+$document = str_replace("<span id='buttonBackPlaceholder'/>", $previous_contents, $document);
+$document = str_replace("<span id='buttonNextPlaceholder'/>", $next_contents, $document);
 
 echo $document;
 
