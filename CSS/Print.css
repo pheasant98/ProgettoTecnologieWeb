@@ -85,7 +85,6 @@ a {
 #filter,
 #filterType,
 #filterContent,
-#filterPeriod,
 #filterOpera {
   border: 0;
   font-size: 1.5em;
@@ -157,8 +156,7 @@ a {
 }
 
 #operaDescriptionArea,
-#eventDescriptionArea,
-#noticeDescriptionArea {
+#eventDescriptionArea {
   height: 20em;
   margin-bottom: 1em;
 }
@@ -182,8 +180,7 @@ a {
   margin-left: 5%;
 }
 
-#reviewButton,
-#buyButton {
+#reviewButton {
   float: right;
   font-size: 1em;
 }
@@ -248,7 +245,6 @@ a {
 #clause,
 #reviewAsk,
 #map,
-#warning,
 #buttonNext,
 #buttonBack,
 #buttonBackUp,
