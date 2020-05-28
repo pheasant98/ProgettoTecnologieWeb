@@ -56,10 +56,10 @@ class FileUtilities {
             return false;
         }
 
-        $this->path = sprintf($this->base_path . '%s.%s', sha1_file($_FILES['image']['tmp_name']), $this->extension);
+        $file_sha = sha1_file($_FILES['image']['tmp_name']);
 
-        if (file_exists($this->path)) {
-            return false;
+        while (file_exists($this->path = sprintf($this->base_path . '%s.%s', $file_sha, $this->extension))) {
+            $file_sha .= '_';
         }
 
         if (move_uploaded_file($_FILES['image']['tmp_name'], $this->path) === false) {
