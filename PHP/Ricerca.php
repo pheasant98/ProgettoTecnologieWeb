@@ -1,26 +1,15 @@
 <?php
 
-require_once ('Controller/LoginController.php');
-
-session_start();
-
 if (!isset($_POST['submit']) || $_POST['submit'] !== 'Cerca' || !isset($_POST['filter']) || !isset($_POST['search'])) {
     header('Location: Errore.php');
 }
 
 if ($_POST['filter'] === 'Opera') {
-    require_once ('Controller/ArtworksController.php');
-
-    $controller = new ArtworksController();
-
+    header('Location: RicercaOpere.php?search=' . $_POST['search']);
 } else if ($_POST['filter'] === 'Evento') {
-    require_once ('Controller/EventsController.php');
-
-    $controller = new EventsController();
+    header('Location: RicercaEventi.php?search=' . $_POST['search']);
 } else {
     header('Location: Errore.php');
 }
-
-
 
 ?>
