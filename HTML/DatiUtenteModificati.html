@@ -6,11 +6,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-        <title>Modifica effettuata | Museo arte nel tempo</title>
+        <title>Dati utente modificati | Museo arte nel tempo</title>
 
         <meta name="language" content="italian it"/>
-        <meta name="title" content="Modifica effettuata | Museo arte nel tempo"/>
-        <meta name="description" content="Modifica dei dati utente andata a buon fine"/>
+        <meta name="title" content="Dati utente modificati | Museo arte nel tempo"/>
+        <meta name="description" content="Modifica dei dati dell'utente andata a buon fine"/>
         <meta name="keywords" content="arte, dipinto, scultura, museo"/>
         <meta name="author" content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto"/>
 
@@ -36,18 +36,19 @@
 
             <span id='loginMenuPlaceholder'/>
 
-            <form id="search" name="search" action="" method="post" role="search" aria-label="form per la ricerca nella pagina">
+            <form id="search" name="search" action="" method="post" role="search" aria-label="Form per la ricerca tra i contenuti del sito">
                 <fieldset id="searchBox">
                     <legend class="hideLegend">Ricerca</legend>
-
-                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
+                    
+					<label class="hideLabel" for="filter">filtro per la ricerca</label>
+                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="2">
                         <option selected="selected" value="Opera">Opera</option>
                         <option value="Evento">Evento</option>
                     </select>
 
-                    <label id="hideLabel" for="searchText">Cerca nel sito</label>
-                    <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
-                    <input id="buttonSubmit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
+                    <label class="hideLabel" for="searchText">Cerca nel sito</label>
+                    <input id="searchText" name="search" type="text" aria-label="Casella di ricerca" tabindex="1"/>
+                    <input id="buttonSubmit" name="submit" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="3"/>
                 </fieldset>
             </form>
         </div>
@@ -55,13 +56,13 @@
         <div id="breadcrumbs" aria-label="breadcrumbs">
             <p>
                 Ti trovi in:
-                <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a>
+                <a href="HomePage.php" title="Home" aria-label="Vai alla homepage del museo" tabindex="9" xml:lang="en">Home</a>
                 &gt;&gt;
-                <a href="AreaPersonale.html" title="Area personale" aria-label="Vai alla pagina Area personale" tabindex="10">Area personale</a>
+                <a href="AreaPersonale.php" title="Area personale" aria-label="Vai alla pagina dell'area personale" tabindex="10">Area personale</a>
                 &gt;&gt;
-                <a href="ModificaDatiUtente.html" title="Modifica dati utente" aria-label="Vai alla pagina per la modifica dei dati utente" tabindex="11">Modifica dati utente</a>
+                <a href="ModificaDatiUtente.php" title="Modifica dati utente" aria-label="Vai alla pagina per la modifica dei dati utente" tabindex="11">Modifica dati utente</a>
                 &gt;&gt;
-                <strong>Modifica effettuata</strong>
+                <strong>Dati utente modificati</strong>
             </p>
         </div>
 
@@ -95,16 +96,16 @@
         </div>
 
         <div id="content" role="main">
-            <h2 class="title">Modifica effettuata</h2>
+            <h2 class="title">Dati utente modificati</h2>
 
             <p>
-                La modifica dei dati utente è stata portata a termine con successo, è ora possibile tornare alla <span xml:lang="en">home</span> oppure alla pagina del proprio
-                <span xml:lang="en">account</span> per usufruire dei servizi dedicati.
+                I dati utente sono stati modificati con successo, è ora possibile tornare alla <span xml:lang="en">home</span> oppure alla pagina del proprio
+                <span xml:lang="en">account</span> per usufruire degli altri servizi dedicati.
             </p>
 
             <p class="navigation">
                 <a id="homepageButton" class="button" href="HomePage.php" title="" role="button" aria-label="vai alla homepage del sito">Home</a>
-                <a id="userButton" class="button" href="AreaPersonale.html" title="" role="button" aria-label="vai alla pagina dell'area utente">Area personale</a>
+                <a id="userButton" class="button" href="AreaPersonale.php" title="" role="button" aria-label="vai alla pagina dell'area personale">Area personale</a>
             </p>
 
             <a id="buttonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">

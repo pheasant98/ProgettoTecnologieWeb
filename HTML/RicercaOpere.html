@@ -6,12 +6,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-        <title>Evento modificato | Museo arte nel tempo</title>
+        <title>Ricerca opere | Museo arte nel tempo</title>
 
         <meta name="language" content="italian it"/>
-        <meta name="title" content="Evento modificato | Museo arte nel tempo"/>
-        <meta name="description" content="Modifica dell'evento andata a buon fine"/>
-        <meta name="keywords" content="arte, pittura, scultura, museo"/>
+        <meta name="title" content="Ricerca opere | Museo arte nel tempo"/>
+        <meta name="description" content="Visualizzazione risultati della ricerca tra le opere"/>
+        <meta name="keywords" content="arte, dipinto, scultura, museo"/>
         <meta name="author" content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto"/>
 
         <link rel="stylesheet" media="screen" href="../CSS/Style.css" type="text/css"/>
@@ -58,54 +58,51 @@
                 Ti trovi in:
                 <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a>
                 &gt;&gt;
-                <a href="AreaPersonale.php" title="Area personale" aria-label="Vai alla pagina dell'area personale" tabindex="10">Area personale</a>
-                &gt;&gt;
-                <a href="ModificaEvento.php" title="Modifica un evento" aria-label="Vai alla pagina per modificare un evento" tabindex="11">Modifica evento</a>
-                &gt;&gt;
-                <strong>Evento modificato</strong>
+                <strong>Ricerca opere</strong>
             </p>
         </div>
 
         <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
             <ul>
                 <li>
-                    <a id="skipMenu" class="skipInformation" href="#content" aria-label="Vai al contenuto" tabindex="13">Vai al contenuto</a>
+                    <a id="skipMenu" class="skipInformation" href="#content" aria-label="Vai al contenuto" tabindex="10">Vai al contenuto</a>
                 </li>
 
                 <li>
-                    <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="14" xml:lang="en">Home</a>
+                    <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="11" xml:lang="en">Home</a>
                 </li>
 
                 <li>
-                    <a href="Opere.php" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="15">Opere</a>
+                    <a href="Opere.php" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="12">Opere</a>
                 </li>
 
                 <li>
-                    <a href="Eventi.php" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="16">Eventi</a>
+                    <a href="Eventi.php" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="13">Eventi</a>
                 </li>
 
                 <li>
-                    <a href="CosaDiconoDiNoi.php" title="Cosa dicono di noi" aria-label="Vai alla pagina delle recensioni" tabindex="17">Cosa
+                    <a href="CosaDiconoDiNoi.php" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni" tabindex="14">Cosa
                         dicono di noi</a>
                 </li>
 
                 <li>
-                    <a href="Contatti.php" title="Contatti" aria-label="Vai alla pagina dei contatti" tabindex="18">Contatti</a>
+                    <a href="Contatti.php" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti" tabindex="15">Contatti</a>
                 </li>
             </ul>
         </div>
 
         <div id="content" role="main">
-            <h2 class="title">Evento modificato</h2>
+            <h2 class="title">Ricerca opere</h2>
 
-            <p>
-                L'evento è stato modificato con successo, è ora possibile tornare alla <span xml:lang="en">home</span> oppure alla pagina del proprio
-                <span xml:lang="en">account</span> per modificare un altro evento oppure usufruire degli altri servizi dedicati.
-            </p>
+            <p>È stata eseguita una ricerca tra le opere presenti nel sito <span id='resultNumberPlaceholder'/>:</p>
+
+            <a href="#buttonBack" class="skipInformation">Salta i risultati presenti nella pagina</a>
+
+            <span id='resultListPlaceholder'/>
 
             <p class="navigation">
-                <a id="homepageButton" class="button" href="HomePage.php" title="" role="button" aria-label="vai alla homepage del sito">Home</a>
-                <a id="userButton" class="button" href="AreaPersonale.php" title="" role="button" aria-label="vai alla pagina dell'area personale">Area personale</a>
+                <span id='buttonBackPlaceholder'/>
+                <span id='buttonNextPlaceholder'/>
             </p>
 
             <a id="buttonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">

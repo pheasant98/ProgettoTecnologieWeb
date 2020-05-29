@@ -36,18 +36,19 @@
 
             <span id='loginMenuPlaceholder'/>
 
-            <form id="search" name="search" action="" method="post" role="search">
+            <form id="search" name="search" action="" method="post" role="search" aria-label="Form per la ricerca tra i contenuti del sito">
                 <fieldset id="searchBox">
                     <legend class="hideLegend">Ricerca</legend>
-
-                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
+                    
+					<label class="hideLabel" for="filter">filtro per la ricerca</label>
+                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="2">
                         <option selected="selected" value="Opera">Opera</option>
                         <option value="Evento">Evento</option>
                     </select>
 
-                    <label id="hideLabel" for="searchText">Cerca nel sito</label>
-                    <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
-                    <input id="buttonSubmit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
+                    <label class="hideLabel" for="searchText">Cerca nel sito</label>
+                    <input id="searchText" name="search" type="text" aria-label="Casella di ricerca" tabindex="1"/>
+                    <input id="buttonSubmit" name="submit" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="3"/>
                 </fieldset>
             </form>
         </div>
@@ -94,17 +95,17 @@
 
         <div id="content" role="main">
             <h2 class="title">Contenuti del sito</h2>
-
             <form id="contentFilter" action="GestioneContenuti.php" method="get">
-                <fieldset class="navigation">
-                    <legend class="hideLegend">Filtro contenuti</legend>
-
+                <fieldset class="fieldset">
+                    <legend>Filtro contenuti</legend>
+                    <label class="hideLabel" for="filter">filtro per il contenuto</label>
                     <select id="filterContent" name="filterContent" aria-label="Filtro per il tipo di contenuto">
                         <option value="Nessun filtro"<span id='filterOptionWholePlaceholder'/>>Nessun filtro</option>
                         <option value="Opera"<span id='filterOptionArtworksPlaceholder'/>> Opera</option>
                         <option value="Evento"<span id='filterOptionEventsPlaceholder'/>> Evento</option>
                     </select>
 
+                    <label class="hideLabel" for="filter">filtro per il contenuto</label>
                     <select id="filterContentType" name="filterContentType" aria-label="Filtro per il tipo di opera">
                         <option value="NessunFiltro"<span id='filterOptionWholeTypePlaceholder'/>>Nessun filtro</option>
                         <option value="Dipinto"<span id='filterOptionPaintingsPlaceholder'/>> Dipinto</option>

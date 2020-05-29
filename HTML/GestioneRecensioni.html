@@ -6,11 +6,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-        <title>Ricerca | Museo arte nel tempo</title>
+        <title>Gestione recensioni | Museo arte nel tempo</title>
 
         <meta name="language" content="italian it"/>
-        <meta name="title" content="Ricerca | Museo arte nel tempo"/>
-        <meta name="description" content="Visualizzazione risultati della ricerca"/>
+        <meta name="title" content="Gestione recensioni | Museo arte nel tempo"/>
+        <meta name="description" content="Elenco di tutte le recensioni presenti all'interno del sito"/>
+        <!-- <meta name="description" content="Elenco di tutte le recensioni lasciate"/> -->
         <meta name="keywords" content="arte, dipinto, scultura, museo"/>
         <meta name="author" content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto"/>
 
@@ -36,18 +37,19 @@
 
             <span id='loginMenuPlaceholder'/>
 
-            <form id="search" name="search" action="" method="post" role="search">
+            <form id="search" name="search" action="" method="post" role="search" aria-label="Form per la ricerca tra i contenuti del sito">
                 <fieldset id="searchBox">
                     <legend class="hideLegend">Ricerca</legend>
-
-                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
+                    
+					<label class="hideLabel" for="filter">filtro per la ricerca</label>
+                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="2">
                         <option selected="selected" value="Opera">Opera</option>
                         <option value="Evento">Evento</option>
                     </select>
 
-                    <label id="hideLabel" for="searchText">Cerca nel sito</label>
-                    <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
-                    <input id="buttonSubmit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
+                    <label class="hideLabel" for="searchText">Cerca nel sito</label>
+                    <input id="searchText" name="search" type="text" aria-label="Casella di ricerca" tabindex="1"/>
+                    <input id="buttonSubmit" name="submit" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="3"/>
                 </fieldset>
             </form>
         </div>
@@ -57,63 +59,57 @@
                 Ti trovi in:
                 <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a>
                 &gt;&gt;
-                <strong>Ricerca</strong>
+                <a href="AreaPersonale.php" title="Area personale" aria-label="Vai alla pagina area personale" tabindex="10">Area personale</a>
+                &gt;&gt;
+                <strong>Gestione recensioni</strong>
             </p>
         </div>
 
         <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
             <ul>
                 <li>
-                    <a id="skipMenu" class="skipInformation" href="#content" aria-label="Vai al contenuto" tabindex="10">Vai al contenuto</a>
+                    <a id="skipMenu" class="skipInformation" href="#content" aria-label="Vai al contenuto" tabindex="11">Vai al contenuto</a>
                 </li>
 
                 <li>
-                    <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="11" xml:lang="en">Home</a>
+                    <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="12" xml:lang="en">Home</a>
                 </li>
 
                 <li>
-                    <a href="Opere.php" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="12">Opere</a>
+                    <a href="Opere.php" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="13">Opere</a>
                 </li>
 
                 <li>
-                    <a href="Eventi.php" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="13">Eventi</a>
+                    <a href="Eventi.php" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="14">Eventi</a>
                 </li>
 
                 <li>
-                    <a href="CosaDiconoDiNoi.php" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni" tabindex="14">Cosa
+                    <a href="CosaDiconoDiNoi.php" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni" tabindex="15">Cosa
                         dicono di noi</a>
                 </li>
 
                 <li>
-                    <a href="Contatti.php" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti" tabindex="15">Contatti</a>
+                    <a href="Contatti.php" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti" tabindex="16">Contatti</a>
                 </li>
             </ul>
         </div>
 
         <div id="content" role="main">
-            <h2 class="title">Ricerca</h2>
+            <h2 class="title">Recensioni presenti nel sito</h2>
+            <!-- <h2 class="title">Recensioni effettuate</h2> -->
 
-            <p>Categoria</p>
-            <span>***</span>
+            <span id='reviewsNumberPlaceholder'/>
 
-            <p>Numero risultati:</p>
-            <span>***</span>
+            <a href="#buttonBack" class="skipInformation">Salta le recensioni presenti nella pagina</a>
 
-            <a href="#buttonBack" class="skipInformation">Salta i risultati presenti nella pagina</a>
-
-            <!--RISULTATO DI ESEMPIO-->
-
-            <dl class="list">
-                <dt>Nome</dt>
-                <dd class="description">Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione</dd>
-            </dl>
+            <span id='reviewsListPlaceholder'/>
 
             <p class="navigation">
-                <a id="buttonBack" class="button" href="" title="Risultati precedenti" role="button" aria-label="Torna ai risultati precedenti"> &lt; Precedente</a>
-                <a id="buttonNext" class="button" href="" title="Risultati successivi" role="button" aria-label="Vai ai risultati successivi"> Successivo &gt;</a>
+                <span id='buttonBackPlaceholder'/>
+                <span id='buttonNextPlaceholder'/>
             </p>
 
-            <a id="buttonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
+            <a id="buttonBackUp" href="#header" title="Torna su" aria-label="Torna su">
                 <img alt="Torna su" src="../Images/TornaSu.png"/>
             </a>
         </div>

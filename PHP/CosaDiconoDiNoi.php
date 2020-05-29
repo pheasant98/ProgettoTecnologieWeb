@@ -26,8 +26,13 @@ if (!isset($_GET['page'])) {
     $page = $_GET['page'];
 }
 
+$review_clause = '';
 $leave_review = '';
-if (LoginController::isAuthenticatedUser()) {
+if (!LoginController::isAuthenticatedUser()) {
+    $review_clause = 'Per lasciare una recensione è necessario aver effettuato l\'accesso al sito con un <span xml:lang="en">account</span> utente.';
+} else if (LoginController::isAdminUser()) {
+    $review_clause = 'Non è possibile lasciare una recensione se è stato fatto l\'accesso con un <span xml:lang="en">account</span> amministratore.';
+} else {
     $leave_review = '<a id="reviewButton" class="button" href="LasciaUnaRecensione.php" title="Pagina di scrittura di una recensione" role="button" aria-label="Vai alla pagina di scrittura della recensione">Lascia una recensione</a>';
 }
 
@@ -50,6 +55,7 @@ $document = file_get_contents('../HTML/CosaDiconoDiNoi.html');
 $login = LoginController::getAuthenticationMenu();
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
+$document = str_replace("<span id='clausePlaceholder'/>", $review_clause, $document);
 $document = str_replace("<span id='leaveReviewPlaceholder'/>", $leave_review, $document);
 $document = str_replace("<span id='reviewsNumberPlaceholder'/>", $reviews_count_found, $document);
 $document = str_replace("<span id='reviewsListPlaceholder'/>", $reviews_list, $document);

@@ -66,6 +66,13 @@ class EventsController {
         return $message;
     }
 
+    public function getSearchedEventsCount($search) {
+        $result_set = $this->events->getSearchedEventsCount($search);
+        $count = $result_set->fetch_assoc()['Totale'];
+        $result_set->free();
+        return $count;
+    }
+
     public function getEventsCount() {
         $result_set = $this->events->getEventsCount();
         $count = $result_set->fetch_assoc()['Totale'];
@@ -78,6 +85,44 @@ class EventsController {
         $count = $result_set->fetch_assoc()['Totale'];
         $result_set->free();
         return $count;
+    }
+
+    public function getSearchedEvents($search, $offset) {
+        $result_set = $this->events->getSearchedEvents($search, $offset);
+
+        $id = 'event';
+        $button = 'buttonBack';
+        $counter = 1;
+        $content = '';
+
+        while($row = $result_set->fetch_assoc()) {
+            $content .= '
+                <dt id="' . $id . $counter . '">
+                     <a href="Evento.php?id=' . $row['ID'] . '\" aria-label="Vai all\'evento">' . $row['Titolo'] . '</a>
+                </dt>
+                <dd>
+                    <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'evento">Salta l\'evento</a>
+    
+                    <p>
+                        Data inizio evento: ' . $row['DataInizio'] . '
+                    </p>
+                    
+                    <p>
+                        Data chiusura evento: ' . $row['DataFine'] . '
+                    </p>
+
+                    <p>
+                        Tipologia: ' . $row['Tipologia'] . '
+                    </p>
+                </dd>
+            ';
+
+            $counter++;
+        }
+
+        $result_set->free();
+
+        return $content;
     }
 
     public function getEvents($type, $offset) {
