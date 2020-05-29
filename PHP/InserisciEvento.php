@@ -10,7 +10,7 @@ require_once ('Controller/EventsController.php');
 session_start();
 
 if (!LoginController::isAuthenticatedUser()) {
-  header('Location: Error.php');
+  header('Location: Errore.php');
 }
 
 $message = '';

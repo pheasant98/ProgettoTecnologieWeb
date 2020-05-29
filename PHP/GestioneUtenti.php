@@ -9,9 +9,9 @@ require_once ('Controller/LoginController.php');
 
 session_start();
 
-//if (!LoginController::isAuthenticatedUser()) {
-  //  header('Location: Error.php');
-//}
+if (!LoginController::isAuthenticatedUser()) {
+    header('Location: Errore.php');
+}
 
 $controller = new UsersController();
 $user_count = $controller->getUsersCount();

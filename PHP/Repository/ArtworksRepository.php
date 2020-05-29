@@ -57,6 +57,7 @@ class ArtworksRepository {
     }
 
     public function getArtworksCountByStyle($style) {
+        echo $style;
         $statement = $this->dbConnection->prepareQuery('SELECT COUNT(*) AS Totale FROM Opere WHERE Stile=?;');
         $statement->bind_param('s', $style);
         return $this->dbConnection->executeSelectStatement($statement);

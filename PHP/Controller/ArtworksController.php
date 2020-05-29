@@ -161,7 +161,7 @@ class ArtworksController {
 
         while($row = $result_set->fetch_assoc()) {
             $content .= '
-                <dt id="'. $id . $counter . '">
+                <dt id="' . $id . $counter . '">
                      <a href="Opera.php?id=' . $row['ID'] . '" aria-label="Vai all\'opera">' . $row['Titolo'] . '</a>
                 </dt>
                 <dd>
@@ -181,6 +181,44 @@ class ArtworksController {
                     
                     <img alt="Immagine dell\'opera ' . $row['Titolo'] . '" src="../' . $row['Immagine'] . '"/>
                 </dd>
+            ';
+
+            $counter++;
+        }
+
+        $result_set->free();
+
+        return $content;
+    }
+
+    public function getArtworksTitle($style, $offset, $events_following = false) {
+        if ($style === '') {
+            $result_set = $this->artworks->getArtworks($offset);
+        } else {
+            $result_set = $this->artworks->getArtworksByStyle($style, $offset);
+        }
+
+        $id = 'content';
+        if ($events_following === true) {
+            $button = $id . '1';
+        } else {
+            $button = 'buttonBack';
+        }
+        $counter = 1;
+        $content = '';
+
+        while($row = $result_set->fetch_assoc()) {
+            $content .= '
+                <li>
+                    <a id="' . $id . $counter . '" href="Opera.php?id=' . $row['ID'] . '" aria-label="Vai all\'opera">' . $row['Titolo'] . '</a>
+
+                    <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'opera">Salta l\'opera</a>
+
+                    <p class="userButton">
+                        <a class="button" href="ModificaOpera.php?id=' . $row['ID'] . '" title="Modifica dettagli opera" role="button" aria-label="Modifica dettagli opera">Modifica</a>
+                        <a class="button" href="" title="Rimuovi opera" role="button" aria-label="Rimuovi opera">Rimuovi</a>
+                    </p>
+                </li>
             ';
 
             $counter++;
