@@ -45,12 +45,12 @@ if (($page * 5) < $user_reviews_count) {
     $next_reviews = '<a id="buttonNext" class="button" href="?page=' . ($page + 1) . '" title="Recensioni successive" role="button" aria-label="Vai alle recensioni successive"> Successive &gt;</a>';
 }
 
-$document = file_get_contents('../HTML/RecensioniUtente.html');
+$document = file_get_contents('../HTML/GestioneRecensioni.html');
 $login = LoginController::getAuthenticationMenu();
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
-$document = str_replace("<span id='userReviewsNumberPlaceholder'/>", $user_reviews_count_found, $document);
-$document = str_replace("<span id='userReviewsListPlaceholder'/>", $user_reviews_list, $document);
+$document = str_replace("<span id='reviewsNumberPlaceholder'/>", $user_reviews_count_found, $document);
+$document = str_replace("<span id='reviewsListPlaceholder'/>", $user_reviews_list, $document);
 $document = str_replace("<span id='buttonBackPlaceholder'/>", $previous_reviews, $document);
 $document = str_replace("<span id='buttonNextPlaceholder'/>", $next_reviews, $document);
 
