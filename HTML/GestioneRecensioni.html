@@ -6,18 +6,17 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-        <title>Eventi | Museo arte nel tempo</title>
+        <title>Gestione recensioni | Museo arte nel tempo</title>
 
         <meta name="language" content="italian it"/>
-        <meta name="title" content="Eventi | Museo arte nel tempo"/>
-        <!-- TODO: Cambiare la description togliendo periodi storici -->
-        <meta name="description" content="Elenco di opere appartenenti a un specifico periodo"/>
+        <meta name="title" content="Gestione recensioni | Museo arte nel tempo"/>
+        <meta name="description" content="Elenco di tutte le recensioni presenti all'interno del sito"/>
         <meta name="keywords" content="arte, dipinto, scultura, museo"/>
         <meta name="author" content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto"/>
 
-        <link href="../CSS/Style.css" media="screen" rel="stylesheet" type="text/css"/>
-        <link href="../CSS/Print.css" media="print" rel="stylesheet" type="text/css"/>
-        <link href="" rel="icon"/>
+        <link rel="stylesheet" media="screen" href="../CSS/Style.css" type="text/css"/>
+        <link rel="stylesheet" media="print" href="../CSS/Print.css" type="text/css"/>
+        <link rel="icon" href=""/>
 
         <script src="../JavaScript/Placeholder.js" type="text/javascript"></script>
     </head>
@@ -27,8 +26,8 @@
             <h1 id="logoImage" class="backgroundImage" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
 
             <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
-                        Menu ad <span xml:lang="en">hamburger</span>
-                    </span>
+                Menu ad <span xml:lang="en">hamburger</span>
+            </span>
 
             <div class="headerTitle">
                 <h1>Museo Arte nel Tempo</h1>
@@ -54,12 +53,14 @@
             </form>
         </div>
 
-        <div aria-label="breadcrumbs" id="breadcrumbs">
+        <div id="breadcrumbs" aria-label="breadcrumbs">
             <p>
                 Ti trovi in:
                 <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a>
                 &gt;&gt;
-                <strong>Eventi</strong>
+                <a href="AreaPersonale.php" title="Area personale" aria-label="Vai alla pagina area personale" tabindex="10">Area personale</a>
+                &gt;&gt;
+                <strong>Gestione recensioni</strong>
             </p>
         </div>
 
@@ -78,7 +79,7 @@
                 </li>
 
                 <li>
-                    <strong>Eventi</strong>
+                    <a href="Eventi.php" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="14">Eventi</a>
                 </li>
 
                 <li>
@@ -93,28 +94,13 @@
         </div>
 
         <div id="content" role="main">
-            <form id="eventFilter" action="Eventi.php" method="get">
-                <fieldset class="navigation">
-                    <legend class="hideLegend">Filtro</legend>
+            <h2 class="title">Recensioni presenti nel sito</h2>
 
-                    <label id="labelFilterType" for="filterType">Visualizza</label>
-                    <select name="filterType" id="filterType" aria-label="filtro per la tipologia di evento">
-                        <option value="TuttiGliEventi"<span id='filterOptionWholePlaceholder'/>> Tutti gli eventi </option>
-                        <option value="Mostre"<span id='filterOptionExhibitionsPlaceholder'/>> Mostre </option>
-                        <option value="Conferenze"<span id='filterOptionConferencesPlaceholder'/>> Conferenze </option>
-                    </select>
+            <span id='reviewsNumberPlaceholder'/>
 
-                    <input id="buttonConfirm" class="button" value="Filtra" type="submit" aria-label="Filtra"/>
-                </fieldset>
-            </form>
+            <a href="#buttonBack" class="skipInformation">Salta le recensioni presenti nella pagina</a>
 
-            <h3 class="subtitle">Eventi</h3>
-
-            <span id='eventNumberFoundPlaceholder'/>
-
-            <a href="#buttonBack" class="skipInformation">Salta le opere presenti nella pagina</a>
-
-            <span id='eventListPlaceholder'/>
+            <span id='reviewsListPlaceholder'/>
 
             <p class="navigation">
                 <span id='buttonBackPlaceholder'/>
@@ -126,7 +112,7 @@
             </a>
         </div>
 
-        <div aria-label="footer" id="footer">
+        <div id="footer" aria-label="footer">
             <p>
                 Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
             </p>
