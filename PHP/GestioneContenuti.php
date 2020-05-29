@@ -16,8 +16,50 @@ if (!LoginController::isAuthenticatedUser()) {
 
 $artworks_controller = new ArtworksController();
 $events_controller = new EventsController();
-$artwork_count = $artworks_controller->getArtworksCount();
-$event_count = $events_controller->getEventsCount();
+$artwork_count = 0;
+$event_count = 0;
+
+$filter_content = 'NessunFiltro';
+$filter_content_type = 'NessunFiltro';
+$filter_content_types = 'NessunFiltro'; //TODO: sistemare con enum giusto
+
+if (isset($_GET['filterContent'])) {
+    $filter_content = $_GET['filterContent'];
+    if ($_GET['filterContent'] === 'Opera') {
+        if (isset($_GET['filterContentType'])) {
+            $filter_content_type = $_GET['filterContentType'];
+            if ($_GET['filterContentType'] === 'Dipinto') {
+                $filter_content_types = 'Dipinti';
+                $artwork_count = $artworks_controller->getArtworksCountByStyle($filter_content_types);
+                echo $artwork_count;
+            } elseif ($_GET['filterContentType'] === 'Scultura') {
+                $filter_content_types = 'Sculture';
+                $artwork_count = $artworks_controller->getArtworksCountByStyle($filter_content_types);
+            } else {
+                $artwork_count = $artworks_controller->getArtworksCount();
+            }
+        }
+    } elseif ($_GET['filterContent'] === 'Evento') {
+        if (isset($_GET['filterContentType'])) {
+            $filter_content_type = $_GET['filterContentType'];
+            if ($_GET['filterContentType'] === 'Mostra') {
+                $filter_content_types = 'Mostre';
+                $event_count = $events_controller->getEventsCountByType($filter_content_types);
+            } elseif ($_GET['filterContentType'] === 'Conferenza') {
+                $filter_content_types = 'Conferenze';
+                $event_count = $events_controller->getEventsCountByType($filter_content_types);
+            } else {
+                $event_count = $events_controller->getEventsCount();
+            }
+        }
+    } else {
+        $artwork_count = $artworks_controller->getArtworksCount();
+        $event_count = $events_controller->getEventsCount();
+    }
+} else {
+    $artwork_count = $artworks_controller->getArtworksCount();
+    $event_count = $events_controller->getEventsCount();
+}
 
 if($artwork_count == 1) {
     $artworks_number_found = '<p> È stata trovata ' . $artwork_count . ' opera. </p>';
@@ -39,20 +81,23 @@ if (!isset($_GET['page'])) {
 }
 
 $offset = ($page - 1) * 5;
-
-if ((($artwork_count - $offset) < 5) && (($artwork_count - $offset) > 0)) {
-    if($event_count > 0) {
-        $contents_list = $artworks_controller->getArtworksTitle('', $offset, true);
-        $events_offset = ($page * 5) - $artwork_count;
-        $contents_list .= $events_controller->getEventsTitle('', 0, $artwork_count, $events_offset);
+if($artwork_count > 0) {
+    if ((($artwork_count - $offset) < 5) && (($artwork_count - $offset) > 0)) {
+        if($event_count > 0) {
+            $contents_list = $artworks_controller->getArtworksTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $offset, true);
+            $events_offset = ($page * 5) - $artwork_count;
+            $contents_list .= $events_controller->getEventsTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, 0, $artwork_count, $events_offset);
+        } else {
+            $contents_list = $artworks_controller->getArtworksTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $offset);
+        }
+    } elseif ($offset > $artwork_count) {
+        $events_offset = $offset - $artwork_count;
+        $contents_list = $events_controller->getEventsTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $events_offset, $offset);
     } else {
-        $contents_list = $artworks_controller->getArtworksTitle('', $offset);
+        $contents_list = $artworks_controller->getArtworksTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $offset);
     }
-} elseif ($offset > $artwork_count) {
-    $events_offset = $offset - $artwork_count;
-    $contents_list = $events_controller->getEventsTitle('', $events_offset, $offset);
 } else {
-    $contents_list = $artworks_controller->getArtworksTitle('', $offset);
+    $contents_list = $events_controller->getEventsTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $offset, 0);
 }
 
 unset($artworks_controller);
@@ -62,17 +107,36 @@ $previous_contents = '';
 $next_contents = '';
 
 if ($page > 1) {
-    $previous_contents = '<a id="buttonBack" class="button" href="?page=' . ($page - 1) . '" title="Utenti precedenti" role="button" aria-label="Torna ai contenuti precedenti"> &lt; Precedenti</a>';
+    $previous_contents = '<a id="buttonBack" class="button" href="?page=' . ($page - 1) . '&amp;filterContent='. $filter_content . '&amp;filterContentType='. $filter_content_type . '" title="Utenti precedenti" role="button" aria-label="Torna ai contenuti precedenti"> &lt; Precedenti</a>';
 }
 
 if (($page * 5) < ($artwork_count + $event_count)) {
-    $next_contents = '<a id="buttonNext" class="button" href="?page=' . ($page + 1) . '" title="Utenti successivi" role="button" aria-label="Vai ai contenuti successivi"> Successivi &gt;</a>';
+    $next_contents = '<a id="buttonNext" class="button" href="?page=' . ($page + 1) . '&amp;filterContent='. $filter_content . '&amp;filterContentType='. $filter_content_type . '" title="Utenti successivi" role="button" aria-label="Vai ai contenuti successivi"> Successivi &gt;</a>';
 }
+
+$filter_option_whole = $filter_content == 'NessunFiltro' ? ' selected="selected"' : '';
+$filter_option_artworks = $filter_content == 'Opera' ? ' selected="selected"' : '';
+$filter_option_events = $filter_content == 'Evento' ? ' selected="selected"' : '';
+$filter_option_whole_type = $filter_content_type == 'NessunFiltro' ? ' selected="selected"' : '';
+$filter_option_paintings = $filter_content_type == 'Dipinto' ? ' selected="selected"' : '';
+$filter_option_scultures = $filter_content_type == 'Scultura' ? ' selected="selected"' : '';
+$filter_option_exhibitions = $filter_content_type == 'Mostre' ? ' selected="selected"' : '';
+$filter_option_conferences = $filter_content_type == 'Conferenze' ? ' selected="selected"' : '';
 
 $document = file_get_contents('../HTML/GestioneContenuti.html');
 $login = LoginController::getAuthenticationMenu();
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
+
+$document = str_replace("<span id='filterOptionWholePlaceholder'/>", $filter_option_whole, $document);
+$document = str_replace("<span id='filterOptionArtworksPlaceholder'/>", $filter_option_artworks, $document);
+$document = str_replace("<span id='filterOptionEventsPlaceholder'/>", $filter_option_events, $document);
+$document = str_replace("<span id='filterOptionWholeTypePlaceholder'/>", $filter_option_whole_type, $document);
+$document = str_replace("<span id='filterOptionPaintingsPlaceholder'/>", $filter_option_paintings, $document);
+$document = str_replace("<span id='filterOptionSculturesPlaceholder'/>", $filter_option_scultures, $document);
+$document = str_replace("<span id='filterOptionExhibitionsPlaceholder'/>", $filter_option_exhibitions, $document);
+$document = str_replace("<span id='filterOptionConferencesPlaceholder'/>", $filter_option_conferences, $document);
+
 $document = str_replace("<span id='artworksNumberFoundPlaceholder'/>", $artworks_number_found, $document);
 $document = str_replace("<span id='eventsNumberFoundPlaceholder'/>", $events_number_found, $document);
 $document = str_replace("<span id='contentsListPlaceholder'/>", $contents_list, $document);
