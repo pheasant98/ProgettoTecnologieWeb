@@ -36,17 +36,10 @@ a:visited {
 /* Regole per gli header delle pagine */
 
 /* Colore e ombreggiatura dell'header */
-#header,
-#headerError404 {
+#header {
   background-color: #333;
   padding: 2em;
   box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1), 0 10px 10px 0 rgba(0, 0, 0, 0.2);
-}
-
-/* Header per pagina 404 */
-#headerError404 {
-  padding: 1em;
-  min-height: 14em;
 }
 
 .headerTitle {
@@ -54,8 +47,7 @@ a:visited {
 }
 
 /* Regole per le barre di ricerca delle pagine */
-#searchBox,
-#searchBoxError404 {
+#searchBox {
   border: 2px solid #000;
   background-color: #eee;
   border-radius: 20px;
@@ -63,19 +55,10 @@ a:visited {
   margin: auto;
 }
 
-#searchBoxError404 {
-  text-align: center;
-}
-
-#search,
-#searchError404 {
+#search {
   clear: both;
   padding-top: 0.5em;
   text-align: center;
-}
-
-#searchError404 {
-  padding: 0.8em 0em;
 }
 
 #searchText {
@@ -191,8 +174,7 @@ a:visited {
 }
 
 /* Regole per i contenuti delle pagine */
-#content,
-#contentError404 {
+#content {
   background-color: #fff;
   color: #000;
   border-radius: 20px;
@@ -374,10 +356,6 @@ a:visited {
   opacity: 0.7;
 }
 
-#buttonHomeError404 {
-  margin: 1em auto auto;
-}
-
 .button {
   display: block;
   text-align: center;
@@ -452,10 +430,6 @@ a:visited {
 /* Layout per smartphone */
 
 @media screen and (max-width: 700px) {
-  /* Regole per gli header delle pagine */
-  #headerError404 {
-    min-height: 10em;
-  }
 
   /* Regole per le barre di ricerca delle pagine */
   #searchText {
@@ -465,11 +439,6 @@ a:visited {
 
   #searchBox {
     white-space: nowrap;
-  }
-
-  #searchBoxError404 {
-    font-size: 0.8em;
-    width: 30em;
   }
 
   /* Regole per le immagini delle pagine */
@@ -566,10 +535,6 @@ a:visited {
     width: 50%;
   }
 
-  #searchBoxError404 {
-    width: 35em;
-  }
-
   /* Regole per le immagini delle pagine */
   #logoImage {
     height: 6em;
@@ -641,11 +606,6 @@ a:visited {
     white-space: nowrap;
   }
 
-  #searchBoxError404 {
-    width: 45em;
-    white-space: nowrap;
-  }
-
   /* Regole per le immagini delle pagine */
   #logoImage {
     height: 6em;
@@ -653,7 +613,7 @@ a:visited {
   }
 
   #imageError404 {
-    height: 26em;
+    height: 23em;
   }
 
   /* Regole per i menu delle pagine */
