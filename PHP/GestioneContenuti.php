@@ -84,19 +84,24 @@ $offset = ($page - 1) * 5;
 if($artwork_count > 0) {
     if ((($artwork_count - $offset) < 5) && (($artwork_count - $offset) > 0)) {
         if($event_count > 0) {
+            //Mi restano meno opere di quelle che può contenere una pagina ma ho eventi quindi li concateno
             $contents_list = $artworks_controller->getArtworksTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $offset, true);
             $events_offset = ($page * 5) - $artwork_count;
             $contents_list .= $events_controller->getEventsTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, 0, $artwork_count, $events_offset);
         } else {
+            //Mi restano meno opere di quelle che può contenere una pagina ma non ho eventi quindi le metto e concludo
             $contents_list = $artworks_controller->getArtworksTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $offset);
         }
     } elseif ($offset > $artwork_count) {
+        //Ho avuto opere ma sono finite
         $events_offset = $offset - $artwork_count;
         $contents_list = $events_controller->getEventsTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $events_offset, $offset);
     } else {
+        //Ho opere e me ne stanno di più di quelle permesse in una pagina
         $contents_list = $artworks_controller->getArtworksTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $offset);
     }
 } else {
+    //Non ho mai avuto opere ed ho solo eventi
     $contents_list = $events_controller->getEventsTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $offset, 0);
 }
 
@@ -136,7 +141,6 @@ $document = str_replace("<span id='filterOptionPaintingsPlaceholder'/>", $filter
 $document = str_replace("<span id='filterOptionSculturesPlaceholder'/>", $filter_option_scultures, $document);
 $document = str_replace("<span id='filterOptionExhibitionsPlaceholder'/>", $filter_option_exhibitions, $document);
 $document = str_replace("<span id='filterOptionConferencesPlaceholder'/>", $filter_option_conferences, $document);
-
 $document = str_replace("<span id='artworksNumberFoundPlaceholder'/>", $artworks_number_found, $document);
 $document = str_replace("<span id='eventsNumberFoundPlaceholder'/>", $events_number_found, $document);
 $document = str_replace("<span id='contentsListPlaceholder'/>", $contents_list, $document);
