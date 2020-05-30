@@ -140,6 +140,50 @@ class ReviewsController {
         return $content;
     }
 
+    public function getListReviews($offset) {
+        $result_set = $this->reviews->getReviews($offset);
+
+        $content = '';
+
+        while($row = $result_set->fetch_assoc()) {
+            $content .= '
+                <li>
+                    <a href="Recensione.php?id=' . $row['ID'] . '" aria-label="Vai alla recensione">' . $row['Oggetto'] . '</a>
+
+                    <p class="userButton">
+                        <a class="button" href="" title="Rimuovi recensione" role="button" aria-label="Rimuovi recensione">Rimuovi</a>
+                    </p>
+                </li>
+            ';
+        }
+
+        $result_set->free();
+
+        return $content;
+    }
+
+    public function getUserListReviews($user, $offset) {
+        $result_set = $this->reviews->getUserReviews($user, $offset);
+
+        $content = '';
+
+        while($row = $result_set->fetch_assoc()) {
+            $content .= '
+                <li>
+                    <a href="Recensione.php?id=' . $row['ID'] . '" aria-label="Vai alla recensione">' . $row['Oggetto'] . '</a>
+
+                    <p class="userButton">
+                        <a class="button" href="" title="Rimuovi recensione" role="button" aria-label="Rimuovi recensione">Rimuovi</a>
+                    </p>
+                </li>
+            ';
+        }
+
+        $result_set->free();
+
+        return $content;
+    }
+
     public function getReview($id) {
         $result_set = $this->reviews->getReview($id);
         $row = $result_set->fetch_assoc();
