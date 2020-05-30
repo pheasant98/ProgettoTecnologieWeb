@@ -30,7 +30,7 @@ if (!isset($_GET['page'])) {
 
 $offset = ($page - 1) * 5;
 
-$event_list = '<dl class="clickableList">' . $controller->getSearchedEvents($_GET['search'], $offset) . '</dl>';
+$event_list = $controller->getSearchedEvents($_GET['search'], $offset);
 
 unset($controller);
 

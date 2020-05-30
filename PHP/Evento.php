@@ -6,6 +6,10 @@ error_reporting(E_ALL);
 
 session_start();
 
+if (!isset($_GET['id'])) {
+    header('Location: Errore.php');
+}
+
 require_once ('Controller/LoginController.php');
 $document = file_get_contents('../HTML/Evento.html');
 

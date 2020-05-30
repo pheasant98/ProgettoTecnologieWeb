@@ -80,17 +80,28 @@ class ReviewsController {
                 <dd>
                     <a href="#' . ($result_set->num_rows == $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta la recensione">Salta la recensione</a>
     
-                    <p class="reviewAuthor">
-                        Utente: ' . $row['Utente'] . '
-                    </p>
-                    
-                    <p class="reviewData">
-                        Data: ' . $row['DataPubblicazione'] . '
-                    </p>
-
-                    <p class="reviewDescription">
-                        ' . $row['Contenuto'] . '
-                    </p>
+                    <dl>
+                        <dt class="reviewAuthor">
+                            Utente: 
+                        </dt>
+                        <dd>
+                            ' . $row['Utente'] . '
+                        </dd>
+                        
+                        <dt class="reviewData">
+                            Data: 
+                        </dt>
+                        <dd>
+                            ' . $row['DataPubblicazione'] . '
+                        </dd>
+    
+                        <dt class="reviewDescription">
+                            Descrizione: 
+                        </dt>
+                        <dd>
+                            ' . $row['Contenuto'] . '
+                        </dd>
+                    </dl>
                 </dd>
             ';
 
@@ -118,17 +129,28 @@ class ReviewsController {
                 <dd>
                     <a href="#' . ($result_set->num_rows == $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta la recensione">Salta la recensione</a>
                     
-                    <p class="reviewData">
-                        Data: ' . $row['DataPubblicazione'] . '
-                    </p>
-
-                    <p class="reviewDescription">
-                        ' . $row['Contenuto'] . '
-                    </p>
-
-                    <p class="userButton">
-                        <a class="button" href="" title="Rimuovi recensione" role="button" aria-label="Rimuovi recensione">Rimuovi</a>
-                    </p>
+                    <dl>
+                        <dt class="reviewData">
+                            Data: 
+                        </dt>
+                        <dd>
+                            ' . $row['DataPubblicazione'] . '
+                        </dd>
+    
+                        <dt class="reviewDescription">
+                            Descrizione: 
+                        </dt>
+                        <dd>
+                            ' . $row['Contenuto'] . '
+                        </dd>
+    
+                        <dt class="userButton">
+                            <a class="button" href="" title="Rimuovi recensione" role="button" aria-label="Rimuovi recensione">Rimuovi</a>
+                        </dt>
+                        <dd>
+                        
+                        </dd>
+                    </dl>
                 </dd>
             ';
 

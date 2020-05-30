@@ -103,17 +103,29 @@ class EventsController {
                 <dd>
                     <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'evento">Salta l\'evento</a>
     
-                    <p>
-                        Data inizio evento: ' . $row['DataInizio'] . '
-                    </p>
+                    <dl>
+                        <dt>
+                            Data inizio evento: 
+                        </dt>
+                        <dd>
+                            ' . $row['DataInizio'] . '
+                        </dd>
+                        
+                        <dt>
+                            Data chiusura evento: 
+                        </dt>
+                        <dd>
+                            ' . $row['DataFine'] . '
+                        </dd>
+    
+                        <dt>
+                            Tipologia: 
+                        </dt>
+                        <dd>
+                            ' . $row['Tipologia'] . '
+                        </dd>
+                    </dl>
                     
-                    <p>
-                        Data chiusura evento: ' . $row['DataFine'] . '
-                    </p>
-
-                    <p>
-                        Tipologia: ' . $row['Tipologia'] . '
-                    </p>
                 </dd>
             ';
 
@@ -145,17 +157,28 @@ class EventsController {
                 <dd>
                     <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'evento">Salta l\'evento</a>
     
-                    <p>
-                        Data inizio evento: ' . $row['DataInizio'] . '
-                    </p>
-                    
-                    <p>
-                        Data chiusura evento: ' . $row['DataFine'] . '
-                    </p>
-
-                    <p>
-                        Tipologia: ' . $row['Tipologia'] . '
-                    </p>
+                    <dl>
+                        <dt>
+                            Data inizio evento: 
+                        </dt>
+                        <dd>
+                            ' . $row['DataInizio'] . '
+                        </dd>
+                        
+                        <dt>
+                            Data chiusura evento: 
+                        </dt>
+                        <dd>
+                            ' . $row['DataFine'] . '
+                        </dd>
+    
+                        <dt>
+                            Tipologia: 
+                        </dt>
+                        <dd>
+                            ' . $row['Tipologia'] . '
+                        </dd>
+                    </dl>
                 </dd>
             ';
 

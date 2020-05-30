@@ -30,7 +30,7 @@ if (!isset($_GET['page'])) {
 
 $offset = ($page - 1) * 5;
 
-$artwork_list = '<dl class="clickableList">' . $controller->getSearchedArtworks($_GET['search'], $offset) . '</dl>';
+$artwork_list = $controller->getSearchedArtworks($_GET['search'], $offset);
 
 unset($controller);
 

@@ -61,7 +61,8 @@ class UsersController {
         $message .= $password === $repeated_password ? '' : '[La conferma della <span xml:lang="en">password</span> non corrisponde a quella inserita inizialmente]';
 
         if ($message === '') {
-            if ($this->users->postUser($name, $surname, $date, $sex, $username, $mail, $password)) {
+            $hashed_password = hash('sha256', $password);
+            if ($this->users->postUser($name, $surname, $date, $sex, $username, $mail, $hashed_password)) {
                 $message = '<p class="success">Nuovo utente correttamente registrato</p>';
             } else {
                 $message = '<p class="error">Errore durante la registrazione del nuovo utente</p>';
@@ -119,7 +120,8 @@ class UsersController {
     }
 
     public function getUserByCredential($username, $password) {
-        $result_set = $this->users->getUserByCredential($username, $password);
+        $hashed_password = hash('sha256', $password);
+        $result_set = $this->users->getUserByCredential($username, $hashed_password);
         $row = $result_set->fetch_assoc();
         $result_set->free();
         return $row;
