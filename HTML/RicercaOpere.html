@@ -6,11 +6,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-        <title>Login | Museo arte nel tempo</title>
+        <title>Ricerca opere | Museo arte nel tempo</title>
 
         <meta name="language" content="italian it"/>
-        <meta name="title" content="Login | Museo arte nel tempo"/>
-        <meta name="description" content="Accedi al tuo account registrato"/>
+        <meta name="title" content="Ricerca opere | Museo arte nel tempo"/>
+        <meta name="description" content="Visualizzazione risultati della ricerca tra le opere"/>
         <meta name="keywords" content="arte, dipinto, scultura, museo"/>
         <meta name="author" content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto"/>
 
@@ -25,7 +25,7 @@
         <div id="header" role="banner">
             <h1 id="logoImage" class="backgroundImage" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
 
-            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="4">
+            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
                 Menu ad <span xml:lang="en">hamburger</span>
             </span>
 
@@ -33,6 +33,8 @@
                 <h1>Museo Arte nel Tempo</h1>
                 <h2>Dal Rinascimento al Neoclassicismo</h2>
             </div>
+
+            <span id='loginMenuPlaceholder'/>
 
             <form id="search" name="search" action="" method="post" role="search" aria-label="Form per la ricerca tra i contenuti del sito">
                 <fieldset id="searchBox">
@@ -51,74 +53,56 @@
             </form>
         </div>
 
-        <div aria-label="breadcrumbs" id="breadcrumbs">
+        <div id="breadcrumbs" aria-label="breadcrumbs">
             <p>
                 Ti trovi in:
-                <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="5" xml:lang="en">Home</a>
+                <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a>
                 &gt;&gt;
-                <strong xml:lang="en">Login</strong>
+                <strong>Ricerca opere</strong>
             </p>
         </div>
 
         <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
             <ul>
                 <li>
-                    <a id="skipMenu" class="skipInformation" href="#content" aria-label="Vai al contenuto" tabindex="6">Vai al contenuto</a>
+                    <a id="skipMenu" class="skipInformation" href="#content" aria-label="Vai al contenuto" tabindex="10">Vai al contenuto</a>
                 </li>
 
                 <li>
-                    <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="7" xml:lang="en">Home</a>
+                    <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="11" xml:lang="en">Home</a>
                 </li>
 
                 <li>
-                    <a href="Opere.php" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="8">Opere</a>
+                    <a href="Opere.php" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="12">Opere</a>
                 </li>
 
                 <li>
-                    <a href="Eventi.php" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="9">Eventi</a>
+                    <a href="Eventi.php" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="13">Eventi</a>
                 </li>
 
                 <li>
-                    <a href="CosaDiconoDiNoi.php" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni" tabindex="10">Cosa
-                    dicono di noi</a>
+                    <a href="CosaDiconoDiNoi.php" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni" tabindex="14">Cosa
+                        dicono di noi</a>
                 </li>
 
                 <li>
-                    <a href="Contatti.php" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti" tabindex="11">Contatti</a>
+                    <a href="Contatti.php" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti" tabindex="15">Contatti</a>
                 </li>
             </ul>
         </div>
 
         <div id="content" role="main">
-            <h2 class="title">
-                Login
-            </h2>
+            <h2 class="title">Ricerca opere</h2>
 
-            <form id="loginForm" name="login" action="" method="post" role="form" aria-label="form per effettuare il login">
-                <fieldset class="hideFieldset">
-                    <legend class="hideLegend">Informazioni necessarie per il login</legend>
+            <p>È stata eseguita una ricerca tra le opere presenti nel sito <span id='resultNumberPlaceholder'/>:</p>
 
-                    <span id='outputMessagePlaceholder'/>
+            <a href="#buttonBack" class="skipInformation">Salta i risultati presenti nella pagina</a>
 
-                    <p>
-                        <label id="usernameLabel" for="username" xml:lang="en">Username</label>
-                        <input id="username" class="formElement" type="text" name="username" value="<span id='usernameValuePlaceholder'/>" aria-label="Inserisci username"/>
-                    </p>
+            <span id='resultListPlaceholder'/>
 
-                    <p>
-                        <label id="passwordLabel" for="password" xml:lang="en">Password</label>
-                        <input id="password" class="formElement" type="password" name="password" aria-label="Inserisci password"/>
-                    </p>
-
-                    <p>
-                        <input id="buttonConfirm" class="button" name="submit" value="Accedi" type="submit" aria-label="Pulsante per accedere al proprio account"/>
-                    </p>
-                </fieldset>
-            </form>
-
-            <p id="register">
-                Non hai ancora un <span xml:lang="en">account</span>?
-                <a href="Registrazione.php" title="Registrati" role="link" aria-label="porta alla pagina di registrazione">Registrati</a>!
+            <p class="navigation">
+                <span id='buttonBackPlaceholder'/>
+                <span id='buttonNextPlaceholder'/>
             </p>
 
             <a id="buttonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
@@ -126,7 +110,7 @@
             </a>
         </div>
 
-        <div aria-label="footer" id="footer">
+        <div id="footer" aria-label="footer">
             <p>
                 Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
             </p>

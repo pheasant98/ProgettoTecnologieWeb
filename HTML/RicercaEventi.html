@@ -6,11 +6,11 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-        <title>Ricerca | Museo arte nel tempo</title>
+        <title>Ricerca eventi | Museo arte nel tempo</title>
 
         <meta name="language" content="italian it"/>
-        <meta name="title" content="Ricerca | Museo arte nel tempo"/>
-        <meta name="description" content="Visualizzazione risultati della ricerca"/>
+        <meta name="title" content="Ricerca eventi | Museo arte nel tempo"/>
+        <meta name="description" content="Visualizzazione risultati della ricerca tra gli eventi"/>
         <meta name="keywords" content="arte, dipinto, scultura, museo"/>
         <meta name="author" content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto"/>
 
@@ -36,18 +36,19 @@
 
             <span id='loginMenuPlaceholder'/>
 
-            <form id="search" name="search" action="" method="post" role="search">
+            <form id="search" name="search" action="" method="post" role="search" aria-label="Form per la ricerca tra i contenuti del sito">
                 <fieldset id="searchBox">
                     <legend class="hideLegend">Ricerca</legend>
-
-                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
-                        <option selected="selected" value="Opera">Opera</option>
-                        <option value="Evento">Evento</option>
+                    
+					<label class="hideLabel" for="filter">filtro per la ricerca</label>
+                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="2">
+                        <option value="Opera">Opera</option>
+                        <option selected="selected" value="Evento">Evento</option>
                     </select>
 
-                    <label id="hideLabel" for="searchText">Cerca nel sito</label>
-                    <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
-                    <input id="buttonSubmit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
+                    <label class="hideLabel" for="searchText">Cerca nel sito</label>
+                    <input id="searchText" name="search" type="text" aria-label="Casella di ricerca" tabindex="1"/>
+                    <input id="buttonSubmit" name="submit" type="submit" value="Cerca" aria-label="Pulsante per la ricerca" tabindex="3"/>
                 </fieldset>
             </form>
         </div>
@@ -57,7 +58,7 @@
                 Ti trovi in:
                 <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a>
                 &gt;&gt;
-                <strong>Ricerca</strong>
+                <strong>Ricerca eventi</strong>
             </p>
         </div>
 
@@ -91,26 +92,17 @@
         </div>
 
         <div id="content" role="main">
-            <h2 class="title">Ricerca</h2>
+            <h2 class="title">Ricerca eventi</h2>
 
-            <p>Categoria</p>
-            <span>***</span>
-
-            <p>Numero risultati:</p>
-            <span>***</span>
+            <p>È stata eseguita una ricerca tra gli eventi presenti nel sito <span id='resultNumberPlaceholder'/>:</p>
 
             <a href="#buttonBack" class="skipInformation">Salta i risultati presenti nella pagina</a>
 
-            <!--RISULTATO DI ESEMPIO-->
-
-            <dl class="list">
-                <dt>Nome</dt>
-                <dd class="description">Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione Descrizione</dd>
-            </dl>
+            <span id='resultListPlaceholder'/>
 
             <p class="navigation">
-                <a id="buttonBack" class="button" href="" title="Risultati precedenti" role="button" aria-label="Torna ai risultati precedenti"> &lt; Precedente</a>
-                <a id="buttonNext" class="button" href="" title="Risultati successivi" role="button" aria-label="Vai ai risultati successivi"> Successivo &gt;</a>
+                <span id='buttonBackPlaceholder'/>
+                <span id='buttonNextPlaceholder'/>
             </p>
 
             <a id="buttonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">

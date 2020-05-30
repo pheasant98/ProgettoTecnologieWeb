@@ -25,6 +25,20 @@ class ArtworksRepository {
         return $this->dbConnection->executeNotSelectStatement($statement);
     }
 
+    public function getSearchedArtworks($search, $offset) {
+        $statement = $this->dbConnection->prepareQuery('SELECT * FROM Opere WHERE Titolo LIKE ? ORDER BY Titolo LIMIT 5 OFFSET ?;');
+        $search = '%' . $search . '%';
+        $statement->bind_param('si', $search, $offset);
+        return $this->dbConnection->executeSelectStatement($statement);
+    }
+
+    public function getSearchedArtworksCount($search) {
+        $statement = $this->dbConnection->prepareQuery('SELECT COUNT(*) AS Totale FROM Opere WHERE Titolo LIKE ?;');
+        $search = '%' . $search . '%';
+        $statement->bind_param('s', $search);
+        return $this->dbConnection->executeSelectStatement($statement);
+    }
+
     public function getArtworks($offset) {
         $statement = $this->dbConnection->prepareQuery('SELECT * FROM Opere ORDER BY Titolo LIMIT 5 OFFSET ?;');
         $statement->bind_param('i', $offset);
@@ -43,6 +57,7 @@ class ArtworksRepository {
     }
 
     public function getArtworksCountByStyle($style) {
+        echo $style;
         $statement = $this->dbConnection->prepareQuery('SELECT COUNT(*) AS Totale FROM Opere WHERE Stile=?;');
         $statement->bind_param('s', $style);
         return $this->dbConnection->executeSelectStatement($statement);

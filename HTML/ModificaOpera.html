@@ -36,18 +36,18 @@
 
             <span id='loginMenuPlaceholder'/>
 
-            <form id="search" name="search" action="" method="post" role="search">
+            <form id="search" name="search" action="" method="post" role="search" aria-label="Form per la ricerca tra i contenuti del sito">
                 <fieldset id="searchBox">
                     <legend class="hideLegend">Ricerca</legend>
-
+                    <label class="hideLabel" for="filter">filtro per la ricerca</label>
                     <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="2">
                         <option selected="selected" value="Opera">Opera</option>
                         <option value="Evento">Evento</option>
                     </select>
 
-                    <label id="hideLabel" for="searchText">Cerca nel sito</label>
-                    <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
-                    <input id="buttonSubmit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="3"/>
+                    <label class="hideLabel" for="searchText">Cerca nel sito</label>
+                    <input id="searchText" name="search" type="text" aria-label="Casella di ricerca" tabindex="1"/>
+                    <input id="buttonSubmit" name="submit" type="submit" value="Cerca" aria-label="Pulsante per la ricerca" tabindex="3"/>
                 </fieldset>
             </form>
         </div>
@@ -93,7 +93,7 @@
         <div id="content" role="main">
             <h2 class="title">Modifica dell'opera</h2>
 
-            <form name="updateArtwork" action="" method="post">
+            <form name="updateArtwork" action="" method="post" enctype="multipart/form-data">
                 <fieldset id="UpdateField" class="hideFieldset">
                     <legend class="hideLegend">Modifica opera</legend>
 
@@ -125,8 +125,8 @@
                         </p>
 
                         <p>
-                            <label id="labelDescription" for="description">Descrizione: </label>
-                            <textarea id="description" class="formElement" name="description" rows="10" cols="70" aria-label="Modifica la descrizione" aria-required="true"><span id='descriptionValuePlaceholder'/>
+                            <label id="labelDescription" for="operaDescriptionArea">Descrizione: </label>
+                            <textarea id="operaDescriptionArea" class="formElement" name="description" rows="10" cols="70" aria-label="Modifica la descrizione" aria-required="true"><span id='descriptionValuePlaceholder'/>
                             </textarea>
                         </p>
 
@@ -206,8 +206,8 @@
                         </p>
 
                     <p class="navigation">
-                        <input id="buttonConfirm" class="button" name="submit" value="Modifica" type="submit" aria-label="Invia le modifiche apportate"/>
-                        <input id="buttonReset" class="button" name="cancel" value="Cancella" type="reset" aria-label="Annulla le modifiche apportate"/>
+                        <input id="buttonConfirm" class="button" name="submit" type="submit" value="Modifica" aria-label="Invia le modifiche apportate"/>
+                        <input id="buttonReset" class="button" name="cancel" type="reset" value="Cancella" aria-label="Annulla le modifiche apportate"/>
                     </p>
                 </fieldset>
             </form>

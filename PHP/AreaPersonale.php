@@ -49,7 +49,7 @@ if (LoginController::isAdminUser()) {
         </li>
 
         <li>
-            <a href="RecensioniUtente.php" class="button userOperationButton" title="Gestisci le tue recensioni" aria-label="Vai alla pagina per la gestione delle recensioni lasciate">Gestisci le recensioni</a>
+            <a href="GestioneRecensioni.php" class="button userOperationButton" title="Gestisci le tue recensioni" aria-label="Vai alla pagina per la gestione delle recensioni lasciate">Gestisci le recensioni</a>
         </li>
 
         <li>

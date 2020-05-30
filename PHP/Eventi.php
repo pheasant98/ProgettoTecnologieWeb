@@ -43,6 +43,7 @@ if (!isset($_GET['page'])) {
 
 $offset = ($page - 1) * 5;
 
+//TODO: spostare <dl></dl> su html
 $event_list = '<dl class="clickableList">' . $controller->getEvents($filter_type, $offset) . '</dl>';
 
 unset($controller);

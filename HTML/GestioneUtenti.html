@@ -36,18 +36,19 @@
 
             <span id='loginMenuPlaceholder'/>
 
-            <form id="search" name="search" action="" method="post" role="search">
+            <form id="search" name="search" action="" method="post" role="search" aria-label="Form per la ricerca tra i contenuti del sito">
                 <fieldset id="searchBox">
                     <legend class="hideLegend">Ricerca</legend>
-
-                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
+                    
+					<label class="hideLabel" for="filter">filtro per la ricerca</label>
+                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="2">
                         <option selected="selected" value="Opera">Opera</option>
                         <option value="Evento">Evento</option>
                     </select>
 
-                    <label id="hideLabel" for="searchText">Cerca nel sito</label>
-                    <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
-                    <input id="buttonSubmit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
+                    <label class="hideLabel" for="searchText">Cerca nel sito</label>
+                    <input id="searchText" name="search" type="text" aria-label="Casella di ricerca" tabindex="1"/>
+                    <input id="buttonSubmit" name="submit" type="submit" value="Cerca" aria-label="Pulsante per la ricerca" tabindex="3"/>
                 </fieldset>
             </form>
         </div>
@@ -57,7 +58,7 @@
                 Ti trovi in:
                 <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a>
                 &gt;&gt;
-                <a href="AreaPersonale.html" title="area admin" aria-label="Vai alla pagina area admin" tabindex="10">Area personale</a>
+                <a href="AreaPersonale.php" title="area admin" aria-label="Vai alla pagina area admin" tabindex="10">Area personale</a>
                 &gt;&gt;
                 <strong>Gestione utenti</strong>
             </p>
@@ -93,16 +94,14 @@
         </div>
 
         <div id="content" role="main">
-            <h2 class="title">Elenco Utenti</h2>
+            <h3 class="title">Elenco Utenti</h3>
 
-            <p>
-                Sono stati trovati # utenti:
-            </p>
+            <span id='userNumberFoundPlaceholder'/>
 
             <a href="#buttonBack" class="skipInformation">Salta gli utenti presenti nella pagina</a>
 
             <ul class="list">
-                <li>
+                <!--<li>
                     <a id="u1" href="Utente.html">Fiammetta Miriam Cannavò FMC 1</a>
 
                     <a href="#u2" class="skipInformation">Salta l'utente</a>
@@ -130,12 +129,13 @@
                     <p class="userButton">
                         <a class="button" href="" title="Rimuovi utente" role="button" aria-label="Rimuovi utente">Rimuovi</a>
                     </p>
-                </li>
+                </li>-->
+                <span id='userListPlaceholder'/>
             </ul>
 
             <p class="navigation">
-                <a id="buttonBack" class="button" href="Utente.html" title="Utenti precedenti" role="button" aria-label="Torna agli utenti precedenti"> &lt; Precedente</a>
-                <a id="buttonNext" class="button" href="" title="Utenti successivi" role="button" aria-label="Vai agli utenti successivi"> Successivo &gt;</a>
+                <span id='buttonBackPlaceholder'/>
+                <span id='buttonNextPlaceholder'/>
             </p>
 
             <a id="buttonBackUp" href="#header" title="Torna su" aria-label="Torna su">

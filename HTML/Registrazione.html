@@ -36,18 +36,19 @@
 
             <span id='loginMenuPlaceholder'/>
 
-            <form id="search" name="search" action="" method="post" role="search">
+            <form id="search" name="search" action="" method="post" role="search" aria-label="Form per la ricerca tra i contenuti del sito">
                 <fieldset id="searchBox">
                     <legend class="hideLegend">Ricerca</legend>
-
-                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
+                    
+					<label class="hideLabel" for="filter">filtro per la ricerca</label>
+                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="2">
                         <option selected="selected" value="Opera">Opera</option>
                         <option value="Evento">Evento</option>
                     </select>
 
-                    <label id="hideLabel" for="searchText">Cerca nel sito</label>
-                    <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
-                    <input id="buttonSubmit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
+                    <label class="hideLabel" for="searchText">Cerca nel sito</label>
+                    <input id="searchText" name="search" type="text" aria-label="Casella di ricerca" tabindex="1"/>
+                    <input id="buttonSubmit" name="submit" type="submit" value="Cerca" aria-label="Pulsante per la ricerca" tabindex="3"/>
                 </fieldset>
             </form>
         </div>
@@ -115,15 +116,15 @@
                         <legend>Sesso</legend>
 
                         <p>
-                            <input id="radioSexM" type="radio" name="sex" value="M"<span id='maleCheckedPlaceholder'/>aria-label="Pulsante per dichiarare sesso maschile"/>
+                            <input id="radioSexM" type="radio" name="sex" value="M" aria-label="Pulsante per dichiarare sesso maschile"<span id='maleCheckedPlaceholder'/>/>
                             <label id="labelSexM" for="radioSexM">Maschile</label>
                         </p>
                         <p>
-                            <input id="radioSexF" type="radio" name="sex" value="F"<span id='femaleCheckedPlaceholder'/>aria-label="Pulsante per dichiarare sesso femminile"/>
+                            <input id="radioSexF" type="radio" name="sex" value="F" aria-label="Pulsante per dichiarare sesso femminile"<span id='femaleCheckedPlaceholder'/>/>
                             <label id="labelSexF" for="radioSexF">Femminile</label>
                         </p>
                         <p>
-                            <input id="radioSexA" type="radio" name="sex" value="A"<span id='otherCheckedPlaceholder'/>aria-label="Pulsante per non dichiarare il sesso"/>
+                            <input id="radioSexA" type="radio" name="sex" value="A" aria-label="Pulsante per non dichiarare il sesso"<span id='otherCheckedPlaceholder'/>/>
                             <label id="labelSexA" for="radioSexA">Preferisco non dichiarare</label>
                         </p>
                     </fieldset>
@@ -149,12 +150,12 @@
 
                     <p>
                         <label id="labelPassword" for="textPassword" xml:lang="en">Password</label>
-                        <input id="textPassword" class="formElement" type="password" name="password" value="<span id='passwordValuePlaceholder'/>" aria-label="Inserisci la password"/>
+                        <input id="textPassword" class="formElement" type="password" name="password" value="" aria-label="Inserisci la password"/>
                     </p>
 
                     <p>
-                        <label id="labelRepetePassword" for="textRepetePassword">Ripetere la <span xml:lang="en">password</span></label>
-                        <input id="textRepetePassword" class="formElement" type="password" name="repetePassword" value="<span id='repetePasswordValuePlaceholder'/>" aria-label="Inserisci nuovamente la password"/>
+                        <label id="labelRepeatePassword" for="textRepeatePassword">Ripetere la <span xml:lang="en">password</span></label>
+                        <input id="textRepeatePassword" class="formElement" type="password" name="repeatePassword" value="" aria-label="Inserisci nuovamente la password"/>
                     </p>
                 </fieldset>
 

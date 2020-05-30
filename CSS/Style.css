@@ -9,7 +9,6 @@
   font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
   line-height: 1.5em;
-
   max-width: 1024px;
 }
 
@@ -38,7 +37,7 @@ a:visited {
 /* Colore e ombreggiatura dell'header */
 #header {
   background-color: #333;
-  padding: 2em;
+  padding: 1em;
   box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1), 0 10px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -53,18 +52,19 @@ a:visited {
   border-radius: 20px;
   clear: both;
   margin: auto;
+  text-align: center;
 }
 
 #search {
   clear: both;
-  padding-top: 0.5em;
   text-align: center;
 }
 
 #searchText {
   border: 0;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+  font-size: 1.6em;
 }
 
 /* Regole per le immagini delle pagine */
@@ -111,8 +111,9 @@ a:visited {
   background-color: #eee;
   border-radius: 20px;
   color: #000;
-  font-size: 1.5em;
-  margin: 1em;
+  font-size: 1.2em;
+  margin-top: 0.5em;
+  margin-bottom: 0.7em;
   padding: 0.5em;
 }
 
@@ -150,9 +151,9 @@ a:visited {
 #menu {
   display: none;
   background-color: #eee;
-  margin: 1.5em;
   border-radius: 20px;
   white-space: nowrap;
+  margin-bottom: 1em;
 }
 
 /* Toglie i pallini dal menu */
@@ -169,7 +170,6 @@ a:visited {
 
 #menu li:hover {
   background-color: #fff;
-  font-weight: bold;
   border-radius: 20px;
 }
 
@@ -178,11 +178,11 @@ a:visited {
   background-color: #fff;
   color: #000;
   border-radius: 20px;
-  margin: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 1em;
   padding: 2em;
 }
 
-.clickableList dt:hover,
 .list dl:hover {
   background-color: #eee;
   border-radius: 20px;
@@ -204,7 +204,6 @@ a:visited {
 #filter,
 #filterType,
 #filterContent,
-#filterPeriod,
 #filterOpera {
   border: 0;
   background: none;
@@ -233,13 +232,6 @@ a:visited {
 /* Visualizzo salta contenuto attivato dal tab */
 .skipInformation:focus {
   position: static;
-}
-
-#warning {
-  padding: 0.5em;
-  margin-bottom: 1em;
-  background-color: #eee;
-  border-radius: 20px;
 }
 
 /* Template di un lista */
@@ -288,7 +280,7 @@ a:visited {
   margin-bottom: 0;
 }
 
-#hideLabel,
+.hideLabel,
 .hideLegend {
   position: absolute;
   height: 0;
@@ -305,9 +297,8 @@ a:visited {
 }
 
 #operaDescriptionArea,
-#eventDescriptionArea,
-#noticeDescriptionArea {
-  height: 20em;
+#eventDescriptionArea {
+  height: 10em;
   margin-bottom: 1em;
 }
 
@@ -334,8 +325,7 @@ a:visited {
   background: none;
 }
 
-#reviewButton,
-#buyButton {
+#reviewButton {
   float: right;
   font-size: 1em;
   width: auto;
@@ -433,7 +423,6 @@ a:visited {
 
   /* Regole per le barre di ricerca delle pagine */
   #searchText {
-    font-size: 1.6em;
     width: 50%;
   }
 
@@ -510,15 +499,14 @@ a:visited {
   #filter,
   #filterType,
   #filterContent,
-  #filterPeriod,
   #filterOpera {
     font-size: 1.3em;
-    margin-right: 1%;
+    margin-right: 3%;
   }
 
   #buttonSubmit {
     font-size: 1.3em;
-    margin-left: 1%;
+    margin-left: 3%;
   }
 
   .paragraph {
@@ -528,10 +516,13 @@ a:visited {
 
 /* Layout per tablet */
 
-@media screen and (min-width: 700px) and (max-width: 830px) {
+@media screen and (min-width: 700px) and (max-width: 829px) {
   /* Regole per le barre di ricerca delle pagine */
+
+  #searchBox, #searchBoxError404{
+    margin: 0 2em;
+  }
   #searchText {
-    font-size: 2em;
     width: 50%;
   }
 
@@ -555,22 +546,26 @@ a:visited {
   }
 
   #menu li {
-    font-size: 2em;
+    font-size: 1.3em;
+    float: left;
+    margin-left: 5%;
+    margin-right: 1%;
   }
 
-  /* Regole per i contenuti delle pagine */
+  #menu ul {
+    padding-left: 8%;
+    padding-right: 3%;
+    padding-bottom: 2.5em;
+  }
+
+/* Regole per i contenuti delle pagine */
   #userTools {
     background-image: none;
-  }
-
-  #warning {
-    font-size: 2em;
   }
 
   #filter,
   #filterType,
   #filterContent,
-  #filterPeriod,
   #filterOpera {
     font-size: 1.7em;
     margin-right: 1em;
@@ -591,18 +586,17 @@ a:visited {
 @media screen and (min-width: 830px) {
   /* Regole per gli header delle pagine */
   #header {
-    height: 21.7em;
+    height: 17.5em;
   }
 
   /* Regole per le barre di ricerca delle pagine */
-  #searchText {
-    font-size: 2em;
+  #searchText{
     width: 12em;
   }
 
   #searchBox {
     float: right;
-    width: 50em;
+    width: 35em;
     white-space: nowrap;
   }
 
@@ -638,29 +632,24 @@ a:visited {
 
   /* Regole per i contenuti delle pagine */
   #content {
-    margin-left: 23em;
+    margin-left: 21.5em;
   }
 
   #userTools {
     background-image: none;
   }
 
-  #warning {
-    font-size: 2em;
-  }
-
   #filter,
   #filterType,
   #filterContent,
-  #filterPeriod,
   #filterOpera {
-    font-size: 1.2em;
-    margin-right: 5%;
+    font-size: 1.6em;
+    margin-right: 1%;
   }
 
   #buttonSubmit {
-    font-size: 2em;
-    margin-left: 5%;
+    font-size: 1.6em;
+    margin-left: 3%;
   }
 
   .paragraph {

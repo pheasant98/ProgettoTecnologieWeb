@@ -36,18 +36,19 @@
 
             <span id='loginMenuPlaceholder'/>
 
-            <form id="search" name="search" action="" method="post" role="search">
+            <form id="search" name="search" action="" method="post" role="search" aria-label="Form per la ricerca tra i contenuti del sito">
                 <fieldset id="searchBox">
                     <legend class="hideLegend">Ricerca</legend>
-
-                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
+                    
+					<label class="hideLabel" for="filter">filtro per la ricerca</label>
+                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="2">
                         <option selected="selected" value="Opera">Opera</option>
                         <option value="Evento">Evento</option>
                     </select>
 
-                    <label id="hideLabel" for="searchText">Cerca nel sito</label>
-                    <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
-                    <input id="buttonSubmit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
+                    <label class="hideLabel" for="searchText">Cerca nel sito</label>
+                    <input id="searchText" name="search" type="text" aria-label="Casella di ricerca" tabindex="1"/>
+                    <input id="buttonSubmit" name="submit" type="submit" value="Cerca" aria-label="Pulsante per la ricerca" tabindex="3"/>
                 </fieldset>
             </form>
         </div>
@@ -57,7 +58,7 @@
                 Ti trovi in:
                 <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a>
                 &gt;&gt;
-                <a href="AreaPersonale.html" title="Area Personale" aria-label="Vai alla pagina dell'area personale" tabindex="10">Area personale</a>
+                <a href="AreaPersonale.php" title="Area Personale" aria-label="Vai alla pagina dell'area personale" tabindex="10">Area personale</a>
                 &gt;&gt;
                 <strong>Gestione contenuti</strong>
             </p>
@@ -94,69 +95,45 @@
 
         <div id="content" role="main">
             <h2 class="title">Contenuti del sito</h2>
-
-            <form id="contentFilter" action="" method="post">
-                <fieldset class="navigation">
-                    <legend class="hideLegend">Filtro contenuti</legend>
-
+            <form id="contentFilter" action="GestioneContenuti.php" method="get">
+                <fieldset class="fieldset">
+                    <legend>Filtro contenuti</legend>
+                    <label class="hideLabel" for="filter">filtro per il contenuto</label>
                     <select id="filterContent" name="filterContent" aria-label="Filtro per il tipo di contenuto">
-                        <option selected="selected" value="Opera"> Opera</option>
-                        <option value="Evento"> Evento</option>
+                        <option value="Nessun filtro"<span id='filterOptionWholePlaceholder'/>>Nessun filtro</option>
+                        <option value="Opera"<span id='filterOptionArtworksPlaceholder'/>> Opera</option>
+                        <option value="Evento"<span id='filterOptionEventsPlaceholder'/>> Evento</option>
                     </select>
 
-                    <select id="filterOpera" name="filterOpera" aria-label="Filtro per il tipo di opera">
-                        <option selected="selected" value="Dipinto"> Dipinto</option>
-                        <option value="Scultura"> Scultura</option>
+                    <label class="hideLabel" for="filter">filtro per il contenuto</label>
+                    <select id="filterOpera" name="filterContentType" aria-label="Filtro per il tipo di opera">
+                        <option value="NessunFiltro"<span id='filterOptionWholeTypePlaceholder'/>>Nessun filtro</option>
+                        <option value="Dipinto"<span id='filterOptionPaintingsPlaceholder'/>> Dipinto</option>
+                        <option value="Scultura"<span id='filterOptionSculturesPlaceholder'/>> Scultura</option>
+                        <option value="Mostra"<span id='filterOptionExhibitionsPlaceholder'/>> Mostra</option>
+                        <option value="Conferenza"<span id='filterOptionConferencesPlaceholder'/>> Conferenza</option>
                     </select>
 
-                    <input id="buttonConfirm" class="button" name="filter" value="Filtra" type="button" aria-label="Pulsante di conferma"/>
+                    <!--
+                        TODO: Aggiungere filtro tipo evento e modificarlo tramite Javascript
+                    -->
+
+                    <input id="buttonConfirm" class="button" name="submit" value="Filtra" type="submit" aria-label="Pulsante di conferma"/>
                 </fieldset>
             </form>
 
-            <p>
-                Sono stati trovati # contenuti:
-            </p>
+            <span id='artworksNumberFoundPlaceholder'/>
+            <span id='eventsNumberFoundPlaceholder'/>
 
             <a href="#buttonBack" class="skipInformation">Salta i contenuti presenti nella pagina</a>
 
             <ul class="list">
-                <li>
-                    <a id="c1" href="">Pagina 1</a>
-
-                    <a href="#c2" class="skipInformation">Salta il contenuto</a>
-
-                    <p class="userButton">
-                        <a class="button" href="ModificaOpera.html" title="Modifica dettagli contenuto" role="button" aria-label="Modifica dettagli contenuto">Modifica</a>
-                        <a class="button" href="" title="Rimuovi contenuto" role="button" aria-label="Rimuovi contenuto">Rimuovi</a>
-                    </p>
-                </li>
-
-                <li>
-                    <a id="c2" href="">Pagina 2</a>
-
-                    <a href="#c3" class="skipInformation">Salta il contenuto</a>
-
-                    <p class="userButton">
-                        <a class="button" href="ModificaOpera.html" title="Modifica dettagli contenuto" role="button" aria-label="Modifica dettagli contenuto">Modifica</a>
-                        <a class="button" href="" title="Rimuovi contenuto" role="button" aria-label="Rimuovi contenuto">Rimuovi</a>
-                    </p>
-                </li>
-
-                <li>
-                    <a id="c3" href="" tabindex="">Pagina 3</a>
-
-                    <a href="#buttonBack" class="skipInformation">Salta il contenuto</a>
-
-                    <p class="userButton">
-                        <a class="button" href="ModificaOpera.html" title="Modifica dettagli contenuto" role="button" aria-label="Modifica dettagli contenuto">Modifica</a>
-                        <a class="button" href="" title="Rimuovi contenuto" role="button" aria-label="Rimuovi contenuto">Rimuovi</a>
-                    </p>
-                </li>
+                <span id='contentsListPlaceholder'/>
             </ul>
 
             <p class="navigation">
-                <a id="buttonBack" class="button" href="ModificaOpera.html" title="Contenuti precedenti" role="button" aria-label="Torna ai contenuti precedenti"> &lt; Precedente </a>
-                <a id="buttonNext" class="button" href="" title="Contenuti successivi" role="button" aria-label="Vai ai contenuti successivi"> Successivo &gt; </a>
+                <span id='buttonBackPlaceholder'/>
+                <span id='buttonNextPlaceholder'/>
             </p>
 
             <a id="buttonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">

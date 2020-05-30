@@ -36,18 +36,19 @@
 
             <span id='loginMenuPlaceholder'/>
 
-            <form id="search" name="search" action="" method="post" role="search">
+            <form id="search" name="search" action="" method="post" role="search" aria-label="Form per la ricerca tra i contenuti del sito">
                 <fieldset id="searchBox">
                     <legend class="hideLegend">Ricerca</legend>
-
-                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
+                    
+					<label class="hideLabel" for="filter">filtro per la ricerca</label>
+                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="2">
                         <option selected="selected" value="Opera">Opera</option>
                         <option value="Evento">Evento</option>
                     </select>
 
-                    <label id="hideLabel" for="searchText">Cerca nel sito</label>
-                    <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
-                    <input id="buttonSubmit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
+                    <label class="hideLabel" for="searchText">Cerca nel sito</label>
+                    <input id="searchText" name="search" type="text" aria-label="Casella di ricerca" tabindex="1"/>
+                    <input id="buttonSubmit" name="submit" type="submit" value="Cerca" aria-label="Pulsante per la ricerca" tabindex="3"/>
                 </fieldset>
             </form>
         </div>
@@ -149,7 +150,16 @@
             </ul>
 
             <h2 class="title"> Come raggiungerci</h2>
-
+            <p>
+                Ci troviamo a pochi passi dalla zona di Padova Fiere.
+            </p>
+            <h3>Con i mezzi pubblici</h3>
+            <p>Autobus: 101, 10.</p>
+            <h3> Dalla stazione dei treni</h3>
+            <p>
+                Dalla Stazione dei treni seguire la via Niccolò Tommasseo per un chilometro. Una volta arrivati davanti al tribunale di Padova,
+                prendete la prima uscita dalla rotonda e proseguite dritti per 400 metri e sarete arrivati a destinazione.
+            </p>
             <p id="mapContainer" class="paragraph">
                 <object id="map" title="Posizione di Museo arte nel tempo sulla mappa" data="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2800.8988785932547!2d11.885283915057387!3d45.41137867910036!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477eda58b44676df%3A0xfacae5884fca17f5!2sTorre+Archimede%2C+Via+Trieste%2C+63%2C+35121+Padova+PD!5e0!3m2!1sit!2sit!4v1546637087232"></object>
             </p>
