@@ -42,6 +42,12 @@ class ReviewsRepository {
         return $this->dbConnection->executeSelectStatement($statement);
     }
 
+    public function getReview($id) {
+        $statement = $this->dbConnection->prepareQuery('SELECT * FROM Recensioni WHERE ID=?;');
+        $statement->bind_param('i', $id);
+        return $this->dbConnection->executeSelectStatement($statement);
+    }
+
     public function deleteReview($id) {
         $statement = $this->dbConnection->prepareQuery('DELETE FROM Recensioni WHERE ID=?;');
         $statement->bind_param('i', $id);

@@ -139,6 +139,13 @@ class ReviewsController {
 
         return $content;
     }
+
+    public function getReview($id) {
+        $result_set = $this->reviews->getReview($id);
+        $row = $result_set->fetch_assoc();
+        $result_set->free();
+        return $row;
+    }
 }
 
 ?>
