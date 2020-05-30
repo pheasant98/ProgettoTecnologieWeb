@@ -3,113 +3,119 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN" "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
 
 <html xml:lang="it" xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-        <title>Error 404 | Museo arte nel tempo</title>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-        <meta name="language" content="italian it"/>
-        <meta name="title" content="Error404 | Museo arte nel tempo"/>
-        <meta name="description" content="Visualizzazione di un errore per dati non trovati"/>
-        <meta name="keywords" content="arte, dipinto, scultura, museo"/>
-        <meta name="author" content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto"/>
+    <title>Home | Museo arte nel tempo</title>
 
-        <link rel="stylesheet" media="screen" href="../CSS/Style.css" type="text/css"/>
-        <link rel="stylesheet" media="print" href="../CSS/Print.css" type="text/css"/>
-        <link rel="icon" href=""/>
+    <meta name="language" content="italian it"/>
+    <meta name="title" content="Home | Museo arte nel tempo"/>
+    <!-- TODO: Cambiare la description togliendo periodi storici-->
+    <meta name="description" content="Museo arte nel tempo, museo dedicato all'esposizione di opere artistiche risalenti
+        al periodo del quattrocentro o del cinquecento o del seicento o del settecento"/>
+    <meta name="keywords" content="arte, dipinto, scultura, museo"/>
+    <meta name="author" content="Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto"/>
 
-        <script src="../JavaScript/Placeholder.js" type="text/javascript"></script>
-    </head>
+    <link rel="stylesheet" media="screen" href="../CSS/Style.css" type="text/css"/>
+    <link rel="stylesheet" media="print" href="../CSS/Print.css" type="text/css"/>
+    <link rel="icon" href=""/>
 
-    <body>
-        <div id="headerError404" role="banner">
-            <h1 id="logoImage" class="backgroundImage" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
+    <script src="../JavaScript/Placeholder.js" type="text/javascript"></script>
+</head>
 
-            <div class="headerTitle">
-                <h1>Museo Arte nel Tempo</h1>
-                <h2>Dal Rinascimento al Neoclassicismo</h2>
-            </div>
-        </div>
+<body>
+<div id="header" role="banner">
+    <h1 id="logoImage" class="backgroundImage" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
+    <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
+                Menu ad <span xml:lang="en">hamburger</span>
+            </span>
 
-        <!--
-        <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
-            <ul>
-                <li>
-                    <a id="skipMenu" class="skipInformation" href="#contentError404" aria-label="Vai al contenuto" tabindex="6">Vai al contenuto</a>
-                </li>
+    <div class="headerTitle">
+        <h1>Museo Arte nel Tempo</h1>
+        <h2>Dal Rinascimento al Neoclassicismo</h2>
+    </div>
 
-                <li>
-                    <a href="../Index.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="7" xml:lang="en">Home</a>
-                </li>
+    <span id='loginMenuPlaceholder'/>
 
-                <li>
-                    <a href="Opere.php" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="8">Opere</a>
-                </li>
+    <form id="search" name="search" action="" method="post" role="search">
+        <fieldset id="searchBox">
+            <legend class="hideLegend">Ricerca</legend>
 
-                <li>
-                    <a href="Eventi.php" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="9">Eventi</a>
-                </li>
+            <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
+                <option selected="selected" value="Opera">Opera</option>
+                <option value="Evento">Evento</option>
+            </select>
 
-                <li>
-                    <a href="CosaDiconoDiNoi.php" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni" tabindex="10">Cosa
-                        dicono di noi</a>
-                </li>
+            <label id="hideLabel" for="searchText">Cerca nel sito</label>
+            <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
+            <input id="buttonSubmit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
+        </fieldset>
+    </form>
+</div>
 
-                <li>
-                    <a href="Contatti.php" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti" tabindex="11">Contatti</a>
-                </li>
-            </ul>
-        </div>
-        -->
+<div id="breadcrumbs" aria-label="breadcrumbs">
+    <p>
+        Ti trovi in:
+        <strong xml:lang="en">Ti sei perso</strong>
+    </p>
+</div>
 
-        <div id="contentError404" role="main">
-            <a class="skipInformation" href="#searchBoxError404" aria-label="Salta il testo">Salta il testo</a>
+<div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
+    <ul>
+        <li>
+            <a id="skipMenu" href="#content" class="skipInformation" aria-label="Vai al contenuto" tabindex="9">Vai al contenuto</a>
+        </li>
 
-            <h2 class="title">Hai proprio l'aria di chi si è perso nei corridoi del museo...</h2>
+        <li>
+            <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="9" xml:lang="en">Home</a>
+        </li>
 
-            <p id="imageError404" class="backgroundImage" title="Cornice vuote di un ritratto" role="img" aria-label="Cornice vuote di un ritratto">Cornice vuota con ritratto</p>
+        <li>
+            <a href="Opere.php" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="10">Opere</a>
+        </li>
 
-            <p class="paragraph">
-                ...vorremmo aiutarti a trovare la strada giusta!
-            </p>
+        <li>
+            <a href="Eventi.php" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="11">Eventi</a>
+        </li>
 
-            <p class="paragraph">
-                Prova a spiegarci meglio cosa ti serve, oppure permettici di riaccompagnarti all'ingresso!
-            </p>
+        <li>
+            <a href="CosaDiconoDiNoi.php" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni" tabindex="12">Cosa
+                dicono di noi</a>
+        </li>
 
-            <form id="searchError404" name="search" action="" method="post" role="search">
-                <fieldset id="searchBoxError404" >
-                    <legend class="hideLegend">Ricerca</legend>
-                    <label class="hideLabel" for="filter">filtro per la ricerca</label>
-                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca">
-                        <option selected="selected" value="Opera">Opera</option>
-                        <option value="Evento">Evento</option>
-                    </select>
+        <li>
+            <a href="Contatti.php" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti" tabindex="13">Contatti</a>
+        </li>
+    </ul>
+</div>
 
-                    <label class="hideLabel" for="searchText">Cerca nel sito</label>
-                    <input id="searchText" name="search" type="text" aria-label="Casella di ricerca"/>
-                    <input id="buttonSubmit" name="submit" type="submit" value="Cerca"  aria-label="Pulsante per la ricerca"/>
-                </fieldset>
-            </form>
+<div id="content" role="main">
 
-            <a id="buttonHomeError404" class="button" href="HomePage.php" title="Home" role="button" aria-label="porta alla pagina di home" xml:lang="en"> Home </a>
+    <h2 class="title">Ti sei perso nei corridoi del museo?</h2>
 
-            <a id="buttonBackUp" href="#headerError404" title="Torna su" role="button" aria-label="Torna su">
-                <img alt="Torna su" src="../Images/TornaSu.png"/>
-            </a>
-        </div>
+    <p id="imageError404" class="backgroundImage" title="Cornice vuote di un ritratto" role="img" aria-label="Cornice vuote di un ritratto">Cornice vuota con ritratto</p>
 
-        <div id="footer" aria-label="footer">
-            <p>
-                Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
-            </p>
+    <p class="paragraph">
+        Ti riaccompagnamo all'<a href="../PHP/HomePage.php">entrata</a>!
+    </p>
 
-            <p>
-                Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
-            </p>
+    <a id="buttonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
+        <img alt="Torna su" src="../Images/TornaSu.png"/>
+    </a>
+</div>
 
-            <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
-            <img alt="Simbolo di validazione CSS" src="../Images/vcss-blue.gif"/>
-        </div>
-    </body>
+<div id="footer" aria-label="footer">
+    <p>
+        Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
+    </p>
+
+    <p>
+        Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
+    </p>
+
+    <img class="validationImage" alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
+    <img class="validationImage" alt="Simbolo di validazione CSS" src="../Images/vcss-blue.gif"/>
+</div>
+</body>
 </html>

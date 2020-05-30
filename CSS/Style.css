@@ -35,16 +35,10 @@ a:visited {
 /* Regole per gli header delle pagine */
 
 /* Colore e ombreggiatura dell'header */
-#header,
-#headerError404 {
+#header {
   background-color: #333;
   padding: 1em;
   box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1), 0 10px 10px 0 rgba(0, 0, 0, 0.2);
-}
-
-/* Header per pagina 404 */
-#headerError404 {
-  min-height: 15em;
 }
 
 .headerTitle {
@@ -52,8 +46,7 @@ a:visited {
 }
 
 /* Regole per le barre di ricerca delle pagine */
-#searchBox,
-#searchBoxError404 {
+#searchBox {
   border: 2px solid #000;
   background-color: #eee;
   border-radius: 20px;
@@ -85,10 +78,12 @@ a:visited {
 }
 
 #imageError404 {
-  background-image: url('../images/EmptyPortrait.png');
+  background-image: url('../images/PortraitsCorridor.png');
   text-indent: 100%;
   background-size: 100%;
   background-position: center;
+  text-align: center;
+  width: 100%;
 }
 
 /* Homepage image */
@@ -179,8 +174,7 @@ a:visited {
 }
 
 /* Regole per i contenuti delle pagine */
-#content,
-#contentError404 {
+#content {
   background-color: #fff;
   color: #000;
   border-radius: 20px;
@@ -352,10 +346,6 @@ a:visited {
   opacity: 0.7;
 }
 
-#buttonHomeError404 {
-  margin: 1em auto auto;
-}
-
 .button {
   display: block;
   text-align: center;
@@ -430,10 +420,6 @@ a:visited {
 /* Layout per smartphone */
 
 @media screen and (max-width: 700px) {
-  /* Regole per gli header delle pagine */
-  #headerError404 {
-    min-height: 11em;
-  }
 
   /* Regole per le barre di ricerca delle pagine */
   #searchText {
@@ -444,10 +430,6 @@ a:visited {
     white-space: nowrap;
   }
 
-  #searchBoxError404 {
-    font-size: 0.8em;
-  }
-
   /* Regole per le immagini delle pagine */
   #logoImage {
     height: 4em;
@@ -456,8 +438,6 @@ a:visited {
 
   #imageError404 {
     height: 13em;
-    width: 13em;
-    margin-left: 27%;
   }
 
   /* Regole per i breadcrumbs delle pagine */
@@ -553,9 +533,7 @@ a:visited {
   }
 
   #imageError404 {
-    float: right;
-    height: 21em;
-    width: 21em;
+    height: 20em;
   }
 
   /* Regole per i menu delle pagine */
@@ -622,11 +600,6 @@ a:visited {
     white-space: nowrap;
   }
 
-  #searchBoxError404 {
-    width: 35em;
-    white-space: nowrap;
-  }
-
   /* Regole per le immagini delle pagine */
   #logoImage {
     height: 6em;
@@ -634,9 +607,7 @@ a:visited {
   }
 
   #imageError404 {
-    float: right;
-    height: 25em;
-    width: 25em;
+    height: 23em;
   }
 
   /* Regole per i menu delle pagine */
