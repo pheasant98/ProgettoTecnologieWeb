@@ -7,10 +7,10 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-    <title>Home | Museo arte nel tempo</title>
+    <title>Ti sei perso! | Museo arte nel tempo</title>
 
     <meta name="language" content="italian it"/>
-    <meta name="title" content="Home | Museo arte nel tempo"/>
+    <meta name="title" content="Ti sei perso! | Museo arte nel tempo"/>
     <!-- TODO: Cambiare la description togliendo periodi storici-->
     <meta name="description" content="Museo arte nel tempo, museo dedicato all'esposizione di opere artistiche risalenti
         al periodo del quattrocentro o del cinquecento o del seicento o del settecento"/>
@@ -38,18 +38,19 @@
 
     <span id='loginMenuPlaceholder'/>
 
-    <form id="search" name="search" action="" method="post" role="search">
+    <form id="search" name="search" action="" method="post" role="search" aria-label="Form per la ricerca tra i contenuti del sito">
         <fieldset id="searchBox">
             <legend class="hideLegend">Ricerca</legend>
 
-            <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="3">
+            <label class="hideLabel" for="filter">filtro per la ricerca</label>
+            <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="2">
                 <option selected="selected" value="Opera">Opera</option>
                 <option value="Evento">Evento</option>
             </select>
 
-            <label id="hideLabel" for="searchText">Cerca nel sito</label>
-            <input id="searchText" name="ricerca" type="text" aria-label="Casella di ricerca" tabindex="1"/>
-            <input id="buttonSubmit" name="invio" value="Cerca" type="submit" aria-label="Pulsante per la ricerca" tabindex="2"/>
+            <label class="hideLabel" for="searchText">Cerca nel sito</label>
+            <input id="searchText" name="search" type="text" aria-label="Casella di ricerca" tabindex="1"/>
+            <input id="buttonSubmit" name="submit" type="submit" value="Cerca" aria-label="Pulsante per la ricerca" tabindex="3"/>
         </fieldset>
     </form>
 </div>
@@ -57,7 +58,7 @@
 <div id="breadcrumbs" aria-label="breadcrumbs">
     <p>
         Ti trovi in:
-        <strong xml:lang="en">Ti sei perso</strong>
+        <strong xml:lang="en">Ti sei perso!</strong>
     </p>
 </div>
 
