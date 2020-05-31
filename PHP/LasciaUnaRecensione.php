@@ -39,8 +39,6 @@ if ($_SESSION['previous_page'] === 'AreaPersonale') {
     $breadcrumbs = '<a href="CosaDiconoDiNoi.php" title="Cosa dicono di noi" aria-label="Vai alla pagina cosa dicono di noi" tabindex="10">Cosa dicono di noi</a>';
 }
 
-unset($_SESSION['previous_page']);
-
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
 $document = str_replace("<span id='breadcrumbsPlaceholder'/>", $breadcrumbs, $document);
 $document = str_replace("<span id='outputMessagePlaceholder'/>", $message, $document);

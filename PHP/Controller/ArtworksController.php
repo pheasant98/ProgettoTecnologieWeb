@@ -1,11 +1,13 @@
 <?php
 
-require_once('Repository/ArtworksRepository.php');
+require_once ('Repository/ArtworksRepository.php');
+require_once ('Utilities/FileUtilities.php');
 
 class ArtworksController {
     private $artworks;
+    private $fileUtilities;
 
-    private static function checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions) {
+    private function checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions) {
         $message = '';
 
         if (strlen($author) === 0) {
@@ -48,30 +50,48 @@ class ArtworksController {
             $message .= '[La dimensione dell\'opera non può essere vuota]';
         }
 
+        if (!FileUtilities::isSelected()) {
+            $message .= '[L\'immagine non è stata selezionata]';
+        } elseif (!FileUtilities::isOneAndOnlyOneSelected()) {
+            $message .= '[Non è possibile selezionare più di un\'immagine]';
+        } elseif (!FileUtilities::isSizeBounded()) {
+            $message .= '[L\'immagine selezionata supera la dimensione massima consentita]';
+        } elseif (!FileUtilities::isUploaded()) {
+            $message .= '[L\'immagine non è stata caricata correttamente]';
+        } elseif (!FileUtilities::isCorrectSized()) {
+            $message .= '[L\'immagine caricata è una dimensione troppo elevata]';
+        } elseif (!$this->fileUtilities->isCorrectExtensioned()) {
+            $message .= '[L\'estensione dell\'immagine non è supportata]';
+        } elseif (!$this->fileUtilities->isUniqueRenamed()) {
+            $message .= '[Non è stato possibile generare un nome univoco per il file. Per favore rinominare il file]';
+        }
+
         return $message;
     }
 
     public function __construct() {
         $this->artworks = new ArtworksRepository();
+        $this->fileUtilities = new FileUtilities();
     }
 
     public function __destruct() {
         unset($this->artworks);
+        unset($this->fileUtilities);
     }
 
-    public function addArtwork($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $image, $user) {
-        $message = ArtworksController::checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions);
+    public function addArtwork($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $user) {
+        $message = $this->checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions);
         //TODO: Sistemare loan come intero??
         if ($message === '') {
             if($style === 'Dipinto') {
-                if ($this->artworks->postPainting($author, $title, $description, $years, $technique, $dimensions, $loan, $image, $user)) {
-                    $message = '<p class="success">L\opera ' . $title . ' è stata inserita correttamente</p>';
+                if ($this->artworks->postPainting($author, $title, $description, $years, $technique, $dimensions, $loan, $this->fileUtilities->getPath(), $user)) {
+                    $message = '<p class="success">L\'opera ' . $title . ' è stata inserita correttamente</p>';
                 } else {
                     $message = '<p class="error">Errore nell\'inserimento dell\'opera ' . $title . '</p>';
                 }
             } else {
-                if ($this->artworks->postSculture($author, $title, $description, $years, $material, $dimensions, $loan, $image, $user)) {
-                    $message = '<p class="success">L\opera ' . $title . ' è stata inserita correttamente</p>';
+                if ($this->artworks->postSculture($author, $title, $description, $years, $material, $dimensions, $loan, $this->fileUtilities->getPath(), $user)) {
+                    $message = '<p class="success">L\'opera ' . $title . ' è stata inserita correttamente</p>';
                 } else {
                     $message = '<p class="error">Errore nell\'inserimento dell\'opera ' . $title . '</p>';
                 }
@@ -254,19 +274,19 @@ class ArtworksController {
         return $row;
     }
 
-    public function updateArtwork($id, $author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $image, $user) {
-        $message = ArtworksController::checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions);
+    public function updateArtwork($id, $author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $user) {
+        $message = $this->checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions);
 
         if ($message === '') {
             if($style === 'Dipinto') {
-                if ($this->artworks->updateArtwork($id, $author, $title, $description, $years, $technique, $material, $dimensions, $loan, $image, $user)) {
-                    $message = '<p class="success">Opera aggiornata correttamente</p>';
+                if ($this->artworks->updateArtwork($id, $author, $title, $description, $years, $technique, $material, $dimensions, $loan, $this->fileUtilities->getPath(), $user)) {
+                    $message = '';
                 } else {
                     $message = '<p class="error">Errore nell\'aggiornamento dell\'opera</p>';
                 }
             } else {
-                if ($this->artworks->updateArtwork($id, $author, $title, $description, $years, $technique, $material, $dimensions, $loan, $image, $user)) {
-                    $message = '<p class="success">Opera aggiornata correttamente</p>';
+                if ($this->artworks->updateArtwork($id, $author, $title, $description, $years, $technique, $material, $dimensions, $loan, $this->fileUtilities->getPath(), $user)) {
+                    $message = '';
                 } else {
                     $message = '<p class="error">Errore nell\'aggiornamento dell\'opera</p>';
                 }

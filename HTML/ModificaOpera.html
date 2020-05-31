@@ -94,7 +94,7 @@
         <div id="content" role="main">
             <h2 class="title">Modifica dell'opera</h2>
 
-            <form name="updateArtwork" action="OperaModificata.php" method="post" enctype="multipart/form-data">
+            <form name="updateArtwork" action="" method="post" enctype="multipart/form-data">
                 <fieldset id="UpdateField" class="hideFieldset">
                     <legend class="hideLegend">Modifica opera</legend>
 
@@ -180,6 +180,8 @@
 
                         <p>
                             <label id="labelSize" for="size">Dimensioni</label>
+                            <div>Le dimensioni devono essere inserite nel seguente formato: altezza x larghezza</div>
+                            <!--TODO: fare classe nel div per farlo diventare più piccolo e giusto sotto la textbox. Controllare se è possibile usere 2 label invece di label+div-->
                             <input id="size" class="formElement" name="dimensions" type="text" value="<span id='dimensionsValuePlaceholder'/>" aria-label="Inserisci le dimensioni"/>
                         </p>
 
@@ -202,8 +204,10 @@
                         </p>
 
                         <p>
+                            <img alt="Immagine opera <span id='titleValuePlaceholder'/>" src="../<span id='artworkImgPlaceholder'/>"/>
                             <label id="labelImageUpload" for="imageUpload">Scegliere l'immagine: </label>
                             <input id="imageUpload" class="formElement" name="image" type="file" aria-label="Modifica l'immagine dell'opera" aria-required="true"/>
+                            <!--TODO: Scrivere il suggerimento delle estensioni supportate-->
                         </p>
 
                     <p class="navigation">

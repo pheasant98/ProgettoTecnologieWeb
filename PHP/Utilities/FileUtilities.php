@@ -7,7 +7,7 @@ class FileUtilities {
     private $path;
 
     public function __construct() {
-        $this->base_path = '../../Images/';
+        $this->base_path = '../Images/Uploaded/';
         $this->accepted_extensions = array('jpeg' => 'image/jpeg', 'jpg' => 'image/jpeg', 'png' => 'image/png');
         $this->extension = '';
         $this->path = '';
@@ -36,11 +36,11 @@ class FileUtilities {
         return $_FILES['image']['error'] === UPLOAD_ERR_OK;
     }
 
-    public static function isCorrectSize() {
+    public static function isCorrectSized() {
         return $_FILES['image']['size'] <= 512000;
     }
 
-    public function isCorrectExtension() {
+    public function isCorrectExtensioned() {
         $file_info = new finfo(FILEINFO_MIME_TYPE);
         $this->extension = array_search($file_info->file($_FILES['image']['tmp_name']), $this->accepted_extensions,true);
 
@@ -70,6 +70,6 @@ class FileUtilities {
     }
 
     public function getPath() {
-        return $this->path !== '' ? $this->path : false;
+        return $this->path !== '' ? substr($this->path, 3) : false;
     }
 }

@@ -149,9 +149,9 @@
 
                         <p>
                             <label id="labelSize" for="size">Dimensioni</label>
-                            <input id="size" class="formElement" name="dimensions" type="text" value="<span id='dimensionsValuePlaceholder'/>" aria-label="Inserisci le dimensioni"/>
                             <div>Le dimensioni devono essere inserite nel seguente formato: altezza x larghezza</div>
-                            <!--TODO: fare classe nel div per farlo diventare più piccolo e giusto sotto la textbox-->
+                            <!--TODO: fare classe nel div per farlo diventare più piccolo e giusto sotto la textbox. Controllare se è possibile usere 2 label invece di label+div-->
+                            <input id="size" class="formElement" name="dimensions" type="text" value="<span id='dimensionsValuePlaceholder'/>" aria-label="Inserisci le dimensioni"/>
                         </p>
                     </fieldset>
 
@@ -167,6 +167,8 @@
                         <p>
                             <label id="labelImageUpload" for="imageUpload">Inserisci Immagine</label>
                             <input id="imageUpload" class="formElement" name="image" type="file" aria-label="Inserisci l'immagine"/>
+                            <!--TODO: Scrivere il suggerimento delle estensioni supportate-->
+
                         </p>
 
                         <p class="navigation">

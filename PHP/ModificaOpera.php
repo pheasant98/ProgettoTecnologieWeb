@@ -45,11 +45,13 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Modifica') {
         $technique = '';
     }
     $loan = ($_POST['loan'] === 'Si' ? 1 : 0);
-    $image = $_POST['image'];
     //TODO:sistemare la modifica delle immagini
-    $_SESSION['artwork_title'] = $_POST['artwork_title'];
-    $message = $artworksController->updateArtwork($_GET['id'], $author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $image, $_SESSION['username']);
+    $_SESSION['artwork_title'] = $_POST['title'];
+    $message = $artworksController->updateArtwork($_GET['id'], $author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $_SESSION['username']);
     unset($artworksController);
+    if($message === '') {
+        header('Location: OperaModificata.php');
+    }
 }
 
 $loan_yes = ' ';
@@ -62,7 +64,7 @@ if ($loan === 'No') {
     $loan_yes = ' checked="checked" ';
 }
 
-if ($style === 'Dipinto') {
+if ($style === 'Dipinti') {
     $painting_style = ' selected="selected" ';
 } else {
     $sculture_style = ' selected="selected" ';
@@ -84,6 +86,7 @@ $document = str_replace("<span id='materialValuePlaceholder'/>", $material, $doc
 $document = str_replace("<span id='dimensionsValuePlaceholder'/>", $dimensions, $document);
 $document = str_replace("<span id='loanYesCheckedPlaceholder'/>", $loan_yes, $document);
 $document = str_replace("<span id='loanNoCheckedPlaceholder'/>", $loan_no, $document);
+$document = str_replace("<span id='artworkImgPlaceholder'/>", $image, $document);
 
 echo $document;
 

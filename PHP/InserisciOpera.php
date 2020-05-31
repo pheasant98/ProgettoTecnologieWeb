@@ -25,9 +25,8 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Inserisci') {
     $material = $_POST['material'];
     $dimensions = $_POST['dimensions'];
     $loan = ($_POST['loan'] === 'Si' ? 1 : 0);
-    $image = $_POST['image'];
     $artworksController = new ArtworksController();
-    $message = $artworksController->addArtwork($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $image, $_SESSION['username']);
+    $message = $artworksController->addArtwork($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $_SESSION['username']);
     unset($artworksController);
 }
 
@@ -41,7 +40,6 @@ if ($message === '') {
     $material = '';
     $dimensions = '';
     $loan = 'No';
-    //$image = $_POST['image'];
 }
 
 $loan_yes = ' ';

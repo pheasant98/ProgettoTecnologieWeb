@@ -235,7 +235,7 @@ class EventsController {
 
         if ($message === '') {
             if ($this->events->updateEvent($id, $title, $description, $begin_date, $end_date, $type, $manager, $user)) {
-                $message = '<p class="success">Evento aggiornato correttamente</p>';
+                $message = '';
             } else {
                 $message = '<p class="error">Errore nell\'aggiornamento dell\'evento</p>';
             }
