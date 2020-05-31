@@ -38,7 +38,7 @@ if (LoginController::isAdminUser()) {
         </li>
 
         <li>
-            <a id="ContenutoSito" class="button userOperationButton" href="GestioneContenuti.php" title="vai alla pagina Contenuto Sito" role="button" aria-label="vai alla pagina Contenuto Sito">Contenuto sito</a>
+            <a id="GestioneContenuti" class="button userOperationButton" href="GestioneContenuti.php" title="vai alla pagina Gestione Contenuti" role="button" aria-label="vai alla pagina Gestione Contenuti">Gestione Contenuti</a>
         </li>
     ';
 } else {
@@ -62,7 +62,6 @@ $document = file_get_contents('../HTML/AreaPersonale.html');
 $login = LoginController::getAuthenticationMenu();
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
-$document = str_replace("<span id='namePlaceholder'/>", $user['Nome'], $document);
 $document = str_replace("<span id='userNamePlaceholder'/>", $user['Nome'], $document);
 $document = str_replace("<span id='userSurnamePlaceholder'/>", $user['Cognome'], $document);
 $document = str_replace("<span id='userSexPlaceholder'/>", $user['Sesso'] === 'M' ? 'Maschile' : ($user['Sesso'] === 'F' ? 'Femminile' : 'Non specificato'), $document);

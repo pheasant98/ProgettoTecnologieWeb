@@ -10,8 +10,10 @@ if (!LoginController::isAuthenticatedUser() && !LoginController::isAdminUser()) 
 
 $document = file_get_contents('../HTML/EventoModificato.html');
 $login = LoginController::getAuthenticationMenu();
+$event_title = $_SESSION['event_title'];
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
+$document = str_replace("<span id='eventTitlePlaceholder'/>", $event_title, $document);
 
 echo $document;
 

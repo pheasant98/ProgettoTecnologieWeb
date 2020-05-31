@@ -1,7 +1,6 @@
 <?php
 
 # TODO: decidere alt immagini: immagine dell'opera "titolo" appartenente alla categoria "tipologia"
-# TODO: capire come compattare opere.php ed eventi.php
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -43,7 +42,6 @@ if (!isset($_GET['page'])) {
 
 $offset = ($page - 1) * 5;
 
-//TODO: spostare <dl></dl> su html
 $event_list = '<dl class="clickableList">' . $controller->getEvents($filter_type, $offset) . '</dl>';
 
 unset($controller);

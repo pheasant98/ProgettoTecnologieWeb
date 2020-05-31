@@ -38,7 +38,7 @@ class ReviewsController {
             if ($this->reviews->postReview($title, $content, $user)) {
                 $message = '<p class="success">Recensione inserita correttamente</p>';
             } else {
-                $message = '<p class="error">Errore nell\'inserimento della nuova recensione</p>';
+                $message = '<p class="error">Errore nell\'inserimento della recensione</p>';
             }
         } else {
             $message = '<ul>' . $message;
@@ -80,17 +80,28 @@ class ReviewsController {
                 <dd>
                     <a href="#' . ($result_set->num_rows == $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta la recensione">Salta la recensione</a>
     
-                    <p class="reviewAuthor">
-                        Utente: ' . $row['Utente'] . '
-                    </p>
-                    
-                    <p class="reviewData">
-                        Data: ' . $row['DataPubblicazione'] . '
-                    </p>
-
-                    <p class="reviewDescription">
-                        ' . $row['Contenuto'] . '
-                    </p>
+                    <dl>
+                        <dt class="reviewAuthor">
+                            Utente: 
+                        </dt>
+                        <dd>
+                            ' . $row['Utente'] . '
+                        </dd>
+                        
+                        <dt class="reviewData">
+                            Data: 
+                        </dt>
+                        <dd>
+                            ' . $row['DataPubblicazione'] . '
+                        </dd>
+    
+                        <dt class="reviewDescription">
+                            Descrizione: 
+                        </dt>
+                        <dd>
+                            ' . $row['Contenuto'] . '
+                        </dd>
+                    </dl>
                 </dd>
             ';
 
