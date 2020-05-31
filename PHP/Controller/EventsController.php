@@ -181,7 +181,7 @@ class EventsController {
                 <li>
                     <a href="Evento.php?id=' . $row['ID'] . '" aria-label="Vai all\'evento">' . $row['Titolo'] . '</a>
                     
-                    <form class="userButton" action="eliminaEvento.php" method="post" role="form">
+                    <form class="userButton" action="EliminaContenuto.php" method="post" role="form">
                         <fieldset class="hideFieldset">
                             <legend class="hideLegend">Pulsanti di modifica ed eliminazione dell\'evento</legend>
                             
@@ -223,6 +223,10 @@ class EventsController {
         }
 
         return $message;
+    }
+
+    public function deleteEvent($id) {
+        $this->events->deleteEvent($id);
     }
 }
 

@@ -102,44 +102,6 @@ class ReviewsController {
         return $content;
     }
 
-    public function getUserReviews($user, $offset) {
-        $result_set = $this->reviews->getUserReviews($user, $offset);
-
-        $id = 'review';
-        $button = 'buttonBack';
-        $counter = 1;
-        $content = '';
-
-        while($row = $result_set->fetch_assoc()) {
-            $content .= '
-                <dt id="' . $id . $counter . '" class="reviewObject">
-                     ' . $row['Oggetto'] . '
-                </dt>
-                <dd>
-                    <a href="#' . ($result_set->num_rows == $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta la recensione">Salta la recensione</a>
-                    
-                    <p class="reviewData">
-                        Data: ' . $row['DataPubblicazione'] . '
-                    </p>
-
-                    <p class="reviewDescription">
-                        ' . $row['Contenuto'] . '
-                    </p>
-
-                    <p class="userButton">
-                        <a class="button" href="" title="Rimuovi recensione" role="button" aria-label="Rimuovi recensione">Rimuovi</a>
-                    </p>
-                </dd>
-            ';
-
-            $counter++;
-        }
-
-        $result_set->free();
-
-        return $content;
-    }
-
     public function getListReviews($offset) {
         $result_set = $this->reviews->getReviews($offset);
 
@@ -150,7 +112,7 @@ class ReviewsController {
                 <li>
                     <a href="Recensione.php?id=' . $row['ID'] . '" aria-label="Vai alla pagina della recensione">' . $row['Oggetto'] . '</a>
 
-                    <form class="userButton" action="eliminaRecensione.php" method="post" role="form">
+                    <form class="userButton" action="EliminaRecensione.php" method="post" role="form">
                         <fieldset class="hideFieldset">
                             <legend class="hideLegend">Pulsante di eliminazione della recensione</legend>
                             
@@ -177,7 +139,7 @@ class ReviewsController {
                 <li>
                     <a href="Recensione.php?id=' . $row['ID'] . '" aria-label="Vai alla pagina della recensione">' . $row['Oggetto'] . '</a>
 
-                    <form class="userButton" action="eliminaRecensione.php" method="post" role="form">
+                    <form class="userButton" action="EliminaRecensione.php" method="post" role="form">
                         <fieldset class="hideFieldset">
                             <legend class="hideLegend">Pulsante di eliminazione della recensione</legend>
                             
@@ -199,6 +161,10 @@ class ReviewsController {
         $row = $result_set->fetch_assoc();
         $result_set->free();
         return $row;
+    }
+
+    public function deleteReview($id) {
+        $this->reviews->deleteReview($id);
     }
 }
 

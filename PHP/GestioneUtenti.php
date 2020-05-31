@@ -30,6 +30,8 @@ if (!isset($_GET['page'])) {
     $page = $_GET['page'];
 }
 
+$_SESSION['page'] = $page;
+
 $offset = ($page - 1) * 5;
 
 $user_list = $controller->getUsers($offset);

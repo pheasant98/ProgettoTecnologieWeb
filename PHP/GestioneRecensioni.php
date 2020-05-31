@@ -34,6 +34,8 @@ header('Location: Errore.php');
 $page = $_GET['page'];
 }
 
+$_SESSION['page'] = $page;
+
 $offset = ($page - 1) * 5;
 if (!LoginController::isAdminUser()) {
     $reviews_list = '<ul class="clickableList">' . $controller->getUserListReviews($_SESSION['username'], $offset) . '</ul>';

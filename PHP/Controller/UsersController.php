@@ -93,7 +93,7 @@ class UsersController {
                 <li>
                     <a href="Utente.php?user=' . $row['Username'] . '" aria-label="Vai alla pagina dell\'utente">' .  $row['Username'] . '</a>
 
-                    <form class="userButton" action="eliminaUtente.php" method="post" role="form">
+                    <form class="userButton" action="EliminaUtente.php" method="post" role="form">
                         <fieldset class="hideFieldset">
                             <legend class="hideLegend">Pulsante di eliminazione dell\'utente</legend>
                             
@@ -141,6 +141,10 @@ class UsersController {
         }
 
         return $message;
+    }
+
+    public function deleteUser($username) {
+        $this->users->deleteUser($username);
     }
 }
 

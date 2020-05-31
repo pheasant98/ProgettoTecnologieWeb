@@ -80,6 +80,10 @@ if (!isset($_GET['page'])) {
     $page = $_GET['page'];
 }
 
+$_SESSION['page'] = $page;
+$_SESSION['filter_content'] = $filter_content;
+$_SESSION['filter_content_type'] = $filter_content_type;
+
 $offset = ($page - 1) * 5;
 if($artwork_count > 0) {
     if ((($artwork_count - $offset) < 5) && (($artwork_count - $offset) > 0)) {
