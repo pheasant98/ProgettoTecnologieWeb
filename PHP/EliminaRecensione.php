@@ -9,6 +9,8 @@ if (!isset($_POST['submit']) || $_POST['submit'] !== 'Rimuovi' || !isset($_SESSI
 require_once ('Controller/ReviewsController.php');
 
 $controller = new ReviewsController();
+$review = $controller->getReview($_POST['id']);
+$_SESSION['review_object_deleted'] = $review['Oggetto'];
 $controller->deleteReview($_POST['id']);
 unset($controller);
 

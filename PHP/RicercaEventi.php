@@ -46,7 +46,7 @@ if (($page * 5) < $event_count) {
 }
 
 require_once ('Controller/LoginController.php');
-$document = file_get_contents('../HTML/Eventi.html');
+$document = file_get_contents('../HTML/RicercaEventi.html');
 $login = LoginController::getAuthenticationMenu();
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
