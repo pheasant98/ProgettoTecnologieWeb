@@ -210,6 +210,7 @@ class ArtworksController {
                             <legend class="hideLegend">Pulsanti di modifica ed eliminazione dell\'opera</legend>
                             
                             <input type="hidden" name="id" value="' . $row['ID'] . '"/>
+                            <input type="hidden" name="type" value="Opera"/>
                             
                             <a class="button" href="ModificaOpera.php?id=' . $row['ID'] . '" title="Modifica dettagli opera" role="button" aria-label="Modifica dettagli opera">Modifica</a>
                             <input id="buttonConfirm" class="button" name="submit" type="submit" value="Rimuovi" role="button" aria-label="Rimuovi opera"/>

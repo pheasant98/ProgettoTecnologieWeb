@@ -61,12 +61,26 @@ if (isset($_GET['filterContent'])) {
     $event_count = $events_controller->getEventsCount();
 }
 
-if($artwork_count == 1) {
+$deleted = '';
+if (isset($_SESSION['deleted']) && isset($_SESSION['deleted_type'])) {
+    if ($_SESSION['deleted_type'] === 'Opera') {
+        $artwork = $artworks_controller->getArtwork($_SESSION['deleted']);
+        $deleted = 'L\'opera "' . $artwork['Titolo'] . '" è stata eliminata correttamente';
+    } else if ($_SESSION['deleted_type'] === 'Evento') {
+        $event = $events_controller->getEvent($_SESSION['deleted']);
+        $deleted = 'L\'evento "' . $event['Titolo'] . '" è stato eliminato correttamente';
+    }
+
+    unset($_SESSION['deleted']);
+    unset($_SESSION['deleted_type']);
+}
+
+if ($artwork_count == 1) {
     $artworks_number_found = '<p> È stata trovata ' . $artwork_count . ' opera. </p>';
 } else {
     $artworks_number_found = '<p> Sono state trovate ' . $artwork_count . ' opere. </p>';
 }
-if($event_count == 1) {
+if ($event_count == 1) {
     $events_number_found = '<p> È stato trovato ' . $event_count . ' evento. </p>';
 } else {
     $events_number_found = '<p> Sono stati trovati ' . $event_count . ' eventi. </p>';
@@ -85,9 +99,9 @@ $_SESSION['filter_content'] = $filter_content;
 $_SESSION['filter_content_type'] = $filter_content_type;
 
 $offset = ($page - 1) * 5;
-if($artwork_count > 0) {
+if ($artwork_count > 0) {
     if ((($artwork_count - $offset) < 5) && (($artwork_count - $offset) > 0)) {
-        if($event_count > 0) {
+        if ($event_count > 0) {
             //Mi restano meno opere di quelle che può contenere una pagina ma ho eventi quindi li concateno
             $contents_list = $artworks_controller->getArtworksTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $offset);
             $events_offset = ($page * 5) - $artwork_count;
@@ -145,6 +159,7 @@ $document = str_replace("<span id='filterOptionPaintingsPlaceholder'/>", $filter
 $document = str_replace("<span id='filterOptionSculturesPlaceholder'/>", $filter_option_scultures, $document);
 $document = str_replace("<span id='filterOptionExhibitionsPlaceholder'/>", $filter_option_exhibitions, $document);
 $document = str_replace("<span id='filterOptionConferencesPlaceholder'/>", $filter_option_conferences, $document);
+$document = str_replace("<span id='deletedContent'/>", $deleted, $document);
 $document = str_replace("<span id='artworksNumberFoundPlaceholder'/>", $artworks_number_found, $document);
 $document = str_replace("<span id='eventsNumberFoundPlaceholder'/>", $events_number_found, $document);
 $document = str_replace("<span id='contentsListPlaceholder'/>", $contents_list, $document);

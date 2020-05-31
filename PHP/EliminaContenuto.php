@@ -6,11 +6,11 @@ if (!isset($_POST['submit']) || $_POST['submit'] !== 'Rimuovi' || !isset($_SESSI
     header('Location: Errore.php');
 }
 
-if ($_SESSION['filter_content'] === 'Evento') {
+if ($_POST['type'] === 'Evento') {
     require_once('Controller/EventsController.php');
     $controller = new EventsController();
     $controller->deleteEvent($_POST['id']);
-} else if ($_SESSION['filter_content'] === 'Opera') {
+} else if ($_POST['type'] === 'Opera') {
     require_once('Controller/ArtworksController.php');
     $controller = new ArtworksController();
     $controller->deleteArtwork($_POST['id']);
@@ -19,6 +19,7 @@ if ($_SESSION['filter_content'] === 'Evento') {
 unset($controller);
 
 $_SESSION['deleted'] = $_POST['id'];
+$_SESSION['deleted_type'] = $_POST['type'];
 
 $page = $_SESSION['page'];
 $filter_content = $_SESSION['filter_content'];
