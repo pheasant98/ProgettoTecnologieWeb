@@ -38,7 +38,7 @@ class ReviewsController {
             if ($this->reviews->postReview($title, $content, $user)) {
                 $message = '<p class="success">Recensione inserita correttamente</p>';
             } else {
-                $message = '<p class="error">Errore nell\'inserimento della nuova recensione</p>';
+                $message = '<p class="error">Errore nell\'inserimento della recensione</p>';
             }
         } else {
             $message = '<ul>' . $message;

@@ -47,6 +47,7 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Modifica') {
     $loan = ($_POST['loan'] === 'Si' ? 1 : 0);
     $image = $_POST['image'];
     //TODO:sistemare la modifica delle immagini
+    $_SESSION['artwork_title'] = $_POST['artwork_title'];
     $message = $artworksController->updateArtwork($_GET['id'], $author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $image, $_SESSION['username']);
     unset($artworksController);
 }

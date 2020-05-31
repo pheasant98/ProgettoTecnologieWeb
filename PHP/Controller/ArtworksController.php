@@ -65,15 +65,15 @@ class ArtworksController {
         if ($message === '') {
             if($style === 'Dipinto') {
                 if ($this->artworks->postPainting($author, $title, $description, $years, $technique, $dimensions, $loan, $image, $user)) {
-                    $message = '<p class="success">Opera inserita correttamente</p>';
+                    $message = '<p class="success">L\opera ' . $title . ' è stata inserita correttamente</p>';
                 } else {
-                    $message = '<p class="error">Errore nell\'inserimento della nuova opera</p>';
+                    $message = '<p class="error">Errore nell\'inserimento dell\'opera ' . $title . '</p>';
                 }
             } else {
                 if ($this->artworks->postSculture($author, $title, $description, $years, $material, $dimensions, $loan, $image, $user)) {
-                    $message = '<p class="success">Opera inserita correttamente</p>';
+                    $message = '<p class="success">L\opera ' . $title . ' è stata inserita correttamente</p>';
                 } else {
-                    $message = '<p class="error">Errore nell\'inserimento della nuova opera</p>';
+                    $message = '<p class="error">Errore nell\'inserimento dell\'opera ' . $title . '</p>';
                 }
             }
         } else {

@@ -10,9 +10,10 @@ if (!LoginController::isAuthenticatedUser()) {
 
 $document = file_get_contents('../HTML/DatiUtenteModificati.html');
 $login = LoginController::getAuthenticationMenu();
-$name =
+$username = $_SESSION['username'];
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
+$document = str_replace("<span id='usernamePlaceholder'/>", $username, $document);
 
 echo $document;
 

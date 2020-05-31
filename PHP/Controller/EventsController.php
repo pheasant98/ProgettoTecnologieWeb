@@ -52,9 +52,9 @@ class EventsController {
 
         if ($message === '') {
             if ($this->events->postEvent($title, $description, $begin_date, $end_date, $type, $manager, $user)) {
-                $message = '<p class="success">Evento inserito correttamente</p>';
+                $message = '<p class="success">L\' evento ' . $title . ' è stato inserito correttamente</p>';
             } else {
-                $message = '<p class="error">Errore nell\'inserimento di un nuovo evento</p>';
+                $message = '<p class="error">Errore nell\'inserimento dell\' evento ' . $title . '</p>';
             }
         } else {
             $message = '<ul>' . $message;

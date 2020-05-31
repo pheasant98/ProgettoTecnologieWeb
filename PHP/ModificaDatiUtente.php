@@ -37,7 +37,6 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Modifica') {
     $oldPassword = hash('sha256', $_POST['OldPassword']);
     $newPassword = hash('sha256', $_POST['NewPassword']);
     $repeated_password = hash('sha256', $_POST['RepeatePassword']);
-
     $message = $usersController->updateUser($_SESSION['username'], $name, $surname, $date, $sex, $mail, $oldPassword, $newPassword, $repeated_password);
     unset($usersController);
 }
