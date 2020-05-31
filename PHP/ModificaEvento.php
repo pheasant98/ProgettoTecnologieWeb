@@ -31,7 +31,7 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Modifica') {
     $end_date = $_POST['endDate'];
     $type = $_POST['type'];
     $manager = $_POST['manager'];
-
+    $_SESSION['event_title'] = $_POST['title'];
     $message = $eventsController->updateEvent($_GET['id'], $title, $description, $begin_date, $end_date, $type, $manager, $_SESSION['username']);
     unset($eventsController);
 }

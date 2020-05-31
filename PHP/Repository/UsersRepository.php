@@ -13,8 +13,7 @@ class UsersRepository {
         unset($this->dbConnection);
     }
 
-    public function postUser($name, $surname, $birthday, $sex, $username, $mail, $password, $admin=0) {
-        $hashed_password = hash('sha256', $password);
+    public function postUser($name, $surname, $birthday, $sex, $username, $mail, $hashed_password, $admin=0) {
         $statement = $this->dbConnection->prepareQuery('INSERT INTO Utenti (Nome, Cognome, DataNascita, Sesso, Username, Email, Password, Admin) VALUES (?, ?, ?, ?, ?, ?, ?, ?);');
         $statement->bind_param('sssssssi', $name, $surname, $birthday, $sex, $username, $mail, $hashed_password, $admin);
         return $this->dbConnection->executeNotSelectStatement($statement);
@@ -37,8 +36,7 @@ class UsersRepository {
         return $this->dbConnection->executeSelectStatement($statement);
     }
 
-    public function getUserByCredential($username, $password) {
-        $hashed_password = hash('sha256', $password);
+    public function getUserByCredential($username, $hashed_password) {
         $statement = $this->dbConnection->prepareQuery('SELECT * FROM Utenti WHERE Username=? AND Password=?;');
         $statement->bind_param('ss', $username, $hashed_password);
         return $this->dbConnection->executeSelectStatement($statement);

@@ -61,19 +61,19 @@ class ArtworksController {
 
     public function addArtwork($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $image, $user) {
         $message = ArtworksController::checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions);
-        //TODO: Sistemare loan come intero
+        //TODO: Sistemare loan come intero??
         if ($message === '') {
             if($style === 'Dipinto') {
                 if ($this->artworks->postPainting($author, $title, $description, $years, $technique, $dimensions, $loan, $image, $user)) {
-                    $message = '<p class="success">Opera inserita correttamente</p>';
+                    $message = '<p class="success">L\opera ' . $title . ' è stata inserita correttamente</p>';
                 } else {
-                    $message = '<p class="error">Errore nell\'inserimento della nuova opera</p>';
+                    $message = '<p class="error">Errore nell\'inserimento dell\'opera ' . $title . '</p>';
                 }
             } else {
                 if ($this->artworks->postSculture($author, $title, $description, $years, $material, $dimensions, $loan, $image, $user)) {
-                    $message = '<p class="success">Opera inserita correttamente</p>';
+                    $message = '<p class="success">L\opera ' . $title . ' è stata inserita correttamente</p>';
                 } else {
-                    $message = '<p class="error">Errore nell\'inserimento della nuova opera</p>';
+                    $message = '<p class="error">Errore nell\'inserimento dell\'opera ' . $title . '</p>';
                 }
             }
         } else {
@@ -123,17 +123,28 @@ class ArtworksController {
                 <dd>
                     <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'opera">Salta l\'opera</a>
     
-                    <p>
-                        Nome autore: ' . $row['Autore'] . '
-                    </p>
-                    
-                    <p>
-                        Stile: ' . $row['Stile'] . '
-                    </p>
-
-                    <p>
-                        Data: ' . $row['Datazione'] . '
-                    </p>
+                    <dl>
+                        <dt>
+                            Nome autore: 
+                        </dt>
+                        <dd>
+                            ' . $row['Autore'] . '
+                        </dd>
+                        
+                        <dt>
+                            Stile: 
+                        </dt>
+                        <dd>
+                            ' . $row['Stile'] . '
+                        </dd>
+    
+                        <dt>
+                            Data: 
+                        </dt>
+                        <dd>
+                            ' . $row['Datazione'] . '
+                        </dd>
+                    </dl>
                     
                     <img alt="Immagine dell\'opera ' . $row['Titolo'] . '" src="../' . $row['Immagine'] . '"/>
                 </dd>
@@ -167,17 +178,28 @@ class ArtworksController {
                 <dd>
                     <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'opera">Salta l\'opera</a>
     
-                    <p>
-                        Nome autore: ' . $row['Autore'] . '
-                    </p>
-                    
-                    <p>
-                        Stile: ' . $row['Stile'] . '
-                    </p>
-
-                    <p>
-                        Data: ' . $row['Datazione'] . '
-                    </p>
+                    <dl>
+                        <dt>
+                            Nome autore: 
+                        </dt>
+                        <dd>
+                            ' . $row['Autore'] . '
+                        </dd>
+                        
+                        <dt>
+                            Stile: 
+                        </dt>
+                        <dd>
+                            ' . $row['Stile'] . '
+                        </dd>
+    
+                        <dt>
+                            Data: 
+                        </dt>
+                        <dd>
+                            ' . $row['Datazione'] . '
+                        </dd>
+                    </dl>
                     
                     <img alt="Immagine dell\'opera ' . $row['Titolo'] . '" src="../' . $row['Immagine'] . '"/>
                 </dd>
