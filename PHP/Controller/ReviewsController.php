@@ -9,15 +9,21 @@ class ReviewsController {
         $message = '';
 
         if (strlen($title) === 0) {
-            $message .= '[Il titolo della recensione non può essere vuoto]';
-        } elseif (strlen($title) < 3) {
-            $message .= '[Il titolo della recensione deve essere lungo almeno 3 caratteri]';
+            $message .= '[Non è possibile inserire una recensione con un titolo vuoto]';
+        } elseif (strlen($title) < 2) {
+            $message .= '[Non è possibile inserire una recensione con un titolo più corto di 2 caratteri]';
+        } elseif (strlen($title) > 64) {
+            $message .= '[Non è possibile inserire una recensione con un titolo più lungo di 64 caratteri]';
+        } elseif (!preg_match('/^[A-zÀ-ú0-9\'`!?.,:()-]+$/', $message)) {
+            $message .= '[Il titolo inserito contiene dei caratteri non consentiti, è possibile inserire solamente lettere, possibilmente accentate, numeri, parentesi e segni di punteggiatura]';
         }
 
         if (strlen($content) === 0) {
-            $message .= '[Il contenuto della recensione non può essere vuoto]';
-        } elseif (strlen($content) < 30) {
-            $message .= '[Il contenuto della recensione deve essere lungo almeno 30 caratteri]';
+            $message .= '[Non è possibile inserire una recensione con un contenuto vuoto]';
+        } elseif (strlen($content) < 4) {
+            $message .= '[Non è possibile inserire una recensione con un contenuto più corto di 4 caratteri]';
+        } elseif (strlen($content) > 500) {
+            $message .= '[Non è possibile inserire una recensione con un contenuto più lungo di 500 caratteri]';
         }
 
         return $message;

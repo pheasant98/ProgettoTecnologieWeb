@@ -14,6 +14,13 @@ if (!LoginController::isAuthenticatedUser()) {
     header('Location: Errore.php');
 }
 
+$welcome = '';
+if (isset($_SESSION['just_registered']) && $_SESSION['just_registered'] === true) {
+    $welcome = '<p>La registrazione è stata completata correttamente</p>';
+
+    unset($_SESSION['just_registered']);
+}
+
 $_SESSION['previous_page'] = 'AreaPersonale';
 
 $users_controller = new UsersController();
@@ -64,6 +71,7 @@ $document = file_get_contents('../HTML/AreaPersonale.html');
 $login = LoginController::getAuthenticationMenu();
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
+$document = str_replace("<span id='justRegisteredWelcomePlaceholder'/>", $welcome, $document);
 $document = str_replace("<span id='userNamePlaceholder'/>", $user['Nome'], $document);
 $document = str_replace("<span id='userSurnamePlaceholder'/>", $user['Cognome'], $document);
 $document = str_replace("<span id='userSexPlaceholder'/>", $user['Sesso'] === 'M' ? 'Maschile' : ($user['Sesso'] === 'F' ? 'Femminile' : 'Non specificato'), $document);

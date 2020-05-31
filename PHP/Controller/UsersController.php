@@ -1,6 +1,7 @@
 <?php
 
 require_once ('Repository/UsersRepository.php');
+require_once ('Utilities/DateUtilities.php');
 
 class UsersController {
     private $users;
@@ -9,39 +10,77 @@ class UsersController {
         $message = '';
 
         if (strlen($name) === 0) {
-            $message .= '[Il nome non può essere vuoto]';
+            $message .= '[Non è possibile inserire un nome vuoto]';
         } elseif (strlen($name) < 2) {
-            $message .= '[Il nome deve essere lungo almeno 2 caratteri]';
+            $message .= '[Non è possibile inserire un nome più corto di 2 caratteri]';
+        } elseif (strlen($name) > 32) {
+            $message .= '[Non è possibile inserire un nome più lungo di 32 caratteri]';
+        } elseif (!preg_match('/^[A-zÀ-ú\'`.\s]+$/', $name)) {
+            $message .= '[Il nome inserito contiene dei caratteri non consentiti, è possibile inserire solamente lettere, possibilmente accentate, apostrofi, punti e spazi]';
         }
 
         if (strlen($surname) === 0) {
-            $message .= '[Il cognome non può essere vuoto]';
+            $message .= '[Non è possibile inserire un cognome vuoto]';
         } elseif (strlen($surname) < 2) {
-            $message .= '[Il cognome deve essere lungo almeno 2 caratteri]';
+            $message .= '[Non è possibile inserire un cognome più corto di 2 caratteri]';
+        } elseif (strlen($surname) > 32) {
+            $message .= '[Non è possibile inserire un cognome più lungo di 32 caratteri]';
+        } elseif (!preg_match('/^[A-zÀ-ú\'-`.\s]+$/', $surname)) {
+            $message .= '[Il cognome inserito contiene dei caratteri non consentiti, è possibile inserire solamente lettere, possibilmente accentate, apostrofi, punti, trattini e spazi]';
         }
 
         if ($sex !== 'M' && $sex !== 'F' && $sex !== 'A') {
-            $message .= '[Il sesso deve essere scelto tra M, F ed A]';
+            $message .= '[Il sesso deve essere scelto tra "Maschile", "Femminile" e "Preferisco non dichiarare"]';
         }
 
         if (strlen($date) === 0) {
-            $message .= '[La data di nascita non può essere vuota]';
+            $message .= '[Non è possibile inserire una data di nascita vuota]';
+        } else {
+            $formatted_date = DateTime::createFromFormat('d-m-Y', $date);
+            if ($formatted_date === false) {
+                $message .= '[Non è possibile inserire una data di nascita espressa nel formato diverso da "gg-mm-aaaa"]';
+            } else {
+                $date_properties = date_create_from_format('d-m-Y', $date);
+                if (!checkdate($date_properties['month'], $date_properties['day'], $date_properties['year'])) {
+                    $message .= '[La data di nascita inserita non è valida]';
+                } else {
+                    $inserted_date = DateTime::createFromFormat('Y-m-d', DateUtilities::italianEnglishDate($date));
+                    $lower_bound = DateTime::createFromFormat('Y-m-d', '1900-01-01');
+                    $upper_bound = DateTime::createFromFormat('Y-m-d', '2006-12-31');
+
+                    if ($inserted_date < $lower_bound) {
+                        $message .= '[Non è possibile inserire una data di nascita precedente al 01-01-1900]';
+                    } elseif ($inserted_date > $upper_bound) {
+                        $message .= '[Non è possibile inserire una data di nascita successiva al 31-12-2006]';
+                    }
+                }
+            }
         }
 
         if (strlen($mail) === 0) {
-            $message .= '[L\'indirizzo <span xml:lang="en">email</span> non può essere vuoto]';
+            $message .= '[Non è possibile inserire un indirizzo <span xml:lang="en">email</span> vuoto]';
+        } elseif (strlen($mail) > 64) {
+            $message .= '[Non è possibile inserire un indirizzo <span xml:lang="en">email</span> più lungo di 64 caratteri]';
+        } elseif (!preg_match('/^[a-zA-Z0-9.!#$%&\'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/', $mail)) {
+            $message .= '[L\'indirizzo <span xml:lang="en">email</span> inserito non è valido]';
         }
 
         if (strlen($username) === 0) {
-            $message .= '[Lo <span xml:lang="en">username</span> non può essere vuoto]';
-        } elseif (strlen($username) < 3) {
-            $message .= '[Lo <span xml:lang="en">username</span> deve essere lungo almeno 3 caratteri]';
+            $message .= '[Non è possibile inserire uno <span xml:lang="en">username</span> vuoto]';
+        } elseif (strlen($username) < 4) {
+            $message .= '[Non è possibile inserire uno <span xml:lang="en">username</span> più corto di 4 caratteri]';
+        } elseif (strlen($username) > 32) {
+            $message .= '[Non è possibile inserire uno <span xml:lang="en">username</span> più lungo di 32 caratteri]';
         }
 
         if (strlen($password) === 0) {
-            $message .= '[La <span xml:lang="en">password</span> non può essere vuota]';
+            $message .= '[Non è possibile inserire una <span xml:lang="en">password</span> vuota]';
         } elseif (strlen($password) < 8) {
-            $message .= '[La <span xml:lang="en">password</span> deve essere lungo almeno 8 caratteri]';
+            $message .= '[Non è possibile inserire una <span xml:lang="en">password</span> più corta di 8 caratteri]';
+        } elseif (strlen($password) > 64) {
+            $message .= '[Non è possibile inserire una <span xml:lang="en">password</span> più lunga di 64 caratteri]';
+        } elseif (!preg_match('/^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+=§_/|ç<>£€!?]).*$/', $password)) {
+            $message .= '[La <span xml:lang="en">password</span> inserita non soddisfa tutti i requisiti richiesti, deve essere presente almeno una lettera minuscola, una lettera maiuscola, un numero ed un carattere speciale]';
         }
 
         return $message;
@@ -63,7 +102,7 @@ class UsersController {
         if ($message === '') {
             $hashed_password = hash('sha256', $password);
             if ($this->users->postUser($name, $surname, $date, $sex, $username, $mail, $hashed_password)) {
-                $message = '<p class="success">Nuovo utente correttamente registrato</p>';
+                $message = '';
             } else {
                 $message = '<p class="error">Errore durante la registrazione del nuovo utente</p>';
             }
