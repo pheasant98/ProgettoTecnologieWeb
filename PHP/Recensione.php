@@ -22,8 +22,8 @@ $review = $controller->getReview($_GET['id']);
 
 unset($controller);
 
-$review_title = $review['Titolo'];
-$review_description = $review['Descrizione'];
+$review_title = $review['Oggetto'];
+$review_description = $review['Contenuto'];
 
 $document = str_replace("<span id='titlePlaceholder'/>", $review_title, $document);
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);

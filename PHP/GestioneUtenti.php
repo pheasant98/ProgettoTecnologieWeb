@@ -16,6 +16,12 @@ if (!LoginController::isAuthenticatedUser()) {
 $controller = new UsersController();
 $user_count = $controller->getUsersCount();
 
+$deleted = '';
+if (isset($_SESSION['deleted'])) {
+    $deleted = 'L\'utente ' . $_SESSION['deleted'] . ' è stato eliminato correttamente';
+    unset($_SESSION['deleted']);
+}
+
 if($user_count == 1) {
     $user_number_found = '<p> È stato trovato ' . $user_count . ' utente: </p>';
 } else {
@@ -29,6 +35,8 @@ if (!isset($_GET['page'])) {
 } else {
     $page = $_GET['page'];
 }
+
+$_SESSION['page'] = $page;
 
 $offset = ($page - 1) * 5;
 
@@ -51,6 +59,7 @@ $document = file_get_contents('../HTML/GestioneUtenti.html');
 $login = LoginController::getAuthenticationMenu();
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
+$document = str_replace("<span id='deletedContent'/>", $deleted, $document);
 $document = str_replace("<span id='userNumberFoundPlaceholder'/>", $user_number_found, $document);
 $document = str_replace("<span id='userListPlaceholder'/>", $user_list, $document);
 $document = str_replace("<span id='buttonBackPlaceholder'/>", $previous_users, $document);

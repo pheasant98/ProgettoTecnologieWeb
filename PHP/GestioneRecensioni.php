@@ -20,6 +20,13 @@ if (!LoginController::isAdminUser()) {
     $reviews_count = $controller->getReviewsCount();
 }
 
+$deleted = '';
+if (isset($_SESSION['deleted'])) {
+    $review = $controller->getReview($_SESSION['id']);
+    $deleted = 'La recensione "' . $review['Oggetto'] . '" è stata eliminata correttamente';
+    unset($_SESSION['deleted']);
+}
+
 if($reviews_count == 1) {
     $user_reviews_count_found = '<p> È stata trovata ' . $reviews_count . ' recensione: </p>';
 } else {
@@ -33,6 +40,8 @@ header('Location: Errore.php');
 } else {
 $page = $_GET['page'];
 }
+
+$_SESSION['page'] = $page;
 
 $offset = ($page - 1) * 5;
 if (!LoginController::isAdminUser()) {
@@ -61,6 +70,7 @@ $document = file_get_contents('../HTML/GestioneRecensioni.html');
 $login = LoginController::getAuthenticationMenu();
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
+$document = str_replace("<span id='deletedContent'/>", $deleted, $document);
 $document = str_replace("<span id='pageDescriptionPlaceholder'/>", $description, $document);
 $document = str_replace("<span id='titlePlaceholder'/>", $title, $document);
 $document = str_replace("<span id='reviewsNumberPlaceholder'/>", $user_reviews_count_found, $document);
