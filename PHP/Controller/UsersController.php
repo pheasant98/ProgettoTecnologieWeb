@@ -86,25 +86,23 @@ class UsersController {
     public function getUsers($offset) {
         $result_set = $this->users->getUsers($offset);
 
-        $id = 'user';
-        $button = 'buttonBack';
-        $counter = 1;
         $content = '';
 
         while($row = $result_set->fetch_assoc()) {
             $content .= '
                 <li>
-                    <a id="' . $id . $counter . '" href="Utente.php?user=' . $row['Username'] . '">' .  $row['Username'] . '</a>
+                    <a href="Utente.php?user=' . $row['Username'] . '" aria-label="Vai alla pagina dell\'utente">' .  $row['Username'] . '</a>
 
-                    <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation">Salta l\'utente</a>
-
-                    <p class="userButton">
-                        <a class="button" href="" title="Rimuovi utente" role="button" aria-label="Rimuovi utente">Rimuovi</a>
-                    </p>
+                    <form class="userButton" action="eliminaUtente.php" method="post" role="form">
+                        <fieldset class="hideFieldset">
+                            <legend class="hideLegend">Pulsante di eliminazione dell\'utente</legend>
+                            
+                            <input type="hidden" name="id" value="' . $row['Username'] . '"/>
+                            <input id="buttonConfirm" class="button" name="submit" type="submit" value="Rimuovi" role="button" aria-label="Rimuovi utente"/>
+                        </fieldset>
+                    </form>
                 </li>
             ';
-
-            $counter++;
         }
 
         $result_set->free();

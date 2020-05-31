@@ -85,9 +85,9 @@ if($artwork_count > 0) {
     if ((($artwork_count - $offset) < 5) && (($artwork_count - $offset) > 0)) {
         if($event_count > 0) {
             //Mi restano meno opere di quelle che può contenere una pagina ma ho eventi quindi li concateno
-            $contents_list = $artworks_controller->getArtworksTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $offset, true);
+            $contents_list = $artworks_controller->getArtworksTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $offset);
             $events_offset = ($page * 5) - $artwork_count;
-            $contents_list .= $events_controller->getEventsTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, 0, $artwork_count, $events_offset);
+            $contents_list .= $events_controller->getEventsTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, 0, $events_offset);
         } else {
             //Mi restano meno opere di quelle che può contenere una pagina ma non ho eventi quindi le metto e concludo
             $contents_list = $artworks_controller->getArtworksTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $offset);
@@ -95,14 +95,14 @@ if($artwork_count > 0) {
     } elseif ($offset > $artwork_count) {
         //Ho avuto opere ma sono finite
         $events_offset = $offset - $artwork_count;
-        $contents_list = $events_controller->getEventsTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $events_offset, $offset);
+        $contents_list = $events_controller->getEventsTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $events_offset);
     } else {
         //Ho opere e me ne stanno di più di quelle permesse in una pagina
         $contents_list = $artworks_controller->getArtworksTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $offset);
     }
 } else {
     //Non ho mai avuto opere ed ho solo eventi
-    $contents_list = $events_controller->getEventsTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $offset, 0);
+    $contents_list = $events_controller->getEventsTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $offset);
 }
 
 unset($artworks_controller);

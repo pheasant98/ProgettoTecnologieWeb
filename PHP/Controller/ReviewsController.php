@@ -148,11 +148,16 @@ class ReviewsController {
         while($row = $result_set->fetch_assoc()) {
             $content .= '
                 <li>
-                    <a href="Recensione.php?id=' . $row['ID'] . '" aria-label="Vai alla recensione">' . $row['Oggetto'] . '</a>
+                    <a href="Recensione.php?id=' . $row['ID'] . '" aria-label="Vai alla pagina della recensione">' . $row['Oggetto'] . '</a>
 
-                    <p class="userButton">
-                        <a class="button" href="" title="Rimuovi recensione" role="button" aria-label="Rimuovi recensione">Rimuovi</a>
-                    </p>
+                    <form class="userButton" action="eliminaRecensione.php" method="post" role="form">
+                        <fieldset class="hideFieldset">
+                            <legend class="hideLegend">Pulsante di eliminazione della recensione</legend>
+                            
+                            <input type="hidden" name="id" value="' . $row['ID'] . '"/>
+                            <input id="buttonConfirm" class="button" name="submit" type="submit" value="Rimuovi" role="button" aria-label="Rimuovi recensione"/>
+                        </fieldset>
+                    </form>
                 </li>
             ';
         }
@@ -170,11 +175,16 @@ class ReviewsController {
         while($row = $result_set->fetch_assoc()) {
             $content .= '
                 <li>
-                    <a href="Recensione.php?id=' . $row['ID'] . '" aria-label="Vai alla recensione">' . $row['Oggetto'] . '</a>
+                    <a href="Recensione.php?id=' . $row['ID'] . '" aria-label="Vai alla pagina della recensione">' . $row['Oggetto'] . '</a>
 
-                    <p class="userButton">
-                        <a class="button" href="" title="Rimuovi recensione" role="button" aria-label="Rimuovi recensione">Rimuovi</a>
-                    </p>
+                    <form class="userButton" action="eliminaRecensione.php" method="post" role="form">
+                        <fieldset class="hideFieldset">
+                            <legend class="hideLegend">Pulsante di eliminazione della recensione</legend>
+                            
+                            <input type="hidden" name="id" value="' . $row['ID'] . '"/>
+                            <input id="buttonConfirm" class="button" name="submit" type="submit" value="Rimuovi" role="button" aria-label="Rimuovi recensione"/>
+                        </fieldset>
+                    </form>
                 </li>
             ';
         }

@@ -191,37 +191,32 @@ class ArtworksController {
         return $content;
     }
 
-    public function getArtworksTitle($style, $offset, $events_following = false) {
+    public function getArtworksTitle($style, $offset) {
         if ($style === '') {
             $result_set = $this->artworks->getArtworks($offset);
         } else {
             $result_set = $this->artworks->getArtworksByStyle($style, $offset);
         }
 
-        $id = 'content';
-        if ($events_following === true) {
-            $button = $id . '1';
-        } else {
-            $button = 'buttonBack';
-        }
-        $counter = 1;
         $content = '';
 
         while($row = $result_set->fetch_assoc()) {
             $content .= '
                 <li>
-                    <a id="' . $id . $counter . '" href="Opera.php?id=' . $row['ID'] . '" aria-label="Vai all\'opera">' . $row['Titolo'] . '</a>
-
-                    <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'opera">Salta l\'opera</a>
-
-                    <p class="userButton">
-                        <a class="button" href="ModificaOpera.php?id=' . $row['ID'] . '" title="Modifica dettagli opera" role="button" aria-label="Modifica dettagli opera">Modifica</a>
-                        <a class="button" href="" title="Rimuovi opera" role="button" aria-label="Rimuovi opera">Rimuovi</a>
-                    </p>
+                    <a href="Opera.php?id=' . $row['ID'] . '" aria-label="Vai all\'opera">' . $row['Titolo'] . '</a>
+                    
+                    <form class="userButton" action="eliminaOpera.php" method="post" role="form">
+                        <fieldset class="hideFieldset">
+                            <legend class="hideLegend">Pulsanti di modifica ed eliminazione dell\'opera</legend>
+                            
+                            <input type="hidden" name="id" value="' . $row['ID'] . '"/>
+                            
+                            <a class="button" href="ModificaOpera.php?id=' . $row['ID'] . '" title="Modifica dettagli opera" role="button" aria-label="Modifica dettagli opera">Modifica</a>
+                            <input id="buttonConfirm" class="button" name="submit" type="submit" value="Rimuovi" role="button" aria-label="Rimuovi opera"/>
+                        </fieldset>
+                    </form>
                 </li>
             ';
-
-            $counter++;
         }
 
         $result_set->free();
