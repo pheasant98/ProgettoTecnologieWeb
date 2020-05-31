@@ -9,12 +9,13 @@ if (!isset($_POST['submit']) || $_POST['submit'] !== 'Rimuovi' || !isset($_SESSI
 require_once ('Controller/ReviewsController.php');
 
 $controller = new ReviewsController();
+
 $review = $controller->getReview($_POST['id']);
-$_SESSION['review_object_deleted'] = $review['Oggetto'];
 $controller->deleteReview($_POST['id']);
+
 unset($controller);
 
-$_SESSION['deleted'] = $_POST['id'];
+$_SESSION['deleted'] = $review['Oggetto'];
 
 $page = $_SESSION['page'];
 unset($_SESSION['page']);

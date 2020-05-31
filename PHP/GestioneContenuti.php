@@ -64,9 +64,9 @@ if (isset($_GET['filterContent'])) {
 $deleted = '';
 if (isset($_SESSION['deleted']) && isset($_SESSION['deleted_type'])) {
     if ($_SESSION['deleted_type'] === 'Opera') {
-        $deleted = 'L\'opera ' . $_SESSION['artwork_title_deleted'] . ' è stata eliminata correttamente';
+        $deleted = 'L\'opera ' . $_SESSION['deleted'] . ' è stata eliminata correttamente';
     } else if ($_SESSION['deleted_type'] === 'Evento') {
-        $deleted = 'L\'evento ' . $_SESSION['event_title_deleted'] . ' è stato eliminato correttamente';
+        $deleted = 'L\'evento ' . $_SESSION['deleted'] . ' è stato eliminato correttamente';
     }
 
     unset($_SESSION['deleted']);

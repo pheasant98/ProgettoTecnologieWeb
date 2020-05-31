@@ -14,6 +14,8 @@ if (!LoginController::isAuthenticatedUser()) {
     header('Location: Errore.php');
 }
 
+$_SESSION['previous_page'] = 'AreaPersonale';
+
 $users_controller = new UsersController();
 $user = $users_controller->getUser($_SESSION['username']);
 unset($users_controller);

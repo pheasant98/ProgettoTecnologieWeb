@@ -26,6 +26,8 @@ if (!isset($_GET['page'])) {
     $page = $_GET['page'];
 }
 
+$_SESSION['previous_page'] = 'CosaDiconoDiNoi';
+
 $review_clause = '';
 $leave_review = '';
 if (!LoginController::isAuthenticatedUser()) {

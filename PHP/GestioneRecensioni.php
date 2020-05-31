@@ -22,7 +22,7 @@ if (!LoginController::isAdminUser()) {
 
 $deleted = '';
 if (isset($_SESSION['deleted'])) {
-    $deleted = 'La recensione ' . $_SESSION['review_object_deleted'] . ' è stata eliminata correttamente';
+    $deleted = 'La recensione ' . $_SESSION['deleted'] . ' è stata eliminata correttamente';
     unset($_SESSION['deleted']);
 }
 
