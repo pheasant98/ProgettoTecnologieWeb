@@ -10,24 +10,24 @@ class ArtworksController {
     private function checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan) {
         $message = '';
         /*if (strlen($date) === 0) {
-            $message .= '[La data di nascita non può essere vuota]';
+            $message .= '[Non è possibile inserire una data di nascita vuota]';
         } else {
             $formatted_date = DateTime::createFromFormat('d-m-Y', $date);
             if ($formatted_date === false) {
-                $message .= '[La data di nascita deve essere espressa nel formato gg-mm-aaaa]';
+                $message .= '[Non è possibile inserire una data di nascita espressa nel formato diverso da "gg-mm-aaaa"]';
             } else {
                 $date_properties = date_create_from_format('d-m-Y', $date);
                 if (!checkdate($date_properties['month'], $date_properties['day'], $date_properties['year'])) {
-                    $message .= '[La data di nascita deve essere una data valida]';
+                    $message .= '[La data di nascita inserita non è valida]';
                 } else {
                     $inserted_date = DateTime::createFromFormat('Y-m-d', DateUtilities::italianEnglishDate($date));
                     $lower_bound = DateTime::createFromFormat('Y-m-d', '1900-01-01');
                     $upper_bound = DateTime::createFromFormat('Y-m-d', '2006-12-31');
 
                     if ($inserted_date < $lower_bound) {
-                        $message .= '[La data di nascita deve essere successiva al 31-12-1899]';
+                        $message .= '[Non è possibile inserire una data di nascita precedente al 01-01-1900]';
                     } elseif ($inserted_date > $upper_bound) {
-                        $message .= '[La data di nascita deve essere precedente al 01-01-2007]';
+                        $message .= '[Non è possibile inserire una data di nascita successiva al 31-12-2006]';
                     }
                 }
             }
