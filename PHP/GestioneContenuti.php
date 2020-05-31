@@ -64,11 +64,9 @@ if (isset($_GET['filterContent'])) {
 $deleted = '';
 if (isset($_SESSION['deleted']) && isset($_SESSION['deleted_type'])) {
     if ($_SESSION['deleted_type'] === 'Opera') {
-        $artwork = $artworks_controller->getArtwork($_SESSION['deleted']);
-        $deleted = 'L\'opera "' . $artwork['Titolo'] . '" è stata eliminata correttamente';
+        $deleted = 'L\'opera ' . $_SESSION['artwork_title_deleted'] . ' è stata eliminata correttamente';
     } else if ($_SESSION['deleted_type'] === 'Evento') {
-        $event = $events_controller->getEvent($_SESSION['deleted']);
-        $deleted = 'L\'evento "' . $event['Titolo'] . '" è stato eliminato correttamente';
+        $deleted = 'L\'evento ' . $_SESSION['event_title_deleted'] . ' è stato eliminato correttamente';
     }
 
     unset($_SESSION['deleted']);
@@ -110,7 +108,7 @@ if ($artwork_count > 0) {
             //Mi restano meno opere di quelle che può contenere una pagina ma non ho eventi quindi le metto e concludo
             $contents_list = $artworks_controller->getArtworksTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $offset);
         }
-    } elseif ($offset > $artwork_count) {
+    } elseif ($offset >= $artwork_count) {
         //Ho avuto opere ma sono finite
         $events_offset = $offset - $artwork_count;
         $contents_list = $events_controller->getEventsTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $events_offset);

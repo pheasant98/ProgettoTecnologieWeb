@@ -9,10 +9,14 @@ if (!isset($_POST['submit']) || $_POST['submit'] !== 'Rimuovi' || !isset($_SESSI
 if ($_POST['type'] === 'Evento') {
     require_once('Controller/EventsController.php');
     $controller = new EventsController();
+    $event = $controller->getEvent($_POST['id']);
+    $_SESSION['event_title_deleted'] = $event['Titolo'];
     $controller->deleteEvent($_POST['id']);
 } else if ($_POST['type'] === 'Opera') {
     require_once('Controller/ArtworksController.php');
     $controller = new ArtworksController();
+    $artwork = $controller->getArtwork($_POST['id']);
+    $_SESSION['artwork_title_deleted'] = $artwork['Titolo'];
     $controller->deleteArtwork($_POST['id']);
 }
 
