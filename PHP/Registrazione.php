@@ -24,6 +24,13 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Registrati') {
     $users_controller = new UsersController();
     $message = $users_controller->addUser($name, $surname, $sex, $date, $mail, $username, $password, $repeated_password);
     unset($users_controller);
+
+    if ($message === '') {
+        $_SESSION['username'] = $_POST['username'];
+        $_SESSION['just_registered'] = true;
+
+        header('Location: AreaPersonale.php');
+    }
 }
 
 if ($message === '') {
