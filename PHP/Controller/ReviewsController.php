@@ -180,6 +180,25 @@ class ReviewsController {
         return $row;
     }
 
+    public function updateReview($id, $title, $description, $user) {
+        $message = ReviewsController::checkInput($title, $description);
+
+        if ($message === '') {
+            if ($this->reviews->updateReview($id, $title, $description, $user)) {
+                $message = '';
+            } else {
+                $message = '<p class="error">Errore nell\'aggiornamento della recensione</p>';
+            }
+        } else {
+            $message = '<ul>' . $message;
+            $message = str_replace('[', '<li class="error">', $message);
+            $message = str_replace(']', '</li>', $message);
+            $message .= '</ul>';
+        }
+
+        return $message;
+    }
+
     public function deleteReview($id) {
         $this->reviews->deleteReview($id);
     }

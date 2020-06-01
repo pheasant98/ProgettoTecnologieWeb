@@ -29,11 +29,11 @@ if($reviews_count == 1) {
 }
 
 if (!isset($_GET['page'])) {
-$page = 1;
+    $page = 1;
 } elseif (($_GET['page'] < 1) || (($_GET['page'] - 1) > ($reviews_count / 5))) {
-header('Location: Errore.php');
+    header('Location: Errore.php');
 } else {
-$page = $_GET['page'];
+    $page = $_GET['page'];
 }
 
 $_SESSION['page'] = $page;
