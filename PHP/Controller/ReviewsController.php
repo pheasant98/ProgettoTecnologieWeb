@@ -84,21 +84,21 @@ class ReviewsController {
                         <dt class="reviewAuthor">
                             Utente: 
                         </dt>
-                        <dd>
+                        <dd class="definition">
                             ' . $row['Utente'] . '
                         </dd>
                         
                         <dt class="reviewData">
                             Data: 
                         </dt>
-                        <dd>
+                        <dd class="definition">
                             ' . $row['DataPubblicazione'] . '
                         </dd>
     
                         <dt class="reviewDescription">
                             Descrizione: 
                         </dt>
-                        <dd>
+                        <dd class="definition">
                             ' . $row['Contenuto'] . '
                         </dd>
                     </dl>

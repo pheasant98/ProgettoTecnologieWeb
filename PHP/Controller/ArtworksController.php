@@ -147,21 +147,21 @@ class ArtworksController {
                         <dt>
                             Nome autore: 
                         </dt>
-                        <dd>
+                        <dd class="definition">
                             ' . $row['Autore'] . '
                         </dd>
                         
                         <dt>
                             Stile: 
                         </dt>
-                        <dd>
+                        <dd class="definition">
                             ' . $row['Stile'] . '
                         </dd>
     
                         <dt>
                             Data: 
                         </dt>
-                        <dd>
+                        <dd class="definition">
                             ' . $row['Datazione'] . '
                         </dd>
                     </dl>
@@ -202,21 +202,21 @@ class ArtworksController {
                         <dt>
                             Nome autore: 
                         </dt>
-                        <dd>
+                        <dd class="definition">
                             ' . $row['Autore'] . '
                         </dd>
                         
                         <dt>
                             Stile: 
                         </dt>
-                        <dd>
+                        <dd class="definition">
                             ' . $row['Stile'] . '
                         </dd>
     
                         <dt>
                             Data: 
                         </dt>
-                        <dd>
+                        <dd class="definition">
                             ' . $row['Datazione'] . '
                         </dd>
                     </dl>

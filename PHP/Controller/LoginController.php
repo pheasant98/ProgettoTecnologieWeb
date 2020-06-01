@@ -4,7 +4,7 @@ class LoginController {
     public static function getAuthenticationMenu() {
         if (isset($_SESSION['username'])) {
             $login = '<div id="loginMenu">
-                        <ul>
+                        <ul class="list">
                             <li>
                                 <a id="areaPersonale" class="button" href="AreaPersonale.php" title="Area personale" role="button" aria-label="Vai alla pagina del profilo utente" tabindex="6">
                                     Area personale

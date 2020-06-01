@@ -15,13 +15,6 @@ function touch() {
     breadcrumbs.classList.toggle("hide");
 }
 
-function touchSecond() {
-    let user = document.getElementById("userMenu");
-    user.classList.toggle("show");
-}
-
 function menu() {
     document.getElementById("hamburgerMenu").addEventListener("click", touch);
-    document.getElementById("userTools").addEventListener("click", touchSecond);
-    // document.getElementById("skipMenu").addEventListener("click", touch)
 }

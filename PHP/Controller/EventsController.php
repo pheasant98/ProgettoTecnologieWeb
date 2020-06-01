@@ -107,21 +107,21 @@ class EventsController {
                         <dt>
                             Data inizio evento: 
                         </dt>
-                        <dd>
+                        <dd class="definition">
                             ' . $row['DataInizio'] . '
                         </dd>
                         
                         <dt>
                             Data chiusura evento: 
                         </dt>
-                        <dd>
+                        <dd class="definition">
                             ' . $row['DataFine'] . '
                         </dd>
     
                         <dt>
                             Tipologia: 
                         </dt>
-                        <dd>
+                        <dd class="definition">
                             ' . $row['Tipologia'] . '
                         </dd>
                     </dl>
@@ -161,21 +161,21 @@ class EventsController {
                         <dt>
                             Data inizio evento: 
                         </dt>
-                        <dd>
+                        <dd class="definition">
                             ' . $row['DataInizio'] . '
                         </dd>
                         
                         <dt>
                             Data chiusura evento: 
                         </dt>
-                        <dd>
+                        <dd class="definition">
                             ' . $row['DataFine'] . '
                         </dd>
     
                         <dt>
                             Tipologia: 
                         </dt>
-                        <dd>
+                        <dd class="definition">
                             ' . $row['Tipologia'] . '
                         </dd>
                     </dl>
