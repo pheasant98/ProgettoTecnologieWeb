@@ -7,23 +7,51 @@ class ArtworksController {
     private $artworks;
     private $fileUtilities;
 
-    private function checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions) {
+    private function checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan) {
         $message = '';
+        /*if (strlen($date) === 0) {
+            $message .= '[Non è possibile inserire una data di nascita vuota]';
+        } else {
+            $formatted_date = DateTime::createFromFormat('d-m-Y', $date);
+            if ($formatted_date === false) {
+                $message .= '[Non è possibile inserire una data di nascita espressa nel formato diverso da "gg-mm-aaaa"]';
+            } else {
+                $date_properties = date_create_from_format('d-m-Y', $date);
+                if (!checkdate($date_properties['month'], $date_properties['day'], $date_properties['year'])) {
+                    $message .= '[La data di nascita inserita non è valida]';
+                } else {
+                    $inserted_date = DateTime::createFromFormat('Y-m-d', DateUtilities::italianEnglishDate($date));
+                    $lower_bound = DateTime::createFromFormat('Y-m-d', '1900-01-01');
+                    $upper_bound = DateTime::createFromFormat('Y-m-d', '2006-12-31');
 
+                    if ($inserted_date < $lower_bound) {
+                        $message .= '[Non è possibile inserire una data di nascita precedente al 01-01-1900]';
+                    } elseif ($inserted_date > $upper_bound) {
+                        $message .= '[Non è possibile inserire una data di nascita successiva al 31-12-2006]';
+                    }
+                }
+            }
+        }*/
         if (strlen($author) === 0) {
             $message .= '[L\'autore dell\'opera non può essere vuoto]';
+        } elseif (strlen($author) > 64) {
+            $message .= '[L\'autore dell\'opera deve essere più corto di 64 caratteri]';
+        } elseif (!preg_match('/^[A-zÀ-ú\'`]+$/', $author)) {
+            $message .= '[L\'autore contiene caratteri non consentiti. Quelli possibili sono lettere, accenti e apostrofi]';
         }
 
         if (strlen($title) === 0) {
             $message .= '[Il titolo dell\'opera non può essere vuoto]';
-        } elseif (strlen($title) < 3) {
-            $message .= '[Il titolo dell\'opera deve essere lungo almeno 3 caratteri]';
+        } elseif (strlen($title) > 64) {
+            $message .= '[Il titolo dell\'opera deve essere più corto di 64 caratteri]';
+        } elseif (!preg_match('/^[A-zÀ-ú0-9\'`!?.,:()-]+$/', $title)) {
+            $message .= '[Il titolo contiene caratteri non consentiti. Quelli possibili sono lettere, numeri, accenti e punteggiatura]';
         }
 
         if (strlen($description) === 0) {
             $message .= '[La descrizione dell\'opera non può essere vuota]';
-        } elseif (strlen($description) < 30) {
-            $message .= '[La descrizione dell\'opera deve essere lunga almeno 30 caratteri]';
+        } elseif (strlen($description) > 500) {
+            $message .= '[La descrizione dell\'opera deve essere più corta di 500 caratteri]';
         }
 
         if (strlen($years) === 0) {
@@ -37,17 +65,31 @@ class ArtworksController {
         if($technique != NULL) {
             if (strlen($technique) === 0) {
                 $message .= '[La tecnica dell\'opera non può essere vuota]';
+            } elseif (strlen($technique) > 64) {
+                $message .= '[La tecnica dell\'opera deve essere più corta di 64 caratteri]';
+            } elseif (!preg_match('/^[A-zÀ-ú\'`]+$/', $technique)) {
+                $message .= '[La tecnica contiene caratteri non consentiti. Quelli possibili sono lettere, accenti e apostrofi]';
             }
         }
 
         if($material != NULL) {
             if (strlen($material) === 0) {
                 $message .= '[Il materiale dell\'opera non può essere vuoto]';
+            } elseif (strlen($material) > 64) {
+                $message .= '[Il materiale dell\'opera deve essere più corta di 64 caratteri]';
+            } elseif (!preg_match('/^[A-zÀ-ú`]+$/', $material)) {
+                $message .= '[Il materiale contiene caratteri non consentiti. Quelli possibili sono lettere e accenti]';
             }
         }
 
         if (strlen($dimensions) === 0) {
             $message .= '[La dimensione dell\'opera non può essere vuota]';
+        } elseif (!preg_match('/^([1-9][0-9]{0,2}|1000)x([1-9][0-9]{0,2}|1000)$/', $dimensions)) {
+            $message .= '[La dimensione contiene caratteri non consentiti. Il formato consentito è specificato nel suggerimento]';
+        }
+
+        if ($loan !== 1 && $loan !== 0) {
+            $message .= '[Il prestito non è stato selezionato correttamente]';
         }
 
         if (!FileUtilities::isSelected()) {
@@ -80,7 +122,7 @@ class ArtworksController {
     }
 
     public function addArtwork($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $user) {
-        $message = $this->checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions);
+        $message = $this->checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan);
         //TODO: Sistemare loan come intero??
         if ($message === '') {
             if($style === 'Dipinto') {
@@ -275,7 +317,7 @@ class ArtworksController {
     }
 
     public function updateArtwork($id, $author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $user) {
-        $message = $this->checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions);
+        $message = $this->checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan);
 
         if ($message === '') {
             if($style === 'Dipinto') {

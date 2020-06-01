@@ -10,14 +10,16 @@ class EventsController {
 
         if (strlen($title) === 0) {
             $message .= '[Il titolo dell\'evento non può essere vuoto]';
-        } elseif (strlen($title) < 3) {
-            $message .= '[Il titolo dell\'evento deve essere lungo almeno 3 caratteri]';
+        } elseif (strlen($title) > 64) {
+            $message .= '[Il titolo dell\'evento deve essere più corto di 64 caratteri]';
+        } elseif (!preg_match('/^[A-zÀ-ú0-9\'`!?.,:()-]+$/', $title)) {
+            $message .= '[Il titolo contiene caratteri non consentiti. Quelli possibili sono lettere, numeri, accenti e punteggiatura]';
         }
 
         if (strlen($description) === 0) {
             $message .= '[La descrizione dell\'evento non può essere vuota]';
-        } elseif (strlen($description) < 30) {
-            $message .= '[La descrizione dell\'evento deve essere lunga almeno 30 caratteri]';
+        } elseif (strlen($description) > 64) {
+            $message .= '[La descrizione dell\'evento deve essere più corto di 64 caratteri]';
         }
 
         if (strlen($begin_date) === 0) {
@@ -34,6 +36,8 @@ class EventsController {
 
         if (strlen($manager) === 0) {
             $message .= '[L\'organizzatore dell\'evento non può essere vuoto]';
+        } elseif (!preg_match('/^[A-zÀ-ú0-9\'`.:()-]+$/', $manager)) {
+            $message .= '[L\'organizzatore dell\'evento contiene caratteri non consentiti. Quelli possibili sono lettere, numeri, accenti e punteggiatura]';
         }
 
         return $message;
