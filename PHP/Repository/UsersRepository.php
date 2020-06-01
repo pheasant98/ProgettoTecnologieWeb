@@ -13,6 +13,18 @@ class UsersRepository {
         unset($this->dbConnection);
     }
 
+    public function checkMail($mail) {
+        $statement = $this->dbConnection->prepareQuery('SELECT COUNT(*) AS Totale FROM Utenti WHERE Email=?;');
+        $statement->bind_param('s', $mail);
+        return $this->dbConnection->executeSelectStatement($statement);
+    }
+
+    public function checkUsername($username) {
+        $statement = $this->dbConnection->prepareQuery('SELECT COUNT(*) AS Totale FROM Utenti WHERE Username=?;');
+        $statement->bind_param('s', $username);
+        return $this->dbConnection->executeSelectStatement($statement);
+    }
+
     public function postUser($name, $surname, $birthday, $sex, $username, $mail, $hashed_password, $admin=0) {
         $statement = $this->dbConnection->prepareQuery('INSERT INTO Utenti (Nome, Cognome, DataNascita, Sesso, Username, Email, Password, Admin) VALUES (?, ?, ?, ?, ?, ?, ?, ?);');
         $statement->bind_param('sssssssi', $name, $surname, $birthday, $sex, $username, $mail, $hashed_password, $admin);

@@ -6,7 +6,21 @@ require_once ('Utilities/DateUtilities.php');
 class UsersController {
     private $users;
 
-    private static function checkInput($name, $surname, $sex, $date, $mail, $username, $password) {
+    private function isUniqueMail($mail) {
+        $result_set = $this->users->checkMail($mail);
+        $count = $result_set->fetch_assoc()['Totale'];
+        $result_set->free();
+        return $count === 0;
+    }
+
+    private function isUniqueUsername($username) {
+        $result_set = $this->users->checkUsername($username);
+        $count = $result_set->fetch_assoc()['Totale'];
+        $result_set->free();
+        return $count === 0;
+    }
+
+    private function checkInput($name, $surname, $sex, $date, $mail, $username, $password) {
         $message = '';
 
         if (strlen($name) === 0) {
@@ -63,6 +77,8 @@ class UsersController {
             $message .= '[Non è possibile inserire un indirizzo <span xml:lang="en">email</span> più lungo di 64 caratteri]';
         } elseif (!preg_match('/^[a-zA-Z0-9.!#$%&\'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/', $mail)) {
             $message .= '[L\'indirizzo <span xml:lang="en">email</span> inserito non è valido]';
+        } elseif (!$this->isUniqueMail($mail)) {
+            $message .= '[L\'indirizzo <span xml:lang="en">email</span> inserito non può essere utilizzato in quanto è già in uso da altro utente]';
         }
 
         if (strlen($username) === 0) {
@@ -71,6 +87,8 @@ class UsersController {
             $message .= '[Non è possibile inserire uno <span xml:lang="en">username</span> più corto di 4 caratteri]';
         } elseif (strlen($username) > 32) {
             $message .= '[Non è possibile inserire uno <span xml:lang="en">username</span> più lungo di 32 caratteri]';
+        } elseif (!$this->isUniqueUsername($username)) {
+            $message .= '[Lo <span xml:lang="en">username</span> inserito non può essere utilizzato in quanto è già in uso da altro utente]';
         }
 
         if (strlen($password) === 0) {
@@ -95,7 +113,7 @@ class UsersController {
     }
 
     public function addUser($name, $surname, $sex, $date, $mail, $username, $password, $repeated_password) {
-        $message = UsersController::checkInput($name, $surname, $sex, $date, $mail, $username, $password);
+        $message = $this->checkInput($name, $surname, $sex, $date, $mail, $username, $password);
 
         $message .= $password === $repeated_password ? '' : '[La conferma della <span xml:lang="en">password</span> non corrisponde a quella inserita inizialmente]';
 
@@ -166,7 +184,7 @@ class UsersController {
 
     public function updateUser($username, $name, $surname, $date, $sex, $mail, $oldPassword, $newPassword, $repeated_password) {
         //TODO: Fare controllo sulla password
-        $message = UsersController::checkInput($name, $surname, $sex, $date, $mail, $username, $newPassword);
+        $message = $this->checkInput($name, $surname, $sex, $date, $mail, $username, $newPassword);
         $message .= $newPassword === $repeated_password ? '' : '[La conferma della <span xml:lang="en">password</span> non corrisponde a quella inserita inizialmente]';
         if ($message === '') {
             if ($this->users->updateUser($username, $name, $surname, $date, $sex, $mail, $newPassword)) {
