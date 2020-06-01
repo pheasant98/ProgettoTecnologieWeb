@@ -11,76 +11,91 @@ class ArtworksController {
         $message = '';
 
         if (strlen($author) === 0) {
-            $message .= '[L\'autore dell\'opera non può essere vuoto]';
+            $message .= '[Non è possibile inserire un autore vuoto]';
+        } elseif (strlen($author) < 5) {
+            $message .= '[Non è possibile inserire un autore più corto di 5 caratteri]';
         } elseif (strlen($author) > 64) {
-            $message .= '[L\'autore dell\'opera deve essere più corto di 64 caratteri]';
-        } elseif (!preg_match('/^[A-zÀ-ú\'`]+$/', $author)) {
-            $message .= '[L\'autore contiene caratteri non consentiti. Quelli possibili sono lettere, accenti e apostrofi]';
+            $message .= '[Non è possibile inserire un autore più lungo di 64 caratteri]';
+        } elseif (!preg_match('/^[A-zÀ-ú\'\-`.\s]+$/', $author)) {
+            $message .= '[L\'autore contiene caratteri non consentiti. Quelli possibili sono lettere, anche accentate, spazi e i seguenti caratteri speciali \' - . `]';
         }
 
         if (strlen($title) === 0) {
-            $message .= '[Il titolo dell\'opera non può essere vuoto]';
+            $message .= '[Non è possibile inserire un titolo vuoto]';
+        } elseif (strlen($title) < 2) {
+            $message .= '[Non è possibile inserire un titolo più corto di 2 caratteri]';
         } elseif (strlen($title) > 64) {
-            $message .= '[Il titolo dell\'opera deve essere più corto di 64 caratteri]';
-        } elseif (!preg_match('/^[A-zÀ-ú0-9\'`!.,:()-]+$/', $title)) {
-            $message .= '[Il titolo contiene caratteri non consentiti. Quelli possibili sono lettere, numeri, accenti e punteggiatura]';
+            $message .= '[Non è possibile inserire un titolo più lungo di 64 caratteri]';
+        } elseif (!preg_match('/^[A-zÀ-ú0-9\'`!.,:(\-)\s]+$/', $title)) {
+            $message .= '[Il titolo contiene caratteri non consentiti. Quelli possibili sono lettere, anche accentate, numeri, spazi e i seguenti caratteri speciali \' ` ! . , : - ()]';
         }
 
         if (strlen($description) === 0) {
-            $message .= '[La descrizione dell\'opera non può essere vuota]';
+            $message .= '[Non è possibile inserire una descrizione vuota]';
+        } elseif (strlen($description) < 2) {
+            $message .= '[Non è possibile inserire una descrizione più corta di 30 caratteri]';
         } elseif (strlen($description) > 500) {
-            $message .= '[La descrizione dell\'opera deve essere più corta di 500 caratteri]';
+            $message .= '[Non è possibile inserire una descrizione più lunga di 500 caratteri]';
         }
 
         if (strlen($years) === 0) {
-            $message .= '[La datazione dell\'opera non può essere vuota]';
+            $message .= '[Non è possibile inserire una datazione vuota]';
         } elseif (!intval($years)) {
             $message .= '[La datazione dell\'opera deve essere un numero intero]';
         } else {
-            $years_number = intval($years);
-            if ($years_number > date('Y') || $years_number < 1400) {
-                $message .= '[La datazione dell\'opera deve essere compresa tra il 1400 e l\'anno corrente]';
+             $formatted_date = DateTime::createFromFormat('Y', $years);
+            if ($formatted_date === false) {
+                $message .= '[La datazione deve contenere solo l\'anno]';
+            } else {
+                $years_number = intval($years);
+                if ($years_number > date('Y') || $years_number < 1400) {
+                    $message .= '[La datazione dell\'opera deve essere compresa tra il 1400 e l\'anno corrente]';
+                }
             }
         }
 
         if ($style !== 'Scultura' && $style !== 'Dipinto') {
-            $message .= '[Lo stile dell\'opera non può essere diverso dalle scelte proposte]';
+            $message .= '[Lo stile dell\'opera deve essere Scultura o Dipinto]';
         }
 
-        if($technique != NULL) {
+        if($technique != NULL) { //TODO: Sistemare anche controllo dopo aver fatto Javascript.
             if (strlen($technique) === 0) {
-                $message .= '[La tecnica dell\'opera non può essere vuota]';
+                $message .= '[Non è possibile inserire una tecnica vuota]';
+            } elseif (strlen($technique) < 4) {
+                $message .= '[Non è possibile inserire una tecnica più corta di 4 caratteri]';
             } elseif (strlen($technique) > 64) {
-                $message .= '[La tecnica dell\'opera deve essere più corta di 64 caratteri]';
-            } elseif (!preg_match('/^[A-zÀ-ú\'`]+$/', $technique)) {
-                $message .= '[La tecnica contiene caratteri non consentiti. Quelli possibili sono lettere, accenti e apostrofi]';
+                $message .= '[Non è possibile inserire una tecnica più lunga di 64 caratteri]';
+            } elseif (!preg_match('/^[A-zÀ-ú\'\-`\s]+$/', $technique)) {
+                $message .= '[La tecnica contiene caratteri non consentiti. Quelli possibili sono lettere, anche accentate, accenti, spazi e i seguenti caratteri speciali \' \ - `]';
             }
         }
 
         if($material != NULL) {
             if (strlen($material) === 0) {
-                $message .= '[Il materiale dell\'opera non può essere vuoto]';
-            } elseif (strlen($material) > 64) {
-                $message .= '[Il materiale dell\'opera deve essere più corta di 64 caratteri]';
-            } elseif (!preg_match('/^[A-zÀ-ú`]+$/', $material)) {
-                $message .= '[Il materiale contiene caratteri non consentiti. Quelli possibili sono lettere e accenti]';
+                $message .= '[Non è possibile inserire un materiale vuoto]';
+            } elseif (strlen($material) < 4) {
+                $message .= '[Non è possibile inserire un materiale più corto di 4 caratteri]';
+            } elseif (strlen($material) > 32) {
+                $message .= '[Non è possibile inserire un materiale più lungo di 32 caratteri]';
+            } elseif (!preg_match('/^[A-zÀ-ú\'\-`\s]+$/', $material)) {
+                $message .= '[Il materiale contiene caratteri non consentiti. Quelli possibili sono lettere, anche accentate, spazi, \' \ - `]';
             }
         }
 
         if (strlen($dimensions) === 0) {
-            $message .= '[La dimensione dell\'opera non può essere vuota]';
+            $message .= '[Non è possibile inserire una dimensione vuota]';
         } elseif (!preg_match('/^([1-9][0-9]{0,2}|1000)x([1-9][0-9]{0,2}|1000)$/', $dimensions)) {
             $message .= '[La dimensione contiene caratteri non consentiti. Il formato consentito è specificato nel suggerimento]';
         }
 
         if ($loan !== 1 && $loan !== 0) {
-            $message .= '[Il prestito non è stato selezionato correttamente]';
+            $message .= '[Il prestito deve essere scelto tra "Si" e "No"]';
         }
 
         if (!FileUtilities::isSelected()) {
             $message .= '[L\'immagine non è stata selezionata]';
         } elseif (!FileUtilities::isOneAndOnlyOneSelected()) {
-            $message .= '[Non è possibile selezionare più di un\'immagine]';
+            $message .= '[È necessario selezionare una ed una sola immagine]';
         } elseif (!FileUtilities::isSizeBounded()) {
             $message .= '[L\'immagine selezionata supera la dimensione massima consentita]';
         } elseif (!FileUtilities::isUploaded()) {
@@ -108,7 +123,6 @@ class ArtworksController {
 
     public function addArtwork($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $user) {
         $message = $this->checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan);
-        //TODO: Sistemare loan come intero??
         if ($message === '') {
             if($style === 'Dipinto') {
                 if ($this->artworks->postPainting($author, $title, $description, $years, $technique, $dimensions, $loan, $this->fileUtilities->getPath(), $user)) {
