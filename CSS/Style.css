@@ -200,7 +200,6 @@ a:visited {
 
 #skipMenu:focus {
   display: block;
-  font-size: 0.7em;
   left: 1em;
   top: 7.8em;
 }
@@ -254,10 +253,13 @@ a:visited {
   list-style-type: none;
 }
 
-#clause {
+.clause {
   clear: right;
   font-size: 0.9em;
-  padding-bottom: 1em;
+  padding: 1em;
+  border: 2px dashed #000;
+  font-style: italic;
+  margin-bottom: 0.5em;
 }
 
 #map {
@@ -464,15 +466,8 @@ a:visited {
 
   #menu li {
     font-size: 1.3em;
-    float: left;
-    margin-left: 5%;
-    margin-right: 1%;
-  }
-
-  #menu ul {
-    padding-left: 8%;
-    padding-right: 3%;
-    padding-bottom: 2.5em;
+    display: inline-block;
+    margin-left: 2%;
   }
 
   #loginMenu a {
@@ -511,12 +506,8 @@ a:visited {
   }
 
   #menu li {
-    float: none;
+    display: block;
     margin:auto;
-  }
-
-  #menu ul{
-    padding: 1em 0;
   }
 
   /* Regole per i contenuti delle pagine */
