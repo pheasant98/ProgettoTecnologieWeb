@@ -2,10 +2,6 @@
 
 # TODO: decidere alt immagini: immagine dell'opera "titolo" appartenente alla categoria "tipologia"
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 session_start();
 
 require_once ('Controller/EventsController.php');
