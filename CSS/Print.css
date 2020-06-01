@@ -21,8 +21,7 @@ a {
 
 /* Regole per gli header delle pagine */
 
-#header,
-#headerError404 {
+#header {
   padding: 0.7em 1.3em 0 1.1em;
   border-bottom-width: 2px;
   border-bottom-style: solid;
@@ -44,8 +43,7 @@ a {
 
 /* Regole per il contenuto principale delle pagine */
 
-#content,
-#contentError404 {
+#content {
   clear: both;
   background-color: #fff;
   color: #000;
@@ -63,23 +61,17 @@ a {
   margin-bottom: 0.5em;
 }
 
-#contentError404 > .title {
-  font-size: 2.2em;
-  line-height: 1.1em;
-  padding-bottom: 0.4em;
-}
-
 #content dt {
-  padding-top: 0.2em;
+  padding-top: 0.5em;
   padding-bottom: 0.2em;
-  font-size: 1.2em;
+  font-size: 1.1em;
+
 }
 
-#content dd {
-  padding-left: 1em;
-  font-size: 1em;
-  padding-top: 0.2em;
-  padding-bottom: 0.5em;
+.definition {
+  position: relative;
+  bottom: 1.5em;
+  left: 15em;
 }
 
 #filter,
@@ -87,8 +79,8 @@ a {
 #filterContent,
 #filterOpera {
   border: 0;
-  font-size: 1.5em;
   background: none;
+  font-size: 1.1em;
   margin-right: 5%;
 }
 
@@ -98,9 +90,6 @@ a {
 
 .list {
   list-style-type: none;
-  margin-bottom: 2.5em;
-  margin-top: 1.5em;
-  margin-left: 0.5em;
 }
 
 .list li {
@@ -173,32 +162,9 @@ a {
   display: inline-block;
 }
 
-#buttonSubmit {
-  cursor: pointer;
-  border: 0;
-  font-size: 1.5em;
-  background: none;
-  margin-left: 5%;
-}
-
 #reviewButton {
   float: right;
   font-size: 1em;
-}
-
-#searchBoxError404 {
-  background-color: #eee;
-  border-radius: 20px;
-  width: 45em;
-  white-space: nowrap;
-}
-
-#error404Options {
-  list-style-type: none;
-}
-
-#error404Options li {
-  padding: 0.3em;
 }
 
 #museumImage {

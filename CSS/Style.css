@@ -204,20 +204,15 @@ a:visited {
   top: 7.8em;
 }
 
-.list dl:hover {
-  background-color: #eee;
-  border-radius: 20px;
-}
 #content dt {
   padding-top: 0.5em;
   padding-bottom: 0.2em;
   font-size: 1.1em;
-
 }
 
 .definition {
   position: relative;
-  bottom: 2em;
+  bottom: 1.7em;
   left: 15em;
 }
 
@@ -226,13 +221,16 @@ a:visited {
 #filterContent,
 #filterOpera {
   border: 0;
-  font-size: 1.3em;
   margin-right: 3%;
   background: none;
+  font-size: 1.1em;
+}
+
+#filter{
+  font-size: 1.3em;
 }
 
 .userButton {
-  text-align: right;
   list-style-type: none;
   border-style: none;
 }
@@ -251,6 +249,10 @@ a:visited {
 /* Template di un lista */
 .list {
   list-style-type: none;
+}
+
+.list li {
+  margin-bottom: 0.5em;
 }
 
 .clause {
