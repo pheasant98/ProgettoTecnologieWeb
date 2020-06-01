@@ -48,6 +48,12 @@ class ReviewsRepository {
         return $this->dbConnection->executeSelectStatement($statement);
     }
 
+    public function updateReview($id, $title, $description, $user) {
+        $statement = $this->dbConnection->prepareQuery('UPDATE Recensioni SET Oggetto=?, Contenuto=?, DataPubblicazione=NOW() WHERE ID=? AND Utente=?;');
+        $statement->bind_param('ssis', $title, $description, $id, $user);
+        return $this->dbConnection->executeNotSelectStatement($statement);
+    }
+
     public function deleteReview($id) {
         $statement = $this->dbConnection->prepareQuery('DELETE FROM Recensioni WHERE ID=?;');
         $statement->bind_param('i', $id);
