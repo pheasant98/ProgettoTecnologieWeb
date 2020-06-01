@@ -12,7 +12,7 @@ class EventsController {
             $message .= '[Il titolo dell\'evento non può essere vuoto]';
         } elseif (strlen($title) > 64) {
             $message .= '[Il titolo dell\'evento deve essere più corto di 64 caratteri]';
-        } elseif (!preg_match('/^[A-zÀ-ú0-9\'`!?.,:()-]+$/', $title)) {
+        } elseif (!preg_match('/^[A-zÀ-ú0-9\'`!.,:()-]+$/', $title)) {
             $message .= '[Il titolo contiene caratteri non consentiti. Quelli possibili sono lettere, numeri, accenti e punteggiatura]';
         }
 
@@ -31,8 +31,8 @@ class EventsController {
             if ($formatted_date === false) {
                 $message .= '[Non è possibile inserire la data di inizio evento espressa nel formato diverso da "gg-mm-aaaa"]';
             } else {
-                $date_properties = date_create_from_format('d-m-Y', $begin_date);
-                if (!checkdate($date_properties['month'], $date_properties['day'], $date_properties['year'])) {
+                $date_properties = explode('-', $begin_date);
+                if (!checkdate($date_properties[1], $date_properties[0], $date_properties[2])) {
                     $message .= '[La data di inizio evento inserita non è valida]';
                 } else {
                     $begin_date_flag = true;
@@ -47,8 +47,8 @@ class EventsController {
             if ($formatted_date === false) {
                 $message .= '[Non è possibile inserire la data di fine evento espressa nel formato diverso da "gg-mm-aaaa"]';
             } else {
-                $date_properties = date_create_from_format('d-m-Y', $end_date);
-                if (!checkdate($date_properties['month'], $date_properties['day'], $date_properties['year'])) {
+                $date_properties = explode('-', $end_date);
+                if (!checkdate($date_properties[1], $date_properties[0], $date_properties[2])) {
                     $message .= '[La data di fine evento inserita non è valida]';
                 } else {
                     $end_date_flag = true;

@@ -40,8 +40,8 @@ class UsersController {
             if ($formatted_date === false) {
                 $message .= '[Non è possibile inserire una data di nascita espressa nel formato diverso da "gg-mm-aaaa"]';
             } else {
-                $date_properties = date_create_from_format('d-m-Y', $date);
-                if (!checkdate($date_properties['month'], $date_properties['day'], $date_properties['year'])) {
+                $date_properties = explode('-', $date);
+                if (!checkdate($date_properties[1], $date_properties[0], $date_properties[2])) {
                     $message .= '[La data di nascita inserita non è valida]';
                 } else {
                     $inserted_date = DateTime::createFromFormat('Y-m-d', DateUtilities::italianEnglishDate($date));
@@ -61,7 +61,7 @@ class UsersController {
             $message .= '[Non è possibile inserire un indirizzo <span xml:lang="en">email</span> vuoto]';
         } elseif (strlen($mail) > 64) {
             $message .= '[Non è possibile inserire un indirizzo <span xml:lang="en">email</span> più lungo di 64 caratteri]';
-        } elseif (!preg_match('/^[a-zA-Z0-9.!#$%&\'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/', $mail)) {
+        } elseif (!preg_match('/^[a-zA-Z0-9.!#$%&\'*+^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/', $mail)) {
             $message .= '[L\'indirizzo <span xml:lang="en">email</span> inserito non è valido]';
         }
 
@@ -79,7 +79,7 @@ class UsersController {
             $message .= '[Non è possibile inserire una <span xml:lang="en">password</span> più corta di 8 caratteri]';
         } elseif (strlen($password) > 64) {
             $message .= '[Non è possibile inserire una <span xml:lang="en">password</span> più lunga di 64 caratteri]';
-        } elseif (!preg_match('/^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&+=§_/|ç<>£€!?]).*$/', $password)) {
+        } elseif (!preg_match('/^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!#$%&\'*+^_`{|}~@]).*$/', $password)) {
             $message .= '[La <span xml:lang="en">password</span> inserita non soddisfa tutti i requisiti richiesti, deve essere presente almeno una lettera minuscola, una lettera maiuscola, un numero ed un carattere speciale]';
         }
 

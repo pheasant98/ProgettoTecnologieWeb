@@ -14,7 +14,7 @@ class ReviewsController {
             $message .= '[Non è possibile inserire una recensione con un titolo più corto di 2 caratteri]';
         } elseif (strlen($title) > 64) {
             $message .= '[Non è possibile inserire una recensione con un titolo più lungo di 64 caratteri]';
-        } elseif (!preg_match('/^[A-zÀ-ú0-9\'`!?.,:()-]+$/', $message)) {
+        } elseif (!preg_match('/^[A-zÀ-ú0-9\'`!.,:()-]+$/', $title)) {
             $message .= '[Il titolo inserito contiene dei caratteri non consentiti, è possibile inserire solamente lettere, possibilmente accentate, numeri, parentesi e segni di punteggiatura]';
         }
 

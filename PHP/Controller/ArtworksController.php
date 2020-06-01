@@ -22,7 +22,7 @@ class ArtworksController {
             $message .= '[Il titolo dell\'opera non può essere vuoto]';
         } elseif (strlen($title) > 64) {
             $message .= '[Il titolo dell\'opera deve essere più corto di 64 caratteri]';
-        } elseif (!preg_match('/^[A-zÀ-ú0-9\'`!?.,:()-]+$/', $title)) {
+        } elseif (!preg_match('/^[A-zÀ-ú0-9\'`!.,:()-]+$/', $title)) {
             $message .= '[Il titolo contiene caratteri non consentiti. Quelli possibili sono lettere, numeri, accenti e punteggiatura]';
         }
 
