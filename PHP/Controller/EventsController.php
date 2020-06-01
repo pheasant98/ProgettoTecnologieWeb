@@ -22,12 +22,53 @@ class EventsController {
             $message .= '[La descrizione dell\'evento deve essere più corto di 64 caratteri]';
         }
 
+        $begin_date_flag = false;
+        $end_date_flag = false;
         if (strlen($begin_date) === 0) {
-            $message .= '[La data d\'inizio dell\'evento non può essere vuota]';
+            $message .= '[Non è possibile inserire la data di inizio evento vuota]';
+        } else {
+            $formatted_date = DateTime::createFromFormat('d-m-Y', $begin_date);
+            if ($formatted_date === false) {
+                $message .= '[Non è possibile inserire la data di inizio evento espressa nel formato diverso da "gg-mm-aaaa"]';
+            } else {
+                $date_properties = date_create_from_format('d-m-Y', $begin_date);
+                if (!checkdate($date_properties['month'], $date_properties['day'], $date_properties['year'])) {
+                    $message .= '[La data di inizio evento inserita non è valida]';
+                } else {
+                    $begin_date_flag = true;
+                }
+            }
         }
 
         if (strlen($end_date) === 0) {
-            $message .= '[La data di fine dell\'evento non può essere vuota]';
+            $message .= '[Non è possibile inserire la data di fine evento vuota]';
+        } else {
+            $formatted_date = DateTime::createFromFormat('d-m-Y', $end_date);
+            if ($formatted_date === false) {
+                $message .= '[Non è possibile inserire la data di fine evento espressa nel formato diverso da "gg-mm-aaaa"]';
+            } else {
+                $date_properties = date_create_from_format('d-m-Y', $end_date);
+                if (!checkdate($date_properties['month'], $date_properties['day'], $date_properties['year'])) {
+                    $message .= '[La data di fine evento inserita non è valida]';
+                } else {
+                    $end_date_flag = true;
+                }
+            }
+        }
+
+        if($begin_date_flag && $end_date_flag) {
+            $inserted_begin_date = DateTime::createFromFormat('Y-m-d', DateUtilities::italianEnglishDate($begin_date));
+            $lower_bound = DateTime::createFromFormat('Y-m-d', date('Y-m-d'));
+            $inserted_end_date = DateTime::createFromFormat('Y-m-d', DateUtilities::italianEnglishDate($end_date));
+            $upper_bound = DateTime::createFromFormat('Y-m-d', date('Y-m-d', strtotime(('+5 years'))));
+
+            if ($inserted_begin_date < $lower_bound) {
+                $message .= '[Non è possibile inserire una data di inizio evento precedente alla data odierna]';
+            } elseif ($inserted_begin_date > $inserted_end_date) {
+                $message .= '[Non è possibile inserire una data di inizio evento successiva alla data di fine evento]';
+            } elseif ($inserted_end_date > $upper_bound) {
+                $message .= '[Non è possibile inserire un evento che si conclude più di tre anni dopo il suo inizio]';
+            }
         }
 
         if ($type !== 'Mostra' && $type !== 'Conferenza') {

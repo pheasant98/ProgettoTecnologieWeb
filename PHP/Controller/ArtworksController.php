@@ -9,29 +9,7 @@ class ArtworksController {
 
     private function checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan) {
         $message = '';
-        /*if (strlen($date) === 0) {
-            $message .= '[Non è possibile inserire una data di nascita vuota]';
-        } else {
-            $formatted_date = DateTime::createFromFormat('d-m-Y', $date);
-            if ($formatted_date === false) {
-                $message .= '[Non è possibile inserire una data di nascita espressa nel formato diverso da "gg-mm-aaaa"]';
-            } else {
-                $date_properties = date_create_from_format('d-m-Y', $date);
-                if (!checkdate($date_properties['month'], $date_properties['day'], $date_properties['year'])) {
-                    $message .= '[La data di nascita inserita non è valida]';
-                } else {
-                    $inserted_date = DateTime::createFromFormat('Y-m-d', DateUtilities::italianEnglishDate($date));
-                    $lower_bound = DateTime::createFromFormat('Y-m-d', '1900-01-01');
-                    $upper_bound = DateTime::createFromFormat('Y-m-d', '2006-12-31');
 
-                    if ($inserted_date < $lower_bound) {
-                        $message .= '[Non è possibile inserire una data di nascita precedente al 01-01-1900]';
-                    } elseif ($inserted_date > $upper_bound) {
-                        $message .= '[Non è possibile inserire una data di nascita successiva al 31-12-2006]';
-                    }
-                }
-            }
-        }*/
         if (strlen($author) === 0) {
             $message .= '[L\'autore dell\'opera non può essere vuoto]';
         } elseif (strlen($author) > 64) {
@@ -56,6 +34,13 @@ class ArtworksController {
 
         if (strlen($years) === 0) {
             $message .= '[La datazione dell\'opera non può essere vuota]';
+        } elseif (!intval($years)) {
+            $message .= '[La datazione dell\'opera deve essere un numero intero]';
+        } else {
+            $years_number = intval($years);
+            if ($years_number > date('Y') || $years_number < 1400) {
+                $message .= '[La datazione dell\'opera deve essere compresa tra il 1400 e l\'anno corrente]';
+            }
         }
 
         if ($style !== 'Scultura' && $style !== 'Dipinto') {
