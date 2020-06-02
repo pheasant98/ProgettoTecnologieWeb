@@ -1,6 +1,7 @@
 <?php
 
 require_once('Repository/EventsRepository.php');
+require_once ('Utilities/DateUtilities.php');
 
 class EventsController {
     private $events;
@@ -9,17 +10,21 @@ class EventsController {
         $message = '';
 
         if (strlen($title) === 0) {
-            $message .= '[Il titolo dell\'evento non può essere vuoto]';
+            $message .= '[Non è possibile inserire un titolo vuoto]';
+        } elseif (strlen($title) < 2) {
+            $message .= '[Non è possibile inserire un titolo più corto di 2 caratteri]';
         } elseif (strlen($title) > 64) {
-            $message .= '[Il titolo dell\'evento deve essere più corto di 64 caratteri]';
-        } elseif (!preg_match('/^[A-zÀ-ú0-9\'`!?.,:()-]+$/', $title)) {
-            $message .= '[Il titolo contiene caratteri non consentiti. Quelli possibili sono lettere, numeri, accenti e punteggiatura]';
+            $message .= '[Non è possibile inserire un titolo più lungo di 64 caratteri]';
+        } elseif (!preg_match('/^[A-zÀ-ú0-9\'`!.,\-:()\s]+$/', $title)) {
+            $message .= '[Il titolo contiene caratteri non consentiti. Quelli possibili sono lettere, anche accentate, numeri, spazi e i seguenti caratteri speciali \' ` ! . , - : ()]';
         }
 
         if (strlen($description) === 0) {
-            $message .= '[La descrizione dell\'evento non può essere vuota]';
+            $message .= '[Non è possibile inserire una descrizione vuota]';
+        } elseif (strlen($description) < 30) {
+            $message .= '[Non è possibile inserire una descrizione più corta di 30 caratteri]';
         } elseif (strlen($description) > 64) {
-            $message .= '[La descrizione dell\'evento deve essere più corto di 64 caratteri]';
+            $message .= '[Non è possibile inserire una descrizione più lunga di 64 caratteri]';
         }
 
         $begin_date_flag = false;
@@ -31,8 +36,8 @@ class EventsController {
             if ($formatted_date === false) {
                 $message .= '[Non è possibile inserire la data di inizio evento espressa nel formato diverso da "gg-mm-aaaa"]';
             } else {
-                $date_properties = date_create_from_format('d-m-Y', $begin_date);
-                if (!checkdate($date_properties['month'], $date_properties['day'], $date_properties['year'])) {
+                $date_properties = explode('-', $begin_date);
+                if (!checkdate($date_properties[1], $date_properties[0], $date_properties[2])) {
                     $message .= '[La data di inizio evento inserita non è valida]';
                 } else {
                     $begin_date_flag = true;
@@ -47,8 +52,8 @@ class EventsController {
             if ($formatted_date === false) {
                 $message .= '[Non è possibile inserire la data di fine evento espressa nel formato diverso da "gg-mm-aaaa"]';
             } else {
-                $date_properties = date_create_from_format('d-m-Y', $end_date);
-                if (!checkdate($date_properties['month'], $date_properties['day'], $date_properties['year'])) {
+                $date_properties = explode('-', $end_date);
+                if (!checkdate($date_properties[1], $date_properties[0], $date_properties[2])) {
                     $message .= '[La data di fine evento inserita non è valida]';
                 } else {
                     $end_date_flag = true;
@@ -72,13 +77,15 @@ class EventsController {
         }
 
         if ($type !== 'Mostra' && $type !== 'Conferenza') {
-            $message .= '[La tipologia dell\'evento è inesistente]';
+            $message .= '[La tipologia dell\'evento deve essere Mostra o Conferenza]';
         }
 
         if (strlen($manager) === 0) {
-            $message .= '[L\'organizzatore dell\'evento non può essere vuoto]';
-        } elseif (!preg_match('/^[A-zÀ-ú0-9\'`.:()-]+$/', $manager)) {
-            $message .= '[L\'organizzatore dell\'evento contiene caratteri non consentiti. Quelli possibili sono lettere, numeri, accenti e punteggiatura]';
+            $message .= '[Non è possibile inserire un organizzatore vuoto]';
+        } elseif (strlen($manager) < 2) {
+            $message .= '[Non è possibile inserire un organizzatore più corto di 2 caratteri]';
+        } elseif (!preg_match('/^[A-zÀ-ú0-9\'`.:(\-)\s]+$/', $manager)) {
+            $message .= '[L\'organizzatore dell\'evento contiene caratteri non consentiti. Quelli possibili sono lettere, anche accentate, numeri, spazi e i seguenti caratteri speciali \' ` . : - ()]';
         }
 
         return $message;
