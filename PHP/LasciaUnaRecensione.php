@@ -20,7 +20,7 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Invia') {
     unset($reviewsController);
 }
 
-if ($message === '') {
+if ($message === '' || $message === '<p class="success">Recensione inserita correttamente</p>') {
     $title = '';
     $content = '';
 }
