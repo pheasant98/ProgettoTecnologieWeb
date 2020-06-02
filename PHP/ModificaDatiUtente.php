@@ -19,20 +19,20 @@ $date = $user['DataNascita'];
 $mail = $user['Email'];
 
 if (isset($_POST['submit']) && $_POST['submit'] === 'Modifica') {
-    $name = $_POST['Name'];
-    $surname = $_POST['Surname'];
-    if ($_POST['Sex'] === 'Maschile') {
+    $name = $_POST['name'];
+    $surname = $_POST['surname'];
+    if ($_POST['sex'] === 'Maschile') {
        $sex = 'M';
-    } elseif ($_POST['Sex'] === 'Femminile') {
+    } elseif ($_POST['sex'] === 'Femminile') {
         $sex = 'F';
     } else {
         $sex = 'A';
     }
-    $date = $_POST['Date'];
-    $mail = $_POST['Mail'];
-    $oldPassword = hash('sha256', $_POST['OldPassword']);
-    $newPassword = hash('sha256', $_POST['NewPassword']);
-    $repeated_password = hash('sha256', $_POST['RepeatePassword']);
+    $date = $_POST['date'];
+    $mail = $_POST['mail'];
+    $oldPassword = hash('sha256', $_POST['oldPassword']);
+    $newPassword = hash('sha256', $_POST['newPassword']);
+    $repeated_password = hash('sha256', $_POST['repetePassword']);
     $message = $usersController->updateUser($_SESSION['username'], $name, $surname, $date, $sex, $mail, $oldPassword, $newPassword, $repeated_password);
     unset($usersController);
 }

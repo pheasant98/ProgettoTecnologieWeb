@@ -17,7 +17,7 @@
         <link href="../CSS/Print.css" media="print" rel="stylesheet" type="text/css"/>
         <link href="" rel="icon"/>
 
-        <script src="../JavaScript/Placeholder.js" type="text/javascript"></script>
+        <script src="../JavaScript/script.js" type="text/javascript"></script>
     </head>
 
     <body>
@@ -95,7 +95,7 @@
         <div id="content" role="main">
             <h2 class="title">Inserimento opera</h2>
 
-            <form id="insert" name="insertArtwork" action="" method="post" role="form" enctype="multipart/form-data">
+            <form id="insert" name="insertArtwork" action="" method="post" role="form" enctype="multipart/form-data" onsubmit="return artworkFormValidation();">
                 <fieldset id="insertArtwork" class="hideFieldset">
                     <legend class="hideLegend">Informazioni da inserire dell'opera</legend>
 

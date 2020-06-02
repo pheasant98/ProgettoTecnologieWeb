@@ -17,7 +17,7 @@
         <link href="../CSS/Print.css" media="print" rel="stylesheet" type="text/css"/>
         <link href="" rel="icon"/>
 
-        <script src="../JavaScript/Placeholder.js" type="text/javascript"></script>
+        <script src="../JavaScript/script.js" type="text/javascript"></script>
     </head>
 
     <body>
@@ -97,7 +97,7 @@
 
             <span id='outputMessagePlaceholder'/>
 
-            <form id="registration" name="registrazione" action="" method="post">
+            <form id="registration" name="registrazione" action="" method="post" role="form" onsubmit="return registrationFormValidation();">
                 <fieldset id="personalData" class="fieldset">
                     <legend>Dati personali</legend>
 
@@ -155,7 +155,7 @@
 
                     <p>
                         <label id="labelRepeatePassword" for="textRepeatePassword">Ripetere la <span xml:lang="en">password</span></label>
-                        <input id="textRepeatePassword" class="formElement" type="password" name="repeatePassword" value="" aria-label="Inserisci nuovamente la password"/>
+                        <input id="textRepeatePassword" class="formElement" type="password" name="repetePassword" value="" aria-label="Inserisci nuovamente la password"/>
                     </p>
                 </fieldset>
 

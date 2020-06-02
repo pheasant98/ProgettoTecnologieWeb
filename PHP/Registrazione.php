@@ -19,7 +19,7 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Registrati') {
     $mail = $_POST['mail'];
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $repeated_password = $_POST['repeatePassword'];
+    $repeated_password = $_POST['repetePassword'];
 
     $users_controller = new UsersController();
     $message = $users_controller->addUser($name, $surname, $sex, $date, $mail, $username, $password, $repeated_password);
