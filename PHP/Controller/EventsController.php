@@ -23,8 +23,8 @@ class EventsController {
             $message .= '[Non è possibile inserire una descrizione vuota]';
         } elseif (strlen($description) < 30) {
             $message .= '[Non è possibile inserire una descrizione più corta di 30 caratteri]';
-        } elseif (strlen($description) > 700) {
-            $message .= '[Non è possibile inserire una descrizione più lunga di 700 caratteri]';
+        } elseif (strlen($description) > 65535) {
+            $message .= '[Non è possibile inserire una descrizione più lunga di 65535 caratteri]';
         }
 
         $begin_date_flag = false;

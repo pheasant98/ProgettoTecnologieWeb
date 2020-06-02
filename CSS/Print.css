@@ -145,8 +145,7 @@ a {
 }
 
 #operaDescriptionArea,
-#eventDescriptionArea,
-#noticeDescriptionArea {
+#eventDescriptionArea {
   height: 10em;
   margin-bottom: 1em;
 }
