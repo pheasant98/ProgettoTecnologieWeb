@@ -610,9 +610,6 @@ function checkUserPassword(input) {
     } else if (password.length < 8) {
         addError(input, 'Non è possibile inserire una <span xml:lang="en">password</span> più corta di 8 caratteri');
         return false;
-    } else if (password.length > 32) {
-        addError(input, 'Non è possibile inserire una <span xml:lang="en">password</span> più lunga di 32 caratteri');
-        return false;
     } else if (!pattern.test(password)) {
         addError(input, 'La <span xml:lang="en">password</span> inserita non soddisfa tutti i requisiti richiesti');
         return false;
