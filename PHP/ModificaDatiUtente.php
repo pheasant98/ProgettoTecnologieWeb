@@ -28,7 +28,7 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Modifica') {
     } else {
         $sex = 'A';
     }
-    $date = $_POST['date'];
+    $date = DateUtilities::englishItalianDate($_POST['date']);
     $mail = $_POST['mail'];
     $oldPassword = hash('sha256', $_POST['oldPassword']);
     $newPassword = hash('sha256', $_POST['newPassword']);

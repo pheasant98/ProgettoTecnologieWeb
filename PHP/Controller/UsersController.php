@@ -119,7 +119,7 @@ class UsersController {
 
         if ($message === '') {
             $hashed_password = hash('sha256', $password);
-            if ($this->users->postUser($name, $surname, $date, $sex, $username, $mail, $hashed_password)) {
+            if ($this->users->postUser($name, $surname, DateUtilities::italianEnglishDate($date), $sex, $username, $mail, $hashed_password)) {
                 $message = '';
             } else {
                 $message = '<p class="error">Errore durante la registrazione del nuovo utente</p>';
@@ -187,7 +187,7 @@ class UsersController {
         $message = $this->checkInput($name, $surname, $sex, $date, $mail, $username, $newPassword);
         $message .= $newPassword === $repeated_password ? '' : '[La conferma della <span xml:lang="en">password</span> non corrisponde a quella inserita inizialmente]';
         if ($message === '') {
-            if ($this->users->updateUser($username, $name, $surname, $date, $sex, $mail, $newPassword)) {
+            if ($this->users->updateUser($username, $name, $surname, DateUtilities::italianEnglishDate($date), $sex, $mail, $newPassword)) {
                 $message = '<p class="success">Utente aggiornata correttamente</p>';
             } else {
                 $message = '<p class="error">Errore nell\'aggiornamento dell\'utente</p>';
