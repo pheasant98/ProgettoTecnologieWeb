@@ -24,21 +24,31 @@ if (!isset($_GET['page'])) {
     $page = $_GET['page'];
 }
 
-$offset = ($page - 1) * 5;
+if ($artwork_count > 0) {
+    $offset = ($page - 1) * 5;
 
-$artwork_list = $controller->getSearchedArtworks($_GET['search'], $offset);
+    $artwork_list = '<dl class="clickableList">' . $controller->getSearchedArtworks($_GET['search'], $offset) . '</dl>';
 
-unset($controller);
+    unset($controller);
 
-$previous_artworks = '';
-$next_artworks = '';
+    $navigation_artworks_buttons = '<p class="navigation">';
 
-if ($page > 1) {
-    $previous_artworks = '<a id="buttonBack" class="button" href="?search=' . $_GET['search'] . '&amp;page=' . ($page - 1) . '" title="Opere precedenti" role="button" aria-label="Torna alle opere precedenti"> &lt; Precedenti</a>';
-}
+    if ($page > 1) {
+        $navigation_artworks_buttons .= '<a id="buttonBack" class="button" href="?search=' . $_GET['search'] . '&amp;page=' . ($page - 1) . '" title="Opere precedenti" role="button" aria-label="Torna alle opere precedenti"> &lt; Precedenti</a>';
+    }
 
-if (($page * 5) < $artwork_count) {
-    $next_artworks = '<a id="buttonNext" class="button" href="?search=' . $_GET['search'] . '&amp;page=' . ($page + 1) . '" title="Opere successive" role="button" aria-label="Vai alle opere successive"> Successive &gt;</a>';
+    if (($page * 5) < $artwork_count) {
+        $navigation_artworks_buttons .= '<a id="buttonNext" class="button" href="?search=' . $_GET['search'] . '&amp;page=' . ($page + 1) . '" title="Opere successive" role="button" aria-label="Vai alle opere successive"> Successive &gt;</a>';
+    }
+
+    $navigation_artworks_buttons .= '</p>';
+
+    $skip_artworks = '<a href="#buttonBack" class="skipInformation">Salta i risultati presenti nella pagina</a>';
+} else {
+    unset($controller);
+    $skip_artworks = '';
+    $artwork_list = '';
+    $navigation_artworks_buttons = '';
 }
 
 require_once ('Controller/LoginController.php');
@@ -47,9 +57,9 @@ $login = LoginController::getAuthenticationMenu();
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
 $document = str_replace("<span id='resultNumberPlaceholder'/>", $artwork_number_found, $document);
+$document = str_replace("<span id='skipArtworksPlaceholder'/>", $skip_artworks, $document);
 $document = str_replace("<span id='resultListPlaceholder'/>", $artwork_list, $document);
-$document = str_replace("<span id='buttonBackPlaceholder'/>", $previous_artworks, $document);
-$document = str_replace("<span id='buttonNextPlaceholder'/>", $next_artworks, $document);
+$document = str_replace("<span id='navigationArtworksButtonsPlaceholder'/>", $navigation_artworks_buttons, $document);
 
 echo $document;
 

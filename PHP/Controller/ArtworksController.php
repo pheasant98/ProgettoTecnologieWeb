@@ -54,7 +54,7 @@ class ArtworksController {
             }
         }
 
-        if ($style !== 'Scultura' && $style !== 'Dipinto') {
+        if ($style !== 'Sculture' && $style !== 'Dipinti') { //FIXME: Quando si sistema nel db si deve mettere Scultura e Dipinto
             $message .= '[Lo stile dell\'opera deve essere Scultura o Dipinto]';
         }
 
