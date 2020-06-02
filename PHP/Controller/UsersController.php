@@ -95,10 +95,10 @@ class UsersController {
             $message .= '[Non è possibile inserire una <span xml:lang="en">password</span> vuota]';
         } elseif (strlen($password) < 8) {
             $message .= '[Non è possibile inserire una <span xml:lang="en">password</span> più corta di 8 caratteri]';
-        } elseif (strlen($password) > 64) {
-            $message .= '[Non è possibile inserire una <span xml:lang="en">password</span> più lunga di 64 caratteri]';
+        } elseif (strlen($password) > 32) {
+            $message .= '[Non è possibile inserire una <span xml:lang="en">password</span> più lunga di 32 caratteri]';
         } elseif (!preg_match('/^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!#$%&\'*+^_`\-{|}~@]).*$/', $password)) {
-            $message .= '[La <span xml:lang="en">password</span> inserita non soddisfa tutti i requisiti richiesti.]';
+            $message .= '[La <span xml:lang="en">password</span> inserita non soddisfa tutti i requisiti richiesti]';
         }
 
         return $message;

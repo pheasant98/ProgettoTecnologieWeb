@@ -105,8 +105,8 @@
                         <legend>Informazioni dell'utente</legend>
 
                         <p>
-                            <label id="labelNome" for="Nome">Nome</label>
-                            <input id="Nome" class="formElement" name="name" type="text" value="<span id='nameValuePlaceholder'/>" aria-label="Modifica nome utente" aria-required="true"/>
+                            <label id="labelNome" for="name">Nome</label>
+                            <input id="name" class="formElement" name="name" type="text" value="<span id='nameValuePlaceholder'/>" aria-label="Modifica nome utente" aria-required="true"/>
                         </p>
 
                         <p>
@@ -114,8 +114,8 @@
                         </p>
 
                         <p>
-                            <label id="labelCognome" for="Cognome">Cognome</label>
-                            <input id="Cognome" class="formElement" name="surname" type="text" value="<span id='surnameValuePlaceholder'/>" aria-label="Modifica cognome utente" aria-required="true"/>
+                            <label id="labelCognome" for="surname">Cognome</label>
+                            <input id="surname" class="formElement" name="surname" type="text" value="<span id='surnameValuePlaceholder'/>" aria-label="Modifica cognome utente" aria-required="true"/>
                         </p>
 
                         <p>
@@ -123,8 +123,8 @@
                         </p>
 
                         <p>
-                            <label id="labelDataNascita" for="DataNascita">Data di nascita</label>
-                            <input id="DataNascita" class="formElement" name="date" type="text" value="<span id='dateValuePlaceholder'/>" aria-label="Modifica data di nascita utente" aria-required="true"/>
+                            <label id="labelDataNascita" for="date">Data di nascita</label>
+                            <input id="date" class="formElement" name="date" type="text" value="<span id='dateValuePlaceholder'/>" aria-label="Modifica data di nascita utente" aria-required="true"/>
                         </p>
 
                         <p>
@@ -135,18 +135,20 @@
                     <fieldset id="fieldSex" class="fieldset">
                         <legend>Sesso</legend>
 
-                        <p>
-                            <input id="radioSexM" name="sex" value="M" type="radio" aria-label="Pulsante per dichiarare sesso maschile"<span id='maleCheckedPlaceholder'/>/>
-                            <label id="labelSexM" for="radioSexM">Maschile</label>
-                        </p>
-                        <p>
-                            <input id="radioSexF" name="sex" value="F" type="radio" aria-label="Pulsante per dichiarare sesso femminile"<span id='femaleCheckedPlaceholder'/>/>
-                            <label id="labelSexF" for="radioSexF">Femminile</label>
-                        </p>
-                        <p>
-                            <input id="radioSexA" name="sex" value="A" type="radio" aria-label="Pulsante per non dichiarare il sesso"<span id='otherCheckedPlaceholder'/>/>
-                            <label id="labelSexA" for="radioSexA">Preferisco non dichiarare</label>
-                        </p>
+                        <ul>
+                            <li>
+                                <input id="sexM" name="sex" value="M" type="radio" aria-label="Pulsante per dichiarare sesso maschile"<span id='maleCheckedPlaceholder'/>/>
+                                <label id="labelSexM" for="sexM">Maschile</label>
+                            </li>
+                            <li>
+                                <input id="sexF" name="sex" value="F" type="radio" aria-label="Pulsante per dichiarare sesso femminile"<span id='femaleCheckedPlaceholder'/>/>
+                                <label id="labelSexF" for="sexF">Femminile</label>
+                            </li>
+                            <li>
+                                <input id="sexA" name="sex" value="A" type="radio" aria-label="Pulsante per non dichiarare il sesso"<span id='otherCheckedPlaceholder'/>/>
+                                <label id="labelSexA" for="sexA">Preferisco non dichiarare</label>
+                            </li>
+                        </ul>
                     </fieldset>
 
                     <p>
@@ -154,8 +156,8 @@
                     </p>
 
                     <p>
-                        <label id="labelEmail" for="Email">Email</label>
-                        <input id="Email" class="formElement" name="mail" type="text" value="<span id='mailValuePlaceholder'/>" aria-label="Modifica email utente" aria-required="true"/>
+                        <label id="labelEmail" for="email">Email</label>
+                        <input id="email" class="formElement" name="mail" type="text" value="<span id='mailValuePlaceholder'/>" aria-label="Modifica email utente" aria-required="true"/>
                     </p>
 
                     <p>
@@ -166,8 +168,8 @@
                         <legend>Cambio password</legend>
 
                         <p>
-                            <label id="labelOldPassword" for="OldPassword">Vecchia <span xml:lang="en">password</span></label>
-                            <input id="OldPassword" class="formElement" type="password" name="oldPassword" aria-label="Inserisci la vecchia password"/>
+                            <label id="labelOldPassword" for="oldPassword">Vecchia <span xml:lang="en">password</span></label>
+                            <input id="oldPassword" class="formElement" type="password" name="oldPassword" aria-label="Inserisci la vecchia password"/>
                         </p>
 
                         <p>
@@ -175,9 +177,9 @@
                         </p>
 
                         <p>
-                        <div class="clause">La password deve essere lunga almeno 8 caratteri e contenere almeno una lettera minuscola, una lettera maiuscola, un numero ed uno tra i seguenti caratteri speciali ! # $ % & ' * + ^ _ ` \ - { | } ~ @</div>
-                            <label id="labelNewPassword" for="NewPassword">Nuova <span xml:lang="en">password</span></label>
-                            <input id="NewPassword" class="formElement" type="password" name="newPassword" aria-label="Inserisci la nuova password"/>
+                            <div class="clause">La password deve essere lunga almeno 8 caratteri e contenere almeno una lettera minuscola, una lettera maiuscola, un numero ed uno tra i seguenti caratteri speciali ! # $ % & ' * + ^ _ ` \ - { | } ~ @</div>
+                            <label id="labelNewPassword" for="newPassword">Nuova <span xml:lang="en">password</span></label>
+                            <input id="newPassword" class="formElement" type="password" name="newPassword" aria-label="Inserisci la nuova password"/>
                         </p>
 
                         <p>
@@ -185,8 +187,8 @@
                         </p>
 
                         <p>
-                            <label id="labelRepeatePassword" for="RepeatePassword">Ripetere la <span xml:lang="en">password</span></label>
-                            <input id="RepeatePassword" class="formElement" type="password" name="repetePassword" aria-label="Inserisci nuovamente la password"/>
+                            <label id="labelRepeatePassword" for="repetePassword">Ripetere la <span xml:lang="en">password</span></label>
+                            <input id="repetePassword" class="formElement" type="password" name="repetePassword" aria-label="Inserisci nuovamente la password"/>
                         </p>
                     </fieldset>
 

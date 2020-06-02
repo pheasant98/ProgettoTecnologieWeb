@@ -85,7 +85,7 @@ class ArtworksController {
         if (strlen($dimensions) === 0) {
             $message .= '[Non è possibile inserire una dimensione vuota]';
         } elseif (!preg_match('/^([1-9][0-9]{0,2}|1000)x([1-9][0-9]{0,2}|1000)$/', $dimensions)) {
-            $message .= '[La dimensione contiene caratteri non consentiti. Il formato consentito è altezzaxlarghezza]';
+            $message .= '[Le dimensioni non rispettano il formato richiesto]';
         }
 
         if ($loan !== 1 && $loan !== 0) {

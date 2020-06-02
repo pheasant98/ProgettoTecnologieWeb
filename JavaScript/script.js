@@ -68,7 +68,7 @@ function isDateValid(day, month, year) {
 
 function getDateFromString(date) {
     const dateArray = date.split('-');
-    return new Date(parseInt(dateArray[0]), parseInt(dateArray[1]), parseInt(dateArray[2]));
+    return new Date(parseInt(dateArray[2]), parseInt(dateArray[1]) - 1, parseInt(dateArray[0]));
 }
 
 function checkDateFormat(date) {
@@ -91,7 +91,7 @@ function checkDate(input) {
         addError(input, 'Non è possibile inserire una data espressa in un formato diverso da "gg-mm-aaaa"');
         return false;
     } else if (!checkDateValidity(date)) {
-        addError(input, 'La data di inizio evento inserita non è valida');
+        addError(input, 'La data inserita non è valida');
         return false;
     } else {
         removeError(input);
@@ -153,8 +153,8 @@ function checkArtworkDescription(input) {
     } else if (description.length < 2) {
         addError(input, 'Non è possibile inserire una descrizione più corta di 2 caratteri');
         return false;
-    } else if (description.length > 3000) {
-        addError(input, 'Non è possibile inserire una descrizione più lunga di 3000 caratteri');
+    } else if (description.length > 65535) {
+        addError(input, 'Non è possibile inserire una descrizione più lunga di 65535 caratteri');
         return false;
     } else {
         removeError(input);
@@ -248,7 +248,7 @@ function checkArtworkDimensions(input) {
         addError(input, 'Non è possibile inserire una dimensione vuota', 3);
         return false;
     } else if (!pattern.test(dimensions)) {
-        addError(input, 'La dimensione contiene caratteri non consentiti. Il formato consentito è altezzaxlarghezza', 3);
+        addError(input, 'Le dimensioni non rispettano il formato richiesto', 3);
         return false;
     } else {
         removeError(input, 3);
@@ -432,6 +432,164 @@ function checkReviewContent(input) {
     }
 }
 
+/* CONTROLLI E GESTIONE DEGLI UTENTI */
+function checkUserName(input) {
+    const name = input.value;
+    const pattern = new RegExp('^[A-zÀ-ú\'\-`.\s]+$');
+    
+    if (name.length === 0) {
+        addError(input, 'Non è possibile inserire un nome vuoto');
+        return false;
+    } else if (name.length < 2) {
+        addError(input, 'Non è possibile inserire un nome più corto di 2 caratteri');
+        return false;
+    } else if (name.length > 32) {
+        addError(input, 'Non è possibile inserire un nome più lungo di 32 caratteri');
+        return false;
+    } else if (!pattern.test(name)) {
+        addError(input, 'Il nome inserito contiene dei caratteri non consentiti. Quelli possibili sono lettere, anche accentate, spazi e i seguenti caratteri speciali \' \ - ` .');
+        return false;
+    } else {
+        removeError(input);
+        return true;
+    }
+}
+
+function checkUserSurname(input) {
+    const surname = input.value;
+    const pattern = new RegExp('^[A-zÀ-ú\'\-`.\s]+$');
+
+    if (surname.length === 0) {
+        addError(input, 'Non è possibile inserire un cognome vuoto');
+        return false;
+    } else if (surname.length < 2) {
+        addError(input, 'Non è possibile inserire un cognome più corto di 2 caratteri');
+        return false;
+    } else if (surname.length > 32) {
+        addError(input, 'Non è possibile inserire un cognome più lungo di 32 caratteri');
+        return false;
+    } else if (!pattern.test(surname)) {
+        addError(input, 'Il cognome inserito contiene dei caratteri non consentiti, è possibile inserire solamente lettere, possibilmente accentate, spazi e i seguenti caratteri speciali \' \ - ` .');
+        return false;
+    } else {
+        removeError(input);
+        return true;
+    }
+}
+
+function checkUserDate(input) {
+    const date = input.value;
+
+    if (date.length === 0) {
+        addError(input, 'Non è possibile inserire una data di nascita vuota');
+        return false;
+    } else if (!checkDateFormat(date)) {
+        addError(input, 'Non è possibile inserire una data di nascita espressa in un formato diverso da "gg-mm-aaaa"');
+        return false;
+    } else if (!checkDateValidity(date)) {
+        addError(input, 'La data di nascita inserita non è valida');
+        return false;
+    } else {
+        const birthDate = getDateFromString(date);
+        const lowerBound = new Date(parseInt('1900'), parseInt('00'), parseInt('01'));
+        const upperBound = new Date(parseInt('2006'), parseInt('11'), parseInt('31'));
+
+        if (birthDate < lowerBound) {
+            addError(input, 'Non è possibile inserire una data di nascita precedente al 01-01-1900');
+            return false;
+        } else if (birthDate > upperBound) {
+            addError(input, 'Non è possibile inserire una data di nascita successiva al 31-12-2006');
+            return false;
+        } else {
+            removeError(input);
+            return true;
+        }
+    }
+}
+
+function checkUserSex(inputSexMale, inputSexFemale, inputSexOther) {
+    const male = inputSexMale.checked;
+    const female = inputSexFemale.checked;
+    const other = inputSexOther.checked;
+
+    if (!male && !female && !other) {
+        addError(inputSexOther, 'Il sesso deve essere scelto tra "Maschile", "Femminile" e "Preferisco non dichiarare"');
+        return false;
+    } else {
+        removeError(inputSexOther);
+        return true;
+    }
+}
+
+function checkUserMail(input) {
+    const mail = input.value;
+    const pattern = new RegExp('^[a-zA-Z0-9.!#$%&\'*+^_`{|}~\-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$');
+
+    if (mail.length === 0) {
+        addError(input, 'Non è possibile inserire un indirizzo <span xml:lang="en">email</span> vuoto');
+        return false;
+    } else if (mail.length > 64) {
+        addError(input, 'Non è possibile inserire un indirizzo <span xml:lang="en">email</span> più lungo di 64 caratteri');
+        return false;
+    } else if (!pattern.test(mail)) {
+        addError(input, 'L\'indirizzo <span xml:lang="en">email</span> inserito non è valido');
+        return false;
+    } else {
+        removeError(input);
+        return true;
+    }
+}
+
+function checkUserUsername(input) {
+    const username = input.value;
+    
+    if (username.length === 0) {
+        addError(input, 'Non è possibile inserire uno <span xml:lang="en">username</span> vuoto');
+        return false;
+    } else if (username.length < 4) {
+        addError(input, 'Non è possibile inserire uno <span xml:lang="en">username</span> più corto di 4 caratteri');
+        return false;
+    } else if (username.length > 32) {
+        addError(input, 'Non è possibile inserire uno <span xml:lang="en">username</span> più lungo di 32 caratteri');
+        return false;
+    } else {
+        removeError(input);
+        return true;
+    }
+}
+
+function checkUserPassword(input) {
+    const password = input.value;
+    const pattern = new RegExp('^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!#$%&\'*+^_`\-{|}~@]).*$');
+    
+    if (password.length === 0) {
+        addError(input, 'Non è possibile inserire una <span xml:lang="en">password</span> vuota');
+        return false;
+    } else if (password.length < 8) {
+        addError(input, 'Non è possibile inserire una <span xml:lang="en">password</span> più corta di 8 caratteri');
+        return false;
+    } else if (password.length > 32) {
+        addError(input, 'Non è possibile inserire una <span xml:lang="en">password</span> più lunga di 32 caratteri');
+        return false;
+    } else if (!pattern.test(password)) {
+        addError(input, 'La <span xml:lang="en">password</span> inserita non soddisfa tutti i requisiti richiesti');
+        return false;
+    } else {
+        removeError(input);
+        return true;
+    }
+}
+
+function checkSamePassword(inputNewPassword, inputConfirmPassword) {
+    if (inputNewPassword.value !== inputConfirmPassword.value) {
+        addError(inputConfirmPassword, '');
+        return false;
+    } else {
+        removeError(inputConfirmPassword);
+        return true;
+    }
+}
+
 /* CONTROLLI E GESTIONE DEI FORM */
 function artworkFormValidation() {
     const author = document.getElementById('author');
@@ -494,9 +652,64 @@ function reviewFormValidation() {
 }
 
 function userFormValidation() {
+    const name = document.getElementById('name');
+    const surname = document.getElementById('surname');
+    const date = document.getElementById('date');
+    const sexM = document.getElementById('sexM');
+    const sexF = document.getElementById('sexF');
+    const sexA = document.getElementById('sexA');
+    const email = document.getElementById('email');
+    const oldPassword = document.getElementById('oldPassword');
+    const newPassword = document.getElementById('newPassword');
+    const confirmPassword = document.getElementById('repetePassword');
 
+    const nameResult = checkUserName(name);
+    const surnameResult = checkUserSurname(surname);
+    const dateResult = checkUserDate(date);
+    const sexResult = checkUserSex(sexM, sexF, sexA);
+    const emailResult = checkUserMail(email);
+
+    let oldPasswordResult = true;
+    let newPasswordResult = true;
+    let confirmPasswordResult = true;
+    let samePasswordResult = true;
+
+    if (oldPassword.value !== '' && newPassword.value !== '' && confirmPassword.value !== '') {
+        oldPasswordResult = checkUserPassword(oldPassword);
+        newPasswordResult = checkUserPassword(newPassword);
+        confirmPasswordResult = checkUserPassword(confirmPassword);
+
+        samePasswordResult = checkSamePassword(newPassword, confirmPassword);
+    }
+
+    return nameResult && surnameResult && dateResult && sexResult && emailResult && oldPasswordResult && newPasswordResult && confirmPasswordResult && samePasswordResult;
 }
 
 function registrationFormValidation() {
+    const name = document.getElementById('name');
+    const surname = document.getElementById('surname');
+    const date = document.getElementById('date');
+    const sexM = document.getElementById('sexM');
+    const sexF = document.getElementById('sexF');
+    const sexA = document.getElementById('sexA');
+    const email = document.getElementById('email');
+    const username = document.getElementById('username');
+    const password = document.getElementById('password');
+    const confirmPassword = document.getElementById('repetePassword');
 
+    const nameResult = checkUserName(name);
+    const surnameResult = checkUserSurname(surname);
+    const dateResult = checkUserDate(date);
+    const sexResult = checkUserSex(sexM, sexF, sexA);
+    const emailResult = checkUserMail(email);
+    const usernameResult = checkUserUsername(username);
+    const passwordResult = checkUserPassword(password);
+    const confirmPasswordResult = checkUserPassword(confirmPassword);
+
+    let samePasswordResult = true;
+    if (passwordResult && confirmPasswordResult) {
+        samePasswordResult = checkSamePassword(password, confirmPassword);
+    }
+
+    return nameResult && surnameResult && dateResult && sexResult && emailResult && usernameResult && passwordResult && confirmPasswordResult && samePasswordResult;
 }
