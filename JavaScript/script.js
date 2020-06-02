@@ -17,6 +17,48 @@ function menu() {
 }
 
 /* GESTIONE DELLA TIPOLOGIA DELLE OPERE */
+function artworkStyleChanged(isModify = false) {
+    const styleInput = document.getElementById('style');
+    const style = styleInput.options[styleInput.selectedIndex].value;
+
+    if (style === 'Dipinto') {
+        const techniqueInput = document.getElementById('technique');
+        const techniqueParent = techniqueInput.parentElement;
+        techniqueParent.className = '';
+
+        const materialInput = document.getElementById('material');
+        const materialParent = materialInput.parentElement;
+        materialParent.className = 'hideContent';
+
+        if (isModify) {
+            const techniqueInputSkip = document.getElementById('postTechniqueSkip');
+            const techniqueParentSkip = techniqueInputSkip.parentElement;
+            techniqueParentSkip.className = '';
+
+            const materialInputSkip = document.getElementById('postMaterialSkip');
+            const materialParentSkip = materialInputSkip.parentElement;
+            materialParentSkip.className = 'hideContent';
+        }
+    } else if (style === 'Scultura') {
+        const materialInput = document.getElementById('material');
+        const materialParent = materialInput.parentElement;
+        materialParent.className = '';
+
+        const techniqueInput = document.getElementById('technique');
+        const techniqueParent = techniqueInput.parentElement;
+        techniqueParent.className = 'hideContent';
+
+        if (isModify) {
+            const materialInputSkip = document.getElementById('postMaterialSkip');
+            const materialParentSkip = materialInputSkip.parentElement;
+            materialParentSkip.className = '';
+
+            const techniqueInputSkip = document.getElementById('postTechniqueSkip');
+            const techniqueParentSkip = techniqueInputSkip.parentElement;
+            techniqueParentSkip.className = 'hideContent';
+        }
+    }
+}
 
 /* GESTIONE DELL'AGGIUNTA E DELLA RIMOZIONE DEGLI ERRORI DAI FORM */
 function removeError(input, tags = 2) {

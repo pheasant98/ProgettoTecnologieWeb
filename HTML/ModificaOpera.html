@@ -148,7 +148,7 @@
 
                         <p>
                             <label id="labelStyle" for="style">Stile: </label>
-                            <select id="style" class="formElement" name="style" aria-label="Modifica lo stile artistico" aria-required="true">
+                            <select id="style" class="formElement" name="style" aria-label="Modifica lo stile artistico" aria-required="true" onchange="artworkStyleChanged(true);">
                                 <option<span id='paintingStyleSelectedPlaceholder'/>value="Dipinto">Dipinto</option>
                                 <option<span id='scultureStyleSelectedPlaceholder'/>value="Scultura">Scultura</option>
                             </select>
@@ -164,7 +164,7 @@
                         </p>
 
                         <p>
-                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
+                            <a id="postTechniqueSkip" class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
@@ -173,7 +173,7 @@
                         </p>
 
                         <p>
-                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
+                            <a id="postMaterialSkip" class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
