@@ -1,0 +1,29 @@
+\BOOKMARK [1][-]{section.1}{Abstract}{}% 1
+\BOOKMARK [1][-]{section.2}{Analisi}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Categorie di utenti}{section.2}% 3
+\BOOKMARK [3][-]{subsubsection.2.1.1}{Attori principali}{subsection.2.1}% 4
+\BOOKMARK [2][-]{subsection.2.2}{Casi d'uso}{section.2}% 5
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Utente generico}{subsection.2.2}% 6
+\BOOKMARK [3][-]{subsubsection.2.2.2}{Utente autenticato}{subsection.2.2}% 7
+\BOOKMARK [3][-]{subsubsection.2.2.3}{Utente amministratore}{subsection.2.2}% 8
+\BOOKMARK [1][-]{section.3}{Progettazione}{}% 9
+\BOOKMARK [2][-]{subsection.3.1}{Database}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.2}{Accessibilit\340 e usabilti\340}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.3}{Layout}{section.3}% 12
+\BOOKMARK [1][-]{section.4}{Implementazione}{}% 13
+\BOOKMARK [2][-]{subsection.4.1}{Back end}{section.4}% 14
+\BOOKMARK [3][-]{subsubsection.4.1.1}{HTML}{subsection.4.1}% 15
+\BOOKMARK [3][-]{subsubsection.4.1.2}{PHP}{subsection.4.1}% 16
+\BOOKMARK [2][-]{subsection.4.2}{Front end}{section.4}% 17
+\BOOKMARK [3][-]{subsubsection.4.2.1}{CSS}{subsection.4.2}% 18
+\BOOKMARK [3][-]{subsubsection.4.2.2}{JavaScript}{subsection.4.2}% 19
+\BOOKMARK [1][-]{section.5}{Presentazione}{}% 20
+\BOOKMARK [2][-]{subsection.5.1}{Desktop}{section.5}% 21
+\BOOKMARK [2][-]{subsection.5.2}{Tablet}{section.5}% 22
+\BOOKMARK [2][-]{subsection.5.3}{Mobile}{section.5}% 23
+\BOOKMARK [2][-]{subsection.5.4}{Stampa}{section.5}% 24
+\BOOKMARK [1][-]{section.6}{Validazione}{}% 25
+\BOOKMARK [2][-]{subsection.6.1}{Strumenti}{section.6}% 26
+\BOOKMARK [1][-]{section.7}{Test}{}% 27
+\BOOKMARK [1][-]{section.8}{Suddivisione del lavoro}{}% 28
+\BOOKMARK [1][-]{appendix.Alph1}{Dati utenti}{}% 29

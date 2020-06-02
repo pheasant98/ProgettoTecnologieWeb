@@ -9,3 +9,10 @@ package.json
 package-lock.json
 .stylelintrc.json
 node_modules
+
+# File generati dalla compilazione LaTeX
+.log
+.aux
+.toc
+.out
+.synctex.gz
