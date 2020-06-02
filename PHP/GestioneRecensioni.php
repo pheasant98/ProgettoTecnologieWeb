@@ -36,29 +36,37 @@ if (!isset($_GET['page'])) {
     $page = $_GET['page'];
 }
 
-$_SESSION['page'] = $page;
+if ($reviews_count > 0) {
+    $_SESSION['page'] = $page;
+    $offset = ($page - 1) * 5;
+    if (!LoginController::isAdminUser()) {
+        $reviews_list = '<ul class="clickableList">' . $controller->getUserListReviews($_SESSION['username'], $offset) . '</ul>';
+        $description = 'Elenco di tutte le recensioni lasciate';
+        $title = 'Recensioni effettuate';
+    } else {
+        $reviews_list = '<ul class="clickableList">' . $controller->getListReviews($offset) . '</ul>';
+        $description = 'Elenco di tutte le recensioni presenti all\'interno del sito';
+        $title = 'Recensioni presenti nel sito';
+    }
 
-$offset = ($page - 1) * 5;
-if (!LoginController::isAdminUser()) {
-    $reviews_list = '<ul class="clickableList">' . $controller->getUserListReviews($_SESSION['username'], $offset) . '</ul>';
-    $description = 'Elenco di tutte le recensioni lasciate';
-    $title = 'Recensioni effettuate';
+    unset($controller);
+
+    $navigation_reviews_buttons = '<p class="navigation">';
+    if ($page > 1) {
+        $navigation_reviews_buttons .= '<a id="buttonBack" class="button" href="?page=' . ($page - 1) . '" title="Recensioni precedenti" role="button" aria-label="Torna alle recensioni precedenti"> &lt; Precedenti</a>';
+    }
+
+    if (($page * 5) < $reviews_count) {
+        $navigation_reviews_buttons .= '<a id="buttonNext" class="button" href="?page=' . ($page + 1) . '" title="Recensioni successive" role="button" aria-label="Vai alle recensioni successive"> Successive &gt;</a>';
+    }
+    $navigation_reviews_buttons .= '</p>';
+
+    $skip_reviews = '<a href="#buttonBack" class="skipInformation">Salta le recensioni presenti nella pagina</a>';
 } else {
-    $reviews_list = '<ul class="clickableList">' . $controller->getListReviews($offset) . '</ul>';
-    $description = 'Elenco di tutte le recensioni presenti all\'interno del sito';
-    $title = 'Recensioni presenti nel sito';
-}
-
-unset($controller);
-
-$previous_reviews = '';
-if ($page > 1) {
-    $previous_reviews = '<a id="buttonBack" class="button" href="?page=' . ($page - 1) . '" title="Recensioni precedenti" role="button" aria-label="Torna alle recensioni precedenti"> &lt; Precedenti</a>';
-}
-
-$next_reviews = '';
-if (($page * 5) < $reviews_count) {
-    $next_reviews = '<a id="buttonNext" class="button" href="?page=' . ($page + 1) . '" title="Recensioni successive" role="button" aria-label="Vai alle recensioni successive"> Successive &gt;</a>';
+    unset($controller);
+    $skip_reviews = '';
+    $reviews_list = '';
+    $navigation_reviews_buttons = '';
 }
 
 $document = file_get_contents('../HTML/GestioneRecensioni.html');
@@ -69,9 +77,9 @@ $document = str_replace("<span id='deletedContent'/>", $deleted, $document);
 $document = str_replace("<span id='pageDescriptionPlaceholder'/>", $description, $document);
 $document = str_replace("<span id='titlePlaceholder'/>", $title, $document);
 $document = str_replace("<span id='reviewsNumberPlaceholder'/>", $user_reviews_count_found, $document);
+$document = str_replace("<span id='skipReviewsPlaceholder'/>", $skip_reviews, $document);
 $document = str_replace("<span id='reviewsListPlaceholder'/>", $reviews_list, $document);
-$document = str_replace("<span id='buttonBackPlaceholder'/>", $previous_reviews, $document);
-$document = str_replace("<span id='buttonNextPlaceholder'/>", $next_reviews, $document);
+$document = str_replace("<span id='navigationReviewsButtonsPlaceholder'/>", $navigation_reviews_buttons, $document);
 
 echo $document;
 

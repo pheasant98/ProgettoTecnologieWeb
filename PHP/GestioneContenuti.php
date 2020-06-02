@@ -88,49 +88,62 @@ if (!isset($_GET['page'])) {
     $page = $_GET['page'];
 }
 
-$_SESSION['page'] = $page;
-$_SESSION['filter_content'] = $filter_content;
-$_SESSION['filter_content_type'] = $filter_content_type;
+if (($artwork_count + $event_count) > 0) {
 
-$offset = ($page - 1) * 5;
-if ($artwork_count > 0) {
-    if ((($artwork_count - $offset) < 5) && (($artwork_count - $offset) > 0)) {
-        if ($event_count > 0) {
-            //Mi restano meno opere di quelle che può contenere una pagina ma ho eventi quindi li concateno
-            $contents_list = $artworks_controller->getArtworksTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $offset);
-            $events_offset = ($page * 5) - $artwork_count;
-            $contents_list .= $events_controller->getEventsTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, 0, $events_offset);
+    $_SESSION['page'] = $page;
+    $_SESSION['filter_content'] = $filter_content;
+    $_SESSION['filter_content_type'] = $filter_content_type;
+
+    $contents_list = '<ul class="list">';
+    $offset = ($page - 1) * 5;
+    if ($artwork_count > 0) {
+        if ((($artwork_count - $offset) < 5) && (($artwork_count - $offset) > 0)) {
+            if ($event_count > 0) {
+                //Mi restano meno opere di quelle che può contenere una pagina ma ho eventi quindi li concateno
+                $contents_list .= $artworks_controller->getArtworksTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $offset);
+                $events_offset = ($page * 5) - $artwork_count;
+                $contents_list .= $events_controller->getEventsTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, 0, $events_offset);
+            } else {
+                //Mi restano meno opere di quelle che può contenere una pagina ma non ho eventi quindi le metto e concludo
+                $contents_list .= $artworks_controller->getArtworksTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $offset);
+            }
+        } elseif ($offset >= $artwork_count) {
+            //Ho avuto opere ma sono finite
+            $events_offset = $offset - $artwork_count;
+            $contents_list .= $events_controller->getEventsTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $events_offset);
         } else {
-            //Mi restano meno opere di quelle che può contenere una pagina ma non ho eventi quindi le metto e concludo
-            $contents_list = $artworks_controller->getArtworksTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $offset);
+            //Ho opere e me ne stanno di più di quelle permesse in una pagina
+            $contents_list .= $artworks_controller->getArtworksTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $offset);
         }
-    } elseif ($offset >= $artwork_count) {
-        //Ho avuto opere ma sono finite
-        $events_offset = $offset - $artwork_count;
-        $contents_list = $events_controller->getEventsTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $events_offset);
     } else {
-        //Ho opere e me ne stanno di più di quelle permesse in una pagina
-        $contents_list = $artworks_controller->getArtworksTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $offset);
+        //Non ho mai avuto opere ed ho solo eventi
+        $contents_list .= $events_controller->getEventsTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $offset);
     }
+
+    $contents_list .= '</ul>';
+
+    unset($artworks_controller);
+    unset($events_controller);
+
+    $navigation_contents_buttons = '<p class="navigation">';
+
+    if ($page > 1) {
+        $navigation_contents_buttons .= '<a id="buttonBack" class="button" href="?page=' . ($page - 1) . '&amp;filterContent=' . $filter_content . '&amp;filterContentType=' . $filter_content_type . '" title="Utenti precedenti" role="button" aria-label="Torna ai contenuti precedenti"> &lt; Precedenti</a>';
+    }
+
+    if (($page * 5) < ($artwork_count + $event_count)) {
+        $navigation_contents_buttons .= '<a id="buttonNext" class="button" href="?page=' . ($page + 1) . '&amp;filterContent=' . $filter_content . '&amp;filterContentType=' . $filter_content_type . '" title="Utenti successivi" role="button" aria-label="Vai ai contenuti successivi"> Successivi &gt;</a>';
+    }
+    $navigation_contents_buttons .= '</p>';
+
+    $skip_contents = '<a href="#buttonBack" class="skipInformation">Salta i contenuti presenti nella pagina</a>';
 } else {
-    //Non ho mai avuto opere ed ho solo eventi
-    $contents_list = $events_controller->getEventsTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $offset);
+    unset($artworks_controller);
+    unset($events_controller);
+    $skip_contents = '';
+    $contents_list = '';
+    $navigation_contents_buttons = '';
 }
-
-unset($artworks_controller);
-unset($events_controller);
-
-$previous_contents = '';
-$next_contents = '';
-
-if ($page > 1) {
-    $previous_contents = '<a id="buttonBack" class="button" href="?page=' . ($page - 1) . '&amp;filterContent='. $filter_content . '&amp;filterContentType='. $filter_content_type . '" title="Utenti precedenti" role="button" aria-label="Torna ai contenuti precedenti"> &lt; Precedenti</a>';
-}
-
-if (($page * 5) < ($artwork_count + $event_count)) {
-    $next_contents = '<a id="buttonNext" class="button" href="?page=' . ($page + 1) . '&amp;filterContent='. $filter_content . '&amp;filterContentType='. $filter_content_type . '" title="Utenti successivi" role="button" aria-label="Vai ai contenuti successivi"> Successivi &gt;</a>';
-}
-
 $filter_option_whole = $filter_content == 'NessunFiltro' ? ' selected="selected"' : '';
 $filter_option_artworks = $filter_content == 'Opera' ? ' selected="selected"' : '';
 $filter_option_events = $filter_content == 'Evento' ? ' selected="selected"' : '';
@@ -153,12 +166,12 @@ $document = str_replace("<span id='filterOptionPaintingsPlaceholder'/>", $filter
 $document = str_replace("<span id='filterOptionSculturesPlaceholder'/>", $filter_option_scultures, $document);
 $document = str_replace("<span id='filterOptionExhibitionsPlaceholder'/>", $filter_option_exhibitions, $document);
 $document = str_replace("<span id='filterOptionConferencesPlaceholder'/>", $filter_option_conferences, $document);
-$document = str_replace("<span id='deletedContent'/>", $deleted, $document);
+$document = str_replace("<span id='deletedContentPlaceholder'/>", $deleted, $document);
 $document = str_replace("<span id='artworksNumberFoundPlaceholder'/>", $artworks_number_found, $document);
 $document = str_replace("<span id='eventsNumberFoundPlaceholder'/>", $events_number_found, $document);
+$document = str_replace("<span id='skipContentsPlaceholder'/>", $skip_contents, $document);
 $document = str_replace("<span id='contentsListPlaceholder'/>", $contents_list, $document);
-$document = str_replace("<span id='buttonBackPlaceholder'/>", $previous_contents, $document);
-$document = str_replace("<span id='buttonNextPlaceholder'/>", $next_contents, $document);
+$document = str_replace("<span id='buttonBackPlaceholder'/>", $navigation_contents_buttons, $document);
 
 echo $document;
 
