@@ -7,6 +7,7 @@ if (!isset($_GET['id'])) {
 }
 
 require_once ('Controller/LoginController.php');
+require_once ('Utilities/DateUtilities.php');
 $document = file_get_contents('../HTML/Evento.html');
 
 require_once ('Controller/EventsController.php');
@@ -20,8 +21,8 @@ unset($controller);
 
 $event_title = $event['Titolo'];
 $event_type = $event['Tipologia'];
-$event_begin_date = $event['DataInizio'];
-$event_end_date = $event['DataFine'];
+$event_begin_date = DateUtilities::englishItalianDate($event['DataInizio']);
+$event_end_date = DateUtilities::englishItalianDate($event['DataFine']);
 $event_manager = $event['Organizzatore'];
 $event_description = $event['Descrizione'];
 

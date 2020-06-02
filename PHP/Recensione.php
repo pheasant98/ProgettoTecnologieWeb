@@ -20,6 +20,7 @@ unset($controller);
 
 $review_title = $review['Oggetto'];
 $review_description = $review['Contenuto'];
+//TODO: decidere se visualizzare la singola recensione come per la pagina cosa dicono di noi
 
 $document = str_replace("<span id='titlePlaceholder'/>", $review_title, $document);
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);

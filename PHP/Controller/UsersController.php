@@ -20,7 +20,21 @@ class UsersController {
         return $count === 0;
     }
 
-    private function checkInput($name, $surname, $sex, $date, $mail, $username, $password) {
+    private function isOldPasswordCorrect($username, $oldPassword) {
+        $result_set = $this->users->checkOldPassword($username, hash('sha256', $oldPassword));
+        $count = $result_set->fetch_assoc()['Totale'];
+        $result_set->free();
+        return $count === 0;
+    }
+
+    private function isOldMail($mail, $username) {
+        $result_set = $this->users->getMailFromUsername($username);
+        $oldMail = $result_set->fetch_assoc()['Mail'];
+        $result_set->free();
+        return $oldMail === $mail;
+    }
+
+    private function checkInput($name, $surname, $sex, $date) {
         $message = '';
 
         if (strlen($name) === 0) {
@@ -71,6 +85,12 @@ class UsersController {
             }
         }
 
+        return $message;
+    }
+
+    function checkUsernameAndPasswordForInsert($mail, $username, $password, $repeated_password) {
+        $message = '';
+
         if (strlen($mail) === 0) {
             $message .= '[Non è possibile inserire un indirizzo <span xml:lang="en">email</span> vuoto]';
         } elseif (strlen($mail) > 64) {
@@ -95,10 +115,56 @@ class UsersController {
             $message .= '[Non è possibile inserire una <span xml:lang="en">password</span> vuota]';
         } elseif (strlen($password) < 8) {
             $message .= '[Non è possibile inserire una <span xml:lang="en">password</span> più corta di 8 caratteri]';
-        } elseif (strlen($password) > 64) {
-            $message .= '[Non è possibile inserire una <span xml:lang="en">password</span> più lunga di 64 caratteri]';
         } elseif (!preg_match('/^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!#$%&\'*+^_`\-{|}~@]).*$/', $password)) {
             $message .= '[La <span xml:lang="en">password</span> inserita non soddisfa tutti i requisiti richiesti.]';
+        }
+
+        if (strlen($repeated_password) === 0) {
+            $message .= '[Non è possibile inserire la <span xml:lang="en">password</span> ripetuta vuota]';
+        } elseif ($password === $repeated_password) {
+            $message .= '[La conferma della <span xml:lang="en">password</span> non corrisponde a quella inserita inizialmente]';
+        }
+
+        return $message;
+    }
+
+    function checkPasswordForUpdate($mail, $username, $old_password, $new_password, $repeated_password) {
+        $message = '';
+
+        if (!$this->isOldMail($mail, $username)) {
+            if (strlen($mail) === 0) {
+                $message .= '[Non è possibile inserire un indirizzo <span xml:lang="en">email</span> vuoto]';
+            } elseif (strlen($mail) > 64) {
+                $message .= '[Non è possibile inserire un indirizzo <span xml:lang="en">email</span> più lungo di 64 caratteri]';
+            } elseif (!preg_match('/^[a-zA-Z0-9.!#$%&\'*+^_`{|}~\-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/', $mail)) {
+                $message .= '[L\'indirizzo <span xml:lang="en">email</span> inserito non è valido]';
+            } elseif (!$this->isUniqueMail($mail)) {
+                $message .= '[L\'indirizzo <span xml:lang="en">email</span> inserito non può essere utilizzato in quanto è già in uso da altro utente]';
+            }
+        }
+
+        if(strlen($new_password) !== 0 || strlen($old_password) !== 0 || strlen($repeated_password) !== 0) {
+            if (strlen($new_password) === 0) {
+                $message .= '[Non è possibile inserire una <span xml:lang="en">password</span> vuota]';
+            } elseif (strlen($new_password) < 8) {
+                $message .= '[Non è possibile inserire una <span xml:lang="en">password</span> più corta di 8 caratteri]';
+            } elseif (!preg_match('/^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!#$%&\'*+^_`\-{|}~@]).*$/', $new_password)) {
+                $message .= '[La <span xml:lang="en">password</span> inserita non soddisfa tutti i requisiti richiesti]';
+            }
+
+            if (strlen($old_password) === 0) {
+                $message .= '[Non è possibile lasciare la <span xml:lang="en">password</span> corrente vuota]';
+            } elseif (!$this->isOldPasswordCorrect($username, hash('sha256', $old_password))) {
+                $message .= '[La <span xml:lang="en">password</span> corrente inserita non è corretta]';
+            } elseif ($old_password === $new_password) {
+                $message .= '[Non è possibile che la <span xml:lang="en">password</span> corrente e quella nuova siano uguali]';
+            }
+
+            if (strlen($repeated_password) === 0) {
+                $message .= '[Non è possibile inserire la <span xml:lang="en">password</span> ripetuta vuota]';
+            } elseif ($new_password !== $repeated_password) {
+                $message .= '[La conferma della <span xml:lang="en">password</span> non corrisponde a quella inserita inizialmente]';
+            }
         }
 
         return $message;
@@ -113,13 +179,12 @@ class UsersController {
     }
 
     public function addUser($name, $surname, $sex, $date, $mail, $username, $password, $repeated_password) {
-        $message = $this->checkInput($name, $surname, $sex, $date, $mail, $username, $password);
-
-        $message .= $password === $repeated_password ? '' : '[La conferma della <span xml:lang="en">password</span> non corrisponde a quella inserita inizialmente]';
+        $message = $this->checkInput($name, $surname, $sex, $date);
+        $message .= $this->checkUsernameAndPasswordForInsert($mail, $username, $password, $repeated_password);
 
         if ($message === '') {
             $hashed_password = hash('sha256', $password);
-            if ($this->users->postUser($name, $surname, $date, $sex, $username, $mail, $hashed_password)) {
+            if ($this->users->postUser($name, $surname, DateUtilities::italianEnglishDate($date), $sex, $username, $mail, $hashed_password)) {
                 $message = '';
             } else {
                 $message = '<p class="error">Errore durante la registrazione del nuovo utente</p>';
@@ -182,15 +247,23 @@ class UsersController {
         return $row;
     }
 
-    public function updateUser($username, $name, $surname, $date, $sex, $mail, $oldPassword, $newPassword, $repeated_password) {
-        //TODO: Fare controllo sulla password
-        $message = $this->checkInput($name, $surname, $sex, $date, $mail, $username, $newPassword);
-        $message .= $newPassword === $repeated_password ? '' : '[La conferma della <span xml:lang="en">password</span> non corrisponde a quella inserita inizialmente]';
+    public function updateUser($username, $name, $surname, $date, $sex, $mail, $old_password, $new_password, $repeated_password) {
+        $message = $this->checkInput($name, $surname, $sex, $date);
+        $message .= $this->checkPasswordForUpdate($mail, $username, $old_password, $new_password, $repeated_password);
         if ($message === '') {
-            if ($this->users->updateUser($username, $name, $surname, $date, $sex, $mail, $newPassword)) {
-                $message = '<p class="success">Utente aggiornata correttamente</p>';
+            if (strlen($new_password) === 0) {
+                if ($this->users->updateUserWithoutPassword($username, $name, $surname, DateUtilities::italianEnglishDate($date), $sex, $mail)) {
+                    $message = '<p class="success">Utente aggiornato correttamente</p>';
+                } else {
+                    $message = '<p class="error">Errore nell\'aggiornamento dell\'utente</p>';
+                }
             } else {
-                $message = '<p class="error">Errore nell\'aggiornamento dell\'utente</p>';
+                $hashed_password = hash('sha256', $new_password);
+                if ($this->users->updateUser($username, $name, $surname, DateUtilities::italianEnglishDate($date), $sex, $mail, $hashed_password)) {
+                    $message = '<p class="success">Utente aggiornato correttamente</p>';
+                } else {
+                    $message = '<p class="error">Errore nell\'aggiornamento dell\'utente</p>';
+                }
             }
         } else {
             $message = '<ul>' . $message;

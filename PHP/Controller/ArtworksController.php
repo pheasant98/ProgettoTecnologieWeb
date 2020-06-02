@@ -66,7 +66,7 @@ class ArtworksController {
             } elseif (strlen($technique) > 64) {
                 $message .= '[Non è possibile inserire una tecnica più lunga di 64 caratteri]';
             } elseif (!preg_match('/^[A-zÀ-ú\'\-`\s]+$/', $technique)) {
-                $message .= '[La tecnica contiene caratteri non consentiti. Quelli possibili sono lettere, anche accentate, accenti, spazi e i seguenti caratteri speciali \' \ - `]';
+                $message .= '[La tecnica contiene caratteri non consentiti. Quelli possibili sono lettere, anche accentate, spazi e i seguenti caratteri speciali \' \ - `]';
             }
         }
 
