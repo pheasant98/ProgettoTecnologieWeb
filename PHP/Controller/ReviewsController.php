@@ -95,10 +95,10 @@ class ReviewsController {
                         </dd>
                         
                         <dt class="reviewData">
-                            Data: 
+                            Data ultima modifica: 
                         </dt>
                         <dd class="definition">
-                            ' . $row['DataPubblicazione'] . '
+                            ' . $row['DataUltimaModifica'] . '
                         </dd>
     
                         <dt class="reviewDescription">
