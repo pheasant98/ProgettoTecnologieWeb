@@ -17,7 +17,7 @@
         <link rel="stylesheet" media="print" href="../CSS/Print.css" type="text/css"/>
         <link rel="icon" href=""/>
 
-        <script src="../JavaScript/Placeholder.js" type="text/javascript"></script>
+        <script src="../JavaScript/script.js" type="text/javascript"></script>
     </head>
 
     <body>
@@ -97,7 +97,7 @@
         <div id="content" role="main">
             <h2 class="title">Modifica recensione</h2>
 
-            <form id="FeedBack" name="feedback" action="" method="post" role="form">
+            <form id="FeedBack" name="feedback" action="" method="post" role="form" onsubmit="return reviewFormValidation();">
                 <fieldset id="feedbackBox">
                     <legend class="hideLegend">Modifica recensione</legend>
 

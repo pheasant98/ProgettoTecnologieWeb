@@ -24,21 +24,31 @@ if (!isset($_GET['page'])) {
     $page = $_GET['page'];
 }
 
-$offset = ($page - 1) * 5;
+if ($event_count > 0) {
+    $offset = ($page - 1) * 5;
 
-$event_list = $controller->getSearchedEvents($_GET['search'], $offset);
+    $event_list = '<dl class="clickableList">' . $controller->getSearchedEvents($_GET['search'], $offset) . '</dl>';
 
-unset($controller);
+    unset($controller);
 
-$previous_events = '';
-$next_events = '';
+    $navigation_events_buttons = '';
 
-if ($page > 1) {
-    $previous_events = '<a id="buttonBack" class="button" href="?search=' . $_GET['search'] . '&amp;page=' . ($page - 1) . '" title="Eventi precedenti" role="button" aria-label="Torna agli eventi precedenti"> &lt; Precedente</a>';
-}
+    if ($page > 1) {
+        $navigation_events_buttons .= '<a id="buttonBack" class="button" href="?search=' . $_GET['search'] . '&amp;page=' . ($page - 1) . '" title="Eventi precedenti" role="button" aria-label="Torna agli eventi precedenti"> &lt; Precedente</a>';
+    }
 
-if (($page * 5) < $event_count) {
-    $next_events = '<a id="buttonNext" class="button" href="?search=' . $_GET['search'] . '&amp;page=' . ($page + 1) . '" title="Eventi successivi" role="button" aria-label="Vai agli eventi successivi"> Successivo &gt;</a>';
+    if (($page * 5) < $event_count) {
+        $navigation_events_buttons .= '<a id="buttonNext" class="button" href="?search=' . $_GET['search'] . '&amp;page=' . ($page + 1) . '" title="Eventi successivi" role="button" aria-label="Vai agli eventi successivi"> Successivo &gt;</a>';
+    }
+
+    $navigation_events_buttons .= '</p>';
+
+    $skip_events = '<a href="#buttonBack" class="skipInformation">Salta i risultati presenti nella pagina</a>';
+} else {
+    unset($controller);
+    $skip_events = '';
+    $event_list = '';
+    $navigation_events_buttons = '';
 }
 
 require_once ('Controller/LoginController.php');
@@ -47,9 +57,9 @@ $login = LoginController::getAuthenticationMenu();
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
 $document = str_replace("<span id='resultNumberFoundPlaceholder'/>", $event_number_found, $document);
+$document = str_replace("<span id='skipEventsPlaceholder'/>", $skip_events, $document);
 $document = str_replace("<span id='resultListPlaceholder'/>", $event_list, $document);
-$document = str_replace("<span id='buttonBackPlaceholder'/>", $previous_events, $document);
-$document = str_replace("<span id='buttonNextPlaceholder'/>", $next_events, $document);
+$document = str_replace("<span id='navigationEventsButtonsPlaceholder'/>", $navigation_events_buttons, $document);
 
 echo $document;
 

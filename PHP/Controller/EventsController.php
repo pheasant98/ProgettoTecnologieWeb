@@ -23,8 +23,8 @@ class EventsController {
             $message .= '[Non è possibile inserire una descrizione vuota]';
         } elseif (strlen($description) < 30) {
             $message .= '[Non è possibile inserire una descrizione più corta di 30 caratteri]';
-        } elseif (strlen($description) > 64) {
-            $message .= '[Non è possibile inserire una descrizione più lunga di 64 caratteri]';
+        } elseif (strlen($description) > 500) {
+            $message .= '[Non è possibile inserire una descrizione più lunga di 500 caratteri]';
         }
 
         $begin_date_flag = false;
@@ -76,7 +76,7 @@ class EventsController {
             }
         }
 
-        if ($type !== 'Mostra' && $type !== 'Conferenza') {
+        if ($type !== 'Mostre' && $type !== 'Conferenze') { //FIXME: Quando si sistema nel db si deve mettere Mostra e Conferenza
             $message .= '[La tipologia dell\'evento deve essere Mostra o Conferenza]';
         }
 

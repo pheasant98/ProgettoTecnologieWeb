@@ -1,0 +1,79 @@
+% InputFile. commands.tex
+
+%%INSERT HERE THE NAME OF THE EDITORS
+\newcommand{\fiamma}{Fiammetta Cannavò}
+\newcommand{\ludo}{Lorenzo Dei Negri}
+\newcommand{\perin}{Federico Perin}
+\newcommand{\toffo}{Massimo Toffoletto}
+
+% BASE COMMANDS 
+\newcommand{\logo}{\includegraphics[width=6cm, height=6cm]{img/Logo}}
+\newcommand{\data}{\today}
+
+% package per il background
+\usepackage[pages=some]{background}
+
+\newcommand{\cover}{
+	\begin{titlepage}
+		\begin{center}
+		
+			\BgThispage
+			\thispagestyle{empty}
+			
+			\begin{figure}
+				\begin{center}
+					\includegraphics[width=10cm]{img/Logo} 
+				\end{center}
+			\end{figure}	
+			
+			\vspace{1cm}
+			
+			\begin{Huge}
+				\textbf{Museo bla bla \\ Relazione di progetto} \\
+			\end{Huge}
+			
+			\vspace{9pt}  
+			
+			\begin{large}
+				\textbf{Progetto universitario di Tecnologie Web\\}
+				\textbf{Anno accademico 2019/2020}\\
+				\vspace{3pt}
+			\end{large}	  
+			
+			\vspace{20pt}
+			
+      	\begin{large}
+        	\textbf{Riferimenti progetto\\}
+        	\textbf{Indirizzo sito web:} %\emph{http://tecweb1920.studenti.math.unipd.it/mdallali}
+       		\\
+        	\textbf{Repository GitHub:} %\emph{https://github.com/marcoDallas/TECWEB1920}\\
+      \end{large} 
+
+      \vspace{10pt} 
+      
+     \begin{center}
+     	\textbf{Componenti del gruppo}\\
+		\begin{tabular}{ l | c }
+				Studente 	& Matricola \\ \hline 
+		 		\fiamma 		& 1167703 \\ 
+		 		\ludo 			& 1161729 \\ 
+		 		\perin 			& 1170747\\ 
+				\toffo			& 1161727 \\
+			\end{tabular}
+			\vspace{0.5cm}
+		\end{center}
+
+		\vspace*{\fill}
+			
+		\begin{center}
+			\textbf{Referente\\}
+%			Dalla Libera Marco - marco.dallalibera.2@studenti.unipd.it\\
+%			\textbf{Utente\\}
+%			\textit{Amministratore:} admin - admin\\
+		\end{center}
+			
+		\end{center}
+	\end{titlepage}
+\pagebreak
+}	%FINE NEW COMMAND COPERTINA
+

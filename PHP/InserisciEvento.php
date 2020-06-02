@@ -10,6 +10,7 @@ if (!LoginController::isAuthenticatedUser()) {
 }
 
 $message = '';
+$title = '';
 
 if (isset($_POST['submit']) && $_POST['submit'] === 'Inserisci') {
     $title = $_POST['title'];
@@ -24,7 +25,7 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Inserisci') {
     unset($eventsController);
 }
 
-if ($message === '') {
+if ($message === '' || $message === '<p class="success">L\' evento ' . $title . ' è stato inserito correttamente</p>') {
     $title = '';
     $description = '';
     $beginDate = '';

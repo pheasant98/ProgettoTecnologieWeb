@@ -1,0 +1,32 @@
+\pagestyle{fancy}
+\fancyhf{}
+\setlength\headheight{30pt}
+\rhead{ Relazione di Progetto }
+\lhead{\includegraphics[scale=0.4]{img/Logo}}
+\cfoot{\thepage \ di \pageref{LastPage}}
+
+% Linea nel footer 
+\renewcommand{\footrulewidth}{0.4pt}
+
+% 3 e 4 livello di profondita' per section e ToC
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+%% Indentazione prima linea dei paragrafi
+%\usepackage{indentfirst}
+%
+%%indice con i puntini
+%\usepackage{tocloft}
+%\renewcommand\cftsecleader{\cftdotfill{\cftdotsep}}
+
+% background setup
+\backgroundsetup {
+	scale=1,
+	color=white,
+	opacity=0,
+	angle=0
+}	

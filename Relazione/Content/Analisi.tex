@@ -1,0 +1,76 @@
+\section{Analisi}
+\label{analisi}
+
+\subsection{Categorie di utenti}
+\label{analisi-categorie-utenti}
+Il museo si rivolge ad un'utenza molto ampia: le opere esposte possono attirare scolaresche, docenti, amatori, specialisti del settore, famiglie, anziani. Il sito deve quindi essere pronto a corrispondere alle esigenze di queste cateogire di utenti: l'interfaccia deve essere intutiva e leggibile, la terminologia non troppo specialistica, la grafica adatta ad un pubblico di tutte le età, nè troppo seria nè eccessivamente giocosa.
+
+\subsubsection{Attori principali}
+\label{analisi-casi-uso-attori-principali}
+Sono state individuate tre categorie principali di attori: \textit{utente generico}, \textit{utente autenticato}, \textit{utente ammininstratore}.
+
+L'\textit{utente generico} è un visitatore anonimo del sito, che non ha effettuato né registrazione né login; egli ha la possibilità di interagire col sito mediante il form di registrazione, la barra di ricerca e i filtri di visualizzazione di opere ed eventi. L'utente generico può prendere visione di tutti i contenuti senza però poterli modificare, eliminare e senza poterne aggiungere di nuovi.
+
+L'\textit{utente autenticato} eredita tutte le funzionalità dell'utente generico. In aggiunta, avendo un account personale nel database, può accedere alla propria area utente, gestire i propri dati personali, lasciare recensioni, modificarle ed eliminarle.
+
+L'\textit{utente amministratore} eredita anch'esso le funzionalità di quello generico, cui si aggiungono quelle legate al possesso di un account (visualizzazione dei dati personali e loro modifica, come per l'\textit{utente autenticato}) e  la gestione di tutti i contenuti presenti nel sito. L'amministratore può inserire, modificare e rimuovere le pagine relative ad eventi e opere, e eliminare, se necessario, recensioni o account di utenti indesiderati.
+
+
+\subsection{Casi d'uso}
+\label{analisi-casi-uso}
+
+\paragraph{Utente generico}
+\label{analisi-casi-uso-attori-principali-utente-generico}
+I casi d'uso che riguardano questa categoria di utenti sono:
+\begin{itemize}
+	\item visualizzazione \textit{Home page};
+	\item interazione coi link del \textit{breadcrumb};
+	\item visualizzazione della pagina \textit{Opere};
+	\item interazione con la pagina \textit{Opere};
+	\item visualizzazione della pagina \textit{Eventi};
+	\item interazione con la pagina \textit{Eventi};
+	\item visualizzazione della pagina \textit{Cosa dicono di noi};
+	\item interazione con la pagina \textit{Cosa dicono di noi};
+	\item visualizzazione della pagina \textit{Contatti};
+	\item visualizzazione della pagina \textit{Login};
+	\item esecuzione di una ricerca mediante la barra nell'\textit{header};
+	\item visualizzazione risultato della ricerca nella pagina \textit{Ricerca};
+	\item interazione con la pagina \textit{Ricerca};
+	\item visualizzazione della pagina \textit{Opera};
+	\item visualizzazione della pagina \textit{Evento};
+	\item visualizzazione della pagina \textit{Recensione};
+	\item visualizzazione della pagina \textit{Registrazione};
+	\item creazione di un account dalla pagina \textit{Registrazione}.
+\end{itemize}
+
+\paragraph{Utente autenticato}
+\label{analisi-casi-uso-attori-principali-utente-autenticato}
+Oltre a tutti i casi d'uso esposti per l'utente generico, riguardano l'utente autenticato anche:
+\begin{itemize}
+	\item autenticazione dalla pagina \textit{Login};
+	\item visualizzazione della pagina \textit{Utente};
+	\item inserimento di una recensione dalla pagina \textit{Lascia una recensione};
+	\item visualizzazione delle proprie recensioni dalla pagina \textit{Gestione recensioni};
+	\item modifica di una recensione dalla pagina \textit{Gestione recensioni};;
+	\item visualizzazione della pagina \textit{Recensione modificata};
+	\item eliminazione di una recensione dalla pagina \textit{Gestione recensioni};
+	\item modifica dei propri dati utente dalla pagina \textit{Modifica dati utente};
+	\item visualizzazione della pagina \textit{Dati utente modificati};
+	\item logout dal proprio account.
+\end{itemize}
+
+\paragraph{Utente amministratore}
+\label{analisi-casi-uso-attori-principali-utente-amministratore}
+Oltre a tutti i casi d'uso esposti per l'utente generico, riguardano l'utente amministratore anche:
+\begin{itemize}
+	\item autenticazione dalla pagina \textit{Login};
+	\item visualizzazione della pagina \textit{Utente};
+	\item visualizzazione della pagina \textit{Gestione contenuti};
+	\item interazione con la pagina \textit{Gestione dei contenuti};
+	\item modifica dei dati di un'opera dalla pagina \textit{Modifica opera};
+	\item modifica dei dati di un evento dalla pagina \textit{Modifica evento};
+	\item rimozione di un evento o un'opera dal sito dalla pagina \textit{Gestione contenuti};
+	\item rimozione di una recensione dal sito dalla pagina \textit{Gestione recensioni};
+	\item rimozione di un utente dal sito dalla pagina \textit{Gestione utenti};
+	\item logout dal proprio account.
+\end{itemize}

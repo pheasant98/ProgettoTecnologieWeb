@@ -17,7 +17,7 @@
         <link rel="stylesheet" media="print" href="../CSS/Print.css" type="text/css"/>
         <link rel="icon" href=""/>
 
-        <script src="../JavaScript/Placeholder.js" type="text/javascript"></script>
+        <script src="../JavaScript/script.js" type="text/javascript"></script>
     </head>
 
     <body>
@@ -92,7 +92,7 @@
         <div id="content" role="main">
             <h2 class="title">Modifica dell'opera</h2>
 
-            <form name="updateArtwork" action="" method="post" enctype="multipart/form-data">
+            <form name="updateArtwork" action="" method="post" role="form" enctype="multipart/form-data" onsubmit="return artworkFormValidation();">
                 <fieldset id="UpdateField" class="hideFieldset">
                     <legend class="hideLegend">Modifica opera</legend>
 
@@ -149,8 +149,8 @@
                         <p>
                             <label id="labelStyle" for="style">Stile: </label>
                             <select id="style" class="formElement" name="style" aria-label="Modifica lo stile artistico" aria-required="true">
-                                <option<span id='paintingStyleSelectedPlaceholder'/>value="Dipinto">Dipinto</option>
-                                <option<span id='scultureStyleSelectedPlaceholder'/>value="Scultura">Scultura</option>
+                                <option value="Dipinti"<span id='paintingStyleSelectedPlaceholder'/>>Dipinto</option>
+                                <option value="Sculture"<span id='scultureStyleSelectedPlaceholder'/>>Scultura</option>
                             </select>
                         </p>
 

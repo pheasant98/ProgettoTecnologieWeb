@@ -36,21 +36,31 @@ if (!isset($_GET['page'])) {
     $page = $_GET['page'];
 }
 
-$offset = ($page - 1) * 5;
+if ($event_count > 0) {
+    $offset = ($page - 1) * 5;
 
-$event_list = '<dl class="clickableList">' . $controller->getEvents($filter_type, $offset) . '</dl>';
+    $event_list = '<dl class="clickableList">' . $controller->getEvents($filter_type, $offset) . '</dl>';
 
-unset($controller);
+    unset($controller);
 
-$previous_events = '';
-$next_events = '';
+    $navigation_events_buttons = '<p class="navigation">';
 
-if ($page > 1) {
-    $previous_events = '<a id="buttonBack" class="button" href="?page=' . ($page - 1) . '&amp;filterType='. $filter_type . '" title="Eventi precedenti" role="button" aria-label="Torna agli eventi precedenti"> &lt; Precedente</a>';
-}
+    if ($page > 1) {
+        $navigation_events_buttons .= '<a id="buttonBack" class="button" href="?page=' . ($page - 1) . '&amp;filterType='. $filter_type . '" title="Eventi precedenti" role="button" aria-label="Torna agli eventi precedenti"> &lt; Precedente</a>';
+    }
 
-if (($page * 5) < $event_count) {
-    $next_events = '<a id="buttonNext" class="button" href="?page=' . ($page + 1) . '&amp;filterType='. $filter_type . '" title="Eventi successivi" role="button" aria-label="Vai agli eventi successivi"> Successivo &gt;</a>';
+    if (($page * 5) < $event_count) {
+        $navigation_events_buttons .= '<a id="buttonNext" class="button" href="?page=' . ($page + 1) . '&amp;filterType='. $filter_type . '" title="Eventi successivi" role="button" aria-label="Vai agli eventi successivi"> Successivo &gt;</a>';
+    }
+
+    $navigation_events_buttons .= '</p>';
+
+    $skip_events = '<a href="#buttonBack" class="skipInformation">Salta gli eventi presenti nella pagina</a>';
+} else {
+    unset($controller);
+    $skip_events = '';
+    $event_list = '';
+    $navigation_events_buttons = '';
 }
 
 $filter_option_whole = $filter_type == '' ? ' selected="selected"' : '';
@@ -63,12 +73,12 @@ $login = LoginController::getAuthenticationMenu();
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
 $document = str_replace("<span id='eventNumberFoundPlaceholder'/>", $event_number_found, $document);
+$document = str_replace("<span id='skipEventsPlaceholder'/>", $skip_events, $document);
 $document = str_replace("<span id='filterOptionWholePlaceholder'/>", $filter_option_whole, $document);
 $document = str_replace("<span id='filterOptionExhibitionsPlaceholder'/>", $filter_option_exhibitions, $document);
 $document = str_replace("<span id='filterOptionConferencesPlaceholder'/>", $filter_option_conferences, $document);
 $document = str_replace("<span id='eventListPlaceholder'/>", $event_list, $document);
-$document = str_replace("<span id='buttonBackPlaceholder'/>", $previous_events, $document);
-$document = str_replace("<span id='buttonNextPlaceholder'/>", $next_events, $document);
+$document = str_replace("<span id='navigationEventsButtonsPlaceholder'/>", $navigation_events_buttons, $document);
 
 echo $document;
 
