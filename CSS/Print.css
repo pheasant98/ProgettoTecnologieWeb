@@ -146,7 +146,7 @@ a {
 
 #operaDescriptionArea,
 #eventDescriptionArea,
-#noticeDescriptionArea {
+#reviewDescriptionArea {
   height: 10em;
   margin-bottom: 1em;
 }
@@ -190,7 +190,6 @@ a {
 #search,
 #searchBox,
 #searchText,
-#searchError404,
 #hamburgerMenu,
 #homepageButton,
 #operationsList,
@@ -209,11 +208,7 @@ a {
 #clause,
 #reviewAsk,
 #map,
-#buttonNext,
-#buttonBack,
 #buttonBackUp,
-#buttonReset,
-#buttonConfirm,
 #footer,
 #logoImage,
 .skipInformation,
