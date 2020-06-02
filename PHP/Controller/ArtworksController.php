@@ -124,7 +124,7 @@ class ArtworksController {
     public function addArtwork($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $user) {
         $message = $this->checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan);
         if ($message === '') {
-            if($style === 'Dipinto') {
+            if($style === 'Dipinti') {
                 if ($this->artworks->postPainting($author, $title, $description, $years, $technique, $dimensions, $loan, $this->fileUtilities->getPath(), $user)) {
                     $message = '<p class="success">L\'opera ' . $title . ' è stata inserita correttamente</p>';
                 } else {

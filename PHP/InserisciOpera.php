@@ -10,6 +10,7 @@ if (!LoginController::isAuthenticatedUser()) {
 }
 
 $message = '';
+$title = '';
 
 if (isset($_POST['submit']) && $_POST['submit'] === 'Inserisci') {
     $author = $_POST['author'];
@@ -26,7 +27,7 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Inserisci') {
     unset($artworksController);
 }
 
-if ($message === '') {
+if ($message === '' || $message === '<p class="success">L\'opera ' . $title . ' è stata inserita correttamente</p>') {
     $author = '';
     $title = '';
     $description = '';
