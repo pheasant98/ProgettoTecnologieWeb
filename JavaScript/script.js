@@ -67,7 +67,7 @@ function removeError(input, tags = 2) {
     const parentNode = input.parentNode;
 
     if (parentNode.children.length > tags) {
-        parentNode.removeChild(parentNode.children[tags]);
+        parentNode.removeChild(parentNode.children[1]);
     }
 }
 
@@ -77,11 +77,30 @@ function addError(input, error, tags = 2) {
     const parentNode = input.parentNode;
     const span = document.createElement("span");
 
-    span.className = "error";
+    span.className = "formFieldError";
     span.insertAdjacentHTML('afterbegin', error);
 
-    // parentNode.appendChild(span);
-    parentNode.insertBefore(span, parentNode.firstChild);
+    parentNode.insertBefore(span, parentNode.children[1]);
+}
+
+function removeRadioError(input) {
+    const parentNode = input.parentElement.parentElement.parentElement;
+
+    if (parentNode.children.length > 2) {
+        parentNode.removeChild(parentNode.children[1]);
+    }
+}
+
+function addRadioError(input, error) {
+    removeRadioError(input);
+
+    const parentNode = input.parentElement.parentElement.parentElement;
+    const span = document.createElement("span");
+
+    span.className = "formFieldError";
+    span.insertAdjacentHTML('afterbegin', error);
+
+    parentNode.insertBefore(span, parentNode.children[1]);
 }
 
 /* CONTROLLI E GESTIONE DELLE DATE */
@@ -560,10 +579,10 @@ function checkUserSex(inputSexMale, inputSexFemale, inputSexOther) {
     const other = inputSexOther.checked;
 
     if (!male && !female && !other) {
-        addError(inputSexOther, 'Il sesso deve essere scelto tra "Maschile", "Femminile" e "Preferisco non dichiarare"');
+        addRadioError(inputSexOther, 'Il sesso deve essere scelto tra "Maschile", "Femminile" e "Preferisco non dichiarare"');
         return false;
     } else {
-        removeError(inputSexOther);
+        removeRadioError(inputSexOther);
         return true;
     }
 }
