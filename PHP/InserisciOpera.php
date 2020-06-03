@@ -18,8 +18,17 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Inserisci') {
     $description = $_POST['description'];
     $years = $_POST['years'];
     $style = $_POST['style'];
-    $technique = $_POST['technique'];
-    $material = $_POST['material'];
+
+    if (isset($_POST['technique'])) {
+        $technique = $_POST['technique'];
+        $material = '';
+    }
+
+    if (isset($_POST['material'])) {
+        $material = $_POST['material'];
+        $technique = '';
+    }
+
     $dimensions = $_POST['dimensions'];
     $loan = ($_POST['loan'] === 'Si' ? 1 : 0);
     $artworksController = new ArtworksController();

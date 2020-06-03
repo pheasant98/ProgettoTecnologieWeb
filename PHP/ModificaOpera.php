@@ -31,7 +31,7 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Modifica') {
     $description = $_POST['description'];
     $years = $_POST['years'];
     $style = $_POST['style'];
-    //TODO: sistemare visualizzazione sulla base dello style in javascript
+
     if (isset($_POST['technique'])) {
         $technique = $_POST['technique'];
         $material = '';
