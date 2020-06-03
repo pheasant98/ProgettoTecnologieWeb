@@ -1,0 +1,31 @@
+\section{Progettazione}
+\label{progettazione}
+
+\subsection{Database}
+\label{progettazione-database}
+Il database di appoggio per i contenuti del sito si articola in quattro tabelle. 
+
+La tabella \textit{Utenti} memorizza i dati degli utenti che effettuano la registrazione sul sito; vi appartengono sia gli utenti autenticati che gli utenti amministratori, questi ultimi distinti dal attributo \textit{Admin}, posto ad 1 se l'utente è amministratore.
+
+La tabella \textit{Opere} contiene i dati relativi alle opere presentate nel sito. Di ognuna vengono presentati i dati tecnici, la descrizione e se si tratta di un prestito o di un pezzo permanente della collezione; a questa tabella appartengono sia \textit{dipinti} che \textit{sculture}. Se fosse necessario, in futuro, prevedere altri tipi di opere artistiche, sarebbe sufficiente aggiungere elementi all'attributo "stile" e gli eventuali attributi specifici del nuvo tipo introdotto.
+
+La tabella \textit{Eventi} contiene i dati relativi agli eventi organizzati dal museo. Di ognuno sono riportati i dati logistici e la descrizione; a questa tabella appartengono sia le \textit{conferenze}, previste anche in cicli, che le \textit{mostre}. Se in futuro venissero programmati eventi di altro tipo, per memorizzarli basterebbe aggiungerne la tipologia all'omonimo attributo della tabella, insieme adf altri evenutali attributi specifici dell'evento organizzato.
+
+Infine, la tabella \textit{Recensione} tiene traccia delle recensioni inserite nel sito dagli utenti autenticati. Poiché è previsto che un utente possa modificare una recensione precedentemente inserita, ne viene mantenuta la data di utlima modifica.
+
+\textit{Utenti} è in relazione con le altre tre classi: di ciascun tipo di contenuto previsto, infatti, si memorizza l'utente che ha effettuato l'inserimento. Per \textit{Opere} ed \textit{Eventi} si tratta sempre di un \textit{utente amministratore}, per le recensioni è sempre un \textit{utente autenticato}.
+
+\begin{center}
+	\includegraphics[width=\textwidth]{img/SchemaLogico}
+	\captionof{figure}{Schema logico del database del museo \textit{TecArt}}
+\end{center}
+
+
+\subsection{Accessibilità e usabiltià}
+\label{progettazione-accessibilità-usabilità}
+
+
+\subsection{\textit{Layout}}
+\label{progettazione-layout}
+Per la scelta del design delle pagine, l'obiettivo è l'adattabilità al maggior numero possibile di dispositivi, indipendentemente dalle dimensioni dello schermo o dal supporto usato dall'utente. Si è puntato poi ad avere una struttura ordinata, leggera e di immediata comprensione e memorizzazione, al fine di rendere la navigazione semplice e intuitiva.
+Per soddisfare queste esigenza è stato scelto il "\textit{layout} a tre pannelli" 

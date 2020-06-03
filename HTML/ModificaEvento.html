@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN" "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
 
-<html xml:lang="it" xmlns="http://www.w3.org/1999/xhtml">
+<html xml:lang="it" xmlns="http://www.w3.org/1999/xhtml" lang="it">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
@@ -123,8 +123,8 @@
                         <p>
                             <label id="labelType" for="type">Tipologia: </label>
                             <select id="type" class="formElement" name="type" aria-label="Modifica la tipologia di evento" aria-required="true">
-                                <option<span id='exhibitionTypeSelectedPlaceholder'/>value="Mostra">Mostra</option>
-                                <option<span id='conferenceTypeSelectedPlaceholder'/>value="Conferenza">Conferenza</option>
+                                <option value="Mostre"<span id='exhibitionTypeSelectedPlaceholder'/>>Mostra</option>
+                                <option value="Conferenze"<span id='conferenceTypeSelectedPlaceholder'/>>Conferenza</option>
                             </select>
                         </p>
 
@@ -162,8 +162,8 @@
                     </p>
 
                     <p class="navigation">
-                        <input id="buttonConfirm" class="button" name="submit" type="submit" value="Modifica" aria-label="Invia le modifiche apportate"/>
-                        <input id="buttonReset" class="button" name="cancel" type="reset" value="Annulla" aria-label="Annulla le modifiche apportate"/>
+                        <input class="button" name="submit" type="submit" value="Modifica" aria-label="Invia le modifiche apportate"/>
+                        <input class="button" name="cancel" type="reset" value="Annulla" aria-label="Annulla le modifiche apportate"/>
                     </p>
                 </fieldset>
             </form>

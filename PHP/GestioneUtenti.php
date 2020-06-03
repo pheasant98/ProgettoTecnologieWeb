@@ -32,23 +32,32 @@ if (!isset($_GET['page'])) {
     $page = $_GET['page'];
 }
 
-$_SESSION['page'] = $page;
+if ($user_count > 0) {
+    $_SESSION['page'] = $page;
 
-$offset = ($page - 1) * 5;
+    $offset = ($page - 1) * 5;
 
-$user_list = $controller->getUsers($offset);
+    $user_list = '<ul class="list">' . $controller->getUsers($offset) . '</ul>';
 
-unset($controller);
+    unset($controller);
 
-$previous_users = '';
-$next_users = '';
+    $navigation_users_buttons = '<p class="navigation">';
 
-if ($page > 1) {
-    $previous_users = '<a id="buttonBack" class="button" href="?page=' . ($page - 1) . '" title="Utenti precedenti" role="button" aria-label="Torna agli utenti precedenti"> &lt; Precedente</a>';
-}
+    if ($page > 1) {
+        $navigation_users_buttons .= '<a id="buttonBack" class="button" href="?page=' . ($page - 1) . '" title="Utenti precedenti" role="button" aria-label="Torna agli utenti precedenti"> &lt; Precedente</a>';
+    }
 
-if (($page * 5) < $user_count) {
-    $next_users = '<a id="buttonNext" class="button" href="?page=' . ($page + 1) . '" title="Utenti successivi" role="button" aria-label="Vai agli utenti successivi"> Successivo &gt;</a>';
+    if (($page * 5) < $user_count) {
+        $navigation_users_buttons .= '<a id="buttonNext" class="button" href="?page=' . ($page + 1) . '" title="Utenti successivi" role="button" aria-label="Vai agli utenti successivi"> Successivo &gt;</a>';
+    }
+
+    $navigation_users_buttons .= '</p>';
+    $skip_users = '<a href="#buttonBack" class="skipInformation">Salta gli utenti presenti nella pagina</a>';
+} else {
+    unset($controller);
+    $skip_users = '';
+    $user_list = '';
+    $navigation_users_buttons = '';
 }
 
 $document = file_get_contents('../HTML/GestioneUtenti.html');
@@ -57,9 +66,9 @@ $login = LoginController::getAuthenticationMenu();
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
 $document = str_replace("<span id='deletedContent'/>", $deleted, $document);
 $document = str_replace("<span id='userNumberFoundPlaceholder'/>", $user_number_found, $document);
+$document = str_replace("<span id='skipUsersPlaceholder'/>", $skip_users, $document);
 $document = str_replace("<span id='userListPlaceholder'/>", $user_list, $document);
-$document = str_replace("<span id='buttonBackPlaceholder'/>", $previous_users, $document);
-$document = str_replace("<span id='buttonNextPlaceholder'/>", $next_users, $document);
+$document = str_replace("<span id='navigationUsersButtonsPlaceholder'/>", $navigation_users_buttons, $document);
 
 echo $document;
 

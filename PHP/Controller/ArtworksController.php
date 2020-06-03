@@ -54,7 +54,7 @@ class ArtworksController {
             }
         }
 
-        if ($style !== 'Scultura' && $style !== 'Dipinto') {
+        if ($style !== 'Sculture' && $style !== 'Dipinti') { //FIXME: Quando si sistema nel db si deve mettere Scultura e Dipinto
             $message .= '[Lo stile dell\'opera deve essere Scultura o Dipinto]';
         }
 
@@ -66,7 +66,7 @@ class ArtworksController {
             } elseif (strlen($technique) > 64) {
                 $message .= '[Non è possibile inserire una tecnica più lunga di 64 caratteri]';
             } elseif (!preg_match('/^[A-zÀ-ú\'\-`\s]+$/', $technique)) {
-                $message .= '[La tecnica contiene caratteri non consentiti. Quelli possibili sono lettere, anche accentate, accenti, spazi e i seguenti caratteri speciali \' \ - `]';
+                $message .= '[La tecnica contiene caratteri non consentiti. Quelli possibili sono lettere, anche accentate, spazi e i seguenti caratteri speciali \' \ - `]';
             }
         }
 
@@ -124,7 +124,7 @@ class ArtworksController {
     public function addArtwork($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $user) {
         $message = $this->checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan);
         if ($message === '') {
-            if($style === 'Dipinto') {
+            if($style === 'Dipinti') {
                 if ($this->artworks->postPainting($author, $title, $description, $years, $technique, $dimensions, $loan, $this->fileUtilities->getPath(), $user)) {
                     $message = '<p class="success">L\'opera ' . $title . ' è stata inserita correttamente</p>';
                 } else {

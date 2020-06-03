@@ -1,0 +1,56 @@
+% File: template.tex
+% InputFile: packages.tex
+\documentclass[11pt,a4paper]{article}
+% Packages per la formattazione
+%package per le sezioni a quattro indici
+\usepackage{titlesec} 
+\usepackage[left=3.5cm,right=3.5cm,top=3.1cm,bottom=2.6cm]{geometry}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{lastpage}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+%package per la gestione delle immagini
+\usepackage{graphicx}
+%pakage per ridefinire font caption
+\usepackage[font=small,labelfont=bf]{caption} 
+\geometry{a4paper}
+%package di style per  l/c/rhead l/rfoot
+\usepackage{fancyhdr} 
+
+%package per i punti nella tableofcontents
+\usepackage{tocloft} 
+\usepackage{longtable}
+\pagestyle{fancy}
+
+% package per i colori
+\usepackage{color} 
+\usepackage[table]{xcolor} 
+\definecolor{acqua}{rgb}{0.0, 1.0, 1.0}
+
+\usepackage{hyperref}
+\hypersetup {
+	colorlinks=true,
+	linkcolor=black,
+	urlcolor=linkcolor
+}		 
+
+%package meno complesso per la gestione delle tabelle
+\usepackage{tabularx}
+\usepackage{pdfpages}
+%package per il simbolo dell'euro
+\usepackage{eurosym}
+%package per unire 2 righe
+\usepackage{multirow}
+%package per mettere il foglio in orizzontale 
+ \usepackage{pdflscape}
+\usepackage{titlesec}
+\usepackage{epstopdf}
+\usepackage{makecell}
+	
+% Indentazione prima linea dei paragrafi
+\usepackage{indentfirst}
+
+%indice con i puntini
+\usepackage{tocloft}
+\renewcommand\cftsecleader{\cftdotfill{\cftdotsep}}

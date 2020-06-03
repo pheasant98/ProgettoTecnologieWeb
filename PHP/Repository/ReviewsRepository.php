@@ -14,13 +14,13 @@ class ReviewsRepository {
     }
 
     public function postReview($title, $content, $user) {
-        $statement = $this->dbConnection->prepareQuery('INSERT INTO Recensioni (ID, Oggetto, Contenuto, DataPubblicazione, Utente) VALUES (NULL, ?, ?, NOW(), ?);');
+        $statement = $this->dbConnection->prepareQuery('INSERT INTO Recensioni (ID, Oggetto, Contenuto, DataUltimaModifica, Utente) VALUES (NULL, ?, ?, NOW(), ?);');
         $statement->bind_param('sss', $title, $content, $user);
         return $this->dbConnection->executeNotSelectStatement($statement);
     }
 
     public function getReviews($offset) {
-        $statement = $this->dbConnection->prepareQuery('SELECT * FROM Recensioni ORDER BY DataPubblicazione DESC LIMIT 5 OFFSET ?;');
+        $statement = $this->dbConnection->prepareQuery('SELECT * FROM Recensioni ORDER BY DataUltimaModifica DESC LIMIT 5 OFFSET ?;');
         $statement->bind_param('i', $offset);
         return $this->dbConnection->executeSelectStatement($statement);
     }
@@ -37,7 +37,7 @@ class ReviewsRepository {
     }
 
     public function getUserReviews($user, $offset) {
-        $statement = $this->dbConnection->prepareQuery('SELECT * FROM Recensioni WHERE Utente=? ORDER BY DataPubblicazione DESC LIMIT 5 OFFSET ?;');
+        $statement = $this->dbConnection->prepareQuery('SELECT * FROM Recensioni WHERE Utente=? ORDER BY DataUltimaModifica DESC LIMIT 5 OFFSET ?;');
         $statement->bind_param('si', $user, $offset);
         return $this->dbConnection->executeSelectStatement($statement);
     }
@@ -49,7 +49,7 @@ class ReviewsRepository {
     }
 
     public function updateReview($id, $title, $description, $user) {
-        $statement = $this->dbConnection->prepareQuery('UPDATE Recensioni SET Oggetto=?, Contenuto=?, DataPubblicazione=NOW() WHERE ID=? AND Utente=?;');
+        $statement = $this->dbConnection->prepareQuery('UPDATE Recensioni SET Oggetto=?, Contenuto=?, DataUltimaModifica=NOW() WHERE ID=? AND Utente=?;');
         $statement->bind_param('ssis', $title, $description, $id, $user);
         return $this->dbConnection->executeNotSelectStatement($statement);
     }

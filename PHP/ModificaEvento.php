@@ -2,6 +2,7 @@
 
 require_once ('Controller/LoginController.php');
 require_once ('Controller/EventsController.php');
+require_once ('Utilities/DateUtilities.php');
 
 session_start();
 
@@ -23,8 +24,8 @@ $manager = $event['Organizzatore'];
 if (isset($_POST['submit']) && $_POST['submit'] === 'Modifica') {
     $title = $_POST['title'];
     $description = $_POST['description'];
-    $begin_date = $_POST['beginDate'];
-    $end_date = $_POST['endDate'];
+    $begin_date = DateUtilities::englishItalianDate($_POST['beginDate']);
+    $end_date = DateUtilities::englishItalianDate($_POST['endDate']);
     $type = $_POST['type'];
     $manager = $_POST['manager'];
     $_SESSION['event_title'] = $_POST['title'];

@@ -28,11 +28,11 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Modifica') {
     } else {
         $sex = 'A';
     }
-    $date = $_POST['date'];
+    $date = DateUtilities::englishItalianDate($_POST['date']);
     $mail = $_POST['mail'];
-    $oldPassword = hash('sha256', $_POST['oldPassword']);
-    $newPassword = hash('sha256', $_POST['newPassword']);
-    $repeated_password = hash('sha256', $_POST['repetePassword']);
+    $oldPassword = $_POST['oldPassword'];
+    $newPassword = $_POST['newPassword'];
+    $repeated_password = $_POST['repetePassword'];
     $message = $usersController->updateUser($_SESSION['username'], $name, $surname, $date, $sex, $mail, $oldPassword, $newPassword, $repeated_password);
     unset($usersController);
 }
