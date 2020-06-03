@@ -4,7 +4,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-        <title><span id='titlePlaceholder'/> | Museo arte nel tempo</title>
+        <title><span id='objectPlaceholder'/> | Museo arte nel tempo</title>
 
         <meta name="language" content="italian it"/>
         <meta name="viewport" content="width=device-width" />
@@ -58,7 +58,7 @@
                 &gt;&gt;
                 <a href="CosaDiconoDiNoi.php" title="Cosa dicono di noi" aria-label="Vai alla pagina con la lista delle recensioni" tabindex="10">Cosa dicono di noi</a>
                 &gt;&gt;
-                <strong><span id='titlePlaceholder'/></strong>
+                <strong><span id='objectPlaceholder'/></strong>
             </p>
         </div>
 
@@ -92,11 +92,35 @@
         </div>
 
         <div id="content" role="main">
-            <h3 class="subtitle"> <span id='titlePlaceholder'/> </h3>
+            <h3 class="subtitle"> Recensione </h3>
+            <dl>
+                <dt class="reviewObject">
+                    Oggetto:
+                </dt>
+                <dd class="definition">
+                    <span id='objectPlaceholder'/>
+                </dd>
+                <dt class="reviewAuthor">
+                    Utente:
+                </dt>
+                <dd class="definition">
+                    <span id='userPlaceholder'/>
+                </dd>
 
-            <p class="paragraph">
-                <span id='descriptionPlaceholder'/>
-            </p>
+                <dt class="reviewData">
+                    Data ultima modifica:
+                </dt>
+                <dd class="definition">
+                    <span id='lastDataPlaceholder'/>
+                </dd>
+
+                <dt class="reviewDescription">
+                    Contenuto:
+                </dt>
+                <dd class="definition">
+                    <span id='contentPlaceholder'/>
+                </dd>
+            </dl>
 
             <a id="buttonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
                 <img alt="Torna su" src="../Images/TornaSu.png"/>
