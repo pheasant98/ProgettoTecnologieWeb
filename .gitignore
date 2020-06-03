@@ -18,3 +18,5 @@ node_modules
 .synctex.gz
 *.log
 *.gz
+*.log
+*.gz

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.24)  4 JUN 2020 00:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.24)  4 JUN 2020 00:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1099,7 +1099,7 @@ Package rerunfilecheck Info: File `Relazione.out' has not changed.
 Here is how much of TeX's memory you used:
  20249 strings out of 492616
  369406 string characters out of 6129480
- 467033 words of memory out of 5000000
+ 467028 words of memory out of 5000000
  23656 multiletter control sequences out of 15000+600000
  16874 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1117,7 +1117,7 @@ live/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texli
 ve/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive
 /2019/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2
 019/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb>
-Output written on Relazione.pdf (17 pages, 543456 bytes).
+Output written on Relazione.pdf (17 pages, 543460 bytes).
 PDF statistics:
  314 PDF objects out of 1000 (max. 8388607)
  271 compressed objects within 3 object streams
