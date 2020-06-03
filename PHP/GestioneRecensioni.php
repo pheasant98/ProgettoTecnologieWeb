@@ -17,9 +17,8 @@ if (!LoginController::isAdminUser()) {
 }
 
 $deleted = '';
-if (isset($_SESSION['deleted'])) {
-    $deleted = 'La recensione ' . $_SESSION['deleted'] . ' è stata eliminata correttamente';
-    unset($_SESSION['deleted']);
+if (isset($_SESSION['reviewDeleted'])) {
+    $deleted = 'La recensione ' . $_SESSION['reviewDeleted'] . ' è stata eliminata correttamente';
 }
 
 if($reviews_count == 1) {
@@ -37,7 +36,7 @@ if (!isset($_GET['page'])) {
 }
 
 if ($reviews_count > 0) {
-    $_SESSION['page'] = $page;
+    $_SESSION['reviewPage'] = $page;
     $offset = ($page - 1) * 5;
     if (!LoginController::isAdminUser()) {
         $reviews_list = '<ul class="clickableList">' . $controller->getUserListReviews($_SESSION['username'], $offset) . '</ul>';

@@ -221,7 +221,7 @@ class UsersController {
                             <legend class="hideLegend">Pulsante di eliminazione dell\'utente</legend>
                             
                             <input type="hidden" name="username" value="' . $row['Username'] . '"/>
-                            <input id="buttonConfirm" class="button" name="submit" type="submit" value="Rimuovi" role="button" aria-label="Rimuovi utente"/>
+                            <input class="button" name="submit" type="submit" value="Rimuovi" role="button" aria-label="Rimuovi utente"/>
                         </fieldset>
                     </form>
                 </li>

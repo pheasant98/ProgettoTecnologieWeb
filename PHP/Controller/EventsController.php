@@ -270,7 +270,7 @@ class EventsController {
                             <input type="hidden" name="type" value="Evento"/>
                             
                             <a class="button" href="ModificaEvento.php?id=' . $row['ID'] . '" title="Modifica dettagli evento" role="button" aria-label="Modifica dettagli evento">Modifica</a>
-                            <input id="buttonConfirm" class="button" name="submit" type="submit" value="Rimuovi" role="button" aria-label="Rimuovi evento"/>
+                            <input class="button" name="submit" type="submit" value="Rimuovi" role="button" aria-label="Rimuovi evento"/>
                         </fieldset>
                     </form>
                 </li>

@@ -5,7 +5,7 @@ require_once ('Controller/ReviewsController.php');
 
 session_start();
 
-if (!LoginController::isAuthenticatedUser() || LoginController::isAdminUser() || !isset($_GET['id']) || !isset($_SESSION['page'])) {
+if (!LoginController::isAuthenticatedUser() || LoginController::isAdminUser() || !isset($_GET['id']) || !isset($_SESSION['reviewPage'])) {
     header('Location: Errore.php');
 }
 
@@ -36,7 +36,7 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Modifica') {
 $document = file_get_contents('../HTML/ModificaRecensione.html');
 $login = LoginController::getAuthenticationMenu();
 
-$breadcrumbs = '?page=' . $_SESSION['page'];
+$breadcrumbs = '?page=' . $_SESSION['reviewPage'];
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
 $document = str_replace("<span id='breadcrumbsPlaceholder'/>", $breadcrumbs, $document);
