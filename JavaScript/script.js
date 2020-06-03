@@ -754,5 +754,11 @@ function registrationFormValidation() {
         samePasswordResult = checkSamePassword(password, confirmPassword);
     }
 
+    const form = document.getElementById('registration');
+    window.scroll({
+        top: form.getBoundingClientRect().top,
+        behavior: 'smooth'
+    });
+
     return nameResult && surnameResult && dateResult && sexResult && emailResult && usernameResult && passwordResult && confirmPasswordResult && samePasswordResult;
 }
