@@ -78,9 +78,10 @@ function addError(input, error, tags = 2) {
     const span = document.createElement("span");
 
     span.className = "error";
-    span.appendChild(document.createTextNode(error));
+    span.insertAdjacentHTML('afterbegin', error);
 
-    parentNode.appendChild(span);
+    // parentNode.appendChild(span);
+    parentNode.insertBefore(span, parentNode.firstChild);
 }
 
 /* CONTROLLI E GESTIONE DELLE DATE */
@@ -604,21 +605,21 @@ function checkUserUsername(input) {
     }
 }
 
-function checkUserPassword(input) {
+function checkUserPassword(input, numbers = 2) {
     const password = input.value;
     const pattern = new RegExp('^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!#$%&\'*+^_`\-{|}~@]).*$');
     
     if (password.length === 0) {
-        addError(input, 'Non è possibile inserire una <span xml:lang="en">password</span> vuota');
+        addError(input, 'Non è possibile inserire una <span xml:lang="en">password</span> vuota', numbers);
         return false;
     } else if (password.length < 8) {
-        addError(input, 'Non è possibile inserire una <span xml:lang="en">password</span> più corta di 8 caratteri');
+        addError(input, 'Non è possibile inserire una <span xml:lang="en">password</span> più corta di 8 caratteri', numbers);
         return false;
     } else if (!pattern.test(password)) {
-        addError(input, 'La <span xml:lang="en">password</span> inserita non soddisfa tutti i requisiti richiesti');
+        addError(input, 'La <span xml:lang="en">password</span> inserita non soddisfa tutti i requisiti richiesti', numbers);
         return false;
     } else {
-        removeError(input);
+        removeError(input, numbers);
         return true;
     }
 }
@@ -746,7 +747,7 @@ function registrationFormValidation() {
     const sexResult = checkUserSex(sexM, sexF, sexA);
     const emailResult = checkUserMail(email);
     const usernameResult = checkUserUsername(username);
-    const passwordResult = checkUserPassword(password);
+    const passwordResult = checkUserPassword(password, 3);
     const confirmPasswordResult = checkUserPassword(confirmPassword);
 
     let samePasswordResult = true;
