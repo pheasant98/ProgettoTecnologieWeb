@@ -12,14 +12,46 @@ if (LoginController::isAuthenticatedUser()) {
 $message = '';
 
 if (isset($_POST['submit']) && $_POST['submit'] === 'Registrati') {
-    $name = $_POST['name'];
-    $surname = $_POST['surname'];
-    $sex = $_POST['sex'];
-    $date = $_POST['date'];
-    $mail = $_POST['mail'];
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $repeated_password = $_POST['repetePassword'];
+    if (isset($_POST['name'])) {
+        $name = $_POST['name'];
+    } else {
+        $name = '';
+    }
+    if (isset($_POST['surname'])) {
+        $surname = $_POST['surname'];
+    } else {
+        $surname = '';
+    }
+    if (isset($_POST['sex'])) {
+        $sex = $_POST['sex'];
+    } else {
+        $sex = '';
+    }
+    if (isset($_POST['date'])) {
+        $date = $_POST['date'];
+    } else {
+        $date = '';
+    }
+    if (isset($_POST['mail'])) {
+        $mail = $_POST['mail'];
+    } else {
+        $mail = '';
+    }
+    if (isset($_POST['username'])) {
+        $username = $_POST['username'];
+    } else {
+        $username = '';
+    }
+    if (isset($_POST['password'])) {
+        $password = $_POST['password'];
+    } else {
+        $password = '';
+    }
+    if (isset($_POST['repetePassword'])) {
+        $repeated_password = $_POST['repetePassword'];
+    } else {
+        $repeated_password = '';
+    }
 
     $users_controller = new UsersController();
     $message = $users_controller->addUser($name, $surname, $sex, $date, $mail, $username, $password, $repeated_password);
