@@ -7,7 +7,7 @@
 \contentsline {subsection}{\numberline {2.2}Casi d'uso}{3}{subsection.2.2}% 
 \contentsline {subsubsection}{\numberline {2.2.1}Utente generico}{3}{subsubsection.2.2.1}% 
 \contentsline {subsubsection}{\numberline {2.2.2}Utente autenticato}{4}{subsubsection.2.2.2}% 
-\contentsline {subsubsection}{\numberline {2.2.3}Utente amministratore}{4}{subsubsection.2.2.3}% 
+\contentsline {subsubsection}{\numberline {2.2.3}Utente amministratore}{5}{subsubsection.2.2.3}% 
 \contentsline {section}{\numberline {3}Progettazione}{6}{section.3}% 
 \contentsline {subsection}{\numberline {3.1}Database}{6}{subsection.3.1}% 
 \contentsline {subsection}{\numberline {3.2}Accessibilit\IeC {\`a} e usabilti\IeC {\`a}}{6}{subsection.3.2}% 
