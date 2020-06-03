@@ -19,27 +19,16 @@ a {
   color: #000;
 }
 
-/* Regole per gli header delle pagine */
+/* Regole per gli header delle pagine
 
 #header {
   padding: 0.7em 1.3em 0 1.1em;
   border-bottom-width: 2px;
   border-bottom-style: solid;
   border-bottom-color: #000;
-  min-height: 8em;
+  min-height: 5em;
 }
-
-.headerTitle {
-  padding: 1.5em 0;
-}
-
-.headerTitle > h1 {
-  font-size: 2em;
-}
-
-.headerTitle > h2 {
-  font-size: 1.7em;
-}
+*/
 
 /* Regole per il contenuto principale delle pagine */
 
