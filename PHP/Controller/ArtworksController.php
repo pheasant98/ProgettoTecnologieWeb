@@ -296,7 +296,7 @@ class ArtworksController {
                             <input type="hidden" name="type" value="Opera"/>
                             
                             <a class="button" href="ModificaOpera.php?id=' . $row['ID'] . '" title="Modifica dettagli opera" role="button" aria-label="Modifica dettagli opera">Modifica</a>
-                            <input id="buttonConfirm" class="button" name="submit" type="submit" value="Rimuovi" role="button" aria-label="Rimuovi opera"/>
+                            <input class="button" name="submit" type="submit" value="Rimuovi" role="button" aria-label="Rimuovi opera"/>
                         </fieldset>
                     </form>
                 </li>
