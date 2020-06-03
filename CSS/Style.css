@@ -516,5 +516,6 @@ a:visited {
   /* Regole per i contenuti delle pagine */
   #content {
     margin-left: 13.5em;
+    min-height: 10.6em;
   }
 }
