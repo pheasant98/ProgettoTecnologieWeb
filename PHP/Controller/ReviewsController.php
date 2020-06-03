@@ -102,7 +102,7 @@ class ReviewsController {
                         </dd>
     
                         <dt class="reviewDescription">
-                            Descrizione: 
+                            Contenuto: 
                         </dt>
                         <dd class="definition">
                             ' . $row['Contenuto'] . '
