@@ -2,18 +2,21 @@
 window.onload = menu;
 
 function touch() {
-    const menus = document.getElementById("menu");
-    menus.classList.toggle("show");
+    const menus = document.getElementById('menu');
+    menus.classList.toggle('show');
 
-    const content = document.getElementById("content");
-    content.classList.toggle("hide");
+    const content = document.getElementById('content');
+    content.classList.toggle('hide');
 
-    const breadcrumbs = document.getElementById("breadcrumbs");
-    breadcrumbs.classList.toggle("hide");
+    const breadcrumbs = document.getElementById('breadcrumbs');
+    breadcrumbs.classList.toggle('hide');
 }
 
 function menu() {
-    document.getElementById("hamburgerMenu").addEventListener("click", touch);
+    document.getElementById('hamburgerMenu').addEventListener('click', touch);
+
+    const menu = document.getElementById('content');
+    menu.style.height
 }
 
 /* GESTIONE DELLA TIPOLOGIA DELLE OPERE */
@@ -21,7 +24,7 @@ function artworkStyleChanged(isModify = false) {
     const styleInput = document.getElementById('style');
     const style = styleInput.options[styleInput.selectedIndex].value;
 
-    if (style === 'Dipinto') {
+    if (style === 'Dipinti') {
         const techniqueInput = document.getElementById('technique');
         const techniqueParent = techniqueInput.parentElement;
         techniqueParent.className = '';
@@ -39,7 +42,7 @@ function artworkStyleChanged(isModify = false) {
             const materialParentSkip = materialInputSkip.parentElement;
             materialParentSkip.className = 'hideContent';
         }
-    } else if (style === 'Scultura') {
+    } else if (style === 'Sculture') {
         const materialInput = document.getElementById('material');
         const materialParent = materialInput.parentElement;
         materialParent.className = '';
@@ -229,7 +232,7 @@ function checkArtworkDate(input) {
 function checkArtworkStyle(input) {
     const style = input.options[input.selectedIndex].value;
 
-    if (style !== 'Scultura' && style !== 'Dipinto') {
+    if (style !== 'Sculture' && style !== 'Dipinti') {
         addError(input, 'Lo stile dell\'opera deve essere Scultura o Dipinto');
         return false;
     } else {
@@ -402,7 +405,7 @@ function checkDateComparison(beginDateInput, endDateInput) {
 function checkEventType(input) {
     const type = input.options[input.selectedIndex].value;
     
-    if (type !== 'Mostra' && type !== 'Conferenza') {
+    if (type !== 'Mostre' && type !== 'Conferenze') {
         addError(input, 'La tipologia dell\'evento deve essere Mostra o Conferenza');
         return false;
     } else {
@@ -682,7 +685,7 @@ function eventFormValidation() {
 
 function reviewFormValidation() {
     const title = document.getElementById('title');
-    const content = document.getElementById('description');
+    const content = document.getElementById('reviewDescriptionArea');
 
     const titleResult = checkReviewTitle(title);
     const contentResult = checkReviewContent(content);
