@@ -1,3 +1,5 @@
+// TODO: aggiungere trim() ai controlli dei campi per rimuovere gli spazi in capo e coda
+
 /* GESTIONE DEL MENU AD HAMBURGER */
 window.onload = menu;
 
@@ -14,9 +16,6 @@ function touch() {
 
 function menu() {
     document.getElementById('hamburgerMenu').addEventListener('click', touch);
-
-    const menu = document.getElementById('content');
-    menu.style.height
 }
 
 /* GESTIONE DELLA TIPOLOGIA DELLE OPERE */
@@ -314,21 +313,23 @@ function checkArtworkLoan(inputYes, inputNo) {
     }
 }
 
-function checkArtworkImage(input) {
+function checkArtworkImage(input, isInsert) {
+    const elements = isInsert ? 2 : 3;
+
     if (input.files.length === 0) {
-        addError(input, 'È necessario selezionare un\'immagine');
+        addError(input, 'È necessario selezionare un\'immagine', elements);
         return false;
     } else if (input.files.length > 1) {
-        addError(input, 'È necessario selezionare una ed una sola immagine');
+        addError(input, 'È necessario selezionare una ed una sola immagine', elements);
         return false;
     } else if (input.files[0].size > 512000) {
-        addError(input, 'L\'immagine caricata è una dimensione troppo elevata. La dimensione massima accettata è 500<abbr title="Kilo Bytes" xml:lang="en">KB</abbr>');
+        addError(input, 'L\'immagine caricata è una dimensione troppo elevata. La dimensione massima accettata è 500<abbr title="Kilo Bytes" xml:lang="en">KB</abbr>', elements);
         return false;
     } else if (input.files[0].type !== 'image/jpeg' && input.files[0].type !== 'image/png') {
-        addError(input, 'L\'estensione dell\'immagine non è supportata. L\'estensioni consentite sono .<abbr title="Joint Photographic Experts Group" xml:lang="en">jpeg</abbr>, .<abbr title="Joint Photographic Group" xml:lang="en">jpg</abbr>, .<abbr title="Portable Network Graphics" xml:lang="en">png</abbr>');
+        addError(input, 'L\'estensione dell\'immagine non è supportata. L\'estensioni consentite sono .<abbr title="Joint Photographic Experts Group" xml:lang="en">jpeg</abbr>, .<abbr title="Joint Photographic Group" xml:lang="en">jpg</abbr>, .<abbr title="Portable Network Graphics" xml:lang="en">png</abbr>', elements);
         return false;
     } else {
-        removeError(input);
+        removeError(input, elements);
         return true;
     }
 }
@@ -633,7 +634,7 @@ function checkSamePassword(inputNewPassword, inputConfirmPassword) {
 }
 
 /* CONTROLLI E GESTIONE DEI FORM */
-function artworkFormValidation() {
+function artworkFormValidation(isInsert = false) {
     const author = document.getElementById('author');
     const title = document.getElementById('title');
     const description = document.getElementById('operaDescriptionArea');
@@ -655,7 +656,7 @@ function artworkFormValidation() {
     const materialResult = checkArtworkMaterial(material);
     const dimensionsResult = checkArtworkDimensions(dimensions);
     const loanResult = checkArtworkLoan(loanYes, loanNo);
-    const imageResult = checkArtworkImage(image);
+    const imageResult = checkArtworkImage(image, isInsert);
 
     return authorResult && titleResult && descriptionResult && yearsResult && styleResult && techniqueResult && materialResult && dimensionsResult && loanResult && imageResult;
 }
