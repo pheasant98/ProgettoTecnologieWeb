@@ -13,9 +13,8 @@ $controller = new UsersController();
 $user_count = $controller->getUsersCount();
 
 $deleted = '';
-if (isset($_SESSION['deleted'])) {
-    $deleted = 'L\'utente ' . $_SESSION['deleted'] . ' è stato eliminato correttamente';
-    unset($_SESSION['deleted']);
+if (isset($_SESSION['userDeleted'])) {
+    $deleted = 'L\'utente ' . $_SESSION['userDeleted'] . ' è stato eliminato correttamente';
 }
 
 if($user_count == 1) {
@@ -33,7 +32,7 @@ if (!isset($_GET['page'])) {
 }
 
 if ($user_count > 0) {
-    $_SESSION['page'] = $page;
+    $_SESSION['userPage'] = $page;
 
     $offset = ($page - 1) * 5;
 

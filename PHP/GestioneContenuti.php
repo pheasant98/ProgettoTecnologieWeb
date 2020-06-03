@@ -58,15 +58,12 @@ if (isset($_GET['filterContent'])) {
 }
 
 $deleted = '';
-if (isset($_SESSION['deleted']) && isset($_SESSION['deleted_type'])) {
+if (isset($_SESSION['contentDeleted']) && isset($_SESSION['deleted_type'])) {
     if ($_SESSION['deleted_type'] === 'Opera') {
-        $deleted = 'L\'opera ' . $_SESSION['deleted'] . ' è stata eliminata correttamente';
+        $deleted = 'L\'opera ' . $_SESSION['contentDeleted'] . ' è stata eliminata correttamente';
     } else if ($_SESSION['deleted_type'] === 'Evento') {
-        $deleted = 'L\'evento ' . $_SESSION['deleted'] . ' è stato eliminato correttamente';
+        $deleted = 'L\'evento ' . $_SESSION['contentDeleted'] . ' è stato eliminato correttamente';
     }
-
-    unset($_SESSION['deleted']);
-    unset($_SESSION['deleted_type']);
 }
 
 if ($artwork_count == 1) {
@@ -90,7 +87,7 @@ if (!isset($_GET['page'])) {
 
 if (($artwork_count + $event_count) > 0) {
 
-    $_SESSION['page'] = $page;
+    $_SESSION['contentPage'] = $page;
     $_SESSION['filter_content'] = $filter_content;
     $_SESSION['filter_content_type'] = $filter_content_type;
 

@@ -2,7 +2,7 @@
 
 session_start();
 
-if (!isset($_POST['submit']) || $_POST['submit'] !== 'Rimuovi' || !isset($_SESSION['page'])) {
+if (!isset($_POST['submit']) || $_POST['submit'] !== 'Rimuovi' || !isset($_SESSION['reviewPage'])) {
     header('Location: Errore.php');
 }
 
@@ -15,10 +15,9 @@ $controller->deleteReview($_POST['id']);
 
 unset($controller);
 
-$_SESSION['deleted'] = $review['Oggetto'];
+$_SESSION['reviewDeleted'] = $review['Oggetto'];
 
-$page = $_SESSION['page'];
-unset($_SESSION['page']);
+$page = $_SESSION['reviewPage'];
 
 header('Location: GestioneRecensioni.php?page=' . $page);
 
