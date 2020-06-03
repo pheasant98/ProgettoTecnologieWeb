@@ -18,13 +18,17 @@ $review = $controller->getReview($_GET['id']);
 
 unset($controller);
 
-$review_title = $review['Oggetto'];
-$review_description = $review['Contenuto'];
-//TODO: decidere se visualizzare la singola recensione come per la pagina cosa dicono di noi
 
-$document = str_replace("<span id='titlePlaceholder'/>", $review_title, $document);
+$review_object = $review['Oggetto'];
+$review_content = $review['Contenuto'];
+$review_user = $review['Utente'];
+$review_last_data = $review['DataUltimaModifica'];
+
+$document = str_replace("<span id='objectPlaceholder'/>", $review_object, $document);
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
-$document = str_replace("<span id='descriptionPlaceholder'/>", $review_description, $document);
+$document = str_replace("<span id='contentPlaceholder'/>", $review_content, $document);
+$document = str_replace("<span id='userPlaceholder'/>", $review_user, $document);
+$document = str_replace("<span id='lastDataPlaceholder'/>", $review_last_data, $document);
 
 echo $document;
 

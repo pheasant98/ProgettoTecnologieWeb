@@ -125,13 +125,13 @@ class ArtworksController {
         $message = $this->checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan);
         if ($message === '') {
             if($style === 'Dipinti') {
-                if ($this->artworks->postPainting($author, $title, $description, $years, $technique, $dimensions, $loan, $this->fileUtilities->getPath(), $user)) {
+                if ($this->artworks->postPainting($author, $title, $description, intval($years), $technique, $dimensions, $loan, $this->fileUtilities->getPath(), $user)) {
                     $message = '<p class="success">L\'opera ' . $title . ' è stata inserita correttamente</p>';
                 } else {
                     $message = '<p class="error">Errore nell\'inserimento dell\'opera ' . $title . '</p>';
                 }
             } else {
-                if ($this->artworks->postSculture($author, $title, $description, $years, $material, $dimensions, $loan, $this->fileUtilities->getPath(), $user)) {
+                if ($this->artworks->postSculture($author, $title, $description, intval($years), $material, $dimensions, $loan, $this->fileUtilities->getPath(), $user)) {
                     $message = '<p class="success">L\'opera ' . $title . ' è stata inserita correttamente</p>';
                 } else {
                     $message = '<p class="error">Errore nell\'inserimento dell\'opera ' . $title . '</p>';
@@ -320,13 +320,13 @@ class ArtworksController {
 
         if ($message === '') {
             if($style === 'Dipinto') {
-                if ($this->artworks->updateArtwork($id, $author, $title, $description, $years, $technique, $material, $dimensions, $loan, $this->fileUtilities->getPath(), $user)) {
+                if ($this->artworks->updateArtwork($id, $author, $title, $description, intval($years), $technique, $material, $dimensions, $loan, $this->fileUtilities->getPath(), $user)) {
                     $message = '';
                 } else {
                     $message = '<p class="error">Errore nell\'aggiornamento dell\'opera</p>';
                 }
             } else {
-                if ($this->artworks->updateArtwork($id, $author, $title, $description, $years, $technique, $material, $dimensions, $loan, $this->fileUtilities->getPath(), $user)) {
+                if ($this->artworks->updateArtwork($id, $author, $title, $description, intval($years), $technique, $material, $dimensions, $loan, $this->fileUtilities->getPath(), $user)) {
                     $message = '';
                 } else {
                     $message = '<p class="error">Errore nell\'aggiornamento dell\'opera</p>';
