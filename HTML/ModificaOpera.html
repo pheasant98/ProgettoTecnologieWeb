@@ -134,7 +134,7 @@
                         </p>
 
                         <p>
-                            <label id="labelyears" for="years">Datazione: </label>
+                            <label id="labelYears" for="years">Datazione: </label>
                             <input id="years" class="formElement" name="years" type="text" value="<span id='yearsValuePlaceholder'/>" aria-label="Modifica l'anno dell'opera" aria-required="true"/>
                         </p>
                     </fieldset>
@@ -148,7 +148,8 @@
 
                         <p>
                             <label id="labelStyle" for="style">Stile: </label>
-                            <select id="style" class="formElement" name="style" aria-label="Modifica lo stile artistico" aria-required="true">
+
+                            <select id="style" class="formElement" name="style" aria-label="Modifica lo stile artistico" aria-required="true" onchange="artworkStyleChanged(true);">
                                 <option value="Dipinti"<span id='paintingStyleSelectedPlaceholder'/>>Dipinto</option>
                                 <option value="Sculture"<span id='scultureStyleSelectedPlaceholder'/>>Scultura</option>
                             </select>
@@ -164,7 +165,7 @@
                         </p>
 
                         <p>
-                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
+                            <a id="postTechniqueSkip" class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
@@ -173,14 +174,14 @@
                         </p>
 
                         <p>
-                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
+                            <a id="postMaterialSkip" class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
-                            <label id="labelSize" for="size">Dimensioni</label>
+                            <label id="labelSize" for="dimensions">Dimensioni</label>
                             <div class="clause">Le dimensioni devono essere inserite nel seguente formato: altezzaxlarghezza</div>
                             <!--TODO: fare classe nel div per farlo diventare più piccolo e giusto sotto la textbox. Controllare se è possibile usere 2 label invece di label+div-->
-                            <input id="size" class="formElement" name="dimensions" type="text" value="<span id='dimensionsValuePlaceholder'/>" aria-label="Inserisci le dimensioni"/>
+                            <input id="dimensions" class="formElement" name="dimensions" type="text" value="<span id='dimensionsValuePlaceholder'/>" aria-label="Inserisci le dimensioni"/>
                         </p>
 
                         <p>
@@ -191,10 +192,16 @@
                     <fieldset id="fieldLoan" class="fieldset">
                         <legend>Opera in prestito?</legend>
 
-                        <label id="labelLoanYes" for="textLoanYes">Sì</label>
-                        <input id="textLoanYes" name="loan" value="Si" type="radio"<span id='loanYesCheckedPlaceholder'/>aria-label="Pulsante per dire si al prestito"/>
-                        <label id="labelLoanNo" for="textLoanNo">No</label>
-                        <input id="textLoanNo" name="loan" value="No" type="radio"<span id='loanNoCheckedPlaceholder'/>aria-label="Pulsante per dire no al prestito"/>
+                        <ul>
+                            <li>
+                                <label id="labelLoanYes" for="loanYes">Sì</label>
+                                <input id="loanYes" name="loan" value="Si" type="radio"<span id='loanYesCheckedPlaceholder'/>aria-label="Pulsante per dire si al prestito"/>
+                            </li>
+                            <li>
+                                <label id="labelLoanNo" for="loanNo">No</label>
+                                <input id="loanNo" name="loan" value="No" type="radio"<span id='loanNoCheckedPlaceholder'/>aria-label="Pulsante per dire no al prestito"/>
+                            </li>
+                        </ul>
                     </fieldset>
 
                         <p>
@@ -204,7 +211,7 @@
                         <p>
                             <img alt="Immagine opera <span id='titleValuePlaceholder'/>" src="../<span id='artworkImgPlaceholder'/>"/>
                             <label id="labelImageUpload" for="imageUpload">Scegliere l'immagine: </label>
-                            <input id="imageUpload" class="formElement" name="image" type="file" aria-label="Modifica l'immagine dell'opera" aria-required="true"/>
+                            <input id="imageUpload" class="formElement" name="image" type="file" accept=".jpg, .jpeg, .png" aria-label="Modifica l'immagine dell'opera" aria-required="true"/>
                             <!--TODO: Scrivere il suggerimento delle estensioni supportate-->
                         </p>
 

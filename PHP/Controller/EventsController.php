@@ -23,8 +23,8 @@ class EventsController {
             $message .= '[Non è possibile inserire una descrizione vuota]';
         } elseif (strlen($description) < 30) {
             $message .= '[Non è possibile inserire una descrizione più corta di 30 caratteri]';
-        } elseif (strlen($description) > 500) {
-            $message .= '[Non è possibile inserire una descrizione più lunga di 500 caratteri]';
+        } elseif (strlen($description) > 65535) {
+            $message .= '[Non è possibile inserire una descrizione più lunga di 65535 caratteri]';
         }
 
         $begin_date_flag = false;
@@ -34,7 +34,7 @@ class EventsController {
         } else {
             $formatted_date = DateTime::createFromFormat('d-m-Y', $begin_date);
             if ($formatted_date === false) {
-                $message .= '[Non è possibile inserire la data di inizio evento espressa nel formato diverso da "gg-mm-aaaa"]';
+                $message .= '[Non è possibile inserire la data di inizio evento espressa in un formato diverso da "gg-mm-aaaa"]';
             } else {
                 $date_properties = explode('-', $begin_date);
                 if (!checkdate($date_properties[1], $date_properties[0], $date_properties[2])) {
@@ -50,7 +50,7 @@ class EventsController {
         } else {
             $formatted_date = DateTime::createFromFormat('d-m-Y', $end_date);
             if ($formatted_date === false) {
-                $message .= '[Non è possibile inserire la data di fine evento espressa nel formato diverso da "gg-mm-aaaa"]';
+                $message .= '[Non è possibile inserire la data di fine evento espressa in un formato diverso da "gg-mm-aaaa"]';
             } else {
                 $date_properties = explode('-', $end_date);
                 if (!checkdate($date_properties[1], $date_properties[0], $date_properties[2])) {
@@ -65,14 +65,19 @@ class EventsController {
             $inserted_begin_date = DateTime::createFromFormat('Y-m-d', DateUtilities::italianEnglishDate($begin_date));
             $lower_bound = DateTime::createFromFormat('Y-m-d', date('Y-m-d'));
             $inserted_end_date = DateTime::createFromFormat('Y-m-d', DateUtilities::italianEnglishDate($end_date));
-            $upper_bound = DateTime::createFromFormat('Y-m-d', date('Y-m-d', strtotime(('+5 years'))));
+            $upper_bound = DateTime::createFromFormat('Y-m-d', date('Y-m-d', strtotime('+3 years')));
+
+            $duration_limit = DateTime::createFromFormat('Y-m-d', DateUtilities::italianEnglishDate($begin_date));
+            $duration_limit->modify('+6 month');
 
             if ($inserted_begin_date < $lower_bound) {
                 $message .= '[Non è possibile inserire una data di inizio evento precedente alla data odierna]';
+            } elseif ($inserted_begin_date > $upper_bound) {
+                $message .= '[Non è possibile inserire una data di inizio evento successiva a tre anni dalla data odierna]';
             } elseif ($inserted_begin_date > $inserted_end_date) {
                 $message .= '[Non è possibile inserire una data di inizio evento successiva alla data di fine evento]';
-            } elseif ($inserted_end_date > $upper_bound) {
-                $message .= '[Non è possibile inserire un evento che si conclude più di tre anni dopo il suo inizio]';
+            } elseif ($inserted_end_date > $duration_limit) {
+                $message .= '[Non è possibile inserire un evento che abbia una durata superiore ai sei mesi]';
             }
         }
 
@@ -84,6 +89,8 @@ class EventsController {
             $message .= '[Non è possibile inserire un organizzatore vuoto]';
         } elseif (strlen($manager) < 2) {
             $message .= '[Non è possibile inserire un organizzatore più corto di 2 caratteri]';
+        } elseif (strlen($manager) > 32) {
+            $message .= '[Non è possibile inserire un organizzatore più lungo di 32 caratteri]';
         } elseif (!preg_match('/^[A-zÀ-ú0-9\'`.:(\-)\s]+$/', $manager)) {
             $message .= '[L\'organizzatore dell\'evento contiene caratteri non consentiti. Quelli possibili sono lettere, anche accentate, numeri, spazi e i seguenti caratteri speciali \' ` . : - ()]';
         }

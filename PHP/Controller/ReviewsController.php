@@ -22,8 +22,8 @@ class ReviewsController {
             $message .= '[Non è possibile inserire una recensione con un contenuto vuoto]';
         } elseif (strlen($content) < 30) {
             $message .= '[Non è possibile inserire una recensione con un contenuto più corto di 30 caratteri]';
-        } elseif (strlen($content) > 500) {
-            $message .= '[Non è possibile inserire una recensione con un contenuto più lungo di 500 caratteri]';
+        } elseif (strlen($content) > 65535) {
+            $message .= '[Non è possibile inserire una recensione con un contenuto più lungo di 65535 caratteri]';
         }
 
         return $message;

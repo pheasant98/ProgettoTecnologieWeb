@@ -33,9 +33,9 @@ class ArtworksController {
         if (strlen($description) === 0) {
             $message .= '[Non è possibile inserire una descrizione vuota]';
         } elseif (strlen($description) < 2) {
-            $message .= '[Non è possibile inserire una descrizione più corta di 30 caratteri]';
-        } elseif (strlen($description) > 500) {
-            $message .= '[Non è possibile inserire una descrizione più lunga di 500 caratteri]';
+            $message .= '[Non è possibile inserire una descrizione più corta di 2 caratteri]';
+        } elseif (strlen($description) > 65535) {
+            $message .= '[Non è possibile inserire una descrizione più lunga di 65535 caratteri]';
         }
 
         if (strlen($years) === 0) {
@@ -85,7 +85,7 @@ class ArtworksController {
         if (strlen($dimensions) === 0) {
             $message .= '[Non è possibile inserire una dimensione vuota]';
         } elseif (!preg_match('/^([1-9][0-9]{0,2}|1000)x([1-9][0-9]{0,2}|1000)$/', $dimensions)) {
-            $message .= '[La dimensione contiene caratteri non consentiti. Il formato consentito è specificato nel suggerimento]';
+            $message .= '[Le dimensioni non rispettano il formato richiesto]';
         }
 
         if ($loan !== 1 && $loan !== 0) {
@@ -93,17 +93,17 @@ class ArtworksController {
         }
 
         if (!FileUtilities::isSelected()) {
-            $message .= '[L\'immagine non è stata selezionata]';
+            $message .= '[È necessario selezionare un\'immagine]';
         } elseif (!FileUtilities::isOneAndOnlyOneSelected()) {
             $message .= '[È necessario selezionare una ed una sola immagine]';
         } elseif (!FileUtilities::isSizeBounded()) {
-            $message .= '[L\'immagine selezionata supera la dimensione massima consentita]';
+            $message .= '[L\'immagine selezionata supera la dimensione massima consentita dal sistema]';
         } elseif (!FileUtilities::isUploaded()) {
             $message .= '[L\'immagine non è stata caricata correttamente]';
         } elseif (!FileUtilities::isCorrectSized()) {
-            $message .= '[L\'immagine caricata è una dimensione troppo elevata]';
+            $message .= '[L\'immagine caricata è una dimensione troppo elevata. La dimensione massima accettata è 500<abbr title="Kilo Bytes" xml:lang="en">KB</abbr>]';
         } elseif (!$this->fileUtilities->isCorrectExtensioned()) {
-            $message .= '[L\'estensione dell\'immagine non è supportata]';
+            $message .= '[L\'estensione dell\'immagine non è supportata. L\'estensioni consentite sono .<abbr title="Joint Photographic Experts Group" xml:lang="en">jpeg</abbr>, .<abbr title="Joint Photographic Group" xml:lang="en">jpg</abbr>, .<abbr title="Portable Network Graphics" xml:lang="en">png</abbr>]';
         } elseif (!$this->fileUtilities->isUniqueRenamed()) {
             $message .= '[Non è stato possibile generare un nome univoco per il file. Per favore rinominare il file]';
         }
