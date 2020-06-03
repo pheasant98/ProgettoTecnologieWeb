@@ -13,11 +13,35 @@ $message = '';
 $title = '';
 
 if (isset($_POST['submit']) && $_POST['submit'] === 'Inserisci') {
-    $author = $_POST['author'];
-    $title = $_POST['title'];
-    $description = $_POST['description'];
-    $years = $_POST['years'];
-    $style = $_POST['style'];
+    if (isset($_POST['author'])) {
+        $author = $_POST['author'];
+    } else {
+        $author = '';
+    }
+
+    if (isset($_POST['title'])) {
+        $title = $_POST['title'];
+    } else {
+        $title = '';
+    }
+
+    if (isset($_POST['description'])) {
+        $description = $_POST['description'];
+    } else {
+        $description = '';
+    }
+
+    if (isset($_POST['years'])) {
+        $years = $_POST['years'];
+    } else {
+        $years = '';
+    }
+
+    if (isset($_POST['style'])) {
+        $style = $_POST['style'];
+    } else {
+        $style = '';
+    }
 
     if (isset($_POST['technique'])) {
         $technique = $_POST['technique'];
@@ -29,8 +53,18 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Inserisci') {
         $technique = '';
     }
 
-    $dimensions = $_POST['dimensions'];
-    $loan = ($_POST['loan'] === 'Si' ? 1 : 0);
+    if (isset($_POST['dimensions'])) {
+        $dimensions = $_POST['dimensions'];
+    } else {
+        $dimensions = '';
+    }
+
+    if (isset($_POST['loan'])) {
+        $loan = ($_POST['loan'] === 'Si' ? 1 : 0);
+    } else {
+        $loan = 0;
+    }
+
     $artworksController = new ArtworksController();
     $message = $artworksController->addArtwork($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $_SESSION['username']);
     unset($artworksController);

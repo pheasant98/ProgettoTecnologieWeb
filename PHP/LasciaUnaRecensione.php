@@ -12,8 +12,17 @@ if (!LoginController::isAuthenticatedUser() || LoginController::isAdminUser() ||
 $message = '';
 
 if (isset($_POST['submit']) && $_POST['submit'] === 'Invia') {
-    $title = $_POST['title'];
-    $content = $_POST['content'];
+    if (isset($_POST['title'])) {
+        $title = $_POST['title'];
+    } else {
+        $title = '';
+    }
+
+    if (isset($_POST['content'])) {
+        $content = $_POST['content'];
+    } else {
+        $content = '';
+    }
 
     $reviewsController = new ReviewsController();
     $message = $reviewsController->addReview($title, $content, $_SESSION['username']);
