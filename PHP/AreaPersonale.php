@@ -50,13 +50,13 @@ if (LoginController::isAdminUser()) {
         <li>
             <a href="ModificaDatiUtente.php" id="ModificaUser" class="button userOperationButton" title="Modifica dati profilo" aria-label="Vai alla pagina per la modifica dei dati del profilo">Modifica profilo</a>
         </li>
-
-        <li>
-            <a href="GestioneRecensioni.php" class="button userOperationButton" title="Gestisci le tue recensioni" aria-label="Vai alla pagina per la gestione delle recensioni lasciate">Gestisci le recensioni</a>
-        </li>
-
+        
         <li>
             <a href="LasciaUnaRecensione.php" class="button userOperationButton" title="Lascia una nuova recensione" aria-label="Vai alla pagina per lasciare una nuova recensione">Lascia una recensione</a>
+        </li>
+        
+        <li>
+            <a href="GestioneRecensioni.php" class="button userOperationButton" title="Gestisci le tue recensioni" aria-label="Vai alla pagina per la gestione delle recensioni lasciate">Gestisci le recensioni</a>
         </li>
     ';
 }

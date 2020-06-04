@@ -11,7 +11,11 @@ if ($_POST['type'] === 'Evento') {
     $controller = new EventsController();
 
     $event = $controller->getEvent($_POST['id']);
-    $controller->deleteEvent($_POST['id']);
+    if ($controller->deleteEvent($_POST['id'])) {
+        $_SESSION['contentDeletedError'] = true;
+    } else {
+        $_SESSION['contentDeletedError'] = false;
+    }
 
     $_SESSION['contentDeleted'] = $event['Titolo'];
 } else if ($_POST['type'] === 'Opera') {
@@ -19,7 +23,11 @@ if ($_POST['type'] === 'Evento') {
     $controller = new ArtworksController();
 
     $artwork = $controller->getArtwork($_POST['id']);
-    $controller->deleteArtwork($_POST['id']);
+    if (unlink('../' . $artwork['Immagine']) && $controller->deleteArtwork($_POST['id'])) {
+        $_SESSION['contentDeletedError'] = true;
+    } else {
+        $_SESSION['contentDeletedError'] = false;
+    }
 
     $_SESSION['contentDeleted'] = $artwork['Titolo'];
 }

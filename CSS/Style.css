@@ -393,10 +393,6 @@ a:visited {
   color: #000;
 }
 
-.disabledButton {
-  pointer-events: none;
-}
-
 .userOperationButton {
   width: 100%;
 }

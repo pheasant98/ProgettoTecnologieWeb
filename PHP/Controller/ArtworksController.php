@@ -343,7 +343,7 @@ class ArtworksController {
     }
 
     public function deleteArtwork($id) {
-        $this->artworks->deleteArtwork($id);
+        return $this->artworks->deleteArtwork($id);
     }
 }
 

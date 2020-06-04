@@ -121,7 +121,7 @@ class UsersController {
 
         if (strlen($repeated_password) === 0) {
             $message .= '[Non è possibile inserire la <span xml:lang="en">password</span> ripetuta vuota]';
-        } elseif ($password === $repeated_password) {
+        } elseif ($password !== $repeated_password) {
             $message .= '[La conferma della <span xml:lang="en">password</span> non corrisponde a quella inserita inizialmente]';
         }
 
@@ -276,7 +276,7 @@ class UsersController {
     }
 
     public function deleteUser($username) {
-        $this->users->deleteUser($username);
+        return $this->users->deleteUser($username);
     }
 }
 

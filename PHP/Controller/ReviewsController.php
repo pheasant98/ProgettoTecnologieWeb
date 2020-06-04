@@ -202,7 +202,7 @@ class ReviewsController {
     }
 
     public function deleteReview($id) {
-        $this->reviews->deleteReview($id);
+        return $this->reviews->deleteReview($id);
     }
 }
 

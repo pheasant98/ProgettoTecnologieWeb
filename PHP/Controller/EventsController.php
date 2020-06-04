@@ -308,7 +308,7 @@ class EventsController {
     }
 
     public function deleteEvent($id) {
-        $this->events->deleteEvent($id);
+        return $this->events->deleteEvent($id);
     }
 }
 
