@@ -30,10 +30,10 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Modifica') {
     $manager = $_POST['manager'];
     $_SESSION['event_title'] = $_POST['title'];
     $message = $eventsController->updateEvent($_GET['id'], $title, $description, $begin_date, $end_date, $type, $manager, $_SESSION['username']);
-    if($message === '') {
+    unset($eventsController);
+    if ($message === '') {
         header('Location: EventoModificato.php');
     }
-    unset($eventsController);
 }
 
 $exhibition_type = ' ';

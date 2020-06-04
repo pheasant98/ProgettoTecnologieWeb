@@ -103,6 +103,18 @@ function addRadioError(input, error) {
     parentNode.insertBefore(span, parentNode.children[1]);
 }
 
+function scrollToError() {
+    const errors = document.getElementsByClassName('formFieldError');
+
+    let input = errors[0].nextElementSibling;
+    while (input.tagName.toLowerCase() !== 'input') {
+        input = input.nextElementSibling;
+    }
+
+    input.focus();
+    errors[0].scrollIntoView({behavior: 'smooth'});
+}
+
 /* CONTROLLI E GESTIONE DELLE DATE */
 function addMonths(date, months) {
     const oldDate = date.getDate();
@@ -136,7 +148,7 @@ function getDateFromString(date) {
 }
 
 function checkDateFormat(date) {
-    const pattern = new RegExp('^\d{2}-\d{2}-\d{4}$');
+    const pattern = new RegExp('^\\d{2}-\\d{2}-\\d{4}$');
     return pattern.test(date);
 }
 
@@ -624,6 +636,25 @@ function checkUserUsername(input) {
     }
 }
 
+function checkUserOldPassword(input, numbers = 2) {
+    const password = input.value;
+    const pattern = new RegExp('^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!#$%&\'*+^_`\-{|}~@]).*$');
+
+    if (password.length === 0) {
+        addError(input, 'Non è possibile che la <span xml:lang="en">password</span> corrente sia vuota', numbers);
+        return false;
+    } else if (password.length < 8) {
+        addError(input, 'Non è possibile che la <span xml:lang="en">password</span> corrente sia più corta di 8 caratteri', numbers);
+        return false;
+    } else if (!pattern.test(password)) {
+        addError(input, 'Non è possibile che la <span xml:lang="en">password</span> corrente non soddisfi tutti i requisiti richiesti', numbers);
+        return false;
+    } else {
+        removeError(input, numbers);
+        return true;
+    }
+}
+
 function checkUserPassword(input, numbers = 2) {
     const password = input.value;
     const pattern = new RegExp('^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!#$%&\'*+^_`\-{|}~@]).*$');
@@ -645,10 +676,20 @@ function checkUserPassword(input, numbers = 2) {
 
 function checkSamePassword(inputNewPassword, inputConfirmPassword) {
     if (inputNewPassword.value !== inputConfirmPassword.value) {
-        addError(inputConfirmPassword, '');
+        addError(inputConfirmPassword, 'Le <span xml:lang="it">password</span> inserite non sono uguali');
         return false;
     } else {
         removeError(inputConfirmPassword);
+        return true;
+    }
+}
+
+function checkSameOldPassword(inputOldPassword, inputNewPassword, numbers = 2) {
+    if (inputOldPassword.value === inputNewPassword.value) {
+        addError(inputNewPassword, 'La nuova <span xml:lang="it">password</span> non può essere uguale a quella corrente', numbers);
+        return false;
+    } else {
+        removeError(inputNewPassword, numbers);
         return true;
     }
 }
@@ -678,6 +719,8 @@ function artworkFormValidation(isInsert = false) {
     const loanResult = checkArtworkLoan(loanYes, loanNo);
     const imageResult = checkArtworkImage(image, isInsert);
 
+    scrollToError();
+
     return authorResult && titleResult && descriptionResult && yearsResult && styleResult && techniqueResult && materialResult && dimensionsResult && loanResult && imageResult;
 }
 
@@ -701,15 +744,19 @@ function eventFormValidation() {
         dateComparisonResult = checkDateComparison(beginDate, endDate);
     }
 
+    scrollToError();
+
     return titleResult && descriptionResult && beginDateResult && endDateResult && dateComparisonResult && typeResult && managerResult;
 }
 
 function reviewFormValidation() {
     const title = document.getElementById('title');
-    const content = document.getElementById('reviewDescriptionArea');
+    const description = document.getElementById('reviewDescriptionArea');
 
     const titleResult = checkReviewTitle(title);
-    const contentResult = checkReviewContent(content);
+    const contentResult = checkReviewContent(description);
+
+    scrollToError();
 
     return titleResult && contentResult;
 }
@@ -736,16 +783,25 @@ function userFormValidation() {
     let newPasswordResult = true;
     let confirmPasswordResult = true;
     let samePasswordResult = true;
+    let sameOldPasswordResult = true;
 
-    if (oldPassword.value !== '' && newPassword.value !== '' && confirmPassword.value !== '') {
-        oldPasswordResult = checkUserPassword(oldPassword);
-        newPasswordResult = checkUserPassword(newPassword);
+    if (oldPassword.value !== '' || newPassword.value !== '' || confirmPassword.value !== '') {
+        oldPasswordResult = checkUserOldPassword(oldPassword);
+        newPasswordResult = checkUserPassword(newPassword, 3);
         confirmPasswordResult = checkUserPassword(confirmPassword);
 
-        samePasswordResult = checkSamePassword(newPassword, confirmPassword);
+        if (oldPasswordResult && newPasswordResult && confirmPasswordResult) {
+            samePasswordResult = checkSamePassword(newPassword, confirmPassword);
+
+            if (samePasswordResult) {
+                sameOldPasswordResult = checkSameOldPassword(oldPassword, newPassword, 3);
+            }
+        }
     }
 
-    return nameResult && surnameResult && dateResult && sexResult && emailResult && oldPasswordResult && newPasswordResult && confirmPasswordResult && samePasswordResult;
+    scrollToError();
+
+    return nameResult && surnameResult && dateResult && sexResult && emailResult && oldPasswordResult && newPasswordResult && confirmPasswordResult && samePasswordResult && sameOldPasswordResult;
 }
 
 function registrationFormValidation() {
@@ -774,11 +830,7 @@ function registrationFormValidation() {
         samePasswordResult = checkSamePassword(password, confirmPassword);
     }
 
-    const form = document.getElementById('registration');
-    window.scroll({
-        top: form.getBoundingClientRect().top,
-        behavior: 'smooth'
-    });
+    scrollToError();
 
     return nameResult && surnameResult && dateResult && sexResult && emailResult && usernameResult && passwordResult && confirmPasswordResult && samePasswordResult;
 }

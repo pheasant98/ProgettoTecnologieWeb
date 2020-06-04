@@ -1,5 +1,6 @@
 <?php
 
+require_once ('Utilities/DateUtilities.php');
 require_once ('Controller/LoginController.php');
 require_once ('Controller/UsersController.php');
 
@@ -15,7 +16,7 @@ $user = $usersController->getUser($_SESSION['username']);
 $name = $user['Nome'];
 $surname = $user['Cognome'];
 $sex = $user['Sesso'];
-$date = $user['DataNascita'];
+$date = DateUtilities::englishItalianDate($user['DataNascita']);
 $mail = $user['Email'];
 
 if (isset($_POST['submit']) && $_POST['submit'] === 'Modifica') {
@@ -35,6 +36,9 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Modifica') {
     $repeated_password = $_POST['repetePassword'];
     $message = $usersController->updateUser($_SESSION['username'], $name, $surname, $date, $sex, $mail, $oldPassword, $newPassword, $repeated_password);
     unset($usersController);
+    if ($message === '') {
+        header('Location: DatiUtenteModificati.php');
+    }
 }
 
 $male = ' ';

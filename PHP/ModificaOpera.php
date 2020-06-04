@@ -44,7 +44,7 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Modifica') {
     $_SESSION['artwork_title'] = $_POST['title'];
     $message = $artworksController->updateArtwork($_GET['id'], $author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $_SESSION['username']);
     unset($artworksController);
-    if($message === '') {
+    if ($message === '') {
         header('Location: OperaModificata.php');
     }
 }

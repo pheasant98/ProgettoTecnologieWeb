@@ -253,14 +253,14 @@ class UsersController {
         if ($message === '') {
             if (strlen($new_password) === 0) {
                 if ($this->users->updateUserWithoutPassword($username, $name, $surname, DateUtilities::italianEnglishDate($date), $sex, $mail)) {
-                    $message = '<p class="success">Utente aggiornato correttamente</p>';
+                    $message = '';
                 } else {
                     $message = '<p class="error">Errore nell\'aggiornamento dell\'utente</p>';
                 }
             } else {
                 $hashed_password = hash('sha256', $new_password);
                 if ($this->users->updateUser($username, $name, $surname, DateUtilities::italianEnglishDate($date), $sex, $mail, $hashed_password)) {
-                    $message = '<p class="success">Utente aggiornato correttamente</p>';
+                    $message = '';
                 } else {
                     $message = '<p class="error">Errore nell\'aggiornamento dell\'utente</p>';
                 }
