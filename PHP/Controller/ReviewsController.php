@@ -81,7 +81,7 @@ class ReviewsController {
         while($row = $result_set->fetch_assoc()) {
             $content .= '
                 <dt id="' . $id . $counter . '" class="titleDef">
-                     ' . $row['Oggetto'] . '
+                    <a href="Recensione.php?id=' . $row['ID'] . '" aria-label="Vai alla recensione">' . $row['Oggetto'] . '</a>
                 </dt>
                 <dd>
                     <a href="#' . ($result_set->num_rows == $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta la recensione">Salta la recensione</a>
@@ -105,7 +105,7 @@ class ReviewsController {
                             Contenuto: 
                         </dt>
                         <dd class="definition">
-                            ' . $row['Contenuto'] . '
+                            ' . substr($row['Contenuto'], 0, 150) . '...' . '
                         </dd>
                     </dl>
                 </dd>

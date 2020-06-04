@@ -23,7 +23,7 @@ function artworkStyleChanged(isModify = false) {
     const styleInput = document.getElementById('style');
     const style = styleInput.options[styleInput.selectedIndex].value;
 
-    if (style === 'Dipinti') {
+    if (style === 'Dipinto') {
         const techniqueInput = document.getElementById('technique');
         const techniqueParent = techniqueInput.parentElement;
         techniqueParent.className = '';
@@ -41,7 +41,7 @@ function artworkStyleChanged(isModify = false) {
             const materialParentSkip = materialInputSkip.parentElement;
             materialParentSkip.className = 'hideContent';
         }
-    } else if (style === 'Sculture') {
+    } else if (style === 'Scultura') {
         const materialInput = document.getElementById('material');
         const materialParent = materialInput.parentElement;
         materialParent.className = '';
@@ -251,7 +251,7 @@ function checkArtworkDate(input) {
 function checkArtworkStyle(input) {
     const style = input.options[input.selectedIndex].value;
 
-    if (style !== 'Sculture' && style !== 'Dipinti') {
+    if (style !== 'Scultura' && style !== 'Dipinto') {
         addError(input, 'Lo stile dell\'opera deve essere Scultura o Dipinto');
         return false;
     } else {
@@ -426,7 +426,7 @@ function checkDateComparison(beginDateInput, endDateInput) {
 function checkEventType(input) {
     const type = input.options[input.selectedIndex].value;
     
-    if (type !== 'Mostre' && type !== 'Conferenze') {
+    if (type !== 'Mostra' && type !== 'Conferenza') {
         addError(input, 'La tipologia dell\'evento deve essere Mostra o Conferenza');
         return false;
     } else {
