@@ -13,9 +13,9 @@ $filter_type = '';
 if (isset($_GET['filterType'])) {
     $filter_type = $_GET['filterType'];
 
-    if ($_GET['filterType'] === 'Mostre') {
+    if ($_GET['filterType'] === 'Mostra') {
         $event_count = $controller->getEventsCountByType($filter_type);
-    } elseif ($_GET['filterType'] === 'Conferenze') {
+    } elseif ($_GET['filterType'] === 'Conferenza') {
         $event_count = $controller->getEventsCountByType($filter_type);
     } else {
         $filter_type = '';
@@ -64,8 +64,8 @@ if ($event_count > 0) {
 }
 
 $filter_option_whole = $filter_type == '' ? ' selected="selected"' : '';
-$filter_option_exhibitions = $filter_type == 'Mostre' ? ' selected="selected"' : '';
-$filter_option_conferences = $filter_type == 'Conferenze' ? ' selected="selected"' : '';
+$filter_option_exhibitions = $filter_type == 'Mostra' ? ' selected="selected"' : '';
+$filter_option_conferences = $filter_type == 'Conferenza' ? ' selected="selected"' : '';
 
 require_once ('Controller/LoginController.php');
 $document = file_get_contents('../HTML/Eventi.html');

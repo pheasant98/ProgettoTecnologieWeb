@@ -25,11 +25,11 @@ if (isset($_GET['filterContent'])) {
         if (isset($_GET['filterContentType'])) {
             $filter_content_type = $_GET['filterContentType'];
             if ($_GET['filterContentType'] === 'Dipinto') {
-                $filter_content_types = 'Dipinti';
+                $filter_content_types = 'Dipinto';
                 $artwork_count = $artworks_controller->getArtworksCountByStyle($filter_content_types);
                 echo $artwork_count;
             } elseif ($_GET['filterContentType'] === 'Scultura') {
-                $filter_content_types = 'Sculture';
+                $filter_content_types = 'Scultura';
                 $artwork_count = $artworks_controller->getArtworksCountByStyle($filter_content_types);
             } else {
                 $artwork_count = $artworks_controller->getArtworksCount();
@@ -39,10 +39,10 @@ if (isset($_GET['filterContent'])) {
         if (isset($_GET['filterContentType'])) {
             $filter_content_type = $_GET['filterContentType'];
             if ($_GET['filterContentType'] === 'Mostra') {
-                $filter_content_types = 'Mostre';
+                $filter_content_types = 'Mostra';
                 $event_count = $events_controller->getEventsCountByType($filter_content_types);
             } elseif ($_GET['filterContentType'] === 'Conferenza') {
-                $filter_content_types = 'Conferenze';
+                $filter_content_types = 'Conferenza';
                 $event_count = $events_controller->getEventsCountByType($filter_content_types);
             } else {
                 $event_count = $events_controller->getEventsCount();
@@ -147,8 +147,8 @@ $filter_option_events = $filter_content == 'Evento' ? ' selected="selected"' : '
 $filter_option_whole_type = $filter_content_type == 'NessunFiltro' ? ' selected="selected"' : '';
 $filter_option_paintings = $filter_content_type == 'Dipinto' ? ' selected="selected"' : '';
 $filter_option_scultures = $filter_content_type == 'Scultura' ? ' selected="selected"' : '';
-$filter_option_exhibitions = $filter_content_type == 'Mostre' ? ' selected="selected"' : '';
-$filter_option_conferences = $filter_content_type == 'Conferenze' ? ' selected="selected"' : '';
+$filter_option_exhibitions = $filter_content_type == 'Mostra' ? ' selected="selected"' : '';
+$filter_option_conferences = $filter_content_type == 'Conferenza' ? ' selected="selected"' : '';
 
 $document = file_get_contents('../HTML/GestioneContenuti.html');
 $login = LoginController::getAuthenticationMenu();
