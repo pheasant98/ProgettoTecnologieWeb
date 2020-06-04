@@ -187,7 +187,7 @@ class UsersController {
             if ($this->users->postUser($name, $surname, DateUtilities::italianEnglishDate($date), $sex, $username, $mail, $hashed_password)) {
                 $message = '';
             } else {
-                $message = '<p class="error">Errore durante la registrazione del nuovo utente</p>';
+                $message = '<p class="error">Non è stato possibile registrare l\'utente ' . $username . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
             }
         } else {
             $message = '<ul>' . $message;
@@ -255,14 +255,14 @@ class UsersController {
                 if ($this->users->updateUserWithoutPassword($username, $name, $surname, DateUtilities::italianEnglishDate($date), $sex, $mail)) {
                     $message = '';
                 } else {
-                    $message = '<p class="error">Errore nell\'aggiornamento dell\'utente</p>';
+                    $message = '<p class="error">Non è stato possibile aggiornare l\'utente ' . $username . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
                 }
             } else {
                 $hashed_password = hash('sha256', $new_password);
                 if ($this->users->updateUser($username, $name, $surname, DateUtilities::italianEnglishDate($date), $sex, $mail, $hashed_password)) {
                     $message = '';
                 } else {
-                    $message = '<p class="error">Errore nell\'aggiornamento dell\'utente</p>';
+                    $message = '<p class="error">Non è stato possibile aggiornare l\'utente ' . $username . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
                 }
             }
         } else {

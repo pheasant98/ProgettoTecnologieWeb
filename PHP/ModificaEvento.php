@@ -49,7 +49,7 @@ $document = file_get_contents('../HTML/ModificaEvento.html');
 $login = LoginController::getAuthenticationMenu();
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
-$document = str_replace("<span id='outputMessagePlaceholder'/>", $message, $document);;
+$document = str_replace("<span id='outputMessagePlaceholder'/>", $message, $document);
 $document = str_replace("<span id='titleValuePlaceholder'/>", $title, $document);
 $document = str_replace("<span id='descriptionValuePlaceholder'/>", $description, $document);
 $document = str_replace("<span id='exhibitionTypeSelectedPlaceholder'/>", $exhibition_type, $document);

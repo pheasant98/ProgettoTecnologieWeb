@@ -112,7 +112,7 @@ class EventsController {
             if ($this->events->postEvent($title, $description, DateUtilities::italianEnglishDate($begin_date), DateUtilities::italianEnglishDate($end_date), $type, $manager, $user)) {
                 $message = '<p class="success">L\' evento ' . $title . ' è stato inserito correttamente</p>';
             } else {
-                $message = '<p class="error">Errore nell\'inserimento dell\' evento ' . $title . '</p>';
+                $message = '<p class="error">Non è stato possibile inserire l\'evento ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
             }
         } else {
             $message = '<ul>' . $message;
@@ -295,7 +295,7 @@ class EventsController {
             if ($this->events->updateEvent($id, $title, $description, DateUtilities::italianEnglishDate($begin_date), DateUtilities::italianEnglishDate($end_date), $type, $manager, $user)) {
                 $message = '';
             } else {
-                $message = '<p class="error">Errore nell\'aggiornamento dell\'evento</p>';
+                $message = '<p class="error">Non è stato possibile aggiornare l\'evento ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
             }
         } else {
             $message = '<ul>' . $message;

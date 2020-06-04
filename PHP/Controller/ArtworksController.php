@@ -128,13 +128,13 @@ class ArtworksController {
                 if ($this->artworks->postPainting($author, $title, $description, intval($years), $technique, $dimensions, $loan, $this->fileUtilities->getPath(), $user)) {
                     $message = '<p class="success">L\'opera ' . $title . ' è stata inserita correttamente</p>';
                 } else {
-                    $message = '<p class="error">Errore nell\'inserimento dell\'opera ' . $title . '</p>';
+                    $message = '<p class="error">Non è stato possibile inserire l\'opera ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
                 }
             } else {
                 if ($this->artworks->postSculture($author, $title, $description, intval($years), $material, $dimensions, $loan, $this->fileUtilities->getPath(), $user)) {
                     $message = '<p class="success">L\'opera ' . $title . ' è stata inserita correttamente</p>';
                 } else {
-                    $message = '<p class="error">Errore nell\'inserimento dell\'opera ' . $title . '</p>';
+                    $message = '<p class="error">Non è stato possibile inserire l\'opera ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
                 }
             }
         } else {
@@ -323,13 +323,13 @@ class ArtworksController {
                 if ($this->artworks->updateArtwork($id, $author, $title, $description, intval($years), $technique, $material, $dimensions, $loan, $this->fileUtilities->getPath(), $user)) {
                     $message = '';
                 } else {
-                    $message = '<p class="error">Errore nell\'aggiornamento dell\'opera</p>';
+                    $message = '<p class="error">Non è stato possibile aggiornare l\'opera ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
                 }
             } else {
                 if ($this->artworks->updateArtwork($id, $author, $title, $description, intval($years), $technique, $material, $dimensions, $loan, $this->fileUtilities->getPath(), $user)) {
                     $message = '';
                 } else {
-                    $message = '<p class="error">Errore nell\'aggiornamento dell\'opera</p>';
+                    $message = '<p class="error">Non è stato possibile aggiornare l\'opera ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
                 }
             }
         } else {

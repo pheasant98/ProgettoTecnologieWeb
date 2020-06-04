@@ -44,7 +44,7 @@ class ReviewsController {
             if ($this->reviews->postReview($title, $content, $user)) {
                 $message = '<p class="success">Recensione inserita correttamente</p>';
             } else {
-                $message = '<p class="error">Errore nell\'inserimento della recensione</p>';
+                $message = '<p class="error">Non è stato possibile inserire la recensione ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
             }
         } else {
             $message = '<ul>' . $message;
@@ -189,7 +189,7 @@ class ReviewsController {
             if ($this->reviews->updateReview($id, $title, $description, $user)) {
                 $message = '';
             } else {
-                $message = '<p class="error">Errore nell\'aggiornamento della recensione</p>';
+                $message = '<p class="error">Non è stato possibile aggiornare la recensione ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
             }
         } else {
             $message = '<ul>' . $message;
