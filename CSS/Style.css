@@ -67,6 +67,16 @@ a:visited {
 
 /* Regole per le immagini delle pagine */
 
+/* Inserimento di un'immagine con la tecnica image replacement */
+.backgroundImage {
+  display: block;
+  text-align: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 /* Logo accessibile */
 #logoImage {
   float: left;
@@ -80,31 +90,17 @@ a:visited {
 #imageError404 {
   background-image: url('../images/PortraitsCorridor.png');
   text-indent: 100%;
-  background-size: 100%;
   background-position: center;
-  text-align: center;
   width: 100%;
   height: 13em;
 }
 
-/* Homepage image */
-#museumImage {
+.significantImage {
   text-align: center;
-  padding-bottom: 1em;
-  padding-top: 1em;
-}
-
-/* Inserimento di un'immagine con la tecnica image replacement */
-.backgroundImage {
-  display: block;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.validationImage {
-  display: inline-block;
+  height: 20em;
+  width: 60%;
+  display:block;
+  margin:1em auto;
 }
 
 /* Regole per i breadcrumbs delle pagine */
@@ -296,11 +292,6 @@ a:visited {
   overflow: hidden;
 }
 
-#operaImage {
-  text-align: center;
-  margin-top: 1em;
-}
-
 .labelBlock{
   display: block;
 }
@@ -481,6 +472,10 @@ a:visited {
 
   .formElement{
     width: 20em;
+  }
+
+  .significantImage {
+    width: 30em;
   }
 }
 

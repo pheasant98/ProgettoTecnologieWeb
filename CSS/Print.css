@@ -153,10 +153,12 @@ a {
   font-size: 1em;
 }
 
-#museumImage {
+.significantImage {
   text-align: center;
-  padding-bottom: 1em;
-  padding-top: 1em;
+  height: 20em;
+  width: 80%;
+  display:block;
+  margin:1em auto;
 }
 
 .backgroundImage {
