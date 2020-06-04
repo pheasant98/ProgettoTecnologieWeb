@@ -62,7 +62,7 @@ if (LoginController::isAdminUser()) {
 }
 
 $document = file_get_contents('../HTML/AreaPersonale.html');
-$login = LoginController::getAuthenticationMenu();
+$login = LoginController::getAuthenticationMenu(false);
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
 $document = str_replace("<span id='justRegisteredWelcomePlaceholder'/>", $welcome, $document);
