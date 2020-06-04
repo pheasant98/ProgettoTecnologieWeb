@@ -59,7 +59,7 @@ if ($loan === 'No') {
     $loan_yes = ' checked="checked" ';
 }
 
-if ($style === 'Dipinti') {
+if ($style === 'Dipinto') {
     $painting_style = ' selected="selected" ';
 } else {
     $sculture_style = ' selected="selected" ';
