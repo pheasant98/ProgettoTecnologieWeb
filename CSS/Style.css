@@ -65,6 +65,14 @@ a:visited {
   width: 50%;
 }
 
+#buttonSubmit {
+  cursor: pointer;
+  border: 0;
+  font-size: 1.3em;
+  margin-left: 3%;
+  background: none;
+}
+
 /* Regole per le immagini delle pagine */
 
 /* Inserimento di un'immagine con la tecnica image replacement */
@@ -204,10 +212,12 @@ a:visited {
 .inlineDef{
   float:left;
 }
+
 .titleDef{
   padding: 1em 0em 0.5em 0em;
   font-size: 1.2em;
 }
+
 .definition {
   padding-left:13em;
   padding-bottom: 0.5em;
@@ -328,18 +338,8 @@ a:visited {
   width: 9.2em;
 }
 
-#buttonSubmit {
-  cursor: pointer;
-  border: 0;
-  font-size: 1.3em;
-  margin-left: 3%;
-  background: none;
-}
-
 #reviewButton {
   float: right;
-  font-size: 1em;
-  width: auto;
 }
 
 #buttonBackUp {
