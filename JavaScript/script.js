@@ -107,7 +107,7 @@ function scrollToError() {
     const errors = document.getElementsByClassName('formFieldError');
 
     let input = errors[0].nextElementSibling;
-    while (input.tagName.toLowerCase() !== 'input') {
+    while (input.tagName.toLowerCase() !== 'input' && input.tagName.toLowerCase() !== 'textarea' && input.tagName.toLowerCase() !== 'select') {
         input = input.nextElementSibling;
     }
 
@@ -475,16 +475,16 @@ function checkReviewTitle(input) {
     const pattern = new RegExp('^[A-zÀ-ú0-9\'`!.,\-:()\s]+$');
 
     if (title.length === 0) {
-        addError(input, 'Non è possibile inserire una recensione con un titolo vuoto');
+        addError(input, 'Non è possibile inserire una recensione con un oggetto vuoto');
         return false;
     } else if (title.length < 2) {
-        addError(input, 'Non è possibile inserire una recensione con un titolo più corto di 2 caratteri');
+        addError(input, 'Non è possibile inserire una recensione con un oggetto più corto di 2 caratteri');
         return false;
     } else if (title.length > 64) {
-        addError(input, 'Non è possibile inserire una recensione con un titolo più lungo di 64 caratteri');
+        addError(input, 'Non è possibile inserire una recensione con un oggetto più lungo di 64 caratteri');
         return false;
     } else if (!pattern.test(title)) {
-        addError(input, 'Il titolo inserito contiene dei caratteri non consentiti. Quelli possibili sono lettere, anche accentate, numeri, spazi e i seguenti caratteri speciali \' ` ! . , \ - : ()');
+        addError(input, 'L\'oggetto inserito contiene dei caratteri non consentiti. Quelli possibili sono lettere, anche accentate, numeri, spazi e i seguenti caratteri speciali \' ` ! . , \ - : ()');
         return false;
     } else {
         removeError(input);
