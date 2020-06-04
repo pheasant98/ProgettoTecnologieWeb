@@ -39,9 +39,9 @@ $login = LoginController::getAuthenticationMenu();
 
 $breadcrumbs = '';
 if ($_SESSION['previous_page'] === 'AreaPersonale') {
-    $breadcrumbs = '<a href="AreaPersonale.php" title="Area personale" aria-label="Vai alla pagina area personale" tabindex="10">Area personale</a>';
+    $breadcrumbs = '<a href="AreaPersonale.php" title="Area personale" aria-label="Vai alla pagina area personale">Area personale</a>';
 } else if ($_SESSION['previous_page'] === 'CosaDiconoDiNoi') {
-    $breadcrumbs = '<a href="CosaDiconoDiNoi.php" title="Cosa dicono di noi" aria-label="Vai alla pagina cosa dicono di noi" tabindex="10">Cosa dicono di noi</a>';
+    $breadcrumbs = '<a href="CosaDiconoDiNoi.php" title="Cosa dicono di noi" aria-label="Vai alla pagina cosa dicono di noi">Cosa dicono di noi</a>';
 }
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
