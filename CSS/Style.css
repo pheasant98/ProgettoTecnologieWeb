@@ -316,16 +316,20 @@ a:visited {
 #reviewDescriptionArea{
   height: 10em;
   margin-bottom: 1em;
+  width: 100%;
 }
-
 #operaImage {
   text-align: center;
   margin-top: 1em;
 }
 
-.formElement {
+.labelBlock{
   display: block;
-  width: 100%;
+}
+
+.formElement,.loginElement,.dateElement {
+  display: block;
+  width: 80%;
   height: 2.6em;
   font-size: 1em;
   font-weight: 400;
@@ -334,8 +338,17 @@ a:visited {
   border-radius: 0.25em;
   padding: 0.375em 0.75em;
   resize: vertical;
+  margin: 0.3em 0em;
 }
 
+.loginElement {
+  width: 65%;
+  display: inline-block;
+}
+
+.dateElement{
+  width: 9.2em;
+}
 #buttonSubmit {
   cursor: pointer;
   border: 0;
@@ -480,6 +493,10 @@ a:visited {
 
   #loginMenu a {
     width: 8em;
+  }
+
+  .formElement{
+    width: 20em;
   }
 }
 

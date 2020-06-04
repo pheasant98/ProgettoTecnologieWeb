@@ -109,7 +109,7 @@
                     <fieldset id="fieldSex" class="fieldset">
                         <legend>Sesso</legend>
 
-                        <ul>
+                        <ul class="list">
                             <li>
                                 <input id="sexM" type="radio" name="sex" value="M" aria-label="Pulsante per dichiarare sesso maschile"<span id='maleCheckedPlaceholder'/>/>
                                 <label id="labelSexM" for="sexM">Maschile</label>
@@ -127,7 +127,7 @@
 
                     <p>
                         <label id="labelDate" for="date">Data di nascita</label>
-                        <input id="date" class="formElement" type="text" name="date" value="<span id='dateValuePlaceholder'/>" aria-label="Inserisci la data di nascita"/>
+                        <input id="date" class="dateElement" type="text" name="date" value="<span id='dateValuePlaceholder'/>" aria-label="Inserisci la data di nascita"/>
                     </p>
 
                     <p>
@@ -145,7 +145,7 @@
                     </p>
 
                     <p>
-                        <label id="labelPassword" for="password" xml:lang="en">Password</label>
+                        <label id="labelPassword" class="labelBlock" for="password" xml:lang="en" >Password</label>
                         <label class="clause">La password deve essere lunga almeno 8 caratteri e contenere almeno una lettera minuscola, una lettera maiuscola, un numero ed uno tra i seguenti caratteri speciali ! # $ % &amp; ' * + ^ _ ` \ - { | } ~ @</label>
                         <input id="password" class="formElement" type="password" name="password" value="" aria-label="Inserisci la password"/>
                     </p>

@@ -45,22 +45,20 @@ a {
   line-height: 2em;
 }
 
-.subtitle {
-  margin-top: 1em;
-  margin-bottom: 0.5em;
-}
-
 #content dt {
-  padding-top: 0.5em;
-  padding-bottom: 0.2em;
-  font-size: 1.1em;
-
+  font-weight: bold;
 }
 
+.inlineDef{
+  float:left;
+}
+.titleDef{
+  padding: 1em 0em 0.5em 0em;
+  font-size: 1.2em;
+}
 .definition {
-  position: relative;
-  bottom: 1.5em;
-  left: 15em;
+  padding-left:13em;
+  padding-bottom: 0.5em;
 }
 
 #filter,
@@ -121,9 +119,13 @@ a {
   display: none;
 }
 
-.formElement {
+.labelBlock{
   display: block;
-  width: 100%;
+}
+
+.formElement,.loginElement,.dateElement {
+  display: block;
+  width: 80%;
   height: 2.6em;
   font-size: 1em;
   font-weight: 400;
@@ -131,6 +133,17 @@ a {
   border: 1px solid #aaa;
   border-radius: 0.25em;
   padding: 0.375em 0.75em;
+  resize: vertical;
+  margin: 0.3em 0em;
+}
+
+.loginElement {
+  width: 65%;
+  display: inline-block;
+}
+
+.dateElement{
+  width: 9.2em;
 }
 
 #operaDescriptionArea,
@@ -138,6 +151,7 @@ a {
 #reviewDescriptionArea {
   height: 10em;
   margin-bottom: 1em;
+  width: 100%;
 }
 
 .navigation {
