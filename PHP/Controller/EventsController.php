@@ -170,7 +170,7 @@ class EventsController {
                         </dd>
                         
                         <dt class="inlineDef">
-                            Data chiusura evento: 
+                            Data fine evento: 
                         </dt>
                         <dd class="definition">
                             ' . DateUtilities::englishItalianDate($row['DataFine']) . '
@@ -224,7 +224,7 @@ class EventsController {
                         </dd>
                         
                         <dt class="inlineDef">
-                            Data chiusura evento: 
+                            Data fine evento: 
                         </dt>
                         <dd class="definition">
                             ' . DateUtilities::englishItalianDate($row['DataFine']) . '

@@ -207,7 +207,7 @@ class ArtworksController {
                         </dd>
                     </dl>
                     
-                    <img alt="Immagine dell\'opera ' . $row['Titolo'] . '" src="../' . $row['Immagine'] . '"/>
+                    <img class="previewOpera" alt="Immagine dell\'opera ' . $row['Titolo'] . '" src="../' . $row['Immagine'] . '"/>
                 </dd>
             ';
 
@@ -262,7 +262,7 @@ class ArtworksController {
                         </dd>
                     </dl>
                     
-                    <img class="significantImage" alt="Immagine dell\'opera ' . $row['Titolo'] . '" src="../' . $row['Immagine'] . '"/>
+                    <img class="previewOpera" alt="Immagine dell\'opera ' . $row['Titolo'] . '" src="../' . $row['Immagine'] . '"/>
                 </dd>
             ';
 
