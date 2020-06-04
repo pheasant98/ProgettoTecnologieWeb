@@ -155,28 +155,28 @@ class EventsController {
 
         while($row = $result_set->fetch_assoc()) {
             $content .= '
-                <dt id="' . $id . $counter . '">
+                <dt id="' . $id . $counter . '" class="titleDef">
                      <a href="Evento.php?id=' . $row['ID'] . '\" aria-label="Vai all\'evento">' . $row['Titolo'] . '</a>
                 </dt>
                 <dd>
                     <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'evento">Salta l\'evento</a>
     
                     <dl>
-                        <dt>
+                        <dt class="inlineDef">
                             Data inizio evento: 
                         </dt>
                         <dd class="definition">
                             ' . DateUtilities::englishItalianDate($row['DataInizio']) . '
                         </dd>
                         
-                        <dt>
+                        <dt class="inlineDef">
                             Data chiusura evento: 
                         </dt>
                         <dd class="definition">
                             ' . DateUtilities::englishItalianDate($row['DataFine']) . '
                         </dd>
     
-                        <dt>
+                        <dt class="inlineDef">
                             Tipologia: 
                         </dt>
                         <dd class="definition">
@@ -209,28 +209,28 @@ class EventsController {
 
         while($row = $result_set->fetch_assoc()) {
             $content .= '
-                <dt id="' . $id . $counter . '">
+                <dt id="' . $id . $counter . '" class="titleDef">
                      <a href="Evento.php?id=' . $row['ID'] . '\" aria-label="Vai all\'evento">' . $row['Titolo'] . '</a>
                 </dt>
                 <dd>
                     <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'evento">Salta l\'evento</a>
     
                     <dl>
-                        <dt>
+                        <dt class="inlineDef">
                             Data inizio evento: 
                         </dt>
                         <dd class="definition">
                             ' . DateUtilities::englishItalianDate($row['DataInizio']) . '
                         </dd>
                         
-                        <dt>
+                        <dt class="inlineDef">
                             Data chiusura evento: 
                         </dt>
                         <dd class="definition">
                             ' . DateUtilities::englishItalianDate($row['DataFine']) . '
                         </dd>
     
-                        <dt>
+                        <dt class="inlineDef">
                             Tipologia: 
                         </dt>
                         <dd class="definition">

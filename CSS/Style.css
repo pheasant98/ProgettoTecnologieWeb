@@ -202,15 +202,19 @@ a:visited {
 }
 
 #content dt {
-  padding-top: 0.5em;
-  padding-bottom: 0.2em;
-  font-size: 1.1em;
+ font-weight: bold;
 }
 
+.inlineDef{
+  float:left;
+}
+.titleDef{
+  padding: 1em 0em;
+  font-size: 1.2em;
+}
 .definition {
-  position: relative;
-  bottom: 1.7em;
-  left: 15em;
+  padding-left:13em;
+  padding-bottom: 0.5em;
 }
 
 #filter,
@@ -424,7 +428,8 @@ a:visited {
 }
 
 .paragraph {
-  font-size: 1.2em;
+  font-size: 1.1em;
+  padding: 0.5em 0;
 }
 
 #footer {

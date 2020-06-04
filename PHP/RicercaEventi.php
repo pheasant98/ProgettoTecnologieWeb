@@ -31,7 +31,7 @@ if ($event_count > 0) {
 
     unset($controller);
 
-    $navigation_events_buttons = '';
+    $navigation_events_buttons = '<p class="navigation">';
 
     if ($page > 1) {
         $navigation_events_buttons .= '<a id="buttonBack" class="button" href="?search=' . $_GET['search'] . '&amp;page=' . ($page - 1) . '" title="Eventi precedenti" role="button" aria-label="Torna agli eventi precedenti"> &lt; Precedente</a>';

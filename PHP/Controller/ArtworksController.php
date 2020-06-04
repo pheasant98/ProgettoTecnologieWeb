@@ -178,28 +178,28 @@ class ArtworksController {
 
         while($row = $result_set->fetch_assoc()) {
             $content .= '
-                <dt id="'. $id . $counter . '">
+                <dt id="'. $id . $counter . '" class="titleDef">
                      <a href="Opera.php?id=' . $row['ID'] . '" aria-label="Vai all\'opera">' . $row['Titolo'] . '</a>
                 </dt>
                 <dd>
                     <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'opera">Salta l\'opera</a>
     
                     <dl>
-                        <dt>
+                        <dt class="inlineDef">
                             Nome autore: 
                         </dt>
                         <dd class="definition">
                             ' . $row['Autore'] . '
                         </dd>
                         
-                        <dt>
+                        <dt class="inlineDef">
                             Stile: 
                         </dt>
                         <dd class="definition">
                             ' . $row['Stile'] . '
                         </dd>
     
-                        <dt>
+                        <dt class="inlineDef">
                             Data: 
                         </dt>
                         <dd class="definition">
@@ -233,28 +233,28 @@ class ArtworksController {
 
         while($row = $result_set->fetch_assoc()) {
             $content .= '
-                <dt id="' . $id . $counter . '">
+                <dt id="' . $id . $counter . '" class="titleDef">
                      <a href="Opera.php?id=' . $row['ID'] . '" aria-label="Vai all\'opera">' . $row['Titolo'] . '</a>
                 </dt>
                 <dd>
                     <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'opera">Salta l\'opera</a>
     
                     <dl>
-                        <dt>
+                        <dt class="inlineDef">
                             Nome autore: 
                         </dt>
                         <dd class="definition">
                             ' . $row['Autore'] . '
                         </dd>
                         
-                        <dt>
+                        <dt class="inlineDef">
                             Stile: 
                         </dt>
                         <dd class="definition">
                             ' . $row['Stile'] . '
                         </dd>
     
-                        <dt>
+                        <dt class="inlineDef">
                             Data: 
                         </dt>
                         <dd class="definition">
