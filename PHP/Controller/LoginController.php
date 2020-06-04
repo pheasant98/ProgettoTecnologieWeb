@@ -7,12 +7,12 @@ class LoginController {
                 $login = '<div id="loginMenu">
                         <ul class="list">
                             <li>
-                                <a id="areaPersonale" class="button" href="AreaPersonale.php" title="Area personale" role="button" aria-label="Vai alla pagina del profilo utente" tabindex="6">
+                                <a id="areaPersonale" class="button" href="AreaPersonale.php" title="Area personale" role="button" aria-label="Vai alla pagina del profilo utente">
                                     Area personale
                                 </a>
                             </li>
                             <li>
-                                <a id="logout" class="button" href="Logout.php" title="Logout" role="button" aria-label="Esci dal tuo profilo" tabindex="7" xml:lang="en">
+                                <a id="logout" class="button" href="Logout.php" title="Logout" role="button" aria-label="Esci dal tuo profilo" xml:lang="en">
                                     Logout
                                 </a>
                             </li>
@@ -20,14 +20,14 @@ class LoginController {
                       </div>';
             } else {
                 $login = '<div id="loginMenu">
-                            <a id="logout" class="button" href="Logout.php" title="Logout" role="button" aria-label="Esci dal tuo profilo" tabindex="6" xml:lang="en">
+                            <a id="logout" class="button" href="Logout.php" title="Logout" role="button" aria-label="Esci dal tuo profilo" xml:lang="en">
                                 Logout
                             </a>
                           </div>';
             }
         } else {
             $login = '<div id="loginMenu">
-                        <a id="login" class="button" href="Login.php" title="Login" role="button" aria-label="vai alla pagina di login" tabindex="4" xml:lang="en">
+                        <a id="login" class="button" href="Login.php" title="Login" role="button" aria-label="vai alla pagina di login" xml:lang="en">
                             Login
                         </a>
                       </div>';
