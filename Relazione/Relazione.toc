@@ -53,8 +53,8 @@
 \contentsline {paragraph}{\numberline {2.3.3.12}Logout dal proprio account}{8}{paragraph.2.3.3.12}% 
 \contentsline {section}{\numberline {3}Progettazione}{9}{section.3}% 
 \contentsline {subsection}{\numberline {3.1}Database}{9}{subsection.3.1}% 
-\contentsline {subsection}{\numberline {3.2}Accessibilit\IeC {\`a} e usabilit\IeC {\`a}}{9}{subsection.3.2}% 
-\contentsline {subsection}{\numberline {3.3}\textit {Layout}}{10}{subsection.3.3}% 
+\contentsline {subsection}{\numberline {3.2}\textit {Layout}}{9}{subsection.3.2}% 
+\contentsline {subsection}{\numberline {3.3}Accessibilit\IeC {\`a} e usabilit\IeC {\`a}}{12}{subsection.3.3}% 
 \contentsline {section}{\numberline {4}Implementazione}{13}{section.4}% 
 \contentsline {subsection}{\numberline {4.1}HTML}{13}{subsection.4.1}% 
 \contentsline {subsection}{\numberline {4.2}CSS}{13}{subsection.4.2}% 
