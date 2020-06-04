@@ -33,7 +33,7 @@
                     <legend class="hideLegend">Ricerca</legend>
                     
 					<label class="hideLabel" for="filter">filtro per la ricerca</label>
-                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="2">
+                    <select id="filterSearch" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="2">
                         <option selected="selected" value="Opera">Opera</option>
                         <option value="Evento">Evento</option>
                     </select>
@@ -94,23 +94,23 @@
 
                     <span id='outputMessagePlaceholder'/>
 
-                    <p>
+                    <p class="navigation">
                         <label id="usernameLabel" class="labelBlock" for="username" xml:lang="en">Username</label>
                         <input id="username" class="loginElement" type="text" name="username" value="<span id='usernameValuePlaceholder'/>" aria-label="Inserisci username"/>
                     </p>
 
-                    <p>
+                    <p class="navigation">
                         <label id="passwordLabel" class="labelBlock" for="password" xml:lang="en">Password</label>
                         <input id="password" class="loginElement" type="password" name="password" aria-label="Inserisci password"/>
                     </p>
 
-                    <p>
+                    <p class="navigation">
                         <input class="button" name="submit" value="Accedi" type="submit" aria-label="Pulsante per accedere al proprio account"/>
                     </p>
                 </fieldset>
             </form>
 
-            <p id="register">
+            <p class="navigation">
                 Non hai ancora un <span xml:lang="en">account</span>?
                 <a href="Registrazione.php" title="Registrati" role="link" aria-label="porta alla pagina di registrazione">Registrati</a>!
             </p>

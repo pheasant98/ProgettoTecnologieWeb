@@ -61,10 +61,8 @@ a {
   padding-bottom: 0.5em;
 }
 
-#filter,
-#filterType,
-#filterContent,
-#filterOpera {
+#filterSearch,
+.filter {
   border: 0;
   background: none;
   font-size: 1.1em;
@@ -83,10 +81,6 @@ a {
   margin-bottom: 1em;
 }
 
-#loginForm p {
-  margin-bottom: 1.5em;
-}
-
 .fieldset,
 .hideFieldset {
   margin-bottom: 1em;
@@ -98,15 +92,6 @@ a {
 .fieldset input,
 .fieldset select {
   margin-right: 1.5em;
-  margin-bottom: 1em;
-}
-
-#feedbackBox {
-  margin: 1em 1em;
-  border-style: none;
-}
-
-#feedbackBox input {
   margin-bottom: 1em;
 }
 
@@ -123,7 +108,7 @@ a {
   display: block;
 }
 
-.formElement,.loginElement,.dateElement {
+.formElement,.loginElement,.dateElement, .descriptionArea {
   display: block;
   width: 80%;
   height: 2.6em;
@@ -146,9 +131,7 @@ a {
   width: 9.2em;
 }
 
-#operaDescriptionArea,
-#eventDescriptionArea,
-#reviewDescriptionArea {
+.descriptionArea{
   height: 10em;
   margin-bottom: 1em;
   width: 100%;

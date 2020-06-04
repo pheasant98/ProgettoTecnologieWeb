@@ -217,17 +217,15 @@ a:visited {
   padding-bottom: 0.5em;
 }
 
-#filter,
-#filterType,
-#filterContent,
-#filterOpera {
+#filterSearch,
+.filter{
   border: 0;
   margin-right: 3%;
   background: none;
   font-size: 1.1em;
 }
 
-#filter{
+#filterSearch{
   font-size: 1.3em;
 }
 
@@ -271,10 +269,6 @@ a:visited {
   margin: 0.5em 10%;
 }
 
-#loginForm p {
-  text-align: center;
-}
-
 /* Toglie il bordo */
 .fieldset,
 .hideFieldset {
@@ -302,22 +296,6 @@ a:visited {
   overflow: hidden;
 }
 
-#feedbackBox {
-  margin: 1em 1em;
-  border-style: none;
-}
-
-#feedbackBox input {
-  margin-bottom: 1em;
-}
-
-#operaDescriptionArea,
-#eventDescriptionArea,
-#reviewDescriptionArea{
-  height: 10em;
-  margin-bottom: 1em;
-  width: 100%;
-}
 #operaImage {
   text-align: center;
   margin-top: 1em;
@@ -327,7 +305,10 @@ a:visited {
   display: block;
 }
 
-.formElement,.loginElement,.dateElement {
+.formElement,
+.loginElement,
+.dateElement,
+.descriptionArea {
   display: block;
   width: 80%;
   height: 2.6em;
@@ -341,6 +322,12 @@ a:visited {
   margin: 0.3em 0em;
 }
 
+.descriptionArea{
+  height: 10em;
+  margin-bottom: 1em;
+  width: 100%;
+}
+
 .loginElement {
   width: 65%;
   display: inline-block;
@@ -349,6 +336,7 @@ a:visited {
 .dateElement{
   width: 9.2em;
 }
+
 #buttonSubmit {
   cursor: pointer;
   border: 0;
@@ -434,10 +422,6 @@ a:visited {
 .subtitle {
   margin-top: 1em;
   margin-bottom: 0.5em;
-}
-
-#register {
-  text-align: center;
 }
 
 .paragraph {

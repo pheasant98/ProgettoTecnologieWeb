@@ -35,7 +35,7 @@
                     <legend class="hideLegend">Ricerca</legend>
                     
 					<label class="hideLabel" for="filter">filtro per la ricerca</label>
-                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="2">
+                    <select id="filterSearch" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="2">
                         <option selected="selected" value="Opera">Opera</option>
                         <option value="Evento">Evento</option>
                     </select>
@@ -94,14 +94,14 @@
                 <fieldset class="fieldset">
                     <legend>Filtro contenuti</legend>
                     <label class="hideLabel" for="filterContent">filtro per il contenuto</label>
-                    <select id="filterContent" name="filterContent" aria-label="Filtro per il tipo di contenuto">
+                    <select id="filterContent" name="filterContent" class="filter" aria-label="Filtro per il tipo di contenuto">
                         <option value="Nessun filtro"<span id='filterOptionWholePlaceholder'/>>Nessun filtro</option>
                         <option value="Opera"<span id='filterOptionArtworksPlaceholder'/>> Opera</option>
                         <option value="Evento"<span id='filterOptionEventsPlaceholder'/>> Evento</option>
                     </select>
 
                     <label class="hideLabel" for="filterOpera">filtro per il contenuto</label>
-                    <select id="filterOpera" name="filterContentType" aria-label="Filtro per il tipo di opera">
+                    <select id="filterOpera" name="filterContentType" class="filter" aria-label="Filtro per il tipo di opera">
                         <option value="NessunFiltro"<span id='filterOptionWholeTypePlaceholder'/>>Nessun filtro</option>
                         <option value="Dipinto"<span id='filterOptionPaintingsPlaceholder'/>> Dipinto</option>
                         <option value="Scultura"<span id='filterOptionSculturesPlaceholder'/>> Scultura</option>

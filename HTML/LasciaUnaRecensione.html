@@ -35,7 +35,7 @@
                     <legend class="hideLegend">Ricerca</legend>
                     
 					<label class="hideLabel" for="filter">filtro per la ricerca</label>
-                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="2">
+                    <select id="filterSearch" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="2">
                         <option selected="selected" value="Opera">Opera</option>
                         <option value="Evento">Evento</option>
                     </select>
@@ -93,7 +93,7 @@
             <span id='outputMessagePlaceholder'/>
 
             <form id="FeedBack" name="feedback" action="" method="post" role="form" onsubmit="return reviewFormValidation();">
-                <fieldset id="feedbackBox">
+                <fieldset class="hideFieldset">
                     <legend class="hideLegend">Informazioni necessarie per lasciare una recensione</legend>
 
                     <p>
@@ -103,7 +103,7 @@
 
                     <p>
                         <label id="labelTextArea" for="reviewDescriptionArea">Contenuto</label>
-                        <textarea id="reviewDescriptionArea" class="formElement" name="content" rows="20" cols="30" aria-label="Inserisci la recensione" aria-required="true"><span id='contentValuePlaceholder'/></textarea>
+                        <textarea id="reviewDescriptionArea" class="descriptionArea" name="content" rows="20" cols="30" aria-label="Inserisci la recensione" aria-required="true"><span id='contentValuePlaceholder'/></textarea>
                     </p>
 
                     <p class="navigation">
