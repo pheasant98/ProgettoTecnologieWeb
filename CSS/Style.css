@@ -73,8 +73,9 @@ a:visited {
   background-image: url('../images/logo.PNG');
   text-indent: 100%;
   background-position: center;
-  height: 4em;
-  width: 39%;
+  margin-left: 0.5em;
+  height: 5em;
+  width: 38%;
 }
 
 #imageError404 {
@@ -450,8 +451,8 @@ a:visited {
 
   /* Regole per le immagini delle pagine */
   #logoImage {
-    height: 6em;
-    width: 39%;
+    margin-left: 1em;
+    width: 30%;
   }
 
   #imageError404 {
@@ -494,8 +495,8 @@ a:visited {
 
   /* Regole per le immagini delle pagine */
   #logoImage {
-
-    width: 9.2em;
+    margin-left: 1em;
+    width: 28%;
   }
 
   #imageError404 {
