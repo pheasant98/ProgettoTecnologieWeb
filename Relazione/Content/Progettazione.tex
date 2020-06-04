@@ -23,7 +23,22 @@ Infine, la tabella \textit{Recensione} tiene traccia delle recensioni inserite n
 
 \subsection{Accessibilità e usabilità}
 \label{progettazione-accessibilità-usabilità}
+Sin dalla fase di progettazione ogni aspetto del sito è stato pensato considerando le esigenze di tutte le possibili categorie di utenti. 
 
+
+A questo scopo, nel rispetto delle specifiche di progetto, il gruppo si è ispirato ai seguenti principi:
+\begin{itemize}
+	\item \textbf{separazione tra struttura, presentazione e comportamento:} tutte le parti statiche delle pagine sono state implementate in XHTML Strict, la parte di presentazione grafica in CSS3, il comportamento con JavaScript, per i controlli dell'input lato \textit{client}, e PHP7, per i controlli dell'input latoto server, la gestione dei contenuti e l'interazione con database;
+	\item \textbf{comprensibilità e navigabilità del sito:} 
+	\item \textbf{contenuti equivalenti:} gli unici contenuti non testuali presenti nel sito sono le immagini, principalmente quelle delle opere esposte; per ogni figura è stato debitamente definito l'attributo \texttt{alt} del relativo tag HTML, in modo da fornire un'alternativa testuale coerente ed esplicativa del contenuto dell'immagine; in caso di immagini non semanticamente significative, esse sono inserite tramite CSS con la proprietà \texttt{background};
+	\item \textbf{scelta dello schema colori:} i colori del sito sono stati scelti in modo da non risultare di ostacolo alla consultazione per utenti ipovedenti o affetti da daltonismo \url{https://webaim.org/resources/contrastchecker/}; 
+	\item \textbf{gestione delle peculiarità di linguaggio:}
+	\item \textbf{strutturazione delle pagine a prescindere dalla tecnologia in uso:}
+	\item \textbf{facilità di navigazione nelle interfacce grafiche:}
+	\item \textbf{indipendenza dal dispositivo usato per la navigazione:}
+	\item \textbf{raccomandazioni W3C:}
+	\item \textbf{guida alla navigazione:}
+\end{itemize}
 
 \subsection{\textit{Layout}}
 \label{progettazione-layout}
@@ -39,12 +54,12 @@ Nella parte più bassa della finestra, simmetricamente all'\textit{header}, si t
 In base alle dimensioni della finestra, questi elementi vengono visualizzati in modo diverso. A seguire, un esempio di design per i formati \textit{mobile}, \textit{tablet} e \textit{desktop}.
 
 \begin{center}
-	\includegraphics[scale=0.2]{img/Mobile}
+	\includegraphics[scale=0.15]{img/Mobile}
 	\captionof{figure}{\textit{Layout mobile} con \textit{menu} nascosto (a sinistra) e visibile (a destra)}
 \end{center}
 
 \begin{center}
-	\includegraphics[scale=0.15]{img/Tablet}
+	\includegraphics[scale=0.13]{img/Tablet}
 	\captionof{figure}{\textit{Layout tablet}}
 \end{center}
 

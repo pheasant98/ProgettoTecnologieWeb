@@ -9,14 +9,20 @@ Gli utenti specialisti o appassionati d'arte sono interessati al lato tecnico e 
 
 In generale, il sito deve essere pronto a corrispondere alle esigenze di un'utenza varia e ampia: l'interfaccia deve essere intutiva e leggibile, la terminologia non troppo specialistica, la grafica adatta ad un pubblico di tutte le età, nè troppo seria nè eccessivamente giocosa.
 
-\subsubsection{Attori principali}
+\subsection{Attori principali}
 \label{analisi-casi-uso-attori-principali}
 Sono state individuate tre categorie principali di attori: \textit{utente generico}, \textit{utente autenticato}, \textit{utente ammininstratore}.
 
+\subsubsection{Utente generico}
+\label{analisi-casi-uso-attori-principali-utente-generico}
 L'\textit{utente generico} è un visitatore anonimo del sito, che non ha effettuato né registrazione né login; egli ha la possibilità di interagire col sito mediante il form di registrazione, la barra di ricerca e i filtri di visualizzazione di opere ed eventi. L'utente generico può prendere visione di tutti i contenuti senza però poterli modificare, eliminare e senza poterne aggiungere di nuovi.
 
+\subsubsection{Utente autenticato}
+\label{analisi-casi-uso-attori-principali-utente-autenticato}
 L'\textit{utente autenticato} eredita tutte le funzionalità dell'utente generico. In aggiunta, avendo un account personale nel database, può accedere alla propria area utente, gestire i propri dati personali, lasciare recensioni, modificarle ed eliminarle.
 
+\subsubsection{Utente amministratore}
+\label{analisi-casi-uso-attori-principali-utente-amministratore}
 L'\textit{utente amministratore} eredita anch'esso le funzionalità di quello generico, cui si aggiungono quelle legate al possesso di un account (visualizzazione dei dati personali e loro modifica, come per l'\textit{utente autenticato}) e  la gestione di tutti i contenuti presenti nel sito. L'amministratore può inserire, modificare e rimuovere le pagine relative ad eventi e opere, e eliminare, se necessario, recensioni o account di utenti indesiderati.
 
 
@@ -44,9 +50,62 @@ I casi d'uso che riguardano questa categoria di utenti sono:
 	\item visualizzazione della pagina \textit{Evento};
 	\item visualizzazione della pagina \textit{Recensione};
 	\item visualizzazione della pagina \textit{Registrazione};
-	\item creazione di un account dalla pagina \textit{Registrazione};
-	\item visualizzazione della pagina di \textit{Errore}.
+	\item creazione di un account dalla pagina \textit{Registrazione}.
 \end{itemize}
+
+\paragraph{Visualizzazione \textit{Home page}}
+\label{analisi-casi-uso-attori-principali-utente-generico-1}
+
+\paragraph{Interazione coi link del \textit{breadcrumb}}
+\label{analisi-casi-uso-attori-principali-utente-generico-2}
+
+\paragraph{Visualizzazione della pagina \textit{Opere}}
+\label{analisi-casi-uso-attori-principali-utente-generico-3}
+
+\paragraph{Interazione con la pagina \textit{Opere}}
+\label{analisi-casi-uso-attori-principali-utente-generico-4}
+
+\paragraph{Visualizzazione della pagina \textit{Eventi}}
+\label{analisi-casi-uso-attori-principali-utente-generico-5}
+
+\paragraph{Interazione con la pagina \textit{Eventi}}
+\label{analisi-casi-uso-attori-principali-utente-generico-6}
+
+\paragraph{Visualizzazione della pagina \textit{Cosa dicono di noi}}
+\label{analisi-casi-uso-attori-principali-utente-generico-7}
+
+\paragraph{Interazione con la pagina \textit{Cosa dicono di noi}}
+\label{analisi-casi-uso-attori-principali-utente-generico-8}
+
+\paragraph{Visualizzazione della pagina \textit{Contatti}}
+\label{analisi-casi-uso-attori-principali-utente-generico-9}
+
+\paragraph{Visualizzazione della pagina \textit{Login}}
+\label{analisi-casi-uso-attori-principali-utente-generico-10}
+
+\paragraph{Esecuzione di una ricerca mediante la barra nell'\textit{header}}
+\label{analisi-casi-uso-attori-principali-utente-generico-11}
+
+\paragraph{Visualizzazione risultato della ricerca nella pagina \textit{Ricerca}}
+\label{analisi-casi-uso-attori-principali-utente-generico-12}
+
+\paragraph{Interazione con la pagina \textit{Ricerca}}
+\label{analisi-casi-uso-attori-principali-utente-generico-13}
+
+\paragraph{Visualizzazione della pagina \textit{Opera}}
+\label{analisi-casi-uso-attori-principali-utente-generico-14}
+
+\paragraph{Visualizzazione della pagina \textit{Evento}}
+\label{analisi-casi-uso-attori-principali-utente-generico-15}
+
+\paragraph{Visualizzazione della pagina \textit{recensione}}
+\label{analisi-casi-uso-attori-principali-utente-generico-16}
+
+\paragraph{Visualizzazione della pagina \textit{Registrazione}}
+\label{analisi-casi-uso-attori-principali-utente-generico-17}
+
+\paragraph{Creazione di un account dalla pagina \textit{Registrazione}}
+\label{analisi-casi-uso-attori-principali-utente-generico-18}
 
 \subsubsection{Utente autenticato}
 \label{analisi-casi-uso-attori-principali-utente-autenticato}
@@ -56,13 +115,44 @@ Oltre a tutti i casi d'uso esposti per l'utente generico, riguardano l'utente au
 	\item visualizzazione della pagina \textit{Utente};
 	\item inserimento di una recensione dalla pagina \textit{Lascia una recensione};
 	\item visualizzazione delle proprie recensioni dalla pagina \textit{Gestione recensioni};
-	\item modifica di una recensione dalla pagina \textit{Gestione recensioni};;
+	\item modifica di una recensione dalla pagina \textit{Gestione recensioni};
 	\item visualizzazione della pagina \textit{Recensione modificata};
-	\item eliminazione di una recensione dalla pagina \textit{Gestione recensioni};
+	\item rimozione di una recensione dalla pagina \textit{Gestione recensioni};
 	\item modifica dei propri dati utente dalla pagina \textit{Modifica dati utente};
 	\item visualizzazione della pagina \textit{Dati utente modificati};
 	\item logout dal proprio account.
 \end{itemize}
+
+\paragraph{Autenticazione dalla pagina \textit{Login}}
+\label{analisi-casi-uso-attori-principali-utente-autenticato-1}
+
+\paragraph{Visualizzazione della pagina \textit{Utente}}
+\label{analisi-casi-uso-attori-principali-utente-autenticato-2}
+
+\paragraph{Inserimento di una recensione dalla pagina \textit{Lascia una recensione}}
+\label{analisi-casi-uso-attori-principali-utente-autenticato-3}
+
+\paragraph{Visualizzazione delle proprie recensioni dalla pagina \textit{Gestione recensioni}}
+\label{analisi-casi-uso-attori-principali-utente-autenticato-4}
+
+\paragraph{Modifica di una recensione dalla pagina \textit{Gestione recensioni}}
+\label{analisi-casi-uso-attori-principali-utente-autenticato-5}
+
+\paragraph{Visualizzazione della pagina \textit{Recensione modificata}}
+\label{analisi-casi-uso-attori-principali-utente-autenticato-6}
+
+\paragraph{RImozione di una recensione dalla pagina \textit{Gestione recensioni}}
+\label{analisi-casi-uso-attori-principali-utente-autenticato-7}
+
+\paragraph{Modifica dei propri dati utente dalla pagina \textit{Modifica dati utente}}
+\label{analisi-casi-uso-attori-principali-utente-autenticato-8}
+
+\paragraph{Visualizzazione della pagina \textit{Dati utente modificati}}
+\label{analisi-casi-uso-attori-principali-utente-autenticato-9}
+
+\paragraph{Logout dal proprio account}
+\label{analisi-casi-uso-attori-principali-utente-autenticato-10}
+
 
 \subsubsection{Utente amministratore}
 \label{analisi-casi-uso-attori-principali-utente-amministratore}
@@ -77,5 +167,43 @@ Oltre a tutti i casi d'uso esposti per l'utente generico, riguardano l'utente am
 	\item rimozione di un evento o un'opera dal sito dalla pagina \textit{Gestione contenuti};
 	\item rimozione di una recensione dal sito dalla pagina \textit{Gestione recensioni};
 	\item rimozione di un utente dal sito dalla pagina \textit{Gestione utenti};
+	\item modifica dei propri dati utente dalla pagina \textit{Modifica dati utente};
+	\item visualizzazione della pagina \textit{Dati utente modificati};
 	\item logout dal proprio account.
 \end{itemize}
+
+\paragraph{Autenticazione dalla pagina \textit{Login}}
+\label{analisi-casi-uso-attori-principali-utente-amministratore-1}
+
+\paragraph{Visualizzazione della pagina \textit{Utente}}
+\label{analisi-casi-uso-attori-principali-utente-amministratore-2}
+
+\paragraph{Visualizzazione della pagina \textit{Gestione contenuti}}
+\label{analisi-casi-uso-attori-principali-utente-amministratore-3}
+
+\paragraph{Interazione con la pagina \textit{Gestione dei contenuti}}
+\label{analisi-casi-uso-attori-principali-utente-amministratore-4}
+
+\paragraph{Modifica dei dati di un'opera dalla pagina \textit{Modifica opera}}
+\label{analisi-casi-uso-attori-principali-utente-amministratore-5}
+
+\paragraph{Modifica dei dati di un evento dalla pagina \textit{Modifica evento}}
+\label{analisi-casi-uso-attori-principali-utente-amministratore-6}
+
+\paragraph{Rimozione di un evento o un'opera dal sito dalla pagina \textit{Gestione contenuti}}
+\label{analisi-casi-uso-attori-principali-utente-amministratore-7}
+
+\paragraph{Rimozione di una recensione dal sito dalla pagina \textit{Gestione recensioni}}
+\label{analisi-casi-uso-attori-principali-utente-amministratore-8}
+
+\paragraph{Rimozione di un utente dal sito dalla pagina \textit{Gestione utenti}}
+\label{analisi-casi-uso-attori-principali-utente-amministratore-9}
+
+\paragraph{Modifica dei propri dati utente dalla pagina \textit{Modifica dati utente}}
+\label{analisi-casi-uso-attori-principali-utente-amministratore-10}
+
+\paragraph{Visualizzazione della pagina \textit{Dati utente modificati}}
+\label{analisi-casi-uso-attori-principali-utente-amministratore-11}
+
+\paragraph{Logout dal proprio account}
+\label{analisi-casi-uso-attori-principali-utente-amministratore-12}

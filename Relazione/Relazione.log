@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.24)  4 JUN 2020 00:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.24)  4 JUN 2020 21:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -759,9 +759,21 @@ Package: afterpage 2014/10/28 v1.08 After-Page Package (DPC)
 \AP@footins=\box49
 )))
 (./Template/style.tex) (./Relazione.aux (./Content/Abstract.aux)
-(./Content/Analisi.aux) (./Content/Progettazione.aux)
-(./Content/Implementazione.aux) (./Content/Presentazione.aux)
-(./Content/Validazione.aux) (./Content/Test.aux)
+(./Content/Analisi.aux
+
+LaTeX Warning: Label `analisi-casi-uso-attori-principali-utente-generico' multi
+ply defined.
+
+
+LaTeX Warning: Label `analisi-casi-uso-attori-principali-utente-autenticato' mu
+ltiply defined.
+
+
+LaTeX Warning: Label `analisi-casi-uso-attori-principali-utente-amministratore'
+ multiply defined.
+
+) (./Content/Progettazione.aux) (./Content/Implementazione.aux)
+(./Content/Presentazione.aux) (./Content/Validazione.aux) (./Content/Test.aux)
 (./Content/SuddivisioneDelLavoro.aux) (./Content/DatiUtenti.aux))
 \openout1 = `Relazione.aux'.
 
@@ -797,7 +809,7 @@ LaTeX Font Info:    ... okay on input line 5.
 * \oddsidemargin=27.31465pt
 * \evensidemargin=27.31465pt
 * \topmargin=-21.06628pt
-* \headheight=50.0pt
+* \headheight=40.0pt
 * \headsep=25.0pt
 * \topskip=11.0pt
 * \footskip=30.0pt
@@ -860,7 +872,7 @@ LaTeX Info: Redefining \nameref on input line 5.
 \openout4 = `Relazione.out'.
 
  ABD: EveryShipout initializing macros
-<img/Logo.png, id=115, 859.32pt x 434.61pt>
+<img/Logo.png, id=288, 859.32pt x 434.61pt>
 File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 9.
@@ -874,7 +886,12 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 [1{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
- <./img/Logo.png>] (./Relazione.toc)
+ <./img/Logo.png>] (./Relazione.tocpdfTeX warning (ext4): destination with the 
+same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.45 ...ione dei contenuti}}{8}{paragraph.2.3.3.4}
+                                                  % [1])
 \tf@toc=\write5
 \openout5 = `Relazione.toc'.
 
@@ -882,55 +899,61 @@ File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 15.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.15 	
-       [1]
+ [2]
 \openout2 = `Content/Abstract.aux'.
 
- (./Content/Abstract.tex)
+
+(./Content/Abstract.tex)
 File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 18.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [2
+ [3
 
 ]
 \openout2 = `Content/Analisi.aux'.
 
  (./Content/Analisi.tex
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 30.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 36.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 30.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 36.
 File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
-Package pdftex.def Info: img/Logo.png  used on input line 38.
+Package pdftex.def Info: img/Logo.png  used on input line 39.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [3
+ [4
 
 
 ]
 File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
-Package pdftex.def Info: img/Logo.png  used on input line 76.
+Package pdftex.def Info: img/Logo.png  used on input line 114.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [4])
+ [5]
+File: img/Logo.png Graphic file (type png)
+<use img/Logo.png>
+Package pdftex.def Info: img/Logo.png  used on input line 161.
+(pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
+ [6])
 File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 20.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [5]
+
+[7]
+File: img/Logo.png Graphic file (type png)
+<use img/Logo.png>
+Package pdftex.def Info: img/Logo.png  used on input line 20.
+(pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
+ [8]
 \openout2 = `Content/Progettazione.aux'.
 
-
-(./Content/Progettazione.tex
-<img/SchemaLogico.png, id=183, 1044.90375pt x 533.995pt>
+ (./Content/Progettazione.tex
+<img/SchemaLogico.png, id=428, 1044.90375pt x 533.995pt>
 File: img/SchemaLogico.png Graphic file (type png)
 <use img/SchemaLogico.png>
 Package pdftex.def Info: img/SchemaLogico.png  used on input line 19.
@@ -943,81 +966,76 @@ See the caption package documentation for explanation.
 
 File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
-Package pdftex.def Info: img/Logo.png  used on input line 32.
+Package pdftex.def Info: img/Logo.png  used on input line 30.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
-[6
+[9
 
 
  <./img/SchemaLogico.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 37--38
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 37--38
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
 
  []
 
-<img/Mobile.png, id=197, 1883.035pt x 1647.15375pt>
+<img/Mobile.png, id=440, 1883.035pt x 1647.15375pt>
 File: img/Mobile.png Graphic file (type png)
 <use img/Mobile.png>
-Package pdftex.def Info: img/Mobile.png  used on input line 42.
-(pdftex.def)             Requested size: 376.60033pt x 329.42491pt.
+Package pdftex.def Info: img/Mobile.png  used on input line 54.
+(pdftex.def)             Requested size: 282.44307pt x 247.06241pt.
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 43.
+(caption)                particular \caption on input line 55.
 See the caption package documentation for explanation.
 
 File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
-Package pdftex.def Info: img/Logo.png  used on input line 43.
+Package pdftex.def Info: img/Logo.png  used on input line 55.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
-[7]
-<img/Tablet.png, id=203, 1581.91pt x 2341.74875pt>
+[10]
+<img/Tablet.png, id=447, 1581.91pt x 2341.74875pt>
 File: img/Tablet.png Graphic file (type png)
 <use img/Tablet.png>
-Package pdftex.def Info: img/Tablet.png  used on input line 47.
-(pdftex.def)             Requested size: 237.27626pt x 351.24716pt.
+Package pdftex.def Info: img/Tablet.png  used on input line 59.
+(pdftex.def)             Requested size: 205.65552pt x 304.43802pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 48.
+(caption)                particular \caption on input line 60.
 See the caption package documentation for explanation.
 
-File: img/Logo.png Graphic file (type png)
-<use img/Logo.png>
-Package pdftex.def Info: img/Logo.png  used on input line 48.
-(pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
-[8 <./img/Mobile.png>]
-<img/Desktop.png, id=211, 1500.60625pt x 1218.5525pt>
+<img/Desktop.png, id=448, 1500.60625pt x 1218.5525pt>
 File: img/Desktop.png Graphic file (type png)
 <use img/Desktop.png>
-Package pdftex.def Info: img/Desktop.png  used on input line 52.
+Package pdftex.def Info: img/Desktop.png  used on input line 64.
 (pdftex.def)             Requested size: 398.3386pt x 323.45409pt.
 
-
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 53.
+(caption)                particular \caption on input line 65.
 See the caption package documentation for explanation.
 
 File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
-Package pdftex.def Info: img/Logo.png  used on input line 53.
+Package pdftex.def Info: img/Logo.png  used on input line 65.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
-[9 <./img/Tablet.png>])
+[11 <./img/Mobile.png> <./img/Tablet.png>])
 File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 22.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [10 <./img/Desktop.png>]
+ [12 <./img/Desktop.png>]
 \openout2 = `Content/Implementazione.aux'.
 
- (./Content/Implementazione.tex)
+
+(./Content/Implementazione.tex)
 File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 24.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [11
+ [13
 
 
 ]
@@ -1028,48 +1046,48 @@ File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 26.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [12
+ [14
 
 
 ]
 \openout2 = `Content/Validazione.aux'.
 
- (./Content/Validazione.tex)
+
+(./Content/Validazione.tex)
 File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 28.
-(pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [13
-
-
-]
-\openout2 = `Content/Test.aux'.
-
-
-(./Content/Test.tex)
-File: img/Logo.png Graphic file (type png)
-<use img/Logo.png>
-Package pdftex.def Info: img/Logo.png  used on input line 30.
-(pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [14
-
-
-]
-\openout2 = `Content/SuddivisioneDelLavoro.aux'.
-
- (./Content/SuddivisioneDelLavoro.tex)
-File: img/Logo.png Graphic file (type png)
-<use img/Logo.png>
-Package pdftex.def Info: img/Logo.png  used on input line 32.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
  [15
 
 
 ]
+\openout2 = `Content/Test.aux'.
+
+ (./Content/Test.tex)
+File: img/Logo.png Graphic file (type png)
+<use img/Logo.png>
+Package pdftex.def Info: img/Logo.png  used on input line 30.
+(pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
+ [16
+
+
+]
+\openout2 = `Content/SuddivisioneDelLavoro.aux'.
+
+
+(./Content/SuddivisioneDelLavoro.tex)
+File: img/Logo.png Graphic file (type png)
+<use img/Logo.png>
+Package pdftex.def Info: img/Logo.png  used on input line 32.
+(pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
+ [17
+
+
+]
 \openout2 = `Content/DatiUtenti.aux'.
 
-
-(./Content/DatiUtenti.tex
+ (./Content/DatiUtenti.tex
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 12.
@@ -1080,7 +1098,7 @@ File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 34.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [16
+ [18
 
 
 ] 
@@ -1094,33 +1112,38 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 36.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 36.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 36.
 Package rerunfilecheck Info: File `Relazione.out' has not changed.
-(rerunfilecheck)             Checksum: 94BEF2D8923AAF889B6EBE4FF3ED0E81;1564.
+(rerunfilecheck)             Checksum: FDD052A7E13A93BB19F6FFE10CC41CED;6163.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 20249 strings out of 492616
- 369406 string characters out of 6129480
- 467028 words of memory out of 5000000
- 23656 multiletter control sequences out of 15000+600000
- 16874 words of font info for 37 fonts, out of 8000000 for 9000
+ 20382 strings out of 492616
+ 373347 string characters out of 6129480
+ 473526 words of memory out of 5000000
+ 23743 multiletter control sequences out of 15000+600000
+ 17575 words of font info for 38 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,17n,79p,827b,728s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
-/usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></u
-sr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbi2488.pfb></usr
-/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/l
-ocal/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/loc
-al/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local
-/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/t
-exlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/tex
-live/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texli
-ve/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive
-/2019/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2
-019/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb>
-Output written on Relazione.pdf (17 pages, 543460 bytes).
+/usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbi1095.pfb></u
+sr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></usr
+/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbi2488.pfb></usr/l
+ocal/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/loc
+al/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local
+/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/t
+exlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/tex
+live/2019/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texli
+ve/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive
+/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2
+019/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/201
+9/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb>
+Output written on Relazione.pdf (19 pages, 591427 bytes).
 PDF statistics:
- 314 PDF objects out of 1000 (max. 8388607)
- 271 compressed objects within 3 object streams
- 50 named destinations out of 1000 (max. 500000)
- 254 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 566 PDF objects out of 1000 (max. 8388607)
+ 517 compressed objects within 6 object streams
+ 95 named destinations out of 1000 (max. 500000)
+ 598 words of extra memory for PDF output out of 10000 (max. 10000000)
 
