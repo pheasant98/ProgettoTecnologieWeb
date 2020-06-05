@@ -63,6 +63,8 @@ if ($artwork_count > 0) {
     $navigation_artworks_buttons = '';
 }
 
+$_SESSION['previous_page'] = 'Opere';
+
 $filter_option_whole = $filter_type == '' ? ' selected="selected"' : '';
 $filter_option_paintings = $filter_type == 'Dipinto' ? ' selected="selected"' : '';
 $filter_option_sculptures = $filter_type == 'Scultura' ? ' selected="selected"' : '';

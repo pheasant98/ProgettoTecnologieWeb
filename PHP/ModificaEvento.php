@@ -28,9 +28,10 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Modifica') {
     $end_date = DateUtilities::englishItalianDate($_POST['endDate']);
     $type = $_POST['type'];
     $manager = $_POST['manager'];
-    $_SESSION['event_title'] = $_POST['title'];
     $message = $eventsController->updateEvent($_GET['id'], $title, $description, $begin_date, $end_date, $type, $manager, $_SESSION['username']);
     if($message === '') {
+        $_SESSION['event_title'] = $_POST['title'];
+        $_SESSION['event_id'] = $_GET['id'];
         header('Location: EventoModificato.php');
     }
     unset($eventsController);
@@ -48,8 +49,11 @@ if ($type === 'Mostra') {
 $document = file_get_contents('../HTML/ModificaEvento.html');
 $login = LoginController::getAuthenticationMenu();
 
+$breadcrumbs = '?page=' . $_SESSION['contentPage'];
+
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
-$document = str_replace("<span id='outputMessagePlaceholder'/>", $message, $document);;
+$document = str_replace("<span id='breadcrumbsPlaceholder'/>", $breadcrumbs, $document);
+$document = str_replace("<span id='outputMessagePlaceholder'/>", $message, $document);
 $document = str_replace("<span id='titleValuePlaceholder'/>", $title, $document);
 $document = str_replace("<span id='descriptionValuePlaceholder'/>", $description, $document);
 $document = str_replace("<span id='exhibitionTypeSelectedPlaceholder'/>", $exhibition_type, $document);

@@ -4,7 +4,7 @@ require_once ('Controller/LoginController.php');
 
 session_start();
 
-if (!LoginController::isAuthenticatedUser() || LoginController::isAdminUser()) {
+if (!LoginController::isAuthenticatedUser() || LoginController::isAdminUser() || !isset($_SESSION['reviewPage']) || !isset($_SESSION['review_id']) || !isset($_SESSION['review_title'])) {
     header('Location: Errore.php');
 }
 
