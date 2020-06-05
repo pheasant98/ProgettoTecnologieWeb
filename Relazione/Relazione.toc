@@ -55,18 +55,18 @@
 \contentsline {subsection}{\numberline {3.1}Database}{9}{subsection.3.1}% 
 \contentsline {subsection}{\numberline {3.2}\textit {Layout}}{9}{subsection.3.2}% 
 \contentsline {subsection}{\numberline {3.3}Accessibilit\IeC {\`a} e usabilit\IeC {\`a}}{12}{subsection.3.3}% 
-\contentsline {section}{\numberline {4}Implementazione}{13}{section.4}% 
-\contentsline {subsection}{\numberline {4.1}HTML}{13}{subsection.4.1}% 
-\contentsline {subsection}{\numberline {4.2}CSS}{13}{subsection.4.2}% 
-\contentsline {subsection}{\numberline {4.3}PHP}{13}{subsection.4.3}% 
-\contentsline {subsection}{\numberline {4.4}JavaScript}{13}{subsection.4.4}% 
-\contentsline {section}{\numberline {5}Presentazione}{14}{section.5}% 
-\contentsline {subsection}{\numberline {5.1}Desktop}{14}{subsection.5.1}% 
-\contentsline {subsection}{\numberline {5.2}Tablet}{14}{subsection.5.2}% 
-\contentsline {subsection}{\numberline {5.3}Mobile}{14}{subsection.5.3}% 
-\contentsline {subsection}{\numberline {5.4}Stampa}{14}{subsection.5.4}% 
-\contentsline {section}{\numberline {6}Validazione}{15}{section.6}% 
-\contentsline {subsection}{\numberline {6.1}Strumenti}{15}{subsection.6.1}% 
-\contentsline {section}{\numberline {7}Test}{16}{section.7}% 
-\contentsline {section}{\numberline {8}Suddivisione del lavoro}{17}{section.8}% 
-\contentsline {section}{\numberline {A}Dati utenti}{18}{appendix.Alph1}% 
+\contentsline {section}{\numberline {4}Implementazione}{14}{section.4}% 
+\contentsline {subsection}{\numberline {4.1}HTML}{14}{subsection.4.1}% 
+\contentsline {subsection}{\numberline {4.2}CSS}{14}{subsection.4.2}% 
+\contentsline {subsection}{\numberline {4.3}PHP}{14}{subsection.4.3}% 
+\contentsline {subsection}{\numberline {4.4}JavaScript}{14}{subsection.4.4}% 
+\contentsline {section}{\numberline {5}Presentazione}{15}{section.5}% 
+\contentsline {subsection}{\numberline {5.1}Desktop}{15}{subsection.5.1}% 
+\contentsline {subsection}{\numberline {5.2}Tablet}{15}{subsection.5.2}% 
+\contentsline {subsection}{\numberline {5.3}Mobile}{15}{subsection.5.3}% 
+\contentsline {subsection}{\numberline {5.4}Stampa}{15}{subsection.5.4}% 
+\contentsline {section}{\numberline {6}Validazione}{16}{section.6}% 
+\contentsline {subsection}{\numberline {6.1}Strumenti}{16}{subsection.6.1}% 
+\contentsline {section}{\numberline {7}Test}{17}{section.7}% 
+\contentsline {section}{\numberline {8}Suddivisione del lavoro}{18}{section.8}% 
+\contentsline {section}{\numberline {A}Dati utenti}{19}{appendix.Alph1}% 
