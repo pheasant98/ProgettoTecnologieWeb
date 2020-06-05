@@ -1,19 +1,14 @@
-// TODO: aggiungere trim() ai controlli dei campi per rimuovere gli spazi in capo e coda
-
 /* GESTIONE DEL MENU AD HAMBURGER */
 window.onload = menu;
 
-// TODO: trovare alternativa a .classList e .toggle() per IE9
-
 function touch() {
     const menus = document.getElementById('menu');
-    menus.classList.toggle('show');
-
     const content = document.getElementById('content');
-    content.classList.toggle('hide');
-
     const breadcrumbs = document.getElementById('breadcrumbs');
-    breadcrumbs.classList.toggle('hide');
+
+    menus.className === 'show' ? menus.removeAttribute('class') : menus.className = 'show';
+    content.className === 'hide' ? content.removeAttribute('class') : content.className = 'hide';
+    breadcrumbs.className === 'hide' ? breadcrumbs.removeAttribute('class') : breadcrumbs.className = 'hide';
 }
 
 function menu() {
@@ -23,12 +18,12 @@ function menu() {
 /* GESTIONE DELLA TIPOLOGIA DELLE OPERE */
 function artworkStyleChanged(isModify) {
     const styleInput = document.getElementById('style');
-    const style = styleInput.options[styleInput.selectedIndex].value;
+    const style = styleInput.options[styleInput.selectedIndex].value.trim();
 
     if (style === 'Dipinti') {
         const techniqueInput = document.getElementById('technique');
         const techniqueParent = techniqueInput.parentElement;
-        techniqueParent.className = '';
+        techniqueParent.removeAttribute('class');
 
         const materialInput = document.getElementById('material');
         const materialParent = materialInput.parentElement;
@@ -37,7 +32,7 @@ function artworkStyleChanged(isModify) {
         if (isModify) {
             const techniqueInputSkip = document.getElementById('postTechniqueSkip');
             const techniqueParentSkip = techniqueInputSkip.parentElement;
-            techniqueParentSkip.className = '';
+            techniqueParentSkip.removeAttribute('class');
 
             const materialInputSkip = document.getElementById('postMaterialSkip');
             const materialParentSkip = materialInputSkip.parentElement;
@@ -46,7 +41,7 @@ function artworkStyleChanged(isModify) {
     } else if (style === 'Sculture') {
         const materialInput = document.getElementById('material');
         const materialParent = materialInput.parentElement;
-        materialParent.className = '';
+        materialParent.removeAttribute('class');
 
         const techniqueInput = document.getElementById('technique');
         const techniqueParent = techniqueInput.parentElement;
@@ -55,7 +50,7 @@ function artworkStyleChanged(isModify) {
         if (isModify) {
             const materialInputSkip = document.getElementById('postMaterialSkip');
             const materialParentSkip = materialInputSkip.parentElement;
-            materialParentSkip.className = '';
+            materialParentSkip.removeAttribute('class');
 
             const techniqueInputSkip = document.getElementById('postTechniqueSkip');
             const techniqueParentSkip = techniqueInputSkip.parentElement;
