@@ -369,7 +369,20 @@ function checkArtworkImage(input) {
             return true;
         }
     } else {
-        // TODO: alternativa per IE9
+        // Supporto per IE9
+        if (input.value.trim().length === 0) {
+            addError(input, 'È necessario selezionare un\'immagine', tags);
+            return false;
+        } else if (((input.value.trim() || '').match(/\.(jpeg|png|jpg)$/g) || []).length < 1) {
+            addError(input, 'L\'estensione dell\'immagine non è supportata. L\'estensioni consentite sono .<abbr title="Joint Photographic Experts Group" xml:lang="en">jpeg</abbr>, .<abbr title="Joint Photographic Group" xml:lang="en">jpg</abbr>, .<abbr title="Portable Network Graphics" xml:lang="en">png</abbr>', tags);
+            return false;
+        } else if (((input.value.trim() || '').match(/\.(jpeg|png|jpg)\s[.(jpeg|png|jpg)]+/g) || []).length >= 1) {
+            addError(input, 'È necessario selezionare una ed una sola immagine', tags);
+            return false;
+        } else {
+            removeError(input, tags);
+            return true;
+        }
     }
 }
 
@@ -377,27 +390,50 @@ function checkInputArtworkImage(event) {
     var input = document.getElementById('imageUpload');
     var checkImage = checkArtworkImage(input);
 
-    if (checkImage && window.FileReader) {
-        if (!document.getElementById('uploadedImage')) {
-            var parentNode = input.parentNode;
-            var img = document.createElement('img');
+    if (checkImage) {
+        if (window.FileReader) {
+            if (!document.getElementById('uploadedImage')) {
+                var parentNode = input.parentNode;
+                var img = document.createElement('img');
 
-            var name = document.getElementById('title').value.trim();
+                var name = document.getElementById('title').value.trim();
 
-            img.setAttribute('id', 'uploadedImage');
-            img.setAttribute('class', ''); // FIXME: aggiungere la giusta classe
-            img.setAttribute('alt', 'Immagine inserita per l\'opera' + name)
+                img.setAttribute('id', 'uploadedImage');
+                img.setAttribute('class', ''); // FIXME: aggiungere la giusta classe
+                img.setAttribute('alt', 'Immagine inserita per l\'opera' + name)
 
-            parentNode.append(img);
+                parentNode.appendChild(img);
+            }
+
+            var target = event.target || window.event.srcElement;
+            var fileReader = new FileReader();
+
+            fileReader.onload = function () {
+                document.getElementById('uploadedImage').src = fileReader.result;
+            }
+            fileReader.readAsDataURL(target.files[0]);
+        } else {
+            // Supporto per IE9
+            if (!document.getElementById('uploadedImageIE')) {
+                var parentNodeIE = input.parentNode;
+                var imgIE = document.createElement('img');
+
+                var nameIE = document.getElementById('title').value.trim();
+
+                imgIE.setAttribute('id', 'uploadedImageIE');
+                imgIE.setAttribute('class', ''); // FIXME: aggiungere la giusta classe
+                imgIE.setAttribute('alt', 'Immagine inserita per l\'opera' + nameIE);
+                imgIE.setAttribute('src', '');
+
+                parentNodeIE.appendChild(imgIE);
+            }
+
+            input.select();
+            input.blur();
+
+            var imagePreviewIE = document.getElementById('uploadedImageIE');
+            imagePreviewIE.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = input.value;
         }
-
-        var target = event.target || window.event.srcElement;
-        var fileReader = new FileReader();
-
-        fileReader.onload = function () {
-            document.getElementById('uploadedImage').src = fileReader.result;
-        }
-        fileReader.readAsDataURL(target.files[0]);
     }
 
     return checkImage;
@@ -405,8 +441,14 @@ function checkInputArtworkImage(event) {
 
 function resetImage() {
     var image = document.getElementById('uploadedImage');
+    var imageIE = document.getElementById('uploadedImageIE');
+
     if (image) {
-        image.remove();
+        image.parentElement.removeChild(image);
+    }
+
+    if (imageIE) {
+        imageIE.parentElement.removeChild(imageIE);
     }
 }
 

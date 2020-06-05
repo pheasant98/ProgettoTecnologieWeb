@@ -32,6 +32,13 @@ a:visited {
   color: #636;
 }
 
+#uploadedImageIE {
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
+  color: rgba(0, 0, 0, 0);
+  width: 50%;
+  height: 10em;
+}
+
 /* Regole per gli header delle pagine */
 
 /* Colore e ombreggiatura dell'header */
