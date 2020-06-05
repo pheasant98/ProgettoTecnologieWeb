@@ -23,6 +23,7 @@ if (!isset($_GET['page'])) {
 }
 
 $_SESSION['previous_page'] = 'CosaDiconoDiNoi';
+$_SESSION['reviews_page'] = $page;
 
 $review_clause = '';
 $leave_review = '';

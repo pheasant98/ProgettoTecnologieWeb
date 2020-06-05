@@ -68,6 +68,8 @@ if ($reviews_count > 0) {
     $navigation_reviews_buttons = '';
 }
 
+$_SESSION['previous_page'] = 'GestioneRecensioni';
+
 $document = file_get_contents('../HTML/GestioneRecensioni.html');
 $login = LoginController::getAuthenticationMenu();
 

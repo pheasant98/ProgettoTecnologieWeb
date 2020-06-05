@@ -41,7 +41,8 @@ $breadcrumbs = '';
 if ($_SESSION['previous_page'] === 'AreaPersonale') {
     $breadcrumbs = '<a href="AreaPersonale.php" title="Area personale" aria-label="Vai alla pagina area personale">Area personale</a>';
 } else if ($_SESSION['previous_page'] === 'CosaDiconoDiNoi') {
-    $breadcrumbs = '<a href="CosaDiconoDiNoi.php" title="Cosa dicono di noi" aria-label="Vai alla pagina cosa dicono di noi">Cosa dicono di noi</a>';
+    $page = '?page=' . $_SESSION['reviews_page'];
+    $breadcrumbs = '<a href="CosaDiconoDiNoi.php' . $page . '" title="Cosa dicono di noi" aria-label="Vai alla pagina cosa dicono di noi">Cosa dicono di noi</a>';
 }
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
