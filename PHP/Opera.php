@@ -31,8 +31,9 @@ $artwork_description = $artwork['Descrizione'];
 
 $breadcrumbs = '';
 if ($_SESSION['previous_page'] === 'GestioneContenuti') {
+    $page = '?page=' . $_SESSION['contentPage'];
     $breadcrumbs = '<a href="AreaPersonale.php" title="Area Personale" aria-label="Vai alla pagina dell\'area personale">Area personale</a>
-                    &gt;&gt;<a href="GestioneContenuti.php" title="Gestione contenuti" aria-label="Vai alla pagina di gestione dei contenuti">Gestione contenuti</a>';
+                    &gt;&gt;<a href="GestioneContenuti.php' . $page . '" title="Gestione contenuti" aria-label="Vai alla pagina di gestione dei contenuti">Gestione contenuti</a>';
 } else if ($_SESSION['previous_page'] === 'Opere') {
     $breadcrumbs = '<a href="Opere.php" title="Opere" aria-label="Vai alla pagina Opere">Opere</a>';
 }
