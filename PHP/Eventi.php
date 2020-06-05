@@ -63,6 +63,8 @@ if ($event_count > 0) {
     $navigation_events_buttons = '';
 }
 
+$_SESSION['previous_page'] = 'Eventi';
+
 $filter_option_whole = $filter_type == '' ? ' selected="selected"' : '';
 $filter_option_exhibitions = $filter_type == 'Mostra' ? ' selected="selected"' : '';
 $filter_option_conferences = $filter_type == 'Conferenza' ? ' selected="selected"' : '';

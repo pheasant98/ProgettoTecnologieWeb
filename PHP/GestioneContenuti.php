@@ -141,6 +141,8 @@ if (($artwork_count + $event_count) > 0) {
     $contents_list = '';
     $navigation_contents_buttons = '';
 }
+
+$_SESSION['previous_page'] = 'GestioneContenuti';
 $filter_option_whole = $filter_content == 'NessunFiltro' ? ' selected="selected"' : '';
 $filter_option_artworks = $filter_content == 'Opera' ? ' selected="selected"' : '';
 $filter_option_events = $filter_content == 'Evento' ? ' selected="selected"' : '';
