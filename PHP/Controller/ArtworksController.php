@@ -182,32 +182,33 @@ class ArtworksController {
                      <a href="Opera.php?id=' . $row['ID'] . '" aria-label="Vai all\'opera">' . $row['Titolo'] . '</a>
                 </dt>
                 <dd>
+                    <img class="previewOpera" alt="Immagine dell\'opera ' . $row['Titolo'] . '" src="../' . $row['Immagine'] . '"/>
                     <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'opera">Salta l\'opera</a>
     
                     <dl>
                         <dt class="inlineDef">
                             Nome autore: 
                         </dt>
-                        <dd class="definition">
+                        <dd class="definitionOpere">
                             ' . $row['Autore'] . '
                         </dd>
                         
                         <dt class="inlineDef">
                             Stile: 
                         </dt>
-                        <dd class="definition">
+                        <dd class="definitionOpere">
                             ' . $row['Stile'] . '
                         </dd>
     
                         <dt class="inlineDef">
                             Data: 
                         </dt>
-                        <dd class="definition">
+                        <dd class="definitionOpere">
                             ' . $row['Datazione'] . '
                         </dd>
                     </dl>
                     
-                    <img class="previewOpera" alt="Immagine dell\'opera ' . $row['Titolo'] . '" src="../' . $row['Immagine'] . '"/>
+                
                 </dd>
             ';
 
@@ -237,32 +238,33 @@ class ArtworksController {
                      <a href="Opera.php?id=' . $row['ID'] . '" aria-label="Vai all\'opera">' . $row['Titolo'] . '</a>
                 </dt>
                 <dd>
+                    <img class="previewOpera" alt="Immagine dell\'opera ' . $row['Titolo'] . '" src="../' . $row['Immagine'] . '"/>
                     <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'opera">Salta l\'opera</a>
     
                     <dl>
                         <dt class="inlineDef">
                             Nome autore: 
                         </dt>
-                        <dd class="definition">
+                        <dd class="definitionOpere">
                             ' . $row['Autore'] . '
                         </dd>
                         
                         <dt class="inlineDef">
                             Stile: 
                         </dt>
-                        <dd class="definition">
+                        <dd class="definitionOpere">
                             ' . $row['Stile'] . '
                         </dd>
     
                         <dt class="inlineDef">
                             Data: 
                         </dt>
-                        <dd class="definition">
+                        <dd class="definitionOpere">
                             ' . $row['Datazione'] . '
                         </dd>
                     </dl>
                     
-                    <img class="previewOpera" alt="Immagine dell\'opera ' . $row['Titolo'] . '" src="../' . $row['Immagine'] . '"/>
+                   
                 </dd>
             ';
 
