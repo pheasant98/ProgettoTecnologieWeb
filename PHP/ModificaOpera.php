@@ -41,10 +41,11 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Modifica') {
         $technique = '';
     }
     $loan = ($_POST['loan'] === 'Si' ? 1 : 0);
-    $_SESSION['artwork_title'] = $_POST['title'];
     $message = $artworksController->updateArtwork($_GET['id'], $author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $_SESSION['username']);
     unset($artworksController);
     if($message === '') {
+        $_SESSION['artwork_title'] = $_POST['title'];
+        $_SESSION['artwork_id'] = $_GET['id'];
         header('Location: OperaModificata.php');
     }
 }
@@ -68,7 +69,10 @@ if ($style === 'Dipinto') {
 $document = file_get_contents('../HTML/ModificaOpera.html');
 $login = LoginController::getAuthenticationMenu();
 
+$breadcrumbs = '?page=' . $_SESSION['contentPage'];
+
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
+$document = str_replace("<span id='breadcrumbsPlaceholder'/>", $breadcrumbs, $document);
 $document = str_replace("<span id='outputMessagePlaceholder'/>", $message, $document);
 $document = str_replace("<span id='authorValuePlaceholder'/>", $author, $document);
 $document = str_replace("<span id='titleValuePlaceholder'/>", $title, $document);
