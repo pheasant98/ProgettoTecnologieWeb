@@ -139,7 +139,7 @@ function daysInMonth(month, year) {
 }
 
 function isDateValid(day, month, year) {
-    return month >= 0 && month < 12 && day > 0 && day <= daysInMonth(month, year);
+    return month > 0 && month <= 12 && day > 0 && day <= daysInMonth(month, year);
 }
 
 function getDateFromString(date) {
@@ -178,7 +178,7 @@ function checkDate(input) {
 /* CONTROLLI E GESTIONE DELLE OPERE */
 function checkArtworkAuthor(input) {
     const author = input.value;
-    const pattern = new RegExp('^[A-zÀ-ú\'\-`.\s]+$');
+    const pattern = new RegExp('^[A-zÀ-ú\'\-`.\\s]+$');
 
     if (author.length === 0) {
         addError(input, 'Non è possibile inserire un autore vuoto');
@@ -200,7 +200,7 @@ function checkArtworkAuthor(input) {
 
 function checkArtworkTitle(input) {
     const title = input.value;
-    const pattern = new RegExp('^[A-zÀ-ú0-9\'`!.,:(\-)\s]+$');
+    const pattern = new RegExp('^[A-zÀ-ú0-9\'`!.,:(\-)\\s]+$');
 
     if (title.length === 0) {
         addError(input, 'Non è possibile inserire un titolo vuoto');
@@ -240,7 +240,7 @@ function checkArtworkDescription(input) {
 
 function checkArtworkDate(input) {
     const years = input.value;
-    const pattern = new RegExp('^\d{2}$');
+    const pattern = new RegExp('^\\d{2}$');
 
     if (years.length === 0) {
         addError(input, 'Non è possibile inserire una datazione vuota');
@@ -274,7 +274,7 @@ function checkArtworkStyle(input) {
 
 function checkArtworkTechnique(input) {
     const technique = input.value;
-    const pattern = new RegExp('^[A-zÀ-ú\'\-`\s]+$');
+    const pattern = new RegExp('^[A-zÀ-ú\'\-`\\s]+$');
 
     if (technique.length === 0) {
         addError(input, 'Non è possibile inserire una tecnica vuota');
@@ -296,7 +296,7 @@ function checkArtworkTechnique(input) {
 
 function checkArtworkMaterial(input) {
     const material = input.value;
-    const pattern = new RegExp('^[A-zÀ-ú\'\-`\s]+$');
+    const pattern = new RegExp('^[A-zÀ-ú\'\-`\\s]+$');
 
     if (material.length === 0) {
         addError(input, 'Non è possibile inserire un materiale vuoto');
@@ -369,7 +369,7 @@ function checkArtworkImage(input, isInsert) {
 /* CONTROLLI E GESTIONE DEGLI EVENTI */
 function checkEventTitle(input) {
     const title = input.value;
-    const pattern = new RegExp('^[A-zÀ-ú0-9\'`!.,\-:()\s]+$');
+    const pattern = new RegExp('^[A-zÀ-ú0-9\'`!.,\-:()\\s]+$');
     
     if (title.length === 0) {
         addError(input, 'Non è possibile inserire un titolo vuoto');
@@ -407,24 +407,35 @@ function checkEventDescription(input) {
     }
 }
 
-function checkDateComparison(beginDateInput, endDateInput) {
+function checkBeginDate(beginDateInput) {
     const beginDate = getDateFromString(beginDateInput.value);
-    const endDate = getDateFromString(endDateInput.value);
 
     const lowerBound = new Date();
     lowerBound.setHours(0,0,0,0);
 
     const upperBound = new Date(lowerBound.getFullYear() + 3, lowerBound.getMonth(), lowerBound.getDay());
-    const durationBound = addMonths(beginDate, 6);
 
     if (beginDate < lowerBound) {
-        addError(endDateInput, 'Non è possibile inserire una data di inizio evento precedente alla data odierna');
+        addError(beginDateInput, 'Non è possibile inserire una data di inizio evento precedente alla data odierna');
         return false;
     } else if (beginDate > upperBound) {
-        addError(endDateInput, 'Non è possibile inserire una data di inizio evento successiva a tre anni dalla data odierna');
+        addError(beginDateInput, 'Non è possibile inserire una data di inizio evento successiva a tre anni dalla data odierna');
         return false;
-    } else if (beginDate > endDate) {
-        addError(endDateInput, 'Non è possibile inserire una data di inizio evento successiva alla data di fine evento');
+    } else {
+        removeError(beginDateInput);
+        return true;
+    }
+}
+
+function checkDateComparison(beginDateInput, endDateInput) {
+    const beginDate = getDateFromString(beginDateInput.value);
+    const endDate = getDateFromString(endDateInput.value);
+
+    let durationBound = getDateFromString(beginDateInput.value);
+    durationBound = addMonths(durationBound, 6);
+
+    if (beginDate > endDate) {
+        addError(endDateInput, 'Non è possibile inserire una data di fine evento precendente alla data di inizio evento');
         return false;
     } else if (endDate > durationBound) {
         addError(endDateInput, 'Non è possibile inserire un evento che abbia una durata superiore ai sei mesi');
@@ -449,7 +460,7 @@ function checkEventType(input) {
 
 function checkEventManager(input) {
     const manager = input.value;
-    const pattern = new RegExp('^[A-zÀ-ú0-9\'`.:(\-)\s]+$');
+    const pattern = new RegExp('^[A-zÀ-ú0-9\'`.:(\-)\\s]+$');
 
     if (manager.length === 0) {
         addError(input, 'Non è possibile inserire un organizzatore vuoto');
@@ -472,7 +483,7 @@ function checkEventManager(input) {
 /* CONTROLLI E GESTIONE DELLE RECENSIONI */
 function checkReviewTitle(input) {
     const title = input.value;
-    const pattern = new RegExp('^[A-zÀ-ú0-9\'`!.,\-:()\s]+$');
+    const pattern = new RegExp('^[A-zÀ-ú0-9\'`!.,\-:()\\s]+$');
 
     if (title.length === 0) {
         addError(input, 'Non è possibile inserire una recensione con un oggetto vuoto');
@@ -513,7 +524,7 @@ function checkReviewContent(input) {
 /* CONTROLLI E GESTIONE DEGLI UTENTI */
 function checkUserName(input) {
     const name = input.value;
-    const pattern = new RegExp('^[A-zÀ-ú\'\-`.\s]+$');
+    const pattern = new RegExp('^[A-zÀ-ú\'\-`.\\s]+$');
     
     if (name.length === 0) {
         addError(input, 'Non è possibile inserire un nome vuoto');
@@ -535,7 +546,7 @@ function checkUserName(input) {
 
 function checkUserSurname(input) {
     const surname = input.value;
-    const pattern = new RegExp('^[A-zÀ-ú\'\-`.\s]+$');
+    const pattern = new RegExp('^[A-zÀ-ú\'\-`.\\s]+$');
 
     if (surname.length === 0) {
         addError(input, 'Non è possibile inserire un cognome vuoto');
@@ -734,10 +745,14 @@ function eventFormValidation() {
 
     const titleResult = checkEventTitle(title);
     const descriptionResult = checkEventDescription(description);
-    const beginDateResult = checkDate(beginDate);
+    let beginDateResult = checkDate(beginDate);
     const endDateResult = checkDate(endDate);
     const typeResult = checkEventType(type);
     const managerResult = checkEventManager(manager);
+
+    if (beginDateResult) {
+        beginDateResult = checkBeginDate(beginDate);
+    }
 
     let dateComparisonResult = true;
     if (beginDateResult && endDateResult) {

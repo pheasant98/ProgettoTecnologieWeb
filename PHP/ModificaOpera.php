@@ -5,7 +5,7 @@ require_once ('Controller/ArtworksController.php');
 
 session_start();
 
-if (!LoginController::isAuthenticatedUser() || !isset($_GET['id'])) {
+if (!LoginController::isAuthenticatedUser() || !LoginController::isAdminUser() || !isset($_GET['id'])) {
     header('Location: Errore.php');
 }
 

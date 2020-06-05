@@ -2,7 +2,7 @@
 
 session_start();
 
-if (!isset($_POST['submit']) || $_POST['submit'] !== 'Rimuovi' || !isset($_SESSION['contentPage']) || !isset($_SESSION['filter_content']) || !isset($_SESSION['filter_content_type'])) {
+if (!isset($_POST['submit']) || $_POST['submit'] !== 'Rimuovi' || !isset($_SESSION['contentPage']) || !isset($_SESSION['filter_content']) || !isset($_SESSION['filter_content_type']) || !LoginController::isAdminUser()) {
     header('Location: Errore.php');
 }
 

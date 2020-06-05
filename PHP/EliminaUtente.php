@@ -2,7 +2,7 @@
 
 session_start();
 
-if (!isset($_POST['submit']) || $_POST['submit'] !== 'Rimuovi' || !isset($_SESSION['userPage'])) {
+if (!isset($_POST['submit']) || $_POST['submit'] !== 'Rimuovi' || !isset($_SESSION['userPage']) || !LoginController::isAdminUser()) {
     header('Location: Errore.php');
 }
 
