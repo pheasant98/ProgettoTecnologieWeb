@@ -6,6 +6,7 @@
   font-family: "Times New Roman", Georgia, sans-serif;
   box-sizing: border-box;
   max-width: 100%;
+  word-wrap: break-word;
 }
 
 html,
@@ -50,15 +51,26 @@ a {
 }
 
 .inlineDef{
-  float:left;
+  margin-top: 1em;
+  margin-left: 0.5em;
+  float: left;
 }
+
 .titleDef{
-  padding: 1em 0em 0.5em 0em;
+  padding: 1.5em 0 0.5em 0;
   font-size: 1.2em;
 }
-.definition {
-  padding-left:13em;
-  padding-bottom: 0.5em;
+
+.definition,
+.definitionOpera,
+.definitionOpere {
+  padding-left: 11.5em;
+  padding-top: 1em;
+  padding-bottom: 0.8em;
+}
+
+.definitionOpere{
+  padding-left: 18em;
 }
 
 #filterSearch,
@@ -119,7 +131,7 @@ a {
   border-radius: 0.25em;
   padding: 0.375em 0.75em;
   resize: vertical;
-  margin: 0.3em 0em;
+  margin: 0.3em 0;
 }
 
 .loginElement {
@@ -159,6 +171,13 @@ a {
   width: 80%;
   display:block;
   margin:1em auto;
+}
+
+.previewOpera{
+  height: 10em;
+  width: 10em;
+  float:left;
+  margin: 0;
 }
 
 .backgroundImage {
