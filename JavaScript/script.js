@@ -3,6 +3,8 @@
 /* GESTIONE DEL MENU AD HAMBURGER */
 window.onload = menu;
 
+// TODO: trovare alternativa a .classList e .toggle() per IE9
+
 function touch() {
     const menus = document.getElementById('menu');
     menus.classList.toggle('show');
@@ -19,7 +21,7 @@ function menu() {
 }
 
 /* GESTIONE DELLA TIPOLOGIA DELLE OPERE */
-function artworkStyleChanged(isModify = false) {
+function artworkStyleChanged(isModify) {
     const styleInput = document.getElementById('style');
     const style = styleInput.options[styleInput.selectedIndex].value;
 
@@ -63,7 +65,7 @@ function artworkStyleChanged(isModify = false) {
 }
 
 /* GESTIONE DELL'AGGIUNTA E DELLA RIMOZIONE DEGLI ERRORI DAI FORM */
-function removeError(input, tags = 2) {
+function removeError(input, tags) {
     const parentNode = input.parentNode;
 
     if (parentNode.children.length > tags) {
@@ -71,7 +73,7 @@ function removeError(input, tags = 2) {
     }
 }
 
-function addError(input, error, tags = 2) {
+function addError(input, error, tags) {
     removeError(input, tags);
 
     const parentNode = input.parentNode;
@@ -161,16 +163,16 @@ function checkDate(input) {
     const date = input.value;
 
     if (date.length === 0) {
-        addError(input, 'Non è possibile inserire una data vuota');
+        addError(input, 'Non è possibile inserire una data vuota', 2);
         return false;
     } else if (!checkDateFormat(date)) {
-        addError(input, 'Non è possibile inserire una data espressa in un formato diverso da "gg-mm-aaaa"');
+        addError(input, 'Non è possibile inserire una data espressa in un formato diverso da "gg-mm-aaaa"', 2);
         return false;
     } else if (!checkDateValidity(date)) {
-        addError(input, 'La data inserita non è valida');
+        addError(input, 'La data inserita non è valida', 2);
         return false;
     } else {
-        removeError(input);
+        removeError(input, 2);
         return true;
     }
 }
@@ -181,19 +183,19 @@ function checkArtworkAuthor(input) {
     const pattern = new RegExp('^[A-zÀ-ú\'\-`.\\s]+$');
 
     if (author.length === 0) {
-        addError(input, 'Non è possibile inserire un autore vuoto');
+        addError(input, 'Non è possibile inserire un autore vuoto', 2);
         return false;
     } else if (author.length < 5) {
-        addError(input, 'Non è possibile inserire un autore più corto di 5 caratteri');
+        addError(input, 'Non è possibile inserire un autore più corto di 5 caratteri', 2);
         return false;
     } else if (author.length > 64) {
-        addError(input, 'Non è possibile inserire un autore più lungo di 64 caratteri');
+        addError(input, 'Non è possibile inserire un autore più lungo di 64 caratteri', 2);
         return false;
     } else if (!pattern.test(author)) {
-        addError(input, 'L\'autore contiene caratteri non consentiti. Quelli possibili sono lettere, anche accentate, spazi e i seguenti caratteri speciali \' - . `');
+        addError(input, 'L\'autore contiene caratteri non consentiti. Quelli possibili sono lettere, anche accentate, spazi e i seguenti caratteri speciali \' - . `', 2);
         return false;
     } else {
-        removeError(input);
+        removeError(input, 2);
         return true;
     }
 }
@@ -203,19 +205,19 @@ function checkArtworkTitle(input) {
     const pattern = new RegExp('^[A-zÀ-ú0-9\'`!.,:(\-)\\s]+$');
 
     if (title.length === 0) {
-        addError(input, 'Non è possibile inserire un titolo vuoto');
+        addError(input, 'Non è possibile inserire un titolo vuoto', 2);
         return false;
     } else if (title.length < 2) {
-        addError(input, 'Non è possibile inserire un titolo più corto di 2 caratteri');
+        addError(input, 'Non è possibile inserire un titolo più corto di 2 caratteri', 2);
         return false;
     } else if (title.length > 64) {
-        addError(input, 'Non è possibile inserire un titolo più lungo di 64 caratteri');
+        addError(input, 'Non è possibile inserire un titolo più lungo di 64 caratteri', 2);
         return false;
     } else if (!pattern.test(title)) {
-        addError(input, 'Il titolo contiene caratteri non consentiti. Quelli possibili sono lettere, anche accentate, numeri, spazi e i seguenti caratteri speciali \' ` ! . , : - ()');
+        addError(input, 'Il titolo contiene caratteri non consentiti. Quelli possibili sono lettere, anche accentate, numeri, spazi e i seguenti caratteri speciali \' ` ! . , : - ()', 2);
         return false;
     } else {
-        removeError(input);
+        removeError(input, 2);
         return true;
     }
 }
@@ -224,16 +226,16 @@ function checkArtworkDescription(input) {
     const description = input.value;
 
     if (description.length === 0) {
-        addError(input, 'Non è possibile inserire una descrizione vuota');
+        addError(input, 'Non è possibile inserire una descrizione vuota', 2);
         return false;
     } else if (description.length < 2) {
-        addError(input, 'Non è possibile inserire una descrizione più corta di 2 caratteri');
+        addError(input, 'Non è possibile inserire una descrizione più corta di 2 caratteri', 2);
         return false;
     } else if (description.length > 65535) {
-        addError(input, 'Non è possibile inserire una descrizione più lunga di 65535 caratteri');
+        addError(input, 'Non è possibile inserire una descrizione più lunga di 65535 caratteri', 2);
         return false;
     } else {
-        removeError(input);
+        removeError(input, 2);
         return true;
     }
 }
@@ -243,19 +245,19 @@ function checkArtworkDate(input) {
     const pattern = new RegExp('^\\d{2}$');
 
     if (years.length === 0) {
-        addError(input, 'Non è possibile inserire una datazione vuota');
+        addError(input, 'Non è possibile inserire una datazione vuota', 2);
         return false;
     } else if (!parseInt(years)) {
-        addError(input, 'La datazione dell\'opera deve essere un numero intero');
+        addError(input, 'La datazione dell\'opera deve essere un numero intero', 2);
         return false;
     } else if (!pattern.test(years)) {
-        addError(input, 'La datazione deve contenere solo l\'anno');
+        addError(input, 'La datazione deve contenere solo l\'anno', 2);
         return false;
     } else if (parseInt(years) < 1400 || parseInt(years) > parseInt((new Date()).getFullYear().toString())) {
-        addError(input, 'La datazione dell\'opera deve essere compresa tra il 1400 e l\'anno corrente');
+        addError(input, 'La datazione dell\'opera deve essere compresa tra il 1400 e l\'anno corrente', 2);
         return false;
     } else {
-        removeError(input);
+        removeError(input, 2);
         return true;
     }
 }
@@ -264,10 +266,10 @@ function checkArtworkStyle(input) {
     const style = input.options[input.selectedIndex].value;
 
     if (style !== 'Sculture' && style !== 'Dipinti') {
-        addError(input, 'Lo stile dell\'opera deve essere Scultura o Dipinto');
+        addError(input, 'Lo stile dell\'opera deve essere Scultura o Dipinto', 2);
         return false;
     } else {
-        removeError(input);
+        removeError(input, 2);
         return true;
     }
 }
@@ -277,19 +279,19 @@ function checkArtworkTechnique(input) {
     const pattern = new RegExp('^[A-zÀ-ú\'\-`\\s]+$');
 
     if (technique.length === 0) {
-        addError(input, 'Non è possibile inserire una tecnica vuota');
+        addError(input, 'Non è possibile inserire una tecnica vuota', 2);
         return false;
     } else if (technique.length < 4) {
-        addError(input, 'Non è possibile inserire una tecnica più corta di 4 caratteri');
+        addError(input, 'Non è possibile inserire una tecnica più corta di 4 caratteri', 2);
         return false;
     } else if (technique.length > 64) {
-        addError(input, 'Non è possibile inserire una tecnica più lunga di 64 caratteri');
+        addError(input, 'Non è possibile inserire una tecnica più lunga di 64 caratteri', 2);
         return false;
     } else if (!pattern.test(technique)) {
-        addError(input, 'La tecnica contiene caratteri non consentiti. Quelli possibili sono lettere, anche accentate, accenti, spazi e i seguenti caratteri speciali \' \ - `');
+        addError(input, 'La tecnica contiene caratteri non consentiti. Quelli possibili sono lettere, anche accentate, accenti, spazi e i seguenti caratteri speciali \' \ - `', 2);
         return false;
     } else {
-        removeError(input);
+        removeError(input, 2);
         return true;
     }
 }
@@ -299,19 +301,19 @@ function checkArtworkMaterial(input) {
     const pattern = new RegExp('^[A-zÀ-ú\'\-`\\s]+$');
 
     if (material.length === 0) {
-        addError(input, 'Non è possibile inserire un materiale vuoto');
+        addError(input, 'Non è possibile inserire un materiale vuoto', 2);
         return false;
     } else if (material.length < 4) {
-        addError(input, 'Non è possibile inserire un materiale più corto di 4 caratteri');
+        addError(input, 'Non è possibile inserire un materiale più corto di 4 caratteri', 2);
         return false;
     } else if (material.length > 32) {
-        addError(input, 'Non è possibile inserire un materiale più lungo di 32 caratteri');
+        addError(input, 'Non è possibile inserire un materiale più lungo di 32 caratteri', 2);
         return false;
     } else if (!pattern.test(material)) {
-        addError(input, 'Il materiale contiene caratteri non consentiti. Quelli possibili sono lettere, anche accentate, spazi, \' \ - `');
+        addError(input, 'Il materiale contiene caratteri non consentiti. Quelli possibili sono lettere, anche accentate, spazi, \' \ - `', 2);
         return false;
     } else {
-        removeError(input);
+        removeError(input, 2);
         return true;
     }
 }
@@ -337,31 +339,33 @@ function checkArtworkLoan(inputYes, inputNo) {
     const no = inputNo.checked;
 
     if (!yes && !no) {
-        addError(inputNo, 'Il prestito deve essere scelto tra "Si" e "No"');
+        addError(inputNo, 'Il prestito deve essere scelto tra "Si" e "No"', 2);
         return false;
     } else {
-        removeError(inputNo);
+        removeError(inputNo, 2);
         return true;
     }
 }
 
+// TODO: trovare alternativa per IE9
+
 function checkArtworkImage(input, isInsert) {
-    const elements = isInsert ? 2 : 3;
+    const tags = isInsert ? 2 : 3;
 
     if (input.files.length === 0) {
-        addError(input, 'È necessario selezionare un\'immagine', elements);
+        addError(input, 'È necessario selezionare un\'immagine', tags);
         return false;
     } else if (input.files.length > 1) {
-        addError(input, 'È necessario selezionare una ed una sola immagine', elements);
+        addError(input, 'È necessario selezionare una ed una sola immagine', tags);
         return false;
     } else if (input.files[0].size > 512000) {
-        addError(input, 'L\'immagine caricata è una dimensione troppo elevata. La dimensione massima accettata è 500<abbr title="Kilo Bytes" xml:lang="en">KB</abbr>', elements);
+        addError(input, 'L\'immagine caricata è una dimensione troppo elevata. La dimensione massima accettata è 500<abbr title="Kilo Bytes" xml:lang="en">KB</abbr>', tags);
         return false;
     } else if (input.files[0].type !== 'image/jpeg' && input.files[0].type !== 'image/png') {
-        addError(input, 'L\'estensione dell\'immagine non è supportata. L\'estensioni consentite sono .<abbr title="Joint Photographic Experts Group" xml:lang="en">jpeg</abbr>, .<abbr title="Joint Photographic Group" xml:lang="en">jpg</abbr>, .<abbr title="Portable Network Graphics" xml:lang="en">png</abbr>', elements);
+        addError(input, 'L\'estensione dell\'immagine non è supportata. L\'estensioni consentite sono .<abbr title="Joint Photographic Experts Group" xml:lang="en">jpeg</abbr>, .<abbr title="Joint Photographic Group" xml:lang="en">jpg</abbr>, .<abbr title="Portable Network Graphics" xml:lang="en">png</abbr>', tags);
         return false;
     } else {
-        removeError(input, elements);
+        removeError(input, tags);
         return true;
     }
 }
@@ -372,19 +376,19 @@ function checkEventTitle(input) {
     const pattern = new RegExp('^[A-zÀ-ú0-9\'`!.,\-:()\\s]+$');
     
     if (title.length === 0) {
-        addError(input, 'Non è possibile inserire un titolo vuoto');
+        addError(input, 'Non è possibile inserire un titolo vuoto', 2);
         return false;
     } else if (title.length < 2) {
-        addError(input, 'Non è possibile inserire un titolo più corto di 2 caratteri');
+        addError(input, 'Non è possibile inserire un titolo più corto di 2 caratteri', 2);
         return false;
     } else if (title.length > 64) {
-        addError(input, 'Non è possibile inserire un titolo più lungo di 64 caratteri');
+        addError(input, 'Non è possibile inserire un titolo più lungo di 64 caratteri', 2);
         return false;
     } else if (!pattern.test(title)) {
-        addError(input, 'Il titolo contiene caratteri non consentiti. Quelli possibili sono lettere, anche accentate, numeri, spazi e i seguenti caratteri speciali \' ` ! . , - : ()');
+        addError(input, 'Il titolo contiene caratteri non consentiti. Quelli possibili sono lettere, anche accentate, numeri, spazi e i seguenti caratteri speciali \' ` ! . , - : ()', 2);
         return false;
     } else {
-        removeError(input);
+        removeError(input, 2);
         return true;
     }
 }
@@ -393,16 +397,16 @@ function checkEventDescription(input) {
     const description = input.value;
     
     if (description.length === 0) {
-        addError(input, 'Non è possibile inserire una descrizione vuota');
+        addError(input, 'Non è possibile inserire una descrizione vuota', 2);
         return false;
     } else if (description.length < 30) {
-        addError(input, 'Non è possibile inserire una descrizione più corta di 30 caratteri');
+        addError(input, 'Non è possibile inserire una descrizione più corta di 30 caratteri', 2);
         return false;
     } else if (description.length > 65535) {
-        addError(input, 'Non è possibile inserire una descrizione più lunga di 65535 caratteri');
+        addError(input, 'Non è possibile inserire una descrizione più lunga di 65535 caratteri', 2);
         return false;
     } else {
-        removeError(input);
+        removeError(input, 2);
         return true;
     }
 }
@@ -416,13 +420,13 @@ function checkBeginDate(beginDateInput) {
     const upperBound = new Date(lowerBound.getFullYear() + 3, lowerBound.getMonth(), lowerBound.getDay());
 
     if (beginDate < lowerBound) {
-        addError(beginDateInput, 'Non è possibile inserire una data di inizio evento precedente alla data odierna');
+        addError(beginDateInput, 'Non è possibile inserire una data di inizio evento precedente alla data odierna', 2);
         return false;
     } else if (beginDate > upperBound) {
-        addError(beginDateInput, 'Non è possibile inserire una data di inizio evento successiva a tre anni dalla data odierna');
+        addError(beginDateInput, 'Non è possibile inserire una data di inizio evento successiva a tre anni dalla data odierna', 2);
         return false;
     } else {
-        removeError(beginDateInput);
+        removeError(beginDateInput, 2);
         return true;
     }
 }
@@ -435,13 +439,13 @@ function checkDateComparison(beginDateInput, endDateInput) {
     durationBound = addMonths(durationBound, 6);
 
     if (beginDate > endDate) {
-        addError(endDateInput, 'Non è possibile inserire una data di fine evento precendente alla data di inizio evento');
+        addError(endDateInput, 'Non è possibile inserire una data di fine evento precendente alla data di inizio evento', 2);
         return false;
     } else if (endDate > durationBound) {
-        addError(endDateInput, 'Non è possibile inserire un evento che abbia una durata superiore ai sei mesi');
+        addError(endDateInput, 'Non è possibile inserire un evento che abbia una durata superiore ai sei mesi', 2);
         return false;
     } else {
-        removeError(endDateInput);
+        removeError(endDateInput, 2);
         return true;
     }
 }
@@ -450,10 +454,10 @@ function checkEventType(input) {
     const type = input.options[input.selectedIndex].value;
     
     if (type !== 'Mostre' && type !== 'Conferenze') {
-        addError(input, 'La tipologia dell\'evento deve essere Mostra o Conferenza');
+        addError(input, 'La tipologia dell\'evento deve essere Mostra o Conferenza', 2);
         return false;
     } else {
-        removeError(input);
+        removeError(input, 2);
         return true;
     }
 }
@@ -463,19 +467,19 @@ function checkEventManager(input) {
     const pattern = new RegExp('^[A-zÀ-ú0-9\'`.:(\-)\\s]+$');
 
     if (manager.length === 0) {
-        addError(input, 'Non è possibile inserire un organizzatore vuoto');
+        addError(input, 'Non è possibile inserire un organizzatore vuoto', 2);
         return false;
     } else if (manager.length < 2) {
-        addError(input, 'Non è possibile inserire un organizzatore più corto di 2 caratteri');
+        addError(input, 'Non è possibile inserire un organizzatore più corto di 2 caratteri', 2);
         return false;
     } else if (manager.length > 32) {
-        addError(input, 'Non è possibile inserire un organizzatore più lungo di 32 caratteri');
+        addError(input, 'Non è possibile inserire un organizzatore più lungo di 32 caratteri', 2);
         return false;
     } else if (!pattern.test(manager)) {
-        addError(input, 'L\'organizzatore dell\'evento contiene caratteri non consentiti. Quelli possibili sono lettere, anche accentate, numeri, spazi e i seguenti caratteri speciali \' ` . : - ()');
+        addError(input, 'L\'organizzatore dell\'evento contiene caratteri non consentiti. Quelli possibili sono lettere, anche accentate, numeri, spazi e i seguenti caratteri speciali \' ` . : - ()', 2);
         return false;
     } else {
-        removeError(input);
+        removeError(input, 2);
         return true;
     }
 }
@@ -486,19 +490,19 @@ function checkReviewTitle(input) {
     const pattern = new RegExp('^[A-zÀ-ú0-9\'`!.,\-:()\\s]+$');
 
     if (title.length === 0) {
-        addError(input, 'Non è possibile inserire una recensione con un oggetto vuoto');
+        addError(input, 'Non è possibile inserire una recensione con un oggetto vuoto', 2);
         return false;
     } else if (title.length < 2) {
-        addError(input, 'Non è possibile inserire una recensione con un oggetto più corto di 2 caratteri');
+        addError(input, 'Non è possibile inserire una recensione con un oggetto più corto di 2 caratteri', 2);
         return false;
     } else if (title.length > 64) {
-        addError(input, 'Non è possibile inserire una recensione con un oggetto più lungo di 64 caratteri');
+        addError(input, 'Non è possibile inserire una recensione con un oggetto più lungo di 64 caratteri', 2);
         return false;
     } else if (!pattern.test(title)) {
-        addError(input, 'L\'oggetto inserito contiene dei caratteri non consentiti. Quelli possibili sono lettere, anche accentate, numeri, spazi e i seguenti caratteri speciali \' ` ! . , \ - : ()');
+        addError(input, 'L\'oggetto inserito contiene dei caratteri non consentiti. Quelli possibili sono lettere, anche accentate, numeri, spazi e i seguenti caratteri speciali \' ` ! . , \ - : ()', 2);
         return false;
     } else {
-        removeError(input);
+        removeError(input, 2);
         return true;
     }
 }
@@ -507,16 +511,16 @@ function checkReviewContent(input) {
     const content = input.value;
 
     if (content.length === 0) {
-        addError(input, 'Non è possibile inserire una recensione con un contenuto vuoto');
+        addError(input, 'Non è possibile inserire una recensione con un contenuto vuoto', 2);
         return false;
     } else if (content.length  < 4) {
-        addError(input, 'Non è possibile inserire una recensione con un contenuto più corto di 4 caratteri');
+        addError(input, 'Non è possibile inserire una recensione con un contenuto più corto di 4 caratteri', 2);
         return false;
     } else if (content.length  > 65535) {
-        addError(input, 'Non è possibile inserire una recensione con un contenuto più lungo di 65535 caratteri');
+        addError(input, 'Non è possibile inserire una recensione con un contenuto più lungo di 65535 caratteri', 2);
         return false;
     } else {
-        removeError(input);
+        removeError(input, 2);
         return true;
     }
 }
@@ -527,19 +531,19 @@ function checkUserName(input) {
     const pattern = new RegExp('^[A-zÀ-ú\'\-`.\\s]+$');
     
     if (name.length === 0) {
-        addError(input, 'Non è possibile inserire un nome vuoto');
+        addError(input, 'Non è possibile inserire un nome vuoto', 2);
         return false;
     } else if (name.length < 2) {
-        addError(input, 'Non è possibile inserire un nome più corto di 2 caratteri');
+        addError(input, 'Non è possibile inserire un nome più corto di 2 caratteri', 2);
         return false;
     } else if (name.length > 32) {
-        addError(input, 'Non è possibile inserire un nome più lungo di 32 caratteri');
+        addError(input, 'Non è possibile inserire un nome più lungo di 32 caratteri', 2);
         return false;
     } else if (!pattern.test(name)) {
-        addError(input, 'Il nome inserito contiene dei caratteri non consentiti. Quelli possibili sono lettere, anche accentate, spazi e i seguenti caratteri speciali \' \ - ` .');
+        addError(input, 'Il nome inserito contiene dei caratteri non consentiti. Quelli possibili sono lettere, anche accentate, spazi e i seguenti caratteri speciali \' \ - ` .', 2);
         return false;
     } else {
-        removeError(input);
+        removeError(input, 2);
         return true;
     }
 }
@@ -549,19 +553,19 @@ function checkUserSurname(input) {
     const pattern = new RegExp('^[A-zÀ-ú\'\-`.\\s]+$');
 
     if (surname.length === 0) {
-        addError(input, 'Non è possibile inserire un cognome vuoto');
+        addError(input, 'Non è possibile inserire un cognome vuoto', 2);
         return false;
     } else if (surname.length < 2) {
-        addError(input, 'Non è possibile inserire un cognome più corto di 2 caratteri');
+        addError(input, 'Non è possibile inserire un cognome più corto di 2 caratteri', 2);
         return false;
     } else if (surname.length > 32) {
-        addError(input, 'Non è possibile inserire un cognome più lungo di 32 caratteri');
+        addError(input, 'Non è possibile inserire un cognome più lungo di 32 caratteri', 2);
         return false;
     } else if (!pattern.test(surname)) {
-        addError(input, 'Il cognome inserito contiene dei caratteri non consentiti, è possibile inserire solamente lettere, possibilmente accentate, spazi e i seguenti caratteri speciali \' \ - ` .');
+        addError(input, 'Il cognome inserito contiene dei caratteri non consentiti, è possibile inserire solamente lettere, possibilmente accentate, spazi e i seguenti caratteri speciali \' \ - ` .', 2);
         return false;
     } else {
-        removeError(input);
+        removeError(input, 2);
         return true;
     }
 }
@@ -570,13 +574,13 @@ function checkUserDate(input) {
     const date = input.value;
 
     if (date.length === 0) {
-        addError(input, 'Non è possibile inserire una data di nascita vuota');
+        addError(input, 'Non è possibile inserire una data di nascita vuota', 2);
         return false;
     } else if (!checkDateFormat(date)) {
-        addError(input, 'Non è possibile inserire una data di nascita espressa in un formato diverso da "gg-mm-aaaa"');
+        addError(input, 'Non è possibile inserire una data di nascita espressa in un formato diverso da "gg-mm-aaaa"', 2);
         return false;
     } else if (!checkDateValidity(date)) {
-        addError(input, 'La data di nascita inserita non è valida');
+        addError(input, 'La data di nascita inserita non è valida', 2);
         return false;
     } else {
         const birthDate = getDateFromString(date);
@@ -584,13 +588,13 @@ function checkUserDate(input) {
         const upperBound = new Date(parseInt('2006'), parseInt('11'), parseInt('31'));
 
         if (birthDate < lowerBound) {
-            addError(input, 'Non è possibile inserire una data di nascita precedente al 01-01-1900');
+            addError(input, 'Non è possibile inserire una data di nascita precedente al 01-01-1900', 2);
             return false;
         } else if (birthDate > upperBound) {
-            addError(input, 'Non è possibile inserire una data di nascita successiva al 31-12-2006');
+            addError(input, 'Non è possibile inserire una data di nascita successiva al 31-12-2006', 2);
             return false;
         } else {
-            removeError(input);
+            removeError(input, 2);
             return true;
         }
     }
@@ -615,16 +619,16 @@ function checkUserMail(input) {
     const pattern = new RegExp('^[a-zA-Z0-9.!#$%&\'*+^_`{|}~\-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$');
 
     if (mail.length === 0) {
-        addError(input, 'Non è possibile inserire un indirizzo <span xml:lang="en">email</span> vuoto');
+        addError(input, 'Non è possibile inserire un indirizzo <span xml:lang="en">email</span> vuoto', 2);
         return false;
     } else if (mail.length > 64) {
-        addError(input, 'Non è possibile inserire un indirizzo <span xml:lang="en">email</span> più lungo di 64 caratteri');
+        addError(input, 'Non è possibile inserire un indirizzo <span xml:lang="en">email</span> più lungo di 64 caratteri', 2);
         return false;
     } else if (!pattern.test(mail)) {
-        addError(input, 'L\'indirizzo <span xml:lang="en">email</span> inserito non è valido');
+        addError(input, 'L\'indirizzo <span xml:lang="en">email</span> inserito non è valido', 2);
         return false;
     } else {
-        removeError(input);
+        removeError(input, 2);
         return true;
     }
 }
@@ -633,80 +637,80 @@ function checkUserUsername(input) {
     const username = input.value;
     
     if (username.length === 0) {
-        addError(input, 'Non è possibile inserire uno <span xml:lang="en">username</span> vuoto');
+        addError(input, 'Non è possibile inserire uno <span xml:lang="en">username</span> vuoto', 2);
         return false;
     } else if (username.length < 4) {
-        addError(input, 'Non è possibile inserire uno <span xml:lang="en">username</span> più corto di 4 caratteri');
+        addError(input, 'Non è possibile inserire uno <span xml:lang="en">username</span> più corto di 4 caratteri', 2);
         return false;
     } else if (username.length > 32) {
-        addError(input, 'Non è possibile inserire uno <span xml:lang="en">username</span> più lungo di 32 caratteri');
+        addError(input, 'Non è possibile inserire uno <span xml:lang="en">username</span> più lungo di 32 caratteri', 2);
         return false;
     } else {
-        removeError(input);
+        removeError(input, 2);
         return true;
     }
 }
 
-function checkUserOldPassword(input, numbers = 2) {
+function checkUserOldPassword(input, tags) {
     const password = input.value;
     const pattern = new RegExp('^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!#$%&\'*+^_`\-{|}~@]).*$');
 
     if (password.length === 0) {
-        addError(input, 'Non è possibile che la <span xml:lang="en">password</span> corrente sia vuota', numbers);
+        addError(input, 'Non è possibile che la <span xml:lang="en">password</span> corrente sia vuota', tags);
         return false;
     } else if (password.length < 8) {
-        addError(input, 'Non è possibile che la <span xml:lang="en">password</span> corrente sia più corta di 8 caratteri', numbers);
+        addError(input, 'Non è possibile che la <span xml:lang="en">password</span> corrente sia più corta di 8 caratteri', tags);
         return false;
     } else if (!pattern.test(password)) {
-        addError(input, 'Non è possibile che la <span xml:lang="en">password</span> corrente non soddisfi tutti i requisiti richiesti', numbers);
+        addError(input, 'Non è possibile che la <span xml:lang="en">password</span> corrente non soddisfi tutti i requisiti richiesti', tags);
         return false;
     } else {
-        removeError(input, numbers);
+        removeError(input, tags);
         return true;
     }
 }
 
-function checkUserPassword(input, numbers = 2) {
+function checkUserPassword(input, tags) {
     const password = input.value;
     const pattern = new RegExp('^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!#$%&\'*+^_`\-{|}~@]).*$');
     
     if (password.length === 0) {
-        addError(input, 'Non è possibile inserire una <span xml:lang="en">password</span> vuota', numbers);
+        addError(input, 'Non è possibile inserire una <span xml:lang="en">password</span> vuota', tags);
         return false;
     } else if (password.length < 8) {
-        addError(input, 'Non è possibile inserire una <span xml:lang="en">password</span> più corta di 8 caratteri', numbers);
+        addError(input, 'Non è possibile inserire una <span xml:lang="en">password</span> più corta di 8 caratteri', tags);
         return false;
     } else if (!pattern.test(password)) {
-        addError(input, 'La <span xml:lang="en">password</span> inserita non soddisfa tutti i requisiti richiesti', numbers);
+        addError(input, 'La <span xml:lang="en">password</span> inserita non soddisfa tutti i requisiti richiesti', tags);
         return false;
     } else {
-        removeError(input, numbers);
+        removeError(input, tags);
         return true;
     }
 }
 
 function checkSamePassword(inputNewPassword, inputConfirmPassword) {
     if (inputNewPassword.value !== inputConfirmPassword.value) {
-        addError(inputConfirmPassword, 'Le <span xml:lang="it">password</span> inserite non sono uguali');
+        addError(inputConfirmPassword, 'Le <span xml:lang="it">password</span> inserite non sono uguali', 2);
         return false;
     } else {
-        removeError(inputConfirmPassword);
+        removeError(inputConfirmPassword, 2);
         return true;
     }
 }
 
-function checkSameOldPassword(inputOldPassword, inputNewPassword, numbers = 2) {
+function checkSameOldPassword(inputOldPassword, inputNewPassword, tags) {
     if (inputOldPassword.value === inputNewPassword.value) {
-        addError(inputNewPassword, 'La nuova <span xml:lang="it">password</span> non può essere uguale a quella corrente', numbers);
+        addError(inputNewPassword, 'La nuova <span xml:lang="it">password</span> non può essere uguale a quella corrente', tags);
         return false;
     } else {
-        removeError(inputNewPassword, numbers);
+        removeError(inputNewPassword, tags);
         return true;
     }
 }
 
 /* CONTROLLI E GESTIONE DEI FORM */
-function artworkFormValidation(isInsert = false) {
+function artworkFormValidation(isInsert) {
     const author = document.getElementById('author');
     const title = document.getElementById('title');
     const description = document.getElementById('operaDescriptionArea');
@@ -801,9 +805,9 @@ function userFormValidation() {
     let sameOldPasswordResult = true;
 
     if (oldPassword.value !== '' || newPassword.value !== '' || confirmPassword.value !== '') {
-        oldPasswordResult = checkUserOldPassword(oldPassword);
+        oldPasswordResult = checkUserOldPassword(oldPassword, 2);
         newPasswordResult = checkUserPassword(newPassword, 3);
-        confirmPasswordResult = checkUserPassword(confirmPassword);
+        confirmPasswordResult = checkUserPassword(confirmPassword, 2);
 
         if (oldPasswordResult && newPasswordResult && confirmPasswordResult) {
             samePasswordResult = checkSamePassword(newPassword, confirmPassword);
@@ -838,7 +842,7 @@ function registrationFormValidation() {
     const emailResult = checkUserMail(email);
     const usernameResult = checkUserUsername(username);
     const passwordResult = checkUserPassword(password, 3);
-    const confirmPasswordResult = checkUserPassword(confirmPassword);
+    const confirmPasswordResult = checkUserPassword(confirmPassword, 2);
 
     let samePasswordResult = true;
     if (passwordResult && confirmPasswordResult) {
