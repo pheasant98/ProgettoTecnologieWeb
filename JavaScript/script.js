@@ -2,9 +2,9 @@
 window.onload = menu;
 
 function touch() {
-    const menus = document.getElementById('menu');
-    const content = document.getElementById('content');
-    const breadcrumbs = document.getElementById('breadcrumbs');
+    var menus = document.getElementById('menu');
+    var content = document.getElementById('content');
+    var breadcrumbs = document.getElementById('breadcrumbs');
 
     menus.className === 'show' ? menus.removeAttribute('class') : menus.className = 'show';
     content.className === 'hide' ? content.removeAttribute('class') : content.className = 'hide';
@@ -17,51 +17,51 @@ function menu() {
 
 /* GESTIONE DELLA TIPOLOGIA DELLE OPERE */
 function artworkStyleChanged(isModify) {
-    const styleInput = document.getElementById('style');
-    const style = styleInput.options[styleInput.selectedIndex].value.trim();
+    var styleInput = document.getElementById('style');
+    var style = styleInput.options[styleInput.selectedIndex].value.trim();
 
     if (style === 'Dipinti') {
-        const techniqueInput = document.getElementById('technique');
-        const techniqueParent = techniqueInput.parentElement;
-        techniqueParent.removeAttribute('class');
+        var techniqueInputD = document.getElementById('technique');
+        var techniqueParentD = techniqueInputD.parentElement;
+        techniqueParentD.removeAttribute('class');
 
-        const materialInput = document.getElementById('material');
-        const materialParent = materialInput.parentElement;
-        materialParent.className = 'hideContent';
+        var materialInputD = document.getElementById('material');
+        var materialParentD = materialInputD.parentElement;
+        materialParentD.className = 'hideContent';
 
         if (isModify) {
-            const techniqueInputSkip = document.getElementById('postTechniqueSkip');
-            const techniqueParentSkip = techniqueInputSkip.parentElement;
-            techniqueParentSkip.removeAttribute('class');
+            var techniqueInputSkipD = document.getElementById('postTechniqueSkip');
+            var techniqueParentSkipD = techniqueInputSkipD.parentElement;
+            techniqueParentSkipD.removeAttribute('class');
 
-            const materialInputSkip = document.getElementById('postMaterialSkip');
-            const materialParentSkip = materialInputSkip.parentElement;
-            materialParentSkip.className = 'hideContent';
+            var materialInputSkipD = document.getElementById('postMaterialSkip');
+            var materialParentSkipD = materialInputSkipD.parentElement;
+            materialParentSkipD.className = 'hideContent';
         }
     } else if (style === 'Sculture') {
-        const materialInput = document.getElementById('material');
-        const materialParent = materialInput.parentElement;
-        materialParent.removeAttribute('class');
+        var materialInputS = document.getElementById('material');
+        var materialParentS = materialInputS.parentElement;
+        materialParentS.removeAttribute('class');
 
-        const techniqueInput = document.getElementById('technique');
-        const techniqueParent = techniqueInput.parentElement;
-        techniqueParent.className = 'hideContent';
+        var techniqueInputS = document.getElementById('technique');
+        var techniqueParentS = techniqueInputS.parentElement;
+        techniqueParentS.className = 'hideContent';
 
         if (isModify) {
-            const materialInputSkip = document.getElementById('postMaterialSkip');
-            const materialParentSkip = materialInputSkip.parentElement;
-            materialParentSkip.removeAttribute('class');
+            var materialInputSkipS = document.getElementById('postMaterialSkip');
+            var materialParentSkipS = materialInputSkipS.parentElement;
+            materialParentSkipS.removeAttribute('class');
 
-            const techniqueInputSkip = document.getElementById('postTechniqueSkip');
-            const techniqueParentSkip = techniqueInputSkip.parentElement;
-            techniqueParentSkip.className = 'hideContent';
+            var techniqueInputSkipS = document.getElementById('postTechniqueSkip');
+            var techniqueParentSkipS = techniqueInputSkipS.parentElement;
+            techniqueParentSkipS.className = 'hideContent';
         }
     }
 }
 
 /* GESTIONE DELL'AGGIUNTA E DELLA RIMOZIONE DEGLI ERRORI DAI FORM */
 function removeError(input, tags) {
-    const parentNode = input.parentNode;
+    var parentNode = input.parentNode;
 
     if (parentNode.children.length > tags) {
         parentNode.removeChild(parentNode.children[1]);
@@ -71,17 +71,17 @@ function removeError(input, tags) {
 function addError(input, error, tags) {
     removeError(input, tags);
 
-    const parentNode = input.parentNode;
-    const span = document.createElement("span");
+    var parentNode = input.parentNode;
+    var span = document.createElement('span');
 
-    span.className = "formFieldError";
+    span.className = 'formFieldError';
     span.insertAdjacentHTML('afterbegin', error);
 
     parentNode.insertBefore(span, parentNode.children[1]);
 }
 
 function removeRadioError(input) {
-    const parentNode = input.parentElement.parentElement.parentElement;
+    var parentNode = input.parentElement.parentElement.parentElement;
 
     if (parentNode.children.length > 2) {
         parentNode.removeChild(parentNode.children[1]);
@@ -91,19 +91,19 @@ function removeRadioError(input) {
 function addRadioError(input, error) {
     removeRadioError(input);
 
-    const parentNode = input.parentElement.parentElement.parentElement;
-    const span = document.createElement("span");
+    var parentNode = input.parentElement.parentElement.parentElement;
+    var span = document.createElement('span');
 
-    span.className = "formFieldError";
+    span.className = 'formFieldError';
     span.insertAdjacentHTML('afterbegin', error);
 
     parentNode.insertBefore(span, parentNode.children[1]);
 }
 
 function scrollToError() {
-    const errors = document.getElementsByClassName('formFieldError');
+    var errors = document.getElementsByClassName('formFieldError');
 
-    let input = errors[0].nextElementSibling;
+    var input = errors[0].nextElementSibling;
     while (input.tagName.toLowerCase() !== 'input' && input.tagName.toLowerCase() !== 'textarea' && input.tagName.toLowerCase() !== 'select') {
         input = input.nextElementSibling;
     }
@@ -114,7 +114,7 @@ function scrollToError() {
 
 /* CONTROLLI E GESTIONE DELLE DATE */
 function addMonths(date, months) {
-    const oldDate = date.getDate();
+    var oldDate = date.getDate();
 
     date.setMonth(date.getMonth() + +months);
     if (date.getDate() !== oldDate) {
@@ -140,22 +140,22 @@ function isDateValid(day, month, year) {
 }
 
 function getDateFromString(date) {
-    const dateArray = date.split('-');
+    var dateArray = date.trim().split('-');
     return new Date(parseInt(dateArray[2]), parseInt(dateArray[1]) - 1, parseInt(dateArray[0]));
 }
 
 function checkDateFormat(date) {
-    const pattern = new RegExp('^\\d{2}-\\d{2}-\\d{4}$');
-    return pattern.test(date);
+    var pattern = new RegExp('^\\d{2}-\\d{2}-\\d{4}$');
+    return pattern.test(date.trim());
 }
 
 function checkDateValidity(date) {
-    const dateArray = date.split('-');
+    var dateArray = date.trim().split('-');
     return isDateValid(parseInt(dateArray[0]), parseInt(dateArray[1]), parseInt(dateArray[2]));
 }
 
 function checkDate(input) {
-    const date = input.value;
+    var date = input.value.trim();
 
     if (date.length === 0) {
         addError(input, 'Non è possibile inserire una data vuota', 2);
@@ -174,8 +174,8 @@ function checkDate(input) {
 
 /* CONTROLLI E GESTIONE DELLE OPERE */
 function checkArtworkAuthor(input) {
-    const author = input.value;
-    const pattern = new RegExp('^[A-zÀ-ú\'\-`.\\s]+$');
+    var author = input.value.trim();
+    var pattern = new RegExp('^[A-zÀ-ú\'\-`.\\s]+$');
 
     if (author.length === 0) {
         addError(input, 'Non è possibile inserire un autore vuoto', 2);
@@ -196,8 +196,8 @@ function checkArtworkAuthor(input) {
 }
 
 function checkArtworkTitle(input) {
-    const title = input.value;
-    const pattern = new RegExp('^[A-zÀ-ú0-9\'`!.,:(\-)\\s]+$');
+    var title = input.value.trim();
+    var pattern = new RegExp('^[A-zÀ-ú0-9\'`!.,:(\-)\\s]+$');
 
     if (title.length === 0) {
         addError(input, 'Non è possibile inserire un titolo vuoto', 2);
@@ -218,7 +218,7 @@ function checkArtworkTitle(input) {
 }
 
 function checkArtworkDescription(input) {
-    const description = input.value;
+    var description = input.value.trim();
 
     if (description.length === 0) {
         addError(input, 'Non è possibile inserire una descrizione vuota', 2);
@@ -236,8 +236,8 @@ function checkArtworkDescription(input) {
 }
 
 function checkArtworkDate(input) {
-    const years = input.value;
-    const pattern = new RegExp('^\\d{2}$');
+    var years = input.value.trim();
+    var pattern = new RegExp('^\\d{2}$');
 
     if (years.length === 0) {
         addError(input, 'Non è possibile inserire una datazione vuota', 2);
@@ -258,7 +258,7 @@ function checkArtworkDate(input) {
 }
 
 function checkArtworkStyle(input) {
-    const style = input.options[input.selectedIndex].value;
+    var style = input.options[input.selectedIndex].value.trim();
 
     if (style !== 'Sculture' && style !== 'Dipinti') {
         addError(input, 'Lo stile dell\'opera deve essere Scultura o Dipinto', 2);
@@ -270,8 +270,8 @@ function checkArtworkStyle(input) {
 }
 
 function checkArtworkTechnique(input) {
-    const technique = input.value;
-    const pattern = new RegExp('^[A-zÀ-ú\'\-`\\s]+$');
+    var technique = input.value.trim();
+    var pattern = new RegExp('^[A-zÀ-ú\'\-`\\s]+$');
 
     if (technique.length === 0) {
         addError(input, 'Non è possibile inserire una tecnica vuota', 2);
@@ -292,8 +292,8 @@ function checkArtworkTechnique(input) {
 }
 
 function checkArtworkMaterial(input) {
-    const material = input.value;
-    const pattern = new RegExp('^[A-zÀ-ú\'\-`\\s]+$');
+    var material = input.value.trim();
+    var pattern = new RegExp('^[A-zÀ-ú\'\-`\\s]+$');
 
     if (material.length === 0) {
         addError(input, 'Non è possibile inserire un materiale vuoto', 2);
@@ -314,8 +314,8 @@ function checkArtworkMaterial(input) {
 }
 
 function checkArtworkDimensions(input) {
-    const dimensions = input.value;
-    const pattern = new RegExp('^([1-9][0-9]{0,2}|1000)x([1-9][0-9]{0,2}|1000)$');
+    var dimensions = input.value.trim();
+    var pattern = new RegExp('^([1-9][0-9]{0,2}|1000)x([1-9][0-9]{0,2}|1000)$');
 
     if (dimensions.length === 0) {
         addError(input, 'Non è possibile inserire una dimensione vuota', 3);
@@ -330,8 +330,8 @@ function checkArtworkDimensions(input) {
 }
 
 function checkArtworkLoan(inputYes, inputNo) {
-    const yes = inputYes.checked;
-    const no = inputNo.checked;
+    var yes = inputYes.checked;
+    var no = inputNo.checked;
 
     if (!yes && !no) {
         addError(inputNo, 'Il prestito deve essere scelto tra "Si" e "No"', 2);
@@ -342,33 +342,78 @@ function checkArtworkLoan(inputYes, inputNo) {
     }
 }
 
-// TODO: trovare alternativa per IE9
+function checkArtworkImage(input) {
+    var tags = 2;
 
-function checkArtworkImage(input, isInsert) {
-    const tags = isInsert ? 2 : 3;
+    for (var i = 0; i < input.parentElement.children.length; ++i) {
+        if (input.parentElement.children[i].tagName.toLowerCase() === 'img') {
+            tags = 3;
+        }
+    }
 
-    if (input.files.length === 0) {
-        addError(input, 'È necessario selezionare un\'immagine', tags);
-        return false;
-    } else if (input.files.length > 1) {
-        addError(input, 'È necessario selezionare una ed una sola immagine', tags);
-        return false;
-    } else if (input.files[0].size > 512000) {
-        addError(input, 'L\'immagine caricata è una dimensione troppo elevata. La dimensione massima accettata è 500<abbr title="Kilo Bytes" xml:lang="en">KB</abbr>', tags);
-        return false;
-    } else if (input.files[0].type !== 'image/jpeg' && input.files[0].type !== 'image/png') {
-        addError(input, 'L\'estensione dell\'immagine non è supportata. L\'estensioni consentite sono .<abbr title="Joint Photographic Experts Group" xml:lang="en">jpeg</abbr>, .<abbr title="Joint Photographic Group" xml:lang="en">jpg</abbr>, .<abbr title="Portable Network Graphics" xml:lang="en">png</abbr>', tags);
-        return false;
+    if (window.FileList) {
+        if (input.files.length === 0) {
+            addError(input, 'È necessario selezionare un\'immagine', tags);
+            return false;
+        } else if (input.files.length > 1) {
+            addError(input, 'È necessario selezionare una ed una sola immagine', tags);
+            return false;
+        } else if (input.files[0].size > 512000) {
+            addError(input, 'L\'immagine caricata è una dimensione troppo elevata. La dimensione massima accettata è 500<abbr title="Kilo Bytes" xml:lang="en">KB</abbr>', tags);
+            return false;
+        } else if (input.files[0].type !== 'image/jpeg' && input.files[0].type !== 'image/png') {
+            addError(input, 'L\'estensione dell\'immagine non è supportata. L\'estensioni consentite sono .<abbr title="Joint Photographic Experts Group" xml:lang="en">jpeg</abbr>, .<abbr title="Joint Photographic Group" xml:lang="en">jpg</abbr>, .<abbr title="Portable Network Graphics" xml:lang="en">png</abbr>', tags);
+            return false;
+        } else {
+            removeError(input, tags);
+            return true;
+        }
     } else {
-        removeError(input, tags);
-        return true;
+        // TODO: alternativa per IE9
+    }
+}
+
+function checkInputArtworkImage(event) {
+    var input = document.getElementById('imageUpload');
+    var checkImage = checkArtworkImage(input);
+
+    if (checkImage && window.FileReader) {
+        if (!document.getElementById('uploadedImage')) {
+            var parentNode = input.parentNode;
+            var img = document.createElement('img');
+
+            var name = document.getElementById('title').value.trim();
+
+            img.setAttribute('id', 'uploadedImage');
+            img.setAttribute('class', ''); // FIXME: aggiungere la giusta classe
+            img.setAttribute('alt', 'Immagine inserita per l\'opera' + name)
+
+            parentNode.append(img);
+        }
+
+        var target = event.target || window.event.srcElement;
+        var fileReader = new FileReader();
+
+        fileReader.onload = function () {
+            document.getElementById('uploadedImage').src = fileReader.result;
+        }
+        fileReader.readAsDataURL(target.files[0]);
+    }
+
+    return checkImage;
+}
+
+function resetImage() {
+    var image = document.getElementById('uploadedImage');
+    if (image) {
+        image.remove();
     }
 }
 
 /* CONTROLLI E GESTIONE DEGLI EVENTI */
 function checkEventTitle(input) {
-    const title = input.value;
-    const pattern = new RegExp('^[A-zÀ-ú0-9\'`!.,\-:()\\s]+$');
+    var title = input.value.trim();
+    var pattern = new RegExp('^[A-zÀ-ú0-9\'`!.,\-:()\\s]+$');
     
     if (title.length === 0) {
         addError(input, 'Non è possibile inserire un titolo vuoto', 2);
@@ -389,7 +434,7 @@ function checkEventTitle(input) {
 }
 
 function checkEventDescription(input) {
-    const description = input.value;
+    var description = input.value.trim();
     
     if (description.length === 0) {
         addError(input, 'Non è possibile inserire una descrizione vuota', 2);
@@ -407,12 +452,12 @@ function checkEventDescription(input) {
 }
 
 function checkBeginDate(beginDateInput) {
-    const beginDate = getDateFromString(beginDateInput.value);
+    var beginDate = getDateFromString(beginDateInput.value.trim());
 
-    const lowerBound = new Date();
+    var lowerBound = new Date();
     lowerBound.setHours(0,0,0,0);
 
-    const upperBound = new Date(lowerBound.getFullYear() + 3, lowerBound.getMonth(), lowerBound.getDay());
+    var upperBound = new Date(lowerBound.getFullYear() + 3, lowerBound.getMonth(), lowerBound.getDay());
 
     if (beginDate < lowerBound) {
         addError(beginDateInput, 'Non è possibile inserire una data di inizio evento precedente alla data odierna', 2);
@@ -427,10 +472,10 @@ function checkBeginDate(beginDateInput) {
 }
 
 function checkDateComparison(beginDateInput, endDateInput) {
-    const beginDate = getDateFromString(beginDateInput.value);
-    const endDate = getDateFromString(endDateInput.value);
+    var beginDate = getDateFromString(beginDateInput.value.trim());
+    var endDate = getDateFromString(endDateInput.value.trim());
 
-    let durationBound = getDateFromString(beginDateInput.value);
+    var durationBound = getDateFromString(beginDateInput.value.trim());
     durationBound = addMonths(durationBound, 6);
 
     if (beginDate > endDate) {
@@ -446,7 +491,7 @@ function checkDateComparison(beginDateInput, endDateInput) {
 }
 
 function checkEventType(input) {
-    const type = input.options[input.selectedIndex].value;
+    var type = input.options[input.selectedIndex].value.trim();
     
     if (type !== 'Mostre' && type !== 'Conferenze') {
         addError(input, 'La tipologia dell\'evento deve essere Mostra o Conferenza', 2);
@@ -458,8 +503,8 @@ function checkEventType(input) {
 }
 
 function checkEventManager(input) {
-    const manager = input.value;
-    const pattern = new RegExp('^[A-zÀ-ú0-9\'`.:(\-)\\s]+$');
+    var manager = input.value.trim();
+    var pattern = new RegExp('^[A-zÀ-ú0-9\'`.:(\-)\\s]+$');
 
     if (manager.length === 0) {
         addError(input, 'Non è possibile inserire un organizzatore vuoto', 2);
@@ -481,8 +526,8 @@ function checkEventManager(input) {
 
 /* CONTROLLI E GESTIONE DELLE RECENSIONI */
 function checkReviewTitle(input) {
-    const title = input.value;
-    const pattern = new RegExp('^[A-zÀ-ú0-9\'`!.,\-:()\\s]+$');
+    var title = input.value.trim();
+    var pattern = new RegExp('^[A-zÀ-ú0-9\'`!.,\-:()\\s]+$');
 
     if (title.length === 0) {
         addError(input, 'Non è possibile inserire una recensione con un oggetto vuoto', 2);
@@ -503,7 +548,7 @@ function checkReviewTitle(input) {
 }
 
 function checkReviewContent(input) {
-    const content = input.value;
+    var content = input.value.trim();
 
     if (content.length === 0) {
         addError(input, 'Non è possibile inserire una recensione con un contenuto vuoto', 2);
@@ -522,8 +567,8 @@ function checkReviewContent(input) {
 
 /* CONTROLLI E GESTIONE DEGLI UTENTI */
 function checkUserName(input) {
-    const name = input.value;
-    const pattern = new RegExp('^[A-zÀ-ú\'\-`.\\s]+$');
+    var name = input.value.trim();
+    var pattern = new RegExp('^[A-zÀ-ú\'\-`.\\s]+$');
     
     if (name.length === 0) {
         addError(input, 'Non è possibile inserire un nome vuoto', 2);
@@ -544,8 +589,8 @@ function checkUserName(input) {
 }
 
 function checkUserSurname(input) {
-    const surname = input.value;
-    const pattern = new RegExp('^[A-zÀ-ú\'\-`.\\s]+$');
+    var surname = input.value.trim();
+    var pattern = new RegExp('^[A-zÀ-ú\'\-`.\\s]+$');
 
     if (surname.length === 0) {
         addError(input, 'Non è possibile inserire un cognome vuoto', 2);
@@ -566,7 +611,7 @@ function checkUserSurname(input) {
 }
 
 function checkUserDate(input) {
-    const date = input.value;
+    var date = input.value.trim();
 
     if (date.length === 0) {
         addError(input, 'Non è possibile inserire una data di nascita vuota', 2);
@@ -578,9 +623,9 @@ function checkUserDate(input) {
         addError(input, 'La data di nascita inserita non è valida', 2);
         return false;
     } else {
-        const birthDate = getDateFromString(date);
-        const lowerBound = new Date(parseInt('1900'), parseInt('00'), parseInt('01'));
-        const upperBound = new Date(parseInt('2006'), parseInt('11'), parseInt('31'));
+        var birthDate = getDateFromString(date);
+        var lowerBound = new Date(parseInt('1900'), parseInt('00'), parseInt('01'));
+        var upperBound = new Date(parseInt('2006'), parseInt('11'), parseInt('31'));
 
         if (birthDate < lowerBound) {
             addError(input, 'Non è possibile inserire una data di nascita precedente al 01-01-1900', 2);
@@ -596,9 +641,9 @@ function checkUserDate(input) {
 }
 
 function checkUserSex(inputSexMale, inputSexFemale, inputSexOther) {
-    const male = inputSexMale.checked;
-    const female = inputSexFemale.checked;
-    const other = inputSexOther.checked;
+    var male = inputSexMale.checked;
+    var female = inputSexFemale.checked;
+    var other = inputSexOther.checked;
 
     if (!male && !female && !other) {
         addRadioError(inputSexOther, 'Il sesso deve essere scelto tra "Maschile", "Femminile" e "Preferisco non dichiarare"');
@@ -610,8 +655,8 @@ function checkUserSex(inputSexMale, inputSexFemale, inputSexOther) {
 }
 
 function checkUserMail(input) {
-    const mail = input.value;
-    const pattern = new RegExp('^[a-zA-Z0-9.!#$%&\'*+^_`{|}~\-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$');
+    var mail = input.value.trim();
+    var pattern = new RegExp('^[a-zA-Z0-9.!#$%&\'*+^_`{|}~\-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$');
 
     if (mail.length === 0) {
         addError(input, 'Non è possibile inserire un indirizzo <span xml:lang="en">email</span> vuoto', 2);
@@ -629,7 +674,7 @@ function checkUserMail(input) {
 }
 
 function checkUserUsername(input) {
-    const username = input.value;
+    var username = input.value.trim();
     
     if (username.length === 0) {
         addError(input, 'Non è possibile inserire uno <span xml:lang="en">username</span> vuoto', 2);
@@ -647,8 +692,8 @@ function checkUserUsername(input) {
 }
 
 function checkUserOldPassword(input, tags) {
-    const password = input.value;
-    const pattern = new RegExp('^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!#$%&\'*+^_`\-{|}~@]).*$');
+    var password = input.value.trim();
+    var pattern = new RegExp('^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!#$%&\'*+^_`\-{|}~@]).*$');
 
     if (password.length === 0) {
         addError(input, 'Non è possibile che la <span xml:lang="en">password</span> corrente sia vuota', tags);
@@ -666,8 +711,8 @@ function checkUserOldPassword(input, tags) {
 }
 
 function checkUserPassword(input, tags) {
-    const password = input.value;
-    const pattern = new RegExp('^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!#$%&\'*+^_`\-{|}~@]).*$');
+    var password = input.value.trim();
+    var pattern = new RegExp('^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!#$%&\'*+^_`\-{|}~@]).*$');
     
     if (password.length === 0) {
         addError(input, 'Non è possibile inserire una <span xml:lang="en">password</span> vuota', tags);
@@ -685,7 +730,7 @@ function checkUserPassword(input, tags) {
 }
 
 function checkSamePassword(inputNewPassword, inputConfirmPassword) {
-    if (inputNewPassword.value !== inputConfirmPassword.value) {
+    if (inputNewPassword.value.trim() !== inputConfirmPassword.value.trim()) {
         addError(inputConfirmPassword, 'Le <span xml:lang="it">password</span> inserite non sono uguali', 2);
         return false;
     } else {
@@ -695,7 +740,7 @@ function checkSamePassword(inputNewPassword, inputConfirmPassword) {
 }
 
 function checkSameOldPassword(inputOldPassword, inputNewPassword, tags) {
-    if (inputOldPassword.value === inputNewPassword.value) {
+    if (inputOldPassword.value.trim() === inputNewPassword.value.trim()) {
         addError(inputNewPassword, 'La nuova <span xml:lang="it">password</span> non può essere uguale a quella corrente', tags);
         return false;
     } else {
@@ -706,28 +751,32 @@ function checkSameOldPassword(inputOldPassword, inputNewPassword, tags) {
 
 /* CONTROLLI E GESTIONE DEI FORM */
 function artworkFormValidation(isInsert) {
-    const author = document.getElementById('author');
-    const title = document.getElementById('title');
-    const description = document.getElementById('operaDescriptionArea');
-    const years = document.getElementById('years');
-    const style = document.getElementById('style');
-    const technique = document.getElementById('technique');
-    const material = document.getElementById('material');
-    const dimensions = document.getElementById('dimensions');
-    const loanYes = document.getElementById('loanYes');
-    const loanNo = document.getElementById('loanNo');
-    const image = document.getElementById('imageUpload');
+    var author = document.getElementById('author');
+    var title = document.getElementById('title');
+    var description = document.getElementById('operaDescriptionArea');
+    var years = document.getElementById('years');
+    var style = document.getElementById('style');
+    var technique = document.getElementById('technique');
+    var material = document.getElementById('material');
+    var dimensions = document.getElementById('dimensions');
+    var loanYes = document.getElementById('loanYes');
+    var loanNo = document.getElementById('loanNo');
+    var image = document.getElementById('imageUpload');
 
-    const authorResult = checkArtworkAuthor(author);
-    const titleResult = checkArtworkTitle(title);
-    const descriptionResult = checkArtworkDescription(description);
-    const yearsResult = checkArtworkDate(years);
-    const styleResult = checkArtworkStyle(style);
-    const techniqueResult = checkArtworkTechnique(technique);
-    const materialResult = checkArtworkMaterial(material);
-    const dimensionsResult = checkArtworkDimensions(dimensions);
-    const loanResult = checkArtworkLoan(loanYes, loanNo);
-    const imageResult = checkArtworkImage(image, isInsert);
+    var authorResult = checkArtworkAuthor(author);
+    var titleResult = checkArtworkTitle(title);
+    var descriptionResult = checkArtworkDescription(description);
+    var yearsResult = checkArtworkDate(years);
+    var styleResult = checkArtworkStyle(style);
+    var techniqueResult = checkArtworkTechnique(technique);
+    var materialResult = checkArtworkMaterial(material);
+    var dimensionsResult = checkArtworkDimensions(dimensions);
+    var loanResult = checkArtworkLoan(loanYes, loanNo);
+
+    var imageResult = true;
+    if (isInsert) {
+        imageResult = checkArtworkImage(image);
+    }
 
     scrollToError();
 
@@ -735,25 +784,25 @@ function artworkFormValidation(isInsert) {
 }
 
 function eventFormValidation() {
-    const title = document.getElementById('title');
-    const description = document.getElementById('eventDescriptionArea');
-    const beginDate = document.getElementById('beginDate');
-    const endDate = document.getElementById('endDate');
-    const type = document.getElementById('type');
-    const manager = document.getElementById('manager');
+    var title = document.getElementById('title');
+    var description = document.getElementById('eventDescriptionArea');
+    var beginDate = document.getElementById('beginDate');
+    var endDate = document.getElementById('endDate');
+    var type = document.getElementById('type');
+    var manager = document.getElementById('manager');
 
-    const titleResult = checkEventTitle(title);
-    const descriptionResult = checkEventDescription(description);
-    let beginDateResult = checkDate(beginDate);
-    const endDateResult = checkDate(endDate);
-    const typeResult = checkEventType(type);
-    const managerResult = checkEventManager(manager);
+    var titleResult = checkEventTitle(title);
+    var descriptionResult = checkEventDescription(description);
+    var beginDateResult = checkDate(beginDate);
+    var endDateResult = checkDate(endDate);
+    var typeResult = checkEventType(type);
+    var managerResult = checkEventManager(manager);
 
     if (beginDateResult) {
         beginDateResult = checkBeginDate(beginDate);
     }
 
-    let dateComparisonResult = true;
+    var dateComparisonResult = true;
     if (beginDateResult && endDateResult) {
         dateComparisonResult = checkDateComparison(beginDate, endDate);
     }
@@ -764,11 +813,11 @@ function eventFormValidation() {
 }
 
 function reviewFormValidation() {
-    const title = document.getElementById('title');
-    const description = document.getElementById('reviewDescriptionArea');
+    var title = document.getElementById('title');
+    var description = document.getElementById('reviewDescriptionArea');
 
-    const titleResult = checkReviewTitle(title);
-    const contentResult = checkReviewContent(description);
+    var titleResult = checkReviewTitle(title);
+    var contentResult = checkReviewContent(description);
 
     scrollToError();
 
@@ -776,30 +825,30 @@ function reviewFormValidation() {
 }
 
 function userFormValidation() {
-    const name = document.getElementById('name');
-    const surname = document.getElementById('surname');
-    const date = document.getElementById('date');
-    const sexM = document.getElementById('sexM');
-    const sexF = document.getElementById('sexF');
-    const sexA = document.getElementById('sexA');
-    const email = document.getElementById('email');
-    const oldPassword = document.getElementById('oldPassword');
-    const newPassword = document.getElementById('newPassword');
-    const confirmPassword = document.getElementById('repetePassword');
+    var name = document.getElementById('name');
+    var surname = document.getElementById('surname');
+    var date = document.getElementById('date');
+    var sexM = document.getElementById('sexM');
+    var sexF = document.getElementById('sexF');
+    var sexA = document.getElementById('sexA');
+    var email = document.getElementById('email');
+    var oldPassword = document.getElementById('oldPassword');
+    var newPassword = document.getElementById('newPassword');
+    var confirmPassword = document.getElementById('repetePassword');
 
-    const nameResult = checkUserName(name);
-    const surnameResult = checkUserSurname(surname);
-    const dateResult = checkUserDate(date);
-    const sexResult = checkUserSex(sexM, sexF, sexA);
-    const emailResult = checkUserMail(email);
+    var nameResult = checkUserName(name);
+    var surnameResult = checkUserSurname(surname);
+    var dateResult = checkUserDate(date);
+    var sexResult = checkUserSex(sexM, sexF, sexA);
+    var emailResult = checkUserMail(email);
 
-    let oldPasswordResult = true;
-    let newPasswordResult = true;
-    let confirmPasswordResult = true;
-    let samePasswordResult = true;
-    let sameOldPasswordResult = true;
+    var oldPasswordResult = true;
+    var newPasswordResult = true;
+    var confirmPasswordResult = true;
+    var samePasswordResult = true;
+    var sameOldPasswordResult = true;
 
-    if (oldPassword.value !== '' || newPassword.value !== '' || confirmPassword.value !== '') {
+    if (oldPassword.value.trim() !== '' || newPassword.value.trim() !== '' || confirmPassword.value.trim() !== '') {
         oldPasswordResult = checkUserOldPassword(oldPassword, 2);
         newPasswordResult = checkUserPassword(newPassword, 3);
         confirmPasswordResult = checkUserPassword(confirmPassword, 2);
@@ -819,27 +868,27 @@ function userFormValidation() {
 }
 
 function registrationFormValidation() {
-    const name = document.getElementById('name');
-    const surname = document.getElementById('surname');
-    const date = document.getElementById('date');
-    const sexM = document.getElementById('sexM');
-    const sexF = document.getElementById('sexF');
-    const sexA = document.getElementById('sexA');
-    const email = document.getElementById('email');
-    const username = document.getElementById('username');
-    const password = document.getElementById('password');
-    const confirmPassword = document.getElementById('repetePassword');
+    var name = document.getElementById('name');
+    var surname = document.getElementById('surname');
+    var date = document.getElementById('date');
+    var sexM = document.getElementById('sexM');
+    var sexF = document.getElementById('sexF');
+    var sexA = document.getElementById('sexA');
+    var email = document.getElementById('email');
+    var username = document.getElementById('username');
+    var password = document.getElementById('password');
+    var confirmPassword = document.getElementById('repetePassword');
 
-    const nameResult = checkUserName(name);
-    const surnameResult = checkUserSurname(surname);
-    const dateResult = checkUserDate(date);
-    const sexResult = checkUserSex(sexM, sexF, sexA);
-    const emailResult = checkUserMail(email);
-    const usernameResult = checkUserUsername(username);
-    const passwordResult = checkUserPassword(password, 3);
-    const confirmPasswordResult = checkUserPassword(confirmPassword, 2);
+    var nameResult = checkUserName(name);
+    var surnameResult = checkUserSurname(surname);
+    var dateResult = checkUserDate(date);
+    var sexResult = checkUserSex(sexM, sexF, sexA);
+    var emailResult = checkUserMail(email);
+    var usernameResult = checkUserUsername(username);
+    var passwordResult = checkUserPassword(password, 3);
+    var confirmPasswordResult = checkUserPassword(confirmPassword, 2);
 
-    let samePasswordResult = true;
+    var samePasswordResult = true;
     if (passwordResult && confirmPasswordResult) {
         samePasswordResult = checkSamePassword(password, confirmPassword);
     }
