@@ -9,7 +9,7 @@
 \contentsline {subsubsection}{\numberline {2.2.3}Utente amministratore}{4}{subsubsection.2.2.3}% 
 \contentsline {subsection}{\numberline {2.3}Casi d'uso}{4}{subsection.2.3}% 
 \contentsline {subsubsection}{\numberline {2.3.1}Utente generico}{4}{subsubsection.2.3.1}% 
-\contentsline {paragraph}{\numberline {2.3.1.1}Visualizzazione \textit {Home page}}{6}{paragraph.2.3.1.1}% 
+\contentsline {paragraph}{\numberline {2.3.1.1}Visualizzazione \textit {Home page}}{5}{paragraph.2.3.1.1}% 
 \contentsline {paragraph}{\numberline {2.3.1.2}Interazione coi link del \textit {breadcrumb}}{6}{paragraph.2.3.1.2}% 
 \contentsline {paragraph}{\numberline {2.3.1.3}Visualizzazione della pagina \textit {Opere}}{6}{paragraph.2.3.1.3}% 
 \contentsline {paragraph}{\numberline {2.3.1.4}Interazione con la pagina \textit {Opere}}{6}{paragraph.2.3.1.4}% 
@@ -34,7 +34,7 @@
 \contentsline {paragraph}{\numberline {2.3.2.4}Visualizzazione delle proprie recensioni dalla pagina \textit {Gestione recensioni}}{7}{paragraph.2.3.2.4}% 
 \contentsline {paragraph}{\numberline {2.3.2.5}Modifica di una recensione dalla pagina \textit {Gestione recensioni}}{7}{paragraph.2.3.2.5}% 
 \contentsline {paragraph}{\numberline {2.3.2.6}Visualizzazione della pagina \textit {Recensione modificata}}{7}{paragraph.2.3.2.6}% 
-\contentsline {paragraph}{\numberline {2.3.2.7}RImozione di una recensione dalla pagina \textit {Gestione recensioni}}{7}{paragraph.2.3.2.7}% 
+\contentsline {paragraph}{\numberline {2.3.2.7}Rimozione di una recensione dalla pagina \textit {Gestione recensioni}}{7}{paragraph.2.3.2.7}% 
 \contentsline {paragraph}{\numberline {2.3.2.8}Modifica dei propri dati utente dalla pagina \textit {Modifica dati utente}}{7}{paragraph.2.3.2.8}% 
 \contentsline {paragraph}{\numberline {2.3.2.9}Visualizzazione della pagina \textit {Dati utente modificati}}{7}{paragraph.2.3.2.9}% 
 \contentsline {paragraph}{\numberline {2.3.2.10}Logout dal proprio account}{7}{paragraph.2.3.2.10}% 

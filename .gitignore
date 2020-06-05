@@ -11,17 +11,8 @@ package-lock.json
 node_modules
 
 # File generati dalla compilazione LaTeX
-.log
-.aux
-.toc
-.out
-.synctex.gz
 *.log
-*.gz
-*.log
-*.gz
 *.aux
-*.log
+*.toc
 *.out
-*.log
-*.gz
+*.syntex.gz
