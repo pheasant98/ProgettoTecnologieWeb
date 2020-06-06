@@ -89,8 +89,8 @@ class EventsController {
             $message .= '[Non è possibile inserire un organizzatore vuoto]';
         } elseif (strlen($manager) < 2) {
             $message .= '[Non è possibile inserire un organizzatore più corto di 2 caratteri]';
-        } elseif (strlen($manager) > 32) {
-            $message .= '[Non è possibile inserire un organizzatore più lungo di 32 caratteri]';
+        } elseif (strlen($manager) > 64) {
+            $message .= '[Non è possibile inserire un organizzatore più lungo di 64 caratteri]';
         } elseif (!preg_match('/^[A-zÀ-ú0-9\'`.:(\-)\s]+$/', $manager)) {
             $message .= '[L\'organizzatore dell\'evento contiene caratteri non consentiti. Quelli possibili sono lettere, anche accentate, numeri, spazi e i seguenti caratteri speciali \' ` . : - ()]';
         }

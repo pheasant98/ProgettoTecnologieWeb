@@ -41,8 +41,8 @@ class UsersController {
             $message .= '[Non è possibile inserire un nome vuoto]';
         } elseif (strlen($name) < 2) {
             $message .= '[Non è possibile inserire un nome più corto di 2 caratteri]';
-        } elseif (strlen($name) > 32) {
-            $message .= '[Non è possibile inserire un nome più lungo di 32 caratteri]';
+        } elseif (strlen($name) > 64) {
+            $message .= '[Non è possibile inserire un nome più lungo di 64 caratteri]';
         } elseif (!preg_match('/^[A-zÀ-ú\'\-`.\s]+$/', $name)) {
             $message .= '[Il nome inserito contiene dei caratteri non consentiti. Quelli possibili sono lettere, anche accentate, spazi e i seguenti caratteri speciali \' \ - ` .]';
         }
@@ -51,8 +51,8 @@ class UsersController {
             $message .= '[Non è possibile inserire un cognome vuoto]';
         } elseif (strlen($surname) < 2) {
             $message .= '[Non è possibile inserire un cognome più corto di 2 caratteri]';
-        } elseif (strlen($surname) > 32) {
-            $message .= '[Non è possibile inserire un cognome più lungo di 32 caratteri]';
+        } elseif (strlen($surname) > 64) {
+            $message .= '[Non è possibile inserire un cognome più lungo di 64 caratteri]';
         } elseif (!preg_match('/^[A-zÀ-ú\'\-`.\s]+$/', $surname)) {
             $message .= '[Il cognome inserito contiene dei caratteri non consentiti, è possibile inserire solamente lettere, possibilmente accentate, spazi e i seguenti caratteri speciali \' \ - ` .]';
         }
