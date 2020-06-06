@@ -50,11 +50,6 @@ a:visited {
   box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.1), 0 10px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
-.headerTitle,
-.hideContent {
-  display: none;
-}
-
 /* Regole per le barre di ricerca delle pagine */
 #searchBox {
   border: 1px solid #000;
@@ -98,6 +93,7 @@ a:visited {
 #logoImage {
   float: left;
   background-image: url('../images/logo.png');
+  color:white;
   text-indent: 100%;
   background-position: center;
   height: 3.1em;
@@ -114,7 +110,8 @@ a:visited {
   height: 13em;
 }
 
-.significantImage, .previewOpera {
+.significantImage,
+.previewOpera {
   text-align: center;
   height: 20em;
   width: 60%;
@@ -138,14 +135,8 @@ a:visited {
   padding: 0.5em;
 }
 
-/* Regole per i breadcrumbs delle pagine */
-#breadcrumbs.hide {
-  display: none;
-}
-
 /* Regole per i menu delle pagine */
 
-/* Pulsante di login */
 .userButton a {
   display: inline-block;
 }
@@ -188,7 +179,6 @@ a:visited {
   font-size: 1.5em;
   margin: 0;
   padding: 0;
-  border-radius: 0;
 }
 
 /* Toglie i pallini dal menu */
@@ -198,7 +188,6 @@ a:visited {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
 }
-
 
 #menu li:hover {
   background-color: #fff;
@@ -213,10 +202,6 @@ a:visited {
   margin-top: 1em;
   margin-bottom: 1em;
   padding: 0.5em 1.5em;
-}
-
-#content.hide {
-  display: none;
 }
 
 #skipMenu:focus {
@@ -327,7 +312,8 @@ a:visited {
   margin-bottom: 1em;
 }
 
-.hideFieldset, .hideRight {
+.hideFieldset,
+.hideRight {
   border: none;
   margin-bottom: 0;
 }
@@ -517,6 +503,10 @@ a:visited {
 
   #menu {
     display: block;
+  }
+
+  #menu.show{
+    font-size: 1em;
   }
 
   #menu li {

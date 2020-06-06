@@ -7,8 +7,8 @@ function touch() {
     var breadcrumbs = document.getElementById('breadcrumbs');
 
     menus.className === 'show' ? menus.removeAttribute('class') : menus.className = 'show';
-    content.className === 'hide' ? content.removeAttribute('class') : content.className = 'hide';
-    breadcrumbs.className === 'hide' ? breadcrumbs.removeAttribute('class') : breadcrumbs.className = 'hide';
+    /*content.className === 'hide' ? content.removeAttribute('class') : content.className = 'hide';
+    breadcrumbs.className === 'hide' ? breadcrumbs.removeAttribute('class') : breadcrumbs.className = 'hide';*/
 }
 
 function menu() {
