@@ -103,13 +103,18 @@ function addRadioError(input, error) {
 function scrollToError() {
     var errors = document.getElementsByClassName('formFieldError');
 
-    var input = errors[0].nextElementSibling;
+    var i = 0;
+    while (errors[i].parentElement.className === 'hideContent') {
+        i++;
+    }
+
+    var input = errors[i].nextElementSibling;
     while (input.tagName.toLowerCase() !== 'input' && input.tagName.toLowerCase() !== 'textarea' && input.tagName.toLowerCase() !== 'select') {
         input = input.nextElementSibling;
     }
 
     input.focus();
-    errors[0].scrollIntoView({behavior: 'smooth'});
+    errors[i].scrollIntoView({behavior: 'smooth'});
 }
 
 /* CONTROLLI E GESTIONE DELLE DATE */
@@ -237,7 +242,7 @@ function checkArtworkDescription(input) {
 
 function checkArtworkDate(input) {
     var years = input.value.trim();
-    var pattern = new RegExp('^\\d{2}$');
+    var pattern = new RegExp('^\\d{4}$');
 
     if (years.length === 0) {
         addError(input, 'Non è possibile inserire una datazione vuota', 2);
@@ -246,7 +251,7 @@ function checkArtworkDate(input) {
         addError(input, 'La datazione dell\'opera deve essere un numero intero', 2);
         return false;
     } else if (!pattern.test(years)) {
-        addError(input, 'La datazione deve contenere solo l\'anno', 2);
+        addError(input, 'La datazione non rispetta il formato richiesto', 2);
         return false;
     } else if (parseInt(years) < 1400 || parseInt(years) > parseInt((new Date()).getFullYear().toString())) {
         addError(input, 'La datazione dell\'opera deve essere compresa tra il 1400 e l\'anno corrente', 2);
@@ -315,7 +320,7 @@ function checkArtworkMaterial(input) {
 
 function checkArtworkDimensions(input) {
     var dimensions = input.value.trim();
-    var pattern = new RegExp('^([1-9][0-9]{0,2}|1000)x([1-9][0-9]{0,2}|1000)$');
+    var pattern = new RegExp('^([1-9][0-9]{0,3})x([1-9][0-9]{0,3})$');
 
     if (dimensions.length === 0) {
         addError(input, 'Non è possibile inserire una dimensione vuota', 3);
@@ -334,10 +339,10 @@ function checkArtworkLoan(inputYes, inputNo) {
     var no = inputNo.checked;
 
     if (!yes && !no) {
-        addError(inputNo, 'Il prestito deve essere scelto tra "Si" e "No"', 2);
+        addRadioError(inputNo, 'Il prestito deve essere scelto tra "Si" e "No"');
         return false;
     } else {
-        removeError(inputNo, 2);
+        removeRadioError(inputNo);
         return true;
     }
 }
@@ -359,10 +364,10 @@ function checkArtworkImage(input, isModify) {
             addError(input, 'È necessario selezionare una ed una sola immagine', tags);
             return false;
         } else if (input.files[0].size > 512000) {
-            addError(input, 'L\'immagine caricata è una dimensione troppo elevata. La dimensione massima accettata è 500<abbr title="Kilo Bytes" xml:lang="en">KB</abbr>', tags);
+            addError(input, 'L\'immagine caricata è una dimensione troppo elevata. La dimensione massima consentita è 500<abbr title="Kilo Bytes" xml:lang="en">KB</abbr>', tags);
             return false;
         } else if (input.files[0].type !== 'image/jpeg' && input.files[0].type !== 'image/png') {
-            addError(input, 'L\'estensione dell\'immagine non è supportata. L\'estensioni consentite sono .<abbr title="Joint Photographic Experts Group" xml:lang="en">jpeg</abbr>, .<abbr title="Joint Photographic Group" xml:lang="en">jpg</abbr>, .<abbr title="Portable Network Graphics" xml:lang="en">png</abbr>', tags);
+            addError(input, 'L\'estensione dell\'immagine non è supportata. Le estensioni consentite sono .<abbr title="Joint Photographic Experts Group" xml:lang="en">jpeg</abbr>, .<abbr title="Joint Photographic Group" xml:lang="en">jpg</abbr>, .<abbr title="Portable Network Graphics" xml:lang="en">png</abbr>', tags);
             return false;
         } else {
             removeError(input, tags);

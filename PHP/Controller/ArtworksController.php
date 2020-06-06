@@ -7,7 +7,7 @@ class ArtworksController {
     private $artworks;
     private $fileUtilities;
 
-    private function checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan) {
+    private function checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $isModify = false) {
         $message = '';
 
         if (strlen($author) === 0) {
@@ -82,9 +82,11 @@ class ArtworksController {
             }
         }
 
+        echo $dimensions;
+
         if (strlen($dimensions) === 0) {
             $message .= '[Non è possibile inserire una dimensione vuota]';
-        } elseif (!preg_match('/^([1-9][0-9]{0,2}|1000)x([1-9][0-9]{0,2}|1000)$/', $dimensions)) {
+        } elseif (!preg_match('/^([1-9][0-9]{0,3})x([1-9][0-9]{0,3})$/', $dimensions)) {
             $message .= '[Le dimensioni non rispettano il formato richiesto]';
         }
 
@@ -92,20 +94,22 @@ class ArtworksController {
             $message .= '[Il prestito deve essere scelto tra "Si" e "No"]';
         }
 
-        if (!FileUtilities::isSelected()) {
-            $message .= '[È necessario selezionare un\'immagine]';
-        } elseif (!FileUtilities::isOneAndOnlyOneSelected()) {
-            $message .= '[È necessario selezionare una ed una sola immagine]';
-        } elseif (!FileUtilities::isSizeBounded()) {
-            $message .= '[L\'immagine selezionata supera la dimensione massima consentita dal sistema]';
-        } elseif (!FileUtilities::isUploaded()) {
-            $message .= '[L\'immagine non è stata caricata correttamente]';
-        } elseif (!FileUtilities::isCorrectSized()) {
-            $message .= '[L\'immagine caricata è una dimensione troppo elevata. La dimensione massima accettata è 500<abbr title="Kilo Bytes" xml:lang="en">KB</abbr>]';
-        } elseif (!$this->fileUtilities->isCorrectExtensioned()) {
-            $message .= '[L\'estensione dell\'immagine non è supportata. L\'estensioni consentite sono .<abbr title="Joint Photographic Experts Group" xml:lang="en">jpeg</abbr>, .<abbr title="Joint Photographic Group" xml:lang="en">jpg</abbr>, .<abbr title="Portable Network Graphics" xml:lang="en">png</abbr>]';
-        } elseif (!$this->fileUtilities->isUniqueRenamed()) {
-            $message .= '[Non è stato possibile generare un nome univoco per il file. Per favore rinominare il file]';
+        if ($isModify && !FileUtilities::isEmpty()) {
+            if (!FileUtilities::isSelected()) {
+                $message .= '[È necessario selezionare un\'immagine]';
+            } elseif (!FileUtilities::isOneAndOnlyOneSelected()) {
+                $message .= '[È necessario selezionare una ed una sola immagine]';
+            } elseif (!FileUtilities::isSizeBounded()) {
+                $message .= '[L\'immagine selezionata supera la dimensione massima consentita dal sistema]';
+            } elseif (!FileUtilities::isUploaded()) {
+                $message .= '[L\'immagine non è stata caricata correttamente]';
+            } elseif (!FileUtilities::isCorrectSized()) {
+                $message .= '[L\'immagine caricata è una dimensione troppo elevata. La dimensione massima consentita è 500<abbr title="Kilo Bytes" xml:lang="en">KB</abbr>]';
+            } elseif (!$this->fileUtilities->isCorrectExtensioned()) {
+                $message .= '[L\'estensione dell\'immagine non è supportata. Le estensioni consentite sono .<abbr title="Joint Photographic Experts Group" xml:lang="en">jpeg</abbr>, .<abbr title="Joint Photographic Group" xml:lang="en">jpg</abbr>, .<abbr title="Portable Network Graphics" xml:lang="en">png</abbr>]';
+            } elseif (!$this->fileUtilities->isUniqueRenamed()) {
+                $message .= '[Non è stato possibile generare un nome univoco per il file. Per favore rinominare il file]';
+            }
         }
 
         return $message;
@@ -316,7 +320,7 @@ class ArtworksController {
     }
 
     public function updateArtwork($id, $author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $old_image, $user) {
-        $message = $this->checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan);
+        $message = $this->checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, true);
 
         if ($message === '') {
             if (copy('../' . $old_image, '../_' . $old_image)) {
