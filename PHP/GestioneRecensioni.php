@@ -58,7 +58,7 @@ if ($reviews_count > 0) {
 
     unset($controller);
 
-    $navigation_reviews_buttons = '<p class="navigation">';
+    $navigation_reviews_buttons = '<p class="buttonPosition">';
     if ($page > 1) {
         $navigation_reviews_buttons .= '<a id="buttonBack" class="button" href="?page=' . ($page - 1) . '" title="Recensioni precedenti" role="button" aria-label="Torna alle recensioni precedenti"> &lt; Precedenti</a>';
     }

@@ -47,7 +47,7 @@ if ($user_count > 0) {
 
     unset($controller);
 
-    $navigation_users_buttons = '<p class="navigation">';
+    $navigation_users_buttons = '<p class="buttonPosition">';
 
     if ($page > 1) {
         $navigation_users_buttons .= '<a id="buttonBack" class="button" href="?page=' . ($page - 1) . '" title="Utenti precedenti" role="button" aria-label="Torna agli utenti precedenti"> &lt; Precedente</a>';

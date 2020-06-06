@@ -36,7 +36,7 @@ if ($artwork_count > 0) {
 
     unset($controller);
 
-    $navigation_artworks_buttons = '<p class="navigation">';
+    $navigation_artworks_buttons = '<p class="buttonPosition">';
 
     if ($page > 1) {
         $navigation_artworks_buttons .= '<a id="buttonBack" class="button" href="?search=' . $_GET['search'] . '&amp;page=' . ($page - 1) . '" title="Opere precedenti" role="button" aria-label="Torna alle opere precedenti"> &lt; Precedenti</a>';

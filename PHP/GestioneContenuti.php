@@ -144,7 +144,7 @@ if (($artwork_count + $event_count) > 0) {
     unset($artworks_controller);
     unset($events_controller);
 
-    $navigation_contents_buttons = '<p class="navigation">';
+    $navigation_contents_buttons = '<p class="buttonPosition">';
 
     if ($page > 1) {
         $navigation_contents_buttons .= '<a id="buttonBack" class="button" href="?page=' . ($page - 1) . '&amp;filterContent=' . $filter_content . '&amp;filterContentType=' . $filter_content_type . '" title="Utenti precedenti" role="button" aria-label="Torna ai contenuti precedenti"> &lt; Precedenti</a>';
