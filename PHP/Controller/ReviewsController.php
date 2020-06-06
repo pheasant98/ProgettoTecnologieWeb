@@ -5,16 +5,16 @@ require_once ('Repository/ReviewsRepository.php');
 class ReviewsController {
     private $reviews;
 
-    private static function checkInput($title, $content) {
+    private static function checkInput($object, $content) {
         $message = '';
 
-        if (strlen($title) === 0) {
+        if (strlen($object) === 0) {
             $message .= '[Non è possibile inserire una recensione con un titolo vuoto]';
-        } elseif (strlen($title) < 2) {
+        } elseif (strlen($object) < 2) {
             $message .= '[Non è possibile inserire una recensione con un titolo più corto di 2 caratteri]';
-        } elseif (strlen($title) > 64) {
+        } elseif (strlen($object) > 64) {
             $message .= '[Non è possibile inserire una recensione con un titolo più lungo di 64 caratteri]';
-        } elseif (!preg_match('/^[A-zÀ-ú0-9\'`!.,\-:()\s]+$/', $title)) {
+        } elseif (!preg_match('/^[A-zÀ-ú0-9\'`!.,\-:()\s]+$/', $object)) {
             $message .= '[Il titolo inserito contiene dei caratteri non consentiti. Quelli possibili sono lettere, anche accentate, numeri, spazi e i seguenti caratteri speciali \' ` ! . , \ - : ()]';
         }
 
@@ -37,14 +37,14 @@ class ReviewsController {
         unset($this->reviews);
     }
 
-    public function addReview($title, $content, $user) {
-        $message = ReviewsController::checkInput($title, $content);
+    public function addReview($object, $content, $user) {
+        $message = ReviewsController::checkInput($object, $content);
 
         if ($message === '') {
-            if ($this->reviews->postReview($title, $content, $user)) {
-                $message = '<p class="success">Recensione ' . $title . ' inserita correttamente</p>';
+            if ($this->reviews->postReview($object, $content, $user)) {
+                $message = '<p class="success">Recensione ' . $object . ' inserita correttamente</p>';
             } else {
-                $message = '<p class="error">Non è stato possibile inserire la recensione ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
+                $message = '<p class="error">Non è stato possibile inserire la recensione ' . $object . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
             }
         } else {
             $message = '<p><ul>' . $message;
@@ -182,14 +182,14 @@ class ReviewsController {
         return $row;
     }
 
-    public function updateReview($id, $title, $description, $user) {
-        $message = ReviewsController::checkInput($title, $description);
+    public function updateReview($id, $object, $description, $user) {
+        $message = ReviewsController::checkInput($object, $description);
 
         if ($message === '') {
-            if ($this->reviews->updateReview($id, $title, $description, $user)) {
+            if ($this->reviews->updateReview($id, $object, $description, $user)) {
                 $message = '';
             } else {
-                $message = '<p class="error">Non è stato possibile aggiornare la recensione ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
+                $message = '<p class="error">Non è stato possibile aggiornare la recensione ' . $object . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
             }
         } else {
             $message = '<p><ul>' . $message;

@@ -64,12 +64,16 @@ if ($loan === 'No') {
 
 if ($style === 'Dipinto') {
     $painting_style = ' selected="selected" ';
-    $hide_technique = ' class="hideContent"';
-    $hide_skip_technique = ' class="hideContent"';
-} else {
-    $sculture_style = ' selected="selected" ';
+    $hide_technique = '';
+    $hide_skip_technique = '';
     $hide_material = ' class="hideContent"';
     $hide_skip_material = ' class="hideContent"';
+} else {
+    $sculture_style = ' selected="selected" ';
+    $hide_material = '';
+    $hide_skip_material = '';
+    $hide_technique = ' class="hideContent"';
+    $hide_skip_technique = ' class="hideContent"';
 }
 
 $document = file_get_contents('../HTML/ModificaOpera.html');

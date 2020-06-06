@@ -41,7 +41,8 @@ if (!isset($_GET['page'])) {
 } else {
     $page = $_GET['page'];
 }
-
+$description = '';
+$title = '';
 if ($reviews_count > 0) {
     $_SESSION['reviewPage'] = $page;
     $offset = ($page - 1) * 5;

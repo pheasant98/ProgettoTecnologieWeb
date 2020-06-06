@@ -13,9 +13,9 @@ class ReviewsRepository {
         unset($this->dbConnection);
     }
 
-    public function postReview($title, $content, $user) {
+    public function postReview($object, $content, $user) {
         $statement = $this->dbConnection->prepareQuery('INSERT INTO Recensioni (ID, Oggetto, Contenuto, DataUltimaModifica, Utente) VALUES (NULL, ?, ?, NOW(), ?);');
-        $statement->bind_param('sss', $title, $content, $user);
+        $statement->bind_param('sss', $object, $content, $user);
         return $this->dbConnection->executeNotSelectStatement($statement);
     }
 
@@ -48,9 +48,9 @@ class ReviewsRepository {
         return $this->dbConnection->executeSelectStatement($statement);
     }
 
-    public function updateReview($id, $title, $description, $user) {
+    public function updateReview($id, $object, $description, $user) {
         $statement = $this->dbConnection->prepareQuery('UPDATE Recensioni SET Oggetto=?, Contenuto=?, DataUltimaModifica=NOW() WHERE ID=? AND Utente=?;');
-        $statement->bind_param('ssis', $title, $description, $id, $user);
+        $statement->bind_param('ssis', $object, $description, $id, $user);
         return $this->dbConnection->executeNotSelectStatement($statement);
     }
 
