@@ -26,7 +26,17 @@ $event_end_date = DateUtilities::englishItalianDate($event['DataFine']);
 $event_manager = $event['Organizzatore'];
 $event_description = $event['Descrizione'];
 
+$breadcrumbs = '';
+if ($_SESSION['previous_page'] === 'GestioneContenuti') {
+    $page = '?page=' . $_SESSION['contentPage'];
+    $breadcrumbs = '<a href="AreaPersonale.php" title="Area Personale" aria-label="Vai alla pagina dell\'area personale">Area personale</a>
+                    &gt;&gt;<a href="GestioneContenuti.php' . $page . '" title="Gestione contenuti" aria-label="Vai alla pagina di gestione dei contenuti">Gestione contenuti</a>';
+} else if ($_SESSION['previous_page'] === 'Eventi') {
+    $breadcrumbs = '<a href="Eventi.php" title="Eventi" aria-label="Vai alla pagina Eventi">Eventi</a>';
+}
+
 $document = str_replace("<span id='titlePlaceholder'/>", $event_title, $document);
+$document = str_replace("<span id='breadcrumbsPlaceholder'/>", $breadcrumbs, $document);
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
 $document = str_replace("<span id='eventTypePlaceholder'/>", $event_type, $document);
 $document = str_replace("<span id='eventBeginDatePlaceholder'/>", $event_begin_date, $document);

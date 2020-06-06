@@ -1,0 +1,64 @@
+Quattrocento
+
+Pittura:
+	- Annunciazione (Beato angelico)		X
+	- Dama con ermellino				X
+	- Primavera (botticelli)			X
+	- Calunnia (botticelli)				X
+	- Annunziata (da Messina)			X
+
+Scultura:	
+	- Maddalena penitente (donatello) 		X
+	- Giuditta e Oloferne (Donatello)		X
+	- Compianto sul Cristo morto (dell'arca)	X
+	- Ercole e Anteo (da pollaio)			X
+
+
+
+Cinquecento
+
+Pittura:
+	- Tondo Doni						X
+	- Ritratto di Eleonora di Toledo col figlio Giovanni	X
+	- Amor sacro e Amor Profano				X
+	- La Velata 						X
+	- la tempesta						X
+	- madonna col collo lungo				X
+	- sei poeti toscani (Vasari)				X
+	- i bari (caravaggio)					X
+
+Scultura:
+	- la pietà						X
+	- david							X
+	- Perseo con testa di medusa				X
+	- ratto delle sabine					X
+	- Mercurio volante					X
+
+
+Seicento
+
+Pittura:
+	- Giuditta taglia la testa ad oloferne			X
+	- Amor vincit omnia					X
+	- Ritratto di suzanne Fourment (rubens)			X
+	- l'astronomo (vermeer)					X
+	- Las Meninas (velazqeuz)				X
+
+Scultura:
+	- Apollo e dafne (bernini)				X
+	- Annunciazione (Mochi)					X
+	- Madonna Carrega					X
+
+
+
+Settecento
+
+Pittura:
+	- Banchetto di cleopatra (tiepolo)			X
+	- Bacino di san marco verso est (canaletto)		X
+	- La taverna 						X
+
+Scultura:
+	- Pudicizia (Corradini)					X
+	- Teseo su Minotauro					X
+	- l'amore minaccioso (falconet)				X

@@ -6,6 +6,7 @@
   font-family: "Times New Roman", Georgia, sans-serif;
   box-sizing: border-box;
   max-width: 100%;
+  word-wrap: break-word;
 }
 
 html,
@@ -45,32 +46,53 @@ a {
   line-height: 2em;
 }
 
-.subtitle {
-  margin-top: 1em;
-  margin-bottom: 0.5em;
-}
-
 #content dt {
-  padding-top: 0.5em;
-  padding-bottom: 0.2em;
-  font-size: 1.1em;
-
+  font-weight: bold;
 }
 
-.definition {
-  position: relative;
-  bottom: 1.5em;
-  left: 15em;
+.inlineDef{
+  margin-top: 1em;
+  margin-left: 0.5em;
+  float: left;
 }
 
-#filter,
-#filterType,
-#filterContent,
-#filterOpera {
+.titleDef{
+  padding: 1.5em 0 0.5em 0;
+  font-size: 1.2em;
+}
+
+.definition,
+.definitionOpera,
+.definitionOpere {
+  padding-left: 11.5em;
+  padding-top: 1em;
+  padding-bottom: 0.8em;
+}
+
+.definitionOpere{
+  padding-left: 18em;
+}
+
+#filterSearch,
+.filter {
   border: 0;
   background: none;
   font-size: 1.1em;
   margin-right: 5%;
+}
+
+.formFieldError,
+.error,
+.success{
+  display: block;
+  font-weight: bold;
+  color: #9F0000;
+}
+.error,.success{
+  text-align: center;
+}
+.success{
+  color:#006600;
 }
 
 .paragraph {
@@ -83,10 +105,6 @@ a {
 
 .list li {
   margin-bottom: 1em;
-}
-
-#loginForm p {
-  margin-bottom: 1.5em;
 }
 
 .fieldset,
@@ -103,15 +121,6 @@ a {
   margin-bottom: 1em;
 }
 
-#feedbackBox {
-  margin: 1em 1em;
-  border-style: none;
-}
-
-#feedbackBox input {
-  margin-bottom: 1em;
-}
-
 .hideFieldset {
   border: none;
   margin-bottom: 0;
@@ -121,9 +130,13 @@ a {
   display: none;
 }
 
-.formElement {
+.labelBlock{
   display: block;
-  width: 100%;
+}
+
+.formElement,.loginElement,.dateElement, .descriptionArea {
+  display: block;
+  width: 80%;
   height: 2.6em;
   font-size: 1em;
   font-weight: 400;
@@ -131,13 +144,23 @@ a {
   border: 1px solid #aaa;
   border-radius: 0.25em;
   padding: 0.375em 0.75em;
+  resize: vertical;
+  margin: 0.3em 0;
 }
 
-#operaDescriptionArea,
-#eventDescriptionArea,
-#reviewDescriptionArea {
+.loginElement {
+  width: 65%;
+  display: inline-block;
+}
+
+.dateElement{
+  width: 9.2em;
+}
+
+.descriptionArea{
   height: 10em;
   margin-bottom: 1em;
+  width: 100%;
 }
 
 .navigation {
@@ -156,10 +179,19 @@ a {
   font-size: 1em;
 }
 
-#museumImage {
+.significantImage {
   text-align: center;
-  padding-bottom: 1em;
-  padding-top: 1em;
+  height: 20em;
+  width: 80%;
+  display:block;
+  margin:1em auto;
+}
+
+.previewOpera{
+  height: 10em;
+  width: 10em;
+  float:left;
+  margin: 0;
 }
 
 .backgroundImage {

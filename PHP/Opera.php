@@ -29,7 +29,17 @@ $artwork_dimension = $artwork['Dimensioni'];
 $artwork_loan = ($artwork['Prestito'] == 1 ? 'Si' : 'No');
 $artwork_description = $artwork['Descrizione'];
 
+$breadcrumbs = '';
+if ($_SESSION['previous_page'] === 'GestioneContenuti') {
+    $page = '?page=' . $_SESSION['contentPage'];
+    $breadcrumbs = '<a href="AreaPersonale.php" title="Area Personale" aria-label="Vai alla pagina dell\'area personale">Area personale</a>
+                    &gt;&gt;<a href="GestioneContenuti.php' . $page . '" title="Gestione contenuti" aria-label="Vai alla pagina di gestione dei contenuti">Gestione contenuti</a>';
+} else if ($_SESSION['previous_page'] === 'Opere') {
+    $breadcrumbs = '<a href="Opere.php" title="Opere" aria-label="Vai alla pagina Opere">Opere</a>';
+}
+
 $document = str_replace("<span id='titlePlaceholder'/>", $artwork_title, $document);
+$document = str_replace("<span id='breadcrumbsPlaceholder'/>", $breadcrumbs, $document);
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
 $document = str_replace("<span id='artworkImgPlaceholder'/>", $artwork_img, $document);
 $document = str_replace("<span id='artworkAuthorPlaceholder'/>", $artwork_author, $document);

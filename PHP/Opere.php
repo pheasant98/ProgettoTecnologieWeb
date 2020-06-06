@@ -13,9 +13,9 @@ $filter_type = '';
 if (isset($_GET['filterType'])) {
     $filter_type = $_GET['filterType'];
 
-    if ($_GET['filterType'] === 'Dipinti') {
+    if ($_GET['filterType'] === 'Dipinto') {
         $artwork_count = $controller->getArtworksCountByStyle($filter_type);
-    } elseif ($_GET['filterType'] === 'Sculture') {
+    } elseif ($_GET['filterType'] === 'Scultura') {
         $artwork_count = $controller->getArtworksCountByStyle($filter_type);
     } else {
         $filter_type = '';
@@ -63,9 +63,11 @@ if ($artwork_count > 0) {
     $navigation_artworks_buttons = '';
 }
 
+$_SESSION['previous_page'] = 'Opere';
+
 $filter_option_whole = $filter_type == '' ? ' selected="selected"' : '';
-$filter_option_paintings = $filter_type == 'Dipinti' ? ' selected="selected"' : '';
-$filter_option_sculptures = $filter_type == 'Sculture' ? ' selected="selected"' : '';
+$filter_option_paintings = $filter_type == 'Dipinto' ? ' selected="selected"' : '';
+$filter_option_sculptures = $filter_type == 'Scultura' ? ' selected="selected"' : '';
 
 require_once ('Controller/LoginController.php');
 $document = file_get_contents('../HTML/Opere.html');

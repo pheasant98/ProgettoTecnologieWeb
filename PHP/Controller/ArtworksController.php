@@ -54,7 +54,7 @@ class ArtworksController {
             }
         }
 
-        if ($style !== 'Sculture' && $style !== 'Dipinti') { //FIXME: Quando si sistema nel db si deve mettere Scultura e Dipinto
+        if ($style !== 'Scultura' && $style !== 'Dipinto') { //FIXME: Quando si sistema nel db si deve mettere Scultura e Dipinto
             $message .= '[Lo stile dell\'opera deve essere Scultura o Dipinto]';
         }
 
@@ -128,7 +128,7 @@ class ArtworksController {
     public function addArtwork($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $user) {
         $message = $this->checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan);
         if ($message === '') {
-            if($style === 'Dipinti') {
+            if($style === 'Dipinto') {
                 if ($this->artworks->postPainting($author, $title, $description, intval($years), $technique, $dimensions, $loan, $this->fileUtilities->getPath(), $user)) {
                     $message = '<p class="success">L\'opera ' . $title . ' è stata inserita correttamente</p>';
                 } else {
@@ -142,10 +142,10 @@ class ArtworksController {
                 }
             }
         } else {
-            $message = '<ul>' . $message;
+            $message = '<p><ul>' . $message;
             $message = str_replace('[', '<li class="error">', $message);
             $message = str_replace(']', '</li>', $message);
-            $message .= '</ul>';
+            $message .= '</ul></p>';
         }
 
         return $message;
@@ -182,36 +182,37 @@ class ArtworksController {
 
         while($row = $result_set->fetch_assoc()) {
             $content .= '
-                <dt id="'. $id . $counter . '">
+                <dt id="'. $id . $counter . '" class="titleDef">
                      <a href="Opera.php?id=' . $row['ID'] . '" aria-label="Vai all\'opera">' . $row['Titolo'] . '</a>
                 </dt>
                 <dd>
+                    <img class="previewOpera" alt="Immagine dell\'opera ' . $row['Titolo'] . '" src="../' . $row['Immagine'] . '"/>
                     <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'opera">Salta l\'opera</a>
     
                     <dl>
-                        <dt>
+                        <dt class="inlineDef">
                             Nome autore: 
                         </dt>
-                        <dd class="definition">
+                        <dd class="definitionOpere">
                             ' . $row['Autore'] . '
                         </dd>
                         
-                        <dt>
+                        <dt class="inlineDef">
                             Stile: 
                         </dt>
-                        <dd class="definition">
+                        <dd class="definitionOpere">
                             ' . $row['Stile'] . '
                         </dd>
     
-                        <dt>
+                        <dt class="inlineDef">
                             Data: 
                         </dt>
-                        <dd class="definition">
+                        <dd class="definitionOpere">
                             ' . $row['Datazione'] . '
                         </dd>
                     </dl>
                     
-                    <img alt="Immagine dell\'opera ' . $row['Titolo'] . '" src="../' . $row['Immagine'] . '"/>
+                
                 </dd>
             ';
 
@@ -237,36 +238,37 @@ class ArtworksController {
 
         while($row = $result_set->fetch_assoc()) {
             $content .= '
-                <dt id="' . $id . $counter . '">
+                <dt id="' . $id . $counter . '" class="titleDef">
                      <a href="Opera.php?id=' . $row['ID'] . '" aria-label="Vai all\'opera">' . $row['Titolo'] . '</a>
                 </dt>
                 <dd>
+                    <img class="previewOpera" alt="Immagine dell\'opera ' . $row['Titolo'] . '" src="../' . $row['Immagine'] . '"/>
                     <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'opera">Salta l\'opera</a>
     
                     <dl>
-                        <dt>
+                        <dt class="inlineDef">
                             Nome autore: 
                         </dt>
-                        <dd class="definition">
+                        <dd class="definitionOpere">
                             ' . $row['Autore'] . '
                         </dd>
                         
-                        <dt>
+                        <dt class="inlineDef">
                             Stile: 
                         </dt>
-                        <dd class="definition">
+                        <dd class="definitionOpere">
                             ' . $row['Stile'] . '
                         </dd>
     
-                        <dt>
+                        <dt class="inlineDef">
                             Data: 
                         </dt>
-                        <dd class="definition">
+                        <dd class="definitionOpere">
                             ' . $row['Datazione'] . '
                         </dd>
                     </dl>
                     
-                    <img alt="Immagine dell\'opera ' . $row['Titolo'] . '" src="../' . $row['Immagine'] . '"/>
+                   
                 </dd>
             ';
 
@@ -340,10 +342,10 @@ class ArtworksController {
                 $message = '<p class="error">Non è stato possibile aggiornare l\'opera ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
             }
         } else {
-            $message = '<ul>' . $message;
+            $message = '<p><ul>' . $message;
             $message = str_replace('[', '<li class="error">', $message);
             $message = str_replace(']', '</li>', $message);
-            $message .= '</ul>';
+            $message .= '</ul></p>';
         }
 
         return $message;

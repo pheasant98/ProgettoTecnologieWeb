@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN" "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
 
 <html xml:lang="it" xmlns="http://www.w3.org/1999/xhtml">
@@ -25,7 +26,7 @@
     <body>
         <div id="header" role="banner">
             <h1 id="logoImage" class="backgroundImage" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
-            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="8">
+            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu">
                 Menu ad <span xml:lang="en">hamburger</span>
             </span>
 
@@ -35,15 +36,15 @@
                 <fieldset id="searchBox">
                     <legend class="hideLegend">Ricerca</legend>
                     
-					<label class="hideLabel" for="filter">filtro per la ricerca</label>
-                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="2">
+					<label class="hideLabel" for="filterSearch">filtro per la ricerca</label>
+                    <select id="filterSearch" name="filter" aria-label="Seleziona il filtro per la ricerca">
                         <option selected="selected" value="Opera">Opera</option>
                         <option value="Evento">Evento</option>
                     </select>
 
                     <label class="hideLabel" for="searchText">Cerca nel sito</label>
-                    <input id="searchText" name="search" type="text" aria-label="Casella di ricerca" tabindex="1"/>
-                    <input id="buttonSubmit" name="submit" type="submit" value="Cerca" aria-label="Pulsante per la ricerca" tabindex="3"/>
+                    <input id="searchText" name="search" type="text" aria-label="Casella di ricerca"/>
+                    <input id="buttonSubmit" name="submit" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
                 </fieldset>
             </form>
         </div>
@@ -58,7 +59,7 @@
         <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
             <ul>
                 <li>
-                    <a id="skipMenu" href="#content" class="skipInformation" aria-label="Vai al contenuto" tabindex="9">Vai al contenuto</a>
+                    <a id="skipMenu" href="#content" class="skipInformation" aria-label="Vai al contenuto">Vai al contenuto</a>
                 </li>
 
                 <li>
@@ -66,20 +67,20 @@
                 </li>
 
                 <li>
-                    <a href="Opere.php" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="10">Opere</a>
+                    <a href="Opere.php" title="Opere" aria-label="Vai alla pagina delle opere">Opere</a>
                 </li>
 
                 <li>
-                    <a href="Eventi.php" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="11">Eventi</a>
+                    <a href="Eventi.php" title="Eventi" aria-label="Vai alla pagina degli eventi">Eventi</a>
                 </li>
 
                 <li>
-                    <a href="CosaDiconoDiNoi.php" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni" tabindex="12">Cosa
+                    <a href="CosaDiconoDiNoi.php" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni">Cosa
                     dicono di noi</a>
                 </li>
 
                 <li>
-                    <a href="Contatti.php" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti" tabindex="13">Contatti</a>
+                    <a href="Contatti.php" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti">Contatti</a>
                 </li>
             </ul>
         </div>
@@ -97,8 +98,8 @@
                 Duis dapibus porta rutrum.
             </p>
 
-            <p id="museumImage">
-                <img alt="Immagine facciata del museo" src="../Images/museo.jpg"/>
+            <p>
+                <img class="significantImage" alt="Immagine della facciata del museo" src="../Images/museo.png"/>
             </p>
 
             <p id="p2" class="paragraph">
@@ -111,6 +112,7 @@
             </p>
 
             <a id="buttonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
+                Torna su
                 <img alt="Torna su" src="../Images/TornaSu.png"/>
             </a>
         </div>
@@ -124,8 +126,8 @@
                 Studenti: Fiammetta Cannavò, Lorenzo Dei Negri, Federico Perin, Massimo Toffoletto
             </p>
 
-            <img class="validationImage" alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
-            <img class="validationImage" alt="Simbolo di validazione CSS" src="../Images/vcss-blue.gif"/>
+            <img alt="Simbolo di validazione XHTML" src="../Images/valid-xhtml10.png"/>
+            <img alt="Simbolo di validazione CSS" src="../Images/vcss-blue.gif"/>
         </div>
     </body>
 </html>

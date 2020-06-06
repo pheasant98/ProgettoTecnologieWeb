@@ -25,7 +25,7 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Modifica') {
 
     if($message === '') {
         $_SESSION['review_title'] = $_POST['title'];
-        $_SESSION['review_id'] = $_GET['title'];
+        $_SESSION['review_id'] = $_GET['id'];
 
         header('Location: RecensioneModificata.php');
     }

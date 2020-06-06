@@ -8,12 +8,17 @@ if (!isset($_GET['search'])) {
 
 require_once ('Controller/ArtworksController.php');
 $controller = new ArtworksController();
-$artwork_count = $controller->getSearchedArtworksCount($_GET['search']);
-
-if($artwork_count === 1) {
-    $artwork_number_found = 'ed è stato trovato ' . $artwork_count . ' risultato';
+if (strlen($_GET['search']) > 50) {
+    $error_length = '<p class="error">Non è possibile inserire un testo di ricerca più lungo di 50 caratteri.</p>';
+    $artwork_count = 0;
 } else {
-    $artwork_number_found = 'e sono stati trovati ' . $artwork_count . ' risultati';
+    $artwork_count = $controller->getSearchedArtworksCount($_GET['search']);
+    if($artwork_count === 1) {
+        $artwork_number_found = '<p>È stata eseguita una ricerca tra le opere presenti nel sito ed è stato trovato ' . $artwork_count . ' risultato:</p>';
+    } else {
+        $artwork_number_found = '<p>È stata eseguita una ricerca tra le opere presenti nel sito e sono stati trovati ' . $artwork_count . ' risultati:</p>';
+    }
+    $error_length = '';
 }
 
 if (!isset($_GET['page'])) {
@@ -56,7 +61,13 @@ $document = file_get_contents('../HTML/RicercaOpere.html');
 $login = LoginController::getAuthenticationMenu();
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
-$document = str_replace("<span id='resultNumberPlaceholder'/>", $artwork_number_found, $document);
+
+if ($error_length === '') {
+    $document = str_replace("<span id='resultNumberFoundPlaceholder'/>", $artwork_number_found, $document);
+} else {
+    $document = str_replace("<span id='resultNumberFoundPlaceholder'/>", $error_length, $document);
+}
+
 $document = str_replace("<span id='skipArtworksPlaceholder'/>", $skip_artworks, $document);
 $document = str_replace("<span id='resultListPlaceholder'/>", $artwork_list, $document);
 $document = str_replace("<span id='navigationArtworksButtonsPlaceholder'/>", $navigation_artworks_buttons, $document);

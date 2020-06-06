@@ -14,7 +14,7 @@ $welcome = '';
 if (isset($_SESSION['just_registered']) && $_SESSION['just_registered'] === true) {
     $welcome = '<p>La registrazione è stata completata correttamente</p>';
 }
-
+unset($_SESSION['just_registered']);
 $_SESSION['previous_page'] = 'AreaPersonale';
 
 $users_controller = new UsersController();
@@ -62,7 +62,7 @@ if (LoginController::isAdminUser()) {
 }
 
 $document = file_get_contents('../HTML/AreaPersonale.html');
-$login = LoginController::getAuthenticationMenu();
+$login = LoginController::getAuthenticationMenu(false);
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
 $document = str_replace("<span id='justRegisteredWelcomePlaceholder'/>", $welcome, $document);

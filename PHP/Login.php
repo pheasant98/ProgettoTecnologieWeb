@@ -20,7 +20,7 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Accedi') {
     unset($usersController);
 
     if ($user === null) {
-        $message = '<span xml:lang="en">Username</span> e/o <span xml:lang="en">password</span> errati!';
+        $message = '<p class="error"><span xml:lang="en">Username</span> e/o <span xml:lang="en">password</span> errati!</p>';
     } else {
         $_SESSION['username'] = $user['Username'];
         $_SESSION['admin'] = $user['Admin'];

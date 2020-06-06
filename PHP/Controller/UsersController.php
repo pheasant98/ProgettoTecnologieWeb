@@ -190,10 +190,10 @@ class UsersController {
                 $message = '<p class="error">Non è stato possibile registrare l\'utente ' . $username . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
             }
         } else {
-            $message = '<ul>' . $message;
+            $message = '<p><ul>' . $message;
             $message = str_replace('[', '<li class="error">', $message);
             $message = str_replace(']', '</li>', $message);
-            $message = $message . '</ul>';
+            $message = $message . '</ul></p>';
         }
 
         return $message;
@@ -266,10 +266,10 @@ class UsersController {
                 }
             }
         } else {
-            $message = '<ul>' . $message;
+            $message = '<p><ul>' . $message;
             $message = str_replace('[', '<li class="error">', $message);
             $message = str_replace(']', '</li>', $message);
-            $message .= '</ul>';
+            $message .= '</ul></p>';
         }
 
         return $message;

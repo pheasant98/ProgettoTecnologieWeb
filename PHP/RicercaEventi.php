@@ -8,12 +8,17 @@ if (!isset($_GET['search'])) {
 
 require_once ('Controller/EventsController.php');
 $controller = new EventsController();
-$event_count = $controller->getSearchedEventsCount($_GET['search']);
-
-if($event_count === 1) {
-    $event_number_found = 'ed è stato trovato ' . $event_count . ' risultato';
+if (strlen($_GET['search']) > 50) {
+    $error_length = '<p class="error">Non è possibile inserire un testo di ricerca più lungo di 50 caratteri.</p>';
+    $event_count = 0;
 } else {
-    $event_number_found = 'e sono stati trovati ' . $event_count . ' risultati';
+    $event_count = $controller->getSearchedEventsCount($_GET['search']);
+    if($event_count === 1) {
+        $event_number_found = '<p>È stata eseguita una ricerca tra gli eventi presenti nel sito ed è stato trovato ' . $event_count . ' risultato:</p>';
+    } else {
+        $event_number_found = '<p>È stata eseguita una ricerca tra gli eventi presenti nel sito e sono stati trovati ' . $event_count . ' risultati:</p>';
+    }
+    $error_length = '';
 }
 
 if (!isset($_GET['page'])) {
@@ -31,7 +36,7 @@ if ($event_count > 0) {
 
     unset($controller);
 
-    $navigation_events_buttons = '';
+    $navigation_events_buttons = '<p class="navigation">';
 
     if ($page > 1) {
         $navigation_events_buttons .= '<a id="buttonBack" class="button" href="?search=' . $_GET['search'] . '&amp;page=' . ($page - 1) . '" title="Eventi precedenti" role="button" aria-label="Torna agli eventi precedenti"> &lt; Precedente</a>';
@@ -56,7 +61,13 @@ $document = file_get_contents('../HTML/RicercaEventi.html');
 $login = LoginController::getAuthenticationMenu();
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
-$document = str_replace("<span id='resultNumberFoundPlaceholder'/>", $event_number_found, $document);
+
+if ($error_length === '') {
+    $document = str_replace("<span id='resultNumberFoundPlaceholder'/>", $event_number_found, $document);
+} else {
+    $document = str_replace("<span id='resultNumberFoundPlaceholder'/>", $error_length, $document);
+}
+
 $document = str_replace("<span id='skipEventsPlaceholder'/>", $skip_events, $document);
 $document = str_replace("<span id='resultListPlaceholder'/>", $event_list, $document);
 $document = str_replace("<span id='navigationEventsButtonsPlaceholder'/>", $navigation_events_buttons, $document);

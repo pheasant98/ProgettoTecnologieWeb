@@ -10,6 +10,7 @@
   box-sizing: border-box;
   line-height: 1.5em;
   max-width: 1024px;
+  word-wrap: break-word;
 }
 
 /* Impostazione colore di sfondo e larghezza minima della pagina */
@@ -73,7 +74,25 @@ a:visited {
   width: 50%;
 }
 
+#buttonSubmit {
+  cursor: pointer;
+  border: 0;
+  font-size: 1.3em;
+  margin-left: 3%;
+  background: none;
+}
+
 /* Regole per le immagini delle pagine */
+
+/* Inserimento di un'immagine con la tecnica image replacement */
+.backgroundImage {
+  display: block;
+  text-align: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  white-space: nowrap;
+  overflow: hidden;
+}
 
 /* Logo accessibile */
 #logoImage {
@@ -81,38 +100,31 @@ a:visited {
   background-image: url('../images/logo.png');
   text-indent: 100%;
   background-position: center;
-  height: 4.1em;
+  height: 3.1em;
   width: 39%;
+  background-size: contain;
+  margin-top: 0.3em;
 }
 
 #imageError404 {
   background-image: url('../images/PortraitsCorridor.png');
   text-indent: 100%;
-  background-size: 100%;
   background-position: center;
-  text-align: center;
   width: 100%;
   height: 13em;
 }
 
-/* Homepage image */
-#museumImage {
+.significantImage, .previewOpera {
   text-align: center;
-  padding-bottom: 1em;
-  padding-top: 1em;
+  height: 20em;
+  width: 60%;
+  display:block;
+  margin:1em auto;
 }
 
-/* Inserimento di un'immagine con la tecnica image replacement */
-.backgroundImage {
-  display: block;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.validationImage {
-  display: inline-block;
+.previewOpera{
+  height: 10em;
+  width: 12em;
 }
 
 /* Regole per i breadcrumbs delle pagine */
@@ -143,16 +155,20 @@ a:visited {
   width: 27%;
 }
 
+#loginButton{
+  margin-top: 2em;
+}
+
 /* Icona per il menu utente */
 #hamburgerMenu {
   float: right;
   background-image: url('../images/HamburgerMenu1.png');
   text-indent: 100%;
   background-position: center;
-  height: 8em;
+  height: 6em;
   width: 20%;
-  margin-left: 7%;
-  margin-bottom: 0.8em;
+  margin: 0.7em 2% 0.5em 6%;
+  background-size: contain;
 }
 
 #hamburgerMenu:active {
@@ -210,28 +226,45 @@ a:visited {
 }
 
 #content dt {
-  padding-top: 0.5em;
-  padding-bottom: 0.2em;
-  font-size: 1.1em;
+ font-weight: bold;
 }
 
-.definition {
-  position: relative;
-  bottom: 1.7em;
-  left: 15em;
+#buttonFilter {
+  width: 5em;
 }
 
-#filter,
-#filterType,
-#filterContent,
-#filterOpera {
+.inlineDef{
+  margin-top: 1em;
+  margin-left: 0.5em;
+  float: left;
+}
+
+.titleDef{
+  padding: 1.5em 0 0.5em 0;
+  font-size: 1.2em;
+}
+
+.definition,
+.definitionOpera,
+.definitionOpere {
+  padding-left: 11.5em;
+  padding-top: 1em;
+  padding-bottom: 0.8em;
+}
+
+.definitionOpera{
+  padding-left: 6.5em;
+}
+
+#filterSearch,
+.filter{
   border: 0;
   margin-right: 3%;
   background: none;
   font-size: 1.1em;
 }
 
-#filter{
+#filterSearch{
   font-size: 1.3em;
 }
 
@@ -252,7 +285,7 @@ a:visited {
 }
 
 /* Template di un lista */
-.list {
+.list, .error, .success {
   list-style-type: none;
 }
 
@@ -273,10 +306,6 @@ a:visited {
   height: 12em;
   width: 80%;
   margin: 0.5em 10%;
-}
-
-#loginForm p {
-  text-align: center;
 }
 
 /* Toglie il bordo */
@@ -306,30 +335,16 @@ a:visited {
   overflow: hidden;
 }
 
-#feedbackBox {
-  margin: 1em 1em;
-  border-style: none;
-}
-
-#feedbackBox input {
-  margin-bottom: 1em;
-}
-
-#operaDescriptionArea,
-#eventDescriptionArea,
-#reviewDescriptionArea{
-  height: 10em;
-  margin-bottom: 1em;
-}
-
-#operaImage {
-  text-align: center;
-  margin-top: 1em;
-}
-
-.formElement {
+.labelBlock{
   display: block;
-  width: 100%;
+}
+
+.formElement,
+.loginElement,
+.dateElement,
+.descriptionArea {
+  display: block;
+  width: 80%;
   height: 2.6em;
   font-size: 1em;
   font-weight: 400;
@@ -338,20 +353,26 @@ a:visited {
   border-radius: 0.25em;
   padding: 0.375em 0.75em;
   resize: vertical;
+  margin: 0.3em 0;
 }
 
-#buttonSubmit {
-  cursor: pointer;
-  border: 0;
-  font-size: 1.3em;
-  margin-left: 3%;
-  background: none;
+.descriptionArea{
+  height: 10em;
+  margin-bottom: 1em;
+  width: 100%;
+}
+
+.loginElement {
+  width: 65%;
+  display: inline-block;
+}
+
+.dateElement{
+  width: 9.2em;
 }
 
 #reviewButton {
   float: right;
-  font-size: 1em;
-  width: auto;
 }
 
 #buttonBackUp {
@@ -423,12 +444,23 @@ a:visited {
   margin-bottom: 0.5em;
 }
 
-#register {
-  text-align: center;
+.paragraph {
+  font-size: 1.1em;
+  padding: 0.5em 0;
 }
 
-.paragraph {
-  font-size: 1.2em;
+.formFieldError,
+.error,
+.success{
+  display: block;
+  font-weight: bold;
+  color: #9F0000;
+}
+.error,.success{
+  text-align: center;
+}
+.success{
+  color:#006600;
 }
 
 #footer {
@@ -456,6 +488,7 @@ a:visited {
   #logoImage {
     height: 4.5em;
     width: 8em;
+    margin:0;
   }
 
   #imageError404 {
@@ -479,6 +512,26 @@ a:visited {
 
   #loginMenu a {
     width: 8em;
+    clear: right;
+  }
+
+  .formElement{
+    width: 20em;
+  }
+
+  .definitionOpere{
+    padding-left: 18em;
+  }
+
+  .significantImage {
+    width: 23em;
+  }
+
+  .previewOpera{
+    height: 10em;
+    width: 10em;
+    float:left;
+    margin: 0;
   }
 }
 

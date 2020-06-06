@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+ARIA 1.0//EN" "http://www.w3.org/WAI/ARIA/schemata/xhtml-aria-1.dtd">
 
 <html xml:lang="it" xmlns="http://www.w3.org/1999/xhtml">
@@ -24,7 +25,7 @@
         <div id="header" role="banner">
             <h1 id="logoImage" class="backgroundImage" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
 
-            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="4">
+            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu">
                 Menu ad <span xml:lang="en">hamburger</span>
             </span>
 
@@ -34,15 +35,15 @@
                 <fieldset id="searchBox">
                     <legend class="hideLegend">Ricerca</legend>
                     
-					<label class="hideLabel" for="filter">filtro per la ricerca</label>
-                    <select id="filter" name="filter" aria-label="Seleziona il filtro per la ricerca" tabindex="2">
+					<label class="hideLabel" for="filterSearch">filtro per la ricerca</label>
+                    <select id="filterSearch" name="filter" aria-label="Seleziona il filtro per la ricerca">
                         <option selected="selected" value="Opera">Opera</option>
                         <option value="Evento">Evento</option>
                     </select>
 
                     <label class="hideLabel" for="searchText">Cerca nel sito</label>
-                    <input id="searchText" name="search" type="text" aria-label="Casella di ricerca" tabindex="1"/>
-                    <input id="buttonSubmit" name="submit" type="submit" value="Cerca" aria-label="Pulsante per la ricerca" tabindex="3"/>
+                    <input id="searchText" name="search" type="text" aria-label="Casella di ricerca"/>
+                    <input id="buttonSubmit" name="submit" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
                 </fieldset>
             </form>
         </div>
@@ -50,9 +51,9 @@
         <div aria-label="breadcrumbs" id="breadcrumbs">
             <p>
                 Ti trovi in:
-                <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="5" xml:lang="en">Home</a>
+                <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
                 &gt;&gt;
-                <a href="Login.php" title="Login" aria-label="Vai alla pagina di login" tabindex="6" xml:lang="en">Login</a>
+                <a href="Login.php" title="Login" aria-label="Vai alla pagina di login" xml:lang="en">Login</a>
                 &gt;&gt;
                 <strong>Registrazione</strong>
             </p>
@@ -61,28 +62,28 @@
         <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
             <ul>
                 <li>
-                    <a id="skipMenu" class="skipInformation" href="#content" aria-label="Vai al contenuto" tabindex="7">Vai al contenuto</a>
+                    <a id="skipMenu" class="skipInformation" href="#content" aria-label="Vai al contenuto">Vai al contenuto</a>
                 </li>
 
                 <li>
-                    <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" tabindex="8" xml:lang="en">Home</a>
+                    <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
                 </li>
 
                 <li>
-                    <a href="Opere.php" title="Opere" aria-label="Vai alla pagina delle opere" tabindex="9">Opere</a>
+                    <a href="Opere.php" title="Opere" aria-label="Vai alla pagina delle opere">Opere</a>
                 </li>
 
                 <li>
-                    <a href="Eventi.php" title="Eventi" aria-label="Vai alla pagina degli eventi" tabindex="10">Eventi</a>
+                    <a href="Eventi.php" title="Eventi" aria-label="Vai alla pagina degli eventi">Eventi</a>
                 </li>
 
                 <li>
-                    <a href="CosaDiconoDiNoi.php" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni" tabindex="11">Cosa
+                    <a href="CosaDiconoDiNoi.php" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni">Cosa
                         dicono di noi</a>
                 </li>
 
                 <li>
-                    <a href="Contatti.php" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti" tabindex="12">Contatti</a>
+                    <a href="Contatti.php" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti">Contatti</a>
                 </li>
             </ul>
         </div>
@@ -90,26 +91,35 @@
         <div id="content" role="main">
             <h2 class="title">Registrazione</h2>
 
-            <span id='outputMessagePlaceholder'/>
-
             <form id="registration" name="registrazione" action="" method="post" role="form" onsubmit="return registrationFormValidation();">
-                <fieldset id="personalData" class="fieldset">
-                    <legend>Dati personali</legend>
+                <fieldset id="personalData" class="hideFieldset">
+                    <legend class="hideLegend">Dati personali</legend>
 
-                    <p>
-                        <label id="labelName" for="name">Nome</label>
-                        <input id="name" class="formElement" type="text" name="name" value="<span id='nameValuePlaceholder'/>" aria-label="Inserisci il nome"/>
-                    </p>
+                    <span id='outputMessagePlaceholder'/>
 
-                    <p>
-                        <label id="labelSurname" for="surname">Cognome</label>
-                        <input id="surname" class="formElement" type="text" name="surname" value="<span id='surnameValuePlaceholder'/>" aria-label="Inserisci il cognome"/>
-                    </p>
+                    <fieldset id="generalInformation" class="fieldset">
+                        <legend>Informazioni dell'utente</legend>
+
+                        <p>
+                            <label id="labelName" for="name">Nome</label>
+                            <input id="name" class="formElement" type="text" name="name" value="<span id='nameValuePlaceholder'/>" aria-label="Inserisci il nome"/>
+                        </p>
+
+                        <p>
+                            <label id="labelSurname" for="surname">Cognome</label>
+                            <input id="surname" class="formElement" type="text" name="surname" value="<span id='surnameValuePlaceholder'/>" aria-label="Inserisci il cognome"/>
+                        </p>
+
+                        <p>
+                            <label id="labelDate" for="date">Data di nascita</label>
+                            <input id="date" class="dateElement" type="text" name="date" value="<span id='dateValuePlaceholder'/>" aria-label="Inserisci la data di nascita"/>
+                        </p>
+                    </fieldset>
 
                     <fieldset id="fieldSex" class="fieldset">
                         <legend>Sesso</legend>
 
-                        <ul>
+                        <ul class="list">
                             <li>
                                 <input id="sexM" type="radio" name="sex" value="M" aria-label="Pulsante per dichiarare sesso maschile"<span id='maleCheckedPlaceholder'/>/>
                                 <label id="labelSexM" for="sexM">Maschile</label>
@@ -126,11 +136,6 @@
                     </fieldset>
 
                     <p>
-                        <label id="labelDate" for="date">Data di nascita</label>
-                        <input id="date" class="formElement" type="text" name="date" value="<span id='dateValuePlaceholder'/>" aria-label="Inserisci la data di nascita"/>
-                    </p>
-
-                    <p>
                         <label id="labelMail" for="email" xml:lang="en">E-mail</label>
                         <input id="email" class="formElement" type="text" name="mail" value="<span id='mailValuePlaceholder'/>" aria-label="Inserisci l'indirizzo E-mail"/>
                     </p>
@@ -145,7 +150,7 @@
                     </p>
 
                     <p>
-                        <label id="labelPassword" for="password" xml:lang="en">Password</label>
+                        <label id="labelPassword" class="labelBlock" for="password" xml:lang="en">Password</label>
                         <label class="clause">La password deve essere lunga almeno 8 caratteri e contenere almeno una lettera minuscola, una lettera maiuscola, un numero ed uno tra i seguenti caratteri speciali ! # $ % &amp; ' * + ^ _ ` \ - { | } ~ @</label>
                         <input id="password" class="formElement" type="password" name="password" value="" aria-label="Inserisci la password"/>
                     </p>
@@ -163,6 +168,7 @@
             </form>
 
             <a id="buttonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
+                Torna su
                 <img alt="Torna su" src="../Images/TornaSu.png"/>
             </a>
         </div>

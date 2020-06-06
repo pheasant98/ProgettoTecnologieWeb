@@ -81,7 +81,7 @@ class EventsController {
             }
         }
 
-        if ($type !== 'Mostre' && $type !== 'Conferenze') { //FIXME: Quando si sistema nel db si deve mettere Mostra e Conferenza
+        if ($type !== 'Mostra' && $type !== 'Conferenza') { //FIXME: Quando si sistema nel db si deve mettere Mostra e Conferenza
             $message .= '[La tipologia dell\'evento deve essere Mostra o Conferenza]';
         }
 
@@ -115,10 +115,10 @@ class EventsController {
                 $message = '<p class="error">Non è stato possibile inserire l\'evento ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
             }
         } else {
-            $message = '<ul>' . $message;
+            $message = '<p><ul>' . $message;
             $message = str_replace('[', '<li class="error">', $message);
             $message = str_replace(']', '</li>', $message);
-            $message .= '</ul>';
+            $message .= '</ul></p>';
         }
 
         return $message;
@@ -155,28 +155,28 @@ class EventsController {
 
         while($row = $result_set->fetch_assoc()) {
             $content .= '
-                <dt id="' . $id . $counter . '">
+                <dt id="' . $id . $counter . '" class="titleDef">
                      <a href="Evento.php?id=' . $row['ID'] . '\" aria-label="Vai all\'evento">' . $row['Titolo'] . '</a>
                 </dt>
                 <dd>
                     <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'evento">Salta l\'evento</a>
     
                     <dl>
-                        <dt>
+                        <dt class="inlineDef">
                             Data inizio evento: 
                         </dt>
                         <dd class="definition">
                             ' . DateUtilities::englishItalianDate($row['DataInizio']) . '
                         </dd>
                         
-                        <dt>
-                            Data chiusura evento: 
+                        <dt class="inlineDef">
+                            Data fine evento: 
                         </dt>
                         <dd class="definition">
                             ' . DateUtilities::englishItalianDate($row['DataFine']) . '
                         </dd>
     
-                        <dt>
+                        <dt class="inlineDef">
                             Tipologia: 
                         </dt>
                         <dd class="definition">
@@ -209,28 +209,28 @@ class EventsController {
 
         while($row = $result_set->fetch_assoc()) {
             $content .= '
-                <dt id="' . $id . $counter . '">
+                <dt id="' . $id . $counter . '" class="titleDef">
                      <a href="Evento.php?id=' . $row['ID'] . '\" aria-label="Vai all\'evento">' . $row['Titolo'] . '</a>
                 </dt>
                 <dd>
                     <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'evento">Salta l\'evento</a>
     
                     <dl>
-                        <dt>
+                        <dt class="inlineDef">
                             Data inizio evento: 
                         </dt>
                         <dd class="definition">
                             ' . DateUtilities::englishItalianDate($row['DataInizio']) . '
                         </dd>
                         
-                        <dt>
-                            Data chiusura evento: 
+                        <dt class="inlineDef">
+                            Data fine evento: 
                         </dt>
                         <dd class="definition">
                             ' . DateUtilities::englishItalianDate($row['DataFine']) . '
                         </dd>
     
-                        <dt>
+                        <dt class="inlineDef">
                             Tipologia: 
                         </dt>
                         <dd class="definition">
@@ -298,10 +298,10 @@ class EventsController {
                 $message = '<p class="error">Non è stato possibile aggiornare l\'evento ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
             }
         } else {
-            $message = '<ul>' . $message;
+            $message = '<p><ul>' . $message;
             $message = str_replace('[', '<li class="error">', $message);
             $message = str_replace(']', '</li>', $message);
-            $message .= '</ul>';
+            $message .= '</ul></p>';
         }
 
         return $message;

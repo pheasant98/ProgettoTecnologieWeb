@@ -47,10 +47,10 @@ class ReviewsController {
                 $message = '<p class="error">Non è stato possibile inserire la recensione ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
             }
         } else {
-            $message = '<ul>' . $message;
+            $message = '<p><ul>' . $message;
             $message = str_replace('[', '<li class="error">', $message);
             $message = str_replace(']', '</li>', $message);
-            $message = $message . '</ul>';
+            $message = $message . '</ul></p>';
         }
 
         return $message;
@@ -80,32 +80,32 @@ class ReviewsController {
 
         while($row = $result_set->fetch_assoc()) {
             $content .= '
-                <dt id="' . $id . $counter . '" class="reviewObject">
-                     ' . $row['Oggetto'] . '
+                <dt id="' . $id . $counter . '" class="titleDef">
+                    <a href="Recensione.php?id=' . $row['ID'] . '" aria-label="Vai alla recensione">' . $row['Oggetto'] . '</a>
                 </dt>
                 <dd>
                     <a href="#' . ($result_set->num_rows == $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta la recensione">Salta la recensione</a>
     
                     <dl>
-                        <dt class="reviewAuthor">
+                        <dt class="inlineDef">
                             Utente: 
                         </dt>
                         <dd class="definition">
                             ' . $row['Utente'] . '
                         </dd>
                         
-                        <dt class="reviewData">
+                        <dt class="inlineDef">
                             Data ultima modifica: 
                         </dt>
                         <dd class="definition">
                             ' . $row['DataUltimaModifica'] . '
                         </dd>
     
-                        <dt class="reviewDescription">
+                        <dt class="inlineDef">
                             Contenuto: 
                         </dt>
                         <dd class="definition">
-                            ' . $row['Contenuto'] . '
+                            ' . substr($row['Contenuto'], 0, 150) . '...' . '
                         </dd>
                     </dl>
                 </dd>
@@ -192,10 +192,10 @@ class ReviewsController {
                 $message = '<p class="error">Non è stato possibile aggiornare la recensione ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
             }
         } else {
-            $message = '<ul>' . $message;
+            $message = '<p><ul>' . $message;
             $message = str_replace('[', '<li class="error">', $message);
             $message = str_replace(']', '</li>', $message);
-            $message .= '</ul>';
+            $message .= '</ul></p>';
         }
 
         return $message;
