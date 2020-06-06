@@ -853,6 +853,15 @@ function checkSameOldPassword(inputOldPassword, inputNewPassword, tags) {
     }
 }
 
+/* CONTROLLI E GESTIONE DELLA RICERCA */
+function checkSearchFilter(input) {
+
+}
+
+function checkSearchText(input) {
+
+}
+
 /* CONTROLLI E GESTIONE DEI FORM */
 function artworkFormValidation(isInsert) {
     var author = document.getElementById('author');
@@ -1000,4 +1009,14 @@ function registrationFormValidation() {
     scrollToError();
 
     return nameResult && surnameResult && dateResult && sexResult && emailResult && usernameResult && passwordResult && confirmPasswordResult && samePasswordResult;
+}
+
+function searchFormValidation() {
+    var filter = document.getElementById('filterSearch');
+    var search = document.getElementById('searchText');
+
+    var filterResult = checkSearchFilter(filter);
+    var searchResult = checkSearchText(search);
+
+    return filterResult && searchResult;
 }
