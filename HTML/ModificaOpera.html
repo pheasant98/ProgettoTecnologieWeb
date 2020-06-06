@@ -134,7 +134,8 @@
                         </p>
 
                         <p>
-                            <label id="labelYears" for="years">Datazione</label>
+                            <label id="labelYears" class="labelBlock" for="years">Datazione</label>
+                            <label class="clause">La datazione deve essere inserita nel seguente formato: aaaa</label>
                             <input id="years" class="formElement" name="years" type="text" value="<span id='yearsValuePlaceholder'/>" aria-label="Modifica l'anno dell'opera" aria-required="true"/>
                         </p>
                     </fieldset>
@@ -159,26 +160,26 @@
                             <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
-                        <p>
+                        <p<span id='hideTechniqueValuePlaceholder'/>>
                             <label id="labelTechnique" for="technique">Tecnica</label>
                             <input id="technique" class="formElement" name="technique" type="text" value="<span id='techniqueValuePlaceholder'/>" aria-label="Modifica la tecnica di realizzazione" aria-required="true"/>
                         </p>
 
-                        <p>
+                        <p<span id='hideSkipTechniqueValuePlaceholder'/>>
                             <a id="postTechniqueSkip" class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
-                        <p class="hideContent">
+                        <p<span id='hideMaterialValuePlaceholder'/>>
                             <label id="labelMaterial" for="material">Materiale</label>
                             <input id="material" class="formElement" name="material" type="text" value="<span id='materialValuePlaceholder'/>" aria-label="Modifica il materiale di realizzazione" aria-required="true"/>
                         </p>
 
-                        <p class="hideContent">
+                        <p<span id='hideSkipMaterialValuePlaceholder'/>>
                             <a id="postMaterialSkip" class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
 
                         <p>
-                            <label id="labelSize" for="dimensions" class="labelBlock">Dimensioni</label>
+                            <label id="labelSize" class="labelBlock" for="dimensions" class="labelBlock">Dimensioni</label>
                             <label class="clause">Le dimensioni devono essere inserite nel seguente formato: altezzaxlarghezza</label>
                             <!--TODO: fare classe nel div per farlo diventare più piccolo e giusto sotto la textbox. Controllare se è possibile usere 2 label invece di label+div-->
                             <input id="dimensions" class="formElement" name="dimensions" type="text" value="<span id='dimensionsValuePlaceholder'/>" aria-label="Inserisci le dimensioni"/>
@@ -210,7 +211,9 @@
 
                         <p>
                             <img class="significantImage" alt="Immagine dell'opera <span id='titleValuePlaceholder'/>" src="../<span id='artworkImgPlaceholder'/>"/>
-                            <label id="labelImageUpload" for="imageUpload">Scegliere l'immagine</label>
+                            <label id="labelImageUpload" class="labelBlock" for="imageUpload">Scegliere l'immagine</label>
+                            <label class="clause labelBlock">La dimensione massima consentita è 500<abbr title="Kilo Bytes" xml:lang="en">KB</abbr></label>
+                            <label class="clause">Le estensioni consentite sono .<abbr title="Joint Photographic Experts Group" xml:lang="en">jpeg</abbr>, .<abbr title="Joint Photographic Group" xml:lang="en">jpg</abbr>, .<abbr title="Portable Network Graphics" xml:lang="en">png</abbr></label>
                             <input id="imageUpload" class="formElement" name="image" type="file" accept=".jpg, .jpeg, .png" aria-label="Modifica l'immagine dell'opera" aria-required="true"/>
                             <!--TODO: Scrivere il suggerimento delle estensioni supportate-->
                         </p>

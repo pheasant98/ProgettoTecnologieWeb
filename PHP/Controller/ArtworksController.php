@@ -54,8 +54,8 @@ class ArtworksController {
             }
         }
 
-        if ($style !== 'Scultura' && $style !== 'Dipinto') { //FIXME: Quando si sistema nel db si deve mettere Scultura e Dipinto
-            $message .= '[Lo stile dell\'opera deve essere Scultura o Dipinto]';
+        if ($style !== 'Scultura' && $style !== 'Dipinto') {
+            $message .= '[Non è possibile inserire uno stile diverso da scultura o dipinto]';
         }
 
         if($technique != NULL) { //TODO: Sistemare anche controllo dopo aver fatto Javascript.

@@ -116,7 +116,8 @@
                         </p>
 
                         <p>
-                            <label id="labelYear" for="years">Datazione</label>
+                            <label id="labelYear" class="labelBlock" for="years">Datazione</label>
+                            <label class="clause">La datazione deve essere inserita nel seguente formato: aaaa</label>
                             <input id="years" class="formElement" name="years" type="text" value="<span id='yearsValuePlaceholder'/>" aria-label="Inserisci la datazione"/>
                         </p>
                     </fieldset>
@@ -131,20 +132,19 @@
                             </select>
                         </p>
 
-                        <p>
+                        <p<span id='hideTechniqueValuePlaceholder'/>>
                             <label id="labelTechnique" for="technique">Tecnica</label>
                             <input id="technique" class="formElement" name="technique" type="text" value="<span id='techniqueValuePlaceholder'/>" aria-label="Inserisci la tecnica"/>
                         </p>
 
-                        <p class="hideContent">
+                        <p<span id='hideMaterialValuePlaceholder'/>>
                             <label id="labelMaterial" for="material">Materiale</label>
                             <input id="material" class="formElement" name="material" type="text" value="<span id='materialValuePlaceholder'/>" aria-label="Inserisci il materiale"/>
                         </p>
 
                         <p>
-                            <label id="labelSize" class="labelBlock" for="dimensions">Dimensioni</label>
+                            <label id="labelSize" class="labelBlock" class="labelBlock" for="dimensions">Dimensioni</label>
                             <label class="clause">Le dimensioni devono essere inserite nel seguente formato: altezzaxlarghezza</label>
-                            <!--TODO: fare classe nel div per farlo diventare più piccolo e giusto sotto la textbox. Controllare se è possibile usere 2 label invece di label+div-->
                             <input id="dimensions" class="formElement" name="dimensions" type="text" value="<span id='dimensionsValuePlaceholder'/>" aria-label="Inserisci le dimensioni"/>
                         </p>
                     </fieldset>
@@ -164,9 +164,10 @@
                     </fieldset>
 
                     <p>
-                        <label id="labelImageUpload" for="imageUpload">Inserisci immagine</label>
+                        <label id="labelImageUpload" class="labelBlock" for="imageUpload">Inserisci immagine</label>
+                        <label class="clause labelBlock">La dimensione massima consentita è 500<abbr title="Kilo Bytes" xml:lang="en">KB</abbr></label>
+                        <label class="clause">Le estensioni consentite sono .<abbr title="Joint Photographic Experts Group" xml:lang="en">jpeg</abbr>, .<abbr title="Joint Photographic Group" xml:lang="en">jpg</abbr>, .<abbr title="Portable Network Graphics" xml:lang="en">png</abbr></label>
                         <input id="imageUpload" class="formElement" name="image" type="file" accept=".jpg, .jpeg, .png" aria-label="Inserisci l'immagine"/>
-                        <!--TODO: Scrivere il suggerimento delle estensioni supportate-->
                     </p>
 
                     <p class="navigation">

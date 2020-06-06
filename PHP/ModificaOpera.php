@@ -62,8 +62,12 @@ if ($loan === 'No') {
 
 if ($style === 'Dipinto') {
     $painting_style = ' selected="selected" ';
+    $hide_technique = ' class="hideContent"';
+    $hide_skip_technique = ' class="hideContent"';
 } else {
     $sculture_style = ' selected="selected" ';
+    $hide_material = ' class="hideContent"';
+    $hide_skip_material = ' class="hideContent"';
 }
 
 $document = file_get_contents('../HTML/ModificaOpera.html');
@@ -81,7 +85,11 @@ $document = str_replace("<span id='yearsValuePlaceholder'/>", $years, $document)
 $document = str_replace("<span id='paintingStyleSelectedPlaceholder'/>", $painting_style, $document);
 $document = str_replace("<span id='scultureStyleSelectedPlaceholder'/>", $sculture_style, $document);
 $document = str_replace("<span id='techniqueValuePlaceholder'/>", $technique, $document);
+$document = str_replace("<span id='hideTechniqueValuePlaceholder'/>", $hide_technique, $document);
+$document = str_replace("<span id='hideSkipTechniqueValuePlaceholder'/>", $hide_skip_technique, $document);
 $document = str_replace("<span id='materialValuePlaceholder'/>", $material, $document);
+$document = str_replace("<span id='hideMaterialValuePlaceholder'/>", $hide_material, $document);
+$document = str_replace("<span id='hideSkipMaterialValuePlaceholder'/>", $hide_skip_material, $document);
 $document = str_replace("<span id='dimensionsValuePlaceholder'/>", $dimensions, $document);
 $document = str_replace("<span id='loanYesCheckedPlaceholder'/>", $loan_yes, $document);
 $document = str_replace("<span id='loanNoCheckedPlaceholder'/>", $loan_no, $document);
