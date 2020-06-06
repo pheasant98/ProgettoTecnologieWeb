@@ -1,7 +1,5 @@
 <?php
 
-# TODO: decidere alt immagini: immagine dell'opera "titolo" appartenente alla categoria "tipologia"
-
 session_start();
 
 require_once ('Controller/EventsController.php');

@@ -17,7 +17,7 @@ $event_count = 0;
 
 $filter_content = 'NessunFiltro';
 $filter_content_type = 'NessunFiltro';
-$filter_content_types = 'NessunFiltro'; //TODO: sistemare con enum giusto
+$filter_content_types = 'NessunFiltro';
 
 if (isset($_GET['filterContent'])) {
     $filter_content = $_GET['filterContent'];
