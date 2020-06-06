@@ -92,7 +92,7 @@
         <div id="content" role="main">
             <h2 class="title">Modifica dell'opera</h2>
 
-            <form name="updateArtwork" action="" method="post" role="form" enctype="multipart/form-data" onsubmit="return artworkFormValidation();">
+            <form name="updateArtwork" action="" method="post" role="form" enctype="multipart/form-data" onsubmit="return artworkFormValidation(false);">
                 <fieldset id="UpdateField" class="hideFieldset">
                     <legend class="hideLegend">Modifica opera</legend>
 
@@ -195,12 +195,12 @@
 
                         <ul class="list">
                             <li>
-                                <label id="labelLoanYes" for="loanYes">Sì</label>
                                 <input id="loanYes" name="loan" value="Si" type="radio"<span id='loanYesCheckedPlaceholder'/>aria-label="Pulsante per dire si al prestito"/>
+                                <label id="labelLoanYes" for="loanYes">Sì</label>
                             </li>
                             <li>
-                                <label id="labelLoanNo" for="loanNo">No</label>
                                 <input id="loanNo" name="loan" value="No" type="radio"<span id='loanNoCheckedPlaceholder'/>aria-label="Pulsante per dire no al prestito"/>
+                                <label id="labelLoanNo" for="loanNo">No</label>
                             </li>
                         </ul>
                     </fieldset>
@@ -210,16 +210,17 @@
                         </p>
 
                         <p>
-                            <img class="significantImage" alt="Immagine dell'opera <span id='titleValuePlaceholder'/>" src="../<span id='artworkImgPlaceholder'/>"/>
                             <label id="labelImageUpload" class="labelBlock" for="imageUpload">Scegliere l'immagine</label>
                             <label class="clause labelBlock">La dimensione massima consentita è 500<abbr title="Kilo Bytes" xml:lang="en">KB</abbr></label>
                             <label class="clause">Le estensioni consentite sono .<abbr title="Joint Photographic Experts Group" xml:lang="en">jpeg</abbr>, .<abbr title="Joint Photographic Group" xml:lang="en">jpg</abbr>, .<abbr title="Portable Network Graphics" xml:lang="en">png</abbr></label>
-                            <input id="imageUpload" class="formElement" name="image" type="file" accept=".jpg, .jpeg, .png" aria-label="Modifica l'immagine dell'opera" aria-required="true"/>
-                            <!--TODO: Scrivere il suggerimento delle estensioni supportate-->
+                            <!--TODO: Scrivere il suggerimento delle estensioni supportate e che si lascia vuoto non si modifica -->
+                            <input id="imageUpload" class="formElement" name="image" type="file" accept=".jpg, .jpeg, .png" aria-label="Modifica l'immagine dell'opera" aria-required="true" onchange="return checkModifyArtworkImage(event)"/>
+                            <input id="previousImage" name="previousImage" type="hidden" value="../<span id='artworkImgPlaceholder'/>"/>
+                            <img id="uploadedImage" class="significantImage" alt="Immagine dell'opera <span id='titleValuePlaceholder'/>" src="../<span id='artworkImgPlaceholder'/>"/>
                         </p>
 
                     <p class="navigation">
-                        <input class="button" name="cancel" type="reset" value="Cancella" aria-label="Annulla le modifiche apportate"/>
+                        <input class="button" name="cancel" type="reset" value="Annulla" aria-label="Annulla le modifiche apportate" onclick="resetImage(true)"/>
                         <input class="button" name="submit" type="submit" value="Modifica" aria-label="Invia le modifiche apportate"/>
                     </p>
                 </fieldset>

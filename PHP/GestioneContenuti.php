@@ -6,7 +6,7 @@ require_once ('Controller/LoginController.php');
 
 session_start();
 
-if (!LoginController::isAuthenticatedUser()) {
+if (!LoginController::isAuthenticatedUser() || !LoginController::isAdminUser()) {
     header('Location: Errore.php');
 }
 
@@ -58,12 +58,24 @@ if (isset($_GET['filterContent'])) {
 }
 
 $deleted = '';
-if (isset($_SESSION['contentDeleted']) && isset($_SESSION['deleted_type'])) {
+if (isset($_SESSION['contentDeleted']) && isset($_SESSION['deleted_type']) && isset($_SESSION['contentDeletedError'])) {
     if ($_SESSION['deleted_type'] === 'Opera') {
-        $deleted = 'L\'opera ' . $_SESSION['contentDeleted'] . ' è stata eliminata correttamente';
+        if ($_SESSION['contentDeletedError']) {
+            $deleted = 'L\'opera ' . $_SESSION['contentDeleted'] . ' è stata eliminata correttamente';
+        } else {
+            $deleted = 'Non è stato possibile eliminare l\'opera ' . $_SESSION['contentDeleted'] . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.';
+        }
     } else if ($_SESSION['deleted_type'] === 'Evento') {
-        $deleted = 'L\'evento ' . $_SESSION['contentDeleted'] . ' è stato eliminato correttamente';
+        if (!$_SESSION['contentDeletedError']) {
+            $deleted = 'L\'evento ' . $_SESSION['contentDeleted'] . ' è stato eliminato correttamente';
+        } else {
+            $deleted = 'Non è stato possibile eliminare l\'evento ' . $_SESSION['contentDeleted'] . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.';
+        }
     }
+
+    unset($_SESSION['contentDeleted']);
+    unset($_SESSION['deleted_type']);
+    unset($_SESSION['contentDeletedError']);
 }
 
 if ($artwork_count == 1) {

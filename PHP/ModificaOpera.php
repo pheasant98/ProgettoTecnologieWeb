@@ -5,7 +5,7 @@ require_once ('Controller/ArtworksController.php');
 
 session_start();
 
-if (!LoginController::isAuthenticatedUser() || !isset($_GET['id'])) {
+if (!LoginController::isAuthenticatedUser() || !LoginController::isAdminUser() || !isset($_GET['id'])) {
     header('Location: Errore.php');
 }
 
@@ -41,7 +41,9 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Modifica') {
         $technique = '';
     }
     $loan = ($_POST['loan'] === 'Si' ? 1 : 0);
-    $message = $artworksController->updateArtwork($_GET['id'], $author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $_SESSION['username']);
+
+    $message = $artworksController->updateArtwork($_GET['id'], $author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $_POST['previousImage'], $_SESSION['username']);
+
     unset($artworksController);
     if($message === '') {
         $_SESSION['artwork_title'] = $_POST['title'];

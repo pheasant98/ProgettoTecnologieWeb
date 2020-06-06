@@ -6,7 +6,7 @@ require_once ('Utilities/DateUtilities.php');
 
 session_start();
 
-if (!LoginController::isAuthenticatedUser() || !isset($_GET['id'])) {
+if (!LoginController::isAuthenticatedUser() || !LoginController::isAdminUser() || !isset($_GET['id'])) {
     header('Location: Errore.php');
 }
 
@@ -29,12 +29,12 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Modifica') {
     $type = $_POST['type'];
     $manager = $_POST['manager'];
     $message = $eventsController->updateEvent($_GET['id'], $title, $description, $begin_date, $end_date, $type, $manager, $_SESSION['username']);
+    unset($eventsController);
     if($message === '') {
         $_SESSION['event_title'] = $_POST['title'];
         $_SESSION['event_id'] = $_GET['id'];
         header('Location: EventoModificato.php');
     }
-    unset($eventsController);
 }
 
 $exhibition_type = ' ';

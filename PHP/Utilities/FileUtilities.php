@@ -20,6 +20,10 @@ class FileUtilities {
         unset($this->path);
     }
 
+    public static function isEmpty() {
+        return $_FILES['image']['name'] === '' || $_FILES['image']['size'] === '';
+    }
+
     public static function isSelected() {
         return isset($_FILES['image']['error']);
     }

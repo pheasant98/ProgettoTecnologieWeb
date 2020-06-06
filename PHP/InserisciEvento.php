@@ -5,7 +5,7 @@ require_once ('Controller/EventsController.php');
 
 session_start();
 
-if (!LoginController::isAuthenticatedUser()) {
+if (!LoginController::isAuthenticatedUser() || !LoginController::isAdminUser()) {
   header('Location: Errore.php');
 }
 

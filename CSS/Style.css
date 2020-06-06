@@ -33,6 +33,14 @@ a:visited {
   color: #636;
 }
 
+/* FIXME: impostare le dimensioni corrette */
+#uploadedImageIE {
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
+  color: rgba(0, 0, 0, 0);
+  width: 50%;
+  height: 10em;
+}
+
 /* Regole per gli header delle pagine */
 
 /* Colore e ombreggiatura dell'header */
@@ -89,7 +97,7 @@ a:visited {
 /* Logo accessibile */
 #logoImage {
   float: left;
-  background-image: url('../images/logo.PNG');
+  background-image: url('../images/logo.png');
   text-indent: 100%;
   background-position: center;
   height: 3.1em;

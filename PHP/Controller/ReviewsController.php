@@ -20,8 +20,8 @@ class ReviewsController {
 
         if (strlen($content) === 0) {
             $message .= '[Non è possibile inserire una recensione con un contenuto vuoto]';
-        } elseif (strlen($content) < 30) {
-            $message .= '[Non è possibile inserire una recensione con un contenuto più corto di 30 caratteri]';
+        } elseif (strlen($content) < 4) {
+            $message .= '[Non è possibile inserire una recensione con un contenuto più corto di 4 caratteri]';
         } elseif (strlen($content) > 65535) {
             $message .= '[Non è possibile inserire una recensione con un contenuto più lungo di 65535 caratteri]';
         }
@@ -42,9 +42,9 @@ class ReviewsController {
 
         if ($message === '') {
             if ($this->reviews->postReview($title, $content, $user)) {
-                $message = '<p class="success">Recensione inserita correttamente</p>';
+                $message = '<p class="success">Recensione ' . $title . ' inserita correttamente</p>';
             } else {
-                $message = '<p class="error">Errore nell\'inserimento della recensione</p>';
+                $message = '<p class="error">Non è stato possibile inserire la recensione ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
             }
         } else {
             $message = '<p><ul>' . $message;
@@ -189,7 +189,7 @@ class ReviewsController {
             if ($this->reviews->updateReview($id, $title, $description, $user)) {
                 $message = '';
             } else {
-                $message = '<p class="error">Errore nell\'aggiornamento della recensione</p>';
+                $message = '<p class="error">Non è stato possibile aggiornare la recensione ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
             }
         } else {
             $message = '<p><ul>' . $message;
@@ -202,7 +202,7 @@ class ReviewsController {
     }
 
     public function deleteReview($id) {
-        $this->reviews->deleteReview($id);
+        return $this->reviews->deleteReview($id);
     }
 }
 
