@@ -92,20 +92,29 @@
             <h2 class="title">Registrazione</h2>
 
             <form id="registration" name="registrazione" action="" method="post" role="form" onsubmit="return registrationFormValidation();">
-                <fieldset id="personalData" class="fieldset">
-                    <legend>Dati personali</legend>
+                <fieldset id="personalData" class="hideFieldset">
+                    <legend class="hideLegend">Dati personali</legend>
 
                     <span id='outputMessagePlaceholder'/>
 
-                    <p>
-                        <label id="labelName" for="name">Nome</label>
-                        <input id="name" class="formElement" type="text" name="name" value="<span id='nameValuePlaceholder'/>" aria-label="Inserisci il nome"/>
-                    </p>
+                    <fieldset id="generalInformation" class="fieldset">
+                        <legend>Informazioni dell'utente</legend>
 
-                    <p>
-                        <label id="labelSurname" for="surname">Cognome</label>
-                        <input id="surname" class="formElement" type="text" name="surname" value="<span id='surnameValuePlaceholder'/>" aria-label="Inserisci il cognome"/>
-                    </p>
+                        <p>
+                            <label id="labelName" for="name">Nome</label>
+                            <input id="name" class="formElement" type="text" name="name" value="<span id='nameValuePlaceholder'/>" aria-label="Inserisci il nome"/>
+                        </p>
+
+                        <p>
+                            <label id="labelSurname" for="surname">Cognome</label>
+                            <input id="surname" class="formElement" type="text" name="surname" value="<span id='surnameValuePlaceholder'/>" aria-label="Inserisci il cognome"/>
+                        </p>
+
+                        <p>
+                            <label id="labelDate" for="date">Data di nascita</label>
+                            <input id="date" class="dateElement" type="text" name="date" value="<span id='dateValuePlaceholder'/>" aria-label="Inserisci la data di nascita"/>
+                        </p>
+                    </fieldset>
 
                     <fieldset id="fieldSex" class="fieldset">
                         <legend>Sesso</legend>
@@ -127,11 +136,6 @@
                     </fieldset>
 
                     <p>
-                        <label id="labelDate" for="date">Data di nascita</label>
-                        <input id="date" class="dateElement" type="text" name="date" value="<span id='dateValuePlaceholder'/>" aria-label="Inserisci la data di nascita"/>
-                    </p>
-
-                    <p>
                         <label id="labelMail" for="email" xml:lang="en">E-mail</label>
                         <input id="email" class="formElement" type="text" name="mail" value="<span id='mailValuePlaceholder'/>" aria-label="Inserisci l'indirizzo E-mail"/>
                     </p>
@@ -146,7 +150,7 @@
                     </p>
 
                     <p>
-                        <label id="labelPassword" class="labelBlock" for="password" xml:lang="en" >Password</label>
+                        <label id="labelPassword" class="labelBlock" for="password" xml:lang="en">Password</label>
                         <label class="clause">La password deve essere lunga almeno 8 caratteri e contenere almeno una lettera minuscola, una lettera maiuscola, un numero ed uno tra i seguenti caratteri speciali ! # $ % &amp; ' * + ^ _ ` \ - { | } ~ @</label>
                         <input id="password" class="formElement" type="password" name="password" value="" aria-label="Inserisci la password"/>
                     </p>
