@@ -60,28 +60,31 @@ function artworkStyleChanged(isModify) {
 }
 
 /* GESTIONE DELLA TIPOLOGIA DI CONTENUTO PER LA PAGINA GestioneContenuti.php */
+function createOption(value, text) {
+    var option = document.createElement('option');
+
+    option.value = value;
+    option.text = text;
+
+    return option;
+}
+
 function contentTypeChanged() {
     var contentInput = document.getElementById('filterContent');
     var contentTypeInput = document.getElementById('filterContentType');
 
     var content = contentInput.options[contentInput.selectedIndex].value.trim();
 
-    for (var i = 1; i < 5; ++i) {
-        contentTypeInput.options[i].removeAttribute('class');
+    for (var i = 4; i > 0; --i) {
+        contentTypeInput.remove(i);
     }
 
     if (content === 'Opera') {
-        for (var x = 3; x < 5; ++x) {
-            contentTypeInput.options[x].className = 'hideContent';
-        }
+        contentTypeInput.add(createOption('Dipinto', 'Dipinti'));
+        contentTypeInput.add(createOption('Scultura', 'Sculture'));
     } else if (content === 'Evento') {
-        for (var y = 1; y < 3; ++y) {
-            contentTypeInput.options[y].className = 'hideContent';
-        }
-    } else if (content === 'Nessun filtro') {
-        for (var z = 1; z < 5; ++z) {
-            contentTypeInput.options[z].className = 'hideContent';
-        }
+        contentTypeInput.add(createOption('Mostra', 'Mostre'));
+        contentTypeInput.add(createOption('Conferenza', 'Conferenze'));
     }
 }
 
