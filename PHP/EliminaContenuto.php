@@ -23,8 +23,20 @@ if ($_POST['type'] === 'Evento') {
     $controller = new ArtworksController();
 
     $artwork = $controller->getArtwork($_POST['id']);
-    if (unlink('../' . $artwork['Immagine']) && $controller->deleteArtwork($_POST['id'])) {
-        $_SESSION['contentDeletedError'] = true;
+
+    if (copy('../' . $artwork['Immagine'], '../_' . $artwork['Immagine'])) {
+        if (unlink('../' . $artwork['Immagine'])) {
+            if ($controller->deleteArtwork($_POST['id'])) {
+                $_SESSION['contentDeletedError'] = true;
+                unlink('../_' . $artwork['Immagine']);
+            } else {
+                $_SESSION['contentDeletedError'] = false;
+                rename('../_' . $artwork['Immagine'], '../' . $artwork['Immagine']);
+            }
+        } else {
+            $_SESSION['contentDeletedError'] = false;
+            unlink('../_' . $artwork['Immagine']);
+        }
     } else {
         $_SESSION['contentDeletedError'] = false;
     }

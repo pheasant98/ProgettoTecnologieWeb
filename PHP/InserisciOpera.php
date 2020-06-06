@@ -6,7 +6,7 @@ require_once ('Controller/ArtworksController.php');
 session_start();
 
 if (!LoginController::isAuthenticatedUser() || !LoginController::isAdminUser()) {
-    // header('Location: Errore.php');
+    // header('Location: Errore.php'); FIXME: rimuovere il commento
 }
 
 $message = '';

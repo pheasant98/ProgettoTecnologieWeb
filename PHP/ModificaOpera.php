@@ -6,7 +6,7 @@ require_once ('Controller/ArtworksController.php');
 session_start();
 
 if (!LoginController::isAuthenticatedUser() || !LoginController::isAdminUser() || !isset($_GET['id'])) {
-    header('Location: Errore.php');
+    // header('Location: Errore.php'); FIXME: rimuovere il commento
 }
 
 $message = '';
@@ -42,7 +42,9 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Modifica') {
     }
     $loan = ($_POST['loan'] === 'Si' ? 1 : 0);
     $_SESSION['artwork_title'] = $_POST['title'];
-    $message = $artworksController->updateArtwork($_GET['id'], $author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $_SESSION['username']);
+
+    $message = $artworksController->updateArtwork($_GET['id'], $author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $_POST['previousImage'], $_SESSION['username']);
+
     unset($artworksController);
     if ($message === '') {
         header('Location: OperaModificata.php');

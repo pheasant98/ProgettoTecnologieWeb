@@ -204,14 +204,15 @@
                         </p>
 
                         <p>
-                            <img alt="Immagine opera <span id='titleValuePlaceholder'/>" src="../<span id='artworkImgPlaceholder'/>"/>
                             <label id="labelImageUpload" for="imageUpload">Scegliere l'immagine: </label>
-                            <input id="imageUpload" class="formElement" name="image" type="file" accept=".jpg, .jpeg, .png" aria-label="Modifica l'immagine dell'opera" aria-required="true"/>
-                            <!--TODO: Scrivere il suggerimento delle estensioni supportate-->
+                            <!--TODO: Scrivere il suggerimento delle estensioni supportate e che si lascia vuoto non si modifica -->
+                            <input id="imageUpload" class="formElement" name="image" type="file" accept=".jpg, .jpeg, .png" aria-label="Modifica l'immagine dell'opera" aria-required="true" onchange="return checkModifyArtworkImage(event)"/>
+                            <input id="previousImage" name="previousImage" type="hidden" value="../<span id='artworkImgPlaceholder'/>"/>
+                            <img id="uploadedImage" class="" alt="Immagine opera <span id='titleValuePlaceholder'/>" src="../<span id='artworkImgPlaceholder'/>"/>
                         </p>
 
                     <p class="navigation">
-                        <input class="button" name="cancel" type="reset" value="Annulla" aria-label="Annulla le modifiche apportate"/>
+                        <input class="button" name="cancel" type="reset" value="Annulla" aria-label="Annulla le modifiche apportate" onclick="resetImage(true)"/>
                         <input class="button" name="submit" type="submit" value="Modifica" aria-label="Invia le modifiche apportate"/>
                     </p>
                 </fieldset>

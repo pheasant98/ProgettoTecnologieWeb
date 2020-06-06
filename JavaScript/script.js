@@ -342,12 +342,12 @@ function checkArtworkLoan(inputYes, inputNo) {
     }
 }
 
-function checkArtworkImage(input) {
-    var tags = 2;
+function checkArtworkImage(input, isModify) {
+    var tags = isModify ? 3 : 2;
 
     for (var i = 0; i < input.parentElement.children.length; ++i) {
         if (input.parentElement.children[i].tagName.toLowerCase() === 'img') {
-            tags = 3;
+            tags++;
         }
     }
 
@@ -386,23 +386,28 @@ function checkArtworkImage(input) {
     }
 }
 
+function createImageElement(input, id) {
+    var parentNode = input.parentNode;
+    var img = document.createElement('img');
+
+    var name = document.getElementById('title').value.trim();
+
+    img.setAttribute('id', id);
+    img.setAttribute('class', ''); // FIXME: aggiungere la giusta classe
+    img.setAttribute('alt', 'Immagine inserita per l\'opera ' + name);
+    img.setAttribute('src', '');
+
+    parentNode.appendChild(img);
+}
+
 function checkInputArtworkImage(event) {
     var input = document.getElementById('imageUpload');
-    var checkImage = checkArtworkImage(input);
+    var checkImage = checkArtworkImage(input, false);
 
     if (checkImage) {
         if (window.FileReader) {
             if (!document.getElementById('uploadedImage')) {
-                var parentNode = input.parentNode;
-                var img = document.createElement('img');
-
-                var name = document.getElementById('title').value.trim();
-
-                img.setAttribute('id', 'uploadedImage');
-                img.setAttribute('class', ''); // FIXME: aggiungere la giusta classe
-                img.setAttribute('alt', 'Immagine inserita per l\'opera' + name)
-
-                parentNode.appendChild(img);
+                createImageElement(input, 'uploadedImage');
             }
 
             var target = event.target || window.event.srcElement;
@@ -415,17 +420,7 @@ function checkInputArtworkImage(event) {
         } else {
             // Supporto per IE9
             if (!document.getElementById('uploadedImageIE')) {
-                var parentNodeIE = input.parentNode;
-                var imgIE = document.createElement('img');
-
-                var nameIE = document.getElementById('title').value.trim();
-
-                imgIE.setAttribute('id', 'uploadedImageIE');
-                imgIE.setAttribute('class', ''); // FIXME: aggiungere la giusta classe
-                imgIE.setAttribute('alt', 'Immagine inserita per l\'opera' + nameIE);
-                imgIE.setAttribute('src', '');
-
-                parentNodeIE.appendChild(imgIE);
+                createImageElement(input, 'uploadedImageIE');
             }
 
             input.select();
@@ -434,21 +429,83 @@ function checkInputArtworkImage(event) {
             var imagePreviewIE = document.getElementById('uploadedImageIE');
             imagePreviewIE.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = input.value;
         }
+    } else {
+        resetImage(false);
     }
 
     return checkImage;
 }
 
-function resetImage() {
+function checkModifyArtworkImage(event) {
+    var input = document.getElementById('imageUpload');
+    var checkImage = true;
+
+    if (input.value.trim() !== '') {
+        checkImage = checkArtworkImage(input, true);
+
+        if (checkImage) {
+            if (window.FileReader) {
+                if (!document.getElementById('uploadedImage')) {
+                    createImageElement(input, 'uploadedImage');
+                }
+
+                var target = event.target || window.event.srcElement;
+                var fileReader = new FileReader();
+
+                fileReader.onload = function () {
+                    document.getElementById('uploadedImage').src = fileReader.result;
+                }
+                fileReader.readAsDataURL(target.files[0]);
+            } else {
+                // Supporto per IE9
+                var nameIE = document.getElementById('title').value.trim();
+                var previousImage = document.getElementById('uploadedImage');
+
+                if (previousImage) {
+                    previousImage.setAttribute('id', 'uploadedImageIE');
+                    previousImage.setAttribute('class', ''); // FIXME: aggiungere la giusta classe
+                    previousImage.setAttribute('alt', 'Immagine inserita per l\'opera ' + nameIE);
+                    previousImage.setAttribute('src', '');
+                }
+
+                if (!document.getElementById('uploadedImageIE')) {
+                    createImageElement(input, 'uploadedImageIE');
+                }
+
+                input.select();
+                input.blur();
+
+                var imagePreviewIE = document.getElementById('uploadedImageIE');
+                imagePreviewIE.filters.item('DXImageTransform.Microsoft.AlphaImageLoader').src = input.value;
+            }
+        } else {
+            resetImage(false);
+        }
+    }
+
+    return checkImage;
+}
+
+function resetImage(isModify) {
     var image = document.getElementById('uploadedImage');
     var imageIE = document.getElementById('uploadedImageIE');
 
-    if (image) {
-        image.parentElement.removeChild(image);
-    }
+    if (isModify) {
+        var input = document.getElementById('imageUpload');
+        var previousImage = document.getElementById('previousImage');
 
-    if (imageIE) {
-        imageIE.parentElement.removeChild(imageIE);
+        if (!image) {
+            createImageElement(input, 'uploadedImage');
+        }
+
+        document.getElementById('uploadedImage').src = previousImage.value;
+    } else {
+        if (image) {
+            image.parentElement.removeChild(image);
+        }
+        if (imageIE) {
+            imageIE.parentElement.removeChild(imageIE);
+        }
     }
 }
 
@@ -816,8 +873,8 @@ function artworkFormValidation(isInsert) {
     var loanResult = checkArtworkLoan(loanYes, loanNo);
 
     var imageResult = true;
-    if (isInsert) {
-        imageResult = checkArtworkImage(image);
+    if (isInsert || image.value.trim() !== '') {
+        imageResult = checkArtworkImage(image, !isInsert);
     }
 
     scrollToError();
