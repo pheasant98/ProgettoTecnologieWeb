@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.24)  6 JUN 2020 18:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.24)  6 JUN 2020 23:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -872,7 +872,7 @@ LaTeX Info: Redefining \nameref on input line 5.
 \openout4 = `Relazione.out'.
 
  ABD: EveryShipout initializing macros
-<img/Logo.png, id=288, 859.32pt x 434.61pt>
+<img/Logo.png, id=336, 859.32pt x 434.61pt>
 File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 8.
@@ -890,8 +890,13 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.45 ...ione dei contenuti}}{9}{paragraph.2.3.3.4}
-                                                  % [1])
+l.45 ...t {Area personale}}{11}{paragraph.2.3.3.2}
+                                                  % [1]
+File: img/Logo.png Graphic file (type png)
+<use img/Logo.png>
+Package pdftex.def Info: img/Logo.png  used on input line 83.
+(pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
+ [2])
 \tf@toc=\write5
 \openout5 = `Relazione.toc'.
 
@@ -899,7 +904,7 @@ File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 14.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [2]
+ [3]
 \openout2 = `Content/Abstract.aux'.
 
 
@@ -908,78 +913,75 @@ File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 15.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [3
+ [4
 
 ]
 \openout2 = `Content/Analisi.aux'.
 
  (./Content/Analisi.tex
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 36.
-
-(/usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 36.
 File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
-Package pdftex.def Info: img/Logo.png  used on input line 39.
+Package pdftex.def Info: img/Logo.png  used on input line 38.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [4
+ [5
 
 
 ]
-File: img/Logo.png Graphic file (type png)
-<use img/Logo.png>
-Package pdftex.def Info: img/Logo.png  used on input line 69.
-(pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [5]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 75.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 57.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
-Package pdftex.def Info: img/Logo.png  used on input line 88.
+Package pdftex.def Info: img/Logo.png  used on input line 68.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
  [6]
 File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
-Package pdftex.def Info: img/Logo.png  used on input line 122.
+Package pdftex.def Info: img/Logo.png  used on input line 98.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
  [7]
-Overfull \hbox (1.7282pt too wide) in paragraph at lines 136--137
-[]\T1/cmr/m/n/10.95 inserimento di una re-cen-sio-ne dal-la pa-gi-na \T1/cmr/m/
-it/10.95 La-scia una re-cen-sio-ne \T1/cmr/m/n/10.95 (ve-di Ÿ[][]2.3.2.3[][]); 
-
- []
-
 File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
-Package pdftex.def Info: img/Logo.png  used on input line 173.
+Package pdftex.def Info: img/Logo.png  used on input line 133.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
-[8]
-Overfull \hbox (2.44334pt too wide) in paragraph at lines 191--192
-[]\T1/cmr/m/n/10.95 modifica dei pro-pri da-ti uten-te dal-la pa-gi-na \T1/cmr/
-m/it/10.95 Mo-di-fi-ca da-ti uten-te \T1/cmr/m/n/10.95 (ve-di Ÿ[][]2.3.3.10[][]
-); 
- []
-
+ [8]
 File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
-Package pdftex.def Info: img/Logo.png  used on input line 227.
+Package pdftex.def Info: img/Logo.png  used on input line 163.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
-[9])
+
+[9]
+File: img/Logo.png Graphic file (type png)
+<use img/Logo.png>
+Package pdftex.def Info: img/Logo.png  used on input line 200.
+(pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
+ [10]
+File: img/Logo.png Graphic file (type png)
+<use img/Logo.png>
+Package pdftex.def Info: img/Logo.png  used on input line 228.
+(pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
+ [11]
+File: img/Logo.png Graphic file (type png)
+<use img/Logo.png>
+Package pdftex.def Info: img/Logo.png  used on input line 259.
+(pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
+ [12]
+File: img/Logo.png Graphic file (type png)
+<use img/Logo.png>
+Package pdftex.def Info: img/Logo.png  used on input line 301.
+(pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
+ [13])
 File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 17.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [10]
+ [14]
 \openout2 = `Content/Progettazione.aux'.
 
  (./Content/Progettazione.tex
-<img/SchemaLogico.png, id=493, 1044.90375pt x 533.995pt>
+<img/SchemaLogico.png, id=548, 1044.90375pt x 533.995pt>
 File: img/SchemaLogico.png Graphic file (type png)
 <use img/SchemaLogico.png>
 Package pdftex.def Info: img/SchemaLogico.png  used on input line 19.
@@ -994,10 +996,18 @@ File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 27.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
-[11
+[15
 
 
  <./img/SchemaLogico.png>]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 28.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 28.
+
 Underfull \hbox (badness 10000) in paragraph at lines 32--33
 
  []
@@ -1007,7 +1017,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--33
 
  []
 
-<img/Mobile.png, id=505, 1883.035pt x 1647.15375pt>
+<img/Mobile.png, id=560, 1883.035pt x 1647.15375pt>
 File: img/Mobile.png Graphic file (type png)
 <use img/Mobile.png>
 Package pdftex.def Info: img/Mobile.png  used on input line 37.
@@ -1017,7 +1027,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 38.
 See the caption package documentation for explanation.
 
-<img/Tablet.png, id=506, 1581.91pt x 2341.74875pt>
+<img/Tablet.png, id=561, 1581.91pt x 2341.74875pt>
 File: img/Tablet.png Graphic file (type png)
 <use img/Tablet.png>
 Package pdftex.def Info: img/Tablet.png  used on input line 42.
@@ -1031,8 +1041,8 @@ File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 43.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
-[12 <./img/Mobile.png>]
-<img/Desktop.png, id=515, 1500.60625pt x 1218.5525pt>
+[16 <./img/Mobile.png>]
+<img/Desktop.png, id=570, 1500.60625pt x 1218.5525pt>
 File: img/Desktop.png Graphic file (type png)
 <use img/Desktop.png>
 Package pdftex.def Info: img/Desktop.png  used on input line 47.
@@ -1047,12 +1057,12 @@ File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 57.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
-[13 <./img/Tablet.png> <./img/Desktop.png>]
+[17 <./img/Tablet.png> <./img/Desktop.png>]
 File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 66.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [14]
+ [18]
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10.95> not available
 (Font)              Font shape `T1/cmtt/m/n' tried instead on input line 71.
 )
@@ -1060,7 +1070,7 @@ File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 19.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [15]
+ [19]
 \openout2 = `Content/Implementazione.aux'.
 
 
@@ -1069,7 +1079,7 @@ File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 21.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [16
+ [20
 
 
 ]
@@ -1080,7 +1090,7 @@ File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 23.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [17
+ [21
 
 
 ]
@@ -1092,7 +1102,7 @@ File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 25.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [18
+ [22
 
 
 ]
@@ -1103,7 +1113,7 @@ File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 27.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [19
+ [23
 
 
 ]
@@ -1115,7 +1125,7 @@ File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 29.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [20
+ [24
 
 
 ]
@@ -1132,7 +1142,7 @@ File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 31.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [21
+ [25
 
 
 ] 
@@ -1152,17 +1162,17 @@ Package rerunfilecheck Warning: File `Relazione.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `Relazione.out':
-(rerunfilecheck)             Before: 50DE80D9586ED47B796C6AB4F98E5590;6179
-(rerunfilecheck)             After:  0C5A0A45BB1E5CD6B61DF65D8534FAA0;6272.
+(rerunfilecheck)             Before: 0C032210CCBABAC8DCA47FB7F827E534;7537
+(rerunfilecheck)             After:  1909799C01B547138E7EE741DEE898C1;7531.
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 20414 strings out of 492616
- 374170 string characters out of 6129480
- 473736 words of memory out of 5000000
- 23763 multiletter control sequences out of 15000+600000
+ 20452 strings out of 492616
+ 375307 string characters out of 6129480
+ 474777 words of memory out of 5000000
+ 23786 multiletter control sequences out of 15000+600000
  20642 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,17n,79p,880b,728s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1185,10 +1195,10 @@ xmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2019/texm
 f-dist/fonts/type1/public/cm-super/sfxc1095.pfb></usr/local/texlive/2019/texmf-
 dist/fonts/type1/public/cm-super/sfxc1200.pfb></usr/local/texlive/2019/texmf-di
 st/fonts/type1/public/cm-super/sfxc2488.pfb>
-Output written on Relazione.pdf (22 pages, 697398 bytes).
+Output written on Relazione.pdf (26 pages, 710244 bytes).
 PDF statistics:
- 654 PDF objects out of 1000 (max. 8388607)
- 597 compressed objects within 6 object streams
- 99 named destinations out of 1000 (max. 500000)
- 598 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 713 PDF objects out of 1000 (max. 8388607)
+ 651 compressed objects within 7 object streams
+ 114 named destinations out of 1000 (max. 500000)
+ 694 words of extra memory for PDF output out of 10000 (max. 10000000)
 
