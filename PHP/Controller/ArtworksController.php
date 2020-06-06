@@ -75,8 +75,8 @@ class ArtworksController {
                 $message .= '[Non è possibile inserire un materiale vuoto]';
             } elseif (strlen($material) < 4) {
                 $message .= '[Non è possibile inserire un materiale più corto di 4 caratteri]';
-            } elseif (strlen($material) > 32) {
-                $message .= '[Non è possibile inserire un materiale più lungo di 32 caratteri]';
+            } elseif (strlen($material) > 64) {
+                $message .= '[Non è possibile inserire un materiale più lungo di 64 caratteri]';
             } elseif (!preg_match('/^[A-zÀ-ú\'\-`\s]+$/', $material)) {
                 $message .= '[Il materiale contiene caratteri non consentiti. Quelli possibili sono lettere, anche accentate, spazi, \' \ - `]';
             }

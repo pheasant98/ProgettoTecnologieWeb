@@ -17,7 +17,6 @@ $event_count = 0;
 
 $filter_content = 'NessunFiltro';
 $filter_content_type = 'NessunFiltro';
-$filter_content_types = 'NessunFiltro';
 
 if (isset($_GET['filterContent'])) {
     $filter_content = $_GET['filterContent'];
@@ -25,12 +24,9 @@ if (isset($_GET['filterContent'])) {
         if (isset($_GET['filterContentType'])) {
             $filter_content_type = $_GET['filterContentType'];
             if ($_GET['filterContentType'] === 'Dipinto') {
-                $filter_content_types = 'Dipinto';
-                $artwork_count = $artworks_controller->getArtworksCountByStyle($filter_content_types);
-                echo $artwork_count;
+                $artwork_count = $artworks_controller->getArtworksCountByStyle($filter_content_type);
             } elseif ($_GET['filterContentType'] === 'Scultura') {
-                $filter_content_types = 'Scultura';
-                $artwork_count = $artworks_controller->getArtworksCountByStyle($filter_content_types);
+                $artwork_count = $artworks_controller->getArtworksCountByStyle($filter_content_type);
             } else {
                 $artwork_count = $artworks_controller->getArtworksCount();
             }
@@ -39,11 +35,9 @@ if (isset($_GET['filterContent'])) {
         if (isset($_GET['filterContentType'])) {
             $filter_content_type = $_GET['filterContentType'];
             if ($_GET['filterContentType'] === 'Mostra') {
-                $filter_content_types = 'Mostra';
-                $event_count = $events_controller->getEventsCountByType($filter_content_types);
+                $event_count = $events_controller->getEventsCountByType($filter_content_type);
             } elseif ($_GET['filterContentType'] === 'Conferenza') {
-                $filter_content_types = 'Conferenza';
-                $event_count = $events_controller->getEventsCountByType($filter_content_types);
+                $event_count = $events_controller->getEventsCountByType($filter_content_type);
             } else {
                 $event_count = $events_controller->getEventsCount();
             }
@@ -109,24 +103,24 @@ if (($artwork_count + $event_count) > 0) {
         if ((($artwork_count - $offset) < 5) && (($artwork_count - $offset) > 0)) {
             if ($event_count > 0) {
                 //Mi restano meno opere di quelle che può contenere una pagina ma ho eventi quindi li concateno
-                $contents_list .= $artworks_controller->getArtworksTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $offset);
+                $contents_list .= $artworks_controller->getArtworksTitle($filter_content_type === 'NessunFiltro' ? '' : $filter_content_type, $offset);
                 $events_offset = ($page * 5) - $artwork_count;
-                $contents_list .= $events_controller->getEventsTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, 0, $events_offset);
+                $contents_list .= $events_controller->getEventsTitle($filter_content_type === 'NessunFiltro' ? '' : $filter_content_type, 0, $events_offset);
             } else {
                 //Mi restano meno opere di quelle che può contenere una pagina ma non ho eventi quindi le metto e concludo
-                $contents_list .= $artworks_controller->getArtworksTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $offset);
+                $contents_list .= $artworks_controller->getArtworksTitle($filter_content_type === 'NessunFiltro' ? '' : $filter_content_type, $offset);
             }
         } elseif ($offset >= $artwork_count) {
             //Ho avuto opere ma sono finite
             $events_offset = $offset - $artwork_count;
-            $contents_list .= $events_controller->getEventsTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $events_offset);
+            $contents_list .= $events_controller->getEventsTitle($filter_content_type === 'NessunFiltro' ? '' : $filter_content_type, $events_offset);
         } else {
             //Ho opere e me ne stanno di più di quelle permesse in una pagina
-            $contents_list .= $artworks_controller->getArtworksTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $offset);
+            $contents_list .= $artworks_controller->getArtworksTitle($filter_content_type === 'NessunFiltro' ? '' : $filter_content_type, $offset);
         }
     } else {
         //Non ho mai avuto opere ed ho solo eventi
-        $contents_list .= $events_controller->getEventsTitle($filter_content_types === 'NessunFiltro' ? '' : $filter_content_types, $offset);
+        $contents_list .= $events_controller->getEventsTitle($filter_content_type === 'NessunFiltro' ? '' : $filter_content_type, $offset);
     }
 
     $contents_list .= '</ul>';
