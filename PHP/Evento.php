@@ -25,14 +25,17 @@ $event_begin_date = DateUtilities::englishItalianDate($event['DataInizio']);
 $event_end_date = DateUtilities::englishItalianDate($event['DataFine']);
 $event_manager = $event['Organizzatore'];
 $event_description = $event['Descrizione'];
-
 $breadcrumbs = '';
 if ($_SESSION['previous_page'] === 'GestioneContenuti') {
-    $page = '?page=' . $_SESSION['contentPage'];
+    $page = 'page=' . $_SESSION['contentPage'];
+    $filter_content = 'filterContent=' . $_SESSION['filter_content'];
+    $filter_content_type = 'filterContentType=' . $_SESSION['filter_content_type'];
     $breadcrumbs = '<a href="AreaPersonale.php" title="Area Personale" aria-label="Vai alla pagina dell\'area personale">Area personale</a>
-                    &gt;&gt;<a href="GestioneContenuti.php' . $page . '" title="Gestione contenuti" aria-label="Vai alla pagina di gestione dei contenuti">Gestione contenuti</a>';
+                    &gt;&gt;<a href="GestioneContenuti.php?' . $page . '&amp;' . $filter_content . '&amp;' . $filter_content_type . '" title="Gestione contenuti" aria-label="Vai alla pagina di gestione dei contenuti">Gestione contenuti</a>';
 } else if ($_SESSION['previous_page'] === 'Eventi') {
-    $breadcrumbs = '<a href="Eventi.php" title="Eventi" aria-label="Vai alla pagina Eventi">Eventi</a>';
+    $page = 'page=' . $_SESSION['event_page'];
+    $filter_event_type = 'filterType=' . $_SESSION['filter_event_type'];
+    $breadcrumbs = '<a href="Eventi.php?' . $page . '&amp;' . $filter_event_type . '" title="Eventi" aria-label="Vai alla pagina Eventi">Eventi</a>';
 }
 
 $document = str_replace("<span id='titlePlaceholder'/>", $event_title, $document);

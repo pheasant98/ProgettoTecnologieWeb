@@ -3,12 +3,8 @@ window.onload = menu;
 
 function touch() {
     var menus = document.getElementById('menu');
-    var content = document.getElementById('content');
-    var breadcrumbs = document.getElementById('breadcrumbs');
 
     menus.className === 'show' ? menus.removeAttribute('class') : menus.className = 'show';
-    content.className === 'hide' ? content.removeAttribute('class') : content.className = 'hide';
-    breadcrumbs.className === 'hide' ? breadcrumbs.removeAttribute('class') : breadcrumbs.className = 'hide';
 }
 
 function menu() {

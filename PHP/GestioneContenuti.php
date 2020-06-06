@@ -72,15 +72,31 @@ if (isset($_SESSION['contentDeleted']) && isset($_SESSION['deleted_type']) && is
     unset($_SESSION['contentDeletedError']);
 }
 
-if ($artwork_count == 1) {
-    $artworks_number_found = '<p> È stata trovata ' . $artwork_count . ' opera. </p>';
+if ($filter_content === 'NessunFiltro') {
+    if ($artwork_count === 1) {
+        $artworks_number_found = '<p> È stata trovata ' . $artwork_count . ' opera </p>';
+    } else {
+        $artworks_number_found = '<p> Sono state trovate ' . $artwork_count . ' opere </p>';
+    }
+    if ($event_count === 1) {
+        $events_number_found = '<p> È stato trovato ' . $event_count . ' evento </p>';
+    } else {
+        $events_number_found = '<p> Sono stati trovati ' . $event_count . ' eventi </p>';
+    }
+} elseif ($filter_content === 'Opera') {
+    if ($artwork_count === 1) {
+        $artworks_number_found = '<p> È stata trovata ' . $artwork_count . ' opera </p>';
+    } else {
+        $artworks_number_found = '<p> Sono state trovate ' . $artwork_count . ' opere </p>';
+    }
+    $events_number_found = '';
 } else {
-    $artworks_number_found = '<p> Sono state trovate ' . $artwork_count . ' opere. </p>';
-}
-if ($event_count == 1) {
-    $events_number_found = '<p> È stato trovato ' . $event_count . ' evento. </p>';
-} else {
-    $events_number_found = '<p> Sono stati trovati ' . $event_count . ' eventi. </p>';
+    if ($event_count === 1) {
+        $events_number_found = '<p> È stato trovato ' . $event_count . ' evento </p>';
+    } else {
+        $events_number_found = '<p> Sono stati trovati ' . $event_count . ' eventi </p>';
+    }
+    $artworks_number_found = '';
 }
 
 if (!isset($_GET['page'])) {
@@ -146,6 +162,8 @@ if (($artwork_count + $event_count) > 0) {
     $skip_contents = '';
     $contents_list = '';
     $navigation_contents_buttons = '';
+    $_SESSION['filter_content'] = 'NessunFiltro';
+    $_SESSION['filter_content_type'] = 'NessunFiltro';
 }
 
 $_SESSION['previous_page'] = 'GestioneContenuti';
