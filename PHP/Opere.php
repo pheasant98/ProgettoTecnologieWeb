@@ -21,9 +21,9 @@ if (isset($_GET['filterType'])) {
 }
 
 if($artwork_count == 1) {
-    $artwork_number_found = '<p> È stata trovata ' . $artwork_count . ' opera: </p>';
+    $artwork_number_found = '<p> È stata trovata ' . $artwork_count . ' opera </p>';
 } else {
-    $artwork_number_found = '<p> Sono state trovate ' . $artwork_count . ' opere: </p>';
+    $artwork_number_found = '<p> Sono state trovate ' . $artwork_count . ' opere </p>';
 }
 
 if (!isset($_GET['page'])) {
@@ -62,6 +62,8 @@ if ($artwork_count > 0) {
 }
 
 $_SESSION['previous_page'] = 'Opere';
+$_SESSION['filter_artwork_type'] = $filter_type;
+$_SESSION['artwork_page'] = $page;
 
 $filter_option_whole = $filter_type == '' ? ' selected="selected"' : '';
 $filter_option_paintings = $filter_type == 'Dipinto' ? ' selected="selected"' : '';
