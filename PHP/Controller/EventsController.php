@@ -263,7 +263,7 @@ class EventsController {
                     <a href="Evento.php?id=' . $row['ID'] . '" aria-label="Vai all\'evento">' . $row['Titolo'] . '</a>
                     
                     <form class="userButton" action="EliminaContenuto.php" method="post" role="form">
-                        <fieldset class="hideFieldset">
+                        <fieldset class="hideRight">
                             <legend class="hideLegend">Pulsanti di modifica ed eliminazione dell\'evento</legend>
                             
                             <input type="hidden" name="id" value="' . $row['ID'] . '"/>

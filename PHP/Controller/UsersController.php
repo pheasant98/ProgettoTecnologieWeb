@@ -217,7 +217,7 @@ class UsersController {
                     <a href="Utente.php?user=' . $row['Username'] . '" aria-label="Vai alla pagina dell\'utente">' .  $row['Username'] . '</a>
 
                     <form class="userButton" action="EliminaUtente.php" method="post" role="form">
-                        <fieldset class="hideFieldset">
+                        <fieldset class="hideRight">
                             <legend class="hideLegend">Pulsante di eliminazione dell\'utente</legend>
                             
                             <input type="hidden" name="username" value="' . $row['Username'] . '"/>

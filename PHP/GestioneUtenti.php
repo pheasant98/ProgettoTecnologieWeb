@@ -43,7 +43,7 @@ if ($user_count > 0) {
 
     $offset = ($page - 1) * 5;
 
-    $user_list = '<ul class="list">' . $controller->getUsers($offset) . '</ul>';
+    $user_list = '<ul class="separation">' . $controller->getUsers($offset) . '</ul>';
 
     unset($controller);
 

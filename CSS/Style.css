@@ -212,7 +212,7 @@ a:visited {
   border-radius: 20px;
   margin-top: 1em;
   margin-bottom: 1em;
-  padding: 2em;
+  padding: 0.5em 1.5em;
 }
 
 #content.hide {
@@ -230,7 +230,7 @@ a:visited {
 }
 
 #buttonFilter {
-  width: 5em;
+  width: 4em;
 }
 
 .inlineDef{
@@ -242,6 +242,7 @@ a:visited {
 .titleDef{
   padding: 1.5em 0 0.5em 0;
   font-size: 1.2em;
+  border-top: 2px solid #ccc;
 }
 
 .definition,
@@ -249,7 +250,7 @@ a:visited {
 .definitionOpere {
   padding-left: 11.5em;
   padding-top: 1em;
-  padding-bottom: 0.8em;
+  padding-bottom: 1em;
 }
 
 .definitionOpera{
@@ -258,13 +259,14 @@ a:visited {
 
 #filterSearch,
 .filter{
-  border: 0;
-  margin-right: 3%;
+  margin: 0 2%;
   background: none;
-  font-size: 1.1em;
+  font-size: 1em;
 }
 
 #filterSearch{
+  border: 0;
+  margin: 0 3% 0 0;
   font-size: 1.3em;
 }
 
@@ -285,7 +287,7 @@ a:visited {
 }
 
 /* Template di un lista */
-.list, .error, .success {
+.list, .error, .success, .separation {
   list-style-type: none;
 }
 
@@ -293,6 +295,9 @@ a:visited {
   margin-bottom: 0.5em;
 }
 
+.separation li{
+  border-top: 2px solid #ccc;
+}
 .clause {
   clear: right;
   font-size: 0.9em;
@@ -310,22 +315,32 @@ a:visited {
 
 /* Toglie il bordo */
 .fieldset,
+.fieldsetOpEv,
 .hideFieldset {
   padding: 1em;
   margin-bottom: 1em;
-  text-align: justify;
   border-radius: 0.25em;
 }
 
 .fieldset input,
 .fieldset select {
-  margin-right: 1.5em;
   margin-bottom: 1em;
 }
 
-.hideFieldset {
+.hideFieldset, .hideRight {
   border: none;
   margin-bottom: 0;
+}
+
+.hideRight{
+  text-align: right;
+  margin-bottom: 1em;
+}
+
+
+.fieldsetOpEv{
+  text-align: center;
+  padding: 0 0.6em 0.2em 0;
 }
 
 .hideLabel,
@@ -431,7 +446,7 @@ a:visited {
   list-style-type: none;
   text-align: center;
   border-style: none;
-  margin-top: 1em;
+  margin-top: 0.5em;
 }
 
 .title {
@@ -486,9 +501,9 @@ a:visited {
 
   /* Regole per le immagini delle pagine */
   #logoImage {
-    height: 4.5em;
-    width: 8em;
-    margin:0;
+    height: 3.5em;
+    width: 7.2em;
+    margin:0 0 0.2em 0;
   }
 
   #imageError404 {
@@ -540,7 +555,7 @@ a:visited {
 @media screen and (min-width: 830px) {
   /* Regole per gli header delle pagine */
   #header {
-    height: 12.8em;
+    height: 11.2em;
   }
 
   /* Regole per le barre di ricerca delle pagine */
