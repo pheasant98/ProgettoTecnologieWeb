@@ -27,7 +27,7 @@ class LoginController {
             }
         } else {
             $login = '<div id="loginMenu">
-                        <a id="login" class="button" href="Login.php" title="Login" role="button" aria-label="vai alla pagina di login" xml:lang="en">
+                        <a id="loginButton" class="button" href="Login.php" title="Login" role="button" aria-label="vai alla pagina di login" xml:lang="en">
                             Login
                         </a>
                       </div>';
