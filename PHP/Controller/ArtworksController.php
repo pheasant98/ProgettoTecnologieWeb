@@ -7,7 +7,7 @@ class ArtworksController {
     private $artworks;
     private $fileUtilities;
 
-    private function checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan) {
+    private function checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $isModify = false) {
         $message = '';
 
         if (strlen($author) === 0) {
@@ -82,9 +82,11 @@ class ArtworksController {
             }
         }
 
+        echo $dimensions;
+
         if (strlen($dimensions) === 0) {
             $message .= '[Non è possibile inserire una dimensione vuota]';
-        } elseif (!preg_match('/^([1-9][0-9]{0,2}|1000)x([1-9][0-9]{0,2}|1000)$/', $dimensions)) {
+        } elseif (!preg_match('/^([1-9][0-9]{0,3})x([1-9][0-9]{0,3})$/', $dimensions)) {
             $message .= '[Le dimensioni non rispettano il formato richiesto]';
         }
 
@@ -92,20 +94,22 @@ class ArtworksController {
             $message .= '[Il prestito deve essere scelto tra "Si" e "No"]';
         }
 
-        if (!FileUtilities::isSelected()) {
-            $message .= '[È necessario selezionare un\'immagine]';
-        } elseif (!FileUtilities::isOneAndOnlyOneSelected()) {
-            $message .= '[È necessario selezionare una ed una sola immagine]';
-        } elseif (!FileUtilities::isSizeBounded()) {
-            $message .= '[L\'immagine selezionata supera la dimensione massima consentita dal sistema]';
-        } elseif (!FileUtilities::isUploaded()) {
-            $message .= '[L\'immagine non è stata caricata correttamente]';
-        } elseif (!FileUtilities::isCorrectSized()) {
-            $message .= '[L\'immagine caricata è una dimensione troppo elevata. La dimensione massima accettata è 500<abbr title="Kilo Bytes" xml:lang="en">KB</abbr>]';
-        } elseif (!$this->fileUtilities->isCorrectExtensioned()) {
-            $message .= '[L\'estensione dell\'immagine non è supportata. L\'estensioni consentite sono .<abbr title="Joint Photographic Experts Group" xml:lang="en">jpeg</abbr>, .<abbr title="Joint Photographic Group" xml:lang="en">jpg</abbr>, .<abbr title="Portable Network Graphics" xml:lang="en">png</abbr>]';
-        } elseif (!$this->fileUtilities->isUniqueRenamed()) {
-            $message .= '[Non è stato possibile generare un nome univoco per il file. Per favore rinominare il file]';
+        if ($isModify && !FileUtilities::isEmpty()) {
+            if (!FileUtilities::isSelected()) {
+                $message .= '[È necessario selezionare un\'immagine]';
+            } elseif (!FileUtilities::isOneAndOnlyOneSelected()) {
+                $message .= '[È necessario selezionare una ed una sola immagine]';
+            } elseif (!FileUtilities::isSizeBounded()) {
+                $message .= '[L\'immagine selezionata supera la dimensione massima consentita dal sistema]';
+            } elseif (!FileUtilities::isUploaded()) {
+                $message .= '[L\'immagine non è stata caricata correttamente]';
+            } elseif (!FileUtilities::isCorrectSized()) {
+                $message .= '[L\'immagine caricata è una dimensione troppo elevata. La dimensione massima consentita è 500<abbr title="Kilo Bytes" xml:lang="en">KB</abbr>]';
+            } elseif (!$this->fileUtilities->isCorrectExtensioned()) {
+                $message .= '[L\'estensione dell\'immagine non è supportata. Le estensioni consentite sono .<abbr title="Joint Photographic Experts Group" xml:lang="en">jpeg</abbr>, .<abbr title="Joint Photographic Group" xml:lang="en">jpg</abbr>, .<abbr title="Portable Network Graphics" xml:lang="en">png</abbr>]';
+            } elseif (!$this->fileUtilities->isUniqueRenamed()) {
+                $message .= '[Non è stato possibile generare un nome univoco per il file. Per favore rinominare il file]';
+            }
         }
 
         return $message;
@@ -128,13 +132,13 @@ class ArtworksController {
                 if ($this->artworks->postPainting($author, $title, $description, intval($years), $technique, $dimensions, $loan, $this->fileUtilities->getPath(), $user)) {
                     $message = '<p class="success">L\'opera ' . $title . ' è stata inserita correttamente</p>';
                 } else {
-                    $message = '<p class="error">Errore nell\'inserimento dell\'opera ' . $title . '</p>';
+                    $message = '<p class="error">Non è stato possibile inserire l\'opera ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
                 }
             } else {
                 if ($this->artworks->postSculture($author, $title, $description, intval($years), $material, $dimensions, $loan, $this->fileUtilities->getPath(), $user)) {
                     $message = '<p class="success">L\'opera ' . $title . ' è stata inserita correttamente</p>';
                 } else {
-                    $message = '<p class="error">Errore nell\'inserimento dell\'opera ' . $title . '</p>';
+                    $message = '<p class="error">Non è stato possibile inserire l\'opera ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
                 }
             }
         } else {
@@ -317,22 +321,25 @@ class ArtworksController {
         return $row;
     }
 
-    public function updateArtwork($id, $author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $user) {
-        $message = $this->checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan);
+    public function updateArtwork($id, $author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $old_image, $user) {
+        $message = $this->checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, true);
 
         if ($message === '') {
-            if($style === 'Dipinto') {
-                if ($this->artworks->updateArtwork($id, $author, $title, $description, intval($years), $technique, $material, $dimensions, $loan, $this->fileUtilities->getPath(), $user)) {
-                    $message = '';
+            if (copy('../' . $old_image, '../_' . $old_image)) {
+                if (unlink('../' . $old_image)) {
+                    if ($this->artworks->updateArtwork($id, $author, $title, $description, intval($years), $technique, $material, $dimensions, $loan, $this->fileUtilities->getPath(), $user)) {
+                        $message = '';
+                        unlink('../_' . $old_image);
+                    } else {
+                        $message = '<p class="error">Non è stato possibile aggiornare l\'opera ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
+                        rename('../_' . $old_image, '../' . $old_image);
+                    }
                 } else {
-                    $message = '<p class="error">Errore nell\'aggiornamento dell\'opera</p>';
+                    $message = '<p class="error">Non è stato possibile aggiornare l\'opera ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
+                    unlink('../_' . $old_image);
                 }
             } else {
-                if ($this->artworks->updateArtwork($id, $author, $title, $description, intval($years), $technique, $material, $dimensions, $loan, $this->fileUtilities->getPath(), $user)) {
-                    $message = '';
-                } else {
-                    $message = '<p class="error">Errore nell\'aggiornamento dell\'opera</p>';
-                }
+                $message = '<p class="error">Non è stato possibile aggiornare l\'opera ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
             }
         } else {
             $message = '<p><ul>' . $message;
@@ -345,7 +352,7 @@ class ArtworksController {
     }
 
     public function deleteArtwork($id) {
-        $this->artworks->deleteArtwork($id);
+        return $this->artworks->deleteArtwork($id);
     }
 }
 

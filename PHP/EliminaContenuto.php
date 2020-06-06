@@ -2,7 +2,7 @@
 
 session_start();
 
-if (!isset($_POST['submit']) || $_POST['submit'] !== 'Rimuovi' || !isset($_SESSION['contentPage']) || !isset($_SESSION['filter_content']) || !isset($_SESSION['filter_content_type'])) {
+if (!isset($_POST['submit']) || $_POST['submit'] !== 'Rimuovi' || !isset($_SESSION['contentPage']) || !isset($_SESSION['filter_content']) || !isset($_SESSION['filter_content_type']) || !LoginController::isAdminUser()) {
     header('Location: Errore.php');
 }
 
@@ -11,7 +11,11 @@ if ($_POST['type'] === 'Evento') {
     $controller = new EventsController();
 
     $event = $controller->getEvent($_POST['id']);
-    $controller->deleteEvent($_POST['id']);
+    if ($controller->deleteEvent($_POST['id'])) {
+        $_SESSION['contentDeletedError'] = true;
+    } else {
+        $_SESSION['contentDeletedError'] = false;
+    }
 
     $_SESSION['contentDeleted'] = $event['Titolo'];
 } else if ($_POST['type'] === 'Opera') {
@@ -19,7 +23,23 @@ if ($_POST['type'] === 'Evento') {
     $controller = new ArtworksController();
 
     $artwork = $controller->getArtwork($_POST['id']);
-    $controller->deleteArtwork($_POST['id']);
+
+    if (copy('../' . $artwork['Immagine'], '../_' . $artwork['Immagine'])) {
+        if (unlink('../' . $artwork['Immagine'])) {
+            if ($controller->deleteArtwork($_POST['id'])) {
+                $_SESSION['contentDeletedError'] = true;
+                unlink('../_' . $artwork['Immagine']);
+            } else {
+                $_SESSION['contentDeletedError'] = false;
+                rename('../_' . $artwork['Immagine'], '../' . $artwork['Immagine']);
+            }
+        } else {
+            $_SESSION['contentDeletedError'] = false;
+            unlink('../_' . $artwork['Immagine']);
+        }
+    } else {
+        $_SESSION['contentDeletedError'] = false;
+    }
 
     $_SESSION['contentDeleted'] = $artwork['Titolo'];
 }

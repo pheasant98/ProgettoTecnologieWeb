@@ -4,7 +4,7 @@ require_once ('Controller/LoginController.php');
 
 session_start();
 
-if ((!LoginController::isAuthenticatedUser() && !LoginController::isAdminUser()) || !isset($_SESSION['artwork_title']) || !isset($_SESSION['artwork_id']) || !isset($_SESSION['contentPage'])) {
+if (!LoginController::isAuthenticatedUser() || !LoginController::isAdminUser() || !isset($_SESSION['artwork_title']) || !isset($_SESSION['artwork_id']) || !isset($_SESSION['contentPage'])) {
     header('Location: Errore.php');
 }
 

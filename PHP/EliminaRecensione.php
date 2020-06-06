@@ -11,7 +11,11 @@ require_once ('Controller/ReviewsController.php');
 $controller = new ReviewsController();
 
 $review = $controller->getReview($_POST['id']);
-$controller->deleteReview($_POST['id']);
+if ($controller->deleteReview($_POST['id'])) {
+    $_SESSION['reviewDeletedError'] = true;
+} else {
+    $_SESSION['reviewDeletedError'] = false;
+}
 
 unset($controller);
 

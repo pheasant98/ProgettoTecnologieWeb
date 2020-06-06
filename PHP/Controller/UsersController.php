@@ -121,7 +121,7 @@ class UsersController {
 
         if (strlen($repeated_password) === 0) {
             $message .= '[Non è possibile inserire la <span xml:lang="en">password</span> ripetuta vuota]';
-        } elseif ($password === $repeated_password) {
+        } elseif ($password !== $repeated_password) {
             $message .= '[La conferma della <span xml:lang="en">password</span> non corrisponde a quella inserita inizialmente]';
         }
 
@@ -187,7 +187,7 @@ class UsersController {
             if ($this->users->postUser($name, $surname, DateUtilities::italianEnglishDate($date), $sex, $username, $mail, $hashed_password)) {
                 $message = '';
             } else {
-                $message = '<p class="error">Errore durante la registrazione del nuovo utente</p>';
+                $message = '<p class="error">Non è stato possibile registrare l\'utente ' . $username . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
             }
         } else {
             $message = '<p><ul>' . $message;
@@ -253,16 +253,16 @@ class UsersController {
         if ($message === '') {
             if (strlen($new_password) === 0) {
                 if ($this->users->updateUserWithoutPassword($username, $name, $surname, DateUtilities::italianEnglishDate($date), $sex, $mail)) {
-                    $message = '<p class="success">Utente aggiornato correttamente</p>';
+                    $message = '';
                 } else {
-                    $message = '<p class="error">Errore nell\'aggiornamento dell\'utente</p>';
+                    $message = '<p class="error">Non è stato possibile aggiornare l\'utente ' . $username . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
                 }
             } else {
                 $hashed_password = hash('sha256', $new_password);
                 if ($this->users->updateUser($username, $name, $surname, DateUtilities::italianEnglishDate($date), $sex, $mail, $hashed_password)) {
-                    $message = '<p class="success">Utente aggiornato correttamente</p>';
+                    $message = '';
                 } else {
-                    $message = '<p class="error">Errore nell\'aggiornamento dell\'utente</p>';
+                    $message = '<p class="error">Non è stato possibile aggiornare l\'utente ' . $username . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
                 }
             }
         } else {
@@ -276,7 +276,7 @@ class UsersController {
     }
 
     public function deleteUser($username) {
-        $this->users->deleteUser($username);
+        return $this->users->deleteUser($username);
     }
 }
 

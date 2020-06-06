@@ -125,7 +125,8 @@
                         <legend>Informazioni tecniche</legend>
                         <p>
                             <label id="LabelFilterStyle" for="style">Stile</label>
-                            <select id="style" class="formElement" name="style" aria-label="Seleziona lo stile" onchange="artworkStyleChanged();">
+
+                            <select id="style" class="formElement" name="style" aria-label="Seleziona lo stile" onchange="artworkStyleChanged(false);">
                                 <option value="Dipinto"<span id='paintingStyleSelectedPlaceholder'/>>Dipinto</option>
                                 <option value="Scultura"<span id='scultureStyleSelectedPlaceholder'/>>Scultura</option>
                             </select>
@@ -153,24 +154,24 @@
                         <legend>Opera in prestito</legend>
                         <ul class="list">
                             <li>
-                                <label id="labelLoanYes" for="loanYes">Sì</label>
                                 <input id="loanYes" name="loan" value="Si" type="radio" aria-label="Pulsante per dire di si al prestito"<span id='loanYesCheckedPlaceholder'/>/>
+                                <label id="labelLoanYes" for="loanYes">Sì</label>
                             </li>
                             <li>
-                                <label id="labelLoanNo" for="loanNo">No</label>
                                 <input id="loanNo" name="loan" value="No" type="radio" aria-label="Pulsante per dire di no al prestito"<span id='loanNoCheckedPlaceholder'/>/>
+                                <label id="labelLoanNo" for="loanNo">No</label>
                             </li>
                         </ul>
                     </fieldset>
 
                     <p>
                         <label id="labelImageUpload" for="imageUpload">Inserisci immagine</label>
-                        <input id="imageUpload" class="formElement" name="image" type="file" accept=".jpg, .jpeg, .png" aria-label="Inserisci l'immagine"/>
                         <!--TODO: Scrivere il suggerimento delle estensioni supportate-->
+                        <input id="imageUpload" class="formElement" name="image" type="file" accept=".jpg, .jpeg, .png" aria-label="Inserisci l'immagine" onchange="return checkInputArtworkImage(event)"/>
                     </p>
 
                     <p class="navigation">
-                        <input class="button" name="reset" type="reset" value="Cancella" role="button" aria-label="Cancella i dati inseriti"/>
+                        <input class="button" name="reset" type="reset" value="Cancella" role="button" aria-label="Cancella i dati inseriti" onclick="resetImage(false)"/>
                         <input class="button" name="submit" type="submit" value="Inserisci" role="button" aria-label="Inserisci la nuova opera con le informazioni specificate"/>
                     </p>
                 </fieldset>
