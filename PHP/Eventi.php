@@ -21,9 +21,9 @@ if (isset($_GET['filterType'])) {
 }
 
 if($event_count == 1) {
-    $event_number_found = '<p> È stato trovato ' . $event_count . ' evento: </p>';
+    $event_number_found = '<p> È stato trovato ' . $event_count . ' evento </p>';
 } else {
-    $event_number_found = '<p> Sono stati trovati ' . $event_count . ' eventi: </p>';
+    $event_number_found = '<p> Sono stati trovati ' . $event_count . ' eventi </p>';
 }
 
 if (!isset($_GET['page'])) {
@@ -62,6 +62,8 @@ if ($event_count > 0) {
 }
 
 $_SESSION['previous_page'] = 'Eventi';
+$_SESSION['filter_event_type'] = $filter_type;
+$_SESSION['event_page'] = $page;
 
 $filter_option_whole = $filter_type == '' ? ' selected="selected"' : '';
 $filter_option_exhibitions = $filter_type == 'Mostra' ? ' selected="selected"' : '';
