@@ -62,36 +62,45 @@ La \textit{Home page} sarà la prima ad essere visualizzata se accede al sito di
 \label{analisi-casi-uso-attori-principali-utente-generico-2}
 In ogni momento, durante la navigazione nel sito, l'utente avrà a disposizione la sequenza ordinata di pagine tramite le quali è univocamente possibile raggiungere quella corrente. Tutti i nomi delle pagine attrversate saranno link sensibili, in modo che sia possibile tornare a visitarle direttamente dal breadcrumb, tranne quello della pagina corrente (per evitare link circolari).
 
-paragraph{Interazione coi link del \textit{menu}}
+\paragraph{Interazione coi link del \textit{menu}}
 \label{analisi-casi-uso-attori-principali-utente-generico-3}
 In ogni momento, durante la navigazione nel sito, l'utente avrà a disposizione un menu per raggiungere tutte le pagine di interesse del sito: \textit{Home page}, \textit{Opere}, \textit{Eventi}, \textit{Cosa dicono di noi} (per le recensioni) e \textit{Contatti}. Tutti i nomi delle pagine in elenco saranno link sensibili, tranne, in caso ci si trovasse in una di esse, quello della pagina corrente (per evitare link circolari).
 
 \paragraph{Visualizzazione della pagina \textit{Opere}}
 \label{analisi-casi-uso-attori-principali-utente-generico-4}
+La pagina \textit{Opere} conterrà un elenco di tutte le opere presenti nel database del sito. Di ogni elemento verranno mostrati titolo, autore, stile, datazione e un'immagine. Il titolo delle opere sarà sensibile: cliccandovi l'utente sarà rimandato alla pagina dedicata alla scheda dell'opera specifica. All'inizio della pagina vi sarà un filtro per la selezione alcune caratteristiche sulla base delle quali selezionare le opere da mostrare in elenco; sarà poi riportato il numero di elementi presenti in elenco. La pagina \textit{Opere} mostrerà al massimo 5 elementi per volta.
 
 \paragraph{Interazione con la pagina \textit{Opere}}
 \label{analisi-casi-uso-attori-principali-utente-generico-5}
+Selezionando le opzioni offerte dal filtro, l'utente potrà raffinare la selezione di opere che desidera visualizzare; cambiando il filtro verrà aggiornato il numero di opere in elenco. Se la lista contasse più di cinque elementi, essi saranno comunque visualizzabili poiché la lista sarà navigabile grazie ai button \texttt{Precedente} e \texttt{Successivo} posti in fondo alla pagina, che permetteranno di vedere l'elenco delle cinque opere precedenti o successive a quelle correnti. Per andare alla pagina di visualizzazione di un'opera specifica sarà sufficiente cliccare sul suo titolo in elenco (vedi §\ref{analisi-casi-uso-attori-principali-utente-generico-15}).
 
 \paragraph{Visualizzazione della pagina \textit{Eventi}}
 \label{analisi-casi-uso-attori-principali-utente-generico-6}
+La pagina \textit{Eventi} conterrà un elenco di tutti gli eventi presenti nel database del sito. Di ogni elemento verranno mostrati titolo, data di inizio, data di fine e tipologia. Il titolo dell'evento sarà sensibile: cliccandovi l'utente sarà rimandato alla pagina dedicata all'evento specifico. All'inizio della pagina vi sarà un filtro per la selezione alcune caratteristiche sulla base delle quali selezionare gli eventi da mostrare in elenco; sarà poi riportato il numero di elementi presenti in elenco. La pagina \textit{Eventi} mostrerà al massimo cinque elementi per volta.
 
 \paragraph{Interazione con la pagina \textit{Eventi}}
 \label{analisi-casi-uso-attori-principali-utente-generico-7}
+Selezionando le opzioni offerte dal filtro, l'utente potrà raffinare la selezione di eventi che desidera visualizzare; cambiando il filtro verrà aggiornato il numero di eventi in elenco. Se la lista contasse più di cinque elementi, essi saranno comunque visualizzabili poiché la lista sarà navigabile grazie ai button \texttt{Precedente} e \texttt{Successivo} posti in fondo alla pagina, che permetteranno di vedere l'elenco dei cinque eventi precedenti o successivi a quelli correnti. Per andare alla pagina di visualizzazione di un evento specifica sarà sufficiente cliccare sul suo titolo in elenco (vedi §\ref{analisi-casi-uso-attori-principali-utente-generico-16}).
 
 \paragraph{Visualizzazione della pagina \textit{Cosa dicono di noi}}
 \label{analisi-casi-uso-attori-principali-utente-generico-8}
+La pagina \textit{Cosa dicono di noi} conterrà un elenco di tutte le recensioni presenti nel database del sito. Di ogni elemento verranno mostrati oggetto, data di ultima modifica e le prime righe del contenuto. L'oggetto della recensione sarà sensibile: cliccandovi l'utente sarà rimandato alla pagina dedicata alla recensione specifica. All'inizio della pagina sarà riportato il numero di elementi presenti in elenco. La pagina \textit{Cosa dicono di noi} mostrerà al massimo cinque elementi per volta.
 
 \paragraph{Interazione con la pagina \textit{Cosa dicono di noi}}
 \label{analisi-casi-uso-attori-principali-utente-generico-9}
+Se la lista contasse più di cinque recensioni, esse saranno comunque visualizzabili poiché l'elenco sarà navigabile grazie ai button \texttt{Precedente} e \texttt{Successivo} posti in fondo alla pagina, che permetteranno di vedere la lista delle cinque recensioni precedenti o successive a quelle correnti. Per andare alla pagina di visualizzazione di una recensione specifica sarà sufficiente cliccare sul suo oggetto in elenco (vedi §\ref{analisi-casi-uso-attori-principali-utente-generico-17}).
 
 \paragraph{Visualizzazione della pagina \textit{Contatti}}
 \label{analisi-casi-uso-attori-principali-utente-generico-10}
+La pagina \textit{Contatti} riporterà nome, indirizzo della sede, numero di telefono e indirizzo email del museo; seguiranno gli orari di apertura della sede ed infine alcune indicazioni stradali per raggiungere il museo, corredate da una mappa della zona circostante alla sede.
 
 \paragraph{Visualizzazione della pagina \textit{Login}}
 \label{analisi-casi-uso-attori-principali-utente-generico-11}
+Da qualunque pagina del sito l'utente potrà andare alla pagina di \textit{Login} grazie al button \texttt{Login} posto nell'\textit{header}. La pagina conterrà un breve form per inserire username e password. Per effetturare il login, inseriti i valori richiesti, visognerà premere il button \texttt{Accedi}. In caso l'utente non fosse in possesso di un account, tramite il link posto in fondo alla pagina avrà la possibilità di raggiungere la pagina di \textit{registrazione} (vedi §\ref{analisi-casi-uso-attori-principali-utente-generico-18}) e creare un profilo personale (vedi §\ref{analisi-casi-uso-attori-principali-utente-generico-19}).
 
 \paragraph{Esecuzione di una ricerca mediante la barra nell'\textit{header}}
 \label{analisi-casi-uso-attori-principali-utente-generico-12}
+In qualunque momento l'utente potrà effettuare una ricerca tra opere ed eventi presenti nel sito tramite la barra di ricerca posta nell'header. La barra offrirà un filtro per selezionare il tipo di contenuto cercato, un campo di input per digitare il testo desiderato e un button \texttt{Cerca} per avviare la ricerca. Per eseguire la ricerca l'utente dovrà cliccare il button \texttt{Cerca}. Se l'utente formulerà la ricerca in modo inappropriato, ciò gli verrà comunicato tramite un messaggio di errore.
 
 \paragraph{Visualizzazione risultato della ricerca nella pagina \textit{Ricerca}}
 \label{analisi-casi-uso-attori-principali-utente-generico-13}
@@ -101,15 +110,19 @@ In ogni momento, durante la navigazione nel sito, l'utente avrà a disposizione 
 
 \paragraph{Visualizzazione della pagina \textit{Opera}}
 \label{analisi-casi-uso-attori-principali-utente-generico-15}
+La pagina \textit{Opera} presenterà la scheda completa dell'opera selezionata. Saranno riportati titolo,  autore, datazione, stile, tecnica o materiale (a seconda che si tratti di un dipinto o di una scultura), dimensioni, lo stato di prestito, una descrizione critica e un'immagine dell'opera.
 
 \paragraph{Visualizzazione della pagina \textit{Evento}}
 \label{analisi-casi-uso-attori-principali-utente-generico-16}
+La pagina \textit{Evento} presenterà i dettagli dell'evento selezionato. Saranno riportati titolo, data di inizio, data di fine, tipologia, organizzatore e una descrizione.
 
-\paragraph{Visualizzazione della pagina \textit{recensione}}
+\paragraph{Visualizzazione della pagina \textit{Recensione}}
 \label{analisi-casi-uso-attori-principali-utente-generico-17}
+La pagina \textit{Recensione} presenterà i dettagli della recensione selezionata. Saranno riportati oggetto, data di inizio, data di ultima modifica, autore e contenuto completo.
 
 \paragraph{Visualizzazione della pagina \textit{Registrazione}}
 \label{analisi-casi-uso-attori-principali-utente-generico-18}
+Tramite la pagina \textit{Login} l'utente accederà alla pagina di registrazione. Questa conterrà un form con tutti i campi da compilare per creare un account personale sul database del sito. Ogni gruppo di campi affini sarà racchiuso in una box. In fondo alla pagina si troveranno il bottone \texttt{Annulla}, per la cancellazione di tutti i dati inseriti nel form, e quello di conferma per la creazione dell'account.
 
 \paragraph{Creazione di un account dalla pagina \textit{Registrazione}}
 \label{analisi-casi-uso-attori-principali-utente-generico-19}
