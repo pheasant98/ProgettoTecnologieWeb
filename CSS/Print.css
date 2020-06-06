@@ -59,6 +59,7 @@ a {
 .titleDef{
   padding: 1.5em 0 0.5em 0;
   font-size: 1.2em;
+  border-top: 2px solid #ccc;
 }
 
 .definition,
@@ -66,19 +67,18 @@ a {
 .definitionOpere {
   padding-left: 11.5em;
   padding-top: 1em;
-  padding-bottom: 0.8em;
+  padding-bottom: 1em;
 }
 
 .definitionOpere{
   padding-left: 18em;
 }
 
-#filterSearch,
 .filter {
   border: 0;
   background: none;
-  font-size: 1.1em;
-  margin-right: 5%;
+  font-size: 1em;
+  margin: 0 2%;
 }
 
 .formFieldError,
@@ -99,7 +99,7 @@ a {
   font-size: 1em;
 }
 
-.list {
+.list, .error, .success, .separation {
   list-style-type: none;
 }
 
@@ -107,10 +107,15 @@ a {
   margin-bottom: 1em;
 }
 
+.separation li{
+  border-top: 2px solid #ccc;
+}
+
 .fieldset,
+.fieldsetOpEv,
 .hideFieldset {
-  margin-bottom: 1em;
   padding: 1em;
+  margin-bottom: 1em;
   text-align: justify;
   border-radius: 0.25em;
 }
@@ -121,9 +126,14 @@ a {
   margin-bottom: 1em;
 }
 
-.hideFieldset {
+.hideFieldset{
   border: none;
   margin-bottom: 0;
+}
+
+.fieldsetOpEv{
+  text-align: center;
+  padding: 0 0.6em 0.2em 0;
 }
 
 .hideLegend {
@@ -167,7 +177,7 @@ a {
   list-style-type: none;
   text-align: center;
   border-style: none;
-  margin-top: 1em;
+  margin-top: 0.5em;
 }
 
 .navigation a {

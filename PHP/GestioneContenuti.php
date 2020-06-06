@@ -103,7 +103,7 @@ if (($artwork_count + $event_count) > 0) {
     $_SESSION['filter_content'] = $filter_content;
     $_SESSION['filter_content_type'] = $filter_content_type;
 
-    $contents_list = '<ul class="list">';
+    $contents_list = '<ul class="separation">';
     $offset = ($page - 1) * 5;
     if ($artwork_count > 0) {
         if ((($artwork_count - $offset) < 5) && (($artwork_count - $offset) > 0)) {
