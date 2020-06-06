@@ -155,14 +155,14 @@ if (($artwork_count + $event_count) > 0) {
 }
 
 $_SESSION['previous_page'] = 'GestioneContenuti';
-$filter_option_whole = $filter_content == 'NessunFiltro' ? ' selected="selected"' : '';
-$filter_option_artworks = $filter_content == 'Opera' ? ' selected="selected"' : '';
-$filter_option_events = $filter_content == 'Evento' ? ' selected="selected"' : '';
-$filter_option_whole_type = $filter_content_type == 'NessunFiltro' ? ' selected="selected"' : '';
-$filter_option_paintings = $filter_content_type == 'Dipinto' ? ' selected="selected"' : '';
-$filter_option_scultures = $filter_content_type == 'Scultura' ? ' selected="selected"' : '';
-$filter_option_exhibitions = $filter_content_type == 'Mostra' ? ' selected="selected"' : '';
-$filter_option_conferences = $filter_content_type == 'Conferenza' ? ' selected="selected"' : '';
+$filter_option_whole = $filter_content === 'NessunFiltro' ? ' selected="selected"' : '';
+$filter_option_artworks = $filter_content === 'Opera' ? ' selected="selected"' : '';
+$filter_option_events = $filter_content === 'Evento' ? ' selected="selected"' : '';
+$filter_option_whole_type = $filter_content_type === 'NessunFiltro' ? ' selected="selected"' : '';
+$filter_option_paintings = $filter_content_type === 'Dipinto' ? ' selected="selected"' : '';
+$filter_option_scultures = $filter_content_type === 'Scultura' ? ' selected="selected"' : '';
+$filter_option_exhibitions = $filter_content_type === 'Mostra' ? ' selected="selected"' : '';
+$filter_option_conferences = $filter_content_type === 'Conferenza' ? ' selected="selected"' : '';
 
 $document = file_get_contents('../HTML/GestioneContenuti.html');
 $login = LoginController::getAuthenticationMenu();

@@ -59,6 +59,40 @@ function artworkStyleChanged(isModify) {
     }
 }
 
+/* GESTIONE DELLA TIPOLOGIA DI CONTENUTO PER LA PAGINA GestioneContenuti.php */
+function contentTypeChanged() {
+    var contentInput = document.getElementById('filterContent');
+    var contentTypeInput = document.getElementById('filterContentType');
+
+    var content = contentInput.options[contentInput.selectedIndex].value.trim();
+
+    for (var i = 1; i < 5; ++i) {
+        contentTypeInput.options[i].removeAttribute('class');
+    }
+
+    if (content === 'Opera') {
+        for (var x = 3; x < 5; ++x) {
+            contentTypeInput.options[x].className = 'hideContent';
+        }
+    } else if (content === 'Evento') {
+        for (var y = 1; y < 3; ++y) {
+            contentTypeInput.options[y].className = 'hideContent';
+        }
+    } else if (content === 'Nessun filtro') {
+        for (var z = 1; z < 5; ++z) {
+            contentTypeInput.options[z].className = 'hideContent';
+        }
+    }
+}
+
+/* GESTIONE MAPPA DI GOOGLE MAPS */
+function checkMapsSupport() {
+    if (navigator.appVersion.indexOf("MSIE 10") !== -1 || navigator.appVersion.indexOf("MSIE 9") !== -1) {
+        var mapContainer = document.getElementById('mapContainer');
+        mapContainer.parentElement.removeChild(mapContainer);
+    }
+}
+
 /* GESTIONE DELL'AGGIUNTA E DELLA RIMOZIONE DEGLI ERRORI DAI FORM */
 function removeError(input, tags) {
     var parentNode = input.parentNode;
@@ -98,6 +132,26 @@ function addRadioError(input, error) {
     span.insertAdjacentHTML('afterbegin', error);
 
     parentNode.insertBefore(span, parentNode.children[1]);
+}
+
+function removeReviewError(input) {
+    var parentNode = input.parentNode;
+
+    while (parentNode.children.length > 6) {
+        parentNode.removeChild(parentNode.children[parentNode.children.length - 1]);
+    }
+}
+
+function addReviewError(input, error) {
+    removeError(input);
+
+    var parentNode = input.parentNode;
+    var span = document.createElement('span');
+
+    span.className = 'formFieldError';
+    span.insertAdjacentHTML('afterbegin', error);
+
+    parentNode.appendChild(span);
 }
 
 function scrollToError() {
@@ -855,11 +909,27 @@ function checkSameOldPassword(inputOldPassword, inputNewPassword, tags) {
 
 /* CONTROLLI E GESTIONE DELLA RICERCA */
 function checkSearchFilter(input) {
+    var type = input.options[input.selectedIndex].value.trim();
 
+    if (type !== 'Opera' && type !== 'Evento') {
+        addReviewError(input, 'La tipologia della ricerca deve essere Opera od Evento');
+        return false;
+    } else {
+        removeReviewError(input);
+        return true;
+    }
 }
 
 function checkSearchText(input) {
+    var search = input.value.trim();
 
+    if (search.length > 64) {
+        addReviewError(input, 'Il testo ricercato non può essere più lungo di 64 caratteri');
+        return false;
+    } else {
+        removeReviewError(input);
+        return true;
+    }
 }
 
 /* CONTROLLI E GESTIONE DEI FORM */
@@ -1017,6 +1087,16 @@ function searchFormValidation() {
 
     var filterResult = checkSearchFilter(filter);
     var searchResult = checkSearchText(search);
+
+    var stylesheet = document.styleSheets[0];
+    var rules = stylesheet.cssRules[stylesheet.cssRules.length - 1];
+    var rule = rules.cssRules[0];
+
+    if (filterResult && searchResult) {
+        rule.style.height = '12.8em';
+    } else {
+        rule.style.height = '14.5em';
+    }
 
     return filterResult && searchResult;
 }

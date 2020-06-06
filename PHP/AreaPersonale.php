@@ -25,23 +25,27 @@ if (LoginController::isAdminUser()) {
     $functionalities = 'Ora che hai effettuato l\'accesso all\'area personale, puoi utilizzare il tuo <span xml:lang="en">account</span> per gestire gli utenti e i contenuti del sito.';
     $operations = '    
         <li>
-            <a id="ModificaAdmin" class="button userOperationButton" href="ModificaDatiUtente.php" title="vai alla pagina modifica dati utente" role="button" aria-label="vai alla pagina modifica dati utente">Modifica profilo</a>
+            <a id="ModificaAdmin" class="button userOperationButton" href="ModificaDatiUtente.php" title="Modifica dati profilo" role="button" aria-label="vai alla pagina di modifica dei dati utente">Modifica profilo</a>
         </li>
 
         <li>
-            <a id="InserisciOpera" class="button userOperationButton" href="InserisciOpera.php" title="vai alla pagina inserisci opera" role="button" aria-label="vai alla pagina inserisci opera">Inserisci opera</a>
+            <a id="InserisciOpera" class="button userOperationButton" href="InserisciOpera.php" title="Inserisci una nuova opera" role="button" aria-label="vai alla pagina per l\'inserimento di un\'opera">Inserisci opera</a>
         </li>
         
         <li>
-            <a id="InserisciEvento" class="button userOperationButton" href="InserisciEvento.php" title="vai alla pagina inserisci evento" role="button" aria-label="vai alla pagina inserisci evento">Inserisci evento</a>
+            <a id="InserisciEvento" class="button userOperationButton" href="InserisciEvento.php" title="Inserisci un nuovo evento" role="button" aria-label="vai alla pagina per l\'inserimento di un evento">Inserisci evento</a>
         </li>
 
         <li>
-            <a id="GestioneUtenti" class="button userOperationButton" href="GestioneUtenti.php" title="vai alla pagina Gestione Utenti" role="button" aria-label="vai alla pagina iGestione Utenti">Gestione utenti</a>
+            <a id="GestioneUtenti" class="button userOperationButton" href="GestioneUtenti.php" title="Gestisci gli utenti" role="button" aria-label="vai alla pagina per la gestione degli utenti">Gestione utenti</a>
         </li>
 
         <li>
-            <a id="GestioneContenuti" class="button userOperationButton" href="GestioneContenuti.php" title="vai alla pagina Gestione Contenuti" role="button" aria-label="vai alla pagina Gestione Contenuti">Gestione Contenuti</a>
+            <a id="GestioneContenuti" class="button userOperationButton" href="GestioneContenuti.php" title="Gestisci i contenuti" role="button" aria-label="vai alla pagina per la gestione dei contenuti">Gestione contenuti</a>
+        </li>
+        
+        <li>
+            <a href="GestioneRecensioni.php" class="button userOperationButton" title="Gestisci le recensioni" aria-label="vai alla pagina per la gestione delle recensioni">Gestisci recensioni</a>
         </li>
     ';
 } else {

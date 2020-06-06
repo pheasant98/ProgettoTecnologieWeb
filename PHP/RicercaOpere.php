@@ -8,8 +8,8 @@ if (!isset($_GET['search'])) {
 
 require_once ('Controller/ArtworksController.php');
 $controller = new ArtworksController();
-if (strlen($_GET['search']) > 50) {
-    $error_length = '<p class="error">Non è possibile inserire un testo di ricerca più lungo di 50 caratteri.</p>';
+if (strlen($_GET['search']) > 64) {
+    $error_length = '<p class="error">Non è possibile inserire un testo di ricerca più lungo di 64 caratteri.</p>';
     $artwork_count = 0;
 } else {
     $artwork_count = $controller->getSearchedArtworksCount($_GET['search']);

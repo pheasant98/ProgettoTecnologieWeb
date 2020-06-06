@@ -21,7 +21,7 @@
         <script src="../JavaScript/script.js" type="text/javascript"></script>
     </head>
 
-    <body>
+    <body onload="contentTypeChanged()">
         <div id="header" role="banner">
             <h1 id="logoImage" class="backgroundImage" title="Immagine del logo Museo arte nel tempo" role="img" aria-label="Immagine del logo Museo arte nel tempo"> Museo Arte nel Tempo </h1>
 
@@ -95,14 +95,14 @@
                 <fieldset class="fieldset">
                     <legend>Filtro contenuti</legend>
                     <label class="hideLabel" for="filterContent">filtro per il contenuto</label>
-                    <select id="filterContent" name="filterContent" class="filter" aria-label="Filtro per il tipo di contenuto">
+                    <select id="filterContent" name="filterContent" class="filter" aria-label="Filtro per il tipo di contenuto" onchange="contentTypeChanged()">
                         <option value="Nessun filtro"<span id='filterOptionWholePlaceholder'/>>Nessun filtro</option>
                         <option value="Opera"<span id='filterOptionArtworksPlaceholder'/>> Opera</option>
                         <option value="Evento"<span id='filterOptionEventsPlaceholder'/>> Evento</option>
                     </select>
 
-                    <label class="hideLabel" for="filterOpera">filtro per il contenuto</label>
-                    <select id="filterOpera" name="filterContentType" class="filter" aria-label="Filtro per il tipo di opera">
+                    <label class="hideLabel" for="filterContentType">filtro per il contenuto</label>
+                    <select id="filterContentType" name="filterContentType" class="filter" aria-label="Filtro per il tipo di opera">
                         <option value="NessunFiltro"<span id='filterOptionWholeTypePlaceholder'/>>Nessun filtro</option>
                         <option value="Dipinto"<span id='filterOptionPaintingsPlaceholder'/>> Dipinti</option>
                         <option value="Scultura"<span id='filterOptionSculturesPlaceholder'/>> Sculture</option>

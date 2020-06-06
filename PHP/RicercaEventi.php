@@ -8,8 +8,8 @@ if (!isset($_GET['search'])) {
 
 require_once ('Controller/EventsController.php');
 $controller = new EventsController();
-if (strlen($_GET['search']) > 50) {
-    $error_length = '<p class="error">Non è possibile inserire un testo di ricerca più lungo di 50 caratteri.</p>';
+if (strlen($_GET['search']) > 64) {
+    $error_length = '<p class="error">Non è possibile inserire un testo di ricerca più lungo di 64 caratteri.</p>';
     $event_count = 0;
 } else {
     $event_count = $controller->getSearchedEventsCount($_GET['search']);
