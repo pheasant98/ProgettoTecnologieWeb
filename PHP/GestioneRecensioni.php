@@ -46,11 +46,11 @@ if ($reviews_count > 0) {
     $_SESSION['reviewPage'] = $page;
     $offset = ($page - 1) * 5;
     if (!LoginController::isAdminUser()) {
-        $reviews_list = '<ul class="clickableList">' . $controller->getUserListReviews($_SESSION['username'], $offset) . '</ul>';
+        $reviews_list = '<ul class="separation">' . $controller->getUserListReviews($_SESSION['username'], $offset) . '</ul>';
         $description = 'Elenco di tutte le recensioni lasciate';
         $title = 'Recensioni effettuate';
     } else {
-        $reviews_list = '<ul class="clickableList">' . $controller->getListReviews($offset) . '</ul>';
+        $reviews_list = '<ul class="separation">' . $controller->getListReviews($offset) . '</ul>';
         $description = 'Elenco di tutte le recensioni presenti all\'interno del sito';
         $title = 'Recensioni presenti nel sito';
     }
