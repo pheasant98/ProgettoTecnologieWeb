@@ -230,7 +230,7 @@ a:visited {
 }
 
 #buttonFilter {
-  width: 5em;
+  width: 4em;
 }
 
 .inlineDef{
@@ -258,13 +258,14 @@ a:visited {
 
 #filterSearch,
 .filter{
-  border: 0;
-  margin-right: 3%;
+  margin: 0 2%;
   background: none;
-  font-size: 1.1em;
+  font-size: 1em;
 }
 
 #filterSearch{
+  border: 0;
+  margin: 0 3% 0 0;
   font-size: 1.3em;
 }
 
@@ -310,22 +311,26 @@ a:visited {
 
 /* Toglie il bordo */
 .fieldset,
+.fieldsetOpEv,
 .hideFieldset {
   padding: 1em;
   margin-bottom: 1em;
-  text-align: justify;
   border-radius: 0.25em;
 }
 
 .fieldset input,
 .fieldset select {
-  margin-right: 1.5em;
   margin-bottom: 1em;
 }
 
 .hideFieldset {
   border: none;
   margin-bottom: 0;
+}
+
+.fieldsetOpEv{
+  text-align: center;
+  padding: 0 0.6em 0.2em 0;
 }
 
 .hideLabel,
