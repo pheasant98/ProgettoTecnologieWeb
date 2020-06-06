@@ -81,6 +81,20 @@ a {
   margin-right: 5%;
 }
 
+.formFieldError,
+.error,
+.success{
+  display: block;
+  font-weight: bold;
+  color: #9F0000;
+}
+.error,.success{
+  text-align: center;
+}
+.success{
+  color:#006600;
+}
+
 .paragraph {
   font-size: 1em;
 }
