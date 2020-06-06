@@ -7,7 +7,7 @@
 \BOOKMARK [3][-]{subsubsection.2.2.3}{Utente amministratore}{subsection.2.2}% 7
 \BOOKMARK [2][-]{subsection.2.3}{Casi d'uso}{section.2}% 8
 \BOOKMARK [3][-]{subsubsection.2.3.1}{Utente generico}{subsection.2.3}% 9
-\BOOKMARK [4][-]{paragraph.2.3.1.1}{Visualizzazione Home page}{subsubsection.2.3.1}% 10
+\BOOKMARK [4][-]{paragraph.2.3.1.1}{Visualizzazione della Home page}{subsubsection.2.3.1}% 10
 \BOOKMARK [4][-]{paragraph.2.3.1.2}{Interazione coi link del breadcrumb}{subsubsection.2.3.1}% 11
 \BOOKMARK [4][-]{paragraph.2.3.1.3}{Visualizzazione della pagina Opere}{subsubsection.2.3.1}% 12
 \BOOKMARK [4][-]{paragraph.2.3.1.4}{Interazione con la pagina Opere}{subsubsection.2.3.1}% 13
@@ -57,7 +57,7 @@
 \BOOKMARK [2][-]{subsection.4.1}{HTML}{section.4}% 57
 \BOOKMARK [2][-]{subsection.4.2}{CSS}{section.4}% 58
 \BOOKMARK [2][-]{subsection.4.3}{PHP}{section.4}% 59
-\BOOKMARK [2][-]{subsection.4.4}{JavaScript}{section.4}% 60
+\BOOKMARK [3][-]{subsubsection.4.3.1}{JavaScript}{subsection.4.3}% 60
 \BOOKMARK [1][-]{section.5}{Presentazione}{}% 61
 \BOOKMARK [2][-]{subsection.5.1}{Desktop}{section.5}% 62
 \BOOKMARK [2][-]{subsection.5.2}{Tablet}{section.5}% 63
