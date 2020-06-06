@@ -82,11 +82,11 @@ a:visited {
 /* Inserimento di un'immagine con la tecnica image replacement */
 .backgroundImage {
   display: block;
-  text-align: center;
-  background-size: 100%;
   background-repeat: no-repeat;
+  background-position: center;
   white-space: nowrap;
   overflow: hidden;
+  background-size: contain;
 }
 
 /* Logo accessibile */
@@ -95,19 +95,16 @@ a:visited {
   background-image: url('../images/logo.png');
   color:white;
   text-indent: 100%;
-  background-position: center;
   height: 3.1em;
   width: 39%;
-  background-size: contain;
   margin-top: 0.3em;
 }
 
 #imageError404 {
   background-image: url('../images/PortraitsCorridor.png');
   text-indent: 100%;
-  background-position: center;
   width: 100%;
-  height: 13em;
+  height: 10em;
 }
 
 .significantImage,
@@ -130,8 +127,7 @@ a:visited {
   border-radius: 20px;
   color: #000;
   font-size: 1.2em;
-  margin-top: 0.5em;
-  margin-bottom: 0.7em;
+  margin: 0.5em 0 0.7em 0;
   padding: 0.5em;
 }
 
@@ -155,11 +151,9 @@ a:visited {
   float: right;
   background-image: url('../images/HamburgerMenu1.png');
   text-indent: 100%;
-  background-position: center;
   height: 6em;
   width: 20%;
   margin: 0.7em 2% 0.5em 6%;
-  background-size: contain;
 }
 
 #hamburgerMenu:active {
@@ -177,16 +171,13 @@ a:visited {
 #menu.show {
   display: block;
   font-size: 1.5em;
-  margin: 0;
-  padding: 0;
+  margin:0;
 }
 
 /* Toglie i pallini dal menu */
 #menu ul {
-  list-style-type: none;
   text-align: center;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
+  padding: 0.5em 0;
 }
 
 #menu li:hover {
@@ -199,8 +190,7 @@ a:visited {
   background-color: #fff;
   color: #000;
   border-radius: 20px;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin: 1em 0;
   padding: 0.5em 1.5em;
 }
 
@@ -219,8 +209,7 @@ a:visited {
 }
 
 .inlineDef{
-  margin-top: 1em;
-  margin-left: 0.5em;
+  margin: 1em 0 0 0.5em;
   float: left;
 }
 
@@ -233,9 +222,7 @@ a:visited {
 .definition,
 .definitionOpera,
 .definitionOpere {
-  padding-left: 11.5em;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding: 1em 0 1em 11.5em;
 }
 
 .definitionOpera{
@@ -256,7 +243,6 @@ a:visited {
 }
 
 .userButton {
-  list-style-type: none;
   border-style: none;
 }
 
@@ -272,8 +258,16 @@ a:visited {
 }
 
 /* Template di un lista */
-.list, .error, .success, .separation {
+.list,
+.error,
+.success,
+.separation,
+.userButton,
+#menu ul,
+.navigation
+{
   list-style-type: none;
+
 }
 
 .list li {
@@ -283,6 +277,7 @@ a:visited {
 .separation li{
   border-top: 2px solid #ccc;
 }
+
 .clause {
   clear: right;
   font-size: 0.9em;
@@ -307,11 +302,6 @@ a:visited {
   border-radius: 0.25em;
 }
 
-.fieldset input,
-.fieldset select {
-  margin-bottom: 1em;
-}
-
 .hideFieldset,
 .hideRight {
   border: none;
@@ -322,7 +312,6 @@ a:visited {
   text-align: right;
   margin-bottom: 1em;
 }
-
 
 .fieldsetOpEv{
   text-align: center;
@@ -354,12 +343,11 @@ a:visited {
   border-radius: 0.25em;
   padding: 0.375em 0.75em;
   resize: vertical;
-  margin: 0.3em 0;
+  margin: 0.3em 0 1em 0;
 }
 
 .descriptionArea{
   height: 10em;
-  margin-bottom: 1em;
   width: 100%;
 }
 
@@ -404,6 +392,7 @@ a:visited {
   box-shadow: 0 0 2px 0 #333, 0 2px 3px #333;
   background: white;
 }
+
 #buttonSubmit:hover{
   background: white;
 }
@@ -429,7 +418,6 @@ a:visited {
 
 /* Posizionamento al centro del contenuto per la navigazione */
 .navigation {
-  list-style-type: none;
   text-align: center;
   border-style: none;
   margin-top: 0.5em;
@@ -441,8 +429,7 @@ a:visited {
 }
 
 .subtitle {
-  margin-top: 1em;
-  margin-bottom: 0.5em;
+  margin: 1em 0 0.5em 0;
 }
 
 .paragraph {
@@ -552,10 +539,6 @@ a:visited {
 
   #searchBox {
    float: right;
-  }
-
-  #imageError404 {
-    height: 23em;
   }
 
   #menu {
