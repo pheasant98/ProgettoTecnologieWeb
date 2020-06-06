@@ -58,7 +58,7 @@ class ArtworksController {
             $message .= '[Non è possibile inserire uno stile diverso da scultura o dipinto]';
         }
 
-        if($technique != NULL) { //TODO: Sistemare anche controllo dopo aver fatto Javascript.
+        if($technique != NULL) {
             if (strlen($technique) === 0) {
                 $message .= '[Non è possibile inserire una tecnica vuota]';
             } elseif (strlen($technique) < 4) {
