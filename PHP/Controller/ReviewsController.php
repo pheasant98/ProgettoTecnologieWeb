@@ -47,10 +47,10 @@ class ReviewsController {
                 $message = '<p class="error">Errore nell\'inserimento della recensione</p>';
             }
         } else {
-            $message = '<ul>' . $message;
+            $message = '<p><ul>' . $message;
             $message = str_replace('[', '<li class="error">', $message);
             $message = str_replace(']', '</li>', $message);
-            $message = $message . '</ul>';
+            $message = $message . '</ul></p>';
         }
 
         return $message;
@@ -192,10 +192,10 @@ class ReviewsController {
                 $message = '<p class="error">Errore nell\'aggiornamento della recensione</p>';
             }
         } else {
-            $message = '<ul>' . $message;
+            $message = '<p><ul>' . $message;
             $message = str_replace('[', '<li class="error">', $message);
             $message = str_replace(']', '</li>', $message);
-            $message .= '</ul>';
+            $message .= '</ul></p>';
         }
 
         return $message;

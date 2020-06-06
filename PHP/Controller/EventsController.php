@@ -115,10 +115,10 @@ class EventsController {
                 $message = '<p class="error">Errore nell\'inserimento dell\' evento ' . $title . '</p>';
             }
         } else {
-            $message = '<ul>' . $message;
+            $message = '<p><ul>' . $message;
             $message = str_replace('[', '<li class="error">', $message);
             $message = str_replace(']', '</li>', $message);
-            $message .= '</ul>';
+            $message .= '</ul></p>';
         }
 
         return $message;
@@ -298,10 +298,10 @@ class EventsController {
                 $message = '<p class="error">Errore nell\'aggiornamento dell\'evento</p>';
             }
         } else {
-            $message = '<ul>' . $message;
+            $message = '<p><ul>' . $message;
             $message = str_replace('[', '<li class="error">', $message);
             $message = str_replace(']', '</li>', $message);
-            $message .= '</ul>';
+            $message .= '</ul></p>';
         }
 
         return $message;
