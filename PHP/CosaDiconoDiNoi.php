@@ -37,7 +37,7 @@ if (!LoginController::isAuthenticatedUser()) {
 
 
 if ($reviews_count > 0) {
-    $number_pages = ceil($reviews_count / 5);
+    $number_pages = intval(ceil($reviews_count / 5));
     $offset = ($page - 1) * 5;
     if ($page === 1) {
         if ($number_pages === 1){
