@@ -6,10 +6,11 @@ if (!isset($_GET['id'])) {
     header('Location: Errore.php');
 }
 
-require_once('Controller/LoginController.php');
+require_once ('Utilities/DateUtilities.php');
+require_once ('Controller/LoginController.php');
 $document = file_get_contents('../HTML/Recensione.html');
 
-require_once('Controller/ReviewsController.php');
+require_once ('Controller/ReviewsController.php');
 $controller = new ReviewsController();
 
 $login = LoginController::getAuthenticationMenu();
@@ -39,7 +40,7 @@ $document = str_replace("<span id='breadcrumbsPlaceholder'/>", $breadcrumbs, $do
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
 $document = str_replace("<span id='contentPlaceholder'/>", $review_content, $document);
 $document = str_replace("<span id='userPlaceholder'/>", $review_user, $document);
-$document = str_replace("<span id='lastDataPlaceholder'/>", $review_last_data, $document);
+$document = str_replace("<span id='lastDataPlaceholder'/>", DateUtilities::englishItalianDate($review_last_data), $document);
 
 echo $document;
 
