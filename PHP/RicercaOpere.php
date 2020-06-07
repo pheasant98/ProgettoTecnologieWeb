@@ -93,6 +93,7 @@ if ($error_length === '') {
 }
 
 $document = str_replace("<span id='skipArtworksPlaceholder'/>", $skip_artworks, $document);
+$document = str_replace("<span id='searchTextPlaceholder'/>", $_SESSION['search_artwork_string'], $document);
 $document = str_replace("<span id='resultListPlaceholder'/>", $artwork_list, $document);
 $document = str_replace("<span id='navigationArtworksButtonsPlaceholder'/>", $navigation_artworks_buttons, $document);
 
