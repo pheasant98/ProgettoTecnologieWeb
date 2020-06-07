@@ -172,6 +172,7 @@ a {
 #reviewButton {
   float: right;
   font-size: 1em;
+  width: 11em;
 }
 
 .significantImage {

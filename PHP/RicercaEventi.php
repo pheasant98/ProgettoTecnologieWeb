@@ -94,6 +94,7 @@ if ($error_length === '') {
 }
 
 $document = str_replace("<span id='skipEventsPlaceholder'/>", $skip_events, $document);
+$document = str_replace("<span id='searchTextPlaceholder'/>", $_SESSION['search_event_string'], $document);
 $document = str_replace("<span id='resultListPlaceholder'/>", $event_list, $document);
 $document = str_replace("<span id='navigationEventsButtonsPlaceholder'/>", $navigation_events_buttons, $document);
 
