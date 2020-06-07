@@ -43,17 +43,22 @@ if (!isset($_GET['page'])) {
 }
 $description = '';
 $title = '';
+
+if (!LoginController::isAdminUser()) {
+    $description = 'Elenco di tutte le recensioni lasciate';
+    $title = 'Recensioni effettuate';
+} else {
+    $description = 'Elenco di tutte le recensioni presenti all\'interno del sito';
+    $title = 'Recensioni presenti nel sito';
+}
+
 if ($reviews_count > 0) {
     $_SESSION['reviewPage'] = $page;
     $offset = ($page - 1) * 5;
     if (!LoginController::isAdminUser()) {
         $reviews_list = '<ul class="separation">' . $controller->getUserListReviews($_SESSION['username'], $offset) . '</ul>';
-        $description = 'Elenco di tutte le recensioni lasciate';
-        $title = 'Recensioni effettuate';
     } else {
         $reviews_list = '<ul class="separation">' . $controller->getListReviews($offset) . '</ul>';
-        $description = 'Elenco di tutte le recensioni presenti all\'interno del sito';
-        $title = 'Recensioni presenti nel sito';
     }
 
     unset($controller);
@@ -78,7 +83,6 @@ if ($reviews_count > 0) {
     } else {
         $skip_reviews = '<p>Ti trovi a pagina ' . $page . ' di ' . $number_pages . '.';
     }
-
 } else {
     unset($controller);
     $skip_reviews = '';
