@@ -219,7 +219,6 @@ class UsersController {
                     <form class="userButton" action="EliminaUtente.php" method="post" role="form">
                         <fieldset class="hideRight">
                             <legend class="hideLegend">Pulsante di eliminazione dell\'utente</legend>
-                            
                             <input type="hidden" name="username" value="' . $row['Username'] . '"/>
                             <input class="button" name="submit" type="submit" value="Rimuovi" role="button" title="Rimuovi utente" aria-label="Rimuovi utente"/>
                         </fieldset>

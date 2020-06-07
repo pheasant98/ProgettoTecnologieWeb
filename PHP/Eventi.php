@@ -65,9 +65,9 @@ if ($event_count > 0) {
 
     if ($number_pages > 1) {
         if ($page === 1) {
-            $skip_events = '<p>Ti trovi a pagina ' . $page . ' di ' . $number_pages . ': ' . '<a href="#buttonNext">vai ai pulsanti di navigazione</a></p>';
+            $skip_events = '<p class="skipDown">Ti trovi a pagina ' . $page . ' di ' . $number_pages . ': ' . '</p><a href="#buttonNext">vai ai pulsanti di navigazione</a>';
         } else {
-            $skip_events = '<p>Ti trovi a pagina ' . $page . ' di ' . $number_pages . ': ' . '<a href="#buttonBack">vai ai pulsanti di navigazione</a></p>';
+            $skip_events = '<p class="skipDown">Ti trovi a pagina ' . $page . ' di ' . $number_pages . ': ' . '</p><a href="#buttonBack">vai ai pulsanti di navigazione</a>';
         }
     } else {
         $skip_events = '<p>Ti trovi a pagina ' . $page . ' di ' . $number_pages . '.';

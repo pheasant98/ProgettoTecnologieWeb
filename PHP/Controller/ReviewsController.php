@@ -158,7 +158,7 @@ class ReviewsController {
 
                     <form class="userButton" action="EliminaRecensione.php" method="post" role="form">
                         <fieldset class="hideRight">
-                            <legend class="hideLegend">Pulsante di eliminazione della recensione</legend>
+                            <legend class="hideLegend">Pulsanti per la gestione della recensione</legend>
                             
                             <input type="hidden" name="id" value="' . $row['ID'] . '"/>
                             
