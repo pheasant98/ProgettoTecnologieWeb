@@ -53,8 +53,9 @@ if (!LoginController::isAdminUser()) {
 }
 
 if ($reviews_count > 0) {
-    $_SESSION['reviewPage'] = $page;
     $offset = ($page - 1) * 5;
+    $_SESSION['reviewPage'] = $page;
+    $_SESSION['review_number_count'] = $reviews_count;
     if (!LoginController::isAdminUser()) {
         $reviews_list = '<ul class="separation">' . $controller->getUserListReviews($_SESSION['username'], $offset) . '</ul>';
     } else {
@@ -73,7 +74,7 @@ if ($reviews_count > 0) {
     }
     $navigation_reviews_buttons .= '</p>';
 
-    $number_pages = ceil($reviews_count/5);
+    $number_pages = ceil($reviews_count / 5);
     if ($number_pages > 1) {
         if ($page === 1) {
             $skip_reviews = '<p>Ti trovi a pagina ' . $page . ' di ' . $number_pages . ': ' . '<a href="#buttonNext">vai ai pulsanti di navigazione</a></p>';

@@ -42,6 +42,7 @@ if ($user_count > 0) {
     $_SESSION['userPage'] = $page;
 
     $offset = ($page - 1) * 5;
+    $_SESSION['user_number_count'] = $user_count;
 
     $user_list = '<ul class="separation">' . $controller->getUsers($offset) . '</ul>';
 
@@ -59,7 +60,7 @@ if ($user_count > 0) {
 
     $navigation_users_buttons .= '</p>';
 
-    $number_pages = ceil($user_count/5);
+    $number_pages = ceil($user_count / 5);
     if ($number_pages > 1) {
         if ($page === 1) {
             $skip_users = '<p>Ti trovi a pagina ' . $page . ' di ' . $number_pages . ': ' . '<a href="#buttonNext">vai ai pulsanti di navigazione</a></p>';

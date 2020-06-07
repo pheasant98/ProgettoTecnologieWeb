@@ -37,7 +37,17 @@ if (!isset($_GET['page'])) {
 if ($event_count > 0) {
     $offset = ($page - 1) * 5;
 
-    $event_list = '<dl class="clickableList">' . $controller->getEvents($filter_type, $offset) . '</dl>';
+    $number_pages = ceil($event_count / 5);
+    $offset = ($page - 1) * 5;
+    if ($page === 1) {
+        if ($number_pages === 1){
+            $event_list = '<dl class="clickableList">' . $controller->getEvents($filter_type, $offset, 'buttonBackUp') . '</dl>';
+        } else {
+            $event_list = '<dl class="clickableList">' . $controller->getEvents($filter_type, $offset, 'buttonNext') . '</dl>';
+        }
+    } else {
+        $event_list = '<dl class="clickableList">' . $controller->getEvents($filter_type, $offset, 'buttonBack') . '</dl>';
+    }
 
     unset($controller);
 
@@ -53,7 +63,6 @@ if ($event_count > 0) {
 
     $navigation_events_buttons .= '</p>';
 
-    $number_pages = ceil($event_count/5);
     if ($number_pages > 1) {
         if ($page === 1) {
             $skip_events = '<p>Ti trovi a pagina ' . $page . ' di ' . $number_pages . ': ' . '<a href="#buttonNext">vai ai pulsanti di navigazione</a></p>';

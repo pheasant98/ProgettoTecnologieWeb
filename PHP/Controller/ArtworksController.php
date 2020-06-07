@@ -173,11 +173,10 @@ class ArtworksController {
         return $count;
     }
 
-    public function getSearchedArtworks($search, $offset) {
+    public function getSearchedArtworks($search, $offset, $button) {
         $result_set = $this->artworks->getSearchedArtworks($search, $offset);
 
         $id = 'artwork';
-        $button = 'buttonBack';
         $counter = 1;
         $content = '';
 
@@ -225,7 +224,7 @@ class ArtworksController {
         return $content;
     }
 
-    public function getArtworks($style, $offset) {
+    public function getArtworks($style, $offset, $button) {
         if ($style === 'TutteLeOpere') {
             $result_set = $this->artworks->getArtworks($offset);
         } else {
@@ -233,7 +232,6 @@ class ArtworksController {
         }
 
         $id = 'artwork';
-        $button = 'buttonBack';
         $counter = 1;
         $content = '';
 

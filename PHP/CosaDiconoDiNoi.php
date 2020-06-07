@@ -37,8 +37,17 @@ if (!LoginController::isAuthenticatedUser()) {
 
 
 if ($reviews_count > 0) {
+    $number_pages = ceil($reviews_count / 5);
     $offset = ($page - 1) * 5;
-    $reviews_list = '<dl class="clickableList">' . $controller->getReviews($offset) . '</dl>';
+    if ($page === 1) {
+        if ($number_pages === 1){
+            $reviews_list = '<dl class="clickableList">' . $controller->getReviews($offset, 'buttonBackUp') . '</dl>';
+        } else {
+            $reviews_list = '<dl class="clickableList">' . $controller->getReviews($offset, 'buttonNext') . '</dl>';
+        }
+    } else {
+        $reviews_list = '<dl class="clickableList">' . $controller->getReviews($offset, 'buttonBack') . '</dl>';
+    }
 
     unset($controller);
 
@@ -53,7 +62,6 @@ if ($reviews_count > 0) {
 
     $navigation_reviews_buttons .= '</p>';
 
-    $number_pages = ceil($reviews_count/5);
     if ($number_pages > 1) {
         if ($page === 1) {
             $skip_reviews = '<p>Ti trovi a pagina ' . $page . ' di ' . $number_pages . ': ' . '<a href="#buttonNext">vai ai pulsanti di navigazione</a></p>';

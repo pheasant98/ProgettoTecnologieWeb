@@ -70,11 +70,10 @@ class ReviewsController {
         return $count;
     }
 
-    public function getReviews($offset) {
+    public function getReviews($offset, $button) {
         $result_set = $this->reviews->getReviews($offset);
 
         $id = 'review';
-        $button = 'buttonBack';
         $counter = 1;
         $content = '';
 
