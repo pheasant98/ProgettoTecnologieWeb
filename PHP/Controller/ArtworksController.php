@@ -183,12 +183,11 @@ class ArtworksController {
         while($row = $result_set->fetch_assoc()) {
             $content .= '
                 <dt id="'. $id . $counter . '" class="titleDef">
-                     <a href="Opera.php?id=' . $row['ID'] . '" aria-label="Vai all\'evento" title= ". $row[\'Titolo\'] . ">' . $row['Titolo'] . '</a>
+                     <a href="Opera.php?id=' . $row['ID'] . '" title="Vai all\'opera ' . $row['Titolo'] . '" aria-label="Vai all\'opera ' . $row['Titolo'] . '">' . $row['Titolo'] . '</a>
                 </dt>
                 <dd>
-                    <img class="previewOpera" alt="Immagine dell\'opera ' . $row['Titolo'] . '" src="../' . $row['Immagine'] . '"/>
                     <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'opera">Salta l\'opera</a>
-    
+                    <img class="previewOpera" alt="Immagine dell\'opera ' . $row['Titolo'] . '" src="../' . $row['Immagine'] . '"/>
                     <dl>
                         <dt class="inlineDef">
                             Nome autore: 
@@ -238,12 +237,11 @@ class ArtworksController {
         while($row = $result_set->fetch_assoc()) {
             $content .= '
                 <dt id="' . $id . $counter . '" class="titleDef">
-                     <a href="Opera.php?id=' . $row['ID'] . '" aria-label="Vai all\'evento" title= ". $row[\'Titolo\'] . ">' . $row['Titolo'] . '</a>
+                     <a href="Opera.php?id=' . $row['ID'] . '" " title="Vai all\'opera ' . $row['Titolo'] . '" aria-label="Vai all\'opera ' . $row['Titolo'] . '">' . $row['Titolo'] . '</a>
                 </dt>
                 <dd>
-                    <img class="previewOpera" alt="Immagine dell\'opera ' . $row['Titolo'] . '" src="../' . $row['Immagine'] . '"/>
                     <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'opera">Salta l\'opera</a>
-    
+                    <img class="previewOpera" alt="Immagine dell\'opera ' . $row['Titolo'] . '" src="../' . $row['Immagine'] . '"/>
                     <dl>
                         <dt class="inlineDef">
                             Nome autore: 
