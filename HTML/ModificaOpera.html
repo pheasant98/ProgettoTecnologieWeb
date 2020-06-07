@@ -132,7 +132,7 @@
                         </p>
                         <p>
                             <label id="labelYears" class="labelPosition" for="years">Datazione</label>
-                            <label class="clause" for="years">La datazione deve essere inserita nel seguente formato: aaaa</label>
+                            <label class="clause" for="years">La datazione deve essere inserita nel seguente formato: <abbr title="anno">aaaa</abbr></label>
                             <input id="years" class="formElement" name="years" type="text" value="<span id='yearsValuePlaceholder'/>" aria-label="Modifica l'anno dell'opera, valore attuale <span id='yearsValuePlaceholder'/>" aria-required="true"/>
                         </p>
                     </fieldset>
@@ -212,7 +212,7 @@
                     </fieldset>
 
                     <p class="buttonPosition">
-                        <input class="button" name="cancel" type="reset" value="Annulla" aria-label="Annulla le modifiche apportate" onclick="resetImage(true)"/>
+                        <input class="button" name="cancel" type="reset" value="Annulla" aria-label="Annulla le modifiche apportate" onclick="resetImage(true);"/>
                         <input id="buttonConfirm" class="button" name="submit" type="submit" value="Modifica" aria-label="Invia le modifiche apportate"/>
                     </p>
                 </fieldset>

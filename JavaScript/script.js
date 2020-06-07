@@ -169,7 +169,7 @@ function addRadioError(input, error) {
     parentNode.insertBefore(span, parentNode.children[1]);
 }
 
-function removeReviewError(input) {
+function removeSearchError(input) {
     var parentNode = input.parentNode;
 
     while (parentNode.children.length > 6) {
@@ -177,7 +177,7 @@ function removeReviewError(input) {
     }
 }
 
-function addReviewError(input, error) {
+function addSearchError(input, error) {
     removeError(input);
 
     var parentNode = input.parentNode;
@@ -581,6 +581,9 @@ function checkModifyArtworkImage(event) {
 }
 
 function resetImage(isModify) {
+    resetArtworkErrors();
+
+    var input = document.getElementById('imageUpload');
     var image = document.getElementById('uploadedImage');
     var imageIE = document.getElementById('uploadedImageIE');
 
@@ -589,7 +592,6 @@ function resetImage(isModify) {
             imageIE.parentElement.removeChild(imageIE);
         }
 
-        var input = document.getElementById('imageUpload');
         var previousImage = document.getElementById('previousImage');
 
         if (!image) {
@@ -605,6 +607,16 @@ function resetImage(isModify) {
             imageIE.parentElement.removeChild(imageIE);
         }
     }
+
+    var tags = isModify ? 5 : 3;
+
+    for (var i = 0; i < input.parentElement.children.length; ++i) {
+        if (input.parentElement.children[i].tagName.toLowerCase() === 'img') {
+            tags++;
+        }
+    }
+
+    removeError(input, tags);
 }
 
 /* CONTROLLI E GESTIONE DEGLI EVENTI */
@@ -657,13 +669,13 @@ function checkBeginDate(beginDateInput) {
     var upperBound = new Date(lowerBound.getFullYear() + 3, lowerBound.getMonth(), lowerBound.getDay());
 
     if (beginDate < lowerBound) {
-        addError(beginDateInput, 'Non è possibile inserire una data di inizio evento precedente alla data odierna', 2);
+        addError(beginDateInput, 'Non è possibile inserire una data di inizio evento precedente alla data odierna', 3);
         return false;
     } else if (beginDate > upperBound) {
-        addError(beginDateInput, 'Non è possibile inserire una data di inizio evento successiva a tre anni dalla data odierna', 2);
+        addError(beginDateInput, 'Non è possibile inserire una data di inizio evento successiva a tre anni dalla data odierna', 3);
         return false;
     } else {
-        removeError(beginDateInput, 2);
+        removeError(beginDateInput, 3);
         return true;
     }
 }
@@ -676,13 +688,13 @@ function checkDateComparison(beginDateInput, endDateInput) {
     durationBound = addMonths(durationBound, 6);
 
     if (beginDate > endDate) {
-        addError(endDateInput, 'Non è possibile inserire una data di fine evento precendente alla data di inizio evento', 2);
+        addError(endDateInput, 'Non è possibile inserire una data di fine evento precendente alla data di inizio evento', 3);
         return false;
     } else if (endDate > durationBound) {
-        addError(endDateInput, 'Non è possibile inserire un evento che abbia una durata superiore ai sei mesi', 2);
+        addError(endDateInput, 'Non è possibile inserire un evento che abbia una durata superiore ai sei mesi', 3);
         return false;
     } else {
-        removeError(endDateInput, 2);
+        removeError(endDateInput, 3);
         return true;
     }
 }
@@ -951,10 +963,10 @@ function checkSearchFilter(input) {
     var type = input.options[input.selectedIndex].value.trim();
 
     if (type !== 'Opera' && type !== 'Evento') {
-        addReviewError(input, 'La tipologia della ricerca deve essere Opera od Evento');
+        addSearchError(input, 'La tipologia della ricerca deve essere Opera od Evento');
         return false;
     } else {
-        removeReviewError(input);
+        removeSearchError(input);
         return true;
     }
 }
@@ -963,12 +975,99 @@ function checkSearchText(input) {
     var search = input.value.trim();
 
     if (search.length > 64) {
-        addReviewError(input, 'Il testo ricercato non può essere più lungo di 64 caratteri');
+        addSearchError(input, 'Il testo ricercato non può essere più lungo di 64 caratteri');
         return false;
     } else {
-        removeReviewError(input);
+        removeSearchError(input);
         return true;
     }
+}
+
+/* RIMOZIONE DEGLI ERRORI IN RESET */
+function resetArtworkErrors() {
+    var author = document.getElementById('author');
+    var title = document.getElementById('title');
+    var description = document.getElementById('operaDescriptionArea');
+    var years = document.getElementById('years');
+    var style = document.getElementById('style');
+    var technique = document.getElementById('technique');
+    var material = document.getElementById('material');
+    var dimensions = document.getElementById('dimensions');
+    var loanNo = document.getElementById('loanNo');
+
+    removeError(author, 2);
+    removeError(title, 2);
+    removeError(description, 2);
+    removeError(years, 3);
+    removeError(style, 2);
+    removeError(technique, 2);
+    removeError(material, 2);
+    removeError(dimensions, 3);
+    removeRadioError(loanNo);
+}
+
+function resetEventErrors() {
+    var title = document.getElementById('title');
+    var description = document.getElementById('eventDescriptionArea');
+    var beginDate = document.getElementById('beginDate');
+    var endDate = document.getElementById('endDate');
+    var type = document.getElementById('type');
+    var manager = document.getElementById('manager');
+
+    removeError(title, 2);
+    removeError(description, 2);
+    removeError(beginDate, 3);
+    removeError(endDate, 3);
+    removeError(type, 2);
+    removeError(manager, 2);
+}
+
+function resetReviewErrors() {
+    var title = document.getElementById('title');
+    var description = document.getElementById('reviewDescriptionArea');
+
+    removeError(title, 2);
+    removeError(description, 2);
+}
+
+function resetUserErrors() {
+    var name = document.getElementById('name');
+    var surname = document.getElementById('surname');
+    var date = document.getElementById('date');
+    var sexA = document.getElementById('sexA');
+    var email = document.getElementById('email');
+    var oldPassword = document.getElementById('oldPassword');
+    var newPassword = document.getElementById('newPassword');
+    var confirmPassword = document.getElementById('repetePassword');
+
+    removeError(name, 2);
+    removeError(surname, 2);
+    removeError(date, 3);
+    removeRadioError(sexA);
+    removeError(email, 2);
+    removeError(oldPassword, 2);
+    removeError(newPassword, 3);
+    removeError(confirmPassword, 2);
+}
+
+function resetRegistrationErrors() {
+    var name = document.getElementById('name');
+    var surname = document.getElementById('surname');
+    var date = document.getElementById('date');
+    var sexA = document.getElementById('sexA');
+    var email = document.getElementById('email');
+    var username = document.getElementById('username');
+    var password = document.getElementById('password');
+    var confirmPassword = document.getElementById('repetePassword');
+
+    removeError(name, 2);
+    removeError(surname, 2);
+    removeError(date, 3);
+    removeRadioError(sexA);
+    removeError(email, 2);
+    removeError(username, 2);
+    removeError(password, 3);
+    removeError(confirmPassword, 2);
 }
 
 /* CONTROLLI E GESTIONE DEI FORM */
