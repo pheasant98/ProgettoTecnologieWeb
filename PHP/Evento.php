@@ -37,6 +37,10 @@ if (isset($_SESSION['previous_page'])) {
         $page = 'page=' . $_SESSION['event_page'];
         $filter_event_type = 'filterType=' . $_SESSION['filter_event_type'];
         $breadcrumbs = '<a href="Eventi.php?' . $page . '&amp;' . $filter_event_type . '" title="Eventi" aria-label="Vai alla pagina Eventi">Eventi</a>';
+    } elseif ($_SESSION['previous_page'] === 'RicercaEventi') {
+        $search = 'search=' . $_SESSION['search_event_string'];
+        $page = 'page=' . $_SESSION['search_event_page'];
+        $breadcrumbs = '<a href="RicercaEventi.php?' . $search . '&amp;' . $page . '" title="Ricerca Eventi" aria-label="Vai alla pagina di ricerca degli eventi">Ricerca Eventi</a>';
     }
 } else {
     $breadcrumbs = '<a href="Eventi.php?page=1&amp;filterType=NessunFiltro" title="Eventi" aria-label="Vai alla pagina Eventi">Eventi</a>';

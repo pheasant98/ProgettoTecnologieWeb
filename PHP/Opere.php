@@ -53,10 +53,15 @@ if ($artwork_count > 0) {
 
     $navigation_artworks_buttons .= '</p>';
 
-    if ($page === 1) {
-        $skip_artworks = '<p>Ti trovi a pagina ' . $page . ' di ' . (ceil($artwork_count/5)) . ': ' . '<a href="#buttonNext">vai ai pulsanti di navigazione</a></p>';
+    $number_pages = ceil($artwork_count/5);
+    if ($number_pages > 1) {
+        if ($page === 1) {
+            $skip_artworks = '<p>Ti trovi a pagina ' . $page . ' di ' . $number_pages . ': ' . '<a href="#buttonNext">vai ai pulsanti di navigazione</a></p>';
+        } else {
+            $skip_artworks = '<p>Ti trovi a pagina ' . $page . ' di ' . $number_pages . ': ' . '<a href="#buttonBack">vai ai pulsanti di navigazione</a></p>';
+        }
     } else {
-        $skip_artworks = '<p>Ti trovi a pagina ' . $page . ' di ' . (ceil($artwork_count/5)) . ': ' . '<a href="#buttonBack">vai ai pulsanti di navigazione</a></p>';
+        $skip_artworks = '<p>Ti trovi a pagina ' . $page . ' di ' . $number_pages . '.';
     }
 
 } else {
