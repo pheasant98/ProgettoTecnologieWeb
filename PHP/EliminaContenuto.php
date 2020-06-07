@@ -2,6 +2,8 @@
 
 session_start();
 
+require_once ('Controller/LoginController.php');
+
 if (!isset($_POST['submit']) || $_POST['submit'] !== 'Rimuovi' || !isset($_SESSION['contentPage']) || !isset($_SESSION['filter_content']) || !isset($_SESSION['filter_content_type']) || !LoginController::isAdminUser()) {
     header('Location: Errore.php');
 }

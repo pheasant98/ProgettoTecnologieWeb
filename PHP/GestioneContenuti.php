@@ -55,15 +55,15 @@ $deleted = '';
 if (isset($_SESSION['contentDeleted']) && isset($_SESSION['deleted_type']) && isset($_SESSION['contentDeletedError'])) {
     if ($_SESSION['deleted_type'] === 'Opera') {
         if ($_SESSION['contentDeletedError']) {
-            $deleted = 'L\'opera ' . $_SESSION['contentDeleted'] . ' è stata eliminata correttamente';
+            $deleted = '<p>L\'opera ' . $_SESSION['contentDeleted'] . ' è stata eliminata correttamente</p>';
         } else {
-            $deleted = 'Non è stato possibile eliminare l\'opera ' . $_SESSION['contentDeleted'] . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.';
+            $deleted = '<p>Non è stato possibile eliminare l\'opera ' . $_SESSION['contentDeleted'] . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
         }
     } else if ($_SESSION['deleted_type'] === 'Evento') {
         if (!$_SESSION['contentDeletedError']) {
-            $deleted = 'L\'evento ' . $_SESSION['contentDeleted'] . ' è stato eliminato correttamente';
+            $deleted = '<p>L\'evento ' . $_SESSION['contentDeleted'] . ' è stato eliminato correttamente</p>';
         } else {
-            $deleted = 'Non è stato possibile eliminare l\'evento ' . $_SESSION['contentDeleted'] . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.';
+            $deleted = '<p>Non è stato possibile eliminare l\'evento ' . $_SESSION['contentDeleted'] . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
         }
     }
 

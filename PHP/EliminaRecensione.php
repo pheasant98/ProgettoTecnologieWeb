@@ -2,6 +2,8 @@
 
 session_start();
 
+require_once ('Controller/LoginController.php');
+
 if (!isset($_POST['submit']) || $_POST['submit'] !== 'Rimuovi' || !isset($_SESSION['reviewPage'])) {
     header('Location: Errore.php');
 }

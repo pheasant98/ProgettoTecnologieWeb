@@ -19,9 +19,9 @@ if (!LoginController::isAdminUser()) {
 $deleted = '';
 if (isset($_SESSION['reviewDeleted']) && isset($_SESSION['reviewDeletedError'])) {
     if ($_SESSION['reviewDeletedError']) {
-        $deleted = 'La recensione ' . $_SESSION['reviewDeleted'] . ' è stata eliminata correttamente';
+        $deleted = '<p>La recensione ' . $_SESSION['reviewDeleted'] . ' è stata eliminata correttamente.</p>';
     } else {
-        $deleted = 'Non è stato possibile eliminare la recensione' . $_SESSION['reviewDeleted'] . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.';
+        $deleted = '<p>Non è stato possibile eliminare la recensione' . $_SESSION['reviewDeleted'] . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
     }
 
     unset($_SESSION['reviewDeleted']);
