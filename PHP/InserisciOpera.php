@@ -43,14 +43,16 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Inserisci') {
         $style = '';
     }
 
-    if (isset($_POST['technique'])) {
+    if (isset($_POST['technique']) && $style === 'Dipinto') {
         $technique = $_POST['technique'];
-        $material = '';
+    } else {
+        $technique = '';
     }
 
-    if (isset($_POST['material'])) {
+    if (isset($_POST['material']) && $style === 'Scultura') {
         $material = $_POST['material'];
-        $technique = '';
+    } else {
+        $material = '';
     }
 
     if (isset($_POST['dimensions'])) {

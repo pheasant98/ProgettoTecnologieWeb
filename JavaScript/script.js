@@ -227,7 +227,7 @@ function checkDate(input) {
 /* CONTROLLI E GESTIONE DELLE OPERE */
 function checkArtworkAuthor(input) {
     var author = input.value.trim();
-    var pattern = new RegExp('^[A-zÀ-ú\'\-`.\\s]+$');
+    var pattern = new RegExp('^[A-zÀ-ú\'\\-`.\\s]+$');
 
     if (author.length === 0) {
         addError(input, 'Non è possibile inserire un autore vuoto', 2);
@@ -249,7 +249,7 @@ function checkArtworkAuthor(input) {
 
 function checkArtworkTitle(input) {
     var title = input.value.trim();
-    var pattern = new RegExp('^[A-zÀ-ú0-9\'`!.,:(\-)\\s]+$');
+    var pattern = new RegExp('^[A-zÀ-ú0-9\'`!.,:(\\-)\\s]+$');
 
     if (title.length === 0) {
         addError(input, 'Non è possibile inserire un titolo vuoto', 2);
@@ -323,7 +323,7 @@ function checkArtworkStyle(input) {
 
 function checkArtworkTechnique(input) {
     var technique = input.value.trim();
-    var pattern = new RegExp('^[A-zÀ-ú\'\-`\\s]+$');
+    var pattern = new RegExp('^[A-zÀ-ú\'\\-`\\s]+$');
 
     if (technique.length === 0) {
         addError(input, 'Non è possibile inserire una tecnica vuota', 2);
@@ -345,7 +345,7 @@ function checkArtworkTechnique(input) {
 
 function checkArtworkMaterial(input) {
     var material = input.value.trim();
-    var pattern = new RegExp('^[A-zÀ-ú\'\-`\\s]+$');
+    var pattern = new RegExp('^[A-zÀ-ú\'\\-`\\s]+$');
 
     if (material.length === 0) {
         addError(input, 'Non è possibile inserire un materiale vuoto', 2);
@@ -568,7 +568,7 @@ function resetImage(isModify) {
 /* CONTROLLI E GESTIONE DEGLI EVENTI */
 function checkEventTitle(input) {
     var title = input.value.trim();
-    var pattern = new RegExp('^[A-zÀ-ú0-9\'`!.,\-:()\\s]+$');
+    var pattern = new RegExp('^[A-zÀ-ú0-9\'`!.,\\-:()\\s]+$');
     
     if (title.length === 0) {
         addError(input, 'Non è possibile inserire un titolo vuoto', 2);
@@ -659,7 +659,7 @@ function checkEventType(input) {
 
 function checkEventManager(input) {
     var manager = input.value.trim();
-    var pattern = new RegExp('^[A-zÀ-ú0-9\'`.:(\-)\\s]+$');
+    var pattern = new RegExp('^[A-zÀ-ú0-9\'`.:(\\-)\\s]+$');
 
     if (manager.length === 0) {
         addError(input, 'Non è possibile inserire un organizzatore vuoto', 2);
@@ -682,7 +682,7 @@ function checkEventManager(input) {
 /* CONTROLLI E GESTIONE DELLE RECENSIONI */
 function checkReviewTitle(input) {
     var title = input.value.trim();
-    var pattern = new RegExp('^[A-zÀ-ú0-9\'`!.,\-:()\\s]+$');
+    var pattern = new RegExp('^[A-zÀ-ú0-9\'`!.,\\-:()\\s]+$');
 
     if (title.length === 0) {
         addError(input, 'Non è possibile inserire una recensione con un oggetto vuoto', 2);
@@ -723,7 +723,7 @@ function checkReviewContent(input) {
 /* CONTROLLI E GESTIONE DEGLI UTENTI */
 function checkUserName(input) {
     var name = input.value.trim();
-    var pattern = new RegExp('^[A-zÀ-ú\'\-`.\\s]+$');
+    var pattern = new RegExp('^[A-zÀ-ú\'\\-`.\\s]+$');
     
     if (name.length === 0) {
         addError(input, 'Non è possibile inserire un nome vuoto', 2);
@@ -745,7 +745,7 @@ function checkUserName(input) {
 
 function checkUserSurname(input) {
     var surname = input.value.trim();
-    var pattern = new RegExp('^[A-zÀ-ú\'\-`.\\s]+$');
+    var pattern = new RegExp('^[A-zÀ-ú\'\\-`.\\s]+$');
 
     if (surname.length === 0) {
         addError(input, 'Non è possibile inserire un cognome vuoto', 2);
@@ -811,7 +811,7 @@ function checkUserSex(inputSexMale, inputSexFemale, inputSexOther) {
 
 function checkUserMail(input) {
     var mail = input.value.trim();
-    var pattern = new RegExp('^[a-zA-Z0-9.!#$%&\'*+^_`{|}~\-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$');
+    var pattern = new RegExp('^[a-zA-Z0-9.!#$%&\'*+^_`{|}~\\-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$');
 
     if (mail.length === 0) {
         addError(input, 'Non è possibile inserire un indirizzo <span xml:lang="en">email</span> vuoto', 2);
@@ -848,7 +848,7 @@ function checkUserUsername(input) {
 
 function checkUserOldPassword(input, tags) {
     var password = input.value.trim();
-    var pattern = new RegExp('^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!#$%&\'*+^_`\-{|}~@]).*$');
+    var pattern = new RegExp('^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!#$%&\'*+^_`\\-{|}~@]).*$');
 
     if (password.length === 0) {
         addError(input, 'Non è possibile che la <span xml:lang="en">password</span> corrente sia vuota', tags);
@@ -867,7 +867,7 @@ function checkUserOldPassword(input, tags) {
 
 function checkUserPassword(input, tags) {
     var password = input.value.trim();
-    var pattern = new RegExp('^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!#$%&\'*+^_`\-{|}~@]).*$');
+    var pattern = new RegExp('^(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!#$%&\'*+^_`\\-{|}~@]).*$');
     
     if (password.length === 0) {
         addError(input, 'Non è possibile inserire una <span xml:lang="en">password</span> vuota', tags);

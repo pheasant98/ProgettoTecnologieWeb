@@ -82,8 +82,6 @@ class ArtworksController {
             }
         }
 
-        echo $dimensions;
-
         if (strlen($dimensions) === 0) {
             $message .= '[Non è possibile inserire una dimensione vuota]';
         } elseif (!preg_match('/^([1-9][0-9]{0,3})x([1-9][0-9]{0,3})$/', $dimensions)) {
@@ -94,7 +92,7 @@ class ArtworksController {
             $message .= '[Il prestito deve essere scelto tra "Si" e "No"]';
         }
 
-        if ($isModify && !FileUtilities::isEmpty()) {
+        if (!$isModify || ($isModify && !FileUtilities::isEmpty())) {
             if (!FileUtilities::isSelected()) {
                 $message .= '[È necessario selezionare un\'immagine]';
             } elseif (!FileUtilities::isOneAndOnlyOneSelected()) {
@@ -110,6 +108,8 @@ class ArtworksController {
             } elseif (!$this->fileUtilities->isUniqueRenamed()) {
                 $message .= '[Non è stato possibile generare un nome univoco per il file. Per favore rinominare il file]';
             }
+        } elseif ($message === '' && $isModify && FileUtilities::isEmpty()) {
+            $message = 'NoNewImage';
         }
 
         return $message;
@@ -127,6 +127,7 @@ class ArtworksController {
 
     public function addArtwork($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $user) {
         $message = $this->checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan);
+
         if ($message === '') {
             if($style === 'Dipinto') {
                 if ($this->artworks->postPainting($author, $title, $description, intval($years), $technique, $dimensions, $loan, $this->fileUtilities->getPath(), $user)) {
@@ -325,12 +326,18 @@ class ArtworksController {
         $message = $this->checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, true);
 
         if ($message === '') {
-            if (unlink('../' . $old_image)) {
+            if (unlink($old_image)) {
                 if ($this->artworks->updateArtwork($id, $author, $title, $description, intval($years), $technique, $material, $dimensions, $loan, $this->fileUtilities->getPath(), $user)) {
                     $message = '';
                 } else {
                     $message = '<p class="error">Non è stato possibile aggiornare l\'opera ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
                 }
+            } else {
+                $message = '<p class="error">Non è stato possibile aggiornare l\'opera ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
+            }
+        } elseif ($message === 'NoNewImage') {
+            if ($this->artworks->updateArtwork($id, $author, $title, $description, intval($years), $technique, $material, $dimensions, $loan, substr($old_image, 3), $user)) {
+                $message = '';
             } else {
                 $message = '<p class="error">Non è stato possibile aggiornare l\'opera ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
             }

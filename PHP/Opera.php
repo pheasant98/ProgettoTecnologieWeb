@@ -42,6 +42,24 @@ if ($_SESSION['previous_page'] === 'GestioneContenuti') {
     $breadcrumbs = '<a href="Opere.php?' . $page . '&amp;' . $filter_artwork_type . '" title="Opere" aria-label="Vai alla pagina Opere">Opere</a>';
 }
 
+if ($artwork_style === 'Dipinto') {
+    $artwork_technique = '<dt class="inlineDef">
+                              Tecnica:
+                          </dt>
+                          <dd class="definitionOpera">
+                              ' . $artwork_technique . '
+                          </dd>';
+    $artwork_material = '';
+} elseif ($artwork_style === 'Scultura') {
+    $artwork_technique = '';
+    $artwork_material = '<dt class="inlineDef">
+                            Materiale:
+                        </dt>
+                        <dd class="definitionOpera">
+                            ' . $artwork_material . '
+                        </dd>';
+}
+
 $document = str_replace("<span id='titlePlaceholder'/>", $artwork_title, $document);
 $document = str_replace("<span id='breadcrumbsPlaceholder'/>", $breadcrumbs, $document);
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);

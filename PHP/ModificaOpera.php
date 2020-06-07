@@ -24,7 +24,6 @@ $dimensions = $artwork['Dimensioni'];
 $loan = ($artwork['Prestito'] === 1 ? 'Si' : 'No');
 $image = $artwork['Immagine'];
 
-
 if (isset($_POST['submit']) && $_POST['submit'] === 'Modifica') {
     $author = $_POST['author'];
     $title = $_POST['title'];
@@ -32,14 +31,18 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Modifica') {
     $years = $_POST['years'];
     $style = $_POST['style'];
 
-    if (isset($_POST['technique'])) {
+    if (isset($_POST['technique']) && $style === 'Dipinto') {
         $technique = $_POST['technique'];
-        $material = '';
-    }
-    if (isset($_POST['material'])) {
-        $material = $_POST['material'];
+    } else {
         $technique = '';
     }
+
+    if (isset($_POST['material']) && $style === 'Scultura') {
+        $material = $_POST['material'];
+    } else {
+        $material = '';
+    }
+
     $loan = ($_POST['loan'] === 'Si' ? 1 : 0);
 
     $message = $artworksController->updateArtwork($_GET['id'], $author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $_POST['previousImage'], $_SESSION['username']);
@@ -56,7 +59,7 @@ $loan_yes = ' ';
 $loan_no = ' ';
 $painting_style = ' ';
 $sculture_style = ' ';
-if ($loan === 'No') {
+if ($loan === 'No' || $loan === 0) {
     $loan_no = ' checked="checked" ';
 } else {
     $loan_yes = ' checked="checked" ';
