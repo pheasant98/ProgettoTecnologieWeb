@@ -38,6 +38,10 @@ a:visited {
   color: rgba(0, 0, 0, 0);
 }
 
+.hideContent {
+  display: none;
+}
+
 /* Regole per gli header delle pagine */
 
 /* Colore e ombreggiatura dell'header */

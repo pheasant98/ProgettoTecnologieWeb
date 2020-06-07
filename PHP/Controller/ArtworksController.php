@@ -325,18 +325,11 @@ class ArtworksController {
         $message = $this->checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, true);
 
         if ($message === '') {
-            if (copy('../' . $old_image, '../_' . $old_image)) {
-                if (unlink('../' . $old_image)) {
-                    if ($this->artworks->updateArtwork($id, $author, $title, $description, intval($years), $technique, $material, $dimensions, $loan, $this->fileUtilities->getPath(), $user)) {
-                        $message = '';
-                        unlink('../_' . $old_image);
-                    } else {
-                        $message = '<p class="error">Non è stato possibile aggiornare l\'opera ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
-                        rename('../_' . $old_image, '../' . $old_image);
-                    }
+            if (unlink('../' . $old_image)) {
+                if ($this->artworks->updateArtwork($id, $author, $title, $description, intval($years), $technique, $material, $dimensions, $loan, $this->fileUtilities->getPath(), $user)) {
+                    $message = '';
                 } else {
                     $message = '<p class="error">Non è stato possibile aggiornare l\'opera ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
-                    unlink('../_' . $old_image);
                 }
             } else {
                 $message = '<p class="error">Non è stato possibile aggiornare l\'opera ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
