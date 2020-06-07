@@ -1,14 +1,8 @@
 /* GESTIONE DEL MENU AD HAMBURGER */
-window.onload = menu;
-
 function touch() {
     var menus = document.getElementById('menu');
 
     menus.className === 'show' ? menus.removeAttribute('class') : menus.className = 'show';
-}
-
-function menu() {
-    document.getElementById('hamburgerMenu').addEventListener('click', touch);
 }
 
 /* GESTIONE DELLA TIPOLOGIA DELLE OPERE */
