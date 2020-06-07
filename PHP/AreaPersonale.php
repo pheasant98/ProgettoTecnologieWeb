@@ -12,7 +12,7 @@ if (!LoginController::isAuthenticatedUser()) {
 
 $welcome = '';
 if (isset($_SESSION['just_registered']) && $_SESSION['just_registered'] === true) {
-    $welcome = '<p>La registrazione è stata completata correttamente</p>';
+    $welcome = '<p class="success">La registrazione è stata completata correttamente</p>';
 }
 unset($_SESSION['just_registered']);
 $_SESSION['previous_page'] = 'AreaPersonale';
