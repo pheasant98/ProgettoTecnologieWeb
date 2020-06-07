@@ -44,7 +44,7 @@ if ($_POST['type'] === 'Evento') {
         }
     } else {
         $_SESSION['contentDeletedError'] = false;
-        echo 'copy not good'
+        echo 'copy not good';
     }
 
     $_SESSION['contentDeleted'] = $artwork['Titolo'];
