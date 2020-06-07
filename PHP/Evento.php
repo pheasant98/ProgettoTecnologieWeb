@@ -26,6 +26,9 @@ $event_end_date = DateUtilities::englishItalianDate($event['DataFine']);
 $event_manager = $event['Organizzatore'];
 $event_description = $event['Descrizione'];
 $breadcrumbs = '';
+$searchText = '';
+$searchFilterOpera = 'selected="selected" ';
+$searchFilterEvento = '';
 if (isset($_SESSION['previous_page'])) {
     if ($_SESSION['previous_page'] === 'GestioneContenuti') {
         $page = 'page=' . $_SESSION['contentPage'];
@@ -38,6 +41,9 @@ if (isset($_SESSION['previous_page'])) {
         $filter_event_type = 'filterType=' . $_SESSION['filter_event_type'];
         $breadcrumbs = '<a href="Eventi.php?' . $page . '&amp;' . $filter_event_type . '" title="Eventi" aria-label="Vai alla pagina Eventi">Eventi</a>';
     } elseif ($_SESSION['previous_page'] === 'RicercaEventi') {
+        $searchText = $_SESSION['search_event_string'];
+        $searchFilterEvento = 'selected="selected" ';
+        $searchFilterOpera = '';
         $search = 'search=' . $_SESSION['search_event_string'];
         $page = 'page=' . $_SESSION['search_event_page'];
         $breadcrumbs = '<a href="RicercaEventi.php?' . $search . '&amp;' . $page . '" title="Ricerca Eventi" aria-label="Vai alla pagina di ricerca degli eventi">Ricerca Eventi</a>';
@@ -47,6 +53,9 @@ if (isset($_SESSION['previous_page'])) {
 }
 
 $document = str_replace("<span id='titlePlaceholder'/>", $event_title, $document);
+$document = str_replace("<span id='searchTextPlaceholder'/>", $searchText, $document);
+$document = str_replace("<span id='searchFilterOperaPlaceholder'/>", $searchFilterOpera, $document);
+$document = str_replace("<span id='searchFilterEventoPlaceholder'/>", $searchFilterEvento, $document);
 $document = str_replace("<span id='breadcrumbsPlaceholder'/>", $breadcrumbs, $document);
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
 $document = str_replace("<span id='eventTypePlaceholder'/>", $event_type, $document);

@@ -30,6 +30,7 @@ $artwork_loan = ($artwork['Prestito'] == 1 ? 'Si' : 'No');
 $artwork_description = $artwork['Descrizione'];
 
 $breadcrumbs = '';
+$searchText = '';
 if (isset($_SESSION['previous_page'])) {
     if ($_SESSION['previous_page'] === 'GestioneContenuti') {
         $page = 'page=' . $_SESSION['contentPage'];
@@ -42,6 +43,7 @@ if (isset($_SESSION['previous_page'])) {
         $filter_artwork_type = 'filterType=' . $_SESSION['filter_artwork_type'];
         $breadcrumbs = '<a href="Opere.php?' . $page . '&amp;' . $filter_artwork_type . '" title="Opere" aria-label="Vai alla pagina Opere">Opere</a>';
     } elseif ($_SESSION['previous_page'] === 'RicercaOpere') {
+        $searchText = $_SESSION['search_artwork_string'];
         $search = 'search=' . $_SESSION['search_artwork_string'];
         $page = 'page=' . $_SESSION['search_artwork_page'];
         $breadcrumbs = '<a href="RicercaOpere.php?' . $search . '&amp;' . $page . '" title="Ricerca Opere" aria-label="Vai alla pagina di ricerca delle opere">Ricerca Opere</a>';
@@ -69,6 +71,7 @@ if ($artwork_style === 'Dipinto') {
 }
 
 $document = str_replace("<span id='titlePlaceholder'/>", $artwork_title, $document);
+$document = str_replace("<span id='searchTextPlaceholder'/>", $searchText, $document);
 $document = str_replace("<span id='breadcrumbsPlaceholder'/>", $breadcrumbs, $document);
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
 $document = str_replace("<span id='artworkImgPlaceholder'/>", $artwork_img, $document);
