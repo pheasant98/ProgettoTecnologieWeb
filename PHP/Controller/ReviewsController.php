@@ -127,14 +127,14 @@ class ReviewsController {
         while($row = $result_set->fetch_assoc()) {
             $content .= '
                 <li>
-                    <a href="Recensione.php?id=' . $row['ID'] . '" aria-label="Vai alla pagina della recensione">' . $row['Oggetto'] . '</a>
+                    <a href="Recensione.php?id=' . $row['ID'] . '" title="Vai alla pagina della recensione,' . $row['Oggetto'] . ' " aria-label="Vai alla pagina della recensione,' . $row['Oggetto'] . ' ">' . $row['Oggetto'] . '</a>
 
                     <form class="userButton" action="EliminaRecensione.php" method="post" role="form">
                         <fieldset class="hideRight">
                             <legend class="hideLegend">Pulsante di eliminazione della recensione</legend>
                             
                             <input type="hidden" name="id" value="' . $row['ID'] . '"/>
-                            <input class="button" name="submit" type="submit" value="Rimuovi" role="button" aria-label="Rimuovi recensione"/>
+                            <input class="button" name="submit" type="submit" value="Rimuovi" role="button" title="Rimunovi recensione" aria-label="Rimuovi recensione"/>
                         </fieldset>
                     </form>
                 </li>
@@ -154,7 +154,7 @@ class ReviewsController {
         while($row = $result_set->fetch_assoc()) {
             $content .= '
                 <li>
-                    <a href="Recensione.php?id=' . $row['ID'] . '" aria-label="Vai alla pagina della recensione">' . $row['Oggetto'] . '</a>
+                    <a href="Recensione.php?id=' . $row['ID'] . '" title="Vai alla pagina della recensione,' . $row['Oggetto'] . ' " aria-label="Vai alla pagina della recensione,' . $row['Oggetto'] . ' ">' . $row['Oggetto'] . '</a>
 
                     <form class="userButton" action="EliminaRecensione.php" method="post" role="form">
                         <fieldset class="hideRight">
@@ -163,7 +163,7 @@ class ReviewsController {
                             <input type="hidden" name="id" value="' . $row['ID'] . '"/>
                             
                             <a class="button" href="ModificaRecensione.php?id=' . $row['ID'] . '" title="Modifica dettagli recensione" role="button" aria-label="Modifica dettagli recensione">Modifica</a>
-                            <input class="button" name="submit" type="submit" value="Rimuovi" role="button" aria-label="Rimuovi recensione"/>
+                            <input class="button" name="submit" type="submit" value="Rimuovi" role="button" title="Rimunovi recensione" aria-label="Rimuovi recensione"/>
                         </fieldset>
                     </form>
                 </li>

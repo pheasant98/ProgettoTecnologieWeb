@@ -183,7 +183,7 @@ class ArtworksController {
         while($row = $result_set->fetch_assoc()) {
             $content .= '
                 <dt id="'. $id . $counter . '" class="titleDef">
-                     <a href="Opera.php?id=' . $row['ID'] . '" aria-label="Vai all\'opera">' . $row['Titolo'] . '</a>
+                     <a href="Opera.php?id=' . $row['ID'] . '" aria-label="Vai all\'evento" title= ". $row[\'Titolo\'] . ">' . $row['Titolo'] . '</a>
                 </dt>
                 <dd>
                     <img class="previewOpera" alt="Immagine dell\'opera ' . $row['Titolo'] . '" src="../' . $row['Immagine'] . '"/>
@@ -238,7 +238,7 @@ class ArtworksController {
         while($row = $result_set->fetch_assoc()) {
             $content .= '
                 <dt id="' . $id . $counter . '" class="titleDef">
-                     <a href="Opera.php?id=' . $row['ID'] . '" aria-label="Vai all\'opera">' . $row['Titolo'] . '</a>
+                     <a href="Opera.php?id=' . $row['ID'] . '" aria-label="Vai all\'evento" title= ". $row[\'Titolo\'] . ">' . $row['Titolo'] . '</a>
                 </dt>
                 <dd>
                     <img class="previewOpera" alt="Immagine dell\'opera ' . $row['Titolo'] . '" src="../' . $row['Immagine'] . '"/>
@@ -301,7 +301,7 @@ class ArtworksController {
                             <input type="hidden" name="type" value="Opera"/>
                             
                             <a class="button" href="ModificaOpera.php?id=' . $row['ID'] . '" title="Modifica dettagli opera" role="button" aria-label="Modifica dettagli opera">Modifica</a>
-                            <input class="button" name="submit" type="submit" value="Rimuovi" role="button" aria-label="Rimuovi opera"/>
+                            <input class="button" name="submit" type="submit" value="Rimuovi" role="button" title="Rimuovi opera" aria-label="Rimuovi opera"/>
                         </fieldset>
                     </form>
                 </li>
