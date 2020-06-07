@@ -226,7 +226,7 @@ class ArtworksController {
     }
 
     public function getArtworks($style, $offset) {
-        if ($style === '') {
+        if ($style === 'TutteLeOpere') {
             $result_set = $this->artworks->getArtworks($offset);
         } else {
             $result_set = $this->artworks->getArtworksByStyle($style, $offset);

@@ -74,27 +74,27 @@ if (isset($_SESSION['contentDeleted']) && isset($_SESSION['deleted_type']) && is
 
 if ($filter_content === 'NessunFiltro') {
     if ($artwork_count === 1) {
-        $artworks_number_found = '<p> È stata trovata ' . $artwork_count . ' opera </p>';
+        $artworks_number_found = '<p> È stata trovata ' . $artwork_count . ' opera. </p>';
     } else {
-        $artworks_number_found = '<p> Sono state trovate ' . $artwork_count . ' opere </p>';
+        $artworks_number_found = '<p> Sono state trovate ' . $artwork_count . ' opere. </p>';
     }
     if ($event_count === 1) {
-        $events_number_found = '<p> È stato trovato ' . $event_count . ' evento </p>';
+        $events_number_found = '<p> È stato trovato ' . $event_count . ' evento. </p>';
     } else {
-        $events_number_found = '<p> Sono stati trovati ' . $event_count . ' eventi </p>';
+        $events_number_found = '<p> Sono stati trovati ' . $event_count . ' eventi. </p>';
     }
 } elseif ($filter_content === 'Opera') {
     if ($artwork_count === 1) {
-        $artworks_number_found = '<p> È stata trovata ' . $artwork_count . ' opera </p>';
+        $artworks_number_found = '<p> È stata trovata ' . $artwork_count . ' opera. </p>';
     } else {
-        $artworks_number_found = '<p> Sono state trovate ' . $artwork_count . ' opere </p>';
+        $artworks_number_found = '<p> Sono state trovate ' . $artwork_count . ' opere. </p>';
     }
     $events_number_found = '';
 } else {
     if ($event_count === 1) {
-        $events_number_found = '<p> È stato trovato ' . $event_count . ' evento </p>';
+        $events_number_found = '<p> È stato trovato ' . $event_count . ' evento. </p>';
     } else {
-        $events_number_found = '<p> Sono stati trovati ' . $event_count . ' eventi </p>';
+        $events_number_found = '<p> Sono stati trovati ' . $event_count . ' eventi. </p>';
     }
     $artworks_number_found = '';
 }
@@ -155,10 +155,15 @@ if (($artwork_count + $event_count) > 0) {
     }
     $navigation_contents_buttons .= '</p>';
 
-    if ($page === 1) {
-        $skip_contents = '<p>Ti trovi a pagina ' . $page . ' di ' . (intval(($artwork_count + $event_count)/5)+1) . ': ' . '<a href="#buttonNext">vai ai pulsanti di navigazione</a></p>';
+    $number_pages = ceil(($artwork_count + $event_count)/5);
+    if ($number_pages > 1) {
+        if ($page === 1) {
+            $skip_contents = '<p>Ti trovi a pagina ' . $page . ' di ' . $number_pages . ': ' . '<a href="#buttonNext">vai ai pulsanti di navigazione</a></p>';
+        } else {
+            $skip_contents = '<p>Ti trovi a pagina ' . $page . ' di ' . $number_pages . ': ' . '<a href="#buttonBack">vai ai pulsanti di navigazione</a></p>';
+        }
     } else {
-        $skip_contents = '<p>Ti trovi a pagina ' . $page . ' di ' . (intval(($artwork_count + $event_count)/5)+1) . ': ' . '<a href="#buttonBack">vai ai pulsanti di navigazione</a></p>';
+        $skip_contents = '<p>Ti trovi a pagina ' . $page . ' di ' . $number_pages . '.';
     }
 
 } else {
