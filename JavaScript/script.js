@@ -657,13 +657,13 @@ function checkBeginDate(beginDateInput) {
     var upperBound = new Date(lowerBound.getFullYear() + 3, lowerBound.getMonth(), lowerBound.getDay());
 
     if (beginDate < lowerBound) {
-        addError(beginDateInput, 'Non è possibile inserire una data di inizio evento precedente alla data odierna', 2);
+        addError(beginDateInput, 'Non è possibile inserire una data di inizio evento precedente alla data odierna', 3);
         return false;
     } else if (beginDate > upperBound) {
-        addError(beginDateInput, 'Non è possibile inserire una data di inizio evento successiva a tre anni dalla data odierna', 2);
+        addError(beginDateInput, 'Non è possibile inserire una data di inizio evento successiva a tre anni dalla data odierna', 3);
         return false;
     } else {
-        removeError(beginDateInput, 2);
+        removeError(beginDateInput, 3);
         return true;
     }
 }
