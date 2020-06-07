@@ -107,7 +107,7 @@ a:visited {
 .significantImage,
 .previewOpera {
   text-align: center;
-  height: 20em;
+  height: 25em;
   width: 60%;
   display:block;
   margin:1em auto;
@@ -513,7 +513,7 @@ a:visited {
   }
 
   .significantImage {
-    width: 23em;
+    width: 25em;
   }
 
   .previewOpera{
