@@ -543,6 +543,10 @@ function resetImage(isModify) {
     var imageIE = document.getElementById('uploadedImageIE');
 
     if (isModify) {
+        if (imageIE) {
+            imageIE.parentElement.removeChild(imageIE);
+        }
+
         var input = document.getElementById('imageUpload');
         var previousImage = document.getElementById('previousImage');
 
