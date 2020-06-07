@@ -175,6 +175,7 @@ a {
   width: 11em;
 }
 
+
 .significantImage {
   text-align: center;
   height: 25em;
@@ -183,12 +184,14 @@ a {
   margin:1em auto;
 }
 
+
 .previewOpera{
   height: 10em;
   width: 10em;
   float:left;
   margin: 0;
 }
+
 
 .backgroundImage {
   display: block;
@@ -199,10 +202,6 @@ a {
   background-size: contain;
 }
 
-#operaImage {
-  text-align: center;
-  margin-top: 1em;
-}
 
 #search,
 #searchBox,
@@ -215,12 +214,8 @@ a {
 #loginMenu a,
 #breadcrumbs,
 #menu,
-#operaImageUpload,
-#eventImageUpload,
 #imageUpload,
 #labelImageUpload,
-#labelEventImageUpload,
-#labelOperaImageUpload,
 #imageError404,
 #clause,
 #reviewAsk,
@@ -228,9 +223,11 @@ a {
 #buttonBackUp,
 #footer,
 #logoImage,
+#buttonNext,
+#buttonBack,
 .skipInformation,
 .button,
 .userButton,
-.clause{
+.clause {
   display: none;
 }
