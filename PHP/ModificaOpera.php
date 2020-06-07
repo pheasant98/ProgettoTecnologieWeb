@@ -79,10 +79,14 @@ if ($style === 'Dipinto') {
     $hide_skip_technique = ' class="hideContent"';
 }
 
+if (isset($_SESSION['contentPage'])) {
+    $breadcrumbs = '?page=' . $_SESSION['contentPage'];
+} else {
+    $breadcrumbs = '?page=1';
+}
+
 $document = file_get_contents('../HTML/ModificaOpera.html');
 $login = LoginController::getAuthenticationMenu();
-
-$breadcrumbs = '?page=' . $_SESSION['contentPage'];
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
 $document = str_replace("<span id='breadcrumbsPlaceholder'/>", $breadcrumbs, $document);
