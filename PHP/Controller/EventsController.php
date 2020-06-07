@@ -155,7 +155,7 @@ class EventsController {
         while($row = $result_set->fetch_assoc()) {
             $content .= '
                 <dt id="' . $id . $counter . '" class="titleDef">
-                     <a href="Evento.php?id=' . $row['ID'] . '\" aria-label="Vai all\'evento">' . $row['Titolo'] . '</a>
+                     <a href="Evento.php?id=' . $row['ID'] . '\" aria-label="Vai all\'evento" title= ". $row[\'Titolo\'] . ">' . $row['Titolo'] . '</a>
                 </dt>
                 <dd>
                     <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'evento">Salta l\'evento</a>
@@ -208,7 +208,7 @@ class EventsController {
         while($row = $result_set->fetch_assoc()) {
             $content .= '
                 <dt id="' . $id . $counter . '" class="titleDef">
-                     <a href="Evento.php?id=' . $row['ID'] . '\" aria-label="Vai all\'evento">' . $row['Titolo'] . '</a>
+                     <a href="Evento.php?id=' . $row['ID'] . '\" title="Vai all\'evento ' . $row['Titolo'] . '" aria-label="Vai all\'evento ' . $row['Titolo'] . '">' . $row['Titolo'] . '</a>
                 </dt>
                 <dd>
                     <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'evento">Salta l\'evento</a>
@@ -258,7 +258,7 @@ class EventsController {
         while($row = $result_set->fetch_assoc()) {
             $content .= '
                 <li>
-                    <a href="Evento.php?id=' . $row['ID'] . '" aria-label="Vai all\'evento">' . $row['Titolo'] . '</a>
+                    <a href="Evento.php?id=' . $row['ID'] . '" title="Vai all\'evento ' . $row['Titolo'] . '" aria-label="Vai all\'evento ' . $row['Titolo'] . '" > ' . $row['Titolo'] . '</a>
                     
                     <form class="userButton" action="EliminaContenuto.php" method="post" role="form">
                         <fieldset class="hideRight">
@@ -268,7 +268,7 @@ class EventsController {
                             <input type="hidden" name="type" value="Evento"/>
                             
                             <a class="button" href="ModificaEvento.php?id=' . $row['ID'] . '" title="Modifica dettagli evento" role="button" aria-label="Modifica dettagli evento">Modifica</a>
-                            <input class="button" name="submit" type="submit" value="Rimuovi" role="button" aria-label="Rimuovi evento"/>
+                            <input class="button" name="submit" type="submit" value="Rimuovi" role="button" title="Rimuovi evento" aria-label="Rimuovi evento"/>
                         </fieldset>
                     </form>
                 </li>

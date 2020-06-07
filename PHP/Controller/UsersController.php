@@ -214,14 +214,14 @@ class UsersController {
         while($row = $result_set->fetch_assoc()) {
             $content .= '
                 <li>
-                    <a href="Utente.php?user=' . $row['Username'] . '" aria-label="Vai alla pagina dell\'utente">' .  $row['Username'] . '</a>
+                    <a href="Utente.php?user=' . $row['Username'] . '" title="Vai alla pagina dell\'utente ' .  $row['Username'] . '" aria-label="Vai alla pagina dell\'utente ' .  $row['Username'] . '">' .  $row['Username'] . '</a>
 
                     <form class="userButton" action="EliminaUtente.php" method="post" role="form">
                         <fieldset class="hideRight">
                             <legend class="hideLegend">Pulsante di eliminazione dell\'utente</legend>
                             
                             <input type="hidden" name="username" value="' . $row['Username'] . '"/>
-                            <input class="button" name="submit" type="submit" value="Rimuovi" role="button" aria-label="Rimuovi utente"/>
+                            <input class="button" name="submit" type="submit" value="Rimuovi" role="button" title="Rimuovi utente" aria-label="Rimuovi utente"/>
                         </fieldset>
                     </form>
                 </li>
