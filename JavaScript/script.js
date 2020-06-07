@@ -676,13 +676,13 @@ function checkDateComparison(beginDateInput, endDateInput) {
     durationBound = addMonths(durationBound, 6);
 
     if (beginDate > endDate) {
-        addError(endDateInput, 'Non è possibile inserire una data di fine evento precendente alla data di inizio evento', 2);
+        addError(endDateInput, 'Non è possibile inserire una data di fine evento precendente alla data di inizio evento', 3);
         return false;
     } else if (endDate > durationBound) {
-        addError(endDateInput, 'Non è possibile inserire un evento che abbia una durata superiore ai sei mesi', 2);
+        addError(endDateInput, 'Non è possibile inserire un evento che abbia una durata superiore ai sei mesi', 3);
         return false;
     } else {
-        removeError(endDateInput, 2);
+        removeError(endDateInput, 3);
         return true;
     }
 }
