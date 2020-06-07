@@ -6,7 +6,7 @@ require_once ('Controller/EventsController.php');
 $controller = new EventsController();
 $event_count = $controller->getEventsCount();
 
-$filter_type = '';
+$filter_type = 'TuttiGliEventi';
 
 if (isset($_GET['filterType'])) {
     $filter_type = $_GET['filterType'];
@@ -16,7 +16,7 @@ if (isset($_GET['filterType'])) {
     } elseif ($_GET['filterType'] === 'Conferenza') {
         $event_count = $controller->getEventsCountByType($filter_type);
     } else {
-        $filter_type = '';
+        $filter_type = 'TuttiGliEventi';
     }
 }
 
@@ -54,9 +54,9 @@ if ($event_count > 0) {
     $navigation_events_buttons .= '</p>';
 
     if ($page === 1) {
-        $skip_events = '<p>Ti trovi a pagina ' . $page . ' di ' . (intval($event_count/5)+1) . ': ' . '<a href="#buttonNext">vai ai pulsanti di navigazione</a></p>';
+        $skip_events = '<p>Ti trovi a pagina ' . $page . ' di ' . (ceil($event_count/5)) . ': ' . '<a href="#buttonNext">vai ai pulsanti di navigazione</a></p>';
     } else {
-        $skip_events = '<p>Ti trovi a pagina ' . $page . ' di ' . (intval($event_count/5)+1) . ': ' . '<a href="#buttonBack">vai ai pulsanti di navigazione</a></p>';
+        $skip_events = '<p>Ti trovi a pagina ' . $page . ' di ' . (ceil($event_count/5)) . ': ' . '<a href="#buttonBack">vai ai pulsanti di navigazione</a></p>';
     }
 
 } else {
@@ -70,7 +70,7 @@ $_SESSION['previous_page'] = 'Eventi';
 $_SESSION['filter_event_type'] = $filter_type;
 $_SESSION['event_page'] = $page;
 
-$filter_option_whole = $filter_type == '' ? ' selected="selected"' : '';
+$filter_option_whole = $filter_type == 'TuttiGliEventi' ? ' selected="selected"' : '';
 $filter_option_exhibitions = $filter_type == 'Mostra' ? ' selected="selected"' : '';
 $filter_option_conferences = $filter_type == 'Conferenza' ? ' selected="selected"' : '';
 

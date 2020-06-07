@@ -30,16 +30,20 @@ $artwork_loan = ($artwork['Prestito'] == 1 ? 'Si' : 'No');
 $artwork_description = $artwork['Descrizione'];
 
 $breadcrumbs = '';
-if ($_SESSION['previous_page'] === 'GestioneContenuti') {
-    $page = '?page=' . $_SESSION['contentPage'];
-    $filter_content = 'filterContent=' . $_SESSION['filter_content'];
-    $filter_content_type = 'filterContentType=' . $_SESSION['filter_content_type'];
-    $breadcrumbs = '<a href="AreaPersonale.php" title="Area Personale" aria-label="Vai alla pagina dell\'area personale">Area personale</a>
+if (isset($_SESSION['previous_page'])) {
+    if ($_SESSION['previous_page'] === 'GestioneContenuti') {
+        $page = '?page=' . $_SESSION['contentPage'];
+        $filter_content = 'filterContent=' . $_SESSION['filter_content'];
+        $filter_content_type = 'filterContentType=' . $_SESSION['filter_content_type'];
+        $breadcrumbs = '<a href="AreaPersonale.php" title="Area Personale" aria-label="Vai alla pagina dell\'area personale">Area personale</a>
                     &gt;&gt;<a href="GestioneContenuti.php' . $page . '&amp;' . $filter_content . '&amp;' . $filter_content_type . '" aria-label="Vai alla pagina di gestione dei contenuti">Gestione contenuti</a>';
-} else if ($_SESSION['previous_page'] === 'Opere') {
-    $page = 'page=' . $_SESSION['artwork_page'];
-    $filter_artwork_type = 'filterType=' . $_SESSION['filter_artwork_type'];
-    $breadcrumbs = '<a href="Opere.php?' . $page . '&amp;' . $filter_artwork_type . '" title="Opere" aria-label="Vai alla pagina Opere">Opere</a>';
+    } else if ($_SESSION['previous_page'] === 'Opere') {
+        $page = 'page=' . $_SESSION['artwork_page'];
+        $filter_artwork_type = 'filterType=' . $_SESSION['filter_artwork_type'];
+        $breadcrumbs = '<a href="Opere.php?' . $page . '&amp;' . $filter_artwork_type . '" title="Opere" aria-label="Vai alla pagina Opere">Opere</a>';
+    }
+} else {
+    $breadcrumbs = '<a href="Opere.php?page=1&amp;filterType=NessunFiltro" title="Opere" aria-label="Vai alla pagina Opere">Opere</a>';
 }
 
 $document = str_replace("<span id='titlePlaceholder'/>", $artwork_title, $document);

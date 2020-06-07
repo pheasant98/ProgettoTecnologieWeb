@@ -6,7 +6,7 @@ require_once ('Controller/ArtworksController.php');
 $controller = new ArtworksController();
 $artwork_count = $controller->getArtworksCount();
 
-$filter_type = '';
+$filter_type = 'TutteLeOpere';
 
 if (isset($_GET['filterType'])) {
     $filter_type = $_GET['filterType'];
@@ -16,7 +16,7 @@ if (isset($_GET['filterType'])) {
     } elseif ($_GET['filterType'] === 'Scultura') {
         $artwork_count = $controller->getArtworksCountByStyle($filter_type);
     } else {
-        $filter_type = '';
+        $filter_type = 'TutteLeOpere';
     }
 }
 
@@ -54,9 +54,9 @@ if ($artwork_count > 0) {
     $navigation_artworks_buttons .= '</p>';
 
     if ($page === 1) {
-        $skip_artworks = '<p>Ti trovi a pagina ' . $page . ' di ' . (intval($artwork_count/5)+1) . ': ' . '<a href="#buttonNext">vai ai pulsanti di navigazione</a></p>';
+        $skip_artworks = '<p>Ti trovi a pagina ' . $page . ' di ' . (ceil($artwork_count/5)) . ': ' . '<a href="#buttonNext">vai ai pulsanti di navigazione</a></p>';
     } else {
-        $skip_artworks = '<p>Ti trovi a pagina ' . $page . ' di ' . (intval($artwork_count/5)+1) . ': ' . '<a href="#buttonBack">vai ai pulsanti di navigazione</a></p>';
+        $skip_artworks = '<p>Ti trovi a pagina ' . $page . ' di ' . (ceil($artwork_count/5)) . ': ' . '<a href="#buttonBack">vai ai pulsanti di navigazione</a></p>';
     }
 
 } else {
@@ -70,7 +70,7 @@ $_SESSION['previous_page'] = 'Opere';
 $_SESSION['filter_artwork_type'] = $filter_type;
 $_SESSION['artwork_page'] = $page;
 
-$filter_option_whole = $filter_type == '' ? ' selected="selected"' : '';
+$filter_option_whole = $filter_type == 'TutteLeOpere' ? ' selected="selected"' : '';
 $filter_option_paintings = $filter_type == 'Dipinto' ? ' selected="selected"' : '';
 $filter_option_sculptures = $filter_type == 'Scultura' ? ' selected="selected"' : '';
 
