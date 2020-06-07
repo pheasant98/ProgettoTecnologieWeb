@@ -17,8 +17,8 @@ $event = $eventsController->getEvent($_GET['id']);
 $title = $event['Titolo'];
 $description = $event['Descrizione'];
 $type = $event['Tipologia'];
-$begin_date = $event['DataInizio'];
-$end_date = $event['DataFine'];
+$begin_date = DateUtilities::englishItalianDate($event['DataInizio']);
+$end_date = DateUtilities::englishItalianDate($event['DataFine']);
 $manager = $event['Organizzatore'];
 
 if (isset($_POST['submit']) && $_POST['submit'] === 'Modifica') {
