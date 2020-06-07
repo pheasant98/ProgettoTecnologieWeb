@@ -229,6 +229,7 @@ a {
 #logoImage,
 .skipInformation,
 .button,
-.userButton {
+.userButton,
+.clause{
   display: none;
 }
