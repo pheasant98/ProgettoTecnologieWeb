@@ -32,7 +32,7 @@ if (!isset($_GET['page'])) {
 if ($event_count > 0) {
     $offset = ($page - 1) * 5;
 
-    $number_pages = ceil($event_count / 5);
+    $number_pages = intval(ceil($event_count / 5));
     $offset = ($page - 1) * 5;
     if ($page === 1) {
         if ($number_pages === 1){
@@ -94,6 +94,7 @@ if ($error_length === '') {
 }
 
 $document = str_replace("<span id='skipEventsPlaceholder'/>", $skip_events, $document);
+$document = str_replace("<span id='searchTextPlaceholder'/>", $_SESSION['search_event_string'], $document);
 $document = str_replace("<span id='resultListPlaceholder'/>", $event_list, $document);
 $document = str_replace("<span id='navigationEventsButtonsPlaceholder'/>", $navigation_events_buttons, $document);
 

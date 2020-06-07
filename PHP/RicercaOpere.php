@@ -32,7 +32,7 @@ if (!isset($_GET['page'])) {
 if ($artwork_count > 0) {
     $offset = ($page - 1) * 5;
 
-    $number_pages = ceil($artwork_count / 5);
+    $number_pages = intval(ceil($artwork_count / 5));
     $offset = ($page - 1) * 5;
     if ($page === 1) {
         if ($number_pages === 1){
@@ -93,6 +93,7 @@ if ($error_length === '') {
 }
 
 $document = str_replace("<span id='skipArtworksPlaceholder'/>", $skip_artworks, $document);
+$document = str_replace("<span id='searchTextPlaceholder'/>", $_SESSION['search_artwork_string'], $document);
 $document = str_replace("<span id='resultListPlaceholder'/>", $artwork_list, $document);
 $document = str_replace("<span id='navigationArtworksButtonsPlaceholder'/>", $navigation_artworks_buttons, $document);
 
