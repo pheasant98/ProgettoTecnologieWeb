@@ -155,7 +155,7 @@ if (($artwork_count + $event_count) > 0) {
     }
     $navigation_contents_buttons .= '</p>';
 
-    $number_pages = ceil(($artwork_count + $event_count)/5);
+    $number_pages = ceil(($artwork_count + $event_count) / 5);
     if ($number_pages > 1) {
         if ($page === 1) {
             $skip_contents = '<p>Ti trovi a pagina ' . $page . ' di ' . $number_pages . ': ' . '<a href="#buttonNext">vai ai pulsanti di navigazione</a></p>';
