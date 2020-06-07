@@ -1,5 +1,20 @@
 \section{Validazione}
 \label{validazione}
+In vari momenti,nel corso dello sviluppo del sito, parte del codice prodotto è stato sottoposto a validazione tramite strumenti autorevoli (vedi §\ref{validazione-strumenti}). La validazione è un'attività fondamentale per la creazione di un sito web di qualità e ben fatto. Innanzitutto, un codice valido funziona esattamente secondo le specifiche del linguaggio cui appartiene, senza comportamenti anomali o imprevisti, cosa invece frequente  quando si ha a che fare con codice non valido. 
+
+Inoltre, il rispetto delle regole di validazione garantisce un \textit{rating} migliore del sito al momento dell'indicizzazione da parte dei diversi motori di ricerca: questo comporterebbe un posizionamento più in basso tra i risultati delle ricerche, con una conseguente penalizzazione nel numero di accessi al sito.
+
+In ottica di massima navigabilità e portabilità del sito, il codice valido è generalmente più compatibile con i numerosi browser attualmente in uso; risulta anche più semplice controllare il comportamento e la presentazione del sito su browser diversi, oltre che a garantire la compatibilità con essi dei costrutti usati (a questo fine è stato usato anche CHIEDI A LUDO)
+
+Infine, tutte le categorie di utenti impossibilitate a navigare il sito attraverso un computer fornito di schermo e puntatore, o affetti da disabilità di vario genere, sarebbero penalizzate nel visitare le varie pagine, perché gli strumenti da essi adottati (per esempio, i lettori di schermo) faticano ad interpretare correttamente codice con errori di validazione.
+
+
 
 \subsection{Strumenti}
 \label{validazione-strumenti}
+Per i controlli di validazione delle pagine del sito sono stati usati due strumenti:
+\begin{itemize}
+	\item \textbf{W3C Markup Validation Service}, per la validazione delle pagine scritte in XHTML. Il controllo di conformità alle regole del W3C è stato fatto in due fasi. Inizialmente sono state validate tutte le pagine statiche, sottoponendo allo strumento il codice XHTML statico. In un secondo momento, con l'aggiunta del codice PHP, sono state validate le pagine complete del sito, composte da codice XHTML sia statico che aggiunto dinamicamente tramite PHP. Il codice delle singole pagine veniva prelevato grazie agli strumenti di sviluppatore messi a disposizione dai vari browser, principalmente \textit{Firefox}, \textit{Google Chrome} e \textit{Safari}, e sottoposte ai controlli del validatore. La prima fase di validazione ha permesso di correggere sin da subito alcuni errori, in modo che, durante la seconda fase, fossero presenti solo eventuali imprecisioni legate al codice XHTML aggiunto dinamicamente. Lo strumento permette di validare sia per inserimento di URI, sia per upload di file, sia per input diretto del codice: quest'ultima modalità è stata la più adottata. Il validatore segnala gli errori in maniera puntuale e precisa, dando dei suggerimenti di correzione, in modo che la loro individuazione e risoluzione sia rapida. Il servizio è reperibile gratuitamente al link: \url{https://validator.w3.org}.
+	
+	\item \textbf{W3C CSS Validation Service}, per la validazione del codice CSS. Il controllo di conformità dei fogli di stile è stato meno complicato rispetto a quello delle pagine XHTML, poichè il codice era meno lungo e raggruppato in soli due file, uno dedicato alla grafica a schermo e uno per quella a stampa. Le modalità di input del codice e di segnalazione degli errori sono analoghe a quanto detto per il \textit{W3C Markup Validation Service} descritto sopra. Il servizio è reperibile gratuitamente al seguente link: \url{https://jigsaw.w3.org/css-validator/}.
+\end{itemize}
