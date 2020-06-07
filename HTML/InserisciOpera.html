@@ -25,7 +25,7 @@
         <div id="header" role="banner">
             <h1 id="logoImage" class="backgroundImage" title="Immagine del logo TecArt" role="img" aria-label="Immagine del logo TecArt"> <span xml:lang="en">TecArt</span> </h1>
 
-            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" onclick="touch();">
+            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="0" onclick="touch();" onkeydown="enterTouch(event);">
                 Menu ad <span xml:lang="en">hamburger</span>
             </span>
 
@@ -168,13 +168,15 @@
                             </li>
                         </ul>
                     </fieldset>
-
-                    <p>
-                        <label id="labelImageUpload" class="labelPosition" for="imageUpload">Inserisci immagine</label>
-                        <label class="clause" for="imageUpload">La dimensione massima consentita per l'immagine è 500<abbr title="Kilo Bytes" xml:lang="en">KB</abbr>, le estensioni supportate sono .<abbr title="Joint Photographic Experts Group" xml:lang="en">jpeg</abbr>, .<abbr title="Joint Photographic Group" xml:lang="en">jpg</abbr>, .<abbr title="Portable Network Graphics" xml:lang="en">png</abbr></label>
-                        <input id="imageUpload" class="formElement" name="image" type="file" accept=".jpg, .jpeg, .png" aria-label="Inserisci l'immagine" onchange="return checkInputArtworkImage(event)"/>
-                    </p>
-
+                    <fieldset id="insertImage" class="fieldset">
+                        <legend>Immagine</legend>
+                        <p>
+                            <label id="labelImageUpload" class="labelPosition" for="imageUpload">Inserisci immagine</label>
+                            <label class="clause" for="imageUpload">La dimensione massima consentita per l'immagine è 500<abbr title="Kilo Bytes" xml:lang="en">KB</abbr>, le estensioni supportate sono .<abbr title="Joint Photographic Experts Group" xml:lang="en">jpeg</abbr>, .<abbr title="Joint Photographic Group" xml:lang="en">jpg</abbr>, .<abbr title="Portable Network Graphics" xml:lang="en">png</abbr></label>
+                            <input id="imageUpload" class="formElement" name="image" type="file" accept=".jpg, .jpeg, .png" aria-label="Inserisci l'immagine" onchange="return checkInputArtworkImage(event)"/>
+                        </p>
+                    </fieldset>
+                    
                     <p class="buttonPosition">
                         <input class="button" name="reset" type="reset" value="Cancella" role="button" aria-label="Cancella i dati inseriti" onclick="resetImage(false)"/>
                         <input class="button" name="submit" type="submit" value="Inserisci" role="button" aria-label="Inserisci la nuova opera con le informazioni specificate"/>

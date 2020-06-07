@@ -25,7 +25,7 @@
         <div id="header" role="banner">
             <h1 id="logoImage" class="backgroundImage" title="Immagine del logo TecArt" role="img" aria-label="Immagine del logo TecArt"> <span xml:lang="en">TecArt</span> </h1>
 
-            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" onclick="touch();">
+            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="0" onclick="touch();" onkeydown="enterTouch(event);">
                 Menu ad <span xml:lang="en">hamburger</span>
             </span>
 
@@ -114,7 +114,6 @@
                         <p>
                             <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
                         </p>
-
                         <p>
                             <label id="labelCognome" for="surname">Cognome</label>
                             <input id="surname" class="formElement" name="surname" type="text" value="<span id='surnameValuePlaceholder'/>" aria-label="Modifica cognome utente" aria-required="true"/>
@@ -123,7 +122,6 @@
                         <p>
                             <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
                         </p>
-
                         <p>
                             <label id="labelDataNascita" class="labelPosition" for="date">Data di nascita</label>
                             <label class="clause" for="date">La data di nascita deve essere inserita nel seguente formato: <abbr title="giorno">gg</abbr>-<abbr title="mese">mm</abbr>-<abbr title="anno">aaaa</abbr></label>
@@ -133,11 +131,18 @@
                         <p>
                             <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
                         </p>
+                        <p>
+                            <label id="labelEmail" for="email">E-mail</label>
+                            <input id="email" class="formElement" name="mail" type="text" value="<span id='mailValuePlaceholder'/>" aria-label="Modifica email utente" aria-required="true"/>
+                        </p>
                     </fieldset>
 
                     <fieldset id="fieldSex" class="fieldset">
                         <legend>Sesso</legend>
 
+                        <p>
+                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
+                        </p>
                         <ul class="list">
                             <li>
                                 <input id="sexM" name="sex" value="M" type="radio" aria-label="Pulsante per dichiarare sesso maschile"<span id='maleCheckedPlaceholder'/>/>
@@ -154,15 +159,6 @@
                         </ul>
                     </fieldset>
 
-                    <p>
-                        <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
-                    </p>
-
-                    <p>
-                        <label id="labelEmail" for="email">E-mail</label>
-                        <input id="email" class="formElement" name="mail" type="text" value="<span id='mailValuePlaceholder'/>" aria-label="Modifica email utente" aria-required="true"/>
-                    </p>
-
                     <fieldset id="changePassword" class="fieldset">
                         <legend>Cambio password</legend>
 
@@ -173,18 +169,23 @@
                         <p>
                             <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
                         </p>
-
                         <p>
                             <label id="labelOldPassword" for="oldPassword"><span xml:lang="en">Password</span> corrente</label>
                             <input id="oldPassword" class="formElement" type="password" name="oldPassword" aria-label="Inserisci la vecchia password"/>
                         </p>
 
                         <p>
+                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
+                        </p>
+                        <p>
                             <label id="labelNewPassword" class="labelPosition" for="newPassword">Nuova <span xml:lang="en">password</span></label>
                             <label class="clause" for="newPassword">La <span xml:lang="en">password</span> deve essere lunga almeno 8 caratteri e contenere almeno una lettera minuscola, una lettera maiuscola, un numero ed uno tra i seguenti caratteri speciali ! # $ % &amp; ' * + ^ _ ` \ - { | } ~ @</label>
                             <input id="newPassword" class="formElement" type="password" name="newPassword" aria-label="Inserisci la nuova password"/>
                         </p>
 
+                        <p>
+                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
+                        </p>
                         <p>
                             <label id="labelRepeatePassword" for="repetePassword">Ripetere la <span xml:lang="en">password</span></label>
                             <input id="repetePassword" class="formElement" type="password" name="repetePassword" aria-label="Inserisci nuovamente la password"/>

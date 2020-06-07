@@ -25,7 +25,7 @@
         <div id="header" role="banner">
             <h1 id="logoImage" class="backgroundImage" title="Immagine del logo TecArt" role="img" aria-label="Immagine del logo TecArt"> <span xml:lang="en">TecArt</span> </h1>
 
-            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" onclick="touch();">
+            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="0" onclick="touch();" onkeydown="enterTouch(event);">
                 Menu ad <span xml:lang="en">hamburger</span>
             </span>
 
@@ -112,7 +112,6 @@
                     <p>
                         <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Salta alla conferma delle modifiche</a>
                     </p>
-
                     <p>
                         <label id="labelTextArea" for="reviewDescriptionArea">Contenuto</label>
                         <textarea id="reviewDescriptionArea" class="descriptionArea" name="content" rows="20" cols="30" aria-label="Modifica la recensione" aria-required="true"><span id='contentValuePlaceholder'/></textarea>

@@ -5,6 +5,12 @@ function touch() {
     menus.className === 'show' ? menus.removeAttribute('class') : menus.className = 'show';
 }
 
+function enterTouch(event) {
+    if (event.keyCode === 13) {
+        touch();
+    }
+}
+
 /* GESTIONE DELLA TIPOLOGIA DELLE OPERE */
 function artworkStyleChanged(isModify) {
     var styleInput = document.getElementById('style');

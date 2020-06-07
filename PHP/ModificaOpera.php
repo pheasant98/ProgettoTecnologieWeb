@@ -43,6 +43,7 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Modifica') {
         $material = '';
     }
 
+    $dimensions = $_POST['dimensions'];
     $loan = ($_POST['loan'] === 'Si' ? 1 : 0);
 
     $message = $artworksController->updateArtwork($_GET['id'], $author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $_POST['previousImage'], $_SESSION['username']);
