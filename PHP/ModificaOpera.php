@@ -83,14 +83,14 @@ $breadcrumbs = '';
 if (isset($_SESSION['contentPage'])) {
     $breadcrumbs .= '?page=' . $_SESSION['contentPage'];
     if (isset($_SESSION['filter_content'])) {
-        $breadcrumbs .= '&amp;filterContent='  . $_SESSION['filter_content'];
+        $breadcrumbs .= '&filterContent='  . $_SESSION['filter_content'];
         if (isset($_SESSION['filter_content_type'])) {
-            $breadcrumbs .= '&amp;filterContentType='  . $_SESSION['filter_content_type'];
+            $breadcrumbs .= '&filterContentType='  . $_SESSION['filter_content_type'];
         } else {
-            $breadcrumbs .= '&amp;filterContentType=NessunFiltro';
+            $breadcrumbs .= '&filterContentType=NessunFiltro';
         }
     } else {
-        $breadcrumbs .= '&amp;filterContent=NessunFiltro';
+        $breadcrumbs .= '&filterContent=NessunFiltro';
     }
 } else {
     $breadcrumbs .= '?page=1';
