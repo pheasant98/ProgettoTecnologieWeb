@@ -33,12 +33,9 @@ a:visited {
   color: #636;
 }
 
-/* FIXME: impostare le dimensioni corrette */
 #uploadedImageIE {
   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale);
   color: rgba(0, 0, 0, 0);
-  width: 50%;
-  height: 10em;
 }
 
 /* Regole per gli header delle pagine */

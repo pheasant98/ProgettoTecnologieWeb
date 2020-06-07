@@ -215,8 +215,8 @@
 
                         <p>
                             <label id="labelImageUpload" class="labelPosition" for="imageUpload">Scegliere l'immagine</label>
-                            <label class="labelPosition">La dimensione massima consentita è 500<abbr title="Kilo Bytes" xml:lang="en">KB</abbr></label>
-                            <label class="clause">Le estensioni consentite sono .<abbr title="Joint Photographic Experts Group" xml:lang="en">jpeg</abbr>, .<abbr title="Joint Photographic Group" xml:lang="en">jpg</abbr>, .<abbr title="Portable Network Graphics" xml:lang="en">png</abbr></label>
+                            <label class="clause">Se non si desidera modificare l'immagine lasciare vuoto questo campo</label>
+                            <label class="clause">La dimensione massima consentita per l'immagine è 500<abbr title="Kilo Bytes" xml:lang="en">KB</abbr>, le estensioni supportate sono .<abbr title="Joint Photographic Experts Group" xml:lang="en">jpeg</abbr>, .<abbr title="Joint Photographic Group" xml:lang="en">jpg</abbr>, .<abbr title="Portable Network Graphics" xml:lang="en">png</abbr></label>
                             <input id="imageUpload" class="formElement" name="image" type="file" accept=".jpg, .jpeg, .png" aria-label="Modifica l'immagine dell'opera" aria-required="true" onchange="return checkModifyArtworkImage(event)"/>
                             <input id="previousImage" name="previousImage" type="hidden" value="../<span id='artworkImgPlaceholder'/>"/>
                             <img id="uploadedImage" class="significantImage" alt="Immagine dell'opera <span id='titleValuePlaceholder'/>" src="../<span id='artworkImgPlaceholder'/>"/>
