@@ -114,7 +114,6 @@
                         <p>
                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
-
                         <p>
                             <label id="labelTitle" for="title">Titolo</label>
                             <input id="title" class="formElement" name="title" type="text" value="<span id='titleValuePlaceholder'/>" aria-label="Modifica il titolo dell'opera" aria-required="true"/>
@@ -123,7 +122,6 @@
                         <p>
                             <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
-
                         <p>
                             <label id="labelDescription" for="operaDescriptionArea">Descrizione</label>
                             <textarea id="operaDescriptionArea" class="descriptionArea" name="description" rows="10" cols="70" aria-label="Modifica la descrizione" aria-required="true"><span id='descriptionValuePlaceholder'/></textarea>
@@ -132,7 +130,6 @@
                         <p>
                             <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
-
                         <p>
                             <label id="labelYears" class="labelPosition" for="years">Datazione</label>
                             <label class="clause" for="years">La datazione deve essere inserita nel seguente formato: aaaa</label>
@@ -146,7 +143,6 @@
                         <p>
                             <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
-
                         <p>
                             <label id="labelStyle" for="style">Stile</label>
 
@@ -159,7 +155,6 @@
                         <p>
                             <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
-
                         <p<span id='hideTechniqueValuePlaceholder'/>>
                             <label id="labelTechnique" for="technique">Tecnica</label>
                             <input id="technique" class="formElement" name="technique" type="text" value="<span id='techniqueValuePlaceholder'/>" aria-label="Modifica la tecnica di realizzazione" aria-required="true"/>
@@ -168,7 +163,6 @@
                         <p<span id='hideSkipTechniqueValuePlaceholder'/>>
                             <a id="postTechniqueSkip" class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
-
                         <p<span id='hideMaterialValuePlaceholder'/>>
                             <label id="labelMaterial" for="material">Materiale</label>
                             <input id="material" class="formElement" name="material" type="text" value="<span id='materialValuePlaceholder'/>" aria-label="Modifica il materiale di realizzazione" aria-required="true"/>
@@ -177,21 +171,19 @@
                         <p<span id='hideSkipMaterialValuePlaceholder'/>>
                             <a id="postMaterialSkip" class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
-
                         <p>
                             <label id="labelSize" class="labelPosition" for="dimensions">Dimensioni</label>
                             <label class="clause" for="dimensions">Le dimensioni devono essere inserite nel seguente formato: altezza x larghezza</label>
                             <input id="dimensions" class="formElement" name="dimensions" type="text" value="<span id='dimensionsValuePlaceholder'/>" aria-label="Inserisci le dimensioni"/>
-                        </p>
-
-                        <p>
-                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
                     </fieldset>
 
                     <fieldset id="fieldLoan" class="fieldset">
                         <legend>Opera in prestito</legend>
 
+                        <p>
+                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
+                        </p>
                         <ul class="list">
                             <li>
                                 <input id="loanYes" name="loan" value="Si" type="radio"<span id='loanYesCheckedPlaceholder'/>aria-label="Pulsante per dire si al prestito"/>
@@ -204,10 +196,11 @@
                         </ul>
                     </fieldset>
 
+                    <fieldset id="updateImage" class="fieldset">
+                        <legend>Immagine</legend>
                         <p>
                             <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
-
                         <p>
                             <label id="labelImageUpload" class="labelPosition" for="imageUpload">Scegliere l'immagine</label>
                             <label class="clause" for="imageUpload">Se non si desidera modificare l'immagine lasciare vuoto questo campo</label>
@@ -216,6 +209,7 @@
                             <input id="previousImage" name="previousImage" type="hidden" value="../<span id='artworkImgPlaceholder'/>"/>
                             <img id="uploadedImage" class="significantImage" alt="Immagine dell'opera <span id='titleValuePlaceholder'/>" src="../<span id='artworkImgPlaceholder'/>"/>
                         </p>
+                    </fieldset>
 
                     <p class="buttonPosition">
                         <input class="button" name="cancel" type="reset" value="Annulla" aria-label="Annulla le modifiche apportate" onclick="resetImage(true)"/>

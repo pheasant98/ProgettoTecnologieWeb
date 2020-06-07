@@ -122,6 +122,11 @@
                                 <option value="Conferenza"<span id='conferenceTypeSelectedPlaceholder'/>>Conferenza</option>
                             </select>
                         </p>
+
+                        <p>
+                            <label id="labelManager" for="manager">Organizzatore</label>
+                            <input id="manager" class="formElement" name="manager" type="text" value="<span id='managerValuePlaceholder'/>" aria-label="Inserisci l'organizzatore"/>
+                        </p>
                     </fieldset>
 
                     <fieldset id="date" class="fieldset">
@@ -139,15 +144,10 @@
                         </p>
                     </fieldset>
 
-                        <p>
-                            <label id="labelManager" for="manager">Organizzatore</label>
-                            <input id="manager" class="formElement" name="manager" type="text" value="<span id='managerValuePlaceholder'/>" aria-label="Inserisci l'organizzatore"/>
-                        </p>
-
-                        <p class="buttonPosition">
-                            <input class="button" name="reset" type="reset" value="Cancella" role="button" aria-label="Cancella i dati inseriti"/>
-                            <input class="button" name="submit" type="submit" value="Inserisci" role="button" aria-label="Inserisci il nuovo evento con le informazioni specificate"/>
-                        </p>
+                    <p class="buttonPosition">
+                        <input class="button" name="reset" type="reset" value="Cancella" role="button" aria-label="Cancella i dati inseriti"/>
+                        <input class="button" name="submit" type="submit" value="Inserisci" role="button" aria-label="Inserisci il nuovo evento con le informazioni specificate"/>
+                    </p>
                 </fieldset>
             </form>
 

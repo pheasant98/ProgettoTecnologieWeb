@@ -121,6 +121,11 @@
                             <label class="clause" for="date">La data di nascita deve essere inserita nel seguente formato: <abbr title="giorno">gg</abbr>-<abbr title="mese">mm</abbr>-<abbr title="anno">aaaa</abbr></label>
                             <input id="date" class="dateElement" type="text" name="date" value="<span id='dateValuePlaceholder'/>" aria-label="Inserisci la data di nascita"/>
                         </p>
+
+                        <p>
+                            <label id="labelMail" for="email" xml:lang="en">E-mail</label>
+                            <input id="email" class="formElement" type="text" name="mail" value="<span id='mailValuePlaceholder'/>" aria-label="Inserisci l'indirizzo E-mail"/>
+                        </p>
                     </fieldset>
 
                     <fieldset id="fieldSex" class="fieldset">
@@ -142,36 +147,31 @@
                         </ul>
                     </fieldset>
 
-                    <p>
-                        <label id="labelMail" for="email" xml:lang="en">E-mail</label>
-                        <input id="email" class="formElement" type="text" name="mail" value="<span id='mailValuePlaceholder'/>" aria-label="Inserisci l'indirizzo E-mail"/>
-                    </p>
-                </fieldset>
+                    <fieldset id="accountData" class="fieldset">
+                        <legend>Credenziali d'accesso</legend>
 
-                <fieldset id="accountData" class="fieldset">
-                    <legend>Dati d'accesso</legend>
+                        <p>
+                            <label id="labelUsername" for="username" xml:lang="en">Username</label>
+                            <input id="username" class="formElement" type="text" name="username" value="<span id='usernameValuePlaceholder'/>" aria-label="Inserisci lo username"/>
+                        </p>
 
-                    <p>
-                        <label id="labelUsername" for="username" xml:lang="en">Username</label>
-                        <input id="username" class="formElement" type="text" name="username" value="<span id='usernameValuePlaceholder'/>" aria-label="Inserisci lo username"/>
-                    </p>
+                        <p>
+                            <label id="labelPassword" class="labelPosition" for="password" xml:lang="en">Password</label>
+                            <label class="clause" for="password">La <span xml:lang="en">password</span> deve essere lunga almeno 8 caratteri e contenere almeno una lettera minuscola, una lettera maiuscola, un numero ed uno tra i seguenti caratteri speciali ! # $ % &amp; ' * + ^ _ ` \ - { | } ~ @</label>
+                            <input id="password" class="formElement" type="password" name="password" value="" aria-label="Inserisci la password"/>
+                        </p>
 
-                    <p>
-                        <label id="labelPassword" class="labelPosition" for="password" xml:lang="en">Password</label>
-                        <label class="clause" for="password">La <span xml:lang="en">password</span> deve essere lunga almeno 8 caratteri e contenere almeno una lettera minuscola, una lettera maiuscola, un numero ed uno tra i seguenti caratteri speciali ! # $ % &amp; ' * + ^ _ ` \ - { | } ~ @</label>
-                        <input id="password" class="formElement" type="password" name="password" value="" aria-label="Inserisci la password"/>
-                    </p>
-
-                    <p>
-                        <label id="labelRepeatePassword" for="repetePassword">Ripetere la <span xml:lang="en">password</span></label>
-                        <input id="repetePassword" class="formElement" type="password" name="repetePassword" value="" aria-label="Inserisci nuovamente la password"/>
-                    </p>
-                </fieldset>
+                        <p>
+                            <label id="labelRepeatePassword" for="repetePassword">Ripetere la <span xml:lang="en">password</span></label>
+                            <input id="repetePassword" class="formElement" type="password" name="repetePassword" value="" aria-label="Inserisci nuovamente la password"/>
+                        </p>
+                    </fieldset>
 
                 <p class="buttonPosition">
                     <input class="button" type="reset" name="reset" value="Cancella" aria-label="Pulsante per la cancellazione dei dati inseriti"/>
                     <input class="button" type="submit" name="submit" value="Registrati" aria-label="Pulsante per la conferma dati inseriti"/>
                 </p>
+                </fieldset>
             </form>
 
             <a id="buttonBackUp" href="#header" title="Torna su" role="button" aria-label="Torna su">
