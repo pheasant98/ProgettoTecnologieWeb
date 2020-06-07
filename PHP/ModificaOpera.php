@@ -80,10 +80,21 @@ if ($style === 'Dipinto') {
     $hide_skip_technique = ' class="hideContent"';
 }
 
+$breadcrumbs = '';
 if (isset($_SESSION['contentPage'])) {
-    $breadcrumbs = '?page=' . $_SESSION['contentPage'];
+    $breadcrumbs .= '?page=' . $_SESSION['contentPage'];
+    if (isset($_SESSION['filter_content'])) {
+        $breadcrumbs .= '&filterContent='  . $_SESSION['filter_content'];
+        if (isset($_SESSION['filter_content_type'])) {
+            $breadcrumbs .= '&filterContentType='  . $_SESSION['filter_content_type'];
+        } else {
+            $breadcrumbs .= '&filterContentType=NessunFiltro';
+        }
+    } else {
+        $breadcrumbs .= '&filterContent=NessunFiltro';
+    }
 } else {
-    $breadcrumbs = '?page=1';
+    $breadcrumbs .= '?page=1';
 }
 
 $document = file_get_contents('../HTML/ModificaOpera.html');
