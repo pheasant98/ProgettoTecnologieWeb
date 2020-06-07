@@ -40,7 +40,7 @@ class EventsRepository {
     }
 
     public function getEventsOrderByTitle($offset, $quantity = 5) {
-        $statement = $this->dbConnection->prepareQuery('SELECT * FROM Eventi ORDER BY Titolo ASC LIMIT ? OFFSET ?;');
+        $statement = $this->dbConnection->prepareQuery('SELECT * FROM Eventi ORDER BY Titolo LIMIT ? OFFSET ?;');
         $statement->bind_param('ii', $quantity,$offset);
         return $this->dbConnection->executeSelectStatement($statement);
     }
@@ -57,7 +57,7 @@ class EventsRepository {
     }
 
     public function getEventsByTypeOrderByTitle($type, $offset, $quantity = 5) {
-        $statement = $this->dbConnection->prepareQuery('SELECT * FROM Eventi WHERE Tipologia=? ORDER BY Titolo DESC LIMIT ? OFFSET ?;');
+        $statement = $this->dbConnection->prepareQuery('SELECT * FROM Eventi WHERE Tipologia=? ORDER BY Titolo LIMIT ? OFFSET ?;');
         $statement->bind_param('sii', $type, $quantity, $offset);
         return $this->dbConnection->executeSelectStatement($statement);
     }
