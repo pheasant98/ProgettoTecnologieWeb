@@ -81,7 +81,7 @@ class EventsController {
             }
         }
 
-        if ($type !== 'Mostra' && $type !== 'Conferenza') { //FIXME: Quando si sistema nel db si deve mettere Mostra e Conferenza
+        if ($type !== 'Mostra' && $type !== 'Conferenza') {
             $message .= '[La tipologia dell\'evento deve essere Mostra o Conferenza]';
         }
 
