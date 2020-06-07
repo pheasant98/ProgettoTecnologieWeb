@@ -39,7 +39,7 @@ if (!isset($_GET['page'])) {
 } elseif (($_GET['page'] < 1) || (($_GET['page'] - 1) > ($reviews_count / 5))) {
     header('Location: Errore.php');
 } else {
-    $page = $_GET['page'];
+    $page = intval($_GET['page']);
 }
 $description = '';
 $title = '';
@@ -68,7 +68,12 @@ if ($reviews_count > 0) {
     }
     $navigation_reviews_buttons .= '</p>';
 
-    $skip_reviews = '<a href="#buttonBack" class="skipInformation">Salta le recensioni presenti nella pagina</a>';
+    if ($page === 1) {
+        $skip_reviews = '<p>Ti trovi a pagina ' . $page . ' di ' . (intval(($reviews_count)/5)+1) . ': ' . '<a href="#buttonNext">vai ai pulsanti di navigazione</a></p>';
+    } else {
+        $skip_reviews = '<p>Ti trovi a pagina ' . $page . ' di ' . (intval(($reviews_count)/5)+1) . ': ' . '<a href="#buttonBack">vai ai pulsanti di navigazione</a></p>';
+    }
+
 } else {
     unset($controller);
     $skip_reviews = '';

@@ -31,7 +31,7 @@ if (!isset($_GET['page'])) {
 } elseif (($_GET['page'] < 1) || (($_GET['page'] - 1) > ($event_count / 5))) {
     header('Location: Errore.php');
 } else {
-    $page = $_GET['page'];
+    $page = intval($_GET['page']);
 }
 
 if ($event_count > 0) {
@@ -53,7 +53,12 @@ if ($event_count > 0) {
 
     $navigation_events_buttons .= '</p>';
 
-    $skip_events = '<a href="#buttonBack" class="skipInformation">Salta gli eventi presenti nella pagina</a>';
+    if ($page === 1) {
+        $skip_events = '<p>Ti trovi a pagina ' . $page . ' di ' . (intval($event_count/5)+1) . ': ' . '<a href="#buttonNext">vai ai pulsanti di navigazione</a></p>';
+    } else {
+        $skip_events = '<p>Ti trovi a pagina ' . $page . ' di ' . (intval($event_count/5)+1) . ': ' . '<a href="#buttonBack">vai ai pulsanti di navigazione</a></p>';
+    }
+
 } else {
     unset($controller);
     $skip_events = '';

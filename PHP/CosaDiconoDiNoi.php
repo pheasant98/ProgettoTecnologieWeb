@@ -9,9 +9,9 @@ $controller = new ReviewsController();
 $reviews_count = $controller->getReviewsCount();
 
 if($reviews_count == 1) {
-    $reviews_count_found = '<p> È stata trovata ' . $reviews_count . ' recensione: </p>';
+    $reviews_count_found = '<p> È stata trovata ' . $reviews_count . ' recensione </p>';
 } else {
-    $reviews_count_found = '<p> Sono state trovate ' . $reviews_count . ' recensioni: </p>';
+    $reviews_count_found = '<p> Sono state trovate ' . $reviews_count . ' recensioni </p>';
 }
 
 if (!isset($_GET['page'])) {
@@ -19,7 +19,7 @@ if (!isset($_GET['page'])) {
 } elseif (($_GET['page'] < 1) || (($_GET['page'] - 1) > ($reviews_count / 5))) {
     header('Location: Errore.php');
 } else {
-    $page = $_GET['page'];
+    $page = intval($_GET['page']);
 }
 
 $_SESSION['previous_page'] = 'CosaDiconoDiNoi';
@@ -53,7 +53,12 @@ if ($reviews_count > 0) {
 
     $navigation_reviews_buttons .= '</p>';
 
-    $skip_reviews = '<a href="#buttonBack" class="skipInformation">Salta le recensioni presenti nella pagina</a>';
+    if ($page === 1) {
+        $skip_reviews = '<p>Ti trovi a pagina ' . $page . ' di ' . (intval($reviews_count/5)+1) . ': ' . '<a href="#buttonNext">vai ai pulsanti di navigazione</a></p>';
+    } else {
+        $skip_reviews = '<p>Ti trovi a pagina ' . $page . ' di ' . (intval($reviews_count/5)+1) . ': ' . '<a href="#buttonBack">vai ai pulsanti di navigazione</a></p>';
+    }
+
 } else {
     unset($controller);
     $skip_reviews = '';
