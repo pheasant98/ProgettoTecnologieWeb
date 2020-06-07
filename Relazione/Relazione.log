@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.24)  7 JUN 2020 19:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.24)  7 JUN 2020 23:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -872,7 +872,7 @@ LaTeX Info: Redefining \nameref on input line 5.
 \openout4 = `Relazione.out'.
 
  ABD: EveryShipout initializing macros
-<img/Logo.png, id=396, 859.32pt x 434.61pt>
+<img/Logo.png, id=404, 859.32pt x 434.61pt>
 File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 8.
@@ -976,7 +976,7 @@ Package pdftex.def Info: img/Logo.png  used on input line 17.
 \openout2 = `Content/Progettazione.aux'.
 
  (./Content/Progettazione.tex
-<img/SchemaLogico.png, id=618, 1044.90375pt x 533.995pt>
+<img/SchemaLogico.png, id=628, 1044.90375pt x 533.995pt>
 File: img/SchemaLogico.png Graphic file (type png)
 <use img/SchemaLogico.png>
 Package pdftex.def Info: img/SchemaLogico.png  used on input line 19.
@@ -1012,7 +1012,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--33
 
  []
 
-<img/Mobile.png, id=630, 1890.06125pt x 1644.1425pt>
+<img/Mobile.png, id=640, 1890.06125pt x 1644.1425pt>
 File: img/Mobile.png Graphic file (type png)
 <use img/Mobile.png>
 Package pdftex.def Info: img/Mobile.png  used on input line 37.
@@ -1022,7 +1022,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 38.
 See the caption package documentation for explanation.
 
-<img/Tablet.png, id=631, 1581.91pt x 2341.74875pt>
+<img/Tablet.png, id=641, 1581.91pt x 2341.74875pt>
 File: img/Tablet.png Graphic file (type png)
 <use img/Tablet.png>
 Package pdftex.def Info: img/Tablet.png  used on input line 42.
@@ -1037,7 +1037,7 @@ File: img/Logo.png Graphic file (type png)
 Package pdftex.def Info: img/Logo.png  used on input line 43.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
 [15 <./img/Mobile.png>]
-<img/Desktop.png, id=640, 1500.60625pt x 1218.5525pt>
+<img/Desktop.png, id=650, 1500.60625pt x 1218.5525pt>
 File: img/Desktop.png Graphic file (type png)
 <use img/Desktop.png>
 Package pdftex.def Info: img/Desktop.png  used on input line 47.
@@ -1080,35 +1080,82 @@ Package pdftex.def Info: img/Logo.png  used on input line 21.
 ]
 \openout2 = `Content/Presentazione.aux'.
 
- (./Content/Presentazione.tex)
+ (./Content/Presentazione.tex
+<img/Mobile-pres.png, id=679, 1183.42125pt x 940.51375pt>
+File: img/Mobile-pres.png Graphic file (type png)
+<use img/Mobile-pres.png>
+Package pdftex.def Info: img/Mobile-pres.png  used on input line 8.
+(pdftex.def)             Requested size: 355.02911pt x 282.1563pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 9.
+See the caption package documentation for explanation.
+
+<img/Tablet-pres.png, id=680, 725.71124pt x 940.51375pt>
+File: img/Tablet-pres.png Graphic file (type png)
+<use img/Tablet-pres.png>
+Package pdftex.def Info: img/Tablet-pres.png  used on input line 16.
+(pdftex.def)             Requested size: 290.27936pt x 376.19884pt.
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 17.
+See the caption package documentation for explanation.
+
+File: img/Logo.png Graphic file (type png)
+<use img/Logo.png>
+Package pdftex.def Info: img/Logo.png  used on input line 17.
+(pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
+[20
+
+
+ <./img/Mobile-pres.png>]
+<img/Desktop-pres.png, id=689, 1132.23pt x 940.51375pt>
+File: img/Desktop-pres.png Graphic file (type png)
+<use img/Desktop-pres.png>
+Package pdftex.def Info: img/Desktop-pres.png  used on input line 25.
+(pdftex.def)             Requested size: 398.3386pt x 330.87817pt.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 26.
+See the caption package documentation for explanation.
+
+File: img/Logo.png Graphic file (type png)
+<use img/Logo.png>
+Package pdftex.def Info: img/Logo.png  used on input line 26.
+(pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
+[21 <./img/Tablet-pres.png>])
 File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 23.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [20
-
-
-]
+ [22 <./img/Desktop-pres.png>]
 \openout2 = `Content/Validazione.aux'.
 
 
-(./Content/Validazione.tex)
+(./Content/Validazione.tex
+File: img/Logo.png Graphic file (type png)
+<use img/Logo.png>
+Package pdftex.def Info: img/Logo.png  used on input line 24.
+(pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
+ [23
+
+
+])
 File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 25.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [21
-
-
-]
+ [24]
 \openout2 = `Content/Test.aux'.
 
  (./Content/Test.tex
 File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
-Package pdftex.def Info: img/Logo.png  used on input line 41.
+Package pdftex.def Info: img/Logo.png  used on input line 44.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [22
+ [25
 
 
 ])
@@ -1116,7 +1163,7 @@ File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 27.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [23]
+ [26]
 \openout2 = `Content/SuddivisioneDelLavoro.aux'.
 
 
@@ -1125,7 +1172,7 @@ File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 29.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [24
+ [27
 
 
 ]
@@ -1142,7 +1189,7 @@ File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 31.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [25
+ [28
 
 
 ] 
@@ -1156,17 +1203,17 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 33.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 33.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 33.
 Package rerunfilecheck Info: File `Relazione.out' has not changed.
-(rerunfilecheck)             Checksum: DCB726B84AD4DDBDC4A3AFE9DBF1D494;8586.
+(rerunfilecheck)             Checksum: 86A57F5AE9B7EF1463F567729A2A9A7D;8704.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 20497 strings out of 492616
- 376301 string characters out of 6129480
- 476493 words of memory out of 5000000
- 23816 multiletter control sequences out of 15000+600000
+ 20524 strings out of 492616
+ 376780 string characters out of 6129480
+ 476573 words of memory out of 5000000
+ 23832 multiletter control sequences out of 15000+600000
  20642 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,17n,79p,1399b,728s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1189,10 +1236,10 @@ xmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2019/texm
 f-dist/fonts/type1/public/cm-super/sfxc1095.pfb></usr/local/texlive/2019/texmf-
 dist/fonts/type1/public/cm-super/sfxc1200.pfb></usr/local/texlive/2019/texmf-di
 st/fonts/type1/public/cm-super/sfxc2488.pfb>
-Output written on Relazione.pdf (26 pages, 759888 bytes).
+Output written on Relazione.pdf (29 pages, 3654456 bytes).
 PDF statistics:
- 800 PDF objects out of 1000 (max. 8388607)
- 737 compressed objects within 8 object streams
- 129 named destinations out of 1000 (max. 500000)
- 814 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 835 PDF objects out of 1000 (max. 8388607)
+ 763 compressed objects within 8 object streams
+ 137 named destinations out of 1000 (max. 500000)
+ 845 words of extra memory for PDF output out of 10000 (max. 10000000)
 
