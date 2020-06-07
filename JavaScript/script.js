@@ -581,14 +581,13 @@ function checkModifyArtworkImage(event) {
 }
 
 function resetImage(isModify) {
+    resetArtworkErrors();
+
     var input = document.getElementById('imageUpload');
     var image = document.getElementById('uploadedImage');
     var imageIE = document.getElementById('uploadedImageIE');
 
     if (isModify) {
-        resetArtworkErrors();
-        var tags = 5;
-
         if (imageIE) {
             imageIE.parentElement.removeChild(imageIE);
         }
@@ -600,14 +599,6 @@ function resetImage(isModify) {
         }
 
         document.getElementById('uploadedImage').src = previousImage.value;
-
-        for (var i = 0; i < input.parentElement.children.length; ++i) {
-            if (input.parentElement.children[i].tagName.toLowerCase() === 'img') {
-                tags++;
-            }
-        }
-
-        removeError(input, tags);
     } else {
         if (image) {
             image.parentElement.removeChild(image);
@@ -616,6 +607,16 @@ function resetImage(isModify) {
             imageIE.parentElement.removeChild(imageIE);
         }
     }
+
+    var tags = isModify ? 5 : 3;
+
+    for (var i = 0; i < input.parentElement.children.length; ++i) {
+        if (input.parentElement.children[i].tagName.toLowerCase() === 'img') {
+            tags++;
+        }
+    }
+
+    removeError(input, tags);
 }
 
 /* CONTROLLI E GESTIONE DEGLI EVENTI */
@@ -1046,6 +1047,26 @@ function resetUserErrors() {
     removeError(email, 2);
     removeError(oldPassword, 2);
     removeError(newPassword, 3);
+    removeError(confirmPassword, 2);
+}
+
+function resetRegistrationErrors() {
+    var name = document.getElementById('name');
+    var surname = document.getElementById('surname');
+    var date = document.getElementById('date');
+    var sexA = document.getElementById('sexA');
+    var email = document.getElementById('email');
+    var username = document.getElementById('username');
+    var password = document.getElementById('password');
+    var confirmPassword = document.getElementById('repetePassword');
+
+    removeError(name, 2);
+    removeError(surname, 2);
+    removeError(date, 3);
+    removeRadioError(sexA);
+    removeError(email, 2);
+    removeError(username, 2);
+    removeError(password, 3);
     removeError(confirmPassword, 2);
 }
 
