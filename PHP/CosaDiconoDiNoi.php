@@ -53,10 +53,15 @@ if ($reviews_count > 0) {
 
     $navigation_reviews_buttons .= '</p>';
 
-    if ($page === 1) {
-        $skip_reviews = '<p>Ti trovi a pagina ' . $page . ' di ' . (intval($reviews_count/5)+1) . ': ' . '<a href="#buttonNext">vai ai pulsanti di navigazione</a></p>';
+    $number_pages = ceil($reviews_count/5);
+    if ($number_pages > 1) {
+        if ($page === 1) {
+            $skip_reviews = '<p>Ti trovi a pagina ' . $page . ' di ' . $number_pages . ': ' . '<a href="#buttonNext">vai ai pulsanti di navigazione</a></p>';
+        } else {
+            $skip_reviews = '<p>Ti trovi a pagina ' . $page . ' di ' . $number_pages . ': ' . '<a href="#buttonBack">vai ai pulsanti di navigazione</a></p>';
+        }
     } else {
-        $skip_reviews = '<p>Ti trovi a pagina ' . $page . ' di ' . (intval($reviews_count/5)+1) . ': ' . '<a href="#buttonBack">vai ai pulsanti di navigazione</a></p>';
+        $skip_reviews = '<p>Ti trovi a pagina ' . $page . ' di ' . $number_pages . '.';
     }
 
 } else {

@@ -196,7 +196,7 @@ class EventsController {
     }
 
     public function getEvents($type, $offset) {
-        if($type === '') {
+        if($type === 'TuttiGliEventi') {
             $result_set = $this->events->getEvents($offset);
         } else {
             $result_set = $this->events->getEventsByType($type, $offset);

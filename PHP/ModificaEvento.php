@@ -46,10 +46,14 @@ if ($type === 'Mostra') {
     $conference_type = ' selected="selected" ';
 }
 
+if (isset($_SESSION['contentPage'])) {
+    $breadcrumbs = '?page=' . $_SESSION['contentPage'];
+} else {
+    $breadcrumbs = '?page=1';
+}
+
 $document = file_get_contents('../HTML/ModificaEvento.html');
 $login = LoginController::getAuthenticationMenu();
-
-$breadcrumbs = '?page=' . $_SESSION['contentPage'];
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
 $document = str_replace("<span id='breadcrumbsPlaceholder'/>", $breadcrumbs, $document);
