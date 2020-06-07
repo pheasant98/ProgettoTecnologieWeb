@@ -145,11 +145,10 @@ class EventsController {
         return $count;
     }
 
-    public function getSearchedEvents($search, $offset) {
+    public function getSearchedEvents($search, $offset, $button) {
         $result_set = $this->events->getSearchedEvents($search, $offset);
 
         $id = 'event';
-        $button = 'buttonBack';
         $counter = 1;
         $content = '';
 
@@ -195,7 +194,7 @@ class EventsController {
         return $content;
     }
 
-    public function getEvents($type, $offset) {
+    public function getEvents($type, $offset, $button) {
         if($type === 'TuttiGliEventi') {
             $result_set = $this->events->getEvents($offset);
         } else {
@@ -203,7 +202,6 @@ class EventsController {
         }
 
         $id = 'event';
-        $button = 'buttonBack';
         $counter = 1;
         $content = '';
 

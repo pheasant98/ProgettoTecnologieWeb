@@ -363,6 +363,7 @@ a:visited {
 
 #reviewButton {
   float: right;
+  width: 11em;
 }
 
 #buttonBackUp {

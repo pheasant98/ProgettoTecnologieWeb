@@ -32,7 +32,17 @@ if (!isset($_GET['page'])) {
 if ($artwork_count > 0) {
     $offset = ($page - 1) * 5;
 
-    $artwork_list = '<dl class="clickableList">' . $controller->getSearchedArtworks($_GET['search'], $offset) . '</dl>';
+    $number_pages = ceil($artwork_count / 5);
+    $offset = ($page - 1) * 5;
+    if ($page === 1) {
+        if ($number_pages === 1){
+            $artwork_list = '<dl class="clickableList">' . $controller->getSearchedArtworks($_GET['search'], $offset, 'buttonBackUp') . '</dl>';
+        } else {
+            $artwork_list = '<dl class="clickableList">' . $controller->getSearchedArtworks($_GET['search'], $offset, 'buttonNext') . '</dl>';
+        }
+    } else {
+        $artwork_list = '<dl class="clickableList">' . $controller->getSearchedArtworks($_GET['search'], $offset, 'buttonBack') . '</dl>';
+    }
 
     unset($controller);
 

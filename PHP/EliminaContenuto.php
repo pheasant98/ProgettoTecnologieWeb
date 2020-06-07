@@ -43,7 +43,15 @@ unset($controller);
 
 $_SESSION['deleted_type'] = $_POST['type'];
 
-$page = $_SESSION['contentPage'];
+
+$content_count = $_SESSION['content_number_count'];
+$offset = ($_SESSION['contentPage'] - 1) * 5;
+if ($offset === ($content_count - 1)) {
+    $page = $_SESSION['contentPage'] - 1;
+} else {
+    $page = $_SESSION['contentPage'];
+}
+
 $filter_content = $_SESSION['filter_content'];
 $filter_content_type = $_SESSION['filter_content_type'];
 

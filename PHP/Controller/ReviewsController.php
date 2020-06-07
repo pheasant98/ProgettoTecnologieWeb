@@ -1,6 +1,7 @@
 <?php
 
 require_once ('Repository/ReviewsRepository.php');
+require_once ('Utilities/DateUtilities.php');
 
 class ReviewsController {
     private $reviews;
@@ -70,11 +71,10 @@ class ReviewsController {
         return $count;
     }
 
-    public function getReviews($offset) {
+    public function getReviews($offset, $button) {
         $result_set = $this->reviews->getReviews($offset);
 
         $id = 'review';
-        $button = 'buttonBack';
         $counter = 1;
         $content = '';
 
@@ -98,14 +98,14 @@ class ReviewsController {
                             Data ultima modifica: 
                         </dt>
                         <dd class="definition">
-                            ' . $row['DataUltimaModifica'] . '
+                            ' . DateUtilities::englishItalianDate($row['DataUltimaModifica']) . '
                         </dd>
     
                         <dt class="inlineDef">
                             Contenuto: 
                         </dt>
                         <dd class="definition">
-                            ' . substr($row['Contenuto'], 0, 150) . '...' . '
+                            ' . substr($row['Contenuto'], 0, 150) . (strlen($row['Contenuto']) > 150 ? '...' : '') . '
                         </dd>
                     </dl>
                 </dd>
