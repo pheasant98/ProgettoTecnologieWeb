@@ -15,9 +15,9 @@ $user_count = $controller->getUsersCount();
 $deleted = '';
 if (isset($_SESSION['userDeleted']) && isset($_SESSION['userDeletedError'])) {
     if ($_SESSION['userDeletedError']) {
-        $deleted = '<p>L\'utente ' . $_SESSION['userDeleted'] . ' è stato eliminato correttamente</p>';
+        $deleted = '<p class="success">L\'utente ' . $_SESSION['userDeleted'] . ' è stato eliminato correttamente</p>';
     } else {
-        $deleted = '<p>Non è stato possibile eliminare l\'utente ' . $_SESSION['userDeleted'] . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
+        $deleted = '<p class="error">Non è stato possibile eliminare l\'utente ' . $_SESSION['userDeleted'] . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
     }
 
     unset($_SESSION['userDeleted']);
