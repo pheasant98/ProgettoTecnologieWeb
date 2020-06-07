@@ -48,6 +48,8 @@ if (LoginController::isAdminUser()) {
             <a href="GestioneRecensioni.php" class="button userOperationButton" title="Gestisci le recensioni" aria-label="vai alla pagina per la gestione delle recensioni">Gestisci recensioni</a>
         </li>
     ';
+    $header_description = 'Visualizzazione del proprio profilo dove e possibile modificarlo, e possibile effettuare la gestione delle pagine presenti
+    nel sito web e di aggiungerne di nuove, e inoltre possibile gestire gli utenti registrati nel sito web';
 } else {
     $functionalities = 'Ora che hai effettuato l\'accesso al sito, puoi utilizzare il tuo <span xml:lang="en">account</span> per lasciare delle recensioni riguardo le visite che hai fatto al museo.';
     $operations = '
@@ -63,12 +65,14 @@ if (LoginController::isAdminUser()) {
             <a href="GestioneRecensioni.php" class="button userOperationButton" title="Gestisci le tue recensioni" aria-label="Vai alla pagina per la gestione delle recensioni lasciate">Gestisci le recensioni</a>
         </li>
     ';
+    $header_description = 'Visualizzazione del proprio profilo dove e possibile modificarlo e inoltre possibile gestire le proprie recensioni oltre ad effettuare di nuove';
 }
 
 $document = file_get_contents('../HTML/AreaPersonale.html');
 $login = LoginController::getAuthenticationMenu(false);
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
+$document = str_replace("<span id='headerDescriptionPlaceholder'/>", $header_description, $document);
 $document = str_replace("<span id='justRegisteredWelcomePlaceholder'/>", $welcome, $document);
 $document = str_replace("<span id='userNamePlaceholder'/>", $user['Nome'], $document);
 $document = str_replace("<span id='userSurnamePlaceholder'/>", $user['Cognome'], $document);
