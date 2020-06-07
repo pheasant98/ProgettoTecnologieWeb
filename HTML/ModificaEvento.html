@@ -114,7 +114,6 @@
                         <p>
                             <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
-
                         <p>
                             <label id="labelDescription" for="eventDescriptionArea">Descrizione</label>
                             <textarea id="eventDescriptionArea" class="descriptionArea" name="description" rows="10" cols="70" aria-label="Modifica la descrizione" aria-required="true"><span id='descriptionValuePlaceholder'/></textarea>
@@ -123,7 +122,6 @@
                         <p>
                             <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
-
                         <p>
                             <label id="labelType" for="type">Tipologia</label>
                             <select id="type" class="formElement" name="type" aria-label="Modifica la tipologia di evento" aria-required="true">
@@ -135,9 +133,16 @@
                         <p>
                             <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
+                        <p>
+                            <label id="labelManager" for="manager">Organizzatore</label>
+                            <input id="manager" class="formElement" name="manager" type="text" value="<span id='managerValuePlaceholder'/>" aria-label="Inserisci l'organizzatore"/>
+                        </p>
                     </fieldset>
                     <fieldset id="date" class="fieldset">
                         <legend>Date</legend>
+                        <p>
+                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
+                        </p>
                         <p>
                             <label id="labelBeginDate" class="labelPosition" for="beginDate">Data d'inizio</label>
                             <label class="clause" for="beginDate">La data d'inizio deve essere inserita nel seguente formato: <abbr title="giorno">gg</abbr>-<abbr title="mese">mm</abbr>-<abbr title="anno">aaaa</abbr></label>
@@ -147,21 +152,12 @@
                         <p>
                             <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
-
                         <p>
                             <label id="labelEndDate" class="labelPosition" for="endDate">Data di fine</label>
                             <label class="clause" for="endDate">La data di fine deve essere inserita nel seguente formato: <abbr title="giorno">gg</abbr>-<abbr title="mese">mm</abbr>-<abbr title="anno">aaaa</abbr></label>
                             <input id="endDate" class="dateElement" name="endDate" type="text" value="<span id='endDateValuePlaceholder'/>" aria-label="Modifica la data dell'evento" aria-required="true"/>
                         </p>
-
-                        <p>
-                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
-                        </p>
                     </fieldset>
-                    <p>
-                        <label id="labelManager" for="manager">Organizzatore</label>
-                        <input id="manager" class="formElement" name="manager" type="text" value="<span id='managerValuePlaceholder'/>" aria-label="Inserisci l'organizzatore"/>
-                    </p>
 
                     <p class="buttonPosition">
                         <input class="button" name="cancel" type="reset" value="Annulla" aria-label="Annulla le modifiche apportate"/>
