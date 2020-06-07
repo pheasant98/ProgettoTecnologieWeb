@@ -66,7 +66,7 @@ class UsersController {
         } else {
             $formatted_date = DateTime::createFromFormat('d-m-Y', $date);
             if ($formatted_date === false) {
-                $message .= '[Non è possibile inserire una data di nascita espressa nel formato diverso da "gg-mm-aaaa"]';
+                $message .= '[Non è possibile inserire una data di nascita espressa nel formato diverso da "<abbr title="giorno">gg</abbr>-<abbr title="mese">mm</abbr>-<abbr title="anno">aaaa</abbr>"]';
             } else {
                 $date_properties = explode('-', $date);
                 if (!checkdate($date_properties[1], $date_properties[0], $date_properties[2])) {

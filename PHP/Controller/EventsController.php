@@ -34,7 +34,7 @@ class EventsController {
         } else {
             $formatted_date = DateTime::createFromFormat('d-m-Y', $begin_date);
             if ($formatted_date === false) {
-                $message .= '[Non è possibile inserire la data di inizio evento espressa in un formato diverso da "gg-mm-aaaa"]';
+                $message .= '[Non è possibile inserire la data di inizio evento espressa in un formato diverso da "<abbr title="giorno">gg</abbr>-<abbr title="mese">mm</abbr>-<abbr title="anno">aaaa</abbr>"]';
             } else {
                 $date_properties = explode('-', $begin_date);
                 if (!checkdate($date_properties[1], $date_properties[0], $date_properties[2])) {
@@ -50,7 +50,7 @@ class EventsController {
         } else {
             $formatted_date = DateTime::createFromFormat('d-m-Y', $end_date);
             if ($formatted_date === false) {
-                $message .= '[Non è possibile inserire la data di fine evento espressa in un formato diverso da "gg-mm-aaaa"]';
+                $message .= '[Non è possibile inserire la data di fine evento espressa in un formato diverso da "<abbr title="giorno">gg</abbr>-<abbr title="mese">mm</abbr>-<abbr title="anno">aaaa</abbr>"]';
             } else {
                 $date_properties = explode('-', $end_date);
                 if (!checkdate($date_properties[1], $date_properties[0], $date_properties[2])) {

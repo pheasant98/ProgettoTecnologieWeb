@@ -367,7 +367,7 @@ function checkArtworkMaterial(input) {
 
 function checkArtworkDimensions(input) {
     var dimensions = input.value.trim();
-    var pattern = new RegExp('^([1-9][0-9]{0,3})x([1-9][0-9]{0,3})$');
+    var pattern = new RegExp('^([1-9][0-9]{0,3})\\sx\\s([1-9][0-9]{0,3})$');
 
     if (dimensions.length === 0) {
         addError(input, 'Non è possibile inserire una dimensione vuota', 3);

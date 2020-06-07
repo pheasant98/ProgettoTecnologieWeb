@@ -107,10 +107,6 @@
                         <legend>Informazioni generali</legend>
 
                         <p>
-                            <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
-                        </p>
-
-                        <p>
                             <label id="labelAutore" for="author">Autore</label>
                             <input id="author" class="formElement" name="author" type="text" value="<span id='authorValuePlaceholder'/>" aria-label="Modifica l'autore dell'opera" aria-required="true"/>
                         </p>
@@ -130,8 +126,7 @@
 
                         <p>
                             <label id="labelDescription" for="operaDescriptionArea">Descrizione</label>
-                            <textarea id="operaDescriptionArea" class="descriptionArea" name="description" rows="10" cols="70" aria-label="Modifica la descrizione" aria-required="true"><span id='descriptionValuePlaceholder'/>
-                            </textarea>
+                            <textarea id="operaDescriptionArea" class="descriptionArea" name="description" rows="10" cols="70" aria-label="Modifica la descrizione" aria-required="true"><span id='descriptionValuePlaceholder'/></textarea>
                         </p>
 
                         <p>
@@ -140,7 +135,7 @@
 
                         <p>
                             <label id="labelYears" class="labelPosition" for="years">Datazione</label>
-                            <label class="clause">La datazione deve essere inserita nel seguente formato: aaaa</label>
+                            <label class="clause" for="years">La datazione deve essere inserita nel seguente formato: aaaa</label>
                             <input id="years" class="formElement" name="years" type="text" value="<span id='yearsValuePlaceholder'/>" aria-label="Modifica l'anno dell'opera" aria-required="true"/>
                         </p>
                     </fieldset>
@@ -185,7 +180,7 @@
 
                         <p>
                             <label id="labelSize" class="labelPosition" for="dimensions">Dimensioni</label>
-                            <label class="clause">Le dimensioni devono essere inserite nel seguente formato: altezzaxlarghezza</label>
+                            <label class="clause" for="dimensions">Le dimensioni devono essere inserite nel seguente formato: altezzaxlarghezza</label>
                             <input id="dimensions" class="formElement" name="dimensions" type="text" value="<span id='dimensionsValuePlaceholder'/>" aria-label="Inserisci le dimensioni"/>
                         </p>
 
@@ -215,8 +210,8 @@
 
                         <p>
                             <label id="labelImageUpload" class="labelPosition" for="imageUpload">Scegliere l'immagine</label>
-                            <label class="clause">Se non si desidera modificare l'immagine lasciare vuoto questo campo</label>
-                            <label class="clause">La dimensione massima consentita per l'immagine è 500<abbr title="Kilo Bytes" xml:lang="en">KB</abbr>, le estensioni supportate sono .<abbr title="Joint Photographic Experts Group" xml:lang="en">jpeg</abbr>, .<abbr title="Joint Photographic Group" xml:lang="en">jpg</abbr>, .<abbr title="Portable Network Graphics" xml:lang="en">png</abbr></label>
+                            <label class="clause" for="imageUpload">Se non si desidera modificare l'immagine lasciare vuoto questo campo</label>
+                            <label class="clause" for="imageUpload">La dimensione massima consentita per l'immagine è 500<abbr title="Kilo Bytes" xml:lang="en">KB</abbr>, le estensioni supportate sono .<abbr title="Joint Photographic Experts Group" xml:lang="en">jpeg</abbr>, .<abbr title="Joint Photographic Group" xml:lang="en">jpg</abbr>, .<abbr title="Portable Network Graphics" xml:lang="en">png</abbr></label>
                             <input id="imageUpload" class="formElement" name="image" type="file" accept=".jpg, .jpeg, .png" aria-label="Modifica l'immagine dell'opera" aria-required="true" onchange="return checkModifyArtworkImage(event)"/>
                             <input id="previousImage" name="previousImage" type="hidden" value="../<span id='artworkImgPlaceholder'/>"/>
                             <img id="uploadedImage" class="significantImage" alt="Immagine dell'opera <span id='titleValuePlaceholder'/>" src="../<span id='artworkImgPlaceholder'/>"/>

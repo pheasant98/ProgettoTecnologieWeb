@@ -117,8 +117,7 @@
 
                         <p>
                             <label id="labelDescription" for="eventDescriptionArea">Descrizione</label>
-                            <textarea id="eventDescriptionArea" class="descriptionArea" name="description" rows="10" cols="70" aria-label="Modifica la descrizione" aria-required="true"><span id='descriptionValuePlaceholder'/>
-                                    </textarea>
+                            <textarea id="eventDescriptionArea" class="descriptionArea" name="description" rows="10" cols="70" aria-label="Modifica la descrizione" aria-required="true"><span id='descriptionValuePlaceholder'/></textarea>
                         </p>
 
                         <p>
@@ -141,7 +140,7 @@
                         <legend>Date</legend>
                         <p>
                             <label id="labelBeginDate" class="labelPosition" for="beginDate">Data d'inizio</label>
-                            <label class="clause">La data d'inizio deve essere inserita nel seguente formato: gg-mm-aaaa</label>
+                            <label class="clause" for="beginDate">La data d'inizio deve essere inserita nel seguente formato: <abbr title="giorno">gg</abbr>-<abbr title="mese">mm</abbr>-<abbr title="anno">aaaa</abbr></label>
                             <input id="beginDate" class="dateElement" name="beginDate" type="text" value="<span id='beginDateValuePlaceholder'/>" aria-label="Modifica la data dell'evento" aria-required="true"/>
                         </p>
 
@@ -151,7 +150,7 @@
 
                         <p>
                             <label id="labelEndDate" class="labelPosition" for="endDate">Data di fine</label>
-                            <label class="clause">La data di fine deve essere inserita nel seguente formato: gg-mm-aaaa</label>
+                            <label class="clause" for="endDate">La data di fine deve essere inserita nel seguente formato: <abbr title="giorno">gg</abbr>-<abbr title="mese">mm</abbr>-<abbr title="anno">aaaa</abbr></label>
                             <input id="endDate" class="dateElement" name="endDate" type="text" value="<span id='endDateValuePlaceholder'/>" aria-label="Modifica la data dell'evento" aria-required="true"/>
                         </p>
 
@@ -164,13 +163,9 @@
                         <input id="manager" class="formElement" name="manager" type="text" value="<span id='managerValuePlaceholder'/>" aria-label="Inserisci l'organizzatore"/>
                     </p>
 
-                    <p>
-                        <a class="skipInformation" href="#buttonConfirm" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
-                    </p>
-
                     <p class="buttonPosition">
                         <input class="button" name="cancel" type="reset" value="Annulla" aria-label="Annulla le modifiche apportate"/>
-                        <input class="button" name="submit" type="submit" value="Modifica" aria-label="Invia le modifiche apportate"/>
+                        <input id="buttonConfirm" class="button" name="submit" type="submit" value="Modifica" aria-label="Invia le modifiche apportate"/>
                     </p>
                 </fieldset>
             </form>
