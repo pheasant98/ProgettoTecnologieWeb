@@ -78,16 +78,45 @@ function contentTypeChanged() {
 
     var content = contentInput.options[contentInput.selectedIndex].value.trim();
 
-    for (var i = 4; i > 0; --i) {
-        contentTypeInput.remove(i);
-    }
-
     if (content === 'Opera') {
-        contentTypeInput.add(createOption('Dipinto', 'Dipinti'));
-        contentTypeInput.add(createOption('Scultura', 'Sculture'));
+        if (contentTypeInput.querySelector('option[value="Mostra"]')) {
+            contentTypeInput.removeChild(contentTypeInput.querySelector('option[value="Mostra"]'));
+        }
+        if (contentTypeInput.querySelector('option[value="Conferenza"]')) {
+            contentTypeInput.removeChild(contentTypeInput.querySelector('option[value="Conferenza"]'));
+        }
+        if (!contentTypeInput.querySelector('option[value="Dipinto"]')) {
+            contentTypeInput.add(createOption('Dipinto', 'Dipinti'));
+        }
+        if (!contentTypeInput.querySelector('option[value="Scultura"]')) {
+            contentTypeInput.add(createOption('Scultura', 'Sculture'));
+        }
     } else if (content === 'Evento') {
-        contentTypeInput.add(createOption('Mostra', 'Mostre'));
-        contentTypeInput.add(createOption('Conferenza', 'Conferenze'));
+        if (contentTypeInput.querySelector('option[value="Dipinto"]')) {
+            contentTypeInput.removeChild(contentTypeInput.querySelector('option[value="Dipinto"]'));
+        }
+        if (contentTypeInput.querySelector('option[value="Scultura"]')) {
+            contentTypeInput.removeChild(contentTypeInput.querySelector('option[value="Scultura"]'));
+        }
+        if (!contentTypeInput.querySelector('option[value="Mostra"]')) {
+            contentTypeInput.add(createOption('Mostra', 'Mostre'));
+        }
+        if (!contentTypeInput.querySelector('option[value="Conferenza"]')) {
+            contentTypeInput.add(createOption('Conferenza', 'Conferenze'));
+        }
+    } else if (content === 'Nessun filtro') {
+        if (contentTypeInput.querySelector('option[value="Dipinto"]')) {
+            contentTypeInput.removeChild(contentTypeInput.querySelector('option[value="Dipinto"]'));
+        }
+        if (contentTypeInput.querySelector('option[value="Scultura"]')) {
+            contentTypeInput.removeChild(contentTypeInput.querySelector('option[value="Scultura"]'));
+        }
+        if (contentTypeInput.querySelector('option[value="Mostra"]')) {
+            contentTypeInput.removeChild(contentTypeInput.querySelector('option[value="Mostra"]'));
+        }
+        if (contentTypeInput.querySelector('option[value="Conferenza"]')) {
+            contentTypeInput.removeChild(contentTypeInput.querySelector('option[value="Conferenza"]'));
+        }
     }
 }
 
