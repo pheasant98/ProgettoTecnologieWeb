@@ -169,7 +169,7 @@ function addRadioError(input, error) {
     parentNode.insertBefore(span, parentNode.children[1]);
 }
 
-function removeReviewError(input) {
+function removeSearchError(input) {
     var parentNode = input.parentNode;
 
     while (parentNode.children.length > 6) {
@@ -177,7 +177,7 @@ function removeReviewError(input) {
     }
 }
 
-function addReviewError(input, error) {
+function addSearchError(input, error) {
     removeError(input);
 
     var parentNode = input.parentNode;
@@ -581,15 +581,18 @@ function checkModifyArtworkImage(event) {
 }
 
 function resetImage(isModify) {
+    var input = document.getElementById('imageUpload');
     var image = document.getElementById('uploadedImage');
     var imageIE = document.getElementById('uploadedImageIE');
 
     if (isModify) {
+        resetArtworkErrors();
+        var tags = 5;
+
         if (imageIE) {
             imageIE.parentElement.removeChild(imageIE);
         }
 
-        var input = document.getElementById('imageUpload');
         var previousImage = document.getElementById('previousImage');
 
         if (!image) {
@@ -597,6 +600,14 @@ function resetImage(isModify) {
         }
 
         document.getElementById('uploadedImage').src = previousImage.value;
+
+        for (var i = 0; i < input.parentElement.children.length; ++i) {
+            if (input.parentElement.children[i].tagName.toLowerCase() === 'img') {
+                tags++;
+            }
+        }
+
+        removeError(input, tags);
     } else {
         if (image) {
             image.parentElement.removeChild(image);
@@ -951,10 +962,10 @@ function checkSearchFilter(input) {
     var type = input.options[input.selectedIndex].value.trim();
 
     if (type !== 'Opera' && type !== 'Evento') {
-        addReviewError(input, 'La tipologia della ricerca deve essere Opera od Evento');
+        addSearchError(input, 'La tipologia della ricerca deve essere Opera od Evento');
         return false;
     } else {
-        removeReviewError(input);
+        removeSearchError(input);
         return true;
     }
 }
@@ -963,12 +974,79 @@ function checkSearchText(input) {
     var search = input.value.trim();
 
     if (search.length > 64) {
-        addReviewError(input, 'Il testo ricercato non può essere più lungo di 64 caratteri');
+        addSearchError(input, 'Il testo ricercato non può essere più lungo di 64 caratteri');
         return false;
     } else {
-        removeReviewError(input);
+        removeSearchError(input);
         return true;
     }
+}
+
+/* RIMOZIONE DEGLI ERRORI IN RESET */
+function resetArtworkErrors() {
+    var author = document.getElementById('author');
+    var title = document.getElementById('title');
+    var description = document.getElementById('operaDescriptionArea');
+    var years = document.getElementById('years');
+    var style = document.getElementById('style');
+    var technique = document.getElementById('technique');
+    var material = document.getElementById('material');
+    var dimensions = document.getElementById('dimensions');
+    var loanNo = document.getElementById('loanNo');
+
+    removeError(author, 2);
+    removeError(title, 2);
+    removeError(description, 2);
+    removeError(years, 3);
+    removeError(style, 2);
+    removeError(technique, 2);
+    removeError(material, 2);
+    removeError(dimensions, 3);
+    removeRadioError(loanNo);
+}
+
+function resetEventErrors() {
+    var title = document.getElementById('title');
+    var description = document.getElementById('eventDescriptionArea');
+    var beginDate = document.getElementById('beginDate');
+    var endDate = document.getElementById('endDate');
+    var type = document.getElementById('type');
+    var manager = document.getElementById('manager');
+
+    removeError(title, 2);
+    removeError(description, 2);
+    removeError(beginDate, 3);
+    removeError(endDate, 3);
+    removeError(type, 2);
+    removeError(manager, 2);
+}
+
+function resetReviewErrors() {
+    var title = document.getElementById('title');
+    var description = document.getElementById('reviewDescriptionArea');
+
+    removeError(title, 2);
+    removeError(description, 2);
+}
+
+function resetUserErrors() {
+    var name = document.getElementById('name');
+    var surname = document.getElementById('surname');
+    var date = document.getElementById('date');
+    var sexA = document.getElementById('sexA');
+    var email = document.getElementById('email');
+    var oldPassword = document.getElementById('oldPassword');
+    var newPassword = document.getElementById('newPassword');
+    var confirmPassword = document.getElementById('repetePassword');
+
+    removeError(name, 2);
+    removeError(surname, 2);
+    removeError(date, 3);
+    removeRadioError(sexA);
+    removeError(email, 2);
+    removeError(oldPassword, 2);
+    removeError(newPassword, 3);
+    removeError(confirmPassword, 2);
 }
 
 /* CONTROLLI E GESTIONE DEI FORM */
