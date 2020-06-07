@@ -42,6 +42,7 @@ if ($user_count > 0) {
     $_SESSION['userPage'] = $page;
 
     $offset = ($page - 1) * 5;
+    $_SESSION['user_number_count'] = $user_count;
 
     $user_list = '<ul class="separation">' . $controller->getUsers($offset) . '</ul>';
 

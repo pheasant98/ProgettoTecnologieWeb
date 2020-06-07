@@ -20,7 +20,13 @@ unset($controller);
 
 $_SESSION['userDeleted'] = $_POST['username'];
 
-$page = $_SESSION['userPage'];
+$user_count = $_SESSION['user_number_count'];
+$offset = ($_SESSION['userPage'] - 1) * 5;
+if ($offset === ($user_count - 1)) {
+    $page = $_SESSION['userPage'] - 1;
+} else {
+    $page = $_SESSION['userPage'];
+}
 
 header('Location: GestioneUtenti.php?page=' . $page);
 

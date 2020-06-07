@@ -44,8 +44,9 @@ if (!isset($_GET['page'])) {
 $description = '';
 $title = '';
 if ($reviews_count > 0) {
-    $_SESSION['reviewPage'] = $page;
     $offset = ($page - 1) * 5;
+    $_SESSION['reviewPage'] = $page;
+    $_SESSION['review_number_count'] = $reviews_count;
     if (!LoginController::isAdminUser()) {
         $reviews_list = '<ul class="separation">' . $controller->getUserListReviews($_SESSION['username'], $offset) . '</ul>';
         $description = 'Elenco di tutte le recensioni lasciate';

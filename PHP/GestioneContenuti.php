@@ -115,6 +115,7 @@ if (($artwork_count + $event_count) > 0) {
 
     $contents_list = '<ul class="separation">';
     $offset = ($page - 1) * 5;
+    $_SESSION['content_number_count'] = $artwork_count + $event_count;
     if ($artwork_count > 0) {
         if ((($artwork_count - $offset) < 5) && (($artwork_count - $offset) > 0)) {
             if ($event_count > 0) {
