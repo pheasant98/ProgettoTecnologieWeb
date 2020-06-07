@@ -31,7 +31,7 @@ if (!isset($_GET['page'])) {
 } elseif (($_GET['page'] < 1) || (($_GET['page'] - 1) > ($artwork_count / 5))) {
     header('Location: Errore.php');
 } else {
-    $page = $_GET['page'];
+    $page = intval($_GET['page']);
 }
 
 if ($artwork_count > 0) {
@@ -53,7 +53,12 @@ if ($artwork_count > 0) {
 
     $navigation_artworks_buttons .= '</p>';
 
-    $skip_artworks = '<a href="#buttonBack" class="skipInformation">Salta le opere presenti nella pagina</a>';
+    if ($page === 1) {
+        $skip_artworks = '<p>Ti trovi a pagina ' . $page . ' di ' . (intval($artwork_count/5)+1) . ': ' . '<a href="#buttonNext">vai ai pulsanti di navigazione</a></p>';
+    } else {
+        $skip_artworks = '<p>Ti trovi a pagina ' . $page . ' di ' . (intval($artwork_count/5)+1) . ': ' . '<a href="#buttonBack">vai ai pulsanti di navigazione</a></p>';
+    }
+
 } else {
     unset($controller);
     $skip_artworks = '';

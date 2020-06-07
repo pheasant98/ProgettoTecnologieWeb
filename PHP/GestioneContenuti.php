@@ -104,7 +104,7 @@ if (!isset($_GET['page'])) {
 } elseif (($_GET['page'] < 1) || (($_GET['page'] - 1) > (($artwork_count + $event_count) / 5))) {
     header('Location: Errore.php');
 } else {
-    $page = $_GET['page'];
+    $page = intval($_GET['page']);
 }
 
 if (($artwork_count + $event_count) > 0) {
@@ -155,7 +155,12 @@ if (($artwork_count + $event_count) > 0) {
     }
     $navigation_contents_buttons .= '</p>';
 
-    $skip_contents = '<a href="#buttonBack" class="skipInformation">Salta i contenuti presenti nella pagina</a>';
+    if ($page === 1) {
+        $skip_contents = '<p>Ti trovi a pagina ' . $page . ' di ' . (intval(($artwork_count + $event_count)/5)+1) . ': ' . '<a href="#buttonNext">vai ai pulsanti di navigazione</a></p>';
+    } else {
+        $skip_contents = '<p>Ti trovi a pagina ' . $page . ' di ' . (intval(($artwork_count + $event_count)/5)+1) . ': ' . '<a href="#buttonBack">vai ai pulsanti di navigazione</a></p>';
+    }
+
 } else {
     unset($artworks_controller);
     unset($events_controller);

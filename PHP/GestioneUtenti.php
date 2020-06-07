@@ -35,7 +35,7 @@ if (!isset($_GET['page'])) {
 } elseif (($_GET['page'] < 1) || (($_GET['page'] - 1) > ($user_count / 5))) {
     header('Location: Errore.php');
 } else {
-    $page = $_GET['page'];
+    $page = intval($_GET['page']);
 }
 
 if ($user_count > 0) {
@@ -58,7 +58,13 @@ if ($user_count > 0) {
     }
 
     $navigation_users_buttons .= '</p>';
-    $skip_users = '<a href="#buttonBack" class="skipInformation">Salta gli utenti presenti nella pagina</a>';
+
+    if ($page === 1) {
+        $skip_users = '<p>Ti trovi a pagina ' . $page . ' di ' . (intval(($user_count)/5)+1) . ': ' . '<a href="#buttonNext">vai ai pulsanti di navigazione</a></p>';
+    } else {
+        $skip_users = '<p>Ti trovi a pagina ' . $page . ' di ' . (intval(($user_count)/5)+1) . ': ' . '<a href="#buttonBack">vai ai pulsanti di navigazione</a></p>';
+    }
+
 } else {
     unset($controller);
     $skip_users = '';
