@@ -43,10 +43,9 @@ unset($controller);
 
 $_SESSION['deleted_type'] = $_POST['type'];
 
-
 $content_count = $_SESSION['content_number_count'];
 $offset = ($_SESSION['contentPage'] - 1) * 5;
-if ($offset === ($content_count - 1)) {
+if ($offset === ($content_count - 1) && $_SESSION['contentDeletedError'] === true) {
     $page = $_SESSION['contentPage'] - 1;
 } else {
     $page = $_SESSION['contentPage'];
@@ -55,6 +54,6 @@ if ($offset === ($content_count - 1)) {
 $filter_content = $_SESSION['filter_content'];
 $filter_content_type = $_SESSION['filter_content_type'];
 
-header('Location: GestioneContenuti.php?page=' . $page . '&amp;filterContent='. $filter_content . '&amp;filterContentType='. $filter_content_type);
+header('Location: GestioneContenuti.php?page=' . $page . '&filterContent='. $filter_content . '&filterContentType='. $filter_content_type);
 
 ?>
