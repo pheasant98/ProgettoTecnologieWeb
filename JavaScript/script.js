@@ -210,16 +210,16 @@ function checkDate(input) {
     var date = input.value.trim();
 
     if (date.length === 0) {
-        addError(input, 'Non è possibile inserire una data vuota', 2);
+        addError(input, 'Non è possibile inserire una data vuota', 3);
         return false;
     } else if (!checkDateFormat(date)) {
-        addError(input, 'Non è possibile inserire una data espressa in un formato diverso da "gg-mm-aaaa"', 2);
+        addError(input, 'La data inserita non rispetta il formato richiesto', 3);
         return false;
     } else if (!checkDateValidity(date)) {
-        addError(input, 'La data inserita non è valida', 2);
+        addError(input, 'La data inserita non è valida', 3);
         return false;
     } else {
-        removeError(input, 2);
+        removeError(input, 3);
         return true;
     }
 }
@@ -292,19 +292,19 @@ function checkArtworkDate(input) {
     var pattern = new RegExp('^\\d{4}$');
 
     if (years.length === 0) {
-        addError(input, 'Non è possibile inserire una datazione vuota', 2);
+        addError(input, 'Non è possibile inserire una datazione vuota', 3);
         return false;
     } else if (!parseInt(years)) {
-        addError(input, 'La datazione dell\'opera deve essere un numero intero', 2);
+        addError(input, 'La datazione dell\'opera deve essere un numero intero', 3);
         return false;
     } else if (!pattern.test(years)) {
-        addError(input, 'La datazione non rispetta il formato richiesto', 2);
+        addError(input, 'La datazione non rispetta il formato richiesto', 3);
         return false;
     } else if (parseInt(years) < 1400 || parseInt(years) > parseInt((new Date()).getFullYear().toString())) {
-        addError(input, 'La datazione dell\'opera deve essere compresa tra il 1400 e l\'anno corrente', 2);
+        addError(input, 'La datazione dell\'opera deve essere compresa tra il 1400 e l\'anno corrente', 3);
         return false;
     } else {
-        removeError(input, 2);
+        removeError(input, 3);
         return true;
     }
 }
@@ -395,7 +395,7 @@ function checkArtworkLoan(inputYes, inputNo) {
 }
 
 function checkArtworkImage(input, isModify) {
-    var tags = isModify ? 3 : 2;
+    var tags = isModify ? 5 : 3;
 
     for (var i = 0; i < input.parentElement.children.length; ++i) {
         if (input.parentElement.children[i].tagName.toLowerCase() === 'img') {
@@ -411,10 +411,10 @@ function checkArtworkImage(input, isModify) {
             addError(input, 'È necessario selezionare una ed una sola immagine', tags);
             return false;
         } else if (input.files[0].size > 512000) {
-            addError(input, 'L\'immagine caricata è una dimensione troppo elevata. La dimensione massima consentita è 500<abbr title="Kilo Bytes" xml:lang="en">KB</abbr>', tags);
+            addError(input, 'L\'immagine selezionata supera la dimensione massima consentita', tags);
             return false;
         } else if (input.files[0].type !== 'image/jpeg' && input.files[0].type !== 'image/png') {
-            addError(input, 'L\'estensione dell\'immagine non è supportata. Le estensioni consentite sono .<abbr title="Joint Photographic Experts Group" xml:lang="en">jpeg</abbr>, .<abbr title="Joint Photographic Group" xml:lang="en">jpg</abbr>, .<abbr title="Portable Network Graphics" xml:lang="en">png</abbr>', tags);
+            addError(input, 'L\'immagine selezionata ha un\'estensione non supportata', tags);
             return false;
         } else {
             removeError(input, tags);
@@ -426,7 +426,7 @@ function checkArtworkImage(input, isModify) {
             addError(input, 'È necessario selezionare un\'immagine', tags);
             return false;
         } else if (((input.value.trim() || '').match(/\.(jpeg|png|jpg)$/g) || []).length < 1) {
-            addError(input, 'L\'estensione dell\'immagine non è supportata. L\'estensioni consentite sono .<abbr title="Joint Photographic Experts Group" xml:lang="en">jpeg</abbr>, .<abbr title="Joint Photographic Group" xml:lang="en">jpg</abbr>, .<abbr title="Portable Network Graphics" xml:lang="en">png</abbr>', tags);
+            addError(input, 'L\'immagine selezionata ha un\'estensione non supportata', tags);
             return false;
         } else if (((input.value.trim() || '').match(/\.(jpeg|png|jpg)\s[.(jpeg|png|jpg)]+/g) || []).length >= 1) {
             addError(input, 'È necessario selezionare una ed una sola immagine', tags);
@@ -445,7 +445,7 @@ function createImageElement(input, id) {
     var name = document.getElementById('title').value.trim();
 
     img.setAttribute('id', id);
-    img.setAttribute('class', ''); // FIXME: aggiungere la giusta classe
+    img.setAttribute('class', 'significantImage');
     img.setAttribute('alt', 'Immagine inserita per l\'opera ' + name);
     img.setAttribute('src', '');
 
@@ -515,7 +515,7 @@ function checkModifyArtworkImage(event) {
 
                 if (previousImage) {
                     previousImage.setAttribute('id', 'uploadedImageIE');
-                    previousImage.setAttribute('class', ''); // FIXME: aggiungere la giusta classe
+                    previousImage.setAttribute('class', 'significantImage');
                     previousImage.setAttribute('alt', 'Immagine inserita per l\'opera ' + nameIE);
                     previousImage.setAttribute('src', '');
                 }
@@ -765,13 +765,13 @@ function checkUserDate(input) {
     var date = input.value.trim();
 
     if (date.length === 0) {
-        addError(input, 'Non è possibile inserire una data di nascita vuota', 2);
+        addError(input, 'Non è possibile inserire una data di nascita vuota', 3);
         return false;
     } else if (!checkDateFormat(date)) {
-        addError(input, 'Non è possibile inserire una data di nascita espressa in un formato diverso da "gg-mm-aaaa"', 2);
+        addError(input, 'La data di nascita non rispetta il formato richiesto', 3);
         return false;
     } else if (!checkDateValidity(date)) {
-        addError(input, 'La data di nascita inserita non è valida', 2);
+        addError(input, 'La data di nascita inserita non è valida', 3);
         return false;
     } else {
         var birthDate = getDateFromString(date);
@@ -779,13 +779,13 @@ function checkUserDate(input) {
         var upperBound = new Date(parseInt('2006'), parseInt('11'), parseInt('31'));
 
         if (birthDate < lowerBound) {
-            addError(input, 'Non è possibile inserire una data di nascita precedente al 01-01-1900', 2);
+            addError(input, 'Non è possibile inserire una data di nascita precedente al 01-01-1900', 3);
             return false;
         } else if (birthDate > upperBound) {
-            addError(input, 'Non è possibile inserire una data di nascita successiva al 31-12-2006', 2);
+            addError(input, 'Non è possibile inserire una data di nascita successiva al 31-12-2006', 3);
             return false;
         } else {
-            removeError(input, 2);
+            removeError(input, 3);
             return true;
         }
     }
