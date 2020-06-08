@@ -11,13 +11,6 @@ function enterTouch(event) {
     }
 }
 
-function skipFocus(linkId) {
-    window.setTimeout(function () {
-        var href = document.getElementById(linkId).href.split('#');
-        document.getElementById(href[1]).focus();
-    }, 10);
-}
-
 /* GESTIONE DELLA TIPOLOGIA DELLE OPERE */
 function artworkStyleChanged(isModify) {
     var styleInput = document.getElementById('style');
@@ -130,7 +123,7 @@ function checkMapsSupport() {
 
 /* GESTIONE DELL'AGGIUNTA E DELLA RIMOZIONE DEGLI ERRORI DAI FORM */
 function removeError(input, tags) {
-    var parentNode = input.parentNode;
+    var parentNode = input.parentElement;
 
     if (parentNode.children.length > tags) {
         parentNode.removeChild(parentNode.children[1]);
@@ -140,8 +133,8 @@ function removeError(input, tags) {
 function addError(input, error, tags) {
     removeError(input, tags);
 
-    var parentNode = input.parentNode;
-    var span = document.createElement('p');
+    var parentNode = input.parentElement;
+    var span = document.createElement('span');
 
     span.className = 'formFieldError';
     span.insertAdjacentHTML('afterbegin', error);
@@ -161,7 +154,7 @@ function addRadioError(input, error) {
     removeRadioError(input);
 
     var parentNode = input.parentElement.parentElement.parentElement;
-    var span = document.createElement('p');
+    var span = document.createElement('span');
 
     span.className = 'formFieldError';
     span.insertAdjacentHTML('afterbegin', error);
@@ -170,7 +163,7 @@ function addRadioError(input, error) {
 }
 
 function removeSearchError(input) {
-    var parentNode = input.parentNode;
+    var parentNode = input.parentElement;
 
     while (parentNode.children.length > 6) {
         parentNode.removeChild(parentNode.children[parentNode.children.length - 1]);
@@ -180,8 +173,8 @@ function removeSearchError(input) {
 function addSearchError(input, error) {
     removeError(input);
 
-    var parentNode = input.parentNode;
-    var span = document.createElement('p');
+    var parentNode = input.parentElement;
+    var span = document.createElement('span');
 
     span.className = 'formFieldError';
     span.insertAdjacentHTML('afterbegin', error);
@@ -940,7 +933,7 @@ function checkUserPassword(input, tags) {
 
 function checkSamePassword(inputNewPassword, inputConfirmPassword) {
     if (inputNewPassword.value.trim() !== inputConfirmPassword.value.trim()) {
-        addError(inputConfirmPassword, 'Le <span xml:lang="en">password</span> inserite non sono uguali', 2);
+        addError(inputConfirmPassword, 'Le <span xml:lang="it">password</span> inserite non sono uguali', 2);
         return false;
     } else {
         removeError(inputConfirmPassword, 2);
@@ -950,7 +943,7 @@ function checkSamePassword(inputNewPassword, inputConfirmPassword) {
 
 function checkSameOldPassword(inputOldPassword, inputNewPassword, tags) {
     if (inputOldPassword.value.trim() === inputNewPassword.value.trim()) {
-        addError(inputNewPassword, 'La nuova <span xml:lang="en">password</span> non può essere uguale a quella corrente', tags);
+        addError(inputNewPassword, 'La nuova <span xml:lang="it">password</span> non può essere uguale a quella corrente', tags);
         return false;
     } else {
         removeError(inputNewPassword, tags);
@@ -1233,7 +1226,7 @@ function searchFormValidation() {
     if (filterResult && searchResult) {
         rule.style.height = '12.8em';
     } else {
-        rule.style.height = '13.0em';
+        rule.style.height = '14.5em';
     }
 
     return filterResult && searchResult;
