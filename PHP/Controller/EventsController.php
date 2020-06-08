@@ -158,7 +158,7 @@ class EventsController {
                      <a href="Evento.php?id=' . $row['ID'] . '\" aria-label="Vai all\'evento" title= ". $row[\'Titolo\'] . ">' . $row['Titolo'] . '</a>
                 </dt>
                 <dd>
-                    <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'evento">Salta l\'evento</a>
+                    <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" title="Vai all\'evento successivo" aria-label="Vai all\'evento successivo">Vai all\'evento successivo</a>
     
                     <dl>
                         <dt class="inlineDef">
@@ -211,7 +211,7 @@ class EventsController {
                      <a href="Evento.php?id=' . $row['ID'] . '\" title="Vai all\'evento ' . $row['Titolo'] . '" aria-label="Vai all\'evento ' . $row['Titolo'] . '">' . $row['Titolo'] . '</a>
                 </dt>
                 <dd>
-                    <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'evento">Salta l\'evento</a>
+                    <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" title="Vai all\'evento successivo" aria-label="Vai all\'evento successivo">Vai all\'evento successivo</a>
     
                     <dl>
                         <dt class="inlineDef">

@@ -7,7 +7,7 @@ class LoginController {
                 $login = '<div id="loginMenu">
                         <ul class="list">
                             <li>
-                                <a id="areaPersonale" class="button" href="AreaPersonale.php" title="Area personale" role="button" aria-label="Vai alla pagina del profilo utente">
+                                <a id="areaPersonale" class="button" href="AreaPersonale.php" title="Area personale" role="button" aria-label="Vai alla pagina dell\'area personale">
                                     Area personale
                                 </a>
                             </li>

@@ -186,7 +186,7 @@ class ArtworksController {
                      <a href="Opera.php?id=' . $row['ID'] . '" title="Vai all\'opera ' . $row['Titolo'] . '" aria-label="Vai all\'opera ' . $row['Titolo'] . '">' . $row['Titolo'] . '</a>
                 </dt>
                 <dd>
-                    <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'opera">Salta l\'opera</a>
+                    <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" title="Vai all\'opera successiva" aria-label="Vai all\'opera successiva">Vai all\'opera successiva</a>
                     <img class="previewOpera" alt="Immagine dell\'opera ' . $row['Titolo'] . '" src="../' . $row['Immagine'] . '"/>
                     <dl>
                         <dt class="inlineDef">
@@ -240,7 +240,7 @@ class ArtworksController {
                      <a href="Opera.php?id=' . $row['ID'] . '"  title="Vai all\'opera ' . $row['Titolo'] . '" aria-label="Vai all\'opera ' . $row['Titolo'] . '">' . $row['Titolo'] . '</a>
                 </dt>
                 <dd>
-                    <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'opera">Salta l\'opera</a>
+                    <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" title="Vai all\'opera successiva" aria-label="Vai all\'opera successiva">Vai all\'opera successiva</a>
                     <img class="previewOpera" alt="Immagine dell\'opera ' . $row['Titolo'] . '" src="../' . $row['Immagine'] . '"/>
                     <dl>
                         <dt class="inlineDef">

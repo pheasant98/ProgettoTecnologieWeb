@@ -84,7 +84,7 @@ class ReviewsController {
                     <a href="Recensione.php?id=' . $row['ID'] . '" aria-label="Vai alla recensione">' . $row['Oggetto'] . '</a>
                 </dt>
                 <dd>
-                    <a href="#' . ($result_set->num_rows == $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta la recensione">Salta la recensione</a>
+                    <a href="#' . ($result_set->num_rows == $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" title="Vai alla recensione successiva" aria-label="Vai alla recensione successiva">Vai alla recensione successiva</a>
     
                     <dl>
                         <dt class="inlineDef">
