@@ -11,7 +11,7 @@
 
 html,
 body {
-  font-size: 1em;
+  font-size: 1.1em;
   background-color: #fff;
   color: #000;
 }
@@ -31,8 +31,8 @@ a {
 }
 
 .title {
-  font-size: 2.5em;
-  line-height: 2em;
+  font-size: 2em;
+  line-height: 1.5em;
 }
 
 #content dt {
@@ -99,7 +99,9 @@ a {
   margin-bottom: 1em;
 }
 
-.separation li{
+.separation li {
+  padding-top: 0.2em;
+  padding-bottom: 1em;
   border-top: 2px solid #ccc;
 }
 
