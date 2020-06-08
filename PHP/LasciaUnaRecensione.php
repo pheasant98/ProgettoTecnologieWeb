@@ -40,13 +40,13 @@ $login = LoginController::getAuthenticationMenu();
 $breadcrumbs = '';
 if (isset($_SESSION['previous_page'])) {
     if ($_SESSION['previous_page'] === 'AreaPersonale') {
-        $breadcrumbs = '<a href="AreaPersonale.php" title="Area personale" aria-label="Vai alla pagina dell\'area personale">Area personale</a>';
+        $breadcrumbs = '<a href="AreaPersonale.php" title="Vai alla pagina dell\'area personale" aria-label="Vai alla pagina dell\'area personale">Area personale</a>';
     } else if ($_SESSION['previous_page'] === 'CosaDiconoDiNoi') {
         $page = '?page=' . $_SESSION['reviews_page'];
-        $breadcrumbs = '<a href="CosaDiconoDiNoi.php' . $page . '" title="Cosa dicono di noi" aria-label="Vai alla pagina cosa dicono di noi">Cosa dicono di noi</a>';
+        $breadcrumbs = '<a href="CosaDiconoDiNoi.php' . $page . '" title="Vai alla pagina cosa dicono di noi" aria-label="Vai alla pagina cosa dicono di noi">Cosa dicono di noi</a>';
     }
 } else {
-    $breadcrumbs = '<a href="CosaDiconoDiNoi.php?page=1" title="Cosa dicono di noi" aria-label="Vai alla pagina cosa dicono di noi">Cosa dicono di noi</a>';
+    $breadcrumbs = '<a href="CosaDiconoDiNoi.php?page=1" title="Vai alla pagina cosa dicono di noi" aria-label="Vai alla pagina cosa dicono di noi">Cosa dicono di noi</a>';
 }
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);

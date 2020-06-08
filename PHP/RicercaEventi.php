@@ -49,11 +49,11 @@ if ($event_count > 0) {
     $navigation_events_buttons = '<p class="buttonPosition">';
 
     if ($page > 1) {
-        $navigation_events_buttons .= '<a id="buttonBack" class="button" href="?search=' . $_GET['search'] . '&amp;page=' . ($page - 1) . '" title="Eventi precedenti" role="button" aria-label="Torna agli eventi precedenti"> &lt; Precedente</a>';
+        $navigation_events_buttons .= '<a id="buttonBack" class="button" href="?search=' . $_GET['search'] . '&amp;page=' . ($page - 1) . '" title="Torna agli eventi precedenti" role="button" aria-label="Torna agli eventi precedenti"> &lt; Precedente</a>';
     }
 
     if (($page * 5) < $event_count) {
-        $navigation_events_buttons .= '<a id="buttonNext" class="button" href="?search=' . $_GET['search'] . '&amp;page=' . ($page + 1) . '" title="Eventi successivi" role="button" aria-label="Vai agli eventi successivi"> Successivo &gt;</a>';
+        $navigation_events_buttons .= '<a id="buttonNext" class="button" href="?search=' . $_GET['search'] . '&amp;page=' . ($page + 1) . '" title="Vai agli eventi successivi" role="button" aria-label="Vai agli eventi successivi"> Successivo &gt;</a>';
     }
 
     $navigation_events_buttons .= '</p>';

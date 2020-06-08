@@ -49,11 +49,11 @@ if ($artwork_count > 0) {
     $navigation_artworks_buttons = '<p class="buttonPosition">';
 
     if ($page > 1) {
-        $navigation_artworks_buttons .= '<a id="buttonBack" class="button" href="?search=' . $_GET['search'] . '&amp;page=' . ($page - 1) . '" title="Opere precedenti" role="button" aria-label="Torna alle opere precedenti"> &lt; Precedenti</a>';
+        $navigation_artworks_buttons .= '<a id="buttonBack" class="button" href="?search=' . $_GET['search'] . '&amp;page=' . ($page - 1) . '" title="Torna alle opere precedenti" role="button" aria-label="Torna alle opere precedenti"> &lt; Precedenti</a>';
     }
 
     if (($page * 5) < $artwork_count) {
-        $navigation_artworks_buttons .= '<a id="buttonNext" class="button" href="?search=' . $_GET['search'] . '&amp;page=' . ($page + 1) . '" title="Opere successive" role="button" aria-label="Vai alle opere successive"> Successive &gt;</a>';
+        $navigation_artworks_buttons .= '<a id="buttonNext" class="button" href="?search=' . $_GET['search'] . '&amp;page=' . ($page + 1) . '" title="Vai alle opere successive" role="button" aria-label="Vai alle opere successive"> Successive &gt;</a>';
     }
 
     $navigation_artworks_buttons .= '</p>';

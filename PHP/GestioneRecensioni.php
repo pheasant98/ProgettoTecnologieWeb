@@ -66,11 +66,11 @@ if ($reviews_count > 0) {
 
     $navigation_reviews_buttons = '<p class="buttonPosition">';
     if ($page > 1) {
-        $navigation_reviews_buttons .= '<a id="buttonBack" class="button" href="?page=' . ($page - 1) . '" title="Recensioni precedenti" role="button" aria-label="Torna alle recensioni precedenti"> &lt; Precedenti</a>';
+        $navigation_reviews_buttons .= '<a id="buttonBack" class="button" href="?page=' . ($page - 1) . '" title="Torna alle recensioni precedenti" role="button" aria-label="Torna alle recensioni precedenti"> &lt; Precedenti</a>';
     }
 
     if (($page * 5) < $reviews_count) {
-        $navigation_reviews_buttons .= '<a id="buttonNext" class="button" href="?page=' . ($page + 1) . '" title="Recensioni successive" role="button" aria-label="Vai alle recensioni successive"> Successive &gt;</a>';
+        $navigation_reviews_buttons .= '<a id="buttonNext" class="button" href="?page=' . ($page + 1) . '" title="Vai alle recensioni successive" role="button" aria-label="Vai alle recensioni successive"> Successive &gt;</a>';
     }
     $navigation_reviews_buttons .= '</p>';
 

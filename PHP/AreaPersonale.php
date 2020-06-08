@@ -25,27 +25,27 @@ if (LoginController::isAdminUser()) {
     $functionalities = 'Ora che hai effettuato l\'accesso all\'area personale, puoi utilizzare il tuo <span xml:lang="en">account</span> per gestire gli utenti e i contenuti del sito.';
     $operations = '    
         <li>
-            <a id="ModificaAdmin" class="button userOperationButton" href="ModificaDatiUtente.php" title="Modifica dati profilo" role="button" aria-label="vai alla pagina di modifica dei dati utente">Modifica profilo</a>
+            <a id="ModificaAdmin" class="button userOperationButton" href="ModificaDatiUtente.php" title="Vai alla pagina di modifica dei dati utente" role="button" aria-label="Vai alla pagina di modifica dei dati utente">Modifica profilo</a>
         </li>
 
         <li>
-            <a id="InserisciOpera" class="button userOperationButton" href="InserisciOpera.php" title="Inserisci una nuova opera" role="button" aria-label="vai alla pagina per l\'inserimento di un\'opera">Inserisci opera</a>
+            <a id="InserisciOpera" class="button userOperationButton" href="InserisciOpera.php" title="Vai alla pagina per l\'inserimento di un\'opera" role="button" aria-label="Vai alla pagina per l\'inserimento di un\'opera">Inserisci opera</a>
         </li>
         
         <li>
-            <a id="InserisciEvento" class="button userOperationButton" href="InserisciEvento.php" title="Inserisci un nuovo evento" role="button" aria-label="vai alla pagina per l\'inserimento di un evento">Inserisci evento</a>
+            <a id="InserisciEvento" class="button userOperationButton" href="InserisciEvento.php" title="Vai alla pagina per l\'inserimento di un evento" role="button" aria-label="Vai alla pagina per l\'inserimento di un evento">Inserisci evento</a>
         </li>
 
         <li>
-            <a id="GestioneUtenti" class="button userOperationButton" href="GestioneUtenti.php" title="Gestisci gli utenti" role="button" aria-label="vai alla pagina per la gestione degli utenti">Gestione utenti</a>
+            <a id="GestioneUtenti" class="button userOperationButton" href="GestioneUtenti.php" title="Vai alla pagina per la gestione degli utenti" role="button" aria-label="Vai alla pagina per la gestione degli utenti">Gestione utenti</a>
         </li>
 
         <li>
-            <a id="GestioneContenuti" class="button userOperationButton" href="GestioneContenuti.php" title="Gestisci i contenuti" role="button" aria-label="vai alla pagina per la gestione dei contenuti">Gestione contenuti</a>
+            <a id="GestioneContenuti" class="button userOperationButton" href="GestioneContenuti.php" title="Vai alla pagina per la gestione dei contenuti" role="button" aria-label="Vai alla pagina per la gestione dei contenuti">Gestione contenuti</a>
         </li>
         
         <li>
-            <a href="GestioneRecensioni.php" class="button userOperationButton" title="Gestisci le recensioni" aria-label="vai alla pagina per la gestione delle recensioni">Gestisci recensioni</a>
+            <a href="GestioneRecensioni.php" class="button userOperationButton" title="Vai alla pagina per la gestione delle recensioni" aria-label="Vai alla pagina per la gestione delle recensioni">Gestisci recensioni</a>
         </li>
     ';
     $header_description = 'Visualizzazione del proprio profilo dove e possibile modificarlo, e possibile effettuare la gestione delle pagine presenti
@@ -54,15 +54,15 @@ if (LoginController::isAdminUser()) {
     $functionalities = 'Ora che hai effettuato l\'accesso al sito, puoi utilizzare il tuo <span xml:lang="en">account</span> per lasciare delle recensioni riguardo le visite che hai fatto al museo.';
     $operations = '
         <li>
-            <a href="ModificaDatiUtente.php" id="ModificaUser" class="button userOperationButton" title="Modifica dati profilo" aria-label="Vai alla pagina per la modifica dei dati del profilo">Modifica profilo</a>
+            <a href="ModificaDatiUtente.php" id="ModificaUser" class="button userOperationButton" title="Vai alla pagina per la modifica dei dati del profilo" aria-label="Vai alla pagina per la modifica dei dati del profilo">Modifica profilo</a>
         </li>
         
         <li>
-            <a href="LasciaUnaRecensione.php" class="button userOperationButton" title="Lascia una nuova recensione" aria-label="Vai alla pagina per lasciare una nuova recensione">Lascia una recensione</a>
+            <a href="LasciaUnaRecensione.php" class="button userOperationButton" title="Vai alla pagina per lasciare una nuova recensione" aria-label="Vai alla pagina per lasciare una nuova recensione">Lascia una recensione</a>
         </li>
         
         <li>
-            <a href="GestioneRecensioni.php" class="button userOperationButton" title="Gestisci le tue recensioni" aria-label="Vai alla pagina per la gestione delle recensioni lasciate">Gestisci le recensioni</a>
+            <a href="GestioneRecensioni.php" class="button userOperationButton" title="Vai alla pagina per la gestione delle recensioni lasciate" aria-label="Vai alla pagina per la gestione delle recensioni lasciate">Gestisci le recensioni</a>
         </li>
     ';
     $header_description = 'Visualizzazione del proprio profilo dove e possibile modificarlo e inoltre possibile gestire le proprie recensioni oltre ad effettuare di nuove';
