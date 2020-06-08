@@ -50,14 +50,14 @@ $breadcrumbs = '';
 if (isset($_SESSION['contentPage'])) {
     $breadcrumbs .= '?page=' . $_SESSION['contentPage'];
     if (isset($_SESSION['filter_content'])) {
-        $breadcrumbs .= '&filterContent='  . $_SESSION['filter_content'];
+        $breadcrumbs .= '&amp;filterContent='  . $_SESSION['filter_content'];
         if (isset($_SESSION['filter_content_type'])) {
-            $breadcrumbs .= '&filterContentType='  . $_SESSION['filter_content_type'];
+            $breadcrumbs .= '&amp;filterContentType='  . $_SESSION['filter_content_type'];
         } else {
-            $breadcrumbs .= '&filterContentType=NessunFiltro';
+            $breadcrumbs .= '&amp;filterContentType=NessunFiltro';
         }
     } else {
-        $breadcrumbs .= '&filterContent=NessunFiltro';
+        $breadcrumbs .= '&amp;filterContent=NessunFiltro';
     }
 } else {
     $breadcrumbs .= '?page=1';

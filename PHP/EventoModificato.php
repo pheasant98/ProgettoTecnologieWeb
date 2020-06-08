@@ -16,14 +16,14 @@ $breadcrumbs_content_management = '';
 if (isset($_SESSION['contentPage'])) {
     $breadcrumbs_content_management .= '?page=' . $_SESSION['contentPage'];
     if (isset($_SESSION['filter_content'])) {
-        $breadcrumbs_content_management .= '&filterContent='  . $_SESSION['filter_content'];
+        $breadcrumbs_content_management .= '&amp;filterContent='  . $_SESSION['filter_content'];
         if (isset($_SESSION['filter_content_type'])) {
-            $breadcrumbs_content_management .= '&filterContentType='  . $_SESSION['filter_content_type'];
+            $breadcrumbs_content_management .= '&amp;filterContentType='  . $_SESSION['filter_content_type'];
         } else {
-            $breadcrumbs_content_management .= '&filterContentType=NessunFiltro';
+            $breadcrumbs_content_management .= '&amp;filterContentType=NessunFiltro';
         }
     } else {
-        $breadcrumbs_content_management .= '&filterContent=NessunFiltro';
+        $breadcrumbs_content_management .= '&amp;filterContent=NessunFiltro';
     }
 } else {
     $breadcrumbs_content_management .= '?page=1';
