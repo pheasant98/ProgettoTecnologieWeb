@@ -18,6 +18,9 @@ body {
 
 a {
   color: #000;
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
 }
 
 /* Regole per il contenuto principale delle pagine */
@@ -65,22 +68,6 @@ a {
   background: none;
   font-size: 1em;
   margin: 0 2%;
-}
-
-.formFieldError,
-.error,
-.success{
-  display: block;
-  font-weight: bold;
-  color: #9F0000;
-}
-
-.error,.success{
-  text-align: center;
-}
-
-.success{
-  color:#006600;
 }
 
 .paragraph {
@@ -230,6 +217,11 @@ a {
 .skipInformation,
 .button,
 .userButton,
-.clause {
+.formFieldError,
+.error,
+.success,
+.hideLabel,
+.disable
+{
   display: none;
 }

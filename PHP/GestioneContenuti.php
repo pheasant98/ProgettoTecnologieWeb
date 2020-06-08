@@ -160,9 +160,9 @@ if (($artwork_count + $event_count) > 0) {
     $number_pages = ceil(($artwork_count + $event_count) / 5);
     if ($number_pages > 1) {
         if ($page === 1) {
-            $skip_contents = '<p class="skipDown">Ti trovi a pagina ' . $page . ' di ' . $number_pages . ':' . '</p> <a href="#buttonNext">vai ai pulsanti di navigazione</a>';
+            $skip_contents = '<p class="skipDown">Ti trovi a pagina ' . $page . ' di ' . $number_pages . ':' . '</p> <a class="disable" href="#buttonNext">vai ai pulsanti di navigazione</a>';
         } else {
-            $skip_contents = '<p class="skipDown">Ti trovi a pagina ' . $page . ' di ' . $number_pages . ':' . '</p> <a href="#buttonBack">vai ai pulsanti di navigazione</a>';
+            $skip_contents = '<p class="skipDown">Ti trovi a pagina ' . $page . ' di ' . $number_pages . ':' . '</p> <a class="disable" href="#buttonBack">vai ai pulsanti di navigazione</a>';
         }
     } else {
         $skip_contents = '<p>Ti trovi a pagina ' . $page . ' di ' . $number_pages . '.';

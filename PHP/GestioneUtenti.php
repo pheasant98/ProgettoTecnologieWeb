@@ -64,9 +64,9 @@ if ($user_count > 0) {
     $number_pages = ceil($user_count / 5);
     if ($number_pages > 1) {
         if ($page === 1) {
-            $skip_users = '<p class="skipDown">Ti trovi a pagina ' . $page . ' di ' . $number_pages . ':' . '</p> <a href="#buttonNext">vai ai pulsanti di navigazione</a>';
+            $skip_users = '<p class="skipDown">Ti trovi a pagina ' . $page . ' di ' . $number_pages . ':' . '</p> <a class="disable" href="#buttonNext">vai ai pulsanti di navigazione</a>';
         } else {
-            $skip_users = '<p class="skipDown">Ti trovi a pagina ' . $page . ' di ' . $number_pages . ':' . '</p> <a href="#buttonBack">vai ai pulsanti di navigazione</a>';
+            $skip_users = '<p class="skipDown">Ti trovi a pagina ' . $page . ' di ' . $number_pages . ':' . '</p> <a class="disable" href="#buttonBack">vai ai pulsanti di navigazione</a>';
         }
     } else {
         $skip_users = '<p>Ti trovi a pagina ' . $page . ' di ' . $number_pages . '.</p>';
