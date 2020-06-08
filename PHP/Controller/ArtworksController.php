@@ -2,6 +2,7 @@
 
 require_once ('Repository/ArtworksRepository.php');
 require_once ('Utilities/FileUtilities.php');
+require_once ('Utilities/InputCheckUtilities.php');
 
 class ArtworksController {
     private $artworks;
@@ -126,20 +127,31 @@ class ArtworksController {
     }
 
     public function addArtwork($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $user) {
+        $author = InputCheckUtilities::prepareStringForChecks($author);
+        $title = InputCheckUtilities::prepareStringForChecks($title);
+        $description = InputCheckUtilities::prepareStringForChecks($description);
+        $years = InputCheckUtilities::prepareStringForChecks($years);
+        $style = InputCheckUtilities::prepareStringForChecks($style);
+        $technique = InputCheckUtilities::prepareStringForChecks($technique);
+        $material = InputCheckUtilities::prepareStringForChecks($material);
+        $dimensions = InputCheckUtilities::prepareStringForChecks($dimensions);
+        $loan = InputCheckUtilities::prepareStringForChecks($loan);
+        $user = InputCheckUtilities::prepareStringForChecks($user);
+
         $message = $this->checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan);
 
         if ($message === '') {
             if($style === 'Dipinto') {
                 if ($this->artworks->postPainting($author, $title, $description, intval($years), $technique, $dimensions, $loan, $this->fileUtilities->getPath(), $user)) {
-                    $message = '<p class="success">L\'opera ' . $title . ' è stata inserita correttamente</p>';
+                    $message = '<p class="success">L\'opera ' . InputCheckUtilities::prepareStringForDisplay($title) . ' è stata inserita correttamente</p>';
                 } else {
-                    $message = '<p class="error">Non è stato possibile inserire l\'opera ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
+                    $message = '<p class="error">Non è stato possibile inserire l\'opera ' . InputCheckUtilities::prepareStringForDisplay($title) . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
                 }
             } else {
                 if ($this->artworks->postSculture($author, $title, $description, intval($years), $material, $dimensions, $loan, $this->fileUtilities->getPath(), $user)) {
-                    $message = '<p class="success">L\'opera ' . $title . ' è stata inserita correttamente</p>';
+                    $message = '<p class="success">L\'opera ' . InputCheckUtilities::prepareStringForDisplay($title) . ' è stata inserita correttamente</p>';
                 } else {
-                    $message = '<p class="error">Non è stato possibile inserire l\'opera ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
+                    $message = '<p class="error">Non è stato possibile inserire l\'opera ' . InputCheckUtilities::prepareStringForDisplay($title) . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
                 }
             }
         } else {
@@ -153,6 +165,7 @@ class ArtworksController {
     }
 
     public function getSearchedArtworksCount($search) {
+        $search = InputCheckUtilities::prepareStringForChecks($search);
         $result_set = $this->artworks->getSearchedArtworksCount($search);
         $count = $result_set->fetch_assoc()['Totale'];
         $result_set->free();
@@ -167,6 +180,7 @@ class ArtworksController {
     }
 
     public function getArtworksCountByStyle($style) {
+        $style = InputCheckUtilities::prepareStringForChecks($style);
         $result_set = $this->artworks->getArtworksCountByStyle($style);
         $count = $result_set->fetch_assoc()['Totale'];
         $result_set->free();
@@ -174,6 +188,8 @@ class ArtworksController {
     }
 
     public function getSearchedArtworks($search, $offset, $button) {
+        $search = InputCheckUtilities::prepareStringForChecks($search);
+
         $result_set = $this->artworks->getSearchedArtworks($search, $offset);
 
         $id = 'artwork';
@@ -183,31 +199,31 @@ class ArtworksController {
         while($row = $result_set->fetch_assoc()) {
             $content .= '
                 <dt id="'. $id . $counter . '" class="titleDef">
-                     <a href="Opera.php?id=' . $row['ID'] . '" title="Vai all\'opera ' . $row['Titolo'] . '" aria-label="Vai all\'opera ' . $row['Titolo'] . '">' . $row['Titolo'] . '</a>
+                     <a href="Opera.php?id=' . $row['ID'] . '" title="Vai all\'opera ' . InputCheckUtilities::prepareStringForDisplay($row['Titolo']) . '" aria-label="Vai all\'opera ' . InputCheckUtilities::prepareStringForDisplay($row['Titolo']) . '">' . InputCheckUtilities::prepareStringForDisplay($row['Titolo']) . '</a>
                 </dt>
                 <dd>
                     <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'opera">Salta l\'opera</a>
-                    <img class="previewOpera" alt="Immagine dell\'opera ' . $row['Titolo'] . '" src="../' . $row['Immagine'] . '"/>
+                    <img class="previewOpera" alt="Immagine dell\'opera ' . InputCheckUtilities::prepareStringForDisplay($row['Titolo']) . '" src="../' . $row['Immagine'] . '"/>
                     <dl>
                         <dt class="inlineDef">
                             Nome autore: 
                         </dt>
                         <dd class="definitionOpere">
-                            ' . $row['Autore'] . '
+                            ' . InputCheckUtilities::prepareStringForDisplay($row['Autore']) . '
                         </dd>
                         
                         <dt class="inlineDef">
                             Stile: 
                         </dt>
                         <dd class="definitionOpere">
-                            ' . $row['Stile'] . '
+                            ' . InputCheckUtilities::prepareStringForDisplay($row['Stile']) . '
                         </dd>
     
                         <dt class="inlineDef">
                             Data: 
                         </dt>
                         <dd class="definitionOpere">
-                            ' . $row['Datazione'] . '
+                            ' . InputCheckUtilities::prepareStringForDisplay($row['Datazione']) . '
                         </dd>
                     </dl>
                     
@@ -224,6 +240,8 @@ class ArtworksController {
     }
 
     public function getArtworks($style, $offset, $button) {
+        $style = InputCheckUtilities::prepareStringForChecks($style);
+
         if ($style === 'TutteLeOpere') {
             $result_set = $this->artworks->getArtworks($offset);
         } else {
@@ -237,31 +255,31 @@ class ArtworksController {
         while($row = $result_set->fetch_assoc()) {
             $content .= '
                 <dt id="' . $id . $counter . '" class="titleDef">
-                     <a href="Opera.php?id=' . $row['ID'] . '"  title="Vai all\'opera ' . $row['Titolo'] . '" aria-label="Vai all\'opera ' . $row['Titolo'] . '">' . $row['Titolo'] . '</a>
+                     <a href="Opera.php?id=' . $row['ID'] . '"  title="Vai all\'opera ' . InputCheckUtilities::prepareStringForDisplay($row['Titolo']) . '" aria-label="Vai all\'opera ' . InputCheckUtilities::prepareStringForDisplay($row['Titolo']) . '">' . InputCheckUtilities::prepareStringForDisplay($row['Titolo']) . '</a>
                 </dt>
                 <dd>
                     <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'opera">Salta l\'opera</a>
-                    <img class="previewOpera" alt="Immagine dell\'opera ' . $row['Titolo'] . '" src="../' . $row['Immagine'] . '"/>
+                    <img class="previewOpera" alt="Immagine dell\'opera ' . InputCheckUtilities::prepareStringForDisplay($row['Titolo']) . '" src="../' . $row['Immagine'] . '"/>
                     <dl>
                         <dt class="inlineDef">
                             Nome autore: 
                         </dt>
                         <dd class="definitionOpere">
-                            ' . $row['Autore'] . '
+                            ' . InputCheckUtilities::prepareStringForDisplay($row['Autore']) . '
                         </dd>
                         
                         <dt class="inlineDef">
                             Stile: 
                         </dt>
                         <dd class="definitionOpere">
-                            ' . $row['Stile'] . '
+                            ' . InputCheckUtilities::prepareStringForDisplay($row['Stile']) . '
                         </dd>
     
                         <dt class="inlineDef">
                             Data: 
                         </dt>
                         <dd class="definitionOpere">
-                            ' . $row['Datazione'] . '
+                            ' . InputCheckUtilities::prepareStringForDisplay($row['Datazione']) . '
                         </dd>
                     </dl>
                     
@@ -278,6 +296,8 @@ class ArtworksController {
     }
 
     public function getArtworksTitle($style, $offset) {
+        $style = InputCheckUtilities::prepareStringForChecks($style);
+
         if ($style === '') {
             $result_set = $this->artworks->getArtworks($offset);
         } else {
@@ -289,7 +309,7 @@ class ArtworksController {
         while($row = $result_set->fetch_assoc()) {
             $content .= '
                 <li>
-                    <a href="Opera.php?id=' . $row['ID'] . '" title="Vai all\'opera ' . $row['Titolo'] . '" aria-label="Vai all\'opera ' . $row['Titolo'] . '">' . $row['Titolo'] . '</a>
+                    <a href="Opera.php?id=' . $row['ID'] . '" title="Vai all\'opera ' . InputCheckUtilities::prepareStringForDisplay($row['Titolo']) . '" aria-label="Vai all\'opera ' . InputCheckUtilities::prepareStringForDisplay($row['Titolo']) . '">' . InputCheckUtilities::prepareStringForDisplay($row['Titolo']) . '</a>
                     
                     <form class="userButton" action="EliminaContenuto.php" method="post" role="form">
                         <fieldset class="hideRight">
@@ -319,6 +339,17 @@ class ArtworksController {
     }
 
     public function updateArtwork($id, $author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, $old_image, $user) {
+        $author = InputCheckUtilities::prepareStringForChecks($author);
+        $title = InputCheckUtilities::prepareStringForChecks($title);
+        $description = InputCheckUtilities::prepareStringForChecks($description);
+        $years = InputCheckUtilities::prepareStringForChecks($years);
+        $style = InputCheckUtilities::prepareStringForChecks($style);
+        $technique = InputCheckUtilities::prepareStringForChecks($technique);
+        $material = InputCheckUtilities::prepareStringForChecks($material);
+        $dimensions = InputCheckUtilities::prepareStringForChecks($dimensions);
+        $loan = InputCheckUtilities::prepareStringForChecks($loan);
+        $user = InputCheckUtilities::prepareStringForChecks($user);
+
         $message = $this->checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, true);
 
         if ($message === '') {
@@ -326,16 +357,16 @@ class ArtworksController {
                 if ($this->artworks->updateArtwork($id, $author, $title, $description, intval($years), $style, $technique, $material, $dimensions, $loan, $this->fileUtilities->getPath(), $user)) {
                     $message = '';
                 } else {
-                    $message = '<p class="error">Non è stato possibile aggiornare l\'opera ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
+                    $message = '<p class="error">Non è stato possibile aggiornare l\'opera ' . InputCheckUtilities::prepareStringForDisplay($title) . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
                 }
             } else {
-                $message = '<p class="error">Non è stato possibile aggiornare l\'opera ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
+                $message = '<p class="error">Non è stato possibile aggiornare l\'opera ' . InputCheckUtilities::prepareStringForDisplay($title) . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
             }
         } elseif ($message === 'NoNewImage') {
             if ($this->artworks->updateArtwork($id, $author, $title, $description, intval($years), $style, $technique, $material, $dimensions, $loan, substr($old_image, 3), $user)) {
                 $message = '';
             } else {
-                $message = '<p class="error">Non è stato possibile aggiornare l\'opera ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
+                $message = '<p class="error">Non è stato possibile aggiornare l\'opera ' . InputCheckUtilities::prepareStringForDisplay($title) . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
             }
         } else {
             $message = '<p><ul>' . $message;

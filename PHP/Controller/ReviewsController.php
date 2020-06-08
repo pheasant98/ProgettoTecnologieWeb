@@ -2,6 +2,7 @@
 
 require_once ('Repository/ReviewsRepository.php');
 require_once ('Utilities/DateUtilities.php');
+require_once ('Utilities/InputCheckUtilities.php');
 
 class ReviewsController {
     private $reviews;
@@ -39,13 +40,17 @@ class ReviewsController {
     }
 
     public function addReview($object, $content, $user) {
+        $object = InputCheckUtilities::prepareStringForChecks($object);
+        $content = InputCheckUtilities::prepareStringForChecks($content);
+        $user = InputCheckUtilities::prepareStringForChecks($user);
+
         $message = ReviewsController::checkInput($object, $content);
 
         if ($message === '') {
             if ($this->reviews->postReview($object, $content, $user)) {
-                $message = '<p class="success">Recensione ' . $object . ' inserita correttamente</p>';
+                $message = '<p class="success">Recensione ' . InputCheckUtilities::prepareStringForDisplay($object) . ' inserita correttamente</p>';
             } else {
-                $message = '<p class="error">Non è stato possibile inserire la recensione ' . $object . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
+                $message = '<p class="error">Non è stato possibile inserire la recensione ' . InputCheckUtilities::prepareStringForDisplay($object) . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
             }
         } else {
             $message = '<p><ul>' . $message;
@@ -65,6 +70,7 @@ class ReviewsController {
     }
 
     public function getUserReviewsCount($user) {
+        $user = InputCheckUtilities::prepareStringForChecks($user);
         $result_set = $this->reviews->getUserReviewsCount($user);
         $count = $result_set->fetch_assoc()['Totale'];
         $result_set->free();
@@ -81,7 +87,7 @@ class ReviewsController {
         while($row = $result_set->fetch_assoc()) {
             $content .= '
                 <dt id="' . $id . $counter . '" class="titleDef">
-                    <a href="Recensione.php?id=' . $row['ID'] . '" aria-label="Vai alla recensione">' . $row['Oggetto'] . '</a>
+                    <a href="Recensione.php?id=' . $row['ID'] . '" aria-label="Vai alla recensione">' . InputCheckUtilities::prepareStringForDisplay($row['Oggetto']) . '</a>
                 </dt>
                 <dd>
                     <a href="#' . ($result_set->num_rows == $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta la recensione">Salta la recensione</a>
@@ -91,7 +97,7 @@ class ReviewsController {
                             Utente: 
                         </dt>
                         <dd class="definition">
-                            ' . $row['Utente'] . '
+                            ' . InputCheckUtilities::prepareStringForDisplay($row['Utente']) . '
                         </dd>
                         
                         <dt class="inlineDef">
@@ -105,7 +111,7 @@ class ReviewsController {
                             Contenuto: 
                         </dt>
                         <dd class="definition">
-                            ' . substr($row['Contenuto'], 0, 150) . (strlen($row['Contenuto']) > 150 ? '...' : '') . '
+                            ' . InputCheckUtilities::prepareStringForDisplay(substr($row['Contenuto'], 0, 150) . (strlen($row['Contenuto']) > 150 ? '...' : '')). '
                         </dd>
                     </dl>
                 </dd>
@@ -127,14 +133,14 @@ class ReviewsController {
         while($row = $result_set->fetch_assoc()) {
             $content .= '
                 <li>
-                    <a href="Recensione.php?id=' . $row['ID'] . '" title="Vai alla pagina della recensione,' . $row['Oggetto'] . ' " aria-label="Vai alla pagina della recensione,' . $row['Oggetto'] . ' ">' . $row['Oggetto'] . '</a>
+                    <a href="Recensione.php?id=' . $row['ID'] . '" title="Vai alla pagina della recensione, ' . InputCheckUtilities::prepareStringForDisplay($row['Oggetto']) . ' " aria-label="Vai alla pagina della recensione, ' . InputCheckUtilities::prepareStringForDisplay($row['Oggetto']) . ' ">' . InputCheckUtilities::prepareStringForDisplay($row['Oggetto']) . '</a>
 
                     <form class="userButton" action="EliminaRecensione.php" method="post" role="form">
                         <fieldset class="hideRight">
                             <legend class="hideLegend">Pulsante di eliminazione della recensione</legend>
                             
                             <input type="hidden" name="id" value="' . $row['ID'] . '"/>
-                            <input class="button" name="submit" type="submit" value="Rimuovi" role="button" title="Rimunovi recensione" aria-label="Rimuovi recensione"/>
+                            <input class="button" name="submit" type="submit" value="Rimuovi" role="button" title="Rimuovi recensione" aria-label="Rimuovi recensione"/>
                         </fieldset>
                     </form>
                 </li>
@@ -154,7 +160,7 @@ class ReviewsController {
         while($row = $result_set->fetch_assoc()) {
             $content .= '
                 <li>
-                    <a href="Recensione.php?id=' . $row['ID'] . '" title="Vai alla pagina della recensione,' . $row['Oggetto'] . ' " aria-label="Vai alla pagina della recensione,' . $row['Oggetto'] . ' ">' . $row['Oggetto'] . '</a>
+                    <a href="Recensione.php?id=' . $row['ID'] . '" title="Vai alla pagina della recensione, ' . InputCheckUtilities::prepareStringForDisplay($row['Oggetto']) . ' " aria-label="Vai alla pagina della recensione, ' . InputCheckUtilities::prepareStringForDisplay($row['Oggetto']) . ' ">' . InputCheckUtilities::prepareStringForDisplay($row['Oggetto']) . '</a>
 
                     <form class="userButton" action="EliminaRecensione.php" method="post" role="form">
                         <fieldset class="hideRight">
@@ -163,7 +169,7 @@ class ReviewsController {
                             <input type="hidden" name="id" value="' . $row['ID'] . '"/>
                             
                             <a class="button" href="ModificaRecensione.php?id=' . $row['ID'] . '" title="Modifica dettagli recensione" role="button" aria-label="Modifica dettagli recensione">Modifica</a>
-                            <input class="button" name="submit" type="submit" value="Rimuovi" role="button" title="Rimunovi recensione" aria-label="Rimuovi recensione"/>
+                            <input class="button" name="submit" type="submit" value="Rimuovi" role="button" title="Rimuovi recensione" aria-label="Rimuovi recensione"/>
                         </fieldset>
                     </form>
                 </li>
@@ -183,13 +189,17 @@ class ReviewsController {
     }
 
     public function updateReview($id, $object, $description, $user) {
+        $object = InputCheckUtilities::prepareStringForChecks($object);
+        $description = InputCheckUtilities::prepareStringForChecks($description);
+        $user = InputCheckUtilities::prepareStringForChecks($user);
+
         $message = ReviewsController::checkInput($object, $description);
 
         if ($message === '') {
             if ($this->reviews->updateReview($id, $object, $description, $user)) {
                 $message = '';
             } else {
-                $message = '<p class="error">Non è stato possibile aggiornare la recensione ' . $object . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
+                $message = '<p class="error">Non è stato possibile aggiornare la recensione ' . InputCheckUtilities::prepareStringForDisplay($object) . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
             }
         } else {
             $message = '<p><ul>' . $message;

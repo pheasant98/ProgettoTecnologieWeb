@@ -1,7 +1,8 @@
 <?php
 
-require_once('Repository/EventsRepository.php');
+require_once ('Repository/EventsRepository.php');
 require_once ('Utilities/DateUtilities.php');
+require_once ('Utilities/InputCheckUtilities.php');
 
 class EventsController {
     private $events;
@@ -107,12 +108,20 @@ class EventsController {
     }
 
     public function addEvent($title, $description, $begin_date, $end_date, $type, $manager, $user) {
+        $title = InputCheckUtilities::prepareStringForChecks($title);
+        $description = InputCheckUtilities::prepareStringForChecks($description);
+        $begin_date = InputCheckUtilities::prepareStringForChecks($begin_date);
+        $end_date = InputCheckUtilities::prepareStringForChecks($end_date);
+        $type = InputCheckUtilities::prepareStringForChecks($type);
+        $manager = InputCheckUtilities::prepareStringForChecks($manager);
+        $user = InputCheckUtilities::prepareStringForChecks($user);
+
         $message = EventsController::checkInput($title, $description, $begin_date, $end_date, $type, $manager);
         if ($message === '') {
             if ($this->events->postEvent($title, $description, DateUtilities::italianEnglishDate($begin_date), DateUtilities::italianEnglishDate($end_date), $type, $manager, $user)) {
-                $message = '<p class="success">L\' evento ' . $title . ' è stato inserito correttamente</p>';
+                $message = '<p class="success">L\' evento ' . InputCheckUtilities::prepareStringForDisplay($title) . ' è stato inserito correttamente</p>';
             } else {
-                $message = '<p class="error">Non è stato possibile inserire l\'evento ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
+                $message = '<p class="error">Non è stato possibile inserire l\'evento ' . InputCheckUtilities::prepareStringForDisplay($title) . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
             }
         } else {
             $message = '<p><ul>' . $message;
@@ -125,6 +134,7 @@ class EventsController {
     }
 
     public function getSearchedEventsCount($search) {
+        $search = InputCheckUtilities::prepareStringForChecks($search);
         $result_set = $this->events->getSearchedEventsCount($search);
         $count = $result_set->fetch_assoc()['Totale'];
         $result_set->free();
@@ -139,6 +149,7 @@ class EventsController {
     }
 
     public function getEventsCountByType($type) {
+        $type = InputCheckUtilities::prepareStringForChecks($type);
         $result_set = $this->events->getEventsCountByType($type);
         $count = $result_set->fetch_assoc()['Totale'];
         $result_set->free();
@@ -146,6 +157,7 @@ class EventsController {
     }
 
     public function getSearchedEvents($search, $offset, $button) {
+        $search = InputCheckUtilities::prepareStringForChecks($search);
         $result_set = $this->events->getSearchedEvents($search, $offset);
 
         $id = 'event';
@@ -155,7 +167,7 @@ class EventsController {
         while($row = $result_set->fetch_assoc()) {
             $content .= '
                 <dt id="' . $id . $counter . '" class="titleDef">
-                     <a href="Evento.php?id=' . $row['ID'] . '\" aria-label="Vai all\'evento" title= ". $row[\'Titolo\'] . ">' . $row['Titolo'] . '</a>
+                     <a href="Evento.php?id=' . $row['ID'] . '\" aria-label="Vai all\'evento" title="' . InputCheckUtilities::prepareStringForDisplay($row['Titolo']) . '">' . InputCheckUtilities::prepareStringForDisplay($row['Titolo']) . '</a>
                 </dt>
                 <dd>
                     <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'evento">Salta l\'evento</a>
@@ -179,10 +191,9 @@ class EventsController {
                             Tipologia: 
                         </dt>
                         <dd class="definition">
-                            ' . $row['Tipologia'] . '
+                            ' . InputCheckUtilities::prepareStringForDisplay($row['Tipologia']) . '
                         </dd>
                     </dl>
-                    
                 </dd>
             ';
 
@@ -195,6 +206,7 @@ class EventsController {
     }
 
     public function getEvents($type, $offset, $button) {
+        $type = InputCheckUtilities::prepareStringForChecks($type);
         if($type === 'TuttiGliEventi') {
             $result_set = $this->events->getEvents($offset);
         } else {
@@ -208,7 +220,7 @@ class EventsController {
         while($row = $result_set->fetch_assoc()) {
             $content .= '
                 <dt id="' . $id . $counter . '" class="titleDef">
-                     <a href="Evento.php?id=' . $row['ID'] . '\" title="Vai all\'evento ' . $row['Titolo'] . '" aria-label="Vai all\'evento ' . $row['Titolo'] . '">' . $row['Titolo'] . '</a>
+                     <a href="Evento.php?id=' . $row['ID'] . '\" title="Vai all\'evento ' . InputCheckUtilities::prepareStringForDisplay($row['Titolo']) . '" aria-label="Vai all\'evento ' . InputCheckUtilities::prepareStringForDisplay($row['Titolo']) . '">' . InputCheckUtilities::prepareStringForDisplay($row['Titolo']) . '</a>
                 </dt>
                 <dd>
                     <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'evento">Salta l\'evento</a>
@@ -232,7 +244,7 @@ class EventsController {
                             Tipologia: 
                         </dt>
                         <dd class="definition">
-                            ' . $row['Tipologia'] . '
+                            ' . InputCheckUtilities::prepareStringForDisplay($row['Tipologia']) . '
                         </dd>
                     </dl>
                 </dd>
@@ -247,6 +259,8 @@ class EventsController {
     }
 
     public function getEventsTitle($type, $offset, $quantity = 5) {
+        $type = InputCheckUtilities::prepareStringForChecks($type);
+
         if($type === '') {
             $result_set = $this->events->getEventsOrderByTitle($offset, $quantity);
         } else {
@@ -258,7 +272,7 @@ class EventsController {
         while($row = $result_set->fetch_assoc()) {
             $content .= '
                 <li>
-                    <a href="Evento.php?id=' . $row['ID'] . '" title="Vai all\'evento ' . $row['Titolo'] . '" aria-label="Vai all\'evento ' . $row['Titolo'] . '" > ' . $row['Titolo'] . '</a>
+                    <a href="Evento.php?id=' . $row['ID'] . '" title="Vai all\'evento ' . InputCheckUtilities::prepareStringForDisplay($row['Titolo']) . '" aria-label="Vai all\'evento ' . InputCheckUtilities::prepareStringForDisplay($row['Titolo']) . '" > ' . InputCheckUtilities::prepareStringForDisplay($row['Titolo']) . '</a>
                     
                     <form class="userButton" action="EliminaContenuto.php" method="post" role="form">
                         <fieldset class="hideRight">
@@ -287,13 +301,21 @@ class EventsController {
     }
 
     public function updateEvent($id, $title, $description, $begin_date, $end_date, $type, $manager, $user) {
+        $title = InputCheckUtilities::prepareStringForChecks($title);
+        $description = InputCheckUtilities::prepareStringForChecks($description);
+        $begin_date = InputCheckUtilities::prepareStringForChecks($begin_date);
+        $end_date = InputCheckUtilities::prepareStringForChecks($end_date);
+        $type = InputCheckUtilities::prepareStringForChecks($type);
+        $manager = InputCheckUtilities::prepareStringForChecks($manager);
+        $user = InputCheckUtilities::prepareStringForChecks($user);
+
         $message = EventsController::checkInput($title, $description, $begin_date, $end_date, $type, $manager);
 
         if ($message === '') {
             if ($this->events->updateEvent($id, $title, $description, DateUtilities::italianEnglishDate($begin_date), DateUtilities::italianEnglishDate($end_date), $type, $manager, $user)) {
                 $message = '';
             } else {
-                $message = '<p class="error">Non è stato possibile aggiornare l\'evento ' . $title . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
+                $message = '<p class="error">Non è stato possibile aggiornare l\'evento ' . InputCheckUtilities::prepareStringForDisplay($title) . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
             }
         } else {
             $message = '<p><ul>' . $message;

@@ -2,6 +2,7 @@
 
 require_once ('Repository/UsersRepository.php');
 require_once ('Utilities/DateUtilities.php');
+require_once ('Utilities/InputCheckUtilities.php');
 
 class UsersController {
     private $users;
@@ -88,7 +89,7 @@ class UsersController {
         return $message;
     }
 
-    function checkUsernameAndPasswordForInsert($mail, $username, $password, $repeated_password) {
+    private function checkUsernameAndPasswordForInsert($mail, $username, $password, $repeated_password) {
         $message = '';
 
         if (strlen($mail) === 0) {
@@ -128,7 +129,7 @@ class UsersController {
         return $message;
     }
 
-    function checkPasswordForUpdate($mail, $username, $old_password, $new_password, $repeated_password) {
+    private function checkPasswordForUpdate($mail, $username, $old_password, $new_password, $repeated_password) {
         $message = '';
 
         if (!$this->isOldMail($mail, $username)) {
@@ -179,6 +180,15 @@ class UsersController {
     }
 
     public function addUser($name, $surname, $sex, $date, $mail, $username, $password, $repeated_password) {
+        $name = InputCheckUtilities::prepareStringForChecks($name);
+        $surname = InputCheckUtilities::prepareStringForChecks($surname);
+        $sex = InputCheckUtilities::prepareStringForChecks($sex);
+        $date = InputCheckUtilities::prepareStringForChecks($date);
+        $mail = InputCheckUtilities::prepareStringForChecks($mail);
+        $username = InputCheckUtilities::prepareStringForChecks($username);
+        $password = InputCheckUtilities::prepareStringForChecks($password);
+        $repeated_password = InputCheckUtilities::prepareStringForChecks($repeated_password);
+
         $message = $this->checkInput($name, $surname, $sex, $date);
         $message .= $this->checkUsernameAndPasswordForInsert($mail, $username, $password, $repeated_password);
 
@@ -187,7 +197,7 @@ class UsersController {
             if ($this->users->postUser($name, $surname, DateUtilities::italianEnglishDate($date), $sex, $username, $mail, $hashed_password)) {
                 $message = '';
             } else {
-                $message = '<p class="error">Non è stato possibile registrare l\'utente ' . $username . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
+                $message = '<p class="error">Non è stato possibile registrare l\'utente ' . InputCheckUtilities::prepareStringForDisplay($username) . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
             }
         } else {
             $message = '<p><ul>' . $message;
@@ -214,12 +224,12 @@ class UsersController {
         while($row = $result_set->fetch_assoc()) {
             $content .= '
                 <li>
-                    <a href="Utente.php?user=' . $row['Username'] . '" title="Vai alla pagina dell\'utente ' .  $row['Username'] . '" aria-label="Vai alla pagina dell\'utente ' .  $row['Username'] . '">' .  $row['Username'] . '</a>
+                    <a href="Utente.php?user=' . InputCheckUtilities::prepareStringForDisplay($row['Username']) . '" title="Vai alla pagina dell\'utente ' .  InputCheckUtilities::prepareStringForDisplay($row['Username']) . '" aria-label="Vai alla pagina dell\'utente ' .  InputCheckUtilities::prepareStringForDisplay($row['Username']) . '">' .  InputCheckUtilities::prepareStringForDisplay($row['Username']) . '</a>
 
                     <form class="userButton" action="EliminaUtente.php" method="post" role="form">
                         <fieldset class="hideRight">
                             <legend class="hideLegend">Pulsante di eliminazione dell\'utente</legend>
-                            <input type="hidden" name="username" value="' . $row['Username'] . '"/>
+                            <input type="hidden" name="username" value="' . InputCheckUtilities::prepareStringForDisplay($row['Username']) . '"/>
                             <input class="button" name="submit" type="submit" value="Rimuovi" role="button" title="Rimuovi utente" aria-label="Rimuovi utente"/>
                         </fieldset>
                     </form>
@@ -232,6 +242,7 @@ class UsersController {
     }
 
     public function getUser($username) {
+        $username = InputCheckUtilities::prepareStringForChecks($username);
         $result_set = $this->users->getUser($username);
         $row = $result_set->fetch_assoc();
         $result_set->free();
@@ -239,6 +250,8 @@ class UsersController {
     }
 
     public function getUserByCredential($username, $password) {
+        $username = InputCheckUtilities::prepareStringForChecks($username);
+        $password = InputCheckUtilities::prepareStringForChecks($password);
         $hashed_password = hash('sha256', $password);
         $result_set = $this->users->getUserByCredential($username, $hashed_password);
         $row = $result_set->fetch_assoc();
@@ -247,6 +260,16 @@ class UsersController {
     }
 
     public function updateUser($username, $name, $surname, $date, $sex, $mail, $old_password, $new_password, $repeated_password) {
+        $name = InputCheckUtilities::prepareStringForChecks($name);
+        $surname = InputCheckUtilities::prepareStringForChecks($surname);
+        $sex = InputCheckUtilities::prepareStringForChecks($sex);
+        $date = InputCheckUtilities::prepareStringForChecks($date);
+        $mail = InputCheckUtilities::prepareStringForChecks($mail);
+        $username = InputCheckUtilities::prepareStringForChecks($username);
+        $old_password = InputCheckUtilities::prepareStringForChecks($old_password);
+        $new_password = InputCheckUtilities::prepareStringForChecks($new_password);
+        $repeated_password = InputCheckUtilities::prepareStringForChecks($repeated_password);
+
         $message = $this->checkInput($name, $surname, $sex, $date);
         $message .= $this->checkPasswordForUpdate($mail, $username, $old_password, $new_password, $repeated_password);
         if ($message === '') {
@@ -254,14 +277,14 @@ class UsersController {
                 if ($this->users->updateUserWithoutPassword($username, $name, $surname, DateUtilities::italianEnglishDate($date), $sex, $mail)) {
                     $message = '';
                 } else {
-                    $message = '<p class="error">Non è stato possibile aggiornare l\'utente ' . $username . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
+                    $message = '<p class="error">Non è stato possibile aggiornare l\'utente ' . InputCheckUtilities::prepareStringForDisplay($username) . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
                 }
             } else {
                 $hashed_password = hash('sha256', $new_password);
                 if ($this->users->updateUser($username, $name, $surname, DateUtilities::italianEnglishDate($date), $sex, $mail, $hashed_password)) {
                     $message = '';
                 } else {
-                    $message = '<p class="error">Non è stato possibile aggiornare l\'utente ' . $username . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
+                    $message = '<p class="error">Non è stato possibile aggiornare l\'utente ' . InputCheckUtilities::prepareStringForDisplay($username) . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
                 }
             }
         } else {
