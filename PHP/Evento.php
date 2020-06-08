@@ -8,6 +8,8 @@ if (!isset($_GET['id'])) {
 
 require_once ('Controller/LoginController.php');
 require_once ('Utilities/DateUtilities.php');
+require_once ('Utilities/InputCheckUtilities.php');
+
 $document = file_get_contents('../HTML/Evento.html');
 
 require_once ('Controller/EventsController.php');
@@ -19,12 +21,12 @@ $event = $controller->getEvent($_GET['id']);
 
 unset($controller);
 
-$event_title = $event['Titolo'];
-$event_type = $event['Tipologia'];
+$event_title = InputCheckUtilities::prepareStringForDisplay($event['Titolo']);
+$event_type = InputCheckUtilities::prepareStringForDisplay($event['Tipologia']);
 $event_begin_date = DateUtilities::englishItalianDate($event['DataInizio']);
 $event_end_date = DateUtilities::englishItalianDate($event['DataFine']);
-$event_manager = $event['Organizzatore'];
-$event_description = $event['Descrizione'];
+$event_manager = InputCheckUtilities::prepareStringForDisplay($event['Organizzatore']);
+$event_description = InputCheckUtilities::prepareStringForDisplay($event['Descrizione']);
 $breadcrumbs = '';
 $searchText = '';
 $searchFilterOpera = 'selected="selected" ';

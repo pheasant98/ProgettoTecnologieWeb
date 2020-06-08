@@ -6,6 +6,8 @@ if (!isset($_GET['id'])) {
     header('Location: Errore.php');
 }
 
+require_once ('Utilities/InputCheckUtilities.php');
+
 require_once ('Controller/LoginController.php');
 $document = file_get_contents('../HTML/Opera.html');
 
@@ -18,16 +20,16 @@ $artwork = $controller->getArtwork($_GET['id']);
 
 unset($controller);
 
-$artwork_title = $artwork['Titolo'];
-$artwork_img = $artwork['Immagine'];
-$artwork_author = $artwork['Autore'];
-$artwork_years = $artwork['Datazione'];
-$artwork_style = $artwork['Stile'];
-$artwork_technique = $artwork['Tecnica'];
-$artwork_material = $artwork['Materiale'];
-$artwork_dimension = $artwork['Dimensioni'];
+$artwork_title = InputCheckUtilities::prepareStringForDisplay($artwork['Titolo']);
+$artwork_img = InputCheckUtilities::prepareStringForDisplay($artwork['Immagine']);
+$artwork_author = InputCheckUtilities::prepareStringForDisplay($artwork['Autore']);
+$artwork_years = InputCheckUtilities::prepareStringForDisplay($artwork['Datazione']);
+$artwork_style = InputCheckUtilities::prepareStringForDisplay($artwork['Stile']);
+$artwork_technique = InputCheckUtilities::prepareStringForDisplay($artwork['Tecnica']);
+$artwork_material = InputCheckUtilities::prepareStringForDisplay($artwork['Materiale']);
+$artwork_dimension = InputCheckUtilities::prepareStringForDisplay($artwork['Dimensioni']);
 $artwork_loan = ($artwork['Prestito'] == 1 ? 'Si' : 'No');
-$artwork_description = $artwork['Descrizione'];
+$artwork_description = InputCheckUtilities::prepareStringForDisplay($artwork['Descrizione']);
 
 $breadcrumbs = '';
 $searchText = '';

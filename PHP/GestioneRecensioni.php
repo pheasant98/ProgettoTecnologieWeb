@@ -4,6 +4,7 @@ session_start();
 
 require_once ('Controller/LoginController.php');
 require_once ('Controller/ReviewsController.php');
+require_once ('Utilities/InputCheckUtilities.php');
 
 if (!LoginController::isAuthenticatedUser()) {
     header('Location: Errore.php');
@@ -19,9 +20,9 @@ if (!LoginController::isAdminUser()) {
 $deleted = '';
 if (isset($_SESSION['reviewDeleted']) && isset($_SESSION['reviewDeletedError'])) {
     if ($_SESSION['reviewDeletedError']) {
-        $deleted = '<p class="success">La recensione ' . $_SESSION['reviewDeleted'] . ' è stata eliminata correttamente.</p>';
+        $deleted = '<p class="success">La recensione ' . InputCheckUtilities::prepareStringForDisplay($_SESSION['reviewDeleted']) . ' è stata eliminata correttamente.</p>';
     } else {
-        $deleted = '<p class="error">Non è stato possibile eliminare la recensione' . $_SESSION['reviewDeleted'] . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
+        $deleted = '<p class="error">Non è stato possibile eliminare la recensione' . InputCheckUtilities::prepareStringForDisplay($_SESSION['reviewDeleted']) . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
     }
 
     unset($_SESSION['reviewDeleted']);

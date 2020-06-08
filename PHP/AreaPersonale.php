@@ -3,6 +3,7 @@
 session_start();
 
 require_once ('Utilities/DateUtilities.php');
+require_once ('Utilities/InputCheckUtilities.php');
 require_once ('Controller/LoginController.php');
 require_once ('Controller/UsersController.php');
 
@@ -74,11 +75,11 @@ $login = LoginController::getAuthenticationMenu(false);
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
 $document = str_replace("<span id='headerDescriptionPlaceholder'/>", $header_description, $document);
 $document = str_replace("<span id='justRegisteredWelcomePlaceholder'/>", $welcome, $document);
-$document = str_replace("<span id='userNamePlaceholder'/>", $user['Nome'], $document);
-$document = str_replace("<span id='userSurnamePlaceholder'/>", $user['Cognome'], $document);
+$document = str_replace("<span id='userNamePlaceholder'/>", InputCheckUtilities::prepareStringForDisplay($user['Nome']), $document);
+$document = str_replace("<span id='userSurnamePlaceholder'/>", InputCheckUtilities::prepareStringForDisplay($user['Cognome']), $document);
 $document = str_replace("<span id='userSexPlaceholder'/>", $user['Sesso'] === 'M' ? 'Maschile' : ($user['Sesso'] === 'F' ? 'Femminile' : 'Non specificato'), $document);
 $document = str_replace("<span id='userBirthDatePlaceholder'/>", DateUtilities::englishItalianDate($user['DataNascita']), $document);
-$document = str_replace("<span id='userMailPlaceholder'/>", $user['Email'], $document);
+$document = str_replace("<span id='userMailPlaceholder'/>", InputCheckUtilities::prepareStringForDisplay($user['Email']), $document);
 $document = str_replace("<span id='functionalitiesPlaceholder'/>", $functionalities, $document);
 $document = str_replace("<span id='operationsPlaceholder'/>", $operations, $document);
 

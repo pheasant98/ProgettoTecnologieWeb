@@ -1,6 +1,7 @@
 <?php
 
 require_once ('Controller/LoginController.php');
+require_once ('Utilities/InputCheckUtilities.php');
 
 session_start();
 
@@ -17,7 +18,7 @@ $review_id = '?id=' . $_SESSION['review_id'];
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
 $document = str_replace("<span id='listBreadcrumbsPlaceholder'/>", $reviews_page, $document);
 $document = str_replace("<span id='modifyBreadcrumbsPlaceholder'/>", $review_id, $document);
-$document = str_replace("<span id='reviewPlaceholder'/>", $_SESSION['review_title'], $document);
+$document = str_replace("<span id='reviewPlaceholder'/>", InputCheckUtilities::prepareStringForDisplay($_SESSION['review_title']), $document);
 
 echo $document;
 

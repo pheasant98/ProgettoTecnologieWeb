@@ -1,6 +1,7 @@
 <?php
 
 require_once ('Controller/LoginController.php');
+require_once ('Utilities/InputCheckUtilities.php');
 
 session_start();
 
@@ -13,7 +14,7 @@ $login = LoginController::getAuthenticationMenu();
 $username = $_SESSION['username'];
 
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
-$document = str_replace("<span id='usernamePlaceholder'/>", $username, $document);
+$document = str_replace("<span id='usernamePlaceholder'/>", InputCheckUtilities::prepareStringForDisplay($username), $document);
 
 echo $document;
 

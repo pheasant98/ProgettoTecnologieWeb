@@ -2,6 +2,7 @@
 
 require_once ('Controller/LoginController.php');
 require_once ('Controller/ArtworksController.php');
+require_once ('Utilities/InputCheckUtilities.php');
 
 session_start();
 
@@ -72,7 +73,7 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Inserisci') {
     unset($artworksController);
 }
 
-if ($message === '' || $message === '<p class="success">L\'opera ' . $title . ' è stata inserita correttamente</p>') {
+if ($message === '' || $message === '<p class="success">L\'opera ' . InputCheckUtilities::prepareStringForDisplay((InputCheckUtilities::prepareStringForChecks($title))) . ' è stata inserita correttamente</p>') {
     $author = '';
     $title = '';
     $description = '';
