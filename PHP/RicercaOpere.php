@@ -6,6 +6,7 @@ if (!isset($_GET['search'])) {
     header('Location: Errore.php');
 }
 
+require_once ('Utilities/InputCheckUtilities.php');
 require_once ('Controller/ArtworksController.php');
 $controller = new ArtworksController();
 if (strlen($_GET['search']) > 64) {
@@ -93,7 +94,7 @@ if ($error_length === '') {
 }
 
 $document = str_replace("<span id='skipArtworksPlaceholder'/>", $skip_artworks, $document);
-$document = str_replace("<span id='searchTextPlaceholder'/>", $_SESSION['search_artwork_string'], $document);
+$document = str_replace("<span id='searchTextPlaceholder'/>", InputCheckUtilities::prepareStringForDisplay($_SESSION['search_artwork_string']), $document);
 $document = str_replace("<span id='resultListPlaceholder'/>", $artwork_list, $document);
 $document = str_replace("<span id='navigationArtworksButtonsPlaceholder'/>", $navigation_artworks_buttons, $document);
 

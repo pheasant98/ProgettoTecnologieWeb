@@ -1,6 +1,7 @@
 <?php
 
 require_once ('Controller/LoginController.php');
+require_once ('Utilities/InputCheckUtilities.php');
 
 session_start();
 
@@ -33,7 +34,7 @@ $breadcrumbs_artwork_modify_id = '?id=' . $_SESSION['artwork_id'];
 $document = str_replace("<span id='loginMenuPlaceholder'/>", $login, $document);
 $document = str_replace("<span id='listBreadcrumbsPlaceholder'/>", $breadcrumbs_content_management, $document);
 $document = str_replace("<span id='modifyBreadcrumbsPlaceholder'/>", $breadcrumbs_artwork_modify_id, $document);
-$document = str_replace("<span id='artworkTitlePlaceholder'/>", $_SESSION['artwork_title'], $document);
+$document = str_replace("<span id='artworkTitlePlaceholder'/>", InputCheckUtilities::prepareStringForDisplay($_SESSION['artwork_title']), $document);
 
 echo $document;
 

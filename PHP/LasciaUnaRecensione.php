@@ -2,6 +2,7 @@
 
 require_once ('Controller/LoginController.php');
 require_once ('Controller/ReviewsController.php');
+require_once ('Utilities/InputCheckUtilities.php');
 
 session_start();
 
@@ -29,7 +30,7 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Invia') {
     unset($reviewsController);
 }
 
-if ($message === '' || $message === '<p class="success">Recensione ' . $title . ' inserita correttamente</p>') {
+if ($message === '' || $message === '<p class="success">Recensione ' . InputCheckUtilities::prepareStringForDisplay((InputCheckUtilities::prepareStringForChecks($title))) . ' inserita correttamente</p>') {
     $title = '';
     $content = '';
 }

@@ -23,7 +23,7 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Modifica') {
     $name = $_POST['name'];
     $surname = $_POST['surname'];
     if ($_POST['sex'] === 'Maschile') {
-       $sex = 'M';
+        $sex = 'M';
     } elseif ($_POST['sex'] === 'Femminile') {
         $sex = 'F';
     } else {

@@ -3,6 +3,7 @@
 require_once ('Controller/ArtworksController.php');
 require_once ('Controller/EventsController.php');
 require_once ('Controller/LoginController.php');
+require_once ('Utilities/InputCheckUtilities.php');
 
 session_start();
 
@@ -55,15 +56,15 @@ $deleted = '';
 if (isset($_SESSION['contentDeleted']) && isset($_SESSION['deleted_type']) && isset($_SESSION['contentDeletedError'])) {
     if ($_SESSION['deleted_type'] === 'Opera') {
         if ($_SESSION['contentDeletedError']) {
-            $deleted = '<p class="success">L\'opera ' . $_SESSION['contentDeleted'] . ' è stata eliminata correttamente</p>';
+            $deleted = '<p class="success">L\'opera ' . InputCheckUtilities::prepareStringForDisplay($_SESSION['contentDeleted']) . ' è stata eliminata correttamente</p>';
         } else {
-            $deleted = '<p class="error">Non è stato possibile eliminare l\'opera ' . $_SESSION['contentDeleted'] . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
+            $deleted = '<p class="error">Non è stato possibile eliminare l\'opera ' . InputCheckUtilities::prepareStringForDisplay($_SESSION['contentDeleted']) . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
         }
     } else if ($_SESSION['deleted_type'] === 'Evento') {
         if ($_SESSION['contentDeletedError']) {
-            $deleted = '<p class="success">L\'evento ' . $_SESSION['contentDeleted'] . ' è stato eliminato correttamente</p>';
+            $deleted = '<p class="success">L\'evento ' . InputCheckUtilities::prepareStringForDisplay($_SESSION['contentDeleted']) . ' è stato eliminato correttamente</p>';
         } else {
-            $deleted = '<p class="error">Non è stato possibile eliminare l\'evento ' . $_SESSION['contentDeleted'] . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
+            $deleted = '<p class="error">Non è stato possibile eliminare l\'evento ' . InputCheckUtilities::prepareStringForDisplay($_SESSION['contentDeleted']) . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
         }
     }
 

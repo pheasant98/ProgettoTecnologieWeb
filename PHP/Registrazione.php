@@ -2,6 +2,7 @@
 
 require_once ('Controller/LoginController.php');
 require_once ('Controller/UsersController.php');
+require_once ('Utilities/InputCheckUtilities.php');
 
 session_start();
 
@@ -59,7 +60,7 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Registrati') {
     unset($users_controller);
 
     if ($message === '') {
-        $_SESSION['username'] = $_POST['username'];
+        $_SESSION['username'] = InputCheckUtilities::prepareStringForChecks($_POST['username']);
         $_SESSION['just_registered'] = true;
 
         header('Location: AreaPersonale.php');
