@@ -11,13 +11,6 @@ function enterTouch(event) {
     }
 }
 
-function skipFocus(linkId) {
-    window.setTimeout(function () {
-        var href = document.getElementById(linkId).href.split('#');
-        document.getElementById(href[1]).focus();
-    }, 10);
-}
-
 /* GESTIONE DELLA TIPOLOGIA DELLE OPERE */
 function artworkStyleChanged(isModify) {
     var styleInput = document.getElementById('style');

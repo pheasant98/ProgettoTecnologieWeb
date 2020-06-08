@@ -132,7 +132,7 @@
                         </p>
                         <p>
                             <label id="labelYears" class="labelPosition" for="years">Datazione</label>
-                            <label class="clause" for="years">La datazione deve essere inserita nel seguente formato: <abbr title="anno">aaaa</abbr></label>
+                            <p class="clause">La datazione deve essere inserita nel seguente formato: <abbr title="anno">aaaa</abbr></p>
                             <input id="years" class="formElement" name="years" type="text" value="<span id='yearsValuePlaceholder'/>" aria-label="Modifica l'anno dell'opera, valore attuale <span id='yearsValuePlaceholder'/>" aria-required="true"/>
                         </p>
                     </fieldset>
@@ -173,7 +173,7 @@
                         </p>
                         <p>
                             <label id="labelSize" class="labelPosition" for="dimensions">Dimensioni</label>
-                            <label class="clause" for="dimensions">Le dimensioni devono essere inserite nel seguente formato: altezza x larghezza</label>
+                            <p class="clause">Le dimensioni devono essere inserite nel seguente formato: altezza x larghezza</p>
                             <input id="dimensions" class="formElement" name="dimensions" type="text" value="<span id='dimensionsValuePlaceholder'/>" aria-label="Inserisci le dimensioni, valore attuale <span id='dimensionsValuePlaceholder'/>"/>
                         </p>
                     </fieldset>
@@ -203,8 +203,8 @@
                         </p>
                         <p>
                             <label id="labelImageUpload" class="labelPosition" for="imageUpload">Scegliere l'immagine</label>
-                            <label class="clause" for="imageUpload">Se non si desidera modificare l'immagine lasciare vuoto questo campo</label>
-                            <label class="clause" for="imageUpload">La dimensione massima consentita per l'immagine è 500<abbr title="Kilo Bytes" xml:lang="en">KB</abbr>, le estensioni supportate sono .<abbr title="Joint Photographic Experts Group" xml:lang="en">jpeg</abbr>, .<abbr title="Joint Photographic Group" xml:lang="en">jpg</abbr>, .<abbr title="Portable Network Graphics" xml:lang="en">png</abbr></label>
+                            <p class="clause">Se non si desidera modificare l'immagine lasciare vuoto questo campo</p>
+                            <p class="clause">La dimensione massima consentita per l'immagine è 500<abbr title="Kilo Bytes" xml:lang="en">KB</abbr>, le estensioni supportate sono .<abbr title="Joint Photographic Experts Group" xml:lang="en">jpeg</abbr>, .<abbr title="Joint Photographic Group" xml:lang="en">jpg</abbr>, .<abbr title="Portable Network Graphics" xml:lang="en">png</abbr></p>
                             <input id="imageUpload" class="formElement" name="image" type="file" accept=".jpg, .jpeg, .png" aria-label="Modifica l'immagine dell'opera" aria-required="true" onchange="return checkModifyArtworkImage(event)"/>
                             <input id="previousImage" name="previousImage" type="hidden" value="../<span id='artworkImgPlaceholder'/>"/>
                             <img id="uploadedImage" class="significantImage" alt="Immagine dell'opera <span id='titleValuePlaceholder'/>" src="../<span id='artworkImgPlaceholder'/>"/>
