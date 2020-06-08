@@ -11,13 +11,6 @@ function enterTouch(event) {
     }
 }
 
-function skipFocus(linkId) {
-    window.setTimeout(function () {
-        var href = document.getElementById(linkId).href.split('#');
-        document.getElementById(href[1]).focus();
-    }, 10);
-}
-
 /* GESTIONE DELLA TIPOLOGIA DELLE OPERE */
 function artworkStyleChanged(isModify) {
     var styleInput = document.getElementById('style');
@@ -130,7 +123,7 @@ function checkMapsSupport() {
 
 /* GESTIONE DELL'AGGIUNTA E DELLA RIMOZIONE DEGLI ERRORI DAI FORM */
 function removeError(input, tags) {
-    var parentNode = input.parentNode;
+    var parentNode = input.parentElement;
 
     if (parentNode.children.length > tags) {
         parentNode.removeChild(parentNode.children[1]);
@@ -140,7 +133,7 @@ function removeError(input, tags) {
 function addError(input, error, tags) {
     removeError(input, tags);
 
-    var parentNode = input.parentNode;
+    var parentNode = input.parentElement;
     var span = document.createElement('span');
 
     span.className = 'formFieldError';
@@ -170,7 +163,7 @@ function addRadioError(input, error) {
 }
 
 function removeSearchError(input) {
-    var parentNode = input.parentNode;
+    var parentNode = input.parentElement;
 
     while (parentNode.children.length > 6) {
         parentNode.removeChild(parentNode.children[parentNode.children.length - 1]);
@@ -180,7 +173,7 @@ function removeSearchError(input) {
 function addSearchError(input, error) {
     removeError(input);
 
-    var parentNode = input.parentNode;
+    var parentNode = input.parentElement;
     var span = document.createElement('span');
 
     span.className = 'formFieldError';
