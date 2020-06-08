@@ -25,29 +25,29 @@
         <div id="header" role="banner">
             <h1 id="logoImage" class="backgroundImage" title="Immagine del logo TecArt" role="img" aria-label="Immagine del logo TecArt"> <span xml:lang="en">TecArt</span> </h1>
 
-            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="0" onclick="touch();" onkeydown="enterTouch(event);">
+            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, clicca sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, clicca sopra per aprire il menu" tabindex="0" onclick="touch();" onkeydown="enterTouch(event);">
                 Menu ad <span xml:lang="en">hamburger</span>
             </span>
 
             <span id='loginMenuPlaceholder'/>
 
-            <form id="search" name="search" action="Ricerca.php" method="post" role="search" aria-label="Form per la ricerca tra i contenuti del sito" onsubmit="return searchFormValidation();">
+            <form id="search" name="search" action="Ricerca.php" method="post" title="Form per la ricerca tra i contenuti del sito" role="search" aria-label="Form per la ricerca tra i contenuti del sito" onsubmit="return searchFormValidation();">
                 <fieldset id="searchBox">
                     <legend class="hideLegend">Ricerca</legend>
                     <label class="hideLabel" for="filterSearch">filtro per la ricerca</label>
-                    <select id="filterSearch" name="filter" aria-label="Seleziona il filtro per la ricerca">
+                    <select id="filterSearch" name="filter" title="Seleziona il filtro per la ricerca" aria-label="Seleziona il filtro per la ricerca">
                         <option selected="selected" value="Opera">Opera</option>
                         <option value="Evento">Evento</option>
                     </select>
 
                     <label class="hideLabel" for="searchText">Cerca nel sito</label>
-                    <input id="searchText" name="search" type="text" aria-label="Casella di ricerca"/>
-                    <input id="buttonSubmit" name="submit" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
+                    <input id="searchText" name="search" type="text" title="Casella di ricerca" aria-label="Casella di ricerca"/>
+                    <input id="buttonSubmit" name="submit" type="submit" value="Cerca" title="Pulsante per la ricerca" aria-label="Pulsante per la ricerca"/>
                 </fieldset>
             </form>
         </div>
 
-        <div id="breadcrumbs" aria-label="breadcrumbs">
+        <div id="breadcrumbs" title="Breadcrumbs" aria-label="Breadcrumbs">
 
             <p>
                 <a class="skipInformation" href="#menu" title="Vai al menu" aria-label="Vai al menu">Vai al menu</a>
@@ -57,39 +57,39 @@
                 Ti trovi in:
                 <a href="HomePage.php" aria-label="Vai alla pagina homepage del museo">Home</a>
                 &gt;&gt;
-                <a href="AreaPersonale.php" title="Area personale" aria-label="Vai alla pagina dell'area personale">Area personale</a>
+                <a href="AreaPersonale.php" title="Vai alla pagina dell'area personale" aria-label="Vai alla pagina dell'area personale">Area personale</a>
                 &gt;&gt;
-                <a href="GestioneContenuti.php<span id='breadcrumbsPlaceholder'/>" aria-label="Vai alla pagina di gestione dei contenuti">Gestione contenuti</a>
+                <a href="GestioneContenuti.php<span id='breadcrumbsPlaceholder'/>" title="Vai alla pagina di gestione dei contenuti" aria-label="Vai alla pagina di gestione dei contenuti">Gestione contenuti</a>
                 &gt;&gt;
                 <strong>Modifica opera</strong>
             </p>
         </div>
 
-        <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
+        <div id="menu" role="navigation" title="Menu per la navigazione nel sito" aria-label="Menu per la navigazione nel sito">
             <ul>
                 <li>
                     <a id="skipMenu" class="skipInformation" href="#content" title="Vai al contenuto" aria-label="Vai al contenuto">Vai al contenuto</a>
                 </li>
 
                 <li>
-                    <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
+                    <a href="HomePage.php" title="Vai alla pagina homepage del museo" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
                 </li>
 
                 <li>
-                    <a href="Opere.php" title="Opere" aria-label="Vai alla pagina delle opere">Opere</a>
+                    <a href="Opere.php" title="Vai alla pagina delle opere" aria-label="Vai alla pagina delle opere">Opere</a>
                 </li>
 
                 <li>
-                    <a href="Eventi.php" title="Eventi" aria-label="Vai alla pagina degli eventi">Eventi</a>
+                    <a href="Eventi.php" title="Vai alla pagina degli eventi" aria-label="Vai alla pagina degli eventi">Eventi</a>
                 </li>
 
                 <li>
-                    <a href="CosaDiconoDiNoi.php" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni">Cosa
+                    <a href="CosaDiconoDiNoi.php" title="Vai alla pagina delle recensioni" aria-label="Vai alla pagina delle recensioni">Cosa
                         dicono di noi</a>
                 </li>
 
                 <li>
-                    <a href="Contatti.php" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti">Contatti</a>
+                    <a href="Contatti.php" title="Vai alla pagina dei contatti" aria-label="Vai alla pagina dei contatti">Contatti</a>
                 </li>
             </ul>
         </div>
@@ -113,7 +113,7 @@
 
                         <p>
                             <label id="labelAutore" for="author">Autore</label>
-                            <input id="author" class="formElement" name="author" type="text" value="<span id='authorValuePlaceholder'/>" aria-label="Modifica l'autore dell'opera, valore attuale <span id='authorValuePlaceholder'/>" aria-required="true"/>
+                            <input id="author" class="formElement" name="author" type="text" value="<span id='authorValuePlaceholder'/>" title="Modifica l'autore dell'opera, valore attuale <span id='authorValuePlaceholder'/>" aria-label="Modifica l'autore dell'opera, valore attuale <span id='authorValuePlaceholder'/>" aria-required="true"/>
                         </p>
 
                         <p>
@@ -121,7 +121,7 @@
                         </p>
                         <p>
                             <label id="labelTitle" for="title">Titolo</label>
-                            <input id="title" class="formElement" name="title" type="text" value="<span id='titleValuePlaceholder'/>" aria-label="Modifica il titolo dell'opera, valore attuale <span id='titleValuePlaceholder'/>" aria-required="true"/>
+                            <input id="title" class="formElement" name="title" type="text" value="<span id='titleValuePlaceholder'/>" title="Modifica il titolo dell'opera, valore attuale <span id='titleValuePlaceholder'/>" aria-label="Modifica il titolo dell'opera, valore attuale <span id='titleValuePlaceholder'/>" aria-required="true"/>
                         </p>
 
                         <p>
@@ -129,7 +129,7 @@
                         </p>
                         <p>
                             <label id="labelDescription" for="operaDescriptionArea">Descrizione</label>
-                            <textarea id="operaDescriptionArea" class="descriptionArea" name="description" rows="10" cols="70" aria-label="Modifica la descrizione'/>" aria-required="true"><span id='descriptionValuePlaceholder'/></textarea>
+                            <textarea id="operaDescriptionArea" class="descriptionArea" name="description" rows="10" cols="70" title="Modifica la descrizione'/>" aria-label="Modifica la descrizione'/>" aria-required="true"><span id='descriptionValuePlaceholder'/></textarea>
                         </p>
 
                         <p>
@@ -137,8 +137,8 @@
                         </p>
                         <p>
                             <label id="labelYears" class="labelPosition" for="years">Datazione</label>
-                            <span class="clause">La datazione deve essere inserita nel seguente formato: <abbr title="anno">aaaa</abbr></span>
-                            <input id="years" class="formElement" name="years" type="text" value="<span id='yearsValuePlaceholder'/>" aria-label="Modifica l'anno dell'opera, valore attuale <span id='yearsValuePlaceholder'/>" aria-required="true"/>
+                            <span class="clause">La datazione deve essere inserita nel seguente formato: <abbr title="anno">aaaa</abbr>.</span>
+                            <input id="years" class="formElement" name="years" type="text" value="<span id='yearsValuePlaceholder'/>" title="Modifica l'anno dell'opera, valore attuale <span id='yearsValuePlaceholder'/> "aria-label="Modifica l'anno dell'opera, valore attuale <span id='yearsValuePlaceholder'/>" aria-required="true"/>
                         </p>
                     </fieldset>
 
@@ -151,7 +151,7 @@
                         <p>
                             <label id="labelStyle" for="style">Stile</label>
 
-                            <select id="style" class="formElement" name="style" aria-label="Modifica lo stile artistico" aria-required="true" onchange="artworkStyleChanged(true);">
+                            <select id="style" class="formElement" name="style" title="Modifica lo stile artistico" aria-label="Modifica lo stile artistico" aria-required="true" onchange="artworkStyleChanged(true);">
                                 <option value="Dipinto"<span id='paintingStyleSelectedPlaceholder'/>>Dipinto</option>
                                 <option value="Scultura"<span id='scultureStyleSelectedPlaceholder'/>>Scultura</option>
                             </select>
@@ -162,15 +162,15 @@
                         </p>
                         <p<span id='hideTechniqueValuePlaceholder'/>>
                             <label id="labelTechnique" for="technique">Tecnica</label>
-                            <input id="technique" class="formElement" name="technique" type="text" value="<span id='techniqueValuePlaceholder'/>" aria-label="Modifica la tecnica di realizzazione, valore attuale <span id='techniqueValuePlaceholder'/>" aria-required="true"/>
+                            <input id="technique" class="formElement" name="technique" type="text" value="<span id='techniqueValuePlaceholder'/>" title="Modifica la tecnica di realizzazione, valore attuale <span id='techniqueValuePlaceholder'/>" aria-label="Modifica la tecnica di realizzazione, valore attuale <span id='techniqueValuePlaceholder'/>" aria-required="true"/>
                         </p>
 
                         <p<span id='hideSkipTechniqueValuePlaceholder'/>>
-                            <a id="postTechniqueSkip" class="skipInformation" href="#buttonConfirm" title="Vai alla conferma delle modifiche" aria-label="Vai alla conferma delle modifiche ">Vai alla conferma delle modifiche</a>
+                            <a id="postTechniqueSkip" class="skipInformation" href="#buttonConfirm" title="Vai alla conferma delle modifiche" aria-label="Vai alla conferma delle modifiche">Vai alla conferma delle modifiche</a>
                         </p>
                         <p<span id='hideMaterialValuePlaceholder'/>>
                             <label id="labelMaterial" for="material">Materiale</label>
-                            <input id="material" class="formElement" name="material" type="text" value="<span id='materialValuePlaceholder'/>" aria-label="Modifica il materiale di realizzazione, valore attuale <span id='materialValuePlaceholder'/>" aria-required="true"/>
+                            <input id="material" class="formElement" name="material" type="text" value="<span id='materialValuePlaceholder'/>" title="Modifica il materiale di realizzazione, valore attuale <span id='materialValuePlaceholder'/> "aria-label="Modifica il materiale di realizzazione, valore attuale <span id='materialValuePlaceholder'/>" aria-required="true"/>
                         </p>
 
                         <p<span id='hideSkipMaterialValuePlaceholder'/>>
@@ -178,12 +178,12 @@
                         </p>
                         <p>
                             <label id="labelSize" class="labelPosition" for="dimensions">Dimensioni</label>
-                            <span class="clause">Le dimensioni devono essere inserite nel seguente formato: altezza x larghezza</span>
-                            <input id="dimensions" class="formElement" name="dimensions" type="text" value="<span id='dimensionsValuePlaceholder'/>" aria-label="Inserisci le dimensioni, valore attuale <span id='dimensionsValuePlaceholder'/>"/>
+                            <span class="clause">Le dimensioni devono essere inserite nel seguente formato: altezza x larghezza.</span>
+                            <input id="dimensions" class="formElement" name="dimensions" type="text" value="<span id='dimensionsValuePlaceholder'/>" title="Inserisci le dimensioni, valore attuale <span id='dimensionsValuePlaceholder'/> "aria-label="Inserisci le dimensioni, valore attuale <span id='dimensionsValuePlaceholder'/>"/>
                         </p>
                     </fieldset>
 
-                    <fieldset id="fieldLoan" class="fieldset">
+                    <fieldset id="fieldLoan" class="fieldset" aria-required="true">
                         <legend>Opera in prestito</legend>
 
                         <p>
@@ -191,11 +191,11 @@
                         </p>
                         <ul class="list">
                             <li>
-                                <input id="loanYes" name="loan" value="Si" type="radio"<span id='loanYesCheckedPlaceholder'/>aria-label="Pulsante per dire si al prestito"/>
+                                <input id="loanYes" name="loan" value="Si" type="radio" title="Pulsante per dire si al prestito" aria-label="Pulsante per dire si al prestito"<span id='loanYesCheckedPlaceholder'/>/>
                                 <label id="labelLoanYes" for="loanYes">Sì</label>
                             </li>
                             <li>
-                                <input id="loanNo" name="loan" value="No" type="radio"<span id='loanNoCheckedPlaceholder'/>aria-label="Pulsante per dire no al prestito"/>
+                                <input id="loanNo" name="loan" value="No" type="radio" title="Pulsante per dire no al prestito" aria-label="Pulsante per dire no al prestito"<span id='loanNoCheckedPlaceholder'/>/>
                                 <label id="labelLoanNo" for="loanNo">No</label>
                             </li>
                         </ul>
@@ -208,9 +208,9 @@
                         </p>
                         <p>
                             <label id="labelImageUpload" class="labelPosition" for="imageUpload">Scegliere l'immagine</label>
-                            <span class="clause">Se non si desidera modificare l'immagine lasciare vuoto questo campo</span>
-                            <span class="clause">La dimensione massima consentita per l'immagine è 500<abbr title="Kilo Bytes" xml:lang="en">KB</abbr>, le estensioni supportate sono .<abbr title="Joint Photographic Experts Group" xml:lang="en">jpeg</abbr>, .<abbr title="Joint Photographic Group" xml:lang="en">jpg</abbr>, .<abbr title="Portable Network Graphics" xml:lang="en">png</abbr></span>
-                            <input id="imageUpload" class="formElement" name="image" type="file" accept=".jpg, .jpeg, .png" aria-label="Modifica l'immagine dell'opera" aria-required="true" onchange="return checkModifyArtworkImage(event)"/>
+                            <span class="clause">Se non si desidera modificare l'immagine lasciare vuoto questo campo.</span>
+                            <span class="clause">La dimensione massima consentita per l'immagine è 500<abbr title="Kilo Bytes" xml:lang="en">KB</abbr>, le estensioni supportate sono .<abbr title="Joint Photographic Experts Group" xml:lang="en">jpeg</abbr>, .<abbr title="Joint Photographic Group" xml:lang="en">jpg</abbr>, .<abbr title="Portable Network Graphics" xml:lang="en">png</abbr>.</span>
+                            <input id="imageUpload" class="formElement" name="image" type="file" accept=".jpg, .jpeg, .png" title="Modifica l'immagine dell'opera" aria-label="Modifica l'immagine dell'opera" onchange="return checkModifyArtworkImage(event)"/>
                             <input id="previousImage" name="previousImage" type="hidden" value="../<span id='artworkImgPlaceholder'/>"/>
                             <img id="uploadedImage" class="significantImage" alt="Immagine dell'opera <span id='titleValuePlaceholder'/>" src="../<span id='artworkImgPlaceholder'/>"/>
                         </p>
@@ -218,7 +218,7 @@
 
                     <p class="buttonPosition">
                         <input class="button" name="cancel" type="reset" value="Annulla" aria-label="Annulla le modifiche apportate" onclick="resetImage(true);"/>
-                        <input id="buttonConfirm" class="button" name="submit" type="submit" value="Modifica" aria-label="Invia le modifiche apportate"/>
+                        <input id="buttonConfirm" class="button" name="submit" type="submit" value="Modifica" title="Invia le modifiche apportate" aria-label="Invia le modifiche apportate"/>
                     </p>
                 </fieldset>
             </form>
@@ -228,7 +228,7 @@
             </a>
         </div>
 
-        <div id="footer" aria-label="footer">
+        <div id="footer" title="footer" aria-label="footer">
             <p>
                 Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
             </p>

@@ -52,11 +52,11 @@ if ($user_count > 0) {
     $navigation_users_buttons = '<p class="buttonPosition">';
 
     if ($page > 1) {
-        $navigation_users_buttons .= '<a id="buttonBack" class="button" href="?page=' . ($page - 1) . '" title="Utenti precedenti" role="button" aria-label="Torna agli utenti precedenti"> &lt; Precedente</a>';
+        $navigation_users_buttons .= '<a id="buttonBack" class="button" href="?page=' . ($page - 1) . '" title="Torna agli utenti precedenti" role="button" aria-label="Torna agli utenti precedenti"> &lt; Precedente</a>';
     }
 
     if (($page * 5) < $user_count) {
-        $navigation_users_buttons .= '<a id="buttonNext" class="button" href="?page=' . ($page + 1) . '" title="Utenti successivi" role="button" aria-label="Vai agli utenti successivi"> Successivo &gt;</a>';
+        $navigation_users_buttons .= '<a id="buttonNext" class="button" href="?page=' . ($page + 1) . '" title="Vai agli utenti successivi" role="button" aria-label="Vai agli utenti successivi"> Successivo &gt;</a>';
     }
 
     $navigation_users_buttons .= '</p>';

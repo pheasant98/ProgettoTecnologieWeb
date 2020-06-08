@@ -25,30 +25,30 @@
 <body>
 <div id="header" role="banner">
     <h1 id="logoImage" class="backgroundImage" title="Immagine del logo TecArt" role="img" aria-label="Immagine del logo TecArt"> <span xml:lang="en">TecArt</span> </h1>
-    <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="0" onclick="touch();" onkeydown="enterTouch(event);">
+    <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, clicca sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, clicca sopra per aprire il menu" tabindex="0" onclick="touch();" onkeydown="enterTouch(event);">
         Menu ad <span xml:lang="en">hamburger</span>
     </span>
 
     <span id='loginMenuPlaceholder'/>
 
-    <form id="search" name="search" action="Ricerca.php" method="post" role="search" aria-label="Form per la ricerca tra i contenuti del sito" onsubmit="return searchFormValidation();">
+    <form id="search" name="search" action="Ricerca.php" method="post" title="Form per la ricerca tra i contenuti del sito" role="search" aria-label="Form per la ricerca tra i contenuti del sito" onsubmit="return searchFormValidation();">
         <fieldset id="searchBox">
             <legend class="hideLegend">Ricerca</legend>
 
             <label class="hideLabel" for="filterSearch">filtro per la ricerca</label>
-            <select id="filterSearch" name="filter" aria-label="Seleziona il filtro per la ricerca">
+            <select id="filterSearch" name="filter" title="Seleziona il filtro per la ricerca" aria-label="Seleziona il filtro per la ricerca">
                 <option selected="selected" value="Opera">Opera</option>
                 <option value="Evento">Evento</option>
             </select>
 
             <label class="hideLabel" for="searchText">Cerca nel sito</label>
-            <input id="searchText" name="search" type="text" aria-label="Casella di ricerca"/>
-            <input id="buttonSubmit" name="submit" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
+            <input id="searchText" name="search" type="text" title="Casella di ricerca" aria-label="Casella di ricerca"/>
+            <input id="buttonSubmit" name="submit" type="submit" value="Cerca" title="Pulsante per la ricerca" aria-label="Pulsante per la ricerca"/>
         </fieldset>
     </form>
 </div>
 
-<div id="breadcrumbs" aria-label="breadcrumbs">
+<div id="breadcrumbs" title="Breadcrumbs" aria-label="Breadcrumbs">
 
     <p>
         <a class="skipInformation" href="#menu" title="Vai al menu" aria-label="Vai al menu">Vai al menu</a>
@@ -60,31 +60,31 @@
     </p>
 </div>
 
-<div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
+<div id="menu" role="navigation" title="Menu per la navigazione nel sito" aria-label="Menu per la navigazione nel sito">
     <ul>
         <li>
             <a id="skipMenu" class="skipInformation" href="#content" title="Vai al contenuto" aria-label="Vai al contenuto">Vai al contenuto</a>
         </li>
 
         <li>
-            <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
+            <a href="HomePage.php" title="Vai alla pagina homepage del museo" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
         </li>
 
         <li>
-            <a href="Opere.php" title="Opere" aria-label="Vai alla pagina delle opere">Opere</a>
+            <a href="Opere.php" title="Vai alla pagina delle opere" aria-label="Vai alla pagina delle opere">Opere</a>
         </li>
 
         <li>
-            <a href="Eventi.php" title="Eventi" aria-label="Vai alla pagina degli eventi">Eventi</a>
+            <a href="Eventi.php" title="Vai alla pagina degli eventi" aria-label="Vai alla pagina degli eventi">Eventi</a>
         </li>
 
         <li>
-            <a href="CosaDiconoDiNoi.php" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni">Cosa
+            <a href="CosaDiconoDiNoi.php" title="Vai alla pagina delle recensioni" aria-label="Vai alla pagina delle recensioni">Cosa
                 dicono di noi</a>
         </li>
 
         <li>
-            <a href="Contatti.php" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti">Contatti</a>
+            <a href="Contatti.php" title="Vai alla pagina dei contatti" aria-label="Vai alla pagina dei contatti">Contatti</a>
         </li>
     </ul>
 </div>
@@ -104,7 +104,7 @@
     </a>
 </div>
 
-<div id="footer" aria-label="footer">
+<div id="footer" title="footer" aria-label="footer">
     <p>
         Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
     </p>
