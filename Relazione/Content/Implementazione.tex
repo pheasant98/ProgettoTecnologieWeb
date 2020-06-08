@@ -3,42 +3,73 @@
 
 \subsection{HTML}
 \label{implementazione-html}
+Per la struttura statica delle pagine del sito è stato usato XHTML. Si è scelto questo linguaggio perché supportato da gran parte dei browser, anche nelle loro versioni meno recenti, e perché regolato da una sintassi molto rigida, che rende quasi univoca l'implementazione dei diversi elementi.È stato scartato HTML5 perché tutte le funzionalità necessarie allo sviluppo del sito erano già offerte da XHTML.
+
+La parte statica delle pagine è composta da header, breadcrumb (nella struttura, non sempre nel contenuto), struttura del content e footer.
+
+Per garantire la separazione tra contenuto e presentazione non sono stati usati tag XHTML di stile nè è stato inserito codice CSS all'interno dei file \textit{.html}. Si è inoltre evitato di inserire tag XHTML strutturali col solo scopo di usarli come base per le regole CSS. 
 
 \subsubsection{Strumenti}
 \label{implementazione-html-strumenti}
 
 \paragraph{w3schools HTML reference}
 \label{implementazione-html-strumenti-w3schools-reference}
+Per valutare la compatibilità dei tag utilizzati rispetto ai vari browser, anche nelle loro versioni meno recenti, ci si è affidati al sito di \textit{w3schools}, che riporta, per ogni tag XHTML, le informazioni di compatibilità.
 
 
 \subsection{CSS}
 \label{implementazione-css}
+Per la definizione della grafica del sito è stato usato CSS3. Nella scelta delle regole CSS si è cercato di garantire l'accessibilità ad utenti affetti da disabilità visive non completamente invalidanti e di evitare effetti grafici che avrebbero potuto causare disagio ad utenti affetti da disturbi comportamentali
 
 \subsubsection{Strumenti}
 \label{implementazione-css-strumenti}
 
 \paragraph{w3schools CSS reference}
 \label{implementazione-css-strumenti-w3schools-reference}
+Per valutare la compatibilità delle regole utilizzate rispetto ai vari browser, anche nelle loro versioni meno recenti, ci si è affidati al sito di \textit{w3schools}, che riporta, per ogni regola CSS, le informazioni di compatibilità.
 
 \subsection{PHP}
 \label{implementazione-php}
-Cose da segnalare:
+Per i controlli sull'input lato server e le interazioni col database è stato usato PHP7. Nonostante tutti i controlli siano fatti in JavaScript lato client, è necessario effettuarli anche lato server in caso i primi falliscano, per esempio se JavaScript non è funzionante. L'uso di PHP ha permesso anche di diversificare il comportamento delle pagine a seconda del contenuto importato dal database e del tipo di utente (generico, autenticato, amministratore) che interagisce col sito.
+
+Il file \textit{.php} sono stati divisi in \textit{repository}, \textit{controller}, \textit{utilities}, DatabaseAcces.php e [NomePagina].php. 
 \begin{itemize}
-	\item salvataggio dei parametri della sessione con default in caso di bookmark di pagine accedute normalmente con specifici parametri di sessione.
+	\item \textbf{\textit{repository}:} una per ogni tabella del database, offre metodi per le query di inserimento, cancellazione, selezione e aggiornamento inviabile alla corrispondente tabella. Per le tabelle di opere ed eventi, che offrono due tipi di contenuti diversi ciascuna, le query sono diversificate per dipinti e sculture nell'una, e per mostre e conferenze nell'altra;
+	\item \textbf{\textit{controller}:} invocano i metodi esposti dalle \textit{repository} mettendo in comunicazione le pagine [NomePagina].php col database. Offrono inoltre tutti i metodi per eseguire i controlli sull'input dell'utente: alcuni controlli generici (trim degli input, sostituzione dei caratteri speciali con le apposite \textit{entity}) sono comuni a tutti i controller, altri invece sono specifici del contenuto che gestiscono.
+	\item \textbf{\textit{utilities}:} il file DateUtilities.php gestisce le conversioni del formato di data; il file FileUtilities.php effettua i controlli sul caricamento dei file da parte dell'utente, poiché l'inserimento di un'opera nel sito richiede anche il caricamento di un'immagine; entrambi i fiel contengono solo funzioni statiche;
+	\item \textbf{DatabaseAccess.php:} offre metodi statici per l'invio e la gestione delle queyr al database;
+	\item \textbf{[NomePagina].php:} una per ogni cagina \textit{.html} statica, gestisce il caricamento dei contenuti del sito e la loro organizzazione nella pagina, la gestione delle connessioni, le interazioni tra pagina e database, le funzionalità a disposizione a seconda del tipo di utente che sta navigando il sito. 
 \end{itemize}
+
+\subsubsection{Sessioni}
+\label{implementazione-php-sessioni}
+Per memorizzare alcune informazioni nel passaggio da una pagina all'altra sono state usate le sessioni. Più precisamente, si tiene traccia dell'ID dell'utente e della sua tipologia, della paginazione dei contenuti (se si tratta di pagine che coinvolgono gli elenchi di opere, eventi, recensioni o utenti) e altri parametri simili.
+
+Per gestire adeguatamente il caso in cui un utente conservasse il \textit{bookmark} di una pagina richiedente specifici parametri di sessione per essere acceduta, si è deciso di prevedere un'impostazione di default dei parametri in assenza del passaggio di valori effettivi. In questo modo sarà comunque possibile accedere alla pagina salvata ed interagire col breadcrumb senza rischio di errori.
+
 
 \subsection{JavaScript}
 \label{implementazione-javascript}
-Cose da segnalare:
+Il linguaggio Javascript è stato usato principalmente per i controlli sull'input lato client: nonostante infatti i controlli siano comunque effettuati lato server (vedi §\ref{implementazione-php}), poiché le elaborazioni \textit{server side} sono più lente e onerose, è preferibile effettuare più check possibili lato client, e fermare subito eventuali input errati. Per questo motivo, comunque, le operazioni effettuate dai metodi JavaScript per controllare l'input sono analoghe a quelle dei corrispondenti metodi PHP lato server.
+
+Lo script JavaScript usato è unico e contiene tutti i metodi per il controllo e la gestione degli input, differenziati per opera, evento, recensione, utente, risultato della ricerca.
+
+Per tutti i form si controlla l'appropriatezza dei dati inseriti dall'utente: se sono errati, sopra il campo di input viene mostrato un messaggio di errore, spesso associato ad un suggerimento sul tipo di errore commesso \footnote{Per agevolare ancora di più l'utente nella compilazione dei form, sono previsti dei suggerimenti associati ai campi a completamento meno intuitvo; questi suggerimenti sono statici, inseriti quindi  in XHTML.}
+
+Oltre al controllo degli input e segnalazione degli errori, JavaScript gestisce solo un paio di funzionalità grafiche:
 \begin{itemize}
-	\item controllo dimensione immagini in IE9;
-	\item no JQuery perché pesante;
-	\item tolta mappa per IE9 e IE10;
-	\item funzione per i salta al contenuto tipo elenchi di contenuti.
+	\item il menu \textit{ad hamburger} a comaprasa, per il layout mobile;
+	\item la rimozione della mappa dalla pagina dei \textit{Contatti} se visualizzata da browser \textit{Internet Explorer 9} e \textit{Internet Explorer 10}, perché non supportato; questo non diminuisce la comprensibilità delle informazioni fornite, poiché la mappa è comunque corredata da indicazioni stradali scritte.
 \end{itemize}
+
+
+È stato possibile implementare in JavaScript tutti i corrispondenti controlli in PHP; unica eccezione il controllo sulla dimensione dell'immagine caricata da browser \textit{Internet Explorer 9}, per problemi di sopporto dei metodi; si è comunque avuto cura di raffinare il più possibile il controllo su questo tipo di input, in modo da ridurre al minimo il numero di input scorretti in arrivo al server. Si è deciso di non adottare JQuery per la risoluzione di questo problema di compatibilità per evitare di appesantire il sito, trattandosi questo di un unico caso di controllo incompleto lato client.
+
 
 \subsubsection{Strumenti}
 \label{implementazione-javascript-strumenti}
 
 \paragraph{MDN web docs}
 \label{implementazione-javascript-strumenti-mdn}
+Per valutare la compatibilità dei meotodi utilizzati rispetto ai vari browser, anche nelle loro versioni meno recenti, ci si è affidati al sito di \textit{MDN} (\url{https://developer.mozilla.org/it/docs/Web/JavaScript}), che riporta, per ogni metodo, le informazioni di compatibilità.
+

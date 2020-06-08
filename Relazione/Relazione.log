@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.24)  8 JUN 2020 03:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.24)  8 JUN 2020 06:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1069,19 +1069,33 @@ Package pdftex.def Info: img/Logo.png  used on input line 18.
 \openout2 = `Content/Implementazione.aux'.
 
 
-(./Content/Implementazione.tex)
+(./Content/Implementazione.tex
 File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
-Package pdftex.def Info: img/Logo.png  used on input line 20.
+Package pdftex.def Info: img/Logo.png  used on input line 38.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
  [19
 
 
 ]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 57.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 57.
+File: img/Logo.png Graphic file (type png)
+<use img/Logo.png>
+Package pdftex.def Info: img/Logo.png  used on input line 62.
+(pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
+ [20])
+File: img/Logo.png Graphic file (type png)
+<use img/Logo.png>
+Package pdftex.def Info: img/Logo.png  used on input line 20.
+(pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
+ [21]
 \openout2 = `Content/Presentazione.aux'.
 
  (./Content/Presentazione.tex
-<img/Mobile-pres.png, id=679, 1183.42125pt x 940.51375pt>
+<img/Mobile-pres.png, id=698, 1183.42125pt x 940.51375pt>
 File: img/Mobile-pres.png Graphic file (type png)
 <use img/Mobile-pres.png>
 Package pdftex.def Info: img/Mobile-pres.png  used on input line 15.
@@ -1096,11 +1110,11 @@ File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 20.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
-[20
+[22
 
 
  <./img/Mobile-pres.png>]
-<img/Tablet-pres.png, id=688, 725.71124pt x 940.51375pt>
+<img/Tablet-pres.png, id=706, 725.71124pt x 940.51375pt>
 File: img/Tablet-pres.png Graphic file (type png)
 <use img/Tablet-pres.png>
 Package pdftex.def Info: img/Tablet-pres.png  used on input line 25.
@@ -1111,7 +1125,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 26.
 See the caption package documentation for explanation.
 
-<img/Desktop-pres.png, id=689, 1132.23pt x 940.51375pt>
+<img/Desktop-pres.png, id=707, 1132.23pt x 940.51375pt>
 File: img/Desktop-pres.png Graphic file (type png)
 <use img/Desktop-pres.png>
 Package pdftex.def Info: img/Desktop-pres.png  used on input line 36.
@@ -1125,12 +1139,12 @@ File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 37.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
-[21 <./img/Tablet-pres.png>])
+[23 <./img/Tablet-pres.png>])
 File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 22.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [22 <./img/Desktop-pres.png>]
+ [24 <./img/Desktop-pres.png>]
 \openout2 = `Content/Validazione.aux'.
 
 
@@ -1139,7 +1153,7 @@ File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 24.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [23
+ [25
 
 
 ]
@@ -1150,7 +1164,7 @@ File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 44.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [24
+ [26
 
 
 ])
@@ -1158,7 +1172,7 @@ File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 26.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [25]
+ [27]
 \openout2 = `Content/SuddivisioneDelLavoro.aux'.
 
 
@@ -1167,7 +1181,7 @@ File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 28.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [26
+ [28
 
 
 ]
@@ -1184,7 +1198,7 @@ File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 30.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
- [27
+ [29
 
 
 ] 
@@ -1198,18 +1212,18 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 32.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 32.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 32.
 Package rerunfilecheck Info: File `Relazione.out' has not changed.
-(rerunfilecheck)             Checksum: 86A57F5AE9B7EF1463F567729A2A9A7D;8704.
+(rerunfilecheck)             Checksum: CCBD648C08F583C468AC1D79DAC115DA;8700.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 20523 strings out of 492616
- 376773 string characters out of 6129480
- 476572 words of memory out of 5000000
- 23832 multiletter control sequences out of 15000+600000
- 20642 words of font info for 43 fonts, out of 8000000 for 9000
+ 20540 strings out of 492616
+ 376942 string characters out of 6129480
+ 475565 words of memory out of 5000000
+ 23840 multiletter control sequences out of 15000+600000
+ 23849 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,17n,79p,1399b,728s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
@@ -1222,19 +1236,22 @@ al/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local
 /texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/t
 exlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/tex
 live/2019/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texli
-ve/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive
-/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2
-019/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/201
-9/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2019/
-texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2019/te
-xmf-dist/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2019/texm
-f-dist/fonts/type1/public/cm-super/sfxc1095.pfb></usr/local/texlive/2019/texmf-
-dist/fonts/type1/public/cm-super/sfxc1200.pfb></usr/local/texlive/2019/texmf-di
-st/fonts/type1/public/cm-super/sfxc2488.pfb>
-Output written on Relazione.pdf (28 pages, 3636166 bytes).
+ve/2019/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive
+/2019/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2
+019/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/201
+9/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2019/
+texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2019/te
+xmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2019/texm
+f-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2019/texmf-
+dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2019/texmf-di
+st/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2019/texmf-dist
+/fonts/type1/public/cm-super/sfxc1095.pfb></usr/local/texlive/2019/texmf-dist/f
+onts/type1/public/cm-super/sfxc1200.pfb></usr/local/texlive/2019/texmf-dist/fon
+ts/type1/public/cm-super/sfxc2488.pfb>
+Output written on Relazione.pdf (30 pages, 3678537 bytes).
 PDF statistics:
- 830 PDF objects out of 1000 (max. 8388607)
- 759 compressed objects within 8 object streams
- 136 named destinations out of 1000 (max. 500000)
+ 857 PDF objects out of 1000 (max. 8388607)
+ 781 compressed objects within 8 object streams
+ 139 named destinations out of 1000 (max. 500000)
  845 words of extra memory for PDF output out of 10000 (max. 10000000)
 
