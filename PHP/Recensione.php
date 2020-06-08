@@ -30,7 +30,7 @@ if (isset($_SESSION['previous_page'])) {
     if ($_SESSION['previous_page'] === 'GestioneRecensioni') {
         $page = '?page=' . $_SESSION['reviewPage'];
         $breadcrumbs = '<a href="AreaPersonale.php" title="Area Personale" aria-label="Vai alla pagina dell\'area personale">Area personale</a>
-                    &gt;&gt;<a href="GestioneRecensioni.php' . $page . '" title="Gestione recensioni" aria-label="Vai alla pagina di gestione delle recensioni">Gestione recensioni</a>';
+                    &gt;&gt; <a href="GestioneRecensioni.php' . $page . '" title="Gestione recensioni" aria-label="Vai alla pagina di gestione delle recensioni">Gestione recensioni</a>';
     } else if ($_SESSION['previous_page'] === 'CosaDiconoDiNoi') {
         $page = '?page=' . $_SESSION['reviews_page'];
         $breadcrumbs = '<a href="CosaDiconoDiNoi.php' . $page . '" title="Cosa dicono di noi" aria-label="Vai alla pagina cosa dicono di noi">Cosa dicono di noi</a>';
