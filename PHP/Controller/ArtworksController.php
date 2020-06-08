@@ -135,7 +135,6 @@ class ArtworksController {
         $technique = InputCheckUtilities::prepareStringForChecks($technique);
         $material = InputCheckUtilities::prepareStringForChecks($material);
         $dimensions = InputCheckUtilities::prepareStringForChecks($dimensions);
-        $loan = InputCheckUtilities::prepareStringForChecks($loan);
         $user = InputCheckUtilities::prepareStringForChecks($user);
 
         $message = $this->checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan);
@@ -347,7 +346,6 @@ class ArtworksController {
         $technique = InputCheckUtilities::prepareStringForChecks($technique);
         $material = InputCheckUtilities::prepareStringForChecks($material);
         $dimensions = InputCheckUtilities::prepareStringForChecks($dimensions);
-        $loan = InputCheckUtilities::prepareStringForChecks($loan);
         $user = InputCheckUtilities::prepareStringForChecks($user);
 
         $message = $this->checkInput($author, $title, $description, $years, $style, $technique, $material, $dimensions, $loan, true);

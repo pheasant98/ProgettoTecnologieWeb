@@ -182,7 +182,6 @@ class UsersController {
     public function addUser($name, $surname, $sex, $date, $mail, $username, $password, $repeated_password) {
         $name = InputCheckUtilities::prepareStringForChecks($name);
         $surname = InputCheckUtilities::prepareStringForChecks($surname);
-        $sex = InputCheckUtilities::prepareStringForChecks($sex);
         $date = InputCheckUtilities::prepareStringForChecks($date);
         $mail = InputCheckUtilities::prepareStringForChecks($mail);
         $username = InputCheckUtilities::prepareStringForChecks($username);
@@ -262,7 +261,6 @@ class UsersController {
     public function updateUser($username, $name, $surname, $date, $sex, $mail, $old_password, $new_password, $repeated_password) {
         $name = InputCheckUtilities::prepareStringForChecks($name);
         $surname = InputCheckUtilities::prepareStringForChecks($surname);
-        $sex = InputCheckUtilities::prepareStringForChecks($sex);
         $date = InputCheckUtilities::prepareStringForChecks($date);
         $mail = InputCheckUtilities::prepareStringForChecks($mail);
         $username = InputCheckUtilities::prepareStringForChecks($username);

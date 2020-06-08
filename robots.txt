@@ -1,8 +1,30 @@
 # Group 1
 User-agent: *
-Disallow: /html/
-Disallow: /php/backend/
-Disallow: /php/modifica_prodotto.php
-Disallow: /php/modifica_news.php
-Disallow: /images/
-
+Disallow: /HTML/
+Disallow: /PHP/Controller/
+Disallow: /PHP/Database/
+Disallow: /PHP/Repository/
+Disallow: /PHP/Utilities/
+Disallow: /PHP/AreaPersonale.php
+Disallow: /PHP/DatiUtenteModificati.php
+Disallow: /PHP/EliminaContenuto.php
+Disallow: /PHP/EliminaRecensione.php
+Disallow: /PHP/EliminaUtente.php
+Disallow: /PHP/Errore.php
+Disallow: /PHP/EventoModificato.php
+Disallow: /PHP/GestioneContenuti.php
+Disallow: /PHP/GestioneRecensioni.php
+Disallow: /PHP/GestioneUtenti.php
+Disallow: /PHP/InserisciEvento.php
+Disallow: /PHP/InserisciOpera.php
+Disallow: /PHP/LasciaUnaRecensione.php
+Disallow: /PHP/Logout.php
+Disallow: /PHP/ModificaDatiUtente.php
+Disallow: /PHP/ModificaEvento.php
+Disallow: /PHP/ModificaOpera.php
+Disallow: /PHP/ModificaRecensione.php
+Disallow: /PHP/OperaModificata.php
+Disallow: /PHP/RecensioneModificata.php
+Disallow: /PHP/Ricerca.php
+Disallow: /PHP/Utente.php
+Disallow: /Images/
