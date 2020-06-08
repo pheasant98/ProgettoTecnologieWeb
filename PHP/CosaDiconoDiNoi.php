@@ -32,7 +32,7 @@ if (!LoginController::isAuthenticatedUser()) {
 } else if (LoginController::isAdminUser()) {
     $review_clause = 'Non è possibile lasciare una recensione se è stato fatto l\'accesso con un <span xml:lang="en">account</span> amministratore.';
 } else {
-    $leave_review = '<a id="reviewButton" class="button" href="LasciaUnaRecensione.php" title="Pagina di scrittura di una recensione" role="button" aria-label="Vai alla pagina di scrittura della recensione">Lascia una recensione</a>';
+    $leave_review = '<a id="reviewButton" class="button" href="LasciaUnaRecensione.php" title="Pagina di scrittura di una recensione" role="button" aria-label="Vai alla pagina di scrittura della recensione" rel="nofollow">Lascia una recensione</a>';
 }
 
 

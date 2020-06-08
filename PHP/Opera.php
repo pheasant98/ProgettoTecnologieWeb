@@ -38,8 +38,8 @@ if (isset($_SESSION['previous_page'])) {
         $page = 'page=' . $_SESSION['contentPage'];
         $filter_content = 'filterContent=' . $_SESSION['filter_content'];
         $filter_content_type = 'filterContentType=' . $_SESSION['filter_content_type'];
-        $breadcrumbs = '<a href="AreaPersonale.php" title="Vai alla pagina dell\'area personale" aria-label="Vai alla pagina dell\'area personale">Area personale</a>
-                    &gt;&gt; <a href="GestioneContenuti.php?' . $page . '&amp;' . $filter_content . '&amp;' . $filter_content_type . '" title="Vai alla pagina di gestione dei contenuti" aria-label="Vai alla pagina di gestione dei contenuti">Gestione contenuti</a>';
+        $breadcrumbs = '<a href="AreaPersonale.php" title="Vai alla pagina dell\'area personale" aria-label="Vai alla pagina dell\'area personale" rel="nofollow">Area personale</a>
+                    &gt;&gt; <a href="GestioneContenuti.php?' . $page . '&amp;' . $filter_content . '&amp;' . $filter_content_type . '" title="Vai alla pagina di gestione dei contenuti" aria-label="Vai alla pagina di gestione dei contenuti" rel="nofollow">Gestione contenuti</a>';
     } else if ($_SESSION['previous_page'] === 'Opere') {
         $page = 'page=' . $_SESSION['artwork_page'];
         $filter_artwork_type = 'filterType=' . $_SESSION['filter_artwork_type'];

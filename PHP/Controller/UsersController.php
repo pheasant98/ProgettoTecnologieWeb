@@ -223,7 +223,7 @@ class UsersController {
         while($row = $result_set->fetch_assoc()) {
             $content .= '
                 <li>
-                    <a href="Utente.php?user=' . InputCheckUtilities::prepareStringForDisplay($row['Username']) . '" title="Vai alla pagina dell\'utente ' .  InputCheckUtilities::prepareStringForDisplay($row['Username']) . '" aria-label="Vai alla pagina dell\'utente ' .  InputCheckUtilities::prepareStringForDisplay($row['Username']) . '">' .  InputCheckUtilities::prepareStringForDisplay($row['Username']) . '</a>
+                    <a href="Utente.php?user=' . InputCheckUtilities::prepareStringForDisplay($row['Username']) . '" title="Vai alla pagina dell\'utente ' .  InputCheckUtilities::prepareStringForDisplay($row['Username']) . '" aria-label="Vai alla pagina dell\'utente ' .  InputCheckUtilities::prepareStringForDisplay($row['Username']) . '" rel="nofollow">' .  InputCheckUtilities::prepareStringForDisplay($row['Username']) . '</a>
 
                     <form class="userButton" action="EliminaUtente.php" method="post" role="form">
                         <fieldset class="hideRight">

@@ -169,7 +169,7 @@ class ReviewsController {
                             
                             <input type="hidden" name="id" value="' . $row['ID'] . '"/>
                             
-                            <a class="button" href="ModificaRecensione.php?id=' . $row['ID'] . '" title="Modifica dettagli recensione" role="button" aria-label="Modifica dettagli recensione">Modifica</a>
+                            <a class="button" href="ModificaRecensione.php?id=' . $row['ID'] . '" title="Modifica dettagli recensione" role="button" aria-label="Modifica dettagli recensione" rel="nofollow">Modifica</a>
                             <input class="button" name="submit" type="submit" value="Rimuovi" role="button" title="Rimuovi recensione" aria-label="Rimuovi recensione"/>
                         </fieldset>
                     </form>
