@@ -5,7 +5,7 @@
 \label{progettazione-database}
 Il database di appoggio per i contenuti del sito si articola in quattro tabelle. 
 
-La tabella \textit{Utenti} memorizza i dati degli utenti che effettuano la registrazione sul sito; vi appartengono sia gli utenti autenticati che gli amministratori, questi ultimi distinti dalL'attributo \textit{Admin}, posto ad 1 se l'utente è amministratore.
+La tabella \textit{Utenti} memorizza i dati degli utenti che effettuano la registrazione sul sito; vi appartengono sia gli utenti autenticati che gli amministratori, questi ultimi distinti dall'attributo \textit{Admin}, posto ad 1 se l'utente è amministratore.
 
 La tabella \textit{Opere} contiene i dati relativi alle opere presentate nel sito. Di ognuna vengono presentati i dati tecnici, la descrizione e se si tratta di un prestito o di un pezzo permanente della collezione; a questa tabella appartengono sia \textit{dipinti} che \textit{sculture}. Se fosse necessario, in futuro, prevedere altri tipi di opere artistiche, sarebbe sufficiente aggiungere altre opzioni per l'attributo "stile" e gli eventuali attributi specifici del nuvo tipo introdotto.
 
@@ -13,7 +13,7 @@ La tabella \textit{Eventi} contiene i dati relativi agli eventi organizzati dal 
 
 Infine, la tabella \textit{Recensione} tiene traccia delle recensioni inserite nel sito dagli utenti autenticati. Poiché è previsto che un utente possa modificare una recensione precedentemente inserita, ne viene mantenuta la data di ultima modifica.
 
-\textit{Utenti} è chiave esterna per le altre tre classi: di ciascun tipo di contenuto previsto, infatti, si memorizza l'utente che ha effettuato l'inserimento. Per \textit{Opere} ed \textit{Eventi} si tratta sempre di un \textit{utente amministratore}, per le recensioni è sempre un \textit{utente autenticato}.
+\textit{Utente} è chiave esterna per le altre tre tabelle: di ciascun tipo di contenuto previsto, infatti, si memorizza lo username dell'utente che ha effettuato l'inserimento. Per \textit{Opere} ed \textit{Eventi} si tratta sempre di un \textit{utente amministratore}, per le recensioni è sempre un \textit{utente autenticato}.
 
 \begin{center}
 	\includegraphics[width=\textwidth]{img/SchemaLogico}
