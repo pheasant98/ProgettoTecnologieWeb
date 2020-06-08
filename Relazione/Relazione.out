@@ -19,8 +19,8 @@
 \BOOKMARK [4][-]{paragraph.2.3.1.10}{Visualizzazione della pagina Contatti}{subsubsection.2.3.1}% 19
 \BOOKMARK [4][-]{paragraph.2.3.1.11}{Visualizzazione della pagina Login}{subsubsection.2.3.1}% 20
 \BOOKMARK [4][-]{paragraph.2.3.1.12}{Esecuzione di una ricerca mediante la barra nell'header}{subsubsection.2.3.1}% 21
-\BOOKMARK [4][-]{paragraph.2.3.1.13}{Visualizzazione risultato della ricerca nella pagina Ricerca}{subsubsection.2.3.1}% 22
-\BOOKMARK [4][-]{paragraph.2.3.1.14}{Interazione con la pagina Ricerca}{subsubsection.2.3.1}% 23
+\BOOKMARK [4][-]{paragraph.2.3.1.13}{Visualizzazione risultato della ricerca nella pagina Ricerca opere o Ricerca eventi}{subsubsection.2.3.1}% 22
+\BOOKMARK [4][-]{paragraph.2.3.1.14}{Interazione con la pagina Ricerca opere o Ricerca eventi}{subsubsection.2.3.1}% 23
 \BOOKMARK [4][-]{paragraph.2.3.1.15}{Visualizzazione della pagina Opera}{subsubsection.2.3.1}% 24
 \BOOKMARK [4][-]{paragraph.2.3.1.16}{Visualizzazione della pagina Evento}{subsubsection.2.3.1}% 25
 \BOOKMARK [4][-]{paragraph.2.3.1.17}{Visualizzazione della pagina Recensione}{subsubsection.2.3.1}% 26
@@ -33,67 +33,62 @@
 \BOOKMARK [4][-]{paragraph.2.3.2.5}{Visualizzazione delle proprie recensioni dalla pagina Gestione recensioni}{subsubsection.2.3.2}% 33
 \BOOKMARK [4][-]{paragraph.2.3.2.6}{Interazione con la pagina Gestione recensioni}{subsubsection.2.3.2}% 34
 \BOOKMARK [4][-]{paragraph.2.3.2.7}{Modifica di una recensione dalla pagina Modifica recensione}{subsubsection.2.3.2}% 35
-\BOOKMARK [4][-]{paragraph.2.3.2.8}{Visualizzazione della pagina Recensione modificata}{subsubsection.2.3.2}% 36
-\BOOKMARK [4][-]{paragraph.2.3.2.9}{Rimozione di una recensione dalla pagina Gestione recensioni}{subsubsection.2.3.2}% 37
-\BOOKMARK [4][-]{paragraph.2.3.2.10}{Modifica dei propri dati utente dalla pagina Modifica dati utente}{subsubsection.2.3.2}% 38
-\BOOKMARK [4][-]{paragraph.2.3.2.11}{Visualizzazione della pagina Dati utente modificati}{subsubsection.2.3.2}% 39
-\BOOKMARK [4][-]{paragraph.2.3.2.12}{Logout dal proprio account}{subsubsection.2.3.2}% 40
-\BOOKMARK [3][-]{subsubsection.2.3.3}{Utente amministratore}{subsection.2.3}% 41
-\BOOKMARK [4][-]{paragraph.2.3.3.1}{Autenticazione dalla pagina Login}{subsubsection.2.3.3}% 42
-\BOOKMARK [4][-]{paragraph.2.3.3.2}{Visualizzazione della pagina Area personale}{subsubsection.2.3.3}% 43
-\BOOKMARK [4][-]{paragraph.2.3.3.3}{Interazione con la pagina Area personale}{subsubsection.2.3.3}% 44
-\BOOKMARK [4][-]{paragraph.2.3.3.4}{Inserimento di un'opera dalla pagina Inserisci opera}{subsubsection.2.3.3}% 45
-\BOOKMARK [4][-]{paragraph.2.3.3.5}{Inserimento di un evento dalla pagina Inserisci evento}{subsubsection.2.3.3}% 46
-\BOOKMARK [4][-]{paragraph.2.3.3.6}{Visualizzazione delle recensioni dalla pagina Gestione recensioni}{subsubsection.2.3.3}% 47
-\BOOKMARK [4][-]{paragraph.2.3.3.7}{Interazione con la pagina Gestione recensioni}{subsubsection.2.3.3}% 48
-\BOOKMARK [4][-]{paragraph.2.3.3.8}{Visualizzazione della pagina Gestione contenuti}{subsubsection.2.3.3}% 49
-\BOOKMARK [4][-]{paragraph.2.3.3.9}{Interazione con la pagina Gestione dei contenuti}{subsubsection.2.3.3}% 50
-\BOOKMARK [4][-]{paragraph.2.3.3.10}{Modifica dei dati di un'opera dalla pagina Modifica opera}{subsubsection.2.3.3}% 51
-\BOOKMARK [4][-]{paragraph.2.3.3.11}{Visualizzazione della pagina Opera modificata}{subsubsection.2.3.3}% 52
-\BOOKMARK [4][-]{paragraph.2.3.3.12}{Modifica dei dati di un evento dalla pagina Modifica evento}{subsubsection.2.3.3}% 53
-\BOOKMARK [4][-]{paragraph.2.3.3.13}{Visualizzazione della pagina Evento modificato}{subsubsection.2.3.3}% 54
-\BOOKMARK [4][-]{paragraph.2.3.3.14}{Rimozione di un evento o un'opera dal sito dalla pagina Gestione contenuti}{subsubsection.2.3.3}% 55
-\BOOKMARK [4][-]{paragraph.2.3.3.15}{Rimozione di una recensione dal sito dalla pagina Gestione recensioni}{subsubsection.2.3.3}% 56
-\BOOKMARK [4][-]{paragraph.2.3.3.16}{Visualizzazione della pagina Gestione utenti}{subsubsection.2.3.3}% 57
-\BOOKMARK [4][-]{paragraph.2.3.3.17}{Interazione con la pagina Gestione dei utenti}{subsubsection.2.3.3}% 58
-\BOOKMARK [4][-]{paragraph.2.3.3.18}{Visualizzazione del profilo di un utente dalla pagina Utente}{subsubsection.2.3.3}% 59
-\BOOKMARK [4][-]{paragraph.2.3.3.19}{Rimozione di un utente dal sito dalla pagina Gestione utenti}{subsubsection.2.3.3}% 60
-\BOOKMARK [4][-]{paragraph.2.3.3.20}{Modifica dei propri dati utente dalla pagina Modifica dati utente}{subsubsection.2.3.3}% 61
-\BOOKMARK [4][-]{paragraph.2.3.3.21}{Visualizzazione della pagina Dati utente modificati}{subsubsection.2.3.3}% 62
-\BOOKMARK [4][-]{paragraph.2.3.3.22}{Logout dal proprio account}{subsubsection.2.3.3}% 63
-\BOOKMARK [1][-]{section.3}{Progettazione}{}% 64
-\BOOKMARK [2][-]{subsection.3.1}{Database}{section.3}% 65
-\BOOKMARK [2][-]{subsection.3.2}{Layout}{section.3}% 66
-\BOOKMARK [2][-]{subsection.3.3}{Accessibilit\340 e usabilit\340}{section.3}% 67
-\BOOKMARK [1][-]{section.4}{Implementazione}{}% 68
-\BOOKMARK [2][-]{subsection.4.1}{HTML}{section.4}% 69
-\BOOKMARK [3][-]{subsubsection.4.1.1}{Strumenti}{subsection.4.1}% 70
-\BOOKMARK [4][-]{paragraph.4.1.1.1}{w3schools HTML reference}{subsubsection.4.1.1}% 71
-\BOOKMARK [2][-]{subsection.4.2}{CSS}{section.4}% 72
-\BOOKMARK [3][-]{subsubsection.4.2.1}{Strumenti}{subsection.4.2}% 73
-\BOOKMARK [4][-]{paragraph.4.2.1.1}{w3schools CSS reference}{subsubsection.4.2.1}% 74
-\BOOKMARK [2][-]{subsection.4.3}{PHP}{section.4}% 75
-\BOOKMARK [3][-]{subsubsection.4.3.1}{Sessioni}{subsection.4.3}% 76
-\BOOKMARK [2][-]{subsection.4.4}{JavaScript}{section.4}% 77
-\BOOKMARK [3][-]{subsubsection.4.4.1}{Strumenti}{subsection.4.4}% 78
-\BOOKMARK [4][-]{paragraph.4.4.1.1}{MDN web docs}{subsubsection.4.4.1}% 79
-\BOOKMARK [1][-]{section.5}{Presentazione}{}% 80
-\BOOKMARK [2][-]{subsection.5.1}{Mobile}{section.5}% 81
-\BOOKMARK [2][-]{subsection.5.2}{Tablet}{section.5}% 82
-\BOOKMARK [2][-]{subsection.5.3}{Desktop}{section.5}% 83
-\BOOKMARK [2][-]{subsection.5.4}{Stampa}{section.5}% 84
-\BOOKMARK [1][-]{section.6}{Validazione}{}% 85
-\BOOKMARK [2][-]{subsection.6.1}{Obiettivi}{section.6}% 86
-\BOOKMARK [2][-]{subsection.6.2}{Strumenti}{section.6}% 87
-\BOOKMARK [1][-]{section.7}{Test}{}% 88
-\BOOKMARK [2][-]{subsection.7.1}{Obiettivi}{section.7}% 89
-\BOOKMARK [2][-]{subsection.7.2}{Strumenti}{section.7}% 90
-\BOOKMARK [3][-]{subsubsection.7.2.1}{Strumenti sviluppatore}{subsection.7.2}% 91
-\BOOKMARK [3][-]{subsubsection.7.2.2}{Lighthouse}{subsection.7.2}% 92
-\BOOKMARK [3][-]{subsubsection.7.2.3}{XAMPP}{subsection.7.2}% 93
-\BOOKMARK [3][-]{subsubsection.7.2.4}{WAVE}{subsection.7.2}% 94
-\BOOKMARK [3][-]{subsubsection.7.2.5}{Silktide}{subsection.7.2}% 95
-\BOOKMARK [3][-]{subsubsection.7.2.6}{NVDA}{subsection.7.2}% 96
-\BOOKMARK [3][-]{subsubsection.7.2.7}{Links2}{subsection.7.2}% 97
-\BOOKMARK [1][-]{section.8}{Suddivisione del lavoro}{}% 98
-\BOOKMARK [1][-]{appendix.Alph1}{Dati utenti}{}% 99
+\BOOKMARK [4][-]{paragraph.2.3.2.8}{Rimozione di una recensione dalla pagina Gestione recensioni}{subsubsection.2.3.2}% 36
+\BOOKMARK [4][-]{paragraph.2.3.2.9}{Modifica dei propri dati utente dalla pagina Modifica dati utente}{subsubsection.2.3.2}% 37
+\BOOKMARK [4][-]{paragraph.2.3.2.10}{Logout dal proprio account}{subsubsection.2.3.2}% 38
+\BOOKMARK [3][-]{subsubsection.2.3.3}{Utente amministratore}{subsection.2.3}% 39
+\BOOKMARK [4][-]{paragraph.2.3.3.1}{Autenticazione dalla pagina Login}{subsubsection.2.3.3}% 40
+\BOOKMARK [4][-]{paragraph.2.3.3.2}{Visualizzazione della pagina Area personale}{subsubsection.2.3.3}% 41
+\BOOKMARK [4][-]{paragraph.2.3.3.3}{Interazione con la pagina Area personale}{subsubsection.2.3.3}% 42
+\BOOKMARK [4][-]{paragraph.2.3.3.4}{Inserimento di un'opera dalla pagina Inserisci opera}{subsubsection.2.3.3}% 43
+\BOOKMARK [4][-]{paragraph.2.3.3.5}{Inserimento di un evento dalla pagina Inserisci evento}{subsubsection.2.3.3}% 44
+\BOOKMARK [4][-]{paragraph.2.3.3.6}{Visualizzazione delle recensioni dalla pagina Gestione recensioni}{subsubsection.2.3.3}% 45
+\BOOKMARK [4][-]{paragraph.2.3.3.7}{Interazione con la pagina Gestione recensioni}{subsubsection.2.3.3}% 46
+\BOOKMARK [4][-]{paragraph.2.3.3.8}{Visualizzazione della pagina Gestione contenuti}{subsubsection.2.3.3}% 47
+\BOOKMARK [4][-]{paragraph.2.3.3.9}{Interazione con la pagina Gestione dei contenuti}{subsubsection.2.3.3}% 48
+\BOOKMARK [4][-]{paragraph.2.3.3.10}{Modifica dei dati di un'opera dalla pagina Modifica opera}{subsubsection.2.3.3}% 49
+\BOOKMARK [4][-]{paragraph.2.3.3.11}{Modifica dei dati di un evento dalla pagina Modifica evento}{subsubsection.2.3.3}% 50
+\BOOKMARK [4][-]{paragraph.2.3.3.12}{Rimozione di un evento o un'opera dal sito dalla pagina Gestione contenuti}{subsubsection.2.3.3}% 51
+\BOOKMARK [4][-]{paragraph.2.3.3.13}{Rimozione di una recensione dal sito dalla pagina Gestione recensioni}{subsubsection.2.3.3}% 52
+\BOOKMARK [4][-]{paragraph.2.3.3.14}{Visualizzazione della pagina Gestione utenti}{subsubsection.2.3.3}% 53
+\BOOKMARK [4][-]{paragraph.2.3.3.15}{Interazione con la pagina Gestione dei utenti}{subsubsection.2.3.3}% 54
+\BOOKMARK [4][-]{paragraph.2.3.3.16}{Visualizzazione del profilo di un utente dalla pagina Utente}{subsubsection.2.3.3}% 55
+\BOOKMARK [4][-]{paragraph.2.3.3.17}{Rimozione di un utente dal sito dalla pagina Gestione utenti}{subsubsection.2.3.3}% 56
+\BOOKMARK [4][-]{paragraph.2.3.3.18}{Modifica dei propri dati utente dalla pagina Modifica dati utente}{subsubsection.2.3.3}% 57
+\BOOKMARK [4][-]{paragraph.2.3.3.19}{Logout dal proprio account}{subsubsection.2.3.3}% 58
+\BOOKMARK [1][-]{section.3}{Progettazione}{}% 59
+\BOOKMARK [2][-]{subsection.3.1}{Database}{section.3}% 60
+\BOOKMARK [2][-]{subsection.3.2}{Layout}{section.3}% 61
+\BOOKMARK [2][-]{subsection.3.3}{Accessibilit\340 e usabilit\340}{section.3}% 62
+\BOOKMARK [1][-]{section.4}{Implementazione}{}% 63
+\BOOKMARK [2][-]{subsection.4.1}{HTML}{section.4}% 64
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Strumenti}{subsection.4.1}% 65
+\BOOKMARK [4][-]{paragraph.4.1.1.1}{w3schools HTML reference}{subsubsection.4.1.1}% 66
+\BOOKMARK [2][-]{subsection.4.2}{CSS}{section.4}% 67
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Strumenti}{subsection.4.2}% 68
+\BOOKMARK [4][-]{paragraph.4.2.1.1}{w3schools CSS reference}{subsubsection.4.2.1}% 69
+\BOOKMARK [2][-]{subsection.4.3}{PHP}{section.4}% 70
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Sessioni}{subsection.4.3}% 71
+\BOOKMARK [2][-]{subsection.4.4}{JavaScript}{section.4}% 72
+\BOOKMARK [3][-]{subsubsection.4.4.1}{Strumenti}{subsection.4.4}% 73
+\BOOKMARK [4][-]{paragraph.4.4.1.1}{MDN web docs}{subsubsection.4.4.1}% 74
+\BOOKMARK [1][-]{section.5}{Presentazione}{}% 75
+\BOOKMARK [2][-]{subsection.5.1}{Mobile}{section.5}% 76
+\BOOKMARK [2][-]{subsection.5.2}{Tablet}{section.5}% 77
+\BOOKMARK [2][-]{subsection.5.3}{Desktop}{section.5}% 78
+\BOOKMARK [2][-]{subsection.5.4}{Stampa}{section.5}% 79
+\BOOKMARK [1][-]{section.6}{Validazione}{}% 80
+\BOOKMARK [2][-]{subsection.6.1}{Obiettivi}{section.6}% 81
+\BOOKMARK [2][-]{subsection.6.2}{Strumenti}{section.6}% 82
+\BOOKMARK [1][-]{section.7}{Test}{}% 83
+\BOOKMARK [2][-]{subsection.7.1}{Obiettivi}{section.7}% 84
+\BOOKMARK [2][-]{subsection.7.2}{Strumenti}{section.7}% 85
+\BOOKMARK [3][-]{subsubsection.7.2.1}{Strumenti sviluppatore}{subsection.7.2}% 86
+\BOOKMARK [3][-]{subsubsection.7.2.2}{Lighthouse}{subsection.7.2}% 87
+\BOOKMARK [3][-]{subsubsection.7.2.3}{XAMPP}{subsection.7.2}% 88
+\BOOKMARK [3][-]{subsubsection.7.2.4}{WAVE}{subsection.7.2}% 89
+\BOOKMARK [3][-]{subsubsection.7.2.5}{Silktide}{subsection.7.2}% 90
+\BOOKMARK [3][-]{subsubsection.7.2.6}{NVDA}{subsection.7.2}% 91
+\BOOKMARK [3][-]{subsubsection.7.2.7}{Links2}{subsection.7.2}% 92
+\BOOKMARK [1][-]{section.8}{Suddivisione del lavoro}{}% 93
+\BOOKMARK [1][-]{appendix.Alph1}{Dati utenti}{}% 94

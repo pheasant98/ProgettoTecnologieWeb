@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.24)  8 JUN 2020 06:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.24)  8 JUN 2020 08:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -872,7 +872,7 @@ LaTeX Info: Redefining \nameref on input line 5.
 \openout4 = `Relazione.out'.
 
  ABD: EveryShipout initializing macros
-<img/Logo.png, id=404, 859.32pt x 434.61pt>
+<img/Logo.png, id=388, 859.32pt x 434.61pt>
 File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
 Package pdftex.def Info: img/Logo.png  used on input line 7.
@@ -890,11 +890,11 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.45 ...t {Area personale}}{11}{paragraph.2.3.3.2}
+l.45 ... {Inserisci opera}}{11}{paragraph.2.3.3.4}
                                                   % [1]
 File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
-Package pdftex.def Info: img/Logo.png  used on input line 85.
+Package pdftex.def Info: img/Logo.png  used on input line 84.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
  [2])
 \tf@toc=\write5
@@ -955,17 +955,17 @@ Package pdftex.def Info: img/Logo.png  used on input line 163.
 [9]
 File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
-Package pdftex.def Info: img/Logo.png  used on input line 203.
+Package pdftex.def Info: img/Logo.png  used on input line 198.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
  [10]
 File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
-Package pdftex.def Info: img/Logo.png  used on input line 233.
+Package pdftex.def Info: img/Logo.png  used on input line 223.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
  [11]
 File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
-Package pdftex.def Info: img/Logo.png  used on input line 264.
+Package pdftex.def Info: img/Logo.png  used on input line 261.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
  [12])
 File: img/Logo.png Graphic file (type png)
@@ -976,7 +976,7 @@ Package pdftex.def Info: img/Logo.png  used on input line 16.
 \openout2 = `Content/Progettazione.aux'.
 
  (./Content/Progettazione.tex
-<img/SchemaLogico.png, id=628, 1044.90375pt x 533.995pt>
+<img/SchemaLogico.png, id=603, 1044.90375pt x 533.995pt>
 File: img/SchemaLogico.png Graphic file (type png)
 <use img/SchemaLogico.png>
 Package pdftex.def Info: img/SchemaLogico.png  used on input line 19.
@@ -1012,7 +1012,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 32--33
 
  []
 
-<img/Mobile.png, id=640, 1890.06125pt x 1644.1425pt>
+<img/Mobile.png, id=615, 1890.06125pt x 1644.1425pt>
 File: img/Mobile.png Graphic file (type png)
 <use img/Mobile.png>
 Package pdftex.def Info: img/Mobile.png  used on input line 37.
@@ -1022,7 +1022,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 38.
 See the caption package documentation for explanation.
 
-<img/Tablet.png, id=641, 1581.91pt x 2341.74875pt>
+<img/Tablet.png, id=616, 1581.91pt x 2341.74875pt>
 File: img/Tablet.png Graphic file (type png)
 <use img/Tablet.png>
 Package pdftex.def Info: img/Tablet.png  used on input line 42.
@@ -1037,7 +1037,7 @@ File: img/Logo.png Graphic file (type png)
 Package pdftex.def Info: img/Logo.png  used on input line 43.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
 [15 <./img/Mobile.png>]
-<img/Desktop.png, id=650, 1500.60625pt x 1218.5525pt>
+<img/Desktop.png, id=625, 1500.60625pt x 1218.5525pt>
 File: img/Desktop.png Graphic file (type png)
 <use img/Desktop.png>
 Package pdftex.def Info: img/Desktop.png  used on input line 47.
@@ -1095,7 +1095,7 @@ Package pdftex.def Info: img/Logo.png  used on input line 20.
 \openout2 = `Content/Presentazione.aux'.
 
  (./Content/Presentazione.tex
-<img/Mobile-pres.png, id=698, 1183.42125pt x 940.51375pt>
+<img/Mobile-pres.png, id=672, 1183.42125pt x 940.51375pt>
 File: img/Mobile-pres.png Graphic file (type png)
 <use img/Mobile-pres.png>
 Package pdftex.def Info: img/Mobile-pres.png  used on input line 15.
@@ -1114,7 +1114,7 @@ Package pdftex.def Info: img/Logo.png  used on input line 20.
 
 
  <./img/Mobile-pres.png>]
-<img/Tablet-pres.png, id=706, 725.71124pt x 940.51375pt>
+<img/Tablet-pres.png, id=680, 725.71124pt x 940.51375pt>
 File: img/Tablet-pres.png Graphic file (type png)
 <use img/Tablet-pres.png>
 Package pdftex.def Info: img/Tablet-pres.png  used on input line 25.
@@ -1125,7 +1125,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 26.
 See the caption package documentation for explanation.
 
-<img/Desktop-pres.png, id=707, 1132.23pt x 940.51375pt>
+<img/Desktop-pres.png, id=681, 1132.23pt x 940.51375pt>
 File: img/Desktop-pres.png Graphic file (type png)
 <use img/Desktop-pres.png>
 Package pdftex.def Info: img/Desktop-pres.png  used on input line 36.
@@ -1211,47 +1211,56 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 32.
 (./Content/SuddivisioneDelLavoro.aux) (./Content/DatiUtenti.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 32.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 32.
-Package rerunfilecheck Info: File `Relazione.out' has not changed.
-(rerunfilecheck)             Checksum: CCBD648C08F583C468AC1D79DAC115DA;8700.
 
+
+Package rerunfilecheck Warning: File `Relazione.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Relazione.out':
+(rerunfilecheck)             Before: C67E803C31A48469920263D0108DBE83;8298
+(rerunfilecheck)             After:  F6701D806B59A820903E12BB58077F05;8183.
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 20540 strings out of 492616
- 376942 string characters out of 6129480
- 475565 words of memory out of 5000000
- 23840 multiletter control sequences out of 15000+600000
+ 20528 strings out of 492616
+ 376552 string characters out of 6129480
+ 475254 words of memory out of 5000000
+ 23832 multiletter control sequences out of 15000+600000
  23849 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,17n,79p,1399b,728s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
-</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
-/usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbi1095.pfb></u
-sr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></usr
-/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbi2488.pfb></usr/l
-ocal/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/loc
-al/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local
-/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/t
-exlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/tex
-live/2019/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texli
-ve/2019/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive
-/2019/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2
-019/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/201
-9/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2019/
-texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2019/te
-xmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2019/texm
-f-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2019/texmf-
-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2019/texmf-di
-st/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2019/texmf-dist
-/fonts/type1/public/cm-super/sfxc1095.pfb></usr/local/texlive/2019/texmf-dist/f
-onts/type1/public/cm-super/sfxc1200.pfb></usr/local/texlive/2019/texmf-dist/fon
-ts/type1/public/cm-super/sfxc2488.pfb>
-Output written on Relazione.pdf (30 pages, 3678537 bytes).
+pdfTeX warning (dest): name{paragraph.2.3.3.20} has been referenced but does 
+not exist, replaced by a fixed one
+
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</
+usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
+sr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbi1095.pfb></usr
+/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></usr/l
+ocal/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbi2488.pfb></usr/loc
+al/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local
+/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/t
+exlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/tex
+live/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texli
+ve/2019/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive
+/2019/texmf-dist/fonts/type1/public/cm-super/sfrm0600.pfb></usr/local/texlive/2
+019/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/201
+9/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2019/
+texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2019/te
+xmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2019/texm
+f-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2019/texmf-
+dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2019/texmf-di
+st/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2019/texmf-dist
+/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2019/texmf-dist/f
+onts/type1/public/cm-super/sfxc1095.pfb></usr/local/texlive/2019/texmf-dist/fon
+ts/type1/public/cm-super/sfxc1200.pfb></usr/local/texlive/2019/texmf-dist/fonts
+/type1/public/cm-super/sfxc2488.pfb>
+Output written on Relazione.pdf (30 pages, 3678413 bytes).
 PDF statistics:
- 857 PDF objects out of 1000 (max. 8388607)
- 781 compressed objects within 8 object streams
- 139 named destinations out of 1000 (max. 500000)
- 845 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 831 PDF objects out of 1000 (max. 8388607)
+ 755 compressed objects within 8 object streams
+ 135 named destinations out of 1000 (max. 500000)
+ 813 words of extra memory for PDF output out of 10000 (max. 10000000)
 

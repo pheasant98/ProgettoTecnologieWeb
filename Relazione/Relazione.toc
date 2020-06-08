@@ -21,8 +21,8 @@
 \contentsline {paragraph}{\numberline {2.3.1.10}Visualizzazione della pagina \textit {Contatti}}{7}{paragraph.2.3.1.10}% 
 \contentsline {paragraph}{\numberline {2.3.1.11}Visualizzazione della pagina \textit {Login}}{7}{paragraph.2.3.1.11}% 
 \contentsline {paragraph}{\numberline {2.3.1.12}Esecuzione di una ricerca mediante la barra nell'\textit {header}}{7}{paragraph.2.3.1.12}% 
-\contentsline {paragraph}{\numberline {2.3.1.13}Visualizzazione risultato della ricerca nella pagina \textit {Ricerca}}{8}{paragraph.2.3.1.13}% 
-\contentsline {paragraph}{\numberline {2.3.1.14}Interazione con la pagina \textit {Ricerca}}{8}{paragraph.2.3.1.14}% 
+\contentsline {paragraph}{\numberline {2.3.1.13}Visualizzazione risultato della ricerca nella pagina \textit {Ricerca opere} o \textit {Ricerca eventi}}{8}{paragraph.2.3.1.13}% 
+\contentsline {paragraph}{\numberline {2.3.1.14}Interazione con la pagina \textit {Ricerca opere} o \textit {Ricerca eventi}}{8}{paragraph.2.3.1.14}% 
 \contentsline {paragraph}{\numberline {2.3.1.15}Visualizzazione della pagina \textit {Opera}}{8}{paragraph.2.3.1.15}% 
 \contentsline {paragraph}{\numberline {2.3.1.16}Visualizzazione della pagina \textit {Evento}}{8}{paragraph.2.3.1.16}% 
 \contentsline {paragraph}{\numberline {2.3.1.17}Visualizzazione della pagina \textit {Recensione}}{8}{paragraph.2.3.1.17}% 
@@ -35,34 +35,29 @@
 \contentsline {paragraph}{\numberline {2.3.2.5}Visualizzazione delle proprie recensioni dalla pagina \textit {Gestione recensioni}}{9}{paragraph.2.3.2.5}% 
 \contentsline {paragraph}{\numberline {2.3.2.6}Interazione con la pagina \textit {Gestione recensioni}}{9}{paragraph.2.3.2.6}% 
 \contentsline {paragraph}{\numberline {2.3.2.7}Modifica di una recensione dalla pagina \textit {Modifica recensione}}{10}{paragraph.2.3.2.7}% 
-\contentsline {paragraph}{\numberline {2.3.2.8}Visualizzazione della pagina \textit {Recensione modificata}}{10}{paragraph.2.3.2.8}% 
-\contentsline {paragraph}{\numberline {2.3.2.9}Rimozione di una recensione dalla pagina \textit {Gestione recensioni}}{10}{paragraph.2.3.2.9}% 
-\contentsline {paragraph}{\numberline {2.3.2.10}Modifica dei propri dati utente dalla pagina \textit {Modifica dati utente}}{10}{paragraph.2.3.2.10}% 
-\contentsline {paragraph}{\numberline {2.3.2.11}Visualizzazione della pagina \textit {Dati utente modificati}}{10}{paragraph.2.3.2.11}% 
-\contentsline {paragraph}{\numberline {2.3.2.12}Logout dal proprio account}{10}{paragraph.2.3.2.12}% 
+\contentsline {paragraph}{\numberline {2.3.2.8}Rimozione di una recensione dalla pagina \textit {Gestione recensioni}}{10}{paragraph.2.3.2.8}% 
+\contentsline {paragraph}{\numberline {2.3.2.9}Modifica dei propri dati utente dalla pagina \textit {Modifica dati utente}}{10}{paragraph.2.3.2.9}% 
+\contentsline {paragraph}{\numberline {2.3.2.10}Logout dal proprio account}{10}{paragraph.2.3.2.10}% 
 \contentsline {subsubsection}{\numberline {2.3.3}Utente amministratore}{10}{subsubsection.2.3.3}% 
 \contentsline {paragraph}{\numberline {2.3.3.1}Autenticazione dalla pagina \textit {Login}}{10}{paragraph.2.3.3.1}% 
-\contentsline {paragraph}{\numberline {2.3.3.2}Visualizzazione della pagina \textit {Area personale}}{11}{paragraph.2.3.3.2}% 
+\contentsline {paragraph}{\numberline {2.3.3.2}Visualizzazione della pagina \textit {Area personale}}{10}{paragraph.2.3.3.2}% 
 \contentsline {paragraph}{\numberline {2.3.3.3}Interazione con la pagina \textit {Area personale}}{11}{paragraph.2.3.3.3}% 
 \contentsline {paragraph}{\numberline {2.3.3.4}Inserimento di un'opera dalla pagina \textit {Inserisci opera}}{11}{paragraph.2.3.3.4}% 
 \contentsline {paragraph}{\numberline {2.3.3.5}Inserimento di un evento dalla pagina \textit {Inserisci evento}}{11}{paragraph.2.3.3.5}% 
 \contentsline {paragraph}{\numberline {2.3.3.6}Visualizzazione delle recensioni dalla pagina \textit {Gestione recensioni}}{11}{paragraph.2.3.3.6}% 
 \contentsline {paragraph}{\numberline {2.3.3.7}Interazione con la pagina \textit {Gestione recensioni}}{11}{paragraph.2.3.3.7}% 
-\contentsline {paragraph}{\numberline {2.3.3.8}Visualizzazione della pagina \textit {Gestione contenuti}}{12}{paragraph.2.3.3.8}% 
+\contentsline {paragraph}{\numberline {2.3.3.8}Visualizzazione della pagina \textit {Gestione contenuti}}{11}{paragraph.2.3.3.8}% 
 \contentsline {paragraph}{\numberline {2.3.3.9}Interazione con la pagina \textit {Gestione dei contenuti}}{12}{paragraph.2.3.3.9}% 
 \contentsline {paragraph}{\numberline {2.3.3.10}Modifica dei dati di un'opera dalla pagina \textit {Modifica opera}}{12}{paragraph.2.3.3.10}% 
-\contentsline {paragraph}{\numberline {2.3.3.11}Visualizzazione della pagina \textit {Opera modificata}}{12}{paragraph.2.3.3.11}% 
-\contentsline {paragraph}{\numberline {2.3.3.12}Modifica dei dati di un evento dalla pagina \textit {Modifica evento}}{12}{paragraph.2.3.3.12}% 
-\contentsline {paragraph}{\numberline {2.3.3.13}Visualizzazione della pagina \textit {Evento modificato}}{12}{paragraph.2.3.3.13}% 
-\contentsline {paragraph}{\numberline {2.3.3.14}Rimozione di un evento o un'opera dal sito dalla pagina \textit {Gestione contenuti}}{13}{paragraph.2.3.3.14}% 
-\contentsline {paragraph}{\numberline {2.3.3.15}Rimozione di una recensione dal sito dalla pagina \textit {Gestione recensioni}}{13}{paragraph.2.3.3.15}% 
-\contentsline {paragraph}{\numberline {2.3.3.16}Visualizzazione della pagina \textit {Gestione utenti}}{13}{paragraph.2.3.3.16}% 
-\contentsline {paragraph}{\numberline {2.3.3.17}Interazione con la pagina \textit {Gestione dei utenti}}{13}{paragraph.2.3.3.17}% 
-\contentsline {paragraph}{\numberline {2.3.3.18}Visualizzazione del profilo di un utente dalla pagina \textit {Utente}}{13}{paragraph.2.3.3.18}% 
-\contentsline {paragraph}{\numberline {2.3.3.19}Rimozione di un utente dal sito dalla pagina \textit {Gestione utenti}}{13}{paragraph.2.3.3.19}% 
-\contentsline {paragraph}{\numberline {2.3.3.20}Modifica dei propri dati utente dalla pagina \textit {Modifica dati utente}}{13}{paragraph.2.3.3.20}% 
-\contentsline {paragraph}{\numberline {2.3.3.21}Visualizzazione della pagina \textit {Dati utente modificati}}{13}{paragraph.2.3.3.21}% 
-\contentsline {paragraph}{\numberline {2.3.3.22}Logout dal proprio account}{13}{paragraph.2.3.3.22}% 
+\contentsline {paragraph}{\numberline {2.3.3.11}Modifica dei dati di un evento dalla pagina \textit {Modifica evento}}{12}{paragraph.2.3.3.11}% 
+\contentsline {paragraph}{\numberline {2.3.3.12}Rimozione di un evento o un'opera dal sito dalla pagina \textit {Gestione contenuti}}{12}{paragraph.2.3.3.12}% 
+\contentsline {paragraph}{\numberline {2.3.3.13}Rimozione di una recensione dal sito dalla pagina \textit {Gestione recensioni}}{12}{paragraph.2.3.3.13}% 
+\contentsline {paragraph}{\numberline {2.3.3.14}Visualizzazione della pagina \textit {Gestione utenti}}{13}{paragraph.2.3.3.14}% 
+\contentsline {paragraph}{\numberline {2.3.3.15}Interazione con la pagina \textit {Gestione dei utenti}}{13}{paragraph.2.3.3.15}% 
+\contentsline {paragraph}{\numberline {2.3.3.16}Visualizzazione del profilo di un utente dalla pagina \textit {Utente}}{13}{paragraph.2.3.3.16}% 
+\contentsline {paragraph}{\numberline {2.3.3.17}Rimozione di un utente dal sito dalla pagina \textit {Gestione utenti}}{13}{paragraph.2.3.3.17}% 
+\contentsline {paragraph}{\numberline {2.3.3.18}Modifica dei propri dati utente dalla pagina \textit {Modifica dati utente}}{13}{paragraph.2.3.3.18}% 
+\contentsline {paragraph}{\numberline {2.3.3.19}Logout dal proprio account}{13}{paragraph.2.3.3.19}% 
 \contentsline {section}{\numberline {3}Progettazione}{14}{section.3}% 
 \contentsline {subsection}{\numberline {3.1}Database}{14}{subsection.3.1}% 
 \contentsline {subsection}{\numberline {3.2}Layout}{14}{subsection.3.2}% 
