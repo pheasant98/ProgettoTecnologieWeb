@@ -3,7 +3,7 @@
 class DatabaseAccess {
     private $connection;
 
-    # public function __construct($database = 'ldeinegr', $pass = 'yu0juo9GeiPheiqu', $user = 'ldeinegr', $host = 'localhost') {
+    # public function __construct($database = 'ldeinegr', $pass = 'yee7ooGhaoSh4Iep', $user = 'ldeinegr', $host = 'localhost') {
 
     public function __construct($database = 'test_tecweb', $pass = '', $user = 'root', $host = 'localhost') {
         if (!($this->connection = @new mysqli($host, $user, $pass, $database))) {
