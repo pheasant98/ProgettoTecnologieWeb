@@ -388,8 +388,8 @@ function checkArtworkMaterial(input) {
     } else if (material.length < 4) {
         addError(input, 'Non è possibile inserire un materiale più corto di 4 caratteri', 2);
         return false;
-    } else if (material.length > 32) {
-        addError(input, 'Non è possibile inserire un materiale più lungo di 32 caratteri', 2);
+    } else if (material.length > 64) {
+        addError(input, 'Non è possibile inserire un materiale più lungo di 64 caratteri', 2);
         return false;
     } else if (!pattern.test(material)) {
         addError(input, 'Il materiale contiene caratteri non consentiti. Quelli possibili sono lettere, anche accentate, spazi, \' \ - `', 2);
@@ -714,8 +714,8 @@ function checkEventManager(input) {
     } else if (manager.length < 2) {
         addError(input, 'Non è possibile inserire un organizzatore più corto di 2 caratteri', 2);
         return false;
-    } else if (manager.length > 32) {
-        addError(input, 'Non è possibile inserire un organizzatore più lungo di 32 caratteri', 2);
+    } else if (manager.length > 64) {
+        addError(input, 'Non è possibile inserire un organizzatore più lungo di 64 caratteri', 2);
         return false;
     } else if (!pattern.test(manager)) {
         addError(input, 'L\'organizzatore dell\'evento contiene caratteri non consentiti. Quelli possibili sono lettere, anche accentate, numeri, spazi e i seguenti caratteri speciali \' ` . : - ()', 2);
@@ -778,8 +778,8 @@ function checkUserName(input) {
     } else if (name.length < 2) {
         addError(input, 'Non è possibile inserire un nome più corto di 2 caratteri', 2);
         return false;
-    } else if (name.length > 32) {
-        addError(input, 'Non è possibile inserire un nome più lungo di 32 caratteri', 2);
+    } else if (name.length > 64) {
+        addError(input, 'Non è possibile inserire un nome più lungo di 64 caratteri', 2);
         return false;
     } else if (!pattern.test(name)) {
         addError(input, 'Il nome inserito contiene dei caratteri non consentiti. Quelli possibili sono lettere, anche accentate, spazi e i seguenti caratteri speciali \' \ - ` .', 2);
@@ -800,8 +800,8 @@ function checkUserSurname(input) {
     } else if (surname.length < 2) {
         addError(input, 'Non è possibile inserire un cognome più corto di 2 caratteri', 2);
         return false;
-    } else if (surname.length > 32) {
-        addError(input, 'Non è possibile inserire un cognome più lungo di 32 caratteri', 2);
+    } else if (surname.length > 64) {
+        addError(input, 'Non è possibile inserire un cognome più lungo di 64 caratteri', 2);
         return false;
     } else if (!pattern.test(surname)) {
         addError(input, 'Il cognome inserito contiene dei caratteri non consentiti, è possibile inserire solamente lettere, possibilmente accentate, spazi e i seguenti caratteri speciali \' \ - ` .', 2);
