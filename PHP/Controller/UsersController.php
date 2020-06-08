@@ -44,7 +44,7 @@ class UsersController {
             $message .= '[Non è possibile inserire un nome più corto di 2 caratteri]';
         } elseif (strlen($name) > 64) {
             $message .= '[Non è possibile inserire un nome più lungo di 64 caratteri]';
-        } elseif (!preg_match('/^[A-zÀ-ú\'\-`.\s]+$/', $name)) {
+        } elseif (!preg_match('/^[A-zÀ-ú\/\'\-`.\s]+$/', $name)) {
             $message .= '[Il nome inserito contiene dei caratteri non consentiti. Quelli possibili sono lettere, anche accentate, spazi e i seguenti caratteri speciali \' \ - ` .]';
         }
 
@@ -54,7 +54,7 @@ class UsersController {
             $message .= '[Non è possibile inserire un cognome più corto di 2 caratteri]';
         } elseif (strlen($surname) > 64) {
             $message .= '[Non è possibile inserire un cognome più lungo di 64 caratteri]';
-        } elseif (!preg_match('/^[A-zÀ-ú\'\-`.\s]+$/', $surname)) {
+        } elseif (!preg_match('/^[A-zÀ-ú\/\'\-`.\s]+$/', $surname)) {
             $message .= '[Il cognome inserito contiene dei caratteri non consentiti, è possibile inserire solamente lettere, possibilmente accentate, spazi e i seguenti caratteri speciali \' \ - ` .]';
         }
 
@@ -96,7 +96,7 @@ class UsersController {
             $message .= '[Non è possibile inserire un indirizzo <span xml:lang="en">email</span> vuoto]';
         } elseif (strlen($mail) > 64) {
             $message .= '[Non è possibile inserire un indirizzo <span xml:lang="en">email</span> più lungo di 64 caratteri]';
-        } elseif (!preg_match('/^[a-zA-Z0-9.!#$%&\'*+^_`{|}~\-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/', $mail)) {
+        } elseif (!preg_match('/^[a-zA-Z0-9.!#$%&\/\'*+^_`{|}~\-]+@[a-zA-Z0-9\/](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/', $mail)) {
             $message .= '[L\'indirizzo <span xml:lang="en">email</span> inserito non è valido]';
         } elseif (!$this->isUniqueMail($mail)) {
             $message .= '[L\'indirizzo <span xml:lang="en">email</span> inserito non può essere utilizzato in quanto è già in uso da altro utente]';
@@ -137,7 +137,7 @@ class UsersController {
                 $message .= '[Non è possibile inserire un indirizzo <span xml:lang="en">email</span> vuoto]';
             } elseif (strlen($mail) > 64) {
                 $message .= '[Non è possibile inserire un indirizzo <span xml:lang="en">email</span> più lungo di 64 caratteri]';
-            } elseif (!preg_match('/^[a-zA-Z0-9.!#$%&\'*+^_`{|}~\-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/', $mail)) {
+            } elseif (!preg_match('/^[a-zA-Z0-9.!#$%&\/\'*+^_`{|}~\-]+@[a-zA-Z0-9\/](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/', $mail)) {
                 $message .= '[L\'indirizzo <span xml:lang="en">email</span> inserito non è valido]';
             } elseif (!$this->isUniqueMail($mail)) {
                 $message .= '[L\'indirizzo <span xml:lang="en">email</span> inserito non può essere utilizzato in quanto è già in uso da altro utente]';

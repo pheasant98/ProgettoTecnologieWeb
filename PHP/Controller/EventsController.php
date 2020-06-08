@@ -16,7 +16,7 @@ class EventsController {
             $message .= '[Non è possibile inserire un titolo più corto di 2 caratteri]';
         } elseif (strlen($title) > 64) {
             $message .= '[Non è possibile inserire un titolo più lungo di 64 caratteri]';
-        } elseif (!preg_match('/^[A-zÀ-ú0-9\'`!.,\-:()\s]+$/', $title)) {
+        } elseif (!preg_match('/^[A-zÀ-ú0-9\/\'`!.,\-:()\s]+$/', $title)) {
             $message .= '[Il titolo contiene caratteri non consentiti. Quelli possibili sono lettere, anche accentate, numeri, spazi e i seguenti caratteri speciali \' ` ! . , - : ()]';
         }
 
@@ -92,7 +92,7 @@ class EventsController {
             $message .= '[Non è possibile inserire un organizzatore più corto di 2 caratteri]';
         } elseif (strlen($manager) > 64) {
             $message .= '[Non è possibile inserire un organizzatore più lungo di 64 caratteri]';
-        } elseif (!preg_match('/^[A-zÀ-ú0-9\'`.:(\-)\s]+$/', $manager)) {
+        } elseif (!preg_match('/^[A-zÀ-ú0-9\/\'`.:(\-)\s]+$/', $manager)) {
             $message .= '[L\'organizzatore dell\'evento contiene caratteri non consentiti. Quelli possibili sono lettere, anche accentate, numeri, spazi e i seguenti caratteri speciali \' ` . : - ()]';
         }
 
@@ -119,7 +119,7 @@ class EventsController {
         $message = EventsController::checkInput($title, $description, $begin_date, $end_date, $type, $manager);
         if ($message === '') {
             if ($this->events->postEvent($title, $description, DateUtilities::italianEnglishDate($begin_date), DateUtilities::italianEnglishDate($end_date), $type, $manager, $user)) {
-                $message = '<p class="success">L\' evento ' . InputCheckUtilities::prepareStringForDisplay($title) . ' è stato inserito correttamente</p>';
+                $message = '<p class="success">L\'evento ' . InputCheckUtilities::prepareStringForDisplay($title) . ' è stato inserito correttamente</p>';
             } else {
                 $message = '<p class="error">Non è stato possibile inserire l\'evento ' . InputCheckUtilities::prepareStringForDisplay($title) . ', se l\'errore persiste si prega di segnalarlo al supporto tecnico.</p>';
             }

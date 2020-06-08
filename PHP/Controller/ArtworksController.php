@@ -17,7 +17,7 @@ class ArtworksController {
             $message .= '[Non è possibile inserire un autore più corto di 5 caratteri]';
         } elseif (strlen($author) > 64) {
             $message .= '[Non è possibile inserire un autore più lungo di 64 caratteri]';
-        } elseif (!preg_match('/^[A-zÀ-ú\'\-`.\s]+$/', $author)) {
+        } elseif (!preg_match('/^[A-zÀ-ú\/\'\-`.\s]+$/', $author)) {
             $message .= '[L\'autore contiene caratteri non consentiti. Quelli possibili sono lettere, anche accentate, spazi e i seguenti caratteri speciali \' - . `]';
         }
 
@@ -27,7 +27,7 @@ class ArtworksController {
             $message .= '[Non è possibile inserire un titolo più corto di 2 caratteri]';
         } elseif (strlen($title) > 64) {
             $message .= '[Non è possibile inserire un titolo più lungo di 64 caratteri]';
-        } elseif (!preg_match('/^[A-zÀ-ú0-9\'`!.,:(\-)\s]+$/', $title)) {
+        } elseif (!preg_match('/^[A-zÀ-ú0-9\/\'`!.,:(\-)\s]+$/', $title)) {
             $message .= '[Il titolo contiene caratteri non consentiti. Quelli possibili sono lettere, anche accentate, numeri, spazi e i seguenti caratteri speciali \' ` ! . , : - ()]';
         }
 
@@ -66,7 +66,7 @@ class ArtworksController {
                 $message .= '[Non è possibile inserire una tecnica più corta di 4 caratteri]';
             } elseif (strlen($technique) > 64) {
                 $message .= '[Non è possibile inserire una tecnica più lunga di 64 caratteri]';
-            } elseif (!preg_match('/^[A-zÀ-ú\'\-`\s]+$/', $technique)) {
+            } elseif (!preg_match('/^[A-zÀ-ú\/\'\-`\s]+$/', $technique)) {
                 $message .= '[La tecnica contiene caratteri non consentiti. Quelli possibili sono lettere, anche accentate, spazi e i seguenti caratteri speciali \' \ - `]';
             }
         }
@@ -78,7 +78,7 @@ class ArtworksController {
                 $message .= '[Non è possibile inserire un materiale più corto di 4 caratteri]';
             } elseif (strlen($material) > 64) {
                 $message .= '[Non è possibile inserire un materiale più lungo di 64 caratteri]';
-            } elseif (!preg_match('/^[A-zÀ-ú\'\-`\s]+$/', $material)) {
+            } elseif (!preg_match('/^[A-zÀ-ú\/\'\-`\s]+$/', $material)) {
                 $message .= '[Il materiale contiene caratteri non consentiti. Quelli possibili sono lettere, anche accentate, spazi, \' \ - `]';
             }
         }
