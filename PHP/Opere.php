@@ -70,7 +70,7 @@ if ($artwork_count > 0) {
             $skip_artworks = '<p class="skipDown">Ti trovi a pagina ' . $page . ' di ' . $number_pages . ': ' . '</p><a href="#buttonBack">vai ai pulsanti di navigazione</a>';
         }
     } else {
-        $skip_artworks = '<p>Ti trovi a pagina ' . $page . ' di ' . $number_pages . '.';
+        $skip_artworks = '<p>Ti trovi a pagina ' . $page . ' di ' . $number_pages . '.</p>';
     }
 
 } else {

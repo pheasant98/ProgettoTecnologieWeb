@@ -237,7 +237,7 @@ class ArtworksController {
         while($row = $result_set->fetch_assoc()) {
             $content .= '
                 <dt id="' . $id . $counter . '" class="titleDef">
-                     <a href="Opera.php?id=' . $row['ID'] . '" " title="Vai all\'opera ' . $row['Titolo'] . '" aria-label="Vai all\'opera ' . $row['Titolo'] . '">' . $row['Titolo'] . '</a>
+                     <a href="Opera.php?id=' . $row['ID'] . '"  title="Vai all\'opera ' . $row['Titolo'] . '" aria-label="Vai all\'opera ' . $row['Titolo'] . '">' . $row['Titolo'] . '</a>
                 </dt>
                 <dd>
                     <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'opera">Salta l\'opera</a>
@@ -289,7 +289,7 @@ class ArtworksController {
         while($row = $result_set->fetch_assoc()) {
             $content .= '
                 <li>
-                    <a href="Opera.php?id=' . $row['ID'] . '" aria-label="Vai all\'opera">' . $row['Titolo'] . '</a>
+                    <a href="Opera.php?id=' . $row['ID'] . '" title="Vai all\'opera ' . $row['Titolo'] . '" aria-label="Vai all\'opera ' . $row['Titolo'] . '">' . $row['Titolo'] . '</a>
                     
                     <form class="userButton" action="EliminaContenuto.php" method="post" role="form">
                         <fieldset class="hideRight">

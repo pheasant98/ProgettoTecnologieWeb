@@ -68,7 +68,7 @@ if ($user_count > 0) {
             $skip_users = '<p class="skipDown">Ti trovi a pagina ' . $page . ' di ' . $number_pages . ': ' . '</p><a href="#buttonBack">vai ai pulsanti di navigazione</a>';
         }
     } else {
-        $skip_users = '<p>Ti trovi a pagina ' . $page . ' di ' . $number_pages . '.';
+        $skip_users = '<p>Ti trovi a pagina ' . $page . ' di ' . $number_pages . '.</p>';
     }
 
 } else {
