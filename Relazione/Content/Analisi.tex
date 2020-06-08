@@ -3,20 +3,26 @@
 
 \subsection{Categorie di utenti}
 \label{analisi-categorie-utenti}
-Il museo si rivolge ad un'utenza molto ampia: le opere esposte possono attirare scolaresche, docenti, amatori, specialisti del settore, famiglie, anziani.
+Il museo si rivolge ad un'utenza molto ampia: le opere esposte possono attirare scolaresche, docenti, amatori d'arte, specialisti del settore, famiglie, anziani.
 
-Gli utenti specialisti o appassionati d'arte sono interessati al lato tecnico e critico delle opere: le schede descrittive dovranno quindi essere ben curate e l'esposizione delle informazioni chiara e precisa. Famiglie e scolaresche puntano ad un'esperienza meno appronfondita ma più ampia e didattica: la collezione di opere presentate deve quindi essere ampia e variegata, e gli eventi organizzati devono prevedere mostre e cicli di conferenze sul più ampio spettro di correnti e tematiche artistiche possibile.
+Gli utenti specialisti o appassionati d'arte sono interessati al lato tecnico e critico delle opere: le schede descrittive dovranno quindi essere ben curate e l'esposizione delle informazioni chiara e precisa. Famiglie e scolaresche puntano ad un'esperienza meno appronfondita ma più ampia e didattica: la collezione di opere presentate deve quindi essere ricca e variegata, e gli eventi organizzati devono prevedere mostre e cicli di conferenze sul più ampio spettro di correnti e tematiche artistiche possibile.
 
-In generale, il sito deve essere pronto a corrispondere alle esigenze di un'utenza varia e ampia: l'interfaccia deve essere intutiva e leggibile, la terminologia non troppo specialistica, la grafica adatta ad un pubblico di tutte le età, nè troppo seria nè eccessivamente giocosa.
+In generale, il sito deve essere pronto a corrispondere alle esigenze di un'utenza varia e diversificata: l'interfaccia deve essere intutiva e leggibile, la terminologia non troppo specialistica, la grafica adatta ad un pubblico di tutte le età, nè troppo seria nè eccessivamente giocosa.
 
-\subsubsection{Attori principali}
+\subsection{Attori principali}
 \label{analisi-casi-uso-attori-principali}
 Sono state individuate tre categorie principali di attori: \textit{utente generico}, \textit{utente autenticato}, \textit{utente ammininstratore}.
 
-L'\textit{utente generico} è un visitatore anonimo del sito, che non ha effettuato né registrazione né login; egli ha la possibilità di interagire col sito mediante il form di registrazione, la barra di ricerca e i filtri di visualizzazione di opere ed eventi. L'utente generico può prendere visione di tutti i contenuti senza però poterli modificare, eliminare e senza poterne aggiungere di nuovi.
+\subsubsection{Utente generico}
+\label{analisi-casi-uso-attori-principali-utente-generico}
+L'\textit{utente generico} è un visitatore anonimo del sito, che non ha effettuato né registrazione né login; ha la possibilità di interagire col sito mediante il form di registrazione, la barra di ricerca e i filtri di visualizzazione di opere ed eventi. L'utente generico può prendere visione di tutti i contenuti senza però poterli modificare, eliminare e senza poterne aggiungere di nuovi.
 
+\subsubsection{Utente autenticato}
+\label{analisi-casi-uso-attori-principali-utente-autenticato}
 L'\textit{utente autenticato} eredita tutte le funzionalità dell'utente generico. In aggiunta, avendo un account personale nel database, può accedere alla propria area utente, gestire i propri dati personali, lasciare recensioni, modificarle ed eliminarle.
 
+\subsubsection{Utente amministratore}
+\label{analisi-casi-uso-attori-principali-utente-amministratore}
 L'\textit{utente amministratore} eredita anch'esso le funzionalità di quello generico, cui si aggiungono quelle legate al possesso di un account (visualizzazione dei dati personali e loro modifica, come per l'\textit{utente autenticato}) e  la gestione di tutti i contenuti presenti nel sito. L'amministratore può inserire, modificare e rimuovere le pagine relative ad eventi e opere, e eliminare, se necessario, recensioni o account di utenti indesiderati.
 
 
@@ -25,56 +31,263 @@ L'\textit{utente amministratore} eredita anch'esso le funzionalità di quello ge
 
 \subsubsection{Utente generico}
 \label{analisi-casi-uso-attori-principali-utente-generico}
-I casi d'uso che riguardano questa categoria di utenti sono:
-\begin{itemize}
-	\item visualizzazione \textit{Home page};
-	\item interazione coi link del \textit{breadcrumb};
-	\item visualizzazione della pagina \textit{Opere};
-	\item interazione con la pagina \textit{Opere};
-	\item visualizzazione della pagina \textit{Eventi};
-	\item interazione con la pagina \textit{Eventi};
-	\item visualizzazione della pagina \textit{Cosa dicono di noi};
-	\item interazione con la pagina \textit{Cosa dicono di noi};
-	\item visualizzazione della pagina \textit{Contatti};
-	\item visualizzazione della pagina \textit{Login};
-	\item esecuzione di una ricerca mediante la barra nell'\textit{header};
-	\item visualizzazione risultato della ricerca nella pagina \textit{Ricerca};
-	\item interazione con la pagina \textit{Ricerca};
-	\item visualizzazione della pagina \textit{Opera};
-	\item visualizzazione della pagina \textit{Evento};
-	\item visualizzazione della pagina \textit{Recensione};
-	\item visualizzazione della pagina \textit{Registrazione};
-	\item creazione di un account dalla pagina \textit{Registrazione}.
-\end{itemize}
+
+\paragraph{Visualizzazione della \textit{Home page}}
+\label{analisi-casi-uso-attori-principali-utente-generico-1}
+La \textit{Home page} sarà la prima ad essere visualizzata se si accede al sito digitando l'url del sito sul browser. In ogni momento sarà possibile tornare alla \textit{Home page} tramite il menu presente in ogni pagina del sito; se, nel percorso seguito all'interno del sito per arrivare alla pagina corrente, l'utente avrà visitato la \textit{Home page}, questa sarà presente nel breadcrumbs e accessibile anche tramite esso. La pagina conterrà una breve presentazione del museo, corredata con una fotografia della sede.
+
+
+\paragraph{Interazione coi link del breadcrumbs}
+\label{analisi-casi-uso-attori-principali-utente-generico-2}
+In ogni momento, durante la navigazione nel sito, l'utente avrà a disposizione la sequenza ordinata di pagine tramite le quali ha raggiunto quella corrente. Tutti i nomi delle pagine attrversate saranno link sensibili, in modo che sia possibile tornare a visitarle direttamente dal breadcrumbs, tranne quello della pagina corrente.
+
+
+\paragraph{Interazione coi link del menu}
+\label{analisi-casi-uso-attori-principali-utente-generico-3}
+In ogni momento, durante la navigazione nel sito, l'utente avrà a disposizione un menu per raggiungere tutte le pagine di interesse del sito: \textit{Home page}, \textit{Opere}, \textit{Eventi}, \textit{Cosa dicono di noi} (per le recensioni) e \textit{Contatti}. Tutti i nomi delle pagine in elenco saranno link sensibili, tranne, in caso ci si trovasse in una di esse, quello della pagina corrente.
+
+
+\paragraph{Visualizzazione della pagina \textit{Opere}}
+\label{analisi-casi-uso-attori-principali-utente-generico-4}
+La pagina \textit{Opere} conterrà un elenco di tutte le opere presenti nel database del sito. Di ogni elemento verranno mostrati titolo, autore, stile, datazione e un'immagine. All'inizio della pagina vi sarà un filtro per la selezione alcune caratteristiche sulla base delle quali selezionare le opere da mostrare in elenco; sarà poi riportato il numero di elementi presenti in elenco, il numero della pagina di risultati corrente e quello di tutte le pagine di risultati trovati. La pagina \textit{Opere} mostrerà al massimo cinque elementi per volta.
+
+
+\paragraph{Interazione con la pagina \textit{Opere}}
+\label{analisi-casi-uso-attori-principali-utente-generico-5}
+Selezionando le opzioni offerte dal filtro, l'utente potrà raffinare la selezione di opere che desidera visualizzare; cambiando il filtro e cliccando il button \texttt{Filtra} verrà aggiornato il numero di opere in elenco. Se l'elenco conterà più di cinque elementi, essi saranno comunque visualizzabili poiché la lista sarà navigabile grazie ai button \texttt{Precedente} e \texttt{Successivo} posti in fondo alla pagina, che permetteranno di vedere l'elenco delle cinque opere precedenti o successive a quelle correnti. Per andare alla pagina di visualizzazione di un'opera specifica sarà sufficiente cliccare sul suo titolo in elenco (vedi §\ref{analisi-casi-uso-attori-principali-utente-generico-15}).
+
+
+\paragraph{Visualizzazione della pagina \textit{Eventi}}
+\label{analisi-casi-uso-attori-principali-utente-generico-6}
+La pagina \textit{Eventi} conterrà un elenco di tutti gli eventi presenti nel database del sito. Di ogni elemento verranno mostrati titolo, data di inizio, data di fine e tipologia. All'inizio della pagina vi sarà un filtro per la selezione di alcune caratteristiche sulla base delle quali selezionare gli eventi da mostrare in elenco; sarà poi riportato il numero di elementi presenti in elenco, il numero della pagina di risultati corrente e quello di tutte le pagine di risultati trovati. La pagina \textit{Eventi} mostrerà al massimo cinque elementi per volta.
+
+
+\paragraph{Interazione con la pagina \textit{Eventi}}
+\label{analisi-casi-uso-attori-principali-utente-generico-7}
+Selezionando le opzioni offerte dal filtro, l'utente potrà raffinare la selezione di eventi che desidera visualizzare; cambiando il filtro e cliccando il button \texttt{Filtra} verrà aggiornato il numero di eventi in elenco. Se l'elenco conterà più di cinque elementi, essi saranno comunque visualizzabili poiché la lista sarà navigabile grazie ai button \texttt{Precedente} e \texttt{Successivo} posti in fondo alla pagina, che permetteranno di vedere l'elenco dei cinque eventi precedenti o successivi a quelli correnti. Per andare alla pagina di visualizzazione di un evento specifica sarà sufficiente cliccare sul suo titolo in elenco (vedi §\ref{analisi-casi-uso-attori-principali-utente-generico-16}).
+
+
+\paragraph{Visualizzazione della pagina \textit{Cosa dicono di noi}}
+\label{analisi-casi-uso-attori-principali-utente-generico-8}
+La pagina \textit{Cosa dicono di noi} conterrà un elenco di tutte le recensioni presenti nel database del sito. Di ogni elemento verranno mostrati oggetto, data di ultima modifica e le prime righe del contenuto. All'inizio della pagina sarà riportato il numero di elementi presenti in elenco, il numero della pagina di risultati corrente e quello di tutte le pagine di risultati trovati. La pagina \textit{Cosa dicono di noi} mostrerà al massimo cinque elementi per volta.
+
+
+\paragraph{Interazione con la pagina \textit{Cosa dicono di noi}}
+\label{analisi-casi-uso-attori-principali-utente-generico-9}
+Se l'elenco delle recensioni conterà più di cinque elementi, esse saranno comunque visualizzabili poiché la lista sarà navigabile grazie ai button \texttt{Precedente} e \texttt{Successivo} posti in fondo alla pagina, che permetteranno di vedere l'elenco delle cinque recensioni precedenti o successive a quelle correnti. Per andare alla pagina di visualizzazione di una recensione specifica sarà sufficiente cliccare sul suo oggetto in elenco (vedi §\ref{analisi-casi-uso-attori-principali-utente-generico-17}).
+
+
+\paragraph{Visualizzazione della pagina \textit{Contatti}}
+\label{analisi-casi-uso-attori-principali-utente-generico-10}
+La pagina \textit{Contatti} riporterà nome, indirizzo della sede, numero di telefono e indirizzo email del museo; seguiranno gli orari di apertura della sede ed infine alcune indicazioni stradali per raggiungere il museo.
+
+
+\paragraph{Visualizzazione della pagina \textit{Login}}
+\label{analisi-casi-uso-attori-principali-utente-generico-11}
+Da qualunque pagina del sito l'utente potrà andare alla pagina di \textit{Login} grazie al button \texttt{Login} posto nell'\textit{header}. La pagina conterrà un breve form per inserire username e password. Per effetturare il login, inseriti i valori richiesti, bisognerà premere il button \texttt{Accedi}. In caso l'utente non fosse in possesso di un account, tramite il link posto in fondo alla pagina avrà la possibilità di raggiungere la pagina \textit{Registrazione} e creare un profilo personale (vedi §\ref{analisi-casi-uso-attori-principali-utente-generico-18}).
+
+
+\paragraph{Esecuzione di una ricerca mediante la barra nell'\textit{header}}
+\label{analisi-casi-uso-attori-principali-utente-generico-12}
+In qualunque momento l'utente potrà effettuare una ricerca tra opere ed eventi presenti nel sito tramite la barra di ricerca posta nell'\textit{header}. La barra offrirà un filtro per selezionare il tipo di contenuto cercato, un campo di input per digitare il testo desiderato e un button \texttt{Cerca} per avviare la ricerca. Per eseguire la ricerca l'utente dovrà cliccare il button \texttt{Cerca}. Se l'utente formulerà la ricerca in modo inappropriato, ciò gli verrà comunicato tramite un messaggio di errore.
+
+
+\paragraph{Visualizzazione risultato della ricerca nella pagina \textit{Ricerca opere} o \textit{Ricerca eventi}}
+\label{analisi-casi-uso-attori-principali-utente-generico-13}
+I risultati della ricerca saranno visualizzati nella pagina \textit{Ricerca opere} o  \textit{Ricerca eventi}. Gli elementi verranno mostrati in forma di elenco, secondo lo stesso formato di visualizzazione delle opere (vedi §\ref{analisi-casi-uso-attori-principali-utente-generico-4}) o degli eventi (vedi §\ref{analisi-casi-uso-attori-principali-utente-generico-6}) a seconda del contenuto cercato. All'inzio della pagina sarà indicato il numero di risultati trovati, il numero della pagina di ricerca corrente e quello di tutte le pagine.
+
+
+\paragraph{Interazione con la pagina  \textit{Ricerca opere} o \textit{Ricerca eventi}}
+\label{analisi-casi-uso-attori-principali-utente-generico-14}
+Se la lista di elementi conterà più di cinque risultati, essi saranno comunque visualizzabili poiché l'elenco sarà navigabile grazie ai button \texttt{Precedente} e \texttt{Successivo} posti in fondo alla pagina, che permetteranno di vedere la lista dei cinque risultati precedenti o successivi a quelli correnti. Per andare alla pagina di visualizzazione di un risultato specifico sarà sufficiente cliccare sul titolo in elenco (vedi §\ref{analisi-casi-uso-attori-principali-utente-generico-5} per le opere, \ref{analisi-casi-uso-attori-principali-utente-generico-7} per gli eventi) .
+
+
+\paragraph{Visualizzazione della pagina \textit{Opera}}
+\label{analisi-casi-uso-attori-principali-utente-generico-15}
+La pagina \textit{Opera} presenterà la scheda completa dell'opera selezionata. Saranno riportati titolo, autore, datazione, stile, tecnica o materiale (a seconda che si tratti di un dipinto o di una scultura), dimensioni, lo stato di prestito, una descrizione critica e un'immagine dell'opera.
+
+
+\paragraph{Visualizzazione della pagina \textit{Evento}}
+\label{analisi-casi-uso-attori-principali-utente-generico-16}
+La pagina \textit{Evento} presenterà i dettagli dell'evento selezionato. Saranno riportati titolo, data di inizio, data di fine, tipologia, organizzatore e una descrizione.
+
+
+\paragraph{Visualizzazione della pagina \textit{Recensione}}
+\label{analisi-casi-uso-attori-principali-utente-generico-17}
+La pagina \textit{Recensione} presenterà i dettagli della recensione selezionata. Saranno riportati oggetto, data di ultima modifica, autore e contenuto completo.
+
+
+\paragraph{Creazione di un account dalla pagina \textit{Registrazione}}
+\label{analisi-casi-uso-attori-principali-utente-generico-18}
+La pagina di \textit{registrazione} conterrà un form con tutti i campi da compilare per creare un account personale sul database del sito. Ogni gruppo di campi affini sarà racchiuso in una box. Per creare un account l'utente dovrà compilare adeguatamente il form di in tutti i suoi campi. Per cancellare i dati inseriti l'utente dovrà cliccare il button \texttt{Annulla}, per creare l'account il button  \texttt{Conferma}, entrambi posti in fondo alla pagina. In caso l'utente compilasse alcuni campi in maniera scorretta, il tentativo di registrazione non andrà a buon fine e verranno visualizzati dei masseggi di errore relativi a tutti i campi in cui sono stati immessi dati non conformi.
+
 
 \subsubsection{Utente autenticato}
 \label{analisi-casi-uso-attori-principali-utente-autenticato}
-Oltre a tutti i casi d'uso esposti per l'utente generico, riguardano l'utente autenticato anche:
-\begin{itemize}
-	\item autenticazione dalla pagina \textit{Login};
-	\item visualizzazione della pagina \textit{Utente};
-	\item inserimento di una recensione dalla pagina \textit{Lascia una recensione};
-	\item visualizzazione delle proprie recensioni dalla pagina \textit{Gestione recensioni};
-	\item modifica di una recensione dalla pagina \textit{Gestione recensioni};;
-	\item visualizzazione della pagina \textit{Recensione modificata};
-	\item eliminazione di una recensione dalla pagina \textit{Gestione recensioni};
-	\item modifica dei propri dati utente dalla pagina \textit{Modifica dati utente};
-	\item visualizzazione della pagina \textit{Dati utente modificati};
-	\item logout dal proprio account.
-\end{itemize}
+L'utente autenticato eredita tutti i casi d'uso dell'utente generico; in aggiunta, segue l'elenco  di quelli che lo riguardano specificamente.
+
+
+\paragraph{Autenticazione dalla pagina \textit{Login}}
+\label{analisi-casi-uso-attori-principali-utente-autenticato-1}
+L'utente inserirà username e password personali negli appositi campi del form della pagina \textit{Login}, poi, per effettuare l'autenticazione, premerà il button \texttt{Accedi}. In caso l'utente compilasse alcuni campi in maniera scorretta, il tentativo di autenticazione non andrà a buon fine e verranno visualizzati dei masseggi di errore relativi a tutti i campi in cui sono stati immessi dati non conformi.
+
+
+\paragraph{Visualizzazione della pagina \textit{Area personale}}
+\label{analisi-casi-uso-attori-principali-utente-autenticato-2}
+La pagina \textit{Area personale} mostrerà tutti i dati dell'utente autenticato. In fondo alla pagina, in forma di menu, saranno riportate le funzionalità messe a disposizione dell'utente autenticato, riguardanti la gestione del proprio profilo e le recensioni.
+
+
+\paragraph{Interazione con la pagina \textit{Area personale}}
+\label{analisi-casi-uso-attori-principali-utente-autenticato-3}
+Tramite il menu messo a disposizione dalla pagina \textit{Area personale}, l'utente potrà accedere alle funzionalità del proprio account. Il menu sarà composto di button che, cliccati, rimanderanno alle pagine delle relative funzionalità. L'utente autenticato potrà modificare i propri dati personali, lasciare una recensione e visualizzare e gestire l'elenco delle proprie recensioni.
+
+
+\paragraph{Inserimento di una recensione dalla pagina \textit{Lascia una recensione}}
+\label{analisi-casi-uso-attori-principali-utente-autenticato-4}
+Per lasciare una recensione, l'utente dovrà compilare l'apposito form presente nella pagina. Al termine della compilazione, per cancellare i dati scritti dovrà cliccare il button \texttt{Annulla}, per completare l'inserimento il button \texttt{Invia}. In caso l'utente compilasse alcuni campi in maniera scorretta, il tentativo di inserimento non andrà a buon fine e verranno visualizzati dei masseggi di errore relativi a tutti i campi in cui sono stati immessi dati non conformi.
+
+
+\paragraph{Visualizzazione delle proprie recensioni dalla pagina \textit{Gestione recensioni}}
+\label{analisi-casi-uso-attori-principali-utente-autenticato-5}
+La pagina conterrà un elenco di tutte le recensioni lasciate dell'utente. Di ogni elemento verrà mostrato l'oggetto; ad ogni elemento saranno associati i button \texttt{Modifica} e  \texttt{RImuovi}. All'inizio della pagina sarà riportato il numero di elementi presenti in elenco, il numero della pagina di recensioni corrente e quello di tutte le pagine di recensioni trovate. La pagina \textit{Gestione recensioni} mostrerà al massimo cinque elementi per volta.
+
+
+\paragraph{Interazione con la pagina \textit{Gestione recensioni}}
+\label{analisi-casi-uso-attori-principali-utente-autenticato-6}
+Se la lista delle recensioni dell'utente conterà più di cinque elementi, esse saranno comunque visualizzabili poiché l'elenco sarà navigabile grazie ai button \texttt{Precedente} e \texttt{Successivo} posti in fondo alla pagina, che permetteranno di vedere la lista delle cinque recensioni precedenti o successive a quelle correnti. Per andare alla pagina di visualizzazione di una recensione specifica sarà sufficiente cliccare sul suo oggetto in elenco (vedi §\ref{analisi-casi-uso-attori-principali-utente-generico-17}). Per modificare una recensione basterà cliccare il button \texttt{Modifica} affiancatole, per eliminarla quello \texttt{RImuovi}.
+
+
+\paragraph{Modifica di una recensione dalla pagina \textit{Modifica recensione}}
+\label{analisi-casi-uso-attori-principali-utente-autenticato-7}
+La pagina offrirà un form già compilato con i dati attuali dell'opera. L'utente potrà modificare tutti i campi a disposizione. Al termine dell'operazione, per cancellare le modifiche l'utente dovrà cliccare il button \texttt{Annulla}: in questo caso, nel form ricompariranno i dati inizialmente mostrati, cioè quelli attuali della recensione. Per confermare le modifiche, l'utente dovrà cliccare il button \texttt{Conferma}. Se la modifica della recensione sarà andata a buon fine, l'utente verrà indirizzato automaticamente a questa pagina, che confermerà la modifica effettuata. In caso l'utente compilasse alcuni campi in maniera scorretta, il tentativo di modifica non andrà a buon fine e verranno visualizzati dei masseggi di errore relativi a tutti i campi in cui sono stati immessi dati non conformi.
+
+
+\paragraph{Rimozione di una recensione dalla pagina \textit{Gestione recensioni}}
+\label{analisi-casi-uso-attori-principali-utente-autenticato-8}
+L'utente cliccherà il button \texttt{Rimuovi} associato alla propria recensione che desidera eliminare. Se l'operazione andrà a buon fine, verrà visualizzato un messaggio di conferma del successo della rimozione.
+
+
+\paragraph{Modifica dei propri dati utente dalla pagina \textit{Modifica dati utente}}
+\label{analisi-casi-uso-attori-principali-utente-autenticato-9}
+La pagina offrirà un form già compilato con i dati attuali dell'opera. L'utente potrà modificare tutti i campi a disposizione. Al termine dell'operazione, per cancellare le modifiche l'utente dovrà cliccare il button \texttt{Annulla}: in questo caso, nel form ricompariranno i dati inizialmente mostrati, cioè quelli attuali dell'utente. Per confermare le modifiche, l'utente dovrà cliccare il button \texttt{Conferma}. Se la modifica dei dati personali sarà andata a buon fine, l'utente verrà indirizzato automaticamente a questa pagina, che confermerà la modifica effettuata. In caso l'utente compilasse alcuni campi in maniera scorretta, il tentativo di modifica non andrà a buon fine e verranno visualizzati dei masseggi di errore relativi a tutti i campi in cui sono stati immessi dati non conformi.
+
+
+\paragraph{Logout dal proprio account}
+\label{analisi-casi-uso-attori-principali-utente-autenticato-10}
+L'utente autenticato cliccherà il button \texttt{Logout} posto nell'\textit{header} disconnettendosi dal proprio account: da questo momento navigherà il sito come utente generico. Questa operazione può essere effettuata da qualunque pagina del sito.
+
 
 \subsubsection{Utente amministratore}
 \label{analisi-casi-uso-attori-principali-utente-amministratore}
-Oltre a tutti i casi d'uso esposti per l'utente generico, riguardano l'utente amministratore anche:
-\begin{itemize}
-	\item autenticazione dalla pagina \textit{Login};
-	\item visualizzazione della pagina \textit{Utente};
-	\item visualizzazione della pagina \textit{Gestione contenuti};
-	\item interazione con la pagina \textit{Gestione dei contenuti};
-	\item modifica dei dati di un'opera dalla pagina \textit{Modifica opera};
-	\item modifica dei dati di un evento dalla pagina \textit{Modifica evento};
-	\item rimozione di un evento o un'opera dal sito dalla pagina \textit{Gestione contenuti};
-	\item rimozione di una recensione dal sito dalla pagina \textit{Gestione recensioni};
-	\item rimozione di un utente dal sito dalla pagina \textit{Gestione utenti};
-	\item logout dal proprio account.
-\end{itemize}
+L'utente amministratore eredita tutti i casi d'uso dell'utente generico; in aggiunta, segue l'elenco  di quelli che lo riguardano specificamente.
+
+
+\paragraph{Autenticazione dalla pagina \textit{Login}}
+\label{analisi-casi-uso-attori-principali-utente-amministratore-1}
+Analogo a quanto descritto in §\ref{analisi-casi-uso-attori-principali-utente-autenticato-1}.
+
+
+\paragraph{Visualizzazione della pagina \textit{Area personale}}
+\label{analisi-casi-uso-attori-principali-utente-amministratore-2}
+La pagina \textit{Area personale} mostrerà tutti i dati personali dell'utente amministratore. In fondo alla pagina, in forma di menu, saranno riportate le funzionalità messe a disposizione dell'utente amministratore, riguardanti la gestione del proprio profilo e di tutti i contenuti del sito.
+
+
+\paragraph{Interazione con la pagina \textit{Area personale}}
+\label{analisi-casi-uso-attori-principali-utente-amministratore-3}
+Tramite il menu messo a disposizione dalla pagina \textit{Area personale}, l'utente potrà accedere alle funzionalità del proprio account. Il menu sarà composto di button che, cliccati, rimanderanno alle pagine delle relative funzionalità. L'utente autenticato potrà modificare i propri dati personali, inserire opere ed eventi, gestire opere, eventi, recensioni e utenti.
+
+
+\paragraph{Inserimento di un'opera dalla pagina \textit{Inserisci opera}}
+\label{analisi-casi-uso-attori-principali-utente-amministratore-4}
+Per aggiungere un'opera, l'utente amministratore dovrà compilare l'apposito form presente nella pagina. Al termine della compilazione, per cancellare i dati scritti dovrà cliccare il button \texttt{Annulla}, per completare l'inserimento il button \texttt{Invia}. In caso l'utente compilasse alcuni campi in maniera scorretta, il tentativo di inserimento non andrà a buon fine e verranno visualizzati dei masseggi di errore relativi a tutti i campi in cui sono stati immessi dati non conformi. Se l'operazione andrà a buon fine, verrà visualizzato un messaggio di conferma del successo dell'inserimento.
+
+
+\paragraph{Inserimento di un evento dalla pagina \textit{Inserisci evento}}
+\label{analisi-casi-uso-attori-principali-utente-amministratore-5}
+Per aggiungere un evento, l'utente amministratore dovrà compilare l'apposito form presente nella pagina. Al termine della compilazione, per cancellare i dati scritti dovrà cliccare il button \texttt{Annulla}, per completare l'inserimento il button \texttt{Invia}. In caso l'utente compilasse alcuni campi in maniera scorretta, il tentativo di inserimento non andrà a buon fine e verranno visualizzati dei masseggi di errore relativi a tutti i campi in cui sono stati immessi dati non conformi. Se l'operazione andrà a buon fine, verrà visualizzato un messaggio di conferma del successo dell'inserimento.
+
+
+\paragraph{Visualizzazione delle recensioni dalla pagina \textit{Gestione recensioni}}
+\label{analisi-casi-uso-attori-principali-utente-amministratore-6}
+La pagina conterrà un elenco di tutte le recensioni lasciate dagli utenti del sito. Di ogni elemento verrà mostrato l'oggetto; ad ogni elemento sarà associato un button \texttt{Rimuovi}. All'inizio della pagina sarà riportato il numero di elementi presenti in elenco, il numero della pagina di recensioni corrente e quello di tutte le pagine di recensioni trovate. La pagina \textit{Gestione recensioni} mostrerà al massimo cinque elementi per volta.
+
+
+\paragraph{Interazione con la pagina \textit{Gestione recensioni}}
+\label{analisi-casi-uso-attori-principali-utente-amministratore-7}
+Se la lista delle recensioni dell'utente conterà più di cinque elementi, esse saranno comunque visualizzabili poiché l'elenco sarà navigabile grazie ai button \texttt{Precedente} e \texttt{Successivo} posti in fondo alla pagina, che permetteranno di vedere la lista delle cinque recensioni precedenti o successive a quelle correnti. Per andare alla pagina di visualizzazione di una recensione specifica sarà sufficiente cliccare sul suo oggetto in elenco (vedi §\ref{analisi-casi-uso-attori-principali-utente-generico-17}). Per eliminare una recensione basterà cliccare il button \texttt{Rimuovi} associatole.
+
+
+\paragraph{Visualizzazione della pagina \textit{Gestione contenuti}}
+\label{analisi-casi-uso-attori-principali-utente-amministratore-8}
+La pagina conterrà un elenco di tutte le opere e gli eventi presenti nel sito. Di ogni elemento verrà mostrato il titolo; ad ogni elemento sarà associato i button  \texttt{Modifica} e \texttt{Rimuovi}. All'inizio della pagina sarà riportato il numero di elementi presenti in elenco, il numero della pagina di contenuti corrente e quello di tutte le pagine di contenuti trovati. La pagina \textit{Gestione contenuti} mostrerà al massimo cinque elementi per volta.
+
+
+\paragraph{Interazione con la pagina \textit{Gestione dei contenuti}}
+\label{analisi-casi-uso-attori-principali-utente-amministratore-9}
+Se la lista di opere ed eventi conterà più di cinque elementi, essi saranno comunque visualizzabili poiché l'elenco sarà navigabile grazie ai button \texttt{Precedente} e \texttt{Successivo} posti in fondo alla pagina, che permetteranno di vedere la lista delle cinque opere o eventi precedenti o successivi a quelli correnti. Per andare alla pagina di visualizzazione di un'opera o evento specifico sarà sufficiente cliccare sul suo titolo in elenco (vedi §\ref{analisi-casi-uso-attori-principali-utente-generico-15} per l'opera, §\ref{analisi-casi-uso-attori-principali-utente-generico-16} per l'evento). Per modificare un'opera o un evento basterà cliccare il button \texttt{Modifica} affiancatole, per eliminarli quello \texttt{Rimuovi}.
+
+
+
+\paragraph{Modifica dei dati di un'opera dalla pagina \textit{Modifica opera}}
+\label{analisi-casi-uso-attori-principali-utente-amministratore-10}
+La pagina offrirà un form già compilato con i dati attuali dell'opera. L'utente potrà modificare tutti i campi. Al termine dell'operazione, per cancellare le modifiche l'utente dovrà cliccare il button \texttt{Annulla}: in questo caso, nel form ricompariranno i dati inizialmente mostrati, cioè quelli attuali dell'opera. Per confermare le modifiche, l'utente dovrà cliccare il button \texttt{Conferma}. Se la modifica dell'opera sarà andata a buon fine, l'utente verrà indirizzato automaticamente a questa pagina, che confermerà la modifica effettuata. In caso l'utente compilasse alcuni campi in maniera scorretta, il tentativo di modifica non andrà a buon fine e verranno visualizzati dei masseggi di errore relativi a tutti i campi in cui sono stati immessi dati non conformi.
+
+%
+%\paragraph{Visualizzazione della pagina \textit{Opera modificata}}
+%\label{analisi-casi-uso-attori-principali-utente-amministratore-11}
+%Se la modifica dell'opera (vedi §\ref{analisi-casi-uso-attori-principali-utente-autenticato-5}) sarà andata a buon fine, l'utente verrà indirizzato automaticamente a questa pagina, che confermerà la modifica effettuata.
+
+
+\paragraph{Modifica dei dati di un evento dalla pagina \textit{Modifica evento}}
+\label{analisi-casi-uso-attori-principali-utente-amministratore-11}
+La pagina offrirà un form già compilato con i dati attuali dell'evento. L'utente potrà modificare tutti i campi. Al termine dell'operazione, per cancellare le modifiche l'utente dovrà cliccare il button \texttt{Annulla}: in questo caso, nel form ricompariranno i dati inizialmente mostrati, cioè quelli attuali dell'evento. Per confermare le modifiche, l'utente dovrà cliccare il button \texttt{Conferma}. Se la modifica dell'evento sarà andata a buon fine, l'utente verrà indirizzato automaticamente a questa pagina, che confermerà la modifica effettuata. In caso l'utente compilasse alcuni campi in maniera scorretta, il tentativo di modifica non andrà a buon fine e verranno visualizzati dei masseggi di errore relativi a tutti i campi in cui sono stati immessi dati non conformi.
+%
+%
+%\paragraph{Visualizzazione della pagina \textit{Evento modificato}}
+%\label{analisi-casi-uso-attori-principali-utente-amministratore-12}
+%Se la modifica dell'evento (vedi §\ref{analisi-casi-uso-attori-principali-utente-autenticato-7}) sarà andata a buon fine, l'utente verrà indirizzato automaticamente a questa pagina, che confermerà la modifica effettuata.
+
+
+\paragraph{Rimozione di un evento o un'opera dal sito dalla pagina \textit{Gestione contenuti}}
+\label{analisi-casi-uso-attori-principali-utente-amministratore-12}
+L'utente amministratore cliccherà il button \texttt{Rimuovi} associato all'opera o evento che desidera eliminare. Se l'operazione andrà a buon fine, verrà visualizzato un messaggio di conferma del successo della rimozione.
+
+
+\paragraph{Rimozione di una recensione dal sito dalla pagina \textit{Gestione recensioni}}
+\label{analisi-casi-uso-attori-principali-utente-amministratore-13}
+L'utente amministratore cliccherà il button \texttt{Rimuovi} associato alla recensione che desidera eliminare. Se l'operazione andrà a buon fine, verrà visualizzato un messaggio di conferma del successo della rimozione. L'utente amministratore può rimuovere le recensioni lasciate da qualunque utente.
+
+
+\paragraph{Visualizzazione della pagina \textit{Gestione utenti}}
+\label{analisi-casi-uso-attori-principali-utente-amministratore-14}
+La pagina conterrà un elenco di tutti gli utenti presenti nel sito. Di ogni utente verrà mostrato l'username; ad ogni utente sarà associato un button \texttt{RImuovi}. All'inizio della pagina sarà riportato il numero di utenti presenti in elenco, il numero della pagina di utenti corrente e quello di tutte le pagine di utenti trovati. La pagina \textit{Gestione utenti} mostrerà al massimo cinque utenti per volta.
+
+
+\paragraph{Interazione con la pagina \textit{Gestione dei utenti}}
+\label{analisi-casi-uso-attori-principali-utente-amministratore-15}
+Se la lista di utenti conterà più di cinque elementi, essi saranno comunque visualizzabili poiché l'elenco sarà navigabile grazie ai button \texttt{Precedente} e \texttt{Successivo} posti in fondo alla pagina, che permetteranno di vedere la lista dei cinque utenti precedenti o successivi a quelli correnti. Per andare alla pagina di visualizzazione di un utente specifico sarà sufficiente cliccare sul suo username in elenco (vedi §\ref{analisi-casi-uso-attori-principali-utente-amministratore-18}). Per eliminare il profilo di un utente basterà cliccare il button \texttt{Rimuovi} affiancatogli.
+
+
+\paragraph{Visualizzazione del profilo di un utente dalla pagina \textit{Utente}}
+\label{analisi-casi-uso-attori-principali-utente-amministratore-16}
+La pagina \textit{Utente} presenterà i dati personali relativi all'account selezionato.
+
+
+\paragraph{Rimozione di un utente dal sito dalla pagina \textit{Gestione utenti}}
+\label{analisi-casi-uso-attori-principali-utente-amministratore-17}
+L'utente amministratore cliccherà il button \texttt{Rimuovi} associato all'account che desidera eliminare. Se l'operazione andrà a buon fine, verrà visualizzato un messaggio di conferma del successo della rimozione.
+
+
+\paragraph{Modifica dei propri dati utente dalla pagina \textit{Modifica dati utente}}
+\label{analisi-casi-uso-attori-principali-utente-amministratore-18}
+Analogo a quanto descritto in §\ref{analisi-casi-uso-attori-principali-utente-autenticato-9}.
+
+
+%\paragraph{Visualizzazione della pagina \textit{Dati utente modificati}}
+%\label{analisi-casi-uso-attori-principali-utente-amministratore-19}
+%Analogo a quanto descritto in §\ref{analisi-casi-uso-attori-principali-utente-autenticato-9}.
+
+
+\paragraph{Logout dal proprio account}
+\label{analisi-casi-uso-attori-principali-utente-amministratore-19}
+Analogo a quanto descritto in §\ref{analisi-casi-uso-attori-principali-utente-autenticato-10}.
