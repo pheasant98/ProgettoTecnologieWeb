@@ -8,7 +8,7 @@
 \BOOKMARK [2][-]{subsection.2.3}{Casi d'uso}{section.2}% 8
 \BOOKMARK [3][-]{subsubsection.2.3.1}{Utente generico}{subsection.2.3}% 9
 \BOOKMARK [4][-]{paragraph.2.3.1.1}{Visualizzazione della Home page}{subsubsection.2.3.1}% 10
-\BOOKMARK [4][-]{paragraph.2.3.1.2}{Interazione coi link del breadcrumb}{subsubsection.2.3.1}% 11
+\BOOKMARK [4][-]{paragraph.2.3.1.2}{Interazione coi link del breadcrumbs}{subsubsection.2.3.1}% 11
 \BOOKMARK [4][-]{paragraph.2.3.1.3}{Interazione coi link del menu}{subsubsection.2.3.1}% 12
 \BOOKMARK [4][-]{paragraph.2.3.1.4}{Visualizzazione della pagina Opere}{subsubsection.2.3.1}% 13
 \BOOKMARK [4][-]{paragraph.2.3.1.5}{Interazione con la pagina Opere}{subsubsection.2.3.1}% 14
@@ -61,7 +61,7 @@
 \BOOKMARK [2][-]{subsection.3.2}{Layout}{section.3}% 61
 \BOOKMARK [2][-]{subsection.3.3}{Accessibilit\340 e usabilit\340}{section.3}% 62
 \BOOKMARK [1][-]{section.4}{Implementazione}{}% 63
-\BOOKMARK [2][-]{subsection.4.1}{HTML}{section.4}% 64
+\BOOKMARK [2][-]{subsection.4.1}{XHTML}{section.4}% 64
 \BOOKMARK [3][-]{subsubsection.4.1.1}{Strumenti}{subsection.4.1}% 65
 \BOOKMARK [4][-]{paragraph.4.1.1.1}{w3schools HTML reference}{subsubsection.4.1.1}% 66
 \BOOKMARK [2][-]{subsection.4.2}{CSS}{section.4}% 67
