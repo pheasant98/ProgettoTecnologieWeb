@@ -170,7 +170,7 @@ class EventsController {
                      <a href="Evento.php?id=' . $row['ID'] . '\" aria-label="Vai all\'evento" title="' . InputCheckUtilities::prepareStringForDisplay($row['Titolo']) . '">' . InputCheckUtilities::prepareStringForDisplay($row['Titolo']) . '</a>
                 </dt>
                 <dd>
-                    <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'evento">Salta l\'evento</a>
+                    <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" title="Vai all\'evento successivo" aria-label="Vai all\'evento successivo">Vai all\'evento successivo</a>
     
                     <dl>
                         <dt class="inlineDef">
@@ -223,7 +223,7 @@ class EventsController {
                      <a href="Evento.php?id=' . $row['ID'] . '\" title="Vai all\'evento ' . InputCheckUtilities::prepareStringForDisplay($row['Titolo']) . '" aria-label="Vai all\'evento ' . InputCheckUtilities::prepareStringForDisplay($row['Titolo']) . '">' . InputCheckUtilities::prepareStringForDisplay($row['Titolo']) . '</a>
                 </dt>
                 <dd>
-                    <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" aria-label="Salta l\'evento">Salta l\'evento</a>
+                    <a href="#' . ($result_set->num_rows === $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" title="Vai all\'evento successivo" aria-label="Vai all\'evento successivo">Vai all\'evento successivo</a>
     
                     <dl>
                         <dt class="inlineDef">

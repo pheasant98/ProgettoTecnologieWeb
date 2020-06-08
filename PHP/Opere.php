@@ -65,9 +65,9 @@ if ($artwork_count > 0) {
 
     if ($number_pages > 1) {
         if ($page === 1) {
-            $skip_artworks = '<p class="skipDown">Ti trovi a pagina ' . $page . ' di ' . $number_pages . ': ' . '</p><a href="#buttonNext">vai ai pulsanti di navigazione</a>';
+            $skip_artworks = '<p class="skipDown">Ti trovi a pagina ' . $page . ' di ' . $number_pages . ':' . '</p> <a href="#buttonNext">vai ai pulsanti di navigazione</a>';
         } else {
-            $skip_artworks = '<p class="skipDown">Ti trovi a pagina ' . $page . ' di ' . $number_pages . ': ' . '</p><a href="#buttonBack">vai ai pulsanti di navigazione</a>';
+            $skip_artworks = '<p class="skipDown">Ti trovi a pagina ' . $page . ' di ' . $number_pages . ':' . '</p> <a href="#buttonBack">vai ai pulsanti di navigazione</a>';
         }
     } else {
         $skip_artworks = '<p>Ti trovi a pagina ' . $page . ' di ' . $number_pages . '.</p>';

@@ -35,7 +35,7 @@ if (isset($_SESSION['previous_page'])) {
         $filter_content = 'filterContent=' . $_SESSION['filter_content'];
         $filter_content_type = 'filterContentType=' . $_SESSION['filter_content_type'];
         $breadcrumbs = '<a href="AreaPersonale.php" title="Area Personale" aria-label="Vai alla pagina dell\'area personale">Area personale</a>
-                    &gt;&gt;<a href="GestioneContenuti.php?' . $page . '&amp;' . $filter_content . '&amp;' . $filter_content_type . '" title="Gestione contenuti" aria-label="Vai alla pagina di gestione dei contenuti">Gestione contenuti</a>';
+                    &gt;&gt; <a href="GestioneContenuti.php?' . $page . '&amp;' . $filter_content . '&amp;' . $filter_content_type . '" title="Gestione contenuti" aria-label="Vai alla pagina di gestione dei contenuti">Gestione contenuti</a>';
     } else if ($_SESSION['previous_page'] === 'Eventi') {
         $page = 'page=' . $_SESSION['event_page'];
         $filter_event_type = 'filterType=' . $_SESSION['filter_event_type'];
