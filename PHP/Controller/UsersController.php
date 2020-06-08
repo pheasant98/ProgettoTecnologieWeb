@@ -221,6 +221,11 @@ class UsersController {
         $content = '';
 
         while($row = $result_set->fetch_assoc()) {
+            if($row['Admin'] == 1) {
+                $delete_button = '';
+            } else {
+                $delete_button = '<input class="button" name="submit" type="submit" value="Rimuovi" role="button" title="Rimuovi utente" aria-label="Rimuovi utente"/>';
+            }
             $content .= '
                 <li>
                     <a href="Utente.php?user=' . InputCheckUtilities::prepareStringForDisplay($row['Username']) . '" title="Vai alla pagina dell\'utente ' .  InputCheckUtilities::prepareStringForDisplay($row['Username']) . '" aria-label="Vai alla pagina dell\'utente ' .  InputCheckUtilities::prepareStringForDisplay($row['Username']) . '" rel="nofollow">' .  InputCheckUtilities::prepareStringForDisplay($row['Username']) . '</a>
@@ -228,8 +233,7 @@ class UsersController {
                     <form class="userButton" action="EliminaUtente.php" method="post" role="form">
                         <fieldset class="hideRight">
                             <legend class="hideLegend">Pulsante di eliminazione dell\'utente</legend>
-                            <input type="hidden" name="username" value="' . InputCheckUtilities::prepareStringForDisplay($row['Username']) . '"/>
-                            <input class="button" name="submit" type="submit" value="Rimuovi" role="button" title="Rimuovi utente" aria-label="Rimuovi utente"/>
+                            <input type="hidden" name="username" value="' . InputCheckUtilities::prepareStringForDisplay($row['Username']) . '"/>' . $delete_button . '
                         </fieldset>
                     </form>
                 </li>

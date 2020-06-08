@@ -50,7 +50,7 @@ if (isset($_POST['submit']) && $_POST['submit'] === 'Inserisci') {
     unset($eventsController);
 }
 
-if ($message === '' || $message === '<p class="success">L\' evento ' . InputCheckUtilities::prepareStringForDisplay((InputCheckUtilities::prepareStringForChecks($title))) . ' è stato inserito correttamente</p>') {
+if ($message === '' || $message === '<p class="success">L\'evento ' . InputCheckUtilities::prepareStringForDisplay((InputCheckUtilities::prepareStringForChecks($title))) . ' è stato inserito correttamente</p>') {
     $title = '';
     $description = '';
     $begin_date = '';
