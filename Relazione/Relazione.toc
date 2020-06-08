@@ -93,4 +93,3 @@
 \contentsline {subsubsection}{\numberline {7.2.6}NVDA}{27}{subsubsection.7.2.6}% 
 \contentsline {subsubsection}{\numberline {7.2.7}Links2}{27}{subsubsection.7.2.7}% 
 \contentsline {section}{\numberline {8}Suddivisione del lavoro}{28}{section.8}% 
-\contentsline {section}{\numberline {A}Dati utenti}{29}{appendix.Alph1}% 
