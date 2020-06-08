@@ -45,31 +45,31 @@ Grazie a questa suddivisione il codice risulta molto più leggibile e di facile 
 
 \subsubsection{Sessioni}
 \label{implementazione-php-sessioni}
-Per memorizzare alcune informazioni nel passaggio da una pagina all'altra sono state usate le sessioni. Più precisamente, si tiene traccia dello username dell'utente e della sua tipologia (admin, autenticato, non autenticato), della paginazione dei contenuti (se si tratta di pagine che coinvolgono gli elenchi di opere, eventi, recensioni o utenti) e altri parametri simili necessari a mantenere le informazioni essenziali ad un'ottimale esperienza d'suo dell'utente durante l'intera navigazione.
+Per memorizzare alcune informazioni nel passaggio da una pagina all'altra sono state usate le sessioni. Più precisamente, si tiene traccia dello username dell'utente e della sua tipologia (admin, autenticato non admin, non autenticato), della paginazione dei contenuti (se si tratta di pagine che coinvolgono gli elenchi di opere, eventi, recensioni o utenti) e altri parametri simili necessari a mantenere le informazioni essenziali ad un'ottimale esperienza d'suo dell'utente durante l'intera navigazione.
 
 Per gestire adeguatamente il caso in cui un utente conservasse il bookmark di una pagina richiedente specifici parametri di sessione per essere acceduta, si è deciso di prevedere un'impostazione di default dei parametri stessi in assenza del passaggio di valori effettivi. In questo modo sarà comunque possibile accedere alla pagina salvata ed interagire con essa e col breadcrumbs senza rischio di errori.
 
 \subsection{JavaScript}
 \label{implementazione-javascript}
-Il linguaggio Javascript è stato usato principalmente per i controlli sull'input lato client: nonostante infatti i controlli siano comunque effettuati lato server (vedi §\ref{implementazione-php}), poiché le elaborazioni \textit{server side} sono più lente e onerose, è preferibile effettuare più controlli possibile direttamente lato client, e fermare lì eventuali input errati. Per questo motivo le operazioni effettuate dai metodi JavaScript per controllare l'input sono analoghe a quelle dei corrispondenti metodi PHP lato server.
+Il linguaggio JavaScript è stato usato principalmente per i controlli sull'input lato client: nonostante infatti i controlli siano effettuati anche lato server (vedi §\ref{implementazione-php}), poiché le elaborazioni \textit{server side} sono più lente e onerose, a causa della comunicazione di rete, è preferibile effettuare più controlli possibile lato client, e fermare lì eventuali input errati. Per questo motivo le operazioni effettuate dai metodi JavaScript per controllare l'input sono analoghe a quelle dei corrispondenti metodi PHP lato server.
 
-Lo script JavaScript usato è unico e contiene tutti i metodi per il controllo e la gestione degli input, differenziati per opera, evento, recensione, utente e risultato della ricerca.
+Viene utilizzato un unico script JavaScript contenuto in un unico file in modo da ridurre i tempi di caricamento, questo contiene tutti i metodi per il controllo e la gestione degli input, differenziati per opera, evento, recensione, utente e risultato della ricerca.
 
-Per tutti i form si controlla l'appropriatezza dei dati inseriti dall'utente: se sono errati, sopra il campo di input viene mostrato un messaggio di errore, spesso associato ad un suggerimento sul tipo di errore commesso \footnote{Per agevolare ancora di più l'utente nella compilazione dei form, sono previsti dei suggerimenti associati ai campi a completamento meno intuitvo; questi suggerimenti sono statici, inseriti quindi in XHTML 1.0 Strict.}
+Per tutti i form si controlla l'appropriatezza dei dati inseriti dall'utente: se sono errati, sopra il campo di input viene mostrato un messaggio di errore, spesso associato ad un suggerimento sul tipo di errore commesso \footnote{Per agevolare ancora di più l'utente nella compilazione dei form, sono previsti dei suggerimenti associati ai campi a completamento meno intuitvo; questi suggerimenti sono statici, inseriti quindi in XHTML 1.0 Strict.}.
 
-Oltre al controllo degli input e segnalazione degli errori, JavaScript gestisce le funzionalità:
+Oltre al controllo degli input e segnalazione degli errori, JavaScript gestisce le seguenti funzionalità:
 \begin{itemize}
-	\item il menu ad hamburger a comparsa, per il layout mobile;
-	\item la rimozione della mappa dalla pagina dei \textit{Contatti} se visualizzata da browser \textit{Internet Explorer 9} e \textit{Internet Explorer 10}, perché non supportato; questo non diminuisce la comprensibilità delle informazioni fornite, poiché la mappa è comunque corredata da indicazioni stradali scritte;
-	\item la selezione dello stile dell'opera per abilitare correttamente i campi in fase di inserimento e modifica;
-	\item i filtri per la visualizzazione di contenuti;
-	\item visualizzazione dell'anteprima dell'immagine inserita per le opere.
+	\item la comparsa e la scomparsa del menu ad hamburger, per il layout mobile;
+	\item la rimozione della mappa dalla pagina dei \textit{Contatti} se questa viene visualizzata tramite browser \textit{Internet Explorer 9} e \textit{Internet Explorer 10}, poiché non supportata; questo non diminuisce la comprensibilità delle informazioni fornite, in quanto la mappa è comunque corredata da indicazioni stradali scritte;
+	\item la corretta abilitazione dei campi dati delle opere durante l'inserimento e la modifica, in base alla selezione dello stile (dipinto o scultura);
+	\item la corretta composizione dei filtri per la pagina \textit{Gestione contenuti}, in base al contenuto desiderato (opera o evento); 
+	\item la visualizzazione dell'anteprima dell'immagine al momento dell'inserimento o della modifica di un'opera.
 \end{itemize}
 
 
-È stato possibile implementare in JavaScript tutti i controlli previsti in PHP; unica eccezione il controllo sulla dimensione dell'immagine caricata via browser \textit{Internet Explorer 9}, per problemi di sopporto dei metodi; si è comunque avuto cura di raffinare il più possibile il controllo su questo tipo di input, in modo da ridurre al minimo il numero di invii scorretti verso al server.
+È stato possibile implementare in JavaScript tutti i controlli previsti in PHP, l'unica eccezione è il controllo sulla dimensione dell'immagine caricata tramite browser \textit{Internet Explorer 9}, a causa del mancato sopporto dei metodi necessari; si è comunque avuto cura di raffinare il più possibile la verifica su questo tipo di input, in modo da ridurre al minimo il numero di invii scorretti verso al server (vengono ugualmente controllati il numero dei file selezionati e la loro estensione).
 
-Si è deciso di non adottare JQuery per la risoluzione di questo problema di compatibilità per evitare di appesantire il sito, trattandosi questo di un unico caso di controllo incompleto lato client.
+Si è deciso di non adottare JQuery per la risoluzione di questo problema di compatibilità, come per il resto delle funzionalità implementate, per evitare di appesantire inutilmente il sito, trattandosi questo dell'unico caso di controllo incompleto lato client; tutti i restati sono stati correttamente implementati utilizzando esclusivamente JavaScript.
 
 
 \subsubsection{Strumenti}
