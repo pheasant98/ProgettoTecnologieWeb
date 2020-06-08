@@ -77,14 +77,13 @@ if ($reviews_count > 0) {
 
     $number_pages = ceil($reviews_count / 5);
     if ($number_pages > 1) {
-        echo "ciao";
         if ($page === 1) {
             $skip_reviews = '<p class="skipDown">Ti trovi a pagina ' . $page . ' di ' . $number_pages . ':' . '</p> <a class="disable" href="#buttonNext">vai ai pulsanti di navigazione</a>';
         } else {
             $skip_reviews = '<p class="skipDown">Ti trovi a pagina ' . $page . ' di ' . $number_pages . ':' . '</p> <a class="disable" href="#buttonBack">vai ai pulsanti di navigazione</a>';
         }
     } else {
-        $skip_reviews = '<p>Ti trovi a pagina ' . $page . ' di ' . $number_pages . '.';
+        $skip_reviews = '<p>Ti trovi a pagina ' . $page . ' di ' . $number_pages . '.</p>';
     }
 } else {
     unset($controller);

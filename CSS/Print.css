@@ -63,6 +63,13 @@ a {
   padding-left: 18em;
 }
 
+.clause {
+  clear: right;
+  padding: 0 1em;
+  font-style: italic;
+  margin-bottom: 0.5em;
+}
+
 .filter {
   border: 0;
   background: none;
