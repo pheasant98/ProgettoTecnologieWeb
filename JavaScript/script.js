@@ -858,7 +858,7 @@ function checkUserSex(inputSexMale, inputSexFemale, inputSexOther) {
 
 function checkUserMail(input) {
     var mail = input.value.trim();
-    var pattern = new RegExp('^[a-zA-Z0-9.!#$%&\\/\'*+^_`{|}~\\-]+@[a-zA-Z0-9\\/](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$');
+    var pattern = new RegExp('^[a-zA-Z0-9.!#$%&\\/\'*+^_`{|}~\\[\\]\\-]+@[\\/\\[\\]a-zA-Z0-9](?:[\\/\\[\\]a-zA-Z0-9-]{0,61}[\\/\\[\\]a-zA-Z0-9])?(?:\.[\\/\\[\\]a-zA-Z0-9](?:[\\/\\[\\]a-zA-Z0-9-]{0,61}[\\/\\[\\]a-zA-Z0-9])?)+$');
 
     if (mail.length === 0) {
         addError(input, 'Non è possibile inserire un indirizzo <span xml:lang="en">email</span> vuoto', 2);
