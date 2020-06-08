@@ -1,25 +1,25 @@
 \section{Implementazione}
 \label{implementazione}
 
-\subsection{HTML}
+\subsection{XHTML}
 \label{implementazione-html}
-Per la struttura statica delle pagine del sito è stato usato XHTML 1.0. Si è scelto questo linguaggio perché supportato da gran parte dei browser, anche nelle loro versioni meno recenti, e perché regolato da una sintassi molto rigida, che rende quasi univoca l'interpretazione dei diversi elementi da parte dei browser stessi. È stato scartato HTML5 perché tutte le funzionalità necessarie allo sviluppo del sito erano già offerte da XHTML 1.0 e attualmente non è ancora completamente supportato da tutti i browser per i quali si vuole rendere compatibile il sito.
+Per la struttura statica delle pagine del sito è stato utilizzato XHTML 1.0 Strict. Si è scelto questo linguaggio perché supportato da gran parte dei browser, anche nelle loro versioni meno recenti, e perché regolato da una sintassi molto rigida, che rende quasi univoca l'interpretazione dei diversi elementi da parte dei browser stessi. È stato scartato HTML5 perché tutte le funzionalità necessarie allo sviluppo del sito erano già offerte da XHTML 1.0 Strict e attualmente non è ancora completamente supportato da tutti i browser per i quali si vuole rendere compatibile il sito.
 
-La parte statica delle pagine è composta da header, breadcrumb (nella struttura, non sempre nel contenuto), struttura del content e footer.
+Il contenuto statico delle pagine è composto da header, breadcrumbs (nella struttura, non sempre nel contenuto), struttura del content e footer.
 
-Per garantire la separazione tra contenuto e presentazione non sono stati usati tag XHTML di stile nè è stato inserito codice CSS all'interno dei file \textit{.html}. Si è inoltre evitato di inserire tag XHTML strutturali col solo scopo di usarli come base per le regole CSS. 
+Per garantire la separazione tra contenuto e presentazione non sono stati usati tag XHTML 1.0 Strict di stile nè è stato inserito codice CSS all'interno dei file \textit{.html}. Si è inoltre evitato di inserire tag XHTML 1.0 Strict strutturali col solo scopo di usarli come base per le regole CSS. 
 
 \subsubsection{Strumenti}
 \label{implementazione-html-strumenti}
 
 \paragraph{w3schools HTML reference}
 \label{implementazione-html-strumenti-w3schools-reference}
-Per valutare la compatibilità dei tag utilizzati rispetto ai vari browser, anche nelle loro versioni meno recenti, ci si è affidati al sito di \textit{w3schools}, che riporta, per ogni tag XHTML, le informazioni di compatibilità.
+Per valutare la compatibilità dei tag utilizzati rispetto ai vari browser, anche nelle loro versioni meno recenti, ci si è affidati al sito di \textit{w3schools}, che riporta, per ogni tag XHTML 1.0 Strict, le informazioni di compatibilità.
 
 
 \subsection{CSS}
 \label{implementazione-css}
-Per la definizione della grafica del sito è stato usato CSS3. Nella scelta delle regole CSS si è cercato di garantire l'accessibilità ad utenti affetti da disabilità visive non completamente invalidanti e di evitare effetti grafici che avrebbero potuto causare disagio ad utenti affetti da disturbi comportamentali
+Per la presentazione grafica del sito è stato utilizzato CSS3. Nella scelta delle regole CSS si è cercato di garantire l'accessibilità ad utenti affetti da disabilità visive non completamente invalidanti e di evitare effetti grafici che avrebbero potuto causare disagio ad utenti affetti da disturbi comportamentali.
 
 \subsubsection{Strumenti}
 \label{implementazione-css-strumenti}
@@ -30,14 +30,14 @@ Per valutare la compatibilità delle regole utilizzate rispetto ai vari browser,
 
 \subsection{PHP}
 \label{implementazione-php}
-Per i controlli sull'input lato server e le interazioni col database è stato usato PHP7. Nonostante tutti i controlli siano fatti in JavaScript lato client, è necessario effettuarli anche lato server in caso i primi falliscano, per esempio se JavaScript non è funzionante. L'uso di PHP ha permesso anche di diversificare il comportamento delle pagine a seconda del contenuto importato dal database e del tipo di utente (generico, autenticato, amministratore) che interagisce col sito.
+Per i controlli sull'input lato server e le interazioni col database è stato usato PHP7. Nonostante tutti i controlli lato client siano fatti in linguaggio JavaScript, è necessario effettuarli anche lato server qualora i primi falliscano, ad esempio se JavaScript è disabilitato. L'uso di PHP ha permesso anche di diversificare il comportamento dinamico delle pagine, a seconda dei risultati ottenuti dalle operazioni col database e del tipo di utente (generico, autenticato o amministratore) che interagisce col sito. In questo modo, infatti, si ottiene la completa separazione del comportamento dal contenuto e dalla presentazione.
 
-Il file \textit{.php} sono stati divisi in \textit{repository}, \textit{controller}, \textit{utilities}, DatabaseAcces.php e [NomePagina].php. 
+Il file \textit{.php} sono stati divisi in \textit{Database}, \textit{Repository}, \textit{Controller}, \textit{Utilities} e [NomePagina].php. 
 \begin{itemize}
-	\item \textbf{\textit{repository}:} una per ogni tabella del database, offre metodi per le query di inserimento, cancellazione, selezione e aggiornamento inviabile alla corrispondente tabella. Per le tabelle di opere ed eventi, che offrono due tipi di contenuti diversi ciascuna, le query sono diversificate per dipinti e sculture nell'una, e per mostre e conferenze nell'altra;
-	\item \textbf{\textit{controller}:} invocano i metodi esposti dalle \textit{repository} mettendo in comunicazione le pagine [NomePagina].php col database. Offrono inoltre tutti i metodi per eseguire i controlli sull'input dell'utente: alcuni controlli generici (trim degli input, sostituzione dei caratteri speciali con le apposite \textit{entity}) sono comuni a tutti i controller, altri invece sono specifici del contenuto che gestiscono.
-	\item \textbf{\textit{utilities}:} il file DateUtilities.php gestisce le conversioni del formato di data; il file FileUtilities.php effettua i controlli sul caricamento dei file da parte dell'utente, poiché l'inserimento di un'opera nel sito richiede anche il caricamento di un'immagine; entrambi i fiel contengono solo funzioni statiche;
-	\item \textbf{DatabaseAccess.php:} offre metodi statici per l'invio e la gestione delle queyr al database;
+	\item \textbf{Database:} un singolo file chiamato \textit{DatabaseAccess.php} offre metodi per la preparazione e l'esecuzione di query al database differenziando quelle che fanno uso dello select statement da quelle prive di esso;
+	\item \textbf{\textit{Repository}:} uno per ogni tabella del database, offre metodi per l'esecuzione di query sulla rispettiva tabella, che implementano le operazioni \textit{CRUD:} inserimento, lettura, modifica e cancellazione. Di queste sono fornite numerose versioni al fine di implementare le funzionalità in modo soddisfacente. Per la tabelle Opere sono offerti due tipi di contenuto diversi, dipinti e sculture, che però, a differenza delle due tipologie di evento, necessitano di campi dati distinti. Dunque si sono costruite query diversificate per risolvere questa evenienza;
+	\item \textbf{\textit{Controller}:} invocano i metodi esposti dalle \textit{repository} mettendo in comunicazione le pagine [NomePagina].php col database. Offrono inoltre tutti i metodi per eseguire i controlli sull'input dell'utente: alcuni controlli generici (trim degli input, sostituzione dei caratteri speciali con le apposite \textit{entity}, eliminazione dei possibili tag XHTML o comandi PHP e gestione delle parole in lingua straniera con opportuni tag) sono comuni a tutti i controller, altri invece sono specifici del contenuto che gestiscono.
+	\item \textbf{\textit{Utilities}:} il file DateUtilities.php gestisce le conversioni del formato di data; il file FileUtilities.php effettua i controlli sul caricamento dei file da parte dell'utente, poiché l'inserimento di un'opera nel sito richiede anche il caricamento di un'immagine; entrambi i fiel contengono solo funzioni statiche;
 	\item \textbf{[NomePagina].php:} una per ogni cagina \textit{.html} statica, gestisce il caricamento dei contenuti del sito e la loro organizzazione nella pagina, la gestione delle connessioni, le interazioni tra pagina e database, le funzionalità a disposizione a seconda del tipo di utente che sta navigando il sito. 
 \end{itemize}
 
