@@ -87,7 +87,8 @@ class ReviewsController {
         while($row = $result_set->fetch_assoc()) {
             $content .= '
                 <dt id="' . $id . $counter . '" class="titleDef">
-                    <a href="Recensione.php?id=' . $row['ID'] . '" aria-label="Vai alla recensione">' . InputCheckUtilities::prepareStringForDisplay($row['Oggetto']) . '</a>
+                    <a href="Recensione.php?id=' . $row['ID'] . '" title="Vai alla recensione" aria-label="Vai alla recensione">' . $row['Oggetto'] . '</a>
+                    <a href="Recensione.php?id=' . $row['ID'] . '" title="Vai alla recensione" aria-label="Vai alla recensione">' . InputCheckUtilities::prepareStringForDisplay($row['Oggetto']) . '</a>
                 </dt>
                 <dd>
                     <a href="#' . ($result_set->num_rows == $counter ? $button : $id . ($counter + 1)) . '" class="skipInformation" title="Vai alla recensione successiva" aria-label="Vai alla recensione successiva">Vai alla recensione successiva</a>

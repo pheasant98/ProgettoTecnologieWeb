@@ -25,30 +25,30 @@
         <div id="header" role="banner">
             <h1 id="logoImage" class="backgroundImage" title="Immagine del logo TecArt" role="img" aria-label="Immagine del logo TecArt"> <span xml:lang="en">TecArt</span> </h1>
 
-            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="0" onclick="touch();" onkeydown="enterTouch(event);">
+            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, clicca sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, clicca sopra per aprire il menu" tabindex="0" onclick="touch();" onkeydown="enterTouch(event);">
                         Menu ad <span xml:lang="en">hamburger</span>
                     </span>
 
             <span id='loginMenuPlaceholder'/>
 
-            <form id="search" name="search" action="Ricerca.php" method="post" role="search" aria-label="Form per la ricerca tra i contenuti del sito" onsubmit="return searchFormValidation();">
+            <form id="search" name="search" action="Ricerca.php" method="post" title="Form per la ricerca tra i contenuti del sito" role="search" aria-label="Form per la ricerca tra i contenuti del sito" onsubmit="return searchFormValidation();">
                 <fieldset id="searchBox">
                     <legend class="hideLegend">Ricerca</legend>
                     
 					<label class="hideLabel" for="filterSearch">filtro per la ricerca</label>
-                    <select id="filterSearch" name="filter" aria-label="Seleziona il filtro per la ricerca">
+                    <select id="filterSearch" name="filter" title="Seleziona il filtro per la ricerca" aria-label="Seleziona il filtro per la ricerca">
                         <option selected="selected" value="Opera">Opera</option>
                         <option value="Evento">Evento</option>
                     </select>
 
                     <label class="hideLabel" for="searchText">Cerca nel sito</label>
-                    <input id="searchText" name="search" type="text" aria-label="Casella di ricerca"/>
-                    <input id="buttonSubmit" name="submit" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
+                    <input id="searchText" name="search" type="text" title="Casella di ricerca" aria-label="Casella di ricerca"/>
+                    <input id="buttonSubmit" name="submit" type="submit" value="Cerca" title="Pulsante per la ricerca" aria-label="Pulsante per la ricerca"/>
                 </fieldset>
             </form>
         </div>
 
-        <div id="breadcrumbs" aria-label="breadcrumbs">
+        <div id="breadcrumbs" title="Breadcrumbs" aria-label="Breadcrumbs">
 
             <p>
                 <a class="skipInformation" href="#menu" title="Vai al menu" aria-label="Vai al menu">Vai al menu</a>
@@ -56,39 +56,39 @@
 
             <p>
                 Ti trovi in:
-                <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
+                <a href="HomePage.php" title="Vai alla pagina homepage del museo" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
                 &gt;&gt;
-                <a href="AreaPersonale.php" title="Area personale" aria-label="Vai alla pagina dell'area personale">Area personale</a>
+                <a href="AreaPersonale.php" title="Vai alla pagina dell'area personale" aria-label="Vai alla pagina dell'area personale">Area personale</a>
                 &gt;&gt;
                 <strong>Inserisci evento</strong>
             </p>
         </div>
 
-        <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
+        <div id="menu" role="navigation" title="Menu per la navigazione nel sito" aria-label="Menu per la navigazione nel sito">
             <ul>
                 <li>
                     <a id="skipMenu" class="skipInformation" href="#content" title="Vai al contenuto" aria-label="Vai al contenuto">Vai al contenuto</a>
                 </li>
 
                 <li>
-                    <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
+                    <a href="HomePage.php" title="Vai alla pagina homepage del museo" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
                 </li>
 
                 <li>
-                    <a href="Opere.php" title="Opere" aria-label="Vai alla pagina delle opere">Opere</a>
+                    <a href="Opere.php" title="Vai alla pagina delle opere" aria-label="Vai alla pagina delle opere">Opere</a>
                 </li>
 
                 <li>
-                    <a href="Eventi.php" title="Eventi" aria-label="Vai alla pagina degli eventi">Eventi</a>
+                    <a href="Eventi.php" title="Vai alla pagina degli eventi" aria-label="Vai alla pagina degli eventi">Eventi</a>
                 </li>
 
                 <li>
-                    <a href="CosaDiconoDiNoi.php" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni">Cosa
+                    <a href="CosaDiconoDiNoi.php" title="Vai alla pagina delle recensioni" aria-label="Vai alla pagina delle recensioni">Cosa
                         dicono di noi</a>
                 </li>
 
                 <li>
-                    <a href="Contatti.php" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti">Contatti</a>
+                    <a href="Contatti.php" title="Vai alla pagina dei contatti" aria-label="Vai alla pagina dei contatti">Contatti</a>
                 </li>
             </ul>
         </div>
@@ -99,6 +99,10 @@
             <form id="insert" name="insertEvent" action="" method="post" role="form" onsubmit="return eventFormValidation();">
                 <fieldset id="insertEvent" class="hideFieldset">
                     <legend class="hideLegend">Informazioni da inserire dell'evento</legend>
+
+                    <p class="clause">
+                        <strong>Tutti i campi vanno compilati obbligatoriamente.</strong>
+                    </p>
 
                     <p class="clause">
                         Se il testo inserito contiene parole in lingua straniera, posizionare i termini in questione
@@ -112,17 +116,17 @@
 
                         <p>
                             <label id="labelTitle" for="title">Titolo</label>
-                            <input id="title" class="formElement" name="title" type="text" value="<span id='titleValuePlaceholder'/>" aria-label="Inserisci il titolo"/>
+                            <input id="title" class="formElement" name="title" type="text" value="<span id='titleValuePlaceholder'/>" title="Inserisci il titolo" aria-label="Inserisci il titolo" aria-required="true"/>
                         </p>
 
                         <p>
                             <label id="labelDescriptionArea" for="eventDescriptionArea">Descrizione</label>
-                            <textarea id="eventDescriptionArea" class="descriptionArea" name="description" rows="20px" cols="20px" aria-label="Inserisci la descrizione"><span id='descriptionValuePlaceholder'/></textarea>
+                            <textarea id="eventDescriptionArea" class="descriptionArea" name="description" rows="20px" cols="20px" title="Inserisci la descrizione" aria-label="Inserisci la descrizione" aria-required="true"><span id='descriptionValuePlaceholder'/></textarea>
                         </p>
 
                         <p>
                             <label id="labelFilterType" for="type">Tipologia</label>
-                            <select id="type" class="formElement" name="type" aria-label="Seleziona la tipologia">
+                            <select id="type" class="formElement" name="type" title="Seleziona la tipologia" aria-label="Seleziona la tipologia" aria-required="true">
                                 <option value="Mostra"<span id='exhibitionTypeSelectedPlaceholder'/>>Mostra</option>
                                 <option value="Conferenza"<span id='conferenceTypeSelectedPlaceholder'/>>Conferenza</option>
                             </select>
@@ -130,7 +134,7 @@
 
                         <p>
                             <label id="labelManager" for="manager">Organizzatore</label>
-                            <input id="manager" class="formElement" name="manager" type="text" value="<span id='managerValuePlaceholder'/>" aria-label="Inserisci l'organizzatore"/>
+                            <input id="manager" class="formElement" name="manager" type="text" value="<span id='managerValuePlaceholder'/>" title="Inserisci l'organizzatore" aria-label="Inserisci l'organizzatore" aria-required="true"/>
                         </p>
                     </fieldset>
 
@@ -139,19 +143,19 @@
                         <p>
                             <label id="labelBeginDate" class="labelPosition" for="beginDate">Data d'inizio</label>
                             <span class="clause">La data d'inizio deve essere inserita nel seguente formato: <abbr title="giorno">gg</abbr>-<abbr title="mese">mm</abbr>-<abbr title="anno">aaaa</abbr></span>
-                            <input id="beginDate" class="dateElement" name="beginDate" type="text" value="<span id='beginDateValuePlaceholder'/>" aria-label="Inserisci la data d'inizio"/>
+                            <input id="beginDate" class="dateElement" name="beginDate" type="text" value="<span id='beginDateValuePlaceholder'/>" title="Inserisci la data d'inizio" aria-label="Inserisci la data d'inizio" aria-required="true"/>
                         </p>
 
                         <p>
                             <label id="labelEndDate" class="labelPosition" for="endDate">Data di fine</label>
                             <span class="clause">La data di fine deve essere inserita nel seguente formato: <abbr title="giorno">gg</abbr>-<abbr title="mese">mm</abbr>-<abbr title="anno">aaaa</abbr></span>
-                            <input id="endDate" class="dateElement" name="endDate" type="text" value="<span id='endDateValuePlaceholder'/>" aria-label="Inserisci la data di fine"/>
+                            <input id="endDate" class="dateElement" name="endDate" type="text" value="<span id='endDateValuePlaceholder'/>" title="Inserisci la data di fine" aria-label="Inserisci la data di fine" aria-required="true"/>
                         </p>
                     </fieldset>
 
                     <p class="buttonPosition">
-                        <input class="button" name="reset" type="reset" value="Cancella" role="button" aria-label="Cancella i dati inseriti" onclick="resetEventErrors();"/>
-                        <input class="button" name="submit" type="submit" value="Inserisci" role="button" aria-label="Inserisci il nuovo evento con le informazioni specificate"/>
+                        <input class="button" name="reset" type="reset" value="Cancella" role="button" title="Cancella i dati inseriti" aria-label="Cancella i dati inseriti" onclick="resetEventErrors();"/>
+                        <input class="button" name="submit" type="submit" value="Inserisci" role="button" title="Inserisci il nuovo evento con le informazioni specificate" aria-label="Inserisci il nuovo evento con le informazioni specificate"/>
                     </p>
                 </fieldset>
             </form>
@@ -161,7 +165,7 @@
             </a>
         </div>
 
-        <div aria-label="footer" id="footer">
+        <div title="footer" aria-label="footer" id="footer">
             <p>
                 Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
             </p>
