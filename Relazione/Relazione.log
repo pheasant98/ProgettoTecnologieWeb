@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.24)  8 JUN 2020 09:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.11.24)  8 JUN 2020 09:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1098,17 +1098,17 @@ Package pdftex.def Info: img/Logo.png  used on input line 20.
 <img/Mobile-pres.png, id=662, 1183.42125pt x 940.51375pt>
 File: img/Mobile-pres.png Graphic file (type png)
 <use img/Mobile-pres.png>
-Package pdftex.def Info: img/Mobile-pres.png  used on input line 15.
+Package pdftex.def Info: img/Mobile-pres.png  used on input line 18.
 (pdftex.def)             Requested size: 319.528pt x 253.94211pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 16.
+(caption)                particular \caption on input line 19.
 See the caption package documentation for explanation.
 
 File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
-Package pdftex.def Info: img/Logo.png  used on input line 20.
+Package pdftex.def Info: img/Logo.png  used on input line 23.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
 [22
 
@@ -1117,27 +1117,27 @@ Package pdftex.def Info: img/Logo.png  used on input line 20.
 <img/Tablet-pres.png, id=670, 725.71124pt x 940.51375pt>
 File: img/Tablet-pres.png Graphic file (type png)
 <use img/Tablet-pres.png>
-Package pdftex.def Info: img/Tablet-pres.png  used on input line 25.
+Package pdftex.def Info: img/Tablet-pres.png  used on input line 28.
 (pdftex.def)             Requested size: 326.56705pt x 423.22728pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 26.
+(caption)                particular \caption on input line 29.
 See the caption package documentation for explanation.
 
 <img/Desktop-pres.png, id=671, 1132.23pt x 940.51375pt>
 File: img/Desktop-pres.png Graphic file (type png)
 <use img/Desktop-pres.png>
-Package pdftex.def Info: img/Desktop-pres.png  used on input line 36.
+Package pdftex.def Info: img/Desktop-pres.png  used on input line 39.
 (pdftex.def)             Requested size: 398.3386pt x 330.87817pt.
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 37.
+(caption)                particular \caption on input line 40.
 See the caption package documentation for explanation.
 
 File: img/Logo.png Graphic file (type png)
 <use img/Logo.png>
-Package pdftex.def Info: img/Logo.png  used on input line 37.
+Package pdftex.def Info: img/Logo.png  used on input line 40.
 (pdftex.def)             Requested size: 60.15854pt x 30.4258pt.
 [23 <./img/Tablet-pres.png>])
 File: img/Logo.png Graphic file (type png)
@@ -1231,7 +1231,7 @@ st/fonts/type1/public/cm-super/sftt1095.pfb></usr/local/texlive/2019/texmf-dist
 /fonts/type1/public/cm-super/sfxc1095.pfb></usr/local/texlive/2019/texmf-dist/f
 onts/type1/public/cm-super/sfxc1200.pfb></usr/local/texlive/2019/texmf-dist/fon
 ts/type1/public/cm-super/sfxc2488.pfb>
-Output written on Relazione.pdf (29 pages, 3676172 bytes).
+Output written on Relazione.pdf (29 pages, 3676057 bytes).
 PDF statistics:
  814 PDF objects out of 1000 (max. 8388607)
  739 compressed objects within 8 object streams
