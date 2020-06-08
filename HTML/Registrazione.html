@@ -16,7 +16,7 @@
 
         <link href="../CSS/Style.css" media="screen" rel="stylesheet" type="text/css"/>
         <link href="../CSS/Print.css" media="print" rel="stylesheet" type="text/css"/>
-        <link href="" rel="icon"/>
+        <link rel="icon" href="../Images/favicon.ico"/>
 
         <script src="../JavaScript/script.js" type="text/javascript"></script>
     </head>
@@ -25,30 +25,30 @@
         <div id="header" role="banner">
             <h1 id="logoImage" class="backgroundImage" title="Immagine del logo TecArt" role="img" aria-label="Immagine del logo TecArt"> <span xml:lang="en">TecArt</span> </h1>
 
-            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="0" onclick="touch();" onkeydown="enterTouch(event);">
+            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, clicca sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, clicca sopra per aprire il menu" tabindex="0" onclick="touch();" onkeydown="enterTouch(event);">
                 Menu ad <span xml:lang="en">hamburger</span>
             </span>
 
             <span id='loginMenuPlaceholder'/>
 
-            <form id="search" name="search" action="Ricerca.php" method="post" role="search" aria-label="Form per la ricerca tra i contenuti del sito" onsubmit="return searchFormValidation();">
+            <form id="search" name="search" action="Ricerca.php" method="post" title="Form per la ricerca tra i contenuti del sito" role="search" aria-label="Form per la ricerca tra i contenuti del sito" onsubmit="return searchFormValidation();">
                 <fieldset id="searchBox">
                     <legend class="hideLegend">Ricerca</legend>
                     
 					<label class="hideLabel" for="filterSearch">filtro per la ricerca</label>
-                    <select id="filterSearch" name="filter" aria-label="Seleziona il filtro per la ricerca">
+                    <select id="filterSearch" name="filter" title="Seleziona il filtro per la ricerca" aria-label="Seleziona il filtro per la ricerca">
                         <option selected="selected" value="Opera">Opera</option>
                         <option value="Evento">Evento</option>
                     </select>
 
                     <label class="hideLabel" for="searchText">Cerca nel sito</label>
-                    <input id="searchText" name="search" type="text" aria-label="Casella di ricerca"/>
-                    <input id="buttonSubmit" name="submit" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
+                    <input id="searchText" name="search" type="text" title="Casella di ricerca" aria-label="Casella di ricerca"/>
+                    <input id="buttonSubmit" name="submit" type="submit" value="Cerca" title="Pulsante per la ricerca" aria-label="Pulsante per la ricerca"/>
                 </fieldset>
             </form>
         </div>
 
-        <div id="breadcrumbs" aria-label="breadcrumbs">
+        <div id="breadcrumbs" title="Breadcrumbs" aria-label="Breadcrumbs">
 
             <p>
                 <a class="skipInformation" href="#menu" title="Vai al menu" aria-label="Vai al menu">Vai al menu</a>
@@ -56,7 +56,7 @@
 
             <p>
                 Ti trovi in:
-                <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
+                <a href="HomePage.php" title="Vai alla pagina homepage del museo" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
                 &gt;&gt;
                 <a href="Login.php" title="Login" aria-label="Vai alla pagina di login" xml:lang="en">Login</a>
                 &gt;&gt;
@@ -64,31 +64,31 @@
             </p>
         </div>
 
-        <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
+        <div id="menu" role="navigation" title="Menu per la navigazione nel sito" aria-label="Menu per la navigazione nel sito">
             <ul>
                 <li>
                     <a id="skipMenu" class="skipInformation" href="#content" title="Vai al contenuto" aria-label="Vai al contenuto">Vai al contenuto</a>
                 </li>
 
                 <li>
-                    <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
+                    <a href="HomePage.php" title="Vai alla pagina homepage del museo" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
                 </li>
 
                 <li>
-                    <a href="Opere.php" title="Opere" aria-label="Vai alla pagina delle opere">Opere</a>
+                    <a href="Opere.php" title="Vai alla pagina delle opere" aria-label="Vai alla pagina delle opere">Opere</a>
                 </li>
 
                 <li>
-                    <a href="Eventi.php" title="Eventi" aria-label="Vai alla pagina degli eventi">Eventi</a>
+                    <a href="Eventi.php" title="Vai alla pagina degli eventi" aria-label="Vai alla pagina degli eventi">Eventi</a>
                 </li>
 
                 <li>
-                    <a href="CosaDiconoDiNoi.php" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni">Cosa
+                    <a href="CosaDiconoDiNoi.php" title="Vai alla pagina delle recensioni" aria-label="Vai alla pagina delle recensioni">Cosa
                         dicono di noi</a>
                 </li>
 
                 <li>
-                    <a href="Contatti.php" title="Contatti" aria-label="Vai alla pagina dedicata ai contatti">Contatti</a>
+                    <a href="Contatti.php" title="Vai alla pagina dei contatti" aria-label="Vai alla pagina dei contatti">Contatti</a>
                 </li>
             </ul>
         </div>
@@ -99,6 +99,10 @@
             <form id="registration" name="registrazione" action="" method="post" role="form" onsubmit="return registrationFormValidation();">
                 <fieldset id="personalData" class="hideFieldset">
                     <legend class="hideLegend">Dati personali</legend>
+
+                    <p class="clause">
+                        <strong>Tutti i campi vanno compilati obbligatoriamente.</strong>
+                    </p>
 
                     <p class="clause">
                         Se il testo inserito contiene parole in lingua straniera, posizionare i termini in questione
@@ -113,40 +117,40 @@
 
                         <p>
                             <label id="labelName" for="name">Nome</label>
-                            <input id="name" class="formElement" type="text" name="name" value="<span id='nameValuePlaceholder'/>" aria-label="Inserisci il nome"/>
+                            <input id="name" class="formElement" type="text" name="name" value="<span id='nameValuePlaceholder'/>" title="Inserisci il nome" aria-label="Inserisci il nome" aria-required="true"/>
                         </p>
 
                         <p>
                             <label id="labelSurname" for="surname">Cognome</label>
-                            <input id="surname" class="formElement" type="text" name="surname" value="<span id='surnameValuePlaceholder'/>" aria-label="Inserisci il cognome"/>
+                            <input id="surname" class="formElement" type="text" name="surname" value="<span id='surnameValuePlaceholder'/>" title="Inserisci il cognome" aria-label="Inserisci il cognome" aria-required="true"/>
                         </p>
 
                         <p>
                             <label id="labelDate" class="labelPosition" for="date">Data di nascita</label>
-                            <span class="clause">La data di nascita deve essere inserita nel seguente formato: <abbr title="giorno">gg</abbr>-<abbr title="mese">mm</abbr>-<abbr title="anno">aaaa</abbr></span>
-                            <input id="date" class="dateElement" type="text" name="date" value="<span id='dateValuePlaceholder'/>" aria-label="Inserisci la data di nascita"/>
+                            <span class="clause">La data di nascita deve essere inserita nel seguente formato: <abbr title="giorno">gg</abbr>-<abbr title="mese">mm</abbr>-<abbr title="anno">aaaa</abbr>.</span>
+                            <input id="date" class="dateElement" type="text" name="date" value="<span id='dateValuePlaceholder'/>" title="Inserisci la data di nascita" aria-label="Inserisci la data di nascita" aria-required="true"/>
                         </p>
 
                         <p>
                             <label id="labelMail" for="email" xml:lang="en">E-mail</label>
-                            <input id="email" class="formElement" type="text" name="mail" value="<span id='mailValuePlaceholder'/>" aria-label="Inserisci l'indirizzo E-mail"/>
+                            <input id="email" class="formElement" type="text" name="mail" value="<span id='mailValuePlaceholder'/>" title="Inserisci l'indirizzo E-mail" aria-label="Inserisci l'indirizzo E-mail" aria-required="true"/>
                         </p>
                     </fieldset>
 
-                    <fieldset id="fieldSex" class="fieldset">
+                    <fieldset id="fieldSex" class="fieldset" aria-required="true">
                         <legend>Sesso</legend>
 
                         <ul class="list">
                             <li>
-                                <input id="sexM" type="radio" name="sex" value="M" aria-label="Pulsante per dichiarare sesso maschile"<span id='maleCheckedPlaceholder'/>/>
+                                <input id="sexM" type="radio" name="sex" value="M" title="Pulsante per dichiarare sesso maschile" aria-label="Pulsante per dichiarare sesso maschile"<span id='maleCheckedPlaceholder'/>/>
                                 <label id="labelSexM" for="sexM">Maschile</label>
                             </li>
                             <li>
-                                <input id="sexF" type="radio" name="sex" value="F" aria-label="Pulsante per dichiarare sesso femminile"<span id='femaleCheckedPlaceholder'/>/>
+                                <input id="sexF" type="radio" name="sex" value="F" title="Pulsante per dichiarare sesso femminile" aria-label="Pulsante per dichiarare sesso femminile"<span id='femaleCheckedPlaceholder'/>/>
                                 <label id="labelSexF" for="sexF">Femminile</label>
                             </li>
                             <li>
-                                <input id="sexA" type="radio" name="sex" value="A" aria-label="Pulsante per non dichiarare il sesso"<span id='otherCheckedPlaceholder'/>/>
+                                <input id="sexA" type="radio" name="sex" value="A" title="Pulsante per non dichiarare il sesso" aria-label="Pulsante per non dichiarare il sesso"<span id='otherCheckedPlaceholder'/>/>
                                 <label id="labelSexA" for="sexA">Preferisco non dichiarare</label>
                             </li>
                         </ul>
@@ -157,24 +161,24 @@
 
                         <p>
                             <label id="labelUsername" for="username" xml:lang="en">Username</label>
-                            <input id="username" class="formElement" type="text" name="username" value="<span id='usernameValuePlaceholder'/>" aria-label="Inserisci lo username"/>
+                            <input id="username" class="formElement" type="text" name="username" value="<span id='usernameValuePlaceholder'/>" title="Inserisci lo username" aria-label="Inserisci lo username" aria-required="true"/>
                         </p>
 
                         <p>
                             <label id="labelPassword" class="labelPosition" for="password" xml:lang="en">Password</label>
                             <span class="clause">La <span xml:lang="en">password</span> deve essere lunga almeno 8 caratteri e contenere almeno una lettera minuscola, una lettera maiuscola, un numero ed uno tra i seguenti caratteri speciali ! # $ % &amp; ' * + ^ _ ` \ - { | } ~ @</span>
-                            <input id="password" class="formElement" type="password" name="password" value="" aria-label="Inserisci la password"/>
+                            <input id="password" class="formElement" type="password" name="password" value="" title="Inserisci la password" aria-label="Inserisci la password" aria-required="true"/>
                         </p>
 
                         <p>
                             <label id="labelRepeatePassword" for="repetePassword">Ripetere la <span xml:lang="en">password</span></label>
-                            <input id="repetePassword" class="formElement" type="password" name="repetePassword" value="" aria-label="Inserisci nuovamente la password"/>
+                            <input id="repetePassword" class="formElement" type="password" name="repetePassword" value="" title="Inserisci nuovamente la password" aria-label="Inserisci nuovamente la password" aria-required="true"/>
                         </p>
                     </fieldset>
 
                 <p class="buttonPosition">
-                    <input class="button" type="reset" name="reset" value="Cancella" aria-label="Pulsante per la cancellazione dei dati inseriti" onclick="resetRegistrationErrors();"/>
-                    <input class="button" type="submit" name="submit" value="Registrati" aria-label="Pulsante per la conferma dati inseriti"/>
+                    <input class="button" type="reset" name="reset" value="Cancella" title="Pulsante per la cancellazione dei dati inseriti" aria-label="Pulsante per la cancellazione dei dati inseriti" onclick="resetRegistrationErrors();"/>
+                    <input class="button" type="submit" name="submit" value="Registrati" title="Pulsante per la conferma dati inseriti" aria-label="Pulsante per la conferma dati inseriti"/>
                 </p>
                 </fieldset>
             </form>
@@ -184,7 +188,7 @@
             </a>
         </div>
 
-        <div aria-label="footer" id="footer">
+        <div title="footer" aria-label="footer" id="footer">
             <p>
                 Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
             </p>

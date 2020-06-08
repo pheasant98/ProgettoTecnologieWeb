@@ -149,11 +149,11 @@ if (($artwork_count + $event_count) > 0) {
     $navigation_contents_buttons = '<p class="buttonPosition">';
 
     if ($page > 1) {
-        $navigation_contents_buttons .= '<a id="buttonBack" class="button" href="?page=' . ($page - 1) . '&amp;filterContent=' . $filter_content . '&amp;filterContentType=' . $filter_content_type . '" title="Utenti precedenti" role="button" aria-label="Torna ai contenuti precedenti"> &lt; Precedenti</a>';
+        $navigation_contents_buttons .= '<a id="buttonBack" class="button" href="?page=' . ($page - 1) . '&amp;filterContent=' . $filter_content . '&amp;filterContentType=' . $filter_content_type . '" title="Torna ai contenuti precedenti" role="button" aria-label="Torna ai contenuti precedenti"> &lt; Precedenti</a>';
     }
 
     if (($page * 5) < ($artwork_count + $event_count)) {
-        $navigation_contents_buttons .= '<a id="buttonNext" class="button" href="?page=' . ($page + 1) . '&amp;filterContent=' . $filter_content . '&amp;filterContentType=' . $filter_content_type . '" title="Utenti successivi" role="button" aria-label="Vai ai contenuti successivi"> Successivi &gt;</a>';
+        $navigation_contents_buttons .= '<a id="buttonNext" class="button" href="?page=' . ($page + 1) . '&amp;filterContent=' . $filter_content . '&amp;filterContentType=' . $filter_content_type . '" title="Vai ai contenuti successivi" role="button" aria-label="Vai ai contenuti successivi"> Successivi &gt;</a>';
     }
     $navigation_contents_buttons .= '</p>';
 

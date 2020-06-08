@@ -16,7 +16,7 @@
 
         <link rel="stylesheet" media="screen" href="../CSS/Style.css" type="text/css"/>
         <link rel="stylesheet" media="print" href="../CSS/Print.css" type="text/css"/>
-        <link rel="icon" href=""/>
+        <link rel="icon" href="../Images/favicon.ico"/>
 
         <script src="../JavaScript/script.js" type="text/javascript"></script>
     </head>
@@ -25,30 +25,30 @@
         <div id="header" role="banner">
             <h1 id="logoImage" class="backgroundImage" title="Immagine del logo TecArt" role="img" aria-label="Immagine del logo TecArt"> <span xml:lang="en">TecArt</span> </h1>
 
-            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, cliccaci sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, cliccaci sopra per aprire il menu" tabindex="0" onclick="touch();" onkeydown="enterTouch(event);">
+            <span id="hamburgerMenu" class="backgroundImage" title="Menu ad hamburger, clicca sopra per aprire il menu" role="img" aria-label="Menu ad hamburger, clicca sopra per aprire il menu" tabindex="0" onclick="touch();" onkeydown="enterTouch(event);">
                 Menu ad <span xml:lang="en">hamburger</span>
             </span>
 
             <span id='loginMenuPlaceholder'/>
 
-            <form id="search" name="search" action="Ricerca.php" method="post" role="search" aria-label="Form per la ricerca tra i contenuti del sito" onsubmit="return searchFormValidation();">
+            <form id="search" name="search" action="Ricerca.php" method="post" title="Form per la ricerca tra i contenuti del sito" role="search" aria-label="Form per la ricerca tra i contenuti del sito" onsubmit="return searchFormValidation();">
                 <fieldset id="searchBox">
                     <legend class="hideLegend">Ricerca</legend>
                     
 					<label class="hideLabel" for="filterSearch">filtro per la ricerca</label>
-                    <select id="filterSearch" name="filter" aria-label="Seleziona il filtro per la ricerca">
+                    <select id="filterSearch" name="filter" title="Seleziona il filtro per la ricerca" aria-label="Seleziona il filtro per la ricerca">
                         <option selected="selected" value="Opera">Opera</option>
                         <option value="Evento">Evento</option>
                     </select>
 
                     <label class="hideLabel" for="searchText">Cerca nel sito</label>
-                    <input id="searchText" name="search" type="text" aria-label="Casella di ricerca"/>
-                    <input id="buttonSubmit" name="submit" type="submit" value="Cerca" aria-label="Pulsante per la ricerca"/>
+                    <input id="searchText" name="search" type="text" title="Casella di ricerca" aria-label="Casella di ricerca"/>
+                    <input id="buttonSubmit" name="submit" type="submit" value="Cerca" title="Pulsante per la ricerca" aria-label="Pulsante per la ricerca"/>
                 </fieldset>
             </form>
         </div>
 
-        <div id="breadcrumbs" aria-label="breadcrumbs">
+        <div id="breadcrumbs" title="Breadcrumbs" aria-label="Breadcrumbs">
 
             <p>
                 <a class="skipInformation" href="#menu" title="Vai al menu" aria-label="Vai al menu">Vai al menu</a>
@@ -56,32 +56,32 @@
 
             <p>
                 Ti trovi in:
-                <a href="HomePage.php" title="Home" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
+                <a href="HomePage.php" title="Vai alla pagina homepage del museo" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
                 &gt;&gt;
                 <strong>Contatti</strong>
             </p>
         </div>
 
-        <div id="menu" role="navigation" aria-label="menu per la navigazione nel sito">
+        <div id="menu" role="navigation" title="Menu per la navigazione nel sito" aria-label="Menu per la navigazione nel sito">
             <ul>
                 <li>
-                    <a id="skipMenu" href="#content" class="skipInformation" aria-label="Vai al contenuto">Vai al contenuto</a>
+                    <a id="skipMenu" href="#content" class="skipInformation" title="Vai al contenuto" aria-label="Vai al contenuto">Vai al contenuto</a>
                 </li>
 
                 <li>
-                    <a href="HomePage.php" aria-label="Vai alla pagina homepage del museo" title="Home" xml:lang="en">Home</a>
+                    <a href="HomePage.php" title="Vai alla pagina homepage del museo" aria-label="Vai alla pagina homepage del museo" xml:lang="en">Home</a>
                 </li>
 
                 <li>
-                    <a href="Opere.php" title="Opere" aria-label="Vai alla pagina delle opere">Opere</a>
+                    <a href="Opere.php" title="Vai alla pagina delle opere" aria-label="Vai alla pagina delle opere">Opere</a>
                 </li>
 
                 <li>
-                    <a href="Eventi.php" title="Eventi" aria-label="Vai alla pagina degli eventi">Eventi</a>
+                    <a href="Eventi.php" title="Vai alla pagina degli eventi" aria-label="Vai alla pagina degli eventi">Eventi</a>
                 </li>
 
                 <li>
-                    <a href="CosaDiconoDiNoi.php" title="Cosa dicono di noi" aria-label="Vai alla pagina dedicata alle recensioni">Cosa dicono di noi</a>
+                    <a href="CosaDiconoDiNoi.php" title="Vai alla pagina delle recensioni" aria-label="Vai alla pagina delle recensioni">Cosa dicono di noi</a>
                 </li>
 
                 <li>
@@ -95,31 +95,31 @@
 
             <h2 class="subtitle">Dati del museo</h2>
 
-            <a class="skipInformation" href="#ulOrari" aria-label="Vai agli orari">Vai agli orari</a>
+            <a class="skipInformation" href="#ulOrari" title="Vai agli orari" aria-label="Vai agli orari">Vai agli orari</a>
 
             <ul class="list">
                 <li>
-                    Nome Museo: Museo TecArt
+                    Nome Museo: TecArt.
                 </li>
 
                 <li>
                     Indirizzo sede: Via Trieste 63, 3 <abbr title="Codice di Avviamento Postale">CAP</abbr> 35121 Padova
-                    <abbr title="Padova">PD</abbr>
+                    <abbr title="Padova">PD</abbr>.
                 </li>
 
                 <li>
-                    Telefono: <a href="tel:049 000 0000" title="chiama questo numero: 049 000 0000" aria-label="chiama questo numero: 049 000 0000">049 000 0000</a>
+                    Telefono: <a href="tel:049 000 0000" title="Chiama questo numero: 049 000 0000" aria-label="Chiama questo numero: 049 000 0000">049 000 0000</a>.
                 </li>
 
                 <li>
                     <span xml:lang="en">Email: </span>
-                    <a href="mailto:MuseoTecArt@tecart.it" title="scrivi all'email: MuseoTecArt@tecart.it" aria-label="scrivi all'email:: MuseoTecArt@tecart.it">MuseoTecArt@tecart.it</a>
+                    <a href="mailto:MuseoTecArt@tecart.it" title="Scrivi all'email: MuseoTecArt@tecart.it" aria-label="Scrivi all'email:: MuseoTecArt@tecart.it">MuseoTecArt@tecart.it</a>
                 </li>
             </ul>
 
             <h2 id="ulOrari" class="subtitle">Orari sede</h2>
 
-            <a href="#directions" class="skipInformation" aria-label="Vai alle indicazioni stradali">Vai alle indicazioni stradali</a>
+            <a href="#directions" class="skipInformation" title="Vai alle indicazioni stradali aria-label="Vai alle indicazioni stradali">Vai alle indicazioni stradali</a>
 
             <ul class="list">
                 <li>
@@ -152,7 +152,7 @@
             </ul>
 
             <h2 id="directions" class="subtitle">Come raggiungerci</h2>
-            <a class="skipInformation" href="#buttonBackUp" aria-label="Vai al bottone torna su">Vai al bottone torna su</a>
+            <a class="skipInformation" href="#buttonBackUp" title="Vai al bottone torna su" aria-label="Vai al bottone torna su">Vai al bottone torna su</a>
             <p>
                 Ci troviamo a pochi passi dalla zona di Padova Fiere.
             </p>
@@ -171,7 +171,7 @@
             </a>
         </div>
 
-        <div id="footer" aria-label="footer">
+        <div id="footer" title="footer" aria-label="footer">
             <p>
                 Progetto per il corso di Tecnologie <span xml:lang="en">Web</span>, Anno Accademico 2019/2020
             </p>
