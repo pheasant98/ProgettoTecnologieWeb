@@ -122,7 +122,7 @@
 
                         <p>
                             <label id="labelYear" class="labelPosition" for="years">Datazione</label>
-                            <p class="clause">La datazione deve essere inserita nel seguente formato: <abbr title="anno">aaaa</abbr></p>
+                            <label class="clause" for="years">La datazione deve essere inserita nel seguente formato: <abbr title="anno">aaaa</abbr></label>
                             <input id="years" class="formElement" name="years" type="text" value="<span id='yearsValuePlaceholder'/>" aria-label="Inserisci la datazione"/>
                         </p>
                     </fieldset>
@@ -150,7 +150,7 @@
 
                         <p>
                             <label id="labelSize" class="labelPosition" for="dimensions">Dimensioni</label>
-                            <p class="clause">Le dimensioni devono essere inserite nel seguente formato: altezza x larghezza</p>
+                            <label class="clause" for="dimensions">Le dimensioni devono essere inserite nel seguente formato: altezza x larghezza</label>
                             <input id="dimensions" class="formElement" name="dimensions" type="text" value="<span id='dimensionsValuePlaceholder'/>" aria-label="Inserisci le dimensioni"/>
                         </p>
                     </fieldset>
@@ -172,7 +172,7 @@
                         <legend>Immagine</legend>
                         <p>
                             <label id="labelImageUpload" class="labelPosition" for="imageUpload">Inserisci immagine</label>
-                            <p class="clause">La dimensione massima consentita per l'immagine è 500<abbr title="Kilo Bytes" xml:lang="en">KB</abbr>, le estensioni supportate sono .<abbr title="Joint Photographic Experts Group" xml:lang="en">jpeg</abbr>, .<abbr title="Joint Photographic Group" xml:lang="en">jpg</abbr>, .<abbr title="Portable Network Graphics" xml:lang="en">png</abbr></p>
+                            <label class="clause" for="imageUpload">La dimensione massima consentita per l'immagine è 500<abbr title="Kilo Bytes" xml:lang="en">KB</abbr>, le estensioni supportate sono .<abbr title="Joint Photographic Experts Group" xml:lang="en">jpeg</abbr>, .<abbr title="Joint Photographic Group" xml:lang="en">jpg</abbr>, .<abbr title="Portable Network Graphics" xml:lang="en">png</abbr></label>
                             <input id="imageUpload" class="formElement" name="image" type="file" accept=".jpg, .jpeg, .png" aria-label="Inserisci l'immagine" onchange="return checkInputArtworkImage(event)"/>
                         </p>
                     </fieldset>
