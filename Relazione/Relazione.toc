@@ -65,7 +65,7 @@
 \contentsline {paragraph}{\numberline {2.3.3.22}Logout dal proprio account}{13}{paragraph.2.3.3.22}% 
 \contentsline {section}{\numberline {3}Progettazione}{14}{section.3}% 
 \contentsline {subsection}{\numberline {3.1}Database}{14}{subsection.3.1}% 
-\contentsline {subsection}{\numberline {3.2}\textit {Layout}}{14}{subsection.3.2}% 
+\contentsline {subsection}{\numberline {3.2}Layout}{14}{subsection.3.2}% 
 \contentsline {subsection}{\numberline {3.3}Accessibilit\IeC {\`a} e usabilit\IeC {\`a}}{17}{subsection.3.3}% 
 \contentsline {section}{\numberline {4}Implementazione}{19}{section.4}% 
 \contentsline {subsection}{\numberline {4.1}HTML}{19}{subsection.4.1}% 
@@ -86,16 +86,16 @@
 \contentsline {section}{\numberline {6}Validazione}{23}{section.6}% 
 \contentsline {subsection}{\numberline {6.1}Obiettivi}{23}{subsection.6.1}% 
 \contentsline {subsection}{\numberline {6.2}Strumenti}{23}{subsection.6.2}% 
-\contentsline {section}{\numberline {7}Test}{25}{section.7}% 
-\contentsline {subsection}{\numberline {7.1}Obiettivi}{25}{subsection.7.1}% 
-\contentsline {subsection}{\numberline {7.2}Strumenti}{25}{subsection.7.2}% 
-\contentsline {subsubsection}{\numberline {7.2.1}Strumenti sviluppatore}{25}{subsubsection.7.2.1}% 
-\contentsline {subsubsection}{\numberline {7.2.2}Lighthouse}{25}{subsubsection.7.2.2}% 
-\contentsline {subsubsection}{\numberline {7.2.3}XAMPP}{25}{subsubsection.7.2.3}% 
-\contentsline {subsubsection}{\numberline {7.2.4}Browsershots}{26}{subsubsection.7.2.4}% 
-\contentsline {subsubsection}{\numberline {7.2.5}WAVE}{26}{subsubsection.7.2.5}% 
-\contentsline {subsubsection}{\numberline {7.2.6}Silktide}{26}{subsubsection.7.2.6}% 
-\contentsline {subsubsection}{\numberline {7.2.7}NVDA}{26}{subsubsection.7.2.7}% 
-\contentsline {subsubsection}{\numberline {7.2.8}Links2}{26}{subsubsection.7.2.8}% 
-\contentsline {section}{\numberline {8}Suddivisione del lavoro}{27}{section.8}% 
-\contentsline {section}{\numberline {A}Dati utenti}{28}{appendix.Alph1}% 
+\contentsline {section}{\numberline {7}Test}{24}{section.7}% 
+\contentsline {subsection}{\numberline {7.1}Obiettivi}{24}{subsection.7.1}% 
+\contentsline {subsection}{\numberline {7.2}Strumenti}{24}{subsection.7.2}% 
+\contentsline {subsubsection}{\numberline {7.2.1}Strumenti sviluppatore}{24}{subsubsection.7.2.1}% 
+\contentsline {subsubsection}{\numberline {7.2.2}Lighthouse}{24}{subsubsection.7.2.2}% 
+\contentsline {subsubsection}{\numberline {7.2.3}XAMPP}{24}{subsubsection.7.2.3}% 
+\contentsline {subsubsection}{\numberline {7.2.4}Browsershots}{25}{subsubsection.7.2.4}% 
+\contentsline {subsubsection}{\numberline {7.2.5}WAVE}{25}{subsubsection.7.2.5}% 
+\contentsline {subsubsection}{\numberline {7.2.6}Silktide}{25}{subsubsection.7.2.6}% 
+\contentsline {subsubsection}{\numberline {7.2.7}NVDA}{25}{subsubsection.7.2.7}% 
+\contentsline {subsubsection}{\numberline {7.2.8}Links2}{25}{subsubsection.7.2.8}% 
+\contentsline {section}{\numberline {8}Suddivisione del lavoro}{26}{section.8}% 
+\contentsline {section}{\numberline {A}Dati utenti}{27}{appendix.Alph1}% 

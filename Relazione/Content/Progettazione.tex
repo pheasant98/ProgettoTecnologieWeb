@@ -20,7 +20,7 @@ Infine, la tabella \textit{Recensione} tiene traccia delle recensioni inserite n
 	\captionof{figure}{Schema logico del database del museo \textit{TecArt}}
 \end{center}
 
-\subsection{\textit{Layout}}
+\subsection{Layout}
 \label{progettazione-layout}
 Per la scelta del design delle pagine, l'obiettivo è l'adattabilità al maggior numero possibile di dispositivi, indipendentemente dalle dimensioni dello schermo o dal supporto usato dall'utente. Si è puntato poi ad avere una struttura ordinata, leggera e di immediata comprensione e memorizzazione, al fine di rendere la navigazione semplice e intuitiva.
 Per soddisfare queste esigenza è stato scelto il "\textit{layout} a tre pannelli". Come da struttura standard, questo tipo di layout divide la schermata in tre settori: \textit{header} che deve contenere la rispota alla domanda "dove mi trovo?"; \textit{menu}, che deve contenere la rispota alla domanda "dove posso andare?"; \textit{content}, che deve contenere la rispota alla domanda "cosa c'è nella pagina?".
@@ -74,9 +74,9 @@ A questo scopo, nel rispetto delle specifiche di progetto, il gruppo si è ispir
 	
 	\item \textbf{guida alla navigazione:}
 	\begin{itemize}
-		\item \textbf{breadcrumb}: l'utente ha sempre ha disposizione la sequenza ordinata delle pagine visitate per arrivare a quella corrente, così da evitare disorientamento COSA DEL BOOKMARK SALVATO, VEDI SEZIONE PHP;
-		\item \textbf{tabindex:} questo attributo non è stato fissato con valori positivi poiché l'ordine del DOM corrispondeva già a quello desiderato per la navigazione COSA DEL MENU MOBILE ONFOCUS;
+		\item \textbf{breadcrumb}: l'utente ha sempre a disposizione la sequenza ordinata delle pagine visitate per arrivare a quella corrente, così da evitare disorientamento.
+		\item \textbf{tabindex:} questo attributo non è stato fissato a valori positivi poiché l'ordine del DOM corrispondeva già a quello desiderato per la navigazione. L'unico caso in cui è stato necessario definirlo è stato il menu \textit{ad hamburger} nella grafica \textit{mobile}: per renderlo \textit{focusable} nella navigazione tramite tab, il suo tabindex è stato posto a 0.
 		\item \textbf{link \texttt{torna su}:} per raggiungere rapidamente l'\textit{header} della pagina (o comunque la sua parte iniziale), senza dover fare scroll verso l'alto;
-		\item \textbf{link \texttt{salta al...}:} per gli utenti che non possono usare puntatore o mouse per arrivare rapidamente al contenuto desiderato, sono stati predisposti dei link interni alle pagine per raggiungere direttamente alcuni punti significativi del contenuto (per esempio, evitare tutto lo scorrimento del menu e passare direttamente al corpo della pagina) FUNZIONE JS PER IL SALTA AL.
+		\item \textbf{link \texttt{salta al...}:} per gli utenti che non possono usare puntatore o mouse per arrivare rapidamente al contenuto desiderato, sono stati predisposti dei link interni alle pagine per raggiungere direttamente alcuni punti significativi del contenuto (per esempio, evitare tutto lo scorrimento del menu e passare direttamente al corpo della pagina).
 	\end{itemize}
 \end{itemize}
